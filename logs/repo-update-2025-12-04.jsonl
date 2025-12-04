@@ -30,3 +30,32 @@
 {"timestamp": "2025-12-04T14:27:35.470413Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "timeline", "title": "Deep Learning Timeline MicroSim"}
 {"timestamp": "2025-12-04T14:27:36.079045Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "tokenizer", "title": "Tokenizer MicroSim"}
 {"timestamp": "2025-12-04T14:27:36.083651Z", "event": "update_completed", "repo": "dmccreary/tracking-ai-course", "sims_found": 26, "metadata_found": 25, "metadata_missing": 1, "added": 25, "updated": 0, "errors": 0}
+{"timestamp": "2025-12-04T14:44:04.359516Z", "event": "update_started", "repo": "dmccreary/geometry-course"}
+{"timestamp": "2025-12-04T14:44:05.904377Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "angle-pairs", "title": "Angle Pairs"}
+{"timestamp": "2025-12-04T14:44:06.511283Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "angle-type-explorer", "title": "Angle Type Explorer"}
+{"timestamp": "2025-12-04T14:44:07.135854Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "area-formulas-quadrilaterals", "title": "Area Formulas for Quadrilaterals"}
+{"timestamp": "2025-12-04T14:44:07.745758Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "circle-area-calculator", "title": "Circle Area Calculator MicroSim"}
+{"timestamp": "2025-12-04T14:44:08.360369Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "circle-area-explorer", "title": "Circle Area Explorer"}
+{"timestamp": "2025-12-04T14:44:08.961390Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "collinear-coplanar-points", "title": "Collinear and Coplanar Points"}
+{"timestamp": "2025-12-04T14:44:09.569259Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "comp-and-sup-angles", "title": "Complementary and Supplementary Angles"}
+{"timestamp": "2025-12-04T14:44:10.179542Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "cords", "title": "Chords"}
+{"timestamp": "2025-12-04T14:44:10.780389Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "cosine", "title": "Cosine as a Ratio"}
+{"timestamp": "2025-12-04T14:44:11.378120Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "degrees-vs-radians", "title": "Degrees vs Radians"}
+{"timestamp": "2025-12-04T14:44:11.978196Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "distance-formula", "title": "Distance Formula Explorer"}
+{"timestamp": "2025-12-04T14:44:12.594814Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2025-12-04T14:44:13.189257Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "koch-fractal", "title": "Koch Fractal"}
+{"timestamp": "2025-12-04T14:44:13.802942Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "line-relationships-3d", "title": "Line Relationships in 3D"}
+{"timestamp": "2025-12-04T14:44:14.507640Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "make-lines-parallel", "title": "Make Lines Parallel"}
+{"timestamp": "2025-12-04T14:44:15.115401Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "point-line-explorer", "title": "Points and Lines Explorer"}
+{"timestamp": "2025-12-04T14:44:15.739717Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "point-line-plane", "title": "Point, Line, Plane - The Three Undefined Terms"}
+{"timestamp": "2025-12-04T14:44:16.335711Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "pythagorean-theorem", "title": "Pythagorean Theorem"}
+{"timestamp": "2025-12-04T14:44:17.024466Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "regular-polygon-explorer-quiz", "title": "Regular Polygon Explorer Quiz"}
+{"timestamp": "2025-12-04T14:44:17.646004Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "regular-polygon-explorer", "title": "Regular Polygon Explorer"}
+{"timestamp": "2025-12-04T14:44:18.252929Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "sierpinski-triangles", "title": "Unknown"}
+{"timestamp": "2025-12-04T14:44:18.856397Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "sine-and-cosine-circle", "title": "Sine and Cosine Circle"}
+{"timestamp": "2025-12-04T14:44:19.433115Z", "event": "missing_metadata", "repo": "dmccreary/geometry-course", "sim": "templates", "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/templates"}
+{"timestamp": "2025-12-04T14:44:20.048111Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "triangle-area-explorer", "title": "Triangle Area Explorer"}
+{"timestamp": "2025-12-04T14:44:20.653051Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "triangle-congruence", "title": "Triangle Congruence"}
+{"timestamp": "2025-12-04T14:44:21.269671Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "word-cloud", "title": "Geometry Word Cloud"}
+{"timestamp": "2025-12-04T14:44:21.855600Z", "event": "missing_metadata", "repo": "dmccreary/geometry-course", "sim": "workflow", "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/workflow"}
+{"timestamp": "2025-12-04T14:44:21.862899Z", "event": "update_completed", "repo": "dmccreary/geometry-course", "sims_found": 27, "metadata_found": 25, "metadata_missing": 2, "added": 25, "updated": 0, "errors": 0}
