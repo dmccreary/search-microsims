@@ -3685,5 +3685,2085 @@
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/tokenizer/",
     "id": 70
+  },
+  {
+    "title": "Angle Pairs",
+    "description": "An interactive MicroSim exploring different types of angle pairs including complementary, supplementary, vertical, and adjacent angles.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Angles"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Complementary Angles",
+      "Supplementary Angles",
+      "Vertical Angles",
+      "Adjacent Angles"
+    ],
+    "prerequisites": [
+      "Basic angle measurement",
+      "Understanding of degrees"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "angle-pairs",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/angle-pairs"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/angle-pairs/",
+    "id": 71
+  },
+  {
+    "title": "Angle Type Explorer",
+    "description": "An interactive MicroSim that allows students to classify angles as acute, right, obtuse, or straight by adjusting a slider from 0\u00b0 to 180\u00b0.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Angles"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Remember",
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Acute Angle",
+      "Right Angle",
+      "Obtuse Angle",
+      "Straight Angle",
+      "Angle Classification"
+    ],
+    "prerequisites": [
+      "Basic understanding of angles",
+      "Knowledge of degree measurement"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "angle-type-explorer",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/angle-type-explorer"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/angle-type-explorer/",
+    "id": 72
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "title": "Area Formulas for Quadrilaterals",
+    "creator": "Claude Code with microsim-p5 skill",
+    "subject": "Geometry",
+    "description": "A visual guide showing area formulas for six common quadrilaterals (rectangle, square, parallelogram, trapezoid, rhombus, and kite) with labeled diagrams and mathematical formulas in a responsive 2x3 grid layout.",
+    "date": "2025-11-13",
+    "type": "Interactive Visual Reference",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "gradeLevel": "9-12",
+    "subjectArea": "Mathematics",
+    "topic": "Area Formulas",
+    "learningObjectives": [
+      "Students will remember area formulas for rectangles, squares, parallelograms, trapezoids, rhombuses, and kites",
+      "Students will understand how these formulas relate to the base rectangle formula",
+      "Students will identify the dimensions needed for each area formula"
+    ],
+    "bloomsTaxonomyLevels": [
+      "Remembering",
+      "Understanding"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Understanding of quadrilateral definitions",
+      "Basic measurement concepts (length, width, height)",
+      "Basic algebraic notation"
+    ],
+    "framework": "p5.js",
+    "canvasDimensions": "responsive width \u00d7 400px",
+    "responsive": "Width-responsive",
+    "dependencies": [
+      "p5.js 1.11.10 CDN"
+    ],
+    "accessibility": {
+      "screenReaderSupport": true,
+      "keyboardNavigation": false,
+      "ariaLabels": true
+    },
+    "controls": [],
+    "parameters": [],
+    "modelType": "Static visual reference",
+    "variables": [
+      "panelWidth",
+      "panelTitleFontSize",
+      "panelFormulaFontSize"
+    ],
+    "equations": [
+      "Rectangle: A = lw",
+      "Square: A = s\u00b2",
+      "Parallelogram: A = bh",
+      "Trapezoid: A = \u00bd(b\u2081 + b\u2082)h",
+      "Rhombus: A = \u00bdd\u2081d\u2082",
+      "Kite: A = \u00bdd\u2081d\u2082"
+    ],
+    "assumptions": [
+      "All shapes are planar (2D)",
+      "Measurements are in consistent units",
+      "Formulas shown are for standard orientations"
+    ],
+    "limitations": [
+      "Does not perform calculations",
+      "Does not show derivations of formulas",
+      "No interactive manipulation of shapes"
+    ],
+    "educationalContext": {
+      "pedagogicalApproach": "Visual reference and comparative analysis",
+      "suggestedActivities": [
+        "Formula comparison and relationship identification",
+        "Dimension identification practice",
+        "Application practice with actual measurements",
+        "Discussion of how rectangle formula relates to others"
+      ],
+      "assessmentOpportunities": [
+        "Formula recall quizzes",
+        "Dimension labeling exercises",
+        "Area calculation problems"
+      ]
+    },
+    "technicalDetails": {
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "mobileCompatible": true,
+      "offlineCapable": false
+    },
+    "standardsAlignment": [
+      "CCSS.MATH.CONTENT.HSG.GMD.A.1 - Give an informal argument for the formulas for the area of geometric figures"
+    ],
+    "keywords": [
+      "area",
+      "formulas",
+      "quadrilaterals",
+      "rectangle",
+      "square",
+      "parallelogram",
+      "trapezoid",
+      "rhombus",
+      "kite",
+      "geometry",
+      "measurement"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "area-formulas-quadrilaterals",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/area-formulas-quadrilaterals"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/area-formulas-quadrilaterals/",
+    "id": 73
+  },
+  {
+    "title": "Circle Area Calculator MicroSim",
+    "description": "Interactive visualization demonstrating the relationship between a circle's radius, area (\u03c0r\u00b2), and circumference (2\u03c0r) with real-time calculations and visual feedback. Students can adjust the radius slider to observe how area grows quadratically while circumference grows linearly.",
+    "creator": "Dan McCreary",
+    "date": "2024-11-10",
+    "subject": [
+      "geometry",
+      "circles",
+      "area",
+      "circumference",
+      "pi",
+      "radius",
+      "quadratic relationships",
+      "mathematical formulas",
+      "interactive learning"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC 4.0",
+    "identifier": "circle-area-calculator",
+    "contributor": [],
+    "educational": {
+      "gradeLevel": "7-10",
+      "bloomsLevel": [
+        "Remember",
+        "Understand",
+        "Apply",
+        "Analyze",
+        "Evaluate"
+      ],
+      "concepts": [
+        "circle",
+        "radius",
+        "area",
+        "circumference",
+        "pi",
+        "quadratic growth",
+        "linear growth"
+      ],
+      "prerequisites": [
+        "Basic geometric shapes",
+        "Squaring numbers",
+        "Basic multiplication"
+      ],
+      "library": "p5.js",
+      "duration": "45-60 minutes"
+    },
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "circle-area-calculator",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/circle-area-calculator"
+    },
+    "url": "circle-area-calculator",
+    "id": 74
+  },
+  {
+    "title": "Circle Area Explorer",
+    "description": "An interactive educational simulation that demonstrates the quadratic relationship between a circle's radius and its area using the formula A = \u03c0r\u00b2. Students can manipulate the radius using a slider or by directly dragging within the circle, with an optional graph showing the quadratic growth curve.",
+    "creator": "Dan McCreary",
+    "contributor": [
+      "ChatGPT (AI Assistant)"
+    ],
+    "date": "2024-11-29",
+    "subject": [
+      "geometry",
+      "circles",
+      "area",
+      "quadratic relationships",
+      "pi",
+      "radius",
+      "mathematics",
+      "interactive simulation"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC 4.0",
+    "identifier": "https://dmccreary.github.io/geometry-course/sims/circle-area-explorer/",
+    "publisher": "Dan McCreary - Geometry Course",
+    "educationalLevel": "high school",
+    "learningResourceType": "interactive demonstration",
+    "audience": "High school geometry students (grades 9-10)",
+    "version": "1.1",
+    "library": "p5.js",
+    "bloomLevel": [
+      "Remember",
+      "Understand",
+      "Apply",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Circle area formula",
+      "Quadratic relationships",
+      "Pi constant",
+      "Radius",
+      "Direct manipulation",
+      "Graphical representation",
+      "Rate of change"
+    ],
+    "prerequisites": [
+      "Basic understanding of circles",
+      "Familiarity with pi (\u03c0)",
+      "Basic algebra skills",
+      "Understanding of squared terms"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "circle-area-explorer",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/circle-area-explorer"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/circle-area-explorer/",
+    "id": 75
+  },
+  {
+    "title": "Collinear and Coplanar Points",
+    "description": "A four-panel diagram showing examples and non-examples of collinear and coplanar point arrangements for geometry education.",
+    "creator": "Dan McCreary",
+    "subject": "Mathematics - Geometry",
+    "date": "2025-01-11",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "gradeLevel": "9-12",
+    "subjectArea": "Mathematics",
+    "topic": "Foundations of Geometry - Points, Lines, and Planes",
+    "learningObjectives": [
+      "Analyze point arrangements to determine whether sets of points are collinear or coplanar",
+      "Distinguish between examples and non-examples of collinear points",
+      "Identify coplanar points in 2D and 3D representations",
+      "Understand that three or more points lying on the same line are always collinear",
+      "Recognize that four or more points may or may not be coplanar"
+    ],
+    "bloomsTaxonomyLevels": [
+      "Understanding",
+      "Analyzing"
+    ],
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Understanding of basic geometric terms (point, line, plane)"
+    ],
+    "framework": "p5.js",
+    "canvasDimensions": "900\u00d7600 (initial, width-responsive)",
+    "responsive": true,
+    "dependencies": [
+      "p5.js CDN v1.11.10"
+    ],
+    "accessibility": {
+      "screenReaderSupport": true,
+      "description": "Four-panel diagram showing examples and non-examples of collinear and coplanar points"
+    },
+    "controls": [],
+    "parameters": [],
+    "modelType": "Static Diagram",
+    "variables": [],
+    "equations": [],
+    "assumptions": [
+      "2D representation of 3D concepts for panels 3 and 4",
+      "Grid lines help visualize planes in 2D space"
+    ],
+    "limitations": [
+      "Panel 4 uses perspective projection to represent 3D space in 2D",
+      "Static diagram without interactivity"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "collinear-coplanar-points",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/collinear-coplanar-points"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/collinear-coplanar-points/",
+    "id": 76
+  },
+  {
+    "title": "Complementary and Supplementary Angles",
+    "description": "An interactive MicroSim demonstrating complementary angles (sum to 90\u00b0) and supplementary angles (sum to 180\u00b0) with visual arcs and real-time calculations.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Angles"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Complementary Angles",
+      "Supplementary Angles",
+      "Angle Measurement",
+      "Angle Relationships"
+    ],
+    "prerequisites": [
+      "Basic angle measurement",
+      "Acute and obtuse angle recognition"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "comp-and-sup-angles",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/comp-and-sup-angles"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/comp-and-sup-angles/",
+    "id": 77
+  },
+  {
+    "title": "Chords",
+    "description": "An interactive MicroSim demonstrating chords in circles - line segments with both endpoints on the circle's circumference.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Circles"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Chord",
+      "Circle",
+      "Diameter",
+      "Radius"
+    ],
+    "prerequisites": [
+      "Understanding of circles",
+      "Basic geometric terms"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "cords",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/cords"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/cords/",
+    "id": 78
+  },
+  {
+    "title": "Cosine as a Ratio",
+    "description": "An interactive MicroSim demonstrating how the cosine function can be visualized as the ratio of the adjacent side to the hypotenuse in a right triangle.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Cosine",
+      "Trigonometric Ratios",
+      "Right Triangle",
+      "Adjacent Side",
+      "Hypotenuse"
+    ],
+    "prerequisites": [
+      "Right triangles",
+      "Basic angle measurement",
+      "Understanding of ratios"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "cosine",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/cosine"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/cosine/",
+    "id": 79
+  },
+  {
+    "title": "Degrees vs Radians",
+    "description": "An interactive MicroSim comparing degrees and radians, showing how 2\u03c0 radians equals 360 degrees through visual representation on a circle.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Trigonometry",
+      "Angle Measurement"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Degrees",
+      "Radians",
+      "Unit Circle",
+      "Angle Conversion",
+      "Pi"
+    ],
+    "prerequisites": [
+      "Basic angle measurement",
+      "Understanding of circles"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "degrees-vs-radians",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/degrees-vs-radians"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/degrees-vs-radians/",
+    "id": 80
+  },
+  {
+    "title": "Distance Formula Explorer",
+    "creator": "AI-Generated MicroSim",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Coordinate Geometry",
+      "Algebra"
+    ],
+    "description": "An interactive educational simulation that helps students visualize and apply the distance formula to find distances between two points on the coordinate plane, demonstrating the connection to the Pythagorean theorem through visual right triangles.",
+    "date": "2025-11-14",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educational": {
+      "gradeLevel": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "subjectArea": "Mathematics - Geometry",
+      "topic": "Distance Formula and Coordinate Geometry",
+      "learningObjectives": [
+        "Apply the distance formula to find distances between two points on a coordinate plane",
+        "Understand the connection between the distance formula and the Pythagorean theorem",
+        "Visualize the geometric relationship between horizontal distance, vertical distance, and diagonal distance",
+        "Calculate distances using both algebraic formulas and visual representations",
+        "Analyze how changing point positions affects distance and triangle dimensions"
+      ],
+      "bloomsTaxonomyLevels": [
+        "Understanding",
+        "Applying",
+        "Analyzing"
+      ],
+      "duration": "15-20 minutes",
+      "prerequisites": [
+        "Understanding of the Pythagorean theorem",
+        "Familiarity with coordinate plane and plotting points",
+        "Basic algebra skills (squaring, square roots)",
+        "Knowledge of absolute value"
+      ],
+      "standards": [
+        "CCSS.MATH.CONTENT.HSG.GPE.B.7",
+        "CCSS.MATH.CONTENT.8.G.B.8"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": "800\u00d7700",
+      "drawHeight": 600,
+      "controlHeight": 100,
+      "responsive": "Width-responsive",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": [
+        "High contrast colors",
+        "Keyboard navigation support",
+        "Screen reader descriptions",
+        "Large text (16pt minimum)",
+        "Manual coordinate entry"
+      ]
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "draggable-point",
+          "name": "Point A",
+          "description": "Blue draggable point representing the first coordinate (x\u2081, y\u2081)",
+          "default": "(1, 2)"
+        },
+        {
+          "type": "draggable-point",
+          "name": "Point B",
+          "description": "Red draggable point representing the second coordinate (x\u2082, y\u2082)",
+          "default": "(4, 6)"
+        },
+        {
+          "type": "checkbox",
+          "name": "Show Right Triangle",
+          "description": "Toggles visibility of the right triangle formed by horizontal and vertical legs",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "name": "Show Calculation Steps",
+          "description": "Displays step-by-step calculation of the distance formula",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "name": "Snap to Grid",
+          "description": "Constrains dragged points to integer coordinates",
+          "default": true
+        },
+        {
+          "type": "button",
+          "name": "Random Points",
+          "description": "Generates random coordinates for both points within the grid range"
+        },
+        {
+          "type": "input-field",
+          "name": "Point A Coordinates",
+          "description": "Manual entry fields for x\u2081 and y\u2081 coordinates",
+          "range": "-10 to 10"
+        },
+        {
+          "type": "input-field",
+          "name": "Point B Coordinates",
+          "description": "Manual entry fields for x\u2082 and y\u2082 coordinates",
+          "range": "-10 to 10"
+        }
+      ],
+      "visualElements": [
+        "Coordinate grid with labeled axes (-10 to +10)",
+        "Two draggable colored points (blue for A, red for B)",
+        "Purple line showing distance between points",
+        "Optional gray right triangle with labeled legs",
+        "Real-time coordinate display for both points",
+        "Distance calculation display"
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Mathematical visualization",
+      "variables": [
+        "Point A coordinates (x\u2081, y\u2081)",
+        "Point B coordinates (x\u2082, y\u2082)",
+        "Horizontal distance (\u0394x = x\u2082 - x\u2081)",
+        "Vertical distance (\u0394y = y\u2082 - y\u2081)",
+        "Euclidean distance (d)"
+      ],
+      "equations": [
+        "\u0394x = x\u2082 - x\u2081",
+        "\u0394y = y\u2082 - y\u2081",
+        "d = \u221a[(\u0394x)\u00b2 + (\u0394y)\u00b2]",
+        "d = \u221a[(x\u2082 - x\u2081)\u00b2 + (y\u2082 - y\u2081)\u00b2]"
+      ],
+      "assumptions": [
+        "2D Euclidean space",
+        "Grid range limited to -10 to +10 for clarity",
+        "Distances calculated in grid units"
+      ],
+      "limitations": [
+        "Does not extend to 3D coordinate systems",
+        "Limited to Cartesian coordinates (no polar coordinates)",
+        "Grid resolution fixed at integer precision when snapping enabled"
+      ]
+    },
+    "pedagogy": {
+      "instructionalStrategy": "Interactive exploration and discovery learning",
+      "assessmentOpportunities": [
+        "Calculate specific distances given coordinates",
+        "Identify point pairs that create specific distances",
+        "Explain the relationship to Pythagorean theorem",
+        "Solve optimization problems (minimum distance scenarios)"
+      ],
+      "differentiation": [
+        "Snap to grid for beginners working with integers",
+        "Free positioning for advanced students working with decimals",
+        "Calculation steps toggle supports multiple learning paces",
+        "Random points provide unlimited practice opportunities"
+      ],
+      "commonMisconceptions": [
+        "Forgetting to square the differences before adding",
+        "Sign errors when working with negative coordinates",
+        "Confusing distance formula with slope formula",
+        "Not taking the square root of the sum"
+      ]
+    },
+    "keywords": [
+      "distance formula",
+      "coordinate plane",
+      "Pythagorean theorem",
+      "Euclidean distance",
+      "Cartesian coordinates",
+      "geometry",
+      "algebra",
+      "interactive learning",
+      "mathematics visualization"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "distance-formula",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/distance-formula"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/distance-formula/",
+    "id": 81
+  },
+  {
+    "title": "Learning Graph Viewer",
+    "description": "An interactive vis.js network graph viewer for exploring geometry concepts and their dependencies with search, filtering, and statistics.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Education",
+      "Learning Graph"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "visualization",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Concept Dependencies",
+      "Knowledge Graph",
+      "Taxonomy",
+      "Learning Progression"
+    ],
+    "prerequisites": [
+      "None"
+    ],
+    "library": "vis.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "graph-viewer",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/graph-viewer"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/graph-viewer/",
+    "id": 82
+  },
+  {
+    "title": "Koch Fractal",
+    "creator": "Generated with Claude Code",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Fractals",
+      "Computer Science"
+    ],
+    "description": "An interactive visualization demonstrating the iterative construction of the Koch curve, a classic fractal with self-similar patterns at every scale. Students can adjust the recursion level from 0 to 6 to observe how simple iterative rules create complex fractal patterns.",
+    "date": "2025-11-14",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educational": {
+      "gradeLevel": "9-12",
+      "subjectArea": "Mathematics",
+      "topic": "Fractals and Geometric Iteration",
+      "learningObjectives": [
+        "Understand how simple iterative rules can create complex patterns",
+        "Explore the concept of self-similarity in fractals",
+        "Observe how mathematical infinity can be approached through finite iterations",
+        "Connect geometric transformations with fractal generation",
+        "Calculate fractal dimensions and understand dimensions beyond integers"
+      ],
+      "bloomsTaxonomy": [
+        "Remember",
+        "Understand",
+        "Apply",
+        "Analyze"
+      ],
+      "duration": "15-20 minutes",
+      "prerequisites": [
+        "Basic understanding of line segments and geometric transformations",
+        "Familiarity with the concept of iteration",
+        "Knowledge of equilateral triangles (helpful but not required)"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": "600\u00d7450 (width\u00d7height)",
+      "responsive": "Width-responsive",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": {
+        "screenReader": "ARIA labels and describe() function",
+        "keyboardNav": "Slider keyboard control supported"
+      }
+    },
+    "controls": [
+      {
+        "type": "slider",
+        "name": "recursionSlider",
+        "label": "Recursion Level",
+        "min": 0,
+        "max": 6,
+        "default": 0,
+        "step": 1,
+        "purpose": "Controls the number of iterations in the Koch curve construction. Level 0 shows a straight line, while higher levels show increasingly complex fractal patterns."
+      }
+    ],
+    "model": {
+      "type": "Geometric Iteration",
+      "variables": [
+        "recursionLevel: Number of iterations (0-6)",
+        "baselineY: Vertical position of the fractal baseline",
+        "canvasWidth: Responsive width of the drawing canvas"
+      ],
+      "algorithm": "Recursive Koch curve generation using geometric transformation",
+      "description": "At each recursion level, every line segment is divided into three equal parts, and the middle third is replaced with two sides of an equilateral triangle. This process creates a self-similar fractal pattern.",
+      "equations": [
+        "Length at level n: (4/3)^n \u00d7 original length",
+        "Number of segments at level n: 4^n",
+        "Fractal dimension: log(4)/log(3) \u2248 1.26"
+      ],
+      "assumptions": [
+        "The fractal is displayed as a 2D projection",
+        "Maximum recursion level is limited to 6 for performance",
+        "Discrete rendering approximates the theoretical continuous curve"
+      ],
+      "limitations": [
+        "Does not show the full Koch snowflake (three curves arranged in a triangle)",
+        "Does not animate the iterative construction process",
+        "Performance may decrease at high recursion levels on slower devices"
+      ]
+    },
+    "pedagogy": {
+      "instructionalStrategy": "Guided exploration with scaffolded questions",
+      "assessmentOpportunities": [
+        "Pattern recognition at different recursion levels",
+        "Mathematical calculation of length and segments",
+        "Understanding of fractal dimension concept",
+        "Connection to real-world fractal examples"
+      ],
+      "commonMisconceptions": [
+        "Believing the curve will eventually smooth out",
+        "Thinking infinite length means infinite area",
+        "Confusion between recursion level and fractal dimension"
+      ]
+    },
+    "relatedConcepts": [
+      "Fractals",
+      "Recursion",
+      "Self-similarity",
+      "Fractal dimension",
+      "Sierpi\u0144ski triangle",
+      "Cantor set",
+      "Geometric series",
+      "Infinite series convergence"
+    ],
+    "references": [
+      {
+        "title": "On a Continuous Curve Without Tangent Constructible from Elementary Geometry",
+        "author": "Helge von Koch",
+        "year": 1904,
+        "note": "Original paper describing the Koch curve"
+      },
+      {
+        "title": "The Fractal Geometry of Nature",
+        "author": "Benoit Mandelbrot",
+        "year": 1982,
+        "note": "Comprehensive introduction to fractals and their applications"
+      }
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "koch-fractal",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/koch-fractal"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/koch-fractal/",
+    "id": 83
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "title": "Line Relationships in 3D",
+    "description": "A 3D WebGL visualization demonstrating parallel, perpendicular, and skew line relationships in three-dimensional space using an interactive rotating box.",
+    "creator": "Claude Code with microsim-p5 skill",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Spatial Reasoning"
+    ],
+    "topic": "3D Line Relationships",
+    "gradeLevel": "9-12",
+    "bloomsLevel": [
+      "Understanding",
+      "Analyzing",
+      "Applying"
+    ],
+    "language": "en",
+    "format": "text/html",
+    "type": "Interactive Simulation",
+    "date": "2025-11-12",
+    "rights": "CC BY-NC 4.0",
+    "learningObjectives": [
+      "Identify parallel, perpendicular, and skew line relationships in 3D space",
+      "Distinguish between coplanar lines (parallel and perpendicular) and non-coplanar lines (skew)",
+      "Visualize how line relationships differ between 2D and 3D geometry",
+      "Apply knowledge of 3D line relationships to real-world structures"
+    ],
+    "prerequisites": [
+      "Understanding of basic line relationships in 2D (parallel and perpendicular)",
+      "Familiarity with 3D coordinate systems",
+      "Basic knowledge of angles and right angles"
+    ],
+    "duration": "15-20 minutes",
+    "framework": "p5.js",
+    "webGLEnabled": true,
+    "canvasWidth": 800,
+    "canvasHeight": 600,
+    "responsive": "Width-responsive",
+    "dependencies": [
+      "p5.js 1.11.10 from CDN"
+    ],
+    "accessibility": {
+      "keyboardNavigation": false,
+      "screenReaderSupport": true,
+      "colorBlindSafe": true,
+      "description": "3D visualization with color-coded lines (blue for parallel, red for perpendicular, green for skew) and text labels"
+    },
+    "controls": [
+      {
+        "type": "checkbox",
+        "id": "autoRotateCheckbox",
+        "label": "Auto-rotate",
+        "default": true,
+        "description": "Enable or disable automatic rotation of the 3D box"
+      },
+      {
+        "type": "slider",
+        "id": "rotationSlider",
+        "label": "Rotation Speed",
+        "min": 0,
+        "max": 2,
+        "default": 0.5,
+        "step": 0.1,
+        "unit": "speed",
+        "description": "Control the speed of automatic rotation"
+      },
+      {
+        "type": "mouse",
+        "id": "mouseDrag",
+        "label": "Manual Rotation",
+        "description": "Click and drag to manually rotate the box in any direction"
+      }
+    ],
+    "variables": [
+      {
+        "name": "rotX",
+        "description": "Current rotation angle around X-axis",
+        "initialValue": -0.3,
+        "unit": "radians"
+      },
+      {
+        "name": "rotY",
+        "description": "Current rotation angle around Y-axis",
+        "initialValue": 0,
+        "unit": "radians"
+      },
+      {
+        "name": "boxWidth",
+        "description": "Width of the 3D box",
+        "initialValue": 300,
+        "unit": "pixels"
+      },
+      {
+        "name": "boxHeight",
+        "description": "Height of the 3D box",
+        "initialValue": 200,
+        "unit": "pixels"
+      },
+      {
+        "name": "boxDepth",
+        "description": "Depth of the 3D box",
+        "initialValue": 150,
+        "unit": "pixels"
+      }
+    ],
+    "modelType": "Geometric visualization",
+    "assumptions": [
+      "Lines are represented by edges of a rectangular prism",
+      "Box is semi-transparent to allow viewing of all edges",
+      "Color-coding distinguishes different line relationships"
+    ],
+    "limitations": [
+      "Shows only three specific examples of each line relationship",
+      "Box shape constrains the types of line relationships shown",
+      "Does not calculate or display numerical measurements of angles or distances"
+    ],
+    "visualElements": [
+      "3D rectangular prism (box) with transparent faces",
+      "Blue highlighted edges showing parallel lines with || symbol",
+      "Red highlighted edges showing perpendicular lines with \u22a5 symbol and right angle indicator",
+      "Green highlighted edges showing skew lines with dashed distance line",
+      "Legend explaining all three line relationships",
+      "Text labels identifying each line (m, n, p, q, r, s)"
+    ],
+    "educationalStandards": [
+      "CCSS.MATH.CONTENT.HSG.CO.A.1 - Know precise definitions of line relationships",
+      "CCSS.MATH.CONTENT.HSG.GMD.B.4 - Identify shapes in three dimensions"
+    ],
+    "tags": [
+      "geometry",
+      "3D",
+      "spatial-reasoning",
+      "parallel-lines",
+      "perpendicular-lines",
+      "skew-lines",
+      "WebGL",
+      "interactive-3D",
+      "line-relationships",
+      "coplanar",
+      "non-coplanar"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "line-relationships-3d",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/line-relationships-3d"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/line-relationships-3d/",
+    "id": 84
+  },
+  {
+    "title": "Make Lines Parallel",
+    "creator": "AI-Generated MicroSim",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Algebra",
+      "Coordinate Geometry"
+    ],
+    "description": "An interactive educational simulation where students drag a point to make two lines parallel by matching their slopes on a coordinate grid. Students receive immediate visual feedback through animation and color-coded messages.",
+    "date": "2025-11-14",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educational": {
+      "gradeLevel": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "subjectArea": "Mathematics - Geometry and Algebra",
+      "topic": "Parallel Lines and Slope",
+      "learningObjectives": [
+        "Understand that parallel lines have equal slopes",
+        "Apply the slope formula to determine if lines are parallel",
+        "Analyze how changing point positions affects line slope",
+        "Create parallel lines by manipulating coordinates on a grid",
+        "Evaluate whether two lines are parallel by comparing their slopes"
+      ],
+      "bloomsTaxonomyLevels": [
+        "Understanding",
+        "Applying",
+        "Analyzing",
+        "Evaluating",
+        "Creating"
+      ],
+      "duration": "10-15 minutes",
+      "prerequisites": [
+        "Understanding of coordinate plane and plotting points",
+        "Knowledge of slope formula: m = (y\u2082 - y\u2081) / (x\u2082 - x\u2081)",
+        "Basic understanding of what parallel means",
+        "Ability to calculate rise and run"
+      ],
+      "standards": [
+        "CCSS.MATH.CONTENT.8.EE.B.6",
+        "CCSS.MATH.CONTENT.HSG.GPE.B.5"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": "800\u00d7680",
+      "drawHeight": 600,
+      "controlHeight": 80,
+      "responsive": "Width-responsive",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": [
+        "High contrast colors",
+        "Large interactive targets",
+        "Clear visual feedback",
+        "Screen reader descriptions",
+        "Snap-to-grid functionality",
+        "Large text (18pt minimum)"
+      ]
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "draggable-point",
+          "name": "Movable Red Point",
+          "description": "Red endpoint of the adjustable line that students drag to create parallel lines",
+          "default": "(5, 2)",
+          "range": "0-10 on both x and y axes",
+          "snapToGrid": true
+        },
+        {
+          "type": "button",
+          "name": "Check",
+          "description": "Verifies if the two lines are parallel by comparing slopes and triggers visual animation",
+          "position": "Bottom right of control area"
+        },
+        {
+          "type": "button",
+          "name": "Reset",
+          "description": "Returns the movable point to its initial position",
+          "position": "Below Check button"
+        }
+      ],
+      "visualElements": [
+        "10\u00d710 coordinate grid with 50-pixel spacing",
+        "Fixed blue line with two black endpoints",
+        "Adjustable blue line with one black fixed endpoint and one red movable endpoint",
+        "Animated green line during slope checking (2-second transition)",
+        "Color-coded feedback messages (green for correct, red for incorrect)",
+        "Grid border and reference lines"
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Mathematical visualization and interactive construction",
+      "variables": [
+        "Line 1 Point 1 coordinates (x\u2081, y\u2081) - fixed at (1, 7)",
+        "Line 1 Point 2 coordinates (x\u2082, y\u2082) - fixed at (7, 3)",
+        "Line 2 Point 1 coordinates (x\u2083, y\u2083) - fixed at (3, 6)",
+        "Line 2 Point 2 coordinates (x\u2084, y\u2084) - draggable, initially (5, 2)",
+        "Slope of Line 1 (m\u2081)",
+        "Slope of Line 2 (m\u2082)",
+        "Animation progress (0 to 1)",
+        "Check state (ready, checking, correct, incorrect)"
+      ],
+      "equations": [
+        "Slope formula: m = (y\u2082 - y\u2081) / (x\u2082 - x\u2081)",
+        "Parallel condition: |m\u2081 - m\u2082| < 0.01 (tolerance)",
+        "Animation interpolation: lerp(start, end, t)"
+      ],
+      "assumptions": [
+        "Lines are in 2D Euclidean space",
+        "Grid coordinates are integers (snap-to-grid enabled)",
+        "Vertical lines (undefined slope) are handled separately",
+        "Small tolerance (0.01) accounts for floating-point precision"
+      ],
+      "limitations": [
+        "Limited to 10\u00d710 grid range",
+        "Only one line is adjustable (the other is fixed)",
+        "Does not handle vertical parallel lines explicitly",
+        "No support for lines outside the grid boundaries"
+      ]
+    },
+    "pedagogy": {
+      "instructionalStrategy": "Interactive discovery learning with immediate feedback",
+      "assessmentOpportunities": [
+        "Verify student can create parallel lines in multiple positions",
+        "Ask students to explain why certain positions create parallel lines",
+        "Calculate slopes manually and verify with the simulation",
+        "Predict whether lines will be parallel before checking",
+        "Explain the relationship between slope and parallelism"
+      ],
+      "differentiation": [
+        "Provide slope calculations for struggling students",
+        "Challenge advanced students to find equations of both lines",
+        "Use graph paper alongside simulation for visual learners",
+        "Ask advanced students to prove algebraically why slopes must match",
+        "Have struggling students start with horizontal lines (slope = 0)"
+      ],
+      "commonMisconceptions": [
+        "Thinking parallel lines must be the same length",
+        "Confusing slope with y-intercept",
+        "Believing any non-intersecting lines are parallel (only true in 2D plane)",
+        "Not understanding that multiple positions can create parallel lines",
+        "Calculating slope incorrectly (mixing up rise and run)"
+      ]
+    },
+    "keywords": [
+      "parallel lines",
+      "slope",
+      "coordinate geometry",
+      "linear equations",
+      "rise over run",
+      "interactive geometry",
+      "drag and drop",
+      "coordinate plane",
+      "mathematics visualization"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "make-lines-parallel",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/make-lines-parallel"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/make-lines-parallel/",
+    "id": 85
+  },
+  {
+    "title": "Points and Lines Explorer",
+    "creator": "AI Assistant with Claude Code",
+    "subject": [
+      "Geometry",
+      "Mathematics",
+      "Points and Lines"
+    ],
+    "description": "An interactive MicroSim for exploring fundamental geometric concepts of points, lines, and their relationships through hands-on manipulation. Students can create, move, and connect points to form lines, demonstrating that two points determine a unique line.",
+    "date": "2025-11-12",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educational": {
+      "gradeLevel": "9-12",
+      "subjectArea": "Mathematics",
+      "topic": "Points, Lines, and Geometric Notation",
+      "learningObjectives": [
+        "Understand that a point represents a specific location in space",
+        "Recognize that two points determine exactly one line",
+        "Apply geometric notation for naming lines (e.g., line AB)",
+        "Explore properties of collinear and non-collinear points",
+        "Manipulate geometric objects to observe changing relationships"
+      ],
+      "bloomsTaxonomyLevels": [
+        "Remember",
+        "Understand",
+        "Apply"
+      ],
+      "duration": "15-20 minutes",
+      "prerequisites": [
+        "Basic algebra skills",
+        "Familiarity with coordinate systems",
+        "Introduction to geometric notation"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": {
+        "width": "responsive",
+        "height": 720,
+        "drawHeight": 600,
+        "controlHeight": 120
+      },
+      "responsive": "Width-responsive",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": [
+        "Screen reader description",
+        "High contrast colors",
+        "Keyboard-accessible controls"
+      ]
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "button",
+          "name": "Regenerate Random Points",
+          "description": "Creates a new random configuration with the number of points specified by the slider"
+        },
+        {
+          "type": "button",
+          "name": "Mode Toggle",
+          "description": "Switches between Move Points mode (create/move) and Connect Points mode (draw lines)"
+        },
+        {
+          "type": "button",
+          "name": "Add Point",
+          "description": "Adds a single point at a random location on the canvas"
+        },
+        {
+          "type": "slider",
+          "name": "Number of Points",
+          "min": 1,
+          "max": 20,
+          "default": 10,
+          "step": 1,
+          "description": "Controls how many points are generated when using the Regenerate button"
+        }
+      ],
+      "modes": [
+        {
+          "name": "Move Mode",
+          "description": "Click anywhere to create new points, drag existing points to move them"
+        },
+        {
+          "name": "Connect Mode",
+          "description": "Click two points to create a line through them that extends infinitely in both directions"
+        }
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Geometric Visualization",
+      "variables": [
+        "Point positions (x, y coordinates)",
+        "Point labels (alphabetical)",
+        "Line endpoints (pairs of points)",
+        "Current interaction mode"
+      ],
+      "assumptions": [
+        "Euclidean geometry on a 2D plane",
+        "Lines extend infinitely (represented by arrows)",
+        "Points are labeled sequentially from A-Z"
+      ],
+      "limitations": [
+        "2D representation only (no 3D visualization)",
+        "Canvas boundaries limit visible portion of infinite lines",
+        "Labels wrap after 26 points (A-Z)"
+      ]
+    },
+    "standards": {
+      "commonCore": [
+        "CCSS.MATH.CONTENT.HSG.CO.A.1"
+      ]
+    },
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "point-line-explorer",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/point-line-explorer"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/point-line-explorer/",
+    "id": 86
+  },
+  {
+    "title": "Point, Line, Plane - The Three Undefined Terms",
+    "creator": "Dan McCreary",
+    "subject": [
+      "Geometry",
+      "Mathematics",
+      "Undefined Terms",
+      "Foundational Concepts"
+    ],
+    "description": "A visual diagram MicroSim showing the three fundamental undefined terms of geometry (point, line, plane) with their properties, visual representations, and proper geometric notation. Features interactive toggle for annotations.",
+    "date": "2025-11-12",
+    "type": "Interactive Diagram",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educational": {
+      "gradeLevel": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "subjectArea": "Mathematics",
+      "topic": "Geometry Foundations",
+      "learningObjectives": [
+        "Remember the three undefined terms of geometry (point, line, plane)",
+        "Understand visual representations and basic properties of undefined terms",
+        "Recognize proper geometric notation for naming points, lines, and planes",
+        "Distinguish between the three undefined terms based on their dimensional properties"
+      ],
+      "bloomsTaxonomy": [
+        "Remembering",
+        "Understanding"
+      ],
+      "duration": "10-15 minutes",
+      "prerequisites": [
+        "Basic understanding of spatial relationships",
+        "Familiarity with coordinate systems (helpful but not required)"
+      ],
+      "standards": [
+        "CCSS.MATH.CONTENT.HSG.CO.A.1"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": {
+        "width": "900 (responsive, minimum)",
+        "height": "550"
+      },
+      "responsive": "Width-responsive with minimum width requirement",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": [
+        "describe() function for screen readers",
+        "High contrast color scheme",
+        "Clear labels and text"
+      ]
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "checkbox",
+          "name": "Show Annotations",
+          "description": "Toggle display of detailed property annotations for each undefined term",
+          "default": true
+        }
+      ],
+      "panels": [
+        {
+          "name": "Point",
+          "backgroundColor": "#E3F2FD",
+          "elements": [
+            "Main point labeled A",
+            "Additional example points (B, C, D, E)",
+            "Property annotations"
+          ]
+        },
+        {
+          "name": "Line",
+          "backgroundColor": "#E8F5E9",
+          "elements": [
+            "Line with directional arrows",
+            "Two labeled points (P, Q)",
+            "Proper line notation with symbol",
+            "Property annotations"
+          ]
+        },
+        {
+          "name": "Plane",
+          "backgroundColor": "#FFF9C4",
+          "elements": [
+            "3D perspective parallelogram with grid",
+            "Three non-collinear points (X, Y, Z)",
+            "Property annotations"
+          ]
+        }
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Static visual diagram with interactive annotation toggle",
+      "concepts": [
+        "Point: 0-dimensional position with no size",
+        "Line: 1-dimensional infinite straight path with no thickness",
+        "Plane: 2-dimensional infinite flat surface with no thickness"
+      ],
+      "visualFeatures": [
+        "Color-coded panels for each term",
+        "Multiple examples of proper geometric notation",
+        "3D perspective representation for plane",
+        "Directional arrows showing infinite extension"
+      ]
+    },
+    "pedagogical": {
+      "teachingStrategy": "Visual representation with progressive disclosure",
+      "keyQuestions": [
+        "What are the three undefined terms of geometry?",
+        "How many dimensions does each undefined term have?",
+        "Why are these terms called 'undefined'?",
+        "How do we name each of these geometric objects?"
+      ],
+      "commonMisconceptions": [
+        "Points have size (they don't\u2014they only have position)",
+        "Lines have endpoints (they extend infinitely)",
+        "Planes have edges (they extend infinitely in all directions)"
+      ],
+      "assessmentOpportunities": [
+        "Identify undefined terms in real-world contexts",
+        "Name geometric objects using proper notation",
+        "Explain dimensional properties of each term",
+        "Distinguish between defined and undefined terms"
+      ]
+    },
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "point-line-plane",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/point-line-plane"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/point-line-plane/",
+    "id": 87
+  },
+  {
+    "title": "Pythagorean Theorem",
+    "description": "An interactive MicroSim demonstrating the Pythagorean theorem (a\u00b2 + b\u00b2 = c\u00b2) with adjustable triangle sides and visual proof using squares.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Pythagorean Theorem"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Pythagorean Theorem",
+      "Right Triangle",
+      "Hypotenuse",
+      "Legs of a Triangle",
+      "Square of a Number"
+    ],
+    "prerequisites": [
+      "Understanding of right triangles",
+      "Basic algebra",
+      "Square roots"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "pythagorean-theorem",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/pythagorean-theorem"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/pythagorean-theorem/",
+    "id": 88
+  },
+  {
+    "title": "Regular Polygon Explorer Quiz",
+    "description": "An interactive quiz MicroSim where students test their knowledge of polygon names by creating shapes matching given prompts.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Polygons",
+      "Assessment"
+    ],
+    "type": "Interactive Assessment",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "Middle School to High School (Grades 6-12)",
+    "learningResourceType": "assessment",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Remember",
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Polygon Names",
+      "Regular Polygon",
+      "Number of Sides",
+      "Triangle",
+      "Square",
+      "Pentagon",
+      "Hexagon"
+    ],
+    "prerequisites": [
+      "Basic polygon terminology",
+      "Understanding of regular polygons"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "regular-polygon-explorer-quiz",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/regular-polygon-explorer-quiz"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/regular-polygon-explorer-quiz/",
+    "id": 89
+  },
+  {
+    "title": "Regular Polygon Explorer",
+    "description": "An interactive MicroSim for exploring regular polygons by adjusting the number of sides, demonstrating how polygons approach circles as sides increase.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Polygons"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "Middle School to High School (Grades 6-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Regular Polygon",
+      "Vertices",
+      "Triangle",
+      "Square",
+      "Pentagon",
+      "Hexagon",
+      "Circle Approximation"
+    ],
+    "prerequisites": [
+      "Basic understanding of shapes",
+      "Familiarity with polygons"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "regular-polygon-explorer",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/regular-polygon-explorer"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/regular-polygon-explorer/",
+    "id": 90
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "dublin_core": {
+      "title": "Sierpinski Triangles",
+      "creator": "Dan McCreary",
+      "subject": [
+        "Mathematics",
+        "Geometry",
+        "Fractals",
+        "Recursion",
+        "Computer Science"
+      ],
+      "description": "An interactive visualization of the Sierpinski triangle fractal demonstrating recursive subdivision and self-similar patterns. Students can adjust the recursion depth from 0 to 7 levels to explore how simple rules create complex fractal patterns.",
+      "date": "2025-01-14",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "language": "en",
+      "rights": "CC BY 4.0"
+    },
+    "educational": {
+      "grade_level": "9-12",
+      "subject_area": "Mathematics",
+      "topic": "Fractals and Recursive Patterns",
+      "learning_objectives": [
+        "Understand the concept of recursive subdivision in geometry",
+        "Analyze how fractals exhibit self-similarity at different scales",
+        "Explore the relationship between recursion depth and pattern complexity",
+        "Evaluate how mathematical infinity appears in finite visualizations",
+        "Calculate exponential growth in triangle counts (3^n)"
+      ],
+      "blooms_taxonomy": [
+        "Understanding",
+        "Applying",
+        "Analyzing",
+        "Evaluating"
+      ],
+      "duration": "15-20 minutes",
+      "prerequisites": [
+        "Basic understanding of triangles and geometric shapes",
+        "Familiarity with exponents and powers",
+        "Understanding of the concept of patterns"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvas_dimensions": {
+        "width": "responsive",
+        "draw_height": 500,
+        "control_height": 50,
+        "total_height": 550
+      },
+      "responsive": "Width-responsive",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": {
+        "screen_reader": true,
+        "keyboard_navigation": false,
+        "describe_function": true
+      }
+    },
+    "user_interface": {
+      "controls": [
+        {
+          "type": "slider",
+          "label": "Recursion Depth",
+          "variable": "recursionSlider",
+          "min": 0,
+          "max": 7,
+          "default": 4,
+          "step": 1,
+          "description": "Controls the number of recursive subdivisions in the Sierpinski triangle pattern"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "currentDepth",
+          "type": "integer",
+          "range": "0-7",
+          "default": 4,
+          "purpose": "Determines how many levels of recursion to apply when drawing the fractal"
+        }
+      ],
+      "displays": [
+        {
+          "type": "text",
+          "label": "Recursion Depth",
+          "location": "control_area",
+          "description": "Shows current recursion depth value"
+        },
+        {
+          "type": "text",
+          "label": "Triangles",
+          "location": "control_area",
+          "description": "Shows total number of triangles drawn (3^depth)"
+        }
+      ]
+    },
+    "simulation_model": {
+      "model_type": "Recursive geometric subdivision",
+      "key_variables": [
+        "recursionDepth - Number of recursive subdivisions to perform",
+        "triangleCount - Total triangles drawn equals 3^depth",
+        "vertices - Coordinates of triangle vertices for each recursion level"
+      ],
+      "algorithm": [
+        "Start with an equilateral triangle",
+        "For each recursion level:",
+        "  - Find midpoints of each side",
+        "  - Create 4 smaller triangles from these midpoints",
+        "  - Draw only the 3 outer triangles (skip center)",
+        "  - Recursively apply to each of the 3 triangles"
+      ],
+      "equations": [
+        "Triangle count = 3^n where n is recursion depth",
+        "Total area approaches 0 as n approaches infinity",
+        "Fractal dimension \u2248 log(3)/log(2) \u2248 1.585"
+      ],
+      "assumptions": [
+        "Perfect geometric precision in subdivision",
+        "Equilateral starting triangle",
+        "Infinite recursion not practically achievable (limited to depth 7)"
+      ],
+      "limitations": [
+        "Performance degrades beyond depth 7 due to exponential triangle count",
+        "Does not show the mathematical properties of infinite recursion",
+        "Visual resolution limits ability to see very small triangles at high depths"
+      ]
+    },
+    "related_concepts": [
+      "Pascal's Triangle",
+      "Koch Snowflake",
+      "Chaos Game",
+      "Fractal Dimension",
+      "Cellular Automata (Rule 90)",
+      "Self-similarity",
+      "Exponential Growth",
+      "Recursion in Computer Science"
+    ],
+    "standards_alignment": {
+      "ccss": [
+        "CCSS.MATH.HSG.MG.A.1 - Use geometric shapes to model situations",
+        "CCSS.MATH.PRACTICE.MP7 - Look for and make use of structure"
+      ],
+      "ngss": [
+        "HS-ETS1-4 - Use mathematics and computational thinking"
+      ]
+    },
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "sierpinski-triangles",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/sierpinski-triangles"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/sierpinski-triangles/",
+    "id": 91
+  },
+  {
+    "title": "Sine and Cosine Circle",
+    "description": "An interactive MicroSim demonstrating how sine and cosine values relate to a point moving around the unit circle, with corresponding graph visualization.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Sine",
+      "Cosine",
+      "Unit Circle",
+      "Trigonometric Functions",
+      "Periodic Functions"
+    ],
+    "prerequisites": [
+      "Understanding of circles",
+      "Basic angle measurement",
+      "Introduction to functions"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "sine-and-cosine-circle",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/sine-and-cosine-circle"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/sine-and-cosine-circle/",
+    "id": 92
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "title": "Triangle Area Explorer",
+    "creator": "Claude Code with microsim-p5 skill",
+    "subject": "Geometry",
+    "description": "An interactive exploration tool for understanding how base and height affect triangle area through the formula A = \u00bdbh. Students manipulate sliders to adjust dimensions and observe real-time area calculations.",
+    "date": "2025-11-13",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "gradeLevel": "6-8",
+    "subjectArea": "Mathematics",
+    "topic": "Triangle Area",
+    "learningObjectives": [
+      "Students will apply the triangle area formula A = \u00bdbh to calculate areas with different dimensions",
+      "Students will analyze the relationship between base, height, and area",
+      "Students will understand that height must be perpendicular to the base",
+      "Students will predict how changing dimensions affects area"
+    ],
+    "bloomsTaxonomyLevels": [
+      "Applying",
+      "Analyzing"
+    ],
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Understanding of triangles",
+      "Basic multiplication and division",
+      "Understanding of units and square units",
+      "Concept of perpendicular lines"
+    ],
+    "framework": "p5.js",
+    "canvasDimensions": "responsive width \u00d7 620px",
+    "responsive": "Width-responsive",
+    "dependencies": [
+      "p5.js 1.11.10 CDN"
+    ],
+    "accessibility": {
+      "screenReaderSupport": true,
+      "keyboardNavigation": false,
+      "ariaLabels": true
+    },
+    "controls": [
+      {
+        "name": "Base Length Slider",
+        "type": "slider",
+        "range": "5-30 units",
+        "default": 20,
+        "description": "Adjusts the length of the triangle's base"
+      },
+      {
+        "name": "Height Slider",
+        "type": "slider",
+        "range": "3-25 units",
+        "default": 15,
+        "description": "Adjusts the perpendicular height of the triangle"
+      },
+      {
+        "name": "Reset Button",
+        "type": "button",
+        "description": "Resets base and height to default values"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "baseLength",
+        "range": "5-30",
+        "default": 20,
+        "unit": "units",
+        "purpose": "Horizontal dimension of triangle base"
+      },
+      {
+        "name": "triangleHeight",
+        "range": "3-25",
+        "default": 15,
+        "unit": "units",
+        "purpose": "Perpendicular height from base to apex"
+      }
+    ],
+    "modelType": "Mathematical formula visualization",
+    "variables": [
+      "baseLength",
+      "triangleHeight",
+      "area",
+      "scale",
+      "baseY"
+    ],
+    "equations": [
+      "Area = (base \u00d7 height) / 2",
+      "A = \u00bdbh"
+    ],
+    "assumptions": [
+      "Triangle is drawn in 2D plane",
+      "Height is always perpendicular to base",
+      "Measurements use consistent arbitrary units",
+      "Triangle vertices remain within visible canvas"
+    ],
+    "limitations": [
+      "Does not show other triangle properties (angles, perimeter)",
+      "Limited to right-angle height visualization",
+      "Fixed scale factor for display",
+      "Does not cover triangle classification types"
+    ],
+    "educationalContext": {
+      "pedagogicalApproach": "Interactive exploration and discovery learning",
+      "suggestedActivities": [
+        "Pattern discovery: observe effects of doubling dimensions",
+        "Area challenge: find multiple base/height combinations for same area",
+        "Maximum/minimum area exploration",
+        "Proportional reasoning: relationship between dimension and area changes"
+      ],
+      "assessmentOpportunities": [
+        "Calculate areas with given dimensions",
+        "Predict area changes from dimension changes",
+        "Identify base and height from triangle diagrams",
+        "Solve for unknown dimension given area and one dimension"
+      ],
+      "commonMisconceptions": [
+        "Height can be measured at any angle (must be perpendicular)",
+        "Area equals perimeter",
+        "Doubling both dimensions doubles area (actually quadruples)",
+        "Formula is bh instead of \u00bdbh"
+      ],
+      "discussionQuestions": [
+        "Why is the formula \u00bdbh instead of just bh?",
+        "What happens to area if you double both base and height?",
+        "Can two triangles with different dimensions have the same area?",
+        "How is triangle area related to rectangle area?"
+      ]
+    },
+    "technicalDetails": {
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "mobileCompatible": true,
+      "offlineCapable": false,
+      "visualFeatures": [
+        "Semi-transparent triangle fill",
+        "Dashed height line in red",
+        "Right angle indicator",
+        "Labeled dimensions",
+        "Measurement display box",
+        "Real-time area calculation"
+      ]
+    },
+    "standardsAlignment": [
+      "CCSS.MATH.CONTENT.6.G.A.1 - Find the area of triangles and polygons",
+      "CCSS.MATH.CONTENT.7.G.B.6 - Solve real-world problems involving area"
+    ],
+    "keywords": [
+      "triangle",
+      "area",
+      "formula",
+      "base",
+      "height",
+      "perpendicular",
+      "geometry",
+      "measurement",
+      "interactive",
+      "exploration"
+    ],
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "triangle-area-explorer",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/triangle-area-explorer"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/triangle-area-explorer/",
+    "id": 93
+  },
+  {
+    "title": "Triangle Congruence",
+    "description": "An interactive MicroSim demonstrating triangle congruence postulates including SSS (Side-Side-Side) and SAS (Side-Angle-Side).",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Triangles",
+      "Congruence"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Triangle Congruence",
+      "SSS Postulate",
+      "SAS Postulate",
+      "Congruent Triangles"
+    ],
+    "prerequisites": [
+      "Understanding of triangles",
+      "Basic angle measurement",
+      "Triangle properties"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "triangle-congruence",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/triangle-congruence"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/triangle-congruence/",
+    "id": 94
+  },
+  {
+    "title": "Geometry Word Cloud",
+    "description": "A word cloud visualization of key geometry concepts weighted by their importance and frequency in the curriculum.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Mathematics",
+      "Geometry",
+      "Vocabulary",
+      "Visualization"
+    ],
+    "type": "Visualization",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC 4.0",
+    "educationalLevel": "High School (Grades 9-12)",
+    "learningResourceType": "visualization",
+    "audience": "Students, Educators",
+    "bloomLevel": [
+      "Remember",
+      "Understand"
+    ],
+    "concepts": [
+      "Geometry Vocabulary",
+      "Key Concepts",
+      "Topic Overview"
+    ],
+    "prerequisites": [
+      "None"
+    ],
+    "library": "wordcloud2.js",
+    "_source": {
+      "repo": "geometry-course",
+      "sim": "word-cloud",
+      "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/word-cloud"
+    },
+    "url": "https://dmccreary.github.io/geometry-course/sims/word-cloud/",
+    "id": 95
   }
 ]
