@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/microsim-search/glossary/">
+        <link rel="canonical" href="https://dmccreary.github.io/microsim-search/search/">
       
       
-        <link rel="prev" href="../microsim-schema/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../how-we-built-this-site/">
+        <link rel="next" href="../microsim-schema/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Glossary - Microsim Search</title>
+        <title>Search Demo - Microsim Search</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glossary-of-terms" class="md-skip">
+        <a href="#microsim-faceted-search-demo" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Glossary
+              Search Demo
             
           </span>
         </div>
@@ -246,10 +246,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../search/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -258,6 +278,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Schema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standalone Version
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -286,30 +371,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -318,44 +383,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#iso-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      ISO Definition
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#term" class="md-nav__link">
-    <span class="md-ellipsis">
-      Term
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -447,18 +474,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#iso-definition" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      ISO Definition
+      Features
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#term" class="md-nav__link">
+  <a href="#demo" class="md-nav__link">
     <span class="md-ellipsis">
-      Term
+      Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Schema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standalone Version
     </span>
   </a>
   
@@ -479,7 +533,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/microsim-search/blob/master/docs/glossary.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/microsim-search/blob/master/docs/search/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -487,18 +541,90 @@
   
 
 
-<h1 id="glossary-of-terms">Glossary of Terms</h1>
-<h4 id="iso-definition">ISO Definition</h4>
-<p>A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:</p>
+<h1 id="microsim-faceted-search-demo">MicroSim Faceted Search Demo</h1>
+<p>This page demonstrates faceted search for MicroSims using <a href="https://github.com/itemsapi/itemsjs">ItemsJS</a>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Full-text search</strong> across titles, descriptions, and concepts</li>
+<li><strong>Faceted filtering</strong> by Subject Area, Education Level, Bloom's Taxonomy, and Library</li>
+<li><strong>OR logic</strong> within facets (select multiple values)</li>
+<li><strong>Active filter chips</strong> with one-click removal</li>
+<li><strong>Responsive design</strong> works on mobile and desktop</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<iframe src="./demo.html" width="100%" height="800" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
+
+<h2 id="how-it-works">How It Works</h2>
 <ol>
-<li>Precise</li>
-<li>Concise</li>
-<li>Distinct</li>
-<li>Non-circular</li>
-<li>Unencumbered with business rules</li>
+<li><strong>Data</strong>: MicroSim metadata is stored in a JSON file (<code>microsims-data.json</code>)</li>
+<li><strong>ItemsJS</strong>: Lightweight JavaScript library handles indexing and faceted search</li>
+<li><strong>No Backend</strong>: Runs entirely in the browser - perfect for GitHub Pages</li>
 </ol>
-<h4 id="term">Term</h4>
-<p>This is the definition of the term.</p>
+<h2 id="data-schema">Data Schema</h2>
+<p>Each MicroSim has the following fields used for search and filtering:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Facet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>searchable</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>searchable</td>
+</tr>
+<tr>
+<td><code>subject</code></td>
+<td>array</td>
+<td>Subject Area</td>
+</tr>
+<tr>
+<td><code>educationalLevel</code></td>
+<td>string</td>
+<td>Education Level</td>
+</tr>
+<tr>
+<td><code>bloomLevel</code></td>
+<td>array</td>
+<td>Bloom's Taxonomy</td>
+</tr>
+<tr>
+<td><code>concepts</code></td>
+<td>array</td>
+<td>searchable</td>
+</tr>
+<tr>
+<td><code>library</code></td>
+<td>string</td>
+<td>Library</td>
+</tr>
+<tr>
+<td><code>creator</code></td>
+<td>string</td>
+<td>display</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>string</td>
+<td>sortable</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>link</td>
+</tr>
+</tbody>
+</table>
+<h2 id="standalone-version">Standalone Version</h2>
+<p>View the standalone HTML version: <a href="demo.html">demo.html</a></p>
 
 
 
@@ -534,7 +660,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../microsim-schema/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MicroSim Schema">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -544,20 +670,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MicroSim Schema
+                Home
               </div>
             </div>
           </a>
         
         
           
-          <a href="../how-we-built-this-site/" class="md-footer__link md-footer__link--next" aria-label="Next: How We Built This Site">
+          <a href="../microsim-schema/" class="md-footer__link md-footer__link--next" aria-label="Next: MicroSim Schema">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                How We Built This Site
+                MicroSim Schema
               </div>
             </div>
             <div class="md-footer__button md-icon">

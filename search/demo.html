@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSim Faceted Search - ItemsJS Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+        }
+
+        /* Search Box */
+        .search-container {
+            grid-column: 1 / -1;
+            margin-bottom: 10px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        #search-input:focus {
+            border-color: #3498db;
+        }
+
+        /* Sidebar Facets */
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .facet {
+            margin-bottom: 25px;
+        }
+
+        .facet:last-child {
+            margin-bottom: 0;
+        }
+
+        .facet h3 {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #7f8c8d;
+            letter-spacing: 0.5px;
+        }
+
+        .facet-item {
+            display: flex;
+            align-items: center;
+            padding: 6px 0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .facet-item:hover {
+            color: #3498db;
+        }
+
+        .facet-item input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .facet-item label {
+            flex: 1;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .facet-item .count {
+            background: #ecf0f1;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .facet-item.selected label {
+            font-weight: 600;
+            color: #3498db;
+        }
+
+        .clear-filters {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+
+        .clear-filters:hover {
+            background: #c0392b;
+        }
+
+        /* Results Area */
+        .results-container {
+            min-height: 500px;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .results-count {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        .sort-select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Result Cards */
+        .result-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .result-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .result-card h3 a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .result-card h3 a:hover {
+            color: #3498db;
+        }
+
+        .result-card .description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .result-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            background: #e8f4fd;
+            color: #3498db;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .tag.level {
+            background: #e8f8f5;
+            color: #1abc9c;
+        }
+
+        .tag.bloom {
+            background: #fef5e7;
+            color: #f39c12;
+        }
+
+        .tag.library {
+            background: #f4ecf7;
+            color: #9b59b6;
+        }
+
+        .tag.difficulty {
+            background: #fdecea;
+            color: #e74c3c;
+        }
+
+        .result-card .meta {
+            font-size: 12px;
+            color: #95a5a6;
+        }
+
+        /* Active Filters */
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .active-filter {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .active-filter .remove {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+        }
+
+        .no-results h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>MicroSim Faceted Search</h1>
+
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search MicroSims by title, description, or concepts...">
+        </div>
+
+        <aside class="sidebar">
+            <div id="facets"></div>
+            <button class="clear-filters" id="clear-filters" style="display: none;">Clear All Filters</button>
+        </aside>
+
+        <main class="results-container">
+            <div class="results-header">
+                <span class="results-count" id="results-count">Loading...</span>
+                <select class="sort-select" id="sort-select">
+                    <option value="title:asc">Title A-Z</option>
+                    <option value="title:desc">Title Z-A</option>
+                    <option value="date:desc">Newest First</option>
+                    <option value="date:asc">Oldest First</option>
+                </select>
+            </div>
+            <div class="active-filters" id="active-filters"></div>
+            <div class="results-grid" id="results"></div>
+        </main>
+    </div>
+
+    <!-- ItemsJS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/itemsjs@latest/dist/itemsjs.min.js"></script>
+
+    <script>
+        // State
+        let itemsjs;
+        let currentFilters = {};
+        let currentQuery = '';
+        let currentSort = 'title:asc';
+
+        // Normalize data to handle varying metadata schemas
+        // Supports both flat legacy format and nested schema format (microsim.dublinCore, etc.)
+        function normalizeData(items) {
+            return items.map((item, index) => {
+                // Ensure arrays for faceted fields
+                const toArray = (val) => {
+                    if (!val) return [];
+                    if (Array.isArray(val)) return val;
+                    return [val];
+                };
+
+                // Helper to get nested or flat field
+                const get = (paths) => {
+                    for (const path of paths) {
+                        const parts = path.split('.');
+                        let val = item;
+                        for (const part of parts) {
+                            val = val?.[part];
+                            if (val === undefined) break;
+                        }
+                        if (val !== undefined) return val;
+                    }
+                    return undefined;
+                };
+
+                // Normalize subject/subjectArea field
+                let subjectArea = toArray(get([
+                    'microsim.educational.subjectArea',
+                    'educational.subjectArea',
+                    'subjectArea',
+                    'subject'
+                ]));
+                // Add topics to subject for searchability
+                const topics = toArray(get([
+                    'microsim.educational.topic',
+                    'educational.topic',
+                    'topic'
+                ]));
+                if (topics.length) subjectArea = [...new Set([...subjectArea, ...topics])];
+
+                // Normalize grade level
+                let gradeLevel = toArray(get([
+                    'microsim.educational.gradeLevel',
+                    'educational.gradeLevel',
+                    'gradeLevel',
+                    'educationalLevel',
+                    'educationLevel'
+                ]));
+
+                // Normalize Bloom's taxonomy
+                let bloomsTaxonomy = toArray(get([
+                    'microsim.educational.bloomsTaxonomy',
+                    'educational.bloomsTaxonomy',
+                    'bloomsTaxonomy',
+                    'bloomLevel',
+                    'bloomsLevel'
+                ]));
+
+                // Normalize difficulty
+                let difficulty = get([
+                    'microsim.educational.difficulty',
+                    'educational.difficulty',
+                    'difficulty'
+                ]) || 'Unknown';
+
+                // Normalize framework
+                let framework = get([
+                    'microsim.technical.framework',
+                    'technical.framework',
+                    'framework',
+                    'library'
+                ]) || 'Unknown';
+
+                // Normalize visualization type
+                let visualizationType = toArray(get([
+                    'microsim.search.visualizationType',
+                    'search.visualizationType',
+                    'visualizationType'
+                ]));
+
+                // Normalize interaction level
+                let interactionLevel = get([
+                    'microsim.search.interactionLevel',
+                    'search.interactionLevel',
+                    'interactionLevel'
+                ]) || 'Unknown';
+
+                // Normalize creator
+                let creator = toArray(get([
+                    'microsim.dublinCore.creator',
+                    'dublinCore.creator',
+                    'creator',
+                    'author'
+                ])).join(', ') || 'Unknown';
+
+                // Normalize title and description
+                let title = get([
+                    'microsim.dublinCore.title',
+                    'dublinCore.title',
+                    'title'
+                ]) || 'Untitled';
+
+                let description = get([
+                    'microsim.dublinCore.description',
+                    'dublinCore.description',
+                    'description'
+                ]) || '';
+
+                // Normalize URL
+                let url = get([
+                    'url',
+                    'microsim.dublinCore.identifier',
+                    'dublinCore.identifier',
+                    'identifier'
+                ]) || item._source?.github_url || '#';
+
+                // Normalize date
+                let date = get([
+                    'microsim.dublinCore.date',
+                    'dublinCore.date',
+                    'date',
+                    'dateCreated'
+                ]) || '';
+
+                // Learning objectives for search
+                let concepts = toArray(get([
+                    'microsim.educational.learningObjectives',
+                    'educational.learningObjectives',
+                    'learningObjectives',
+                    'concepts'
+                ]));
+
+                return {
+                    id: item.id || index + 1,
+                    title,
+                    description,
+                    subjectArea,
+                    gradeLevel,
+                    bloomsTaxonomy,
+                    difficulty,
+                    framework,
+                    visualizationType,
+                    interactionLevel,
+                    creator,
+                    date,
+                    url,
+                    concepts,
+                    _source: item._source
+                };
+            });
+        }
+
+        // Configuration for ItemsJS
+        const configuration = {
+            searchableFields: ['title', 'description', 'concepts', 'subjectArea'],
+            sortings: {
+                'title:asc': { field: 'title', order: 'asc' },
+                'title:desc': { field: 'title', order: 'desc' },
+                'date:asc': { field: 'date', order: 'asc' },
+                'date:desc': { field: 'date', order: 'desc' }
+            },
+            aggregations: {
+                subjectArea: {
+                    title: 'Subject Area',
+                    size: 20,
+                    conjunction: false // OR logic within facet
+                },
+                gradeLevel: {
+                    title: 'Grade Level',
+                    size: 20,
+                    conjunction: false
+                },
+                bloomsTaxonomy: {
+                    title: 'Bloom\'s Taxonomy',
+                    size: 6,
+                    conjunction: false
+                },
+                difficulty: {
+                    title: 'Difficulty',
+                    size: 5,
+                    conjunction: false
+                },
+                framework: {
+                    title: 'Framework',
+                    size: 10,
+                    conjunction: false
+                },
+                visualizationType: {
+                    title: 'Visualization',
+                    size: 15,
+                    conjunction: false
+                }
+            }
+        };
+
+        // Initialize
+        async function init() {
+            try {
+                console.log('Fetching data...');
+                const response = await fetch('microsims-data.json');
+                console.log('Response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const rawData = await response.json();
+                console.log('Raw data loaded:', rawData.length, 'items');
+
+                const data = normalizeData(rawData);
+                console.log('Normalized data:', data.length, 'items');
+
+                if (typeof window.itemsjs === 'undefined') {
+                    throw new Error('ItemsJS library not loaded');
+                }
+
+                itemsjs = window.itemsjs(data, configuration);
+                console.log('ItemsJS initialized');
+                render();
+                setupEventListeners();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('results').innerHTML =
+                    `<div class="no-results"><h2>Error Loading Data</h2><p>${error.message}</p></div>`;
+            }
+        }
+
+        // Render everything
+        function render() {
+            const [sortField, sortOrder] = currentSort.split(':');
+
+            const results = itemsjs.search({
+                query: currentQuery,
+                filters: currentFilters,
+                sort: currentSort,
+                per_page: 100
+            });
+
+            renderFacets(results.data.aggregations);
+            renderResults(results.data.items);
+            renderActiveFilters();
+
+            document.getElementById('results-count').textContent =
+                `${results.pagination.total} MicroSim${results.pagination.total !== 1 ? 's' : ''} found`;
+
+            // Show/hide clear button
+            const hasFilters = Object.keys(currentFilters).length > 0 || currentQuery;
+            document.getElementById('clear-filters').style.display = hasFilters ? 'block' : 'none';
+        }
+
+        // Render facets
+        function renderFacets(aggregations) {
+            const facetsContainer = document.getElementById('facets');
+            facetsContainer.innerHTML = '';
+
+            for (const [key, agg] of Object.entries(aggregations)) {
+                if (agg.buckets.length === 0) continue;
+
+                const facetDiv = document.createElement('div');
+                facetDiv.className = 'facet';
+                facetDiv.innerHTML = `<h3>${agg.title}</h3>`;
+
+                const itemsDiv = document.createElement('div');
+                itemsDiv.className = 'facet-items';
+
+                agg.buckets.forEach(bucket => {
+                    const isSelected = (currentFilters[key] || []).includes(bucket.key);
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = `facet-item ${isSelected ? 'selected' : ''}`;
+                    itemDiv.innerHTML = `
+                        <input type="checkbox"
+                               id="${key}-${bucket.key}"
+                               ${isSelected ? 'checked' : ''}
+                               data-facet="${key}"
+                               data-value="${bucket.key}">
+                        <label for="${key}-${bucket.key}">${bucket.key}</label>
+                        <span class="count">${bucket.doc_count}</span>
+                    `;
+                    itemsDiv.appendChild(itemDiv);
+                });
+
+                facetDiv.appendChild(itemsDiv);
+                facetsContainer.appendChild(facetDiv);
+            }
+        }
+
+        // Render results
+        function renderResults(items) {
+            const resultsContainer = document.getElementById('results');
+
+            if (items.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <h2>No MicroSims Found</h2>
+                        <p>Try adjusting your search or filters.</p>
+                    </div>`;
+                return;
+            }
+
+            resultsContainer.innerHTML = items.map(item => `
+                <div class="result-card">
+                    <h3><a href="${item.url || '#'}" target="_blank">${item.title || 'Untitled'}</a></h3>
+                    <p class="description">${item.description || ''}</p>
+                    <div class="tags">
+                        ${(item.subjectArea || []).slice(0, 3).map(s => `<span class="tag">${s}</span>`).join('')}
+                        ${(item.gradeLevel || []).slice(0, 2).map(g => `<span class="tag level">${g}</span>`).join('')}
+                        <span class="tag library">${item.framework || 'Unknown'}</span>
+                    </div>
+                    <div class="tags">
+                        ${(item.bloomsTaxonomy || []).map(b => `<span class="tag bloom">${b}</span>`).join('')}
+                        ${item.difficulty && item.difficulty !== 'Unknown' ? `<span class="tag difficulty">${item.difficulty}</span>` : ''}
+                    </div>
+                    <div class="meta">By ${item.creator || 'Unknown'}${item.date ? ' | ' + item.date : ''}</div>
+                </div>
+            `).join('');
+        }
+
+        // Render active filters
+        function renderActiveFilters() {
+            const container = document.getElementById('active-filters');
+            const filters = [];
+
+            if (currentQuery) {
+                filters.push(`<span class="active-filter">Search: "${currentQuery}" <span class="remove" data-type="query">×</span></span>`);
+            }
+
+            for (const [facet, values] of Object.entries(currentFilters)) {
+                values.forEach(value => {
+                    filters.push(`<span class="active-filter">${value} <span class="remove" data-type="filter" data-facet="${facet}" data-value="${value}">×</span></span>`);
+                });
+            }
+
+            container.innerHTML = filters.join('');
+        }
+
+        // Event listeners
+        function setupEventListeners() {
+            // Search input
+            let searchTimeout;
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    currentQuery = e.target.value;
+                    render();
+                }, 200);
+            });
+
+            // Facet clicks
+            document.getElementById('facets').addEventListener('change', (e) => {
+                if (e.target.type === 'checkbox') {
+                    const facet = e.target.dataset.facet;
+                    const value = e.target.dataset.value;
+
+                    if (!currentFilters[facet]) {
+                        currentFilters[facet] = [];
+                    }
+
+                    if (e.target.checked) {
+                        currentFilters[facet].push(value);
+                    } else {
+                        currentFilters[facet] = currentFilters[facet].filter(v => v !== value);
+                        if (currentFilters[facet].length === 0) {
+                            delete currentFilters[facet];
+                        }
+                    }
+
+                    render();
+                }
+            });
+
+            // Sort
+            document.getElementById('sort-select').addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                render();
+            });
+
+            // Clear filters
+            document.getElementById('clear-filters').addEventListener('click', () => {
+                currentFilters = {};
+                currentQuery = '';
+                document.getElementById('search-input').value = '';
+                render();
+            });
+
+            // Remove individual filters
+            document.getElementById('active-filters').addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove')) {
+                    if (e.target.dataset.type === 'query') {
+                        currentQuery = '';
+                        document.getElementById('search-input').value = '';
+                    } else {
+                        const facet = e.target.dataset.facet;
+                        const value = e.target.dataset.value;
+                        currentFilters[facet] = currentFilters[facet].filter(v => v !== value);
+                        if (currentFilters[facet].length === 0) {
+                            delete currentFilters[facet];
+                        }
+                    }
+                    render();
+                }
+            });
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>

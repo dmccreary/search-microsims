@@ -1,0 +1,1561 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Microsim Faceted Search CC ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/microsim-search/microsim-schema/">
+      
+      
+        <link rel="prev" href="../search/">
+      
+      
+        <link rel="next" href="../glossary/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>MicroSim Schema - Microsim Search</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microsim-metadata-schema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Microsim Search" class="md-header__button md-logo" aria-label="Microsim Search" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Microsim Search
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MicroSim Schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/microsim-search" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Microsim Search" class="md-nav__button md-logo" aria-label="Microsim Search" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Microsim Search
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/microsim-search" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MicroSim Schema
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim Schema
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dublin-core-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dublin Core Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dublin Core Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search &amp; Discovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search & Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualization-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-search-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Search Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#educational-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Educational Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Educational Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subject-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difficulty
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-educational-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Educational Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-technical-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Technical Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faceted-search-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faceted Search Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-field-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legacy Field Mapping
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dublin-core-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dublin Core Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dublin Core Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search &amp; Discovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search & Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualization-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-search-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Search Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#educational-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Educational Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Educational Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subject-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difficulty
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-educational-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Educational Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-technical-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Technical Fields
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faceted-search-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faceted Search Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-field-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legacy Field Mapping
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/microsim-search/blob/master/docs/microsim-schema.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="microsim-metadata-schema">MicroSim Metadata Schema</h1>
+<p>This document describes the official JSON schema for MicroSim metadata, used for cataloging and searching educational simulations.</p>
+<p><strong>Schema Source</strong>: <a href="https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json">microsim-schema.json</a></p>
+<h2 id="overview">Overview</h2>
+<p>The MicroSim metadata schema is a comprehensive JSON Schema (Draft 07) that organizes metadata into eight primary sections:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dublinCore</code></td>
+<td>Resource identification (title, creator, rights)</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>Findability (tags, visualization type, complexity)</td>
+</tr>
+<tr>
+<td><code>educational</code></td>
+<td>Learning attributes (grade level, subject, Bloom's taxonomy)</td>
+</tr>
+<tr>
+<td><code>technical</code></td>
+<td>Framework, dimensions, dependencies</td>
+</tr>
+<tr>
+<td><code>userInterface</code></td>
+<td>Layout, controls, accessibility</td>
+</tr>
+<tr>
+<td><code>simulation</code></td>
+<td>Physics/math model, variables, equations</td>
+</tr>
+<tr>
+<td><code>analytics</code></td>
+<td>Event tracking, learning indicators</td>
+</tr>
+<tr>
+<td><code>usage</code></td>
+<td>Pedagogical guidance, assessment questions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dublin-core-metadata">Dublin Core Metadata</h2>
+<p>Standard resource description elements based on the Dublin Core standard.</p>
+<h3 id="required-fields">Required Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>Name of the MicroSim</td>
+</tr>
+<tr>
+<td><code>creator</code></td>
+<td>array</td>
+<td>Authors, developers, or AI models that created it</td>
+</tr>
+<tr>
+<td><code>subject</code></td>
+<td>array</td>
+<td>Topic keywords and subject areas</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>Content description and educational purpose</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>string</td>
+<td>Creation date (ISO 8601 format)</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>enum</td>
+<td>Resource type</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>enum</td>
+<td>File format</td>
+</tr>
+<tr>
+<td><code>rights</code></td>
+<td>string</td>
+<td>License or copyright</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-values">Type Values</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Interactive Simulation | Educational MicroSim | Infographic
+</code></pre></div></td></tr></table></div>
+<h3 id="optional-fields">Optional Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>publisher</code></td>
+<td>string</td>
+<td>Entity making resource available</td>
+</tr>
+<tr>
+<td><code>contributor</code></td>
+<td>array</td>
+<td>Reviewers, editors, etc.</td>
+</tr>
+<tr>
+<td><code>identifier</code></td>
+<td>string</td>
+<td>DOI, URI, or unique reference</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>string</td>
+<td>Resource this is derived from</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>string</td>
+<td>ISO 639-1 code (e.g., "en", "en-US")</td>
+</tr>
+<tr>
+<td><code>relation</code></td>
+<td>array</td>
+<td>Related resources</td>
+</tr>
+<tr>
+<td><code>coverage</code></td>
+<td>object</td>
+<td>Spatial/temporal coverage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="search-discovery">Search &amp; Discovery</h2>
+<p>Metadata for improved findability and filtering.</p>
+<h3 id="visualization-type">Visualization Type</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>animation | chart | infographic | graph | diagram | simulation
+interactive-demo | data-visualization | 3d-model | timeline
+network | map | dashboard
+</code></pre></div></td></tr></table></div>
+<h3 id="interaction-level">Interaction Level</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>passive | low | moderate | high | very-high
+</code></pre></div></td></tr></table></div>
+<h3 id="application-domains">Application Domains</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>education | research | training | demonstration
+assessment | exploration | modeling | analysis
+</code></pre></div></td></tr></table></div>
+<h3 id="other-search-fields">Other Search Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tags</code></td>
+<td>array</td>
+<td>Searchable keywords (required)</td>
+</tr>
+<tr>
+<td><code>searchKeywords</code></td>
+<td>array</td>
+<td>SEO-friendly keywords</td>
+</tr>
+<tr>
+<td><code>complexity</code></td>
+<td>integer</td>
+<td>1-10 scale (1=simple, 10=complex)</td>
+</tr>
+<tr>
+<td><code>relatedConcepts</code></td>
+<td>array</td>
+<td>For recommendation systems</td>
+</tr>
+</tbody>
+</table>
+<h2 id="educational-specifications">Educational Specifications</h2>
+<p>Learning-focused attributes for curriculum alignment.</p>
+<h3 id="grade-level">Grade Level</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>K | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+Undergraduate | Graduate | Adult
+</code></pre></div></td></tr></table></div>
+<h3 id="subject-area">Subject Area</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Mathematics | Science | Physics | Chemistry | Biology
+Computer Science | Engineering | Economics | Finance | Statistics
+Psychology | Social Studies | Language Arts | Art | Music
+Health | Physical Education | Other
+</code></pre></div></td></tr></table></div>
+<h3 id="blooms-taxonomy">Bloom's Taxonomy</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Remember | Understand | Apply | Analyze | Evaluate | Create
+</code></pre></div></td></tr></table></div>
+<h3 id="difficulty">Difficulty</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Beginner | Intermediate | Advanced
+</code></pre></div></td></tr></table></div>
+<h3 id="learning-theory">Learning Theory</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>constructivism | behaviorism | cognitivism
+connectivism | experiential | social-learning
+</code></pre></div></td></tr></table></div>
+<h3 id="other-educational-fields">Other Educational Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>topic</code></td>
+<td>array</td>
+<td>Specific concepts covered</td>
+</tr>
+<tr>
+<td><code>learningObjectives</code></td>
+<td>array</td>
+<td>Learning outcomes</td>
+</tr>
+<tr>
+<td><code>prerequisites</code></td>
+<td>array</td>
+<td>Required prior knowledge</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>object</td>
+<td>Typical/range interaction time</td>
+</tr>
+<tr>
+<td><code>curriculumStandards</code></td>
+<td>array</td>
+<td>CCSS, NGSS, ISTE alignment</td>
+</tr>
+<tr>
+<td><code>cognitiveLoad</code></td>
+<td>object</td>
+<td>Intrinsic/extraneous/germane load</td>
+</tr>
+<tr>
+<td><code>scaffolding</code></td>
+<td>object</td>
+<td>Guided discovery, hints, feedback</td>
+</tr>
+<tr>
+<td><code>misconceptions</code></td>
+<td>array</td>
+<td>Common misconceptions addressed</td>
+</tr>
+<tr>
+<td><code>transferSkills</code></td>
+<td>array</td>
+<td>Transferable skills developed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="technical-requirements">Technical Requirements</h2>
+<h3 id="framework">Framework</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>p5.js | vanilla-js | d3.js | three.js | other
+</code></pre></div></td></tr></table></div>
+<h3 id="canvas-dimensions">Canvas Dimensions</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;responsive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="other-technical-fields">Other Technical Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>string</td>
+<td>MicroSim version number</td>
+</tr>
+<tr>
+<td><code>dependencies</code></td>
+<td>array</td>
+<td>Required libraries</td>
+</tr>
+<tr>
+<td><code>browserCompatibility</code></td>
+<td>array</td>
+<td>Supported browsers</td>
+</tr>
+<tr>
+<td><code>performanceMetrics</code></td>
+<td>object</td>
+<td>Load time, memory, FPS</td>
+</tr>
+<tr>
+<td><code>deviceRequirements</code></td>
+<td>object</td>
+<td>Touch, keyboard, screen size</td>
+</tr>
+<tr>
+<td><code>accessibility</code></td>
+<td>object</td>
+<td>WCAG level, screen reader support</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-metadata">Example Metadata</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;microsim&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pendulum Simulation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Dan McCreary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Claude&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Simple Harmonic Motion&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive pendulum demonstrating period and gravity relationships&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-15&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive Simulation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rights&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CC BY 4.0&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pendulum&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;oscillation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gravity&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;visualizationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;animation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;simulation&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;interactionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;complexity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;9&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Science&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Simple Harmonic Motion&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Period&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Gravity&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;learningObjectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Understand the relationship between pendulum length and period&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Observe how gravity affects oscillation&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Understand&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Analyze&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Intermediate&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p5.js&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;canvasDimensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;responsive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="faceted-search-fields">Faceted Search Fields</h2>
+<p>The following fields are used for faceted filtering in the search interface:</p>
+<table>
+<thead>
+<tr>
+<th>Facet</th>
+<th>Schema Path</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subject Area</td>
+<td><code>educational.subjectArea</code></td>
+<td>18 standard subjects</td>
+</tr>
+<tr>
+<td>Grade Level</td>
+<td><code>educational.gradeLevel</code></td>
+<td>K-12, Undergraduate, Graduate, Adult</td>
+</tr>
+<tr>
+<td>Bloom's Taxonomy</td>
+<td><code>educational.bloomsTaxonomy</code></td>
+<td>6 cognitive levels</td>
+</tr>
+<tr>
+<td>Difficulty</td>
+<td><code>educational.difficulty</code></td>
+<td>Beginner, Intermediate, Advanced</td>
+</tr>
+<tr>
+<td>Framework</td>
+<td><code>technical.framework</code></td>
+<td>p5.js, d3.js, three.js, etc.</td>
+</tr>
+<tr>
+<td>Visualization Type</td>
+<td><code>search.visualizationType</code></td>
+<td>13 visualization types</td>
+</tr>
+<tr>
+<td>Interaction Level</td>
+<td><code>search.interactionLevel</code></td>
+<td>5 levels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="schema-validation">Schema Validation</h2>
+<p>To validate metadata against the schema:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Using ajv-cli</span>
+npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>ajv-cli
+ajv<span class="w"> </span>validate<span class="w"> </span>-s<span class="w"> </span>microsim-schema.json<span class="w"> </span>-d<span class="w"> </span>metadata.json
+</code></pre></div></td></tr></table></div>
+<h2 id="legacy-field-mapping">Legacy Field Mapping</h2>
+<p>Older metadata files may use different field names. The search normalizes these:</p>
+<table>
+<thead>
+<tr>
+<th>Legacy Field</th>
+<th>Schema Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subject</code> (string)</td>
+<td><code>dublinCore.subject</code> (array)</td>
+</tr>
+<tr>
+<td><code>educationalLevel</code></td>
+<td><code>educational.gradeLevel</code></td>
+</tr>
+<tr>
+<td><code>bloomLevel</code></td>
+<td><code>educational.bloomsTaxonomy</code></td>
+</tr>
+<tr>
+<td><code>library</code></td>
+<td><code>technical.framework</code></td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td><code>dublinCore.creator</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Search Demo">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Search Demo
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
