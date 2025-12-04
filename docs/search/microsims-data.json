@@ -6390,6 +6390,710 @@
     "id": 107
   },
   {
+    "title": "DAG Viewer",
+    "description": "Interactive left-to-right Directed Acyclic Graph (DAG) viewer that visualizes concept dependencies. Uses hierarchical layout to show nodes positioned by their dependency level, with independent nodes on the right and dependent nodes on the left.",
+    "creator": "Dan McCreary",
+    "date": "2024-07-22",
+    "subject": [
+      "Directed Acyclic Graph",
+      "DAG",
+      "Graph Visualization",
+      "Dependency Graph",
+      "Hierarchical Layout",
+      "Learning Graph"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/dag-viewer/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "4.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Directed Acyclic Graph",
+      "Topological Order",
+      "Dependencies",
+      "Hierarchical Layout",
+      "Graph Visualization"
+    ],
+    "prerequisites": [
+      "Directed Graphs",
+      "Graph Basics"
+    ],
+    "library": "vis-network.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "dag-viewer",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/dag-viewer"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/dag-viewer/",
+    "id": 108
+  },
+  {
+    "title": "Data Element Matcher",
+    "description": "Interactive visualization for matching data elements between source and target schemas. Demonstrates the schema matching problem common in data integration and ETL processes.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Schema Matching",
+      "Data Integration",
+      "Data Element Mapping",
+      "ETL",
+      "Data Warehousing"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/data-element-match/",
+    "educationalLevel": "Undergraduate",
+    "learningResourceType": "simulation",
+    "audience": "Data Engineers, Students",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Schema Matching",
+      "Data Mapping",
+      "Data Integration",
+      "Entity Resolution"
+    ],
+    "prerequisites": [
+      "Database Basics",
+      "Data Modeling"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "data-element-match",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/data-element-match"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/data-element-match/",
+    "id": 109
+  },
+  {
+    "title": "Graph Degree",
+    "description": "Interactive visualization showing incoming, outgoing, and total degree of nodes in a directed graph. Demonstrates the fundamental concept of node degree and its importance in network analysis.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Graph Degree",
+      "In-Degree",
+      "Out-Degree",
+      "Network Analysis",
+      "Graph Theory",
+      "Directed Graphs"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/degree/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Remember",
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Graph Degree",
+      "In-Degree",
+      "Out-Degree",
+      "Hub Nodes",
+      "Sink Nodes",
+      "Centrality"
+    ],
+    "prerequisites": [
+      "Directed Graphs",
+      "Graph Basics"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "degree",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/degree"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/degree/",
+    "id": 110
+  },
+  {
+    "title": "Degree V2",
+    "description": "Interactive visualization demonstrating how graph degree changes based on the number of connections between vertices. Features sliders to control node count and degree, with nodes arranged in a circular layout.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Graph Degree",
+      "Network Visualization",
+      "Regular Graphs",
+      "Graph Theory",
+      "Network Density"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/degree-v2/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "2.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Graph Degree",
+      "Regular Graphs",
+      "Network Density",
+      "Circular Layout"
+    ],
+    "prerequisites": [
+      "Graph Basics",
+      "Graph Degree"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "degree-v2",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/degree-v2"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/degree-v2/",
+    "id": 111
+  },
+  {
+    "title": "Force Directed Graph Layout",
+    "description": "Interactive simulation of force-directed graph placement algorithm. Demonstrates how physical simulation with attractive and repulsive forces creates visually pleasing graph layouts through iterative refinement.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Force-Directed Layout",
+      "Graph Visualization",
+      "Physics Simulation",
+      "Graph Drawing",
+      "Network Layout"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/force/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Force-Directed Layout",
+      "Graph Drawing",
+      "Physical Simulation",
+      "Iterative Algorithms",
+      "Convergence"
+    ],
+    "prerequisites": [
+      "Graph Basics",
+      "Basic Physics"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "force",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/force"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/force/",
+    "id": 112
+  },
+  {
+    "title": "Learning Graph",
+    "description": "Interactive visualization of a learning graph showing concept dependencies and taxonomies. Demonstrates how to build educational dependency graphs using LLM-assisted multi-step prompting.",
+    "creator": "Dan McCreary",
+    "date": "2024-07-22",
+    "subject": [
+      "Learning Graph",
+      "Curriculum Design",
+      "Concept Dependencies",
+      "Educational Technology",
+      "Knowledge Graphs"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/learning-graph/",
+    "educationalLevel": "Undergraduate",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Curriculum Designers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Create"
+    ],
+    "concepts": [
+      "Learning Graphs",
+      "Concept Dependencies",
+      "Bloom's Taxonomy",
+      "Curriculum Design",
+      "Knowledge Visualization"
+    ],
+    "prerequisites": [
+      "Graph Basics",
+      "Course Design Fundamentals"
+    ],
+    "library": "vis-network.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "learning-graph",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/learning-graph"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/learning-graph/",
+    "id": 113
+  },
+  {
+    "title": "Graph Legends",
+    "description": "Tutorial on creating fixed-position node legends for vis-network.js graph visualizations. Demonstrates how to add non-interactive legend nodes with distinct shapes and colors.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Graph Legends",
+      "vis-network.js",
+      "Network Visualization",
+      "Data Visualization",
+      "User Interface"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/legends/",
+    "educationalLevel": "Undergraduate",
+    "learningResourceType": "tutorial",
+    "audience": "Developers, Students",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Graph Legends",
+      "Fixed Nodes",
+      "Node Groups",
+      "Visual Encoding"
+    ],
+    "prerequisites": [
+      "JavaScript",
+      "vis-network.js Basics"
+    ],
+    "library": "vis-network.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "legends",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/legends"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/legends/",
+    "id": 114
+  },
+  {
+    "title": "Graph Matching",
+    "description": "Interactive demonstrations of graph matching problems including schema matching, resource matching, and entity resolution. Shows how graphs can visualize and optimize matching relationships.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Graph Matching",
+      "Schema Matching",
+      "Entity Resolution",
+      "Resource Allocation",
+      "Bipartite Graphs"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/matching/",
+    "educationalLevel": "Undergraduate",
+    "learningResourceType": "simulation",
+    "audience": "Data Engineers, Students",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Graph Matching",
+      "Schema Matching",
+      "Entity Resolution",
+      "Bipartite Matching",
+      "Data Integration"
+    ],
+    "prerequisites": [
+      "Graph Basics",
+      "Data Integration Concepts"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "matching",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/matching"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/matching/",
+    "id": 115
+  },
+  {
+    "title": "PageRank",
+    "description": "Interactive visualization of Google's PageRank algorithm showing iterative calculation of node importance in directed graphs. Node sizes update to reflect their calculated PageRank values.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "PageRank",
+      "Graph Algorithms",
+      "Web Search",
+      "Link Analysis",
+      "Centrality Measures"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/page-rank/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "PageRank",
+      "Damping Factor",
+      "Iterative Algorithms",
+      "Convergence",
+      "Link Analysis",
+      "Node Importance"
+    ],
+    "prerequisites": [
+      "Directed Graphs",
+      "Graph Basics"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "page-rank",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/page-rank"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/page-rank/",
+    "id": 116
+  },
+  {
+    "title": "Shortest Path",
+    "description": "Interactive visualization of Dijkstra's shortest path algorithm for finding optimal routes in weighted graphs. Demonstrates how the algorithm explores nodes and updates distances to find the shortest path.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Shortest Path",
+      "Dijkstra's Algorithm",
+      "Graph Algorithms",
+      "Weighted Graphs",
+      "Routing"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/shortest-path/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Dijkstra's Algorithm",
+      "Shortest Path",
+      "Weighted Graphs",
+      "Greedy Algorithms",
+      "Graph Traversal"
+    ],
+    "prerequisites": [
+      "Weighted Graphs",
+      "Graph Basics"
+    ],
+    "library": "vis-network.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "shortest-path",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/shortest-path"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/shortest-path/",
+    "id": 117
+  },
+  {
+    "title": "Spanning Trees",
+    "description": "Interactive visualization of minimum spanning tree algorithms for connecting vertices with minimum total edge weight. Demonstrates Prim's or Kruskal's algorithm for finding optimal network connections.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Spanning Trees",
+      "Minimum Spanning Tree",
+      "Prim's Algorithm",
+      "Kruskal's Algorithm",
+      "Graph Algorithms"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/spanning-tree/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Spanning Tree",
+      "Minimum Spanning Tree",
+      "Network Design",
+      "Greedy Algorithms"
+    ],
+    "prerequisites": [
+      "Weighted Graphs",
+      "Tree Data Structures"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "spanning-tree",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/spanning-tree"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/spanning-tree/",
+    "id": 118
+  },
+  {
+    "title": "MicroSim Template",
+    "description": "Template for creating new p5.js MicroSims with basic canvas setup and drawing examples. Demonstrates standard structure and best practices for educational simulations.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Template",
+      "p5.js",
+      "MicroSim",
+      "Canvas Drawing",
+      "Tutorial"
+    ],
+    "type": "Template",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/template/",
+    "educationalLevel": "High School",
+    "learningResourceType": "template",
+    "audience": "Developers, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Apply",
+      "Create"
+    ],
+    "concepts": [
+      "Canvas Drawing",
+      "p5.js Setup",
+      "Shapes",
+      "Colors"
+    ],
+    "prerequisites": [
+      "Basic JavaScript"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "template",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/template"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/template/",
+    "id": 119
+  },
+  {
+    "title": "Traveling Salesperson Problem",
+    "description": "Interactive visualization of the Traveling Salesperson Problem (TSP) demonstrating random routes, nearest neighbor heuristic, and 2-opt optimization using vis-network.",
+    "creator": "Dan McCreary",
+    "date": "2024-12-04",
+    "subject": [
+      "Traveling Salesperson Problem",
+      "TSP",
+      "Optimization",
+      "NP-Hard",
+      "Graph Algorithms",
+      "Heuristics",
+      "Route Planning"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/traveling-salesperson/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Traveling Salesperson Problem",
+      "NP-Hard",
+      "Route Optimization",
+      "Nearest Neighbor Heuristic",
+      "2-opt Algorithm",
+      "Fisher-Yates Shuffle",
+      "Euclidean Distance"
+    ],
+    "prerequisites": [
+      "Graph Basics",
+      "Algorithm Complexity",
+      "Distance Calculations"
+    ],
+    "library": "vis-network.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "traveling-salesperson",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/traveling-salesperson"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/traveling-salesperson/",
+    "id": 120
+  },
+  {
+    "title": "Weighted Graph",
+    "description": "Interactive visualization of weighted graphs showing edge distances between US metropolitan cities. Demonstrates how to create a k-nearest-neighbors graph with distance weights.",
+    "creator": "Dan McCreary",
+    "date": "2024-09-16",
+    "subject": [
+      "Weighted Graphs",
+      "Edge Weights",
+      "K-Nearest Neighbors",
+      "Graph Visualization",
+      "Geographic Networks"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY-NC-SA 4.0",
+    "publisher": "Dan McCreary",
+    "identifier": "https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Weighted Graphs",
+      "Edge Weights",
+      "Nearest Neighbors",
+      "Euclidean Distance"
+    ],
+    "prerequisites": [
+      "Graph Basics",
+      "Coordinate Geometry"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "graph-algorithms",
+      "sim": "weighted-graph",
+      "github_url": "https://github.com/dmccreary/graph-algorithms/tree/main/docs/sims/weighted-graph"
+    },
+    "url": "https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/",
+    "id": 121
+  },
+  {
+    "title": "Learning Graph for Graph Data Modeling Course",
+    "description": "Interactive visualization of 150 core graph data modeling concepts and their prerequisite dependencies. Uses force-directed layout to show concept relationships from foundational topics to advanced goals.",
+    "creator": "Dan McCreary",
+    "date": "2024-11-19",
+    "subject": [
+      "Graph Data Modeling",
+      "Learning Graph",
+      "Concept Dependencies",
+      "Knowledge Visualization",
+      "Educational Technology"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "identifier": "https://dmccreary.github.io/graph-data-modeling-course/sims/learning-graph/",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Undergraduate",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, Data Scientists",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Remember",
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Graph Theory",
+      "Nodes and Edges",
+      "Property Graphs",
+      "Knowledge Graphs",
+      "Schema Design",
+      "Data Modeling",
+      "Prerequisite Learning"
+    ],
+    "prerequisites": [
+      "Basic Database Concepts",
+      "Data Structures"
+    ],
+    "library": "vis-network",
+    "_source": {
+      "repo": "graph-data-modeling-course",
+      "sim": "learning-graph",
+      "github_url": "https://github.com/dmccreary/graph-data-modeling-course/tree/main/docs/sims/learning-graph"
+    },
+    "url": "https://dmccreary.github.io/graph-data-modeling-course/sims/learning-graph/",
+    "id": 122
+  },
+  {
     "microsim": {
       "title": "ADDIE Workflow Interactive Model",
       "description": "Interactive visualization of the ADDIE instructional design model showing the five phases (Analysis, Design, Development, Implementation, Evaluation) and their iterative relationships. Users can click phases to explore details and see how designers cycle through the process.",
@@ -6547,7 +7251,7 @@
       "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/addie-workflow"
     },
     "url": "https://dmccreary.github.io/intelligent-textbooks/sims/addie-workflow/",
-    "id": 108
+    "id": 123
   },
   {
     "microsim": {
@@ -6770,7 +7474,7 @@
       "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/cognitive-load"
     },
     "url": "https://dmccreary.github.io/intelligent-textbooks/sims/cognitive-load/",
-    "id": 109
+    "id": 124
   },
   {
     "microsim": {
@@ -7138,7 +7842,7 @@
       "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/kemp-model"
     },
     "url": "https://dmccreary.github.io/intelligent-textbooks/sims/kemp-model/",
-    "id": 110
+    "id": 125
   },
   {
     "title": "Question-Based Learning Graph Update",
@@ -7199,7 +7903,7 @@
       "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/question-color-update"
     },
     "url": "https://dmccreary.github.io/intelligent-textbooks/sims/question-color-update/",
-    "id": 111
+    "id": 126
   },
   {
     "microsim": {
@@ -7517,7 +8221,7 @@
       "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/sam-process"
     },
     "url": "https://dmccreary.github.io/intelligent-textbooks/sims/sam-process/",
-    "id": 112
+    "id": 127
   },
   {
     "title": "Three-Color DFS Cycle Detection",
@@ -7553,7 +8257,7 @@
       "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/three-color-dfs"
     },
     "url": "https://dmccreary.github.io/intelligent-textbooks/sims/three-color-dfs/",
-    "id": 113
+    "id": 128
   },
   {
     "dublinCore": {
@@ -7678,7 +8382,7 @@
       "github_url": "https://github.com/dmccreary/intro-to-graph/tree/main/docs/sims/knowledge-triangle"
     },
     "url": "https://dmccreary.github.io/intro-to-graph/sims/knowledge-triangle/",
-    "id": 114
+    "id": 129
   },
   {
     "title": "Minimum Spanning Tree Algorithm Visualizer",
@@ -7799,7 +8503,7 @@
       "github_url": "https://github.com/dmccreary/intro-to-graph/tree/main/docs/sims/minimum-spanning-tree"
     },
     "url": "https://dmccreary.github.io/intro-to-graph/sims/minimum-spanning-tree/",
-    "id": 115
+    "id": 130
   },
   {
     "title": "Organization Chart Visualization",
@@ -7843,7 +8547,7 @@
       "github_url": "https://github.com/dmccreary/intro-to-graph/tree/main/docs/sims/org-chart"
     },
     "url": "https://dmccreary.github.io/intro-to-graph/sims/org-chart/",
-    "id": 116
+    "id": 131
   },
   {
     "title": "Scientific Method Workflow",
@@ -7888,7 +8592,7 @@
       "github_url": "https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/scientific-method"
     },
     "url": "https://dmccreary.github.io/intro-to-physics-course/sims/scientific-method/",
-    "id": 117
+    "id": 132
   },
   {
     "title": "Book Build Workflow",
@@ -7943,7 +8647,7 @@
       "github_url": "https://github.com/dmccreary/learning-graphs/tree/main/docs/sims/book-build-workflow"
     },
     "url": "https://dmccreary.github.io/learning-graphs/sims/book-build-workflow/",
-    "id": 118
+    "id": 133
   },
   {
     "title": "Learning is Nonlinear",
@@ -8055,7 +8759,7 @@
       "github_url": "https://github.com/dmccreary/learning-graphs/tree/main/docs/sims/learning-is-nonlinear"
     },
     "url": "learning-is-nonlinear-v1",
-    "id": 119
+    "id": 134
   },
   {
     "title": "555 Timer",
@@ -8095,7 +8799,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/555-timer"
     },
     "url": "https://dmccreary.github.io/microsims/sims/555-timer/",
-    "id": 120
+    "id": 135
   },
   {
     "title": "Ac Circuit",
@@ -8135,7 +8839,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/ac-circuit"
     },
     "url": "https://dmccreary.github.io/microsims/sims/ac-circuit/",
-    "id": 121
+    "id": 136
   },
   {
     "title": "AI Benchmarks Timeline",
@@ -8181,7 +8885,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/ai-benchmarks-timeline"
     },
     "url": "https://dmccreary.github.io/microsims/sims/ai-benchmarks-timeline/",
-    "id": 122
+    "id": 137
   },
   {
     "title": "Alu",
@@ -8221,7 +8925,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/alu"
     },
     "url": "https://dmccreary.github.io/microsims/sims/alu/",
-    "id": 123
+    "id": 138
   },
   {
     "title": "Analog Circuit",
@@ -8261,7 +8965,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/analog-circuit"
     },
     "url": "https://dmccreary.github.io/microsims/sims/analog-circuit/",
-    "id": 124
+    "id": 139
   },
   {
     "title": "Analog Clock",
@@ -8301,7 +9005,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/analog-clock"
     },
     "url": "https://dmccreary.github.io/microsims/sims/analog-clock/",
-    "id": 125
+    "id": 140
   },
   {
     "title": "Animated Wire",
@@ -8341,7 +9045,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/animated-wire"
     },
     "url": "https://dmccreary.github.io/microsims/sims/animated-wire/",
-    "id": 126
+    "id": 141
   },
   {
     "title": "Background Grid",
@@ -8381,7 +9085,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/background-grid"
     },
     "url": "https://dmccreary.github.io/microsims/sims/background-grid/",
-    "id": 127
+    "id": 142
   },
   {
     "title": "Ball In Rotating Hexagon",
@@ -8421,7 +9125,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/ball-in-rotating-hexagon"
     },
     "url": "https://dmccreary.github.io/microsims/sims/ball-in-rotating-hexagon/",
-    "id": 128
+    "id": 143
   },
   {
     "title": "Bathtub",
@@ -8461,7 +9165,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/bathtub"
     },
     "url": "https://dmccreary.github.io/microsims/sims/bathtub/",
-    "id": 129
+    "id": 144
   },
   {
     "title": "Battery Drain",
@@ -8501,7 +9205,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/battery-drain"
     },
     "url": "https://dmccreary.github.io/microsims/sims/battery-drain/",
-    "id": 130
+    "id": 145
   },
   {
     "title": "Battery Life",
@@ -8541,7 +9245,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/battery-life"
     },
     "url": "https://dmccreary.github.io/microsims/sims/battery-life/",
-    "id": 131
+    "id": 146
   },
   {
     "title": "Bee",
@@ -8581,7 +9285,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/bee"
     },
     "url": "https://dmccreary.github.io/microsims/sims/bee/",
-    "id": 132
+    "id": 147
   },
   {
     "title": "Bfs",
@@ -8621,7 +9325,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/bfs"
     },
     "url": "https://dmccreary.github.io/microsims/sims/bfs/",
-    "id": 133
+    "id": 148
   },
   {
     "title": "Bfs Vs Dfs",
@@ -8661,7 +9365,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/bfs-vs-dfs"
     },
     "url": "https://dmccreary.github.io/microsims/sims/bfs-vs-dfs/",
-    "id": 134
+    "id": 149
   },
   {
     "title": "Binary Number",
@@ -8701,7 +9405,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/binary-number"
     },
     "url": "https://dmccreary.github.io/microsims/sims/binary-number/",
-    "id": 135
+    "id": 150
   },
   {
     "title": "Book Gen Workflow",
@@ -8741,7 +9445,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/book-gen-workflow"
     },
     "url": "https://dmccreary.github.io/microsims/sims/book-gen-workflow/",
-    "id": 136
+    "id": 151
   },
   {
     "title": "Bouncing Ball",
@@ -8791,7 +9495,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/bouncing-ball"
     },
     "url": "https://dmccreary.github.io/microsims/sims/bouncing-ball/",
-    "id": 137
+    "id": 152
   },
   {
     "title": "Breadboard",
@@ -8831,7 +9535,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/breadboard"
     },
     "url": "https://dmccreary.github.io/microsims/sims/breadboard/",
-    "id": 138
+    "id": 153
   },
   {
     "title": "Brownian Motion",
@@ -8886,7 +9590,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/brownian-motion"
     },
     "url": "https://dmccreary.github.io/microsims/sims/brownian-motion/",
-    "id": 139
+    "id": 154
   },
   {
     "title": "Circle",
@@ -8926,7 +9630,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/circle"
     },
     "url": "https://dmccreary.github.io/microsims/sims/circle/",
-    "id": 140
+    "id": 155
   },
   {
     "title": "Circuits",
@@ -8966,7 +9670,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/circuits"
     },
     "url": "https://dmccreary.github.io/microsims/sims/circuits/",
-    "id": 141
+    "id": 156
   },
   {
     "title": "Collision Avoidance Robot",
@@ -9006,7 +9710,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/collision-avoidance-robot"
     },
     "url": "https://dmccreary.github.io/microsims/sims/collision-avoidance-robot/",
-    "id": 142
+    "id": 157
   },
   {
     "title": "Color Names",
@@ -9046,7 +9750,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/color-names"
     },
     "url": "https://dmccreary.github.io/microsims/sims/color-names/",
-    "id": 143
+    "id": 158
   },
   {
     "microsim": {
@@ -9150,7 +9854,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/color-wheel"
     },
     "url": "https://dmccreary.github.io/microsims/sims/color-wheel/",
-    "id": 144
+    "id": 159
   },
   {
     "title": "Color Wheel with Named Colors",
@@ -9245,7 +9949,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/color-wheel-with-named-colors"
     },
     "url": "https://dmccreary.github.io/microsims/sims/color-wheel-with-named-colors/",
-    "id": 145
+    "id": 160
   },
   {
     "title": "Conway",
@@ -9285,7 +9989,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/conway-old"
     },
     "url": "https://dmccreary.github.io/microsims/sims/conway/",
-    "id": 146
+    "id": 161
   },
   {
     "title": "CSS Box Model",
@@ -9335,7 +10039,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/css-box-model"
     },
     "url": "https://dmccreary.github.io/microsims/sims/css-box-model/",
-    "id": 147
+    "id": 162
   },
   {
     "title": "Curve",
@@ -9375,7 +10079,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/curve"
     },
     "url": "https://dmccreary.github.io/microsims/sims/curve/",
-    "id": 148
+    "id": 163
   },
   {
     "title": "Data Element Mapper",
@@ -9415,7 +10119,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/data-element-mapper"
     },
     "url": "https://dmccreary.github.io/microsims/sims/data-element-mapper/",
-    "id": 149
+    "id": 164
   },
   {
     "title": "Fft Butterfly",
@@ -9455,7 +10159,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fft-butterfly"
     },
     "url": "https://dmccreary.github.io/microsims/sims/fft-butterfly/",
-    "id": 150
+    "id": 165
   },
   {
     "title": "Microphone Frequency Visualization with FFT",
@@ -9495,7 +10199,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fft-mic"
     },
     "url": "https://dmccreary.github.io/microsims/sims/fft-mic/",
-    "id": 151
+    "id": 166
   },
   {
     "title": "Fft Mic V2",
@@ -9535,7 +10239,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fft-mic-v2"
     },
     "url": "https://dmccreary.github.io/microsims/sims/fft-mic-v2/",
-    "id": 152
+    "id": 167
   },
   {
     "title": "Fibonacci Clock",
@@ -9575,7 +10279,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fibonacci-clock"
     },
     "url": "https://dmccreary.github.io/microsims/sims/fibonacci-clock/",
-    "id": 153
+    "id": 168
   },
   {
     "title": "Flashcards",
@@ -9615,7 +10319,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/flashcards"
     },
     "url": "https://dmccreary.github.io/microsims/sims/flashcards/",
-    "id": 154
+    "id": 169
   },
   {
     "microsim": {
@@ -9770,7 +10474,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/flex-layout-playground"
     },
     "url": "https://dmccreary.github.io/microsims/sims/flex-layout-playground/",
-    "id": 155
+    "id": 170
   },
   {
     "title": "Flower Petal Designer",
@@ -9810,7 +10514,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/flower-petal"
     },
     "url": "https://dmccreary.github.io/microsims/sims/flower-petal/",
-    "id": 156
+    "id": 171
   },
   {
     "title": "Force Directed Graph",
@@ -9850,7 +10554,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/force-directed-graph"
     },
     "url": "https://dmccreary.github.io/microsims/sims/force-directed-graph/",
-    "id": 157
+    "id": 172
   },
   {
     "title": "Fourier",
@@ -9890,7 +10594,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fourier"
     },
     "url": "https://dmccreary.github.io/microsims/sims/fourier/",
-    "id": 158
+    "id": 173
   },
   {
     "title": "Fractal Tree",
@@ -9930,7 +10634,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fractal-tree"
     },
     "url": "https://dmccreary.github.io/microsims/sims/fractal-tree/",
-    "id": 159
+    "id": 174
   },
   {
     "title": "Galton Board",
@@ -9970,7 +10674,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/galton-board"
     },
     "url": "https://dmccreary.github.io/microsims/sims/galton-board/",
-    "id": 160
+    "id": 175
   },
   {
     "microsim": {
@@ -10120,7 +10824,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/global-impact"
     },
     "url": "https://dmccreary.github.io/microsims/sims/global-impact/",
-    "id": 161
+    "id": 176
   },
   {
     "title": "Gold Star",
@@ -10160,7 +10864,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/gold-star"
     },
     "url": "https://dmccreary.github.io/microsims/sims/gold-star/",
-    "id": 162
+    "id": 177
   },
   {
     "title": "H Bridge",
@@ -10200,7 +10904,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/h-bridge"
     },
     "url": "https://dmccreary.github.io/microsims/sims/h-bridge/",
-    "id": 163
+    "id": 178
   },
   {
     "title": "Icons Demo",
@@ -10251,7 +10955,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/icons"
     },
     "url": "https://dmccreary.github.io/microsims/sims/icons/",
-    "id": 164
+    "id": 179
   },
   {
     "title": "Koch Curve Fractal",
@@ -10310,7 +11014,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/koch"
     },
     "url": "https://dmccreary.github.io/microsims/sims/koch/",
-    "id": 165
+    "id": 180
   },
   {
     "title": "Lady Bug Walk",
@@ -10350,7 +11054,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/lady-bug-walk"
     },
     "url": "https://dmccreary.github.io/microsims/sims/lady-bug-walk/",
-    "id": 166
+    "id": 181
   },
   {
     "title": "Larson Scanner",
@@ -10390,7 +11094,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/larson-scanner"
     },
     "url": "https://dmccreary.github.io/microsims/sims/larson-scanner/",
-    "id": 167
+    "id": 182
   },
   {
     "title": "Learning Graph",
@@ -10430,7 +11134,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/learning-graph"
     },
     "url": "https://dmccreary.github.io/microsims/sims/learning-graph/",
-    "id": 168
+    "id": 183
   },
   {
     "title": "Learning Graph V1",
@@ -10470,7 +11174,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/learning-graph-v1"
     },
     "url": "https://dmccreary.github.io/microsims/sims/learning-graph-v1/",
-    "id": 169
+    "id": 184
   },
   {
     "title": "Least Squares",
@@ -10510,7 +11214,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/least-squares"
     },
     "url": "https://dmccreary.github.io/microsims/sims/least-squares/",
-    "id": 170
+    "id": 185
   },
   {
     "title": "Lissajous Figures",
@@ -10550,7 +11254,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/lissajous-figures"
     },
     "url": "https://dmccreary.github.io/microsims/sims/lissajous-figures/",
-    "id": 171
+    "id": 186
   },
   {
     "title": "Logic Gates",
@@ -10590,7 +11294,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/logic-gates"
     },
     "url": "https://dmccreary.github.io/microsims/sims/logic-gates/",
-    "id": 172
+    "id": 187
   },
   {
     "title": "Maze Gen",
@@ -10630,7 +11334,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/maze-gen"
     },
     "url": "https://dmccreary.github.io/microsims/sims/maze-gen/",
-    "id": 173
+    "id": 188
   },
   {
     "title": "Maze Solver",
@@ -10670,7 +11374,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/maze-solver"
     },
     "url": "https://dmccreary.github.io/microsims/sims/maze-solver/",
-    "id": 174
+    "id": 189
   },
   {
     "title": "AI-Assisted MicroSim Creation Workflow",
@@ -10714,7 +11418,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/microsim-creation-workflow"
     },
     "url": "https://dmccreary.github.io/microsims/sims/microsim-creation-workflow/",
-    "id": 175
+    "id": 190
   },
   {
     "microsim": {
@@ -10818,7 +11522,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/microsim-layout"
     },
     "url": "https://dmccreary.github.io/microsims/sims/microsim-layout/",
-    "id": 176
+    "id": 191
   },
   {
     "title": "MicroSim Library Ecosystem",
@@ -10926,7 +11630,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/microsim-library-ecosystem"
     },
     "url": "https://dmccreary.github.io/microsims/sims/microsim-library-ecosystem/",
-    "id": 177
+    "id": 192
   },
   {
     "title": "MicroSim Uniqueness Interactive Venn Diagram",
@@ -10966,7 +11670,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/microsim-uniqueness"
     },
     "url": "https://dmccreary.github.io/microsims/sims/microsim-uniqueness/",
-    "id": 178
+    "id": 193
   },
   {
     "title": "Mobile Buttons",
@@ -11006,7 +11710,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/mobile-buttons"
     },
     "url": "https://dmccreary.github.io/microsims/sims/mobile-buttons/",
-    "id": 179
+    "id": 194
   },
   {
     "title": "Motor",
@@ -11046,7 +11750,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/motor"
     },
     "url": "https://dmccreary.github.io/microsims/sims/motor/",
-    "id": 180
+    "id": 195
   },
   {
     "title": "Named Colors",
@@ -11086,7 +11790,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/named-colors"
     },
     "url": "https://dmccreary.github.io/microsims/sims/named-colors/",
-    "id": 181
+    "id": 196
   },
   {
     "title": "Neopixel",
@@ -11126,7 +11830,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/neopixel"
     },
     "url": "https://dmccreary.github.io/microsims/sims/neopixel/",
-    "id": 182
+    "id": 197
   },
   {
     "title": "Neural Network",
@@ -11166,7 +11870,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/neural-network"
     },
     "url": "https://dmccreary.github.io/microsims/sims/neural-network/",
-    "id": 183
+    "id": 198
   },
   {
     "title": "OODA Loop",
@@ -11220,7 +11924,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/ooda"
     },
     "url": "https://dmccreary.github.io/microsims/sims/ooda/",
-    "id": 184
+    "id": 199
   },
   {
     "title": "p5.js Animation Loop Cycle",
@@ -11254,7 +11958,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/p5-animation-loop"
     },
     "url": "https://dmccreary.github.io/microsims/sims/p5-animation-loop/",
-    "id": 185
+    "id": 200
   },
   {
     "microsim": {
@@ -11327,7 +12031,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/p5-coordinate-system"
     },
     "url": "https://dmccreary.github.io/microsims/sims/p5-coordinate-system/",
-    "id": 186
+    "id": 201
   },
   {
     "title": "Particle Fields",
@@ -11367,7 +12071,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/particle-fields"
     },
     "url": "https://dmccreary.github.io/microsims/sims/particle-fields/",
-    "id": 187
+    "id": 202
   },
   {
     "title": "Pendulum",
@@ -11407,7 +12111,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/pendulum"
     },
     "url": "https://dmccreary.github.io/microsims/sims/pendulum/",
-    "id": 188
+    "id": 203
   },
   {
     "title": "Polygon",
@@ -11447,7 +12151,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/polygon"
     },
     "url": "https://dmccreary.github.io/microsims/sims/polygon/",
-    "id": 189
+    "id": 204
   },
   {
     "title": "Prisoners Dilemma",
@@ -11487,7 +12191,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/prisoners-dilemma"
     },
     "url": "https://dmccreary.github.io/microsims/sims/prisoners-dilemma/",
-    "id": 190
+    "id": 205
   },
   {
     "title": "Projectile Motion",
@@ -11541,7 +12245,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/projectile-motion"
     },
     "url": "https://dmccreary.github.io/microsims/sims/projectile-motion/",
-    "id": 191
+    "id": 206
   },
   {
     "title": "Projectile Motion with Gravity",
@@ -11597,7 +12301,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/projectile-motion-gravity"
     },
     "url": "https://dmccreary.github.io/microsims/sims/projectile-motion-gravity/",
-    "id": 192
+    "id": 207
   },
   {
     "title": "Projecting AI Task Completion to 2030",
@@ -11646,7 +12350,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/projecting-ai"
     },
     "url": "https://dmccreary.github.io/microsims/sims/projecting-ai/",
-    "id": 193
+    "id": 208
   },
   {
     "title": "Pwm",
@@ -11686,7 +12390,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/pwm"
     },
     "url": "https://dmccreary.github.io/microsims/sims/pwm/",
-    "id": 194
+    "id": 209
   },
   {
     "title": "Pythagorean Theorem MicroSim",
@@ -11726,7 +12430,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/pythagorean-theorem"
     },
     "url": "https://dmccreary.github.io/microsims/sims/pythagorean-theorem/",
-    "id": 195
+    "id": 210
   },
   {
     "title": "Rabbits And Foxes",
@@ -11766,7 +12470,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/rabbits-and-foxes"
     },
     "url": "https://dmccreary.github.io/microsims/sims/rabbits-and-foxes/",
-    "id": 196
+    "id": 211
   },
   {
     "microsim": {
@@ -11864,7 +12568,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/rainbow-color-picker"
     },
     "url": "https://dmccreary.github.io/microsims/sims/rainbow-color-picker/",
-    "id": 197
+    "id": 212
   },
   {
     "title": "Recursion Tree",
@@ -11904,7 +12608,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/recursion-tree"
     },
     "url": "https://dmccreary.github.io/microsims/sims/recursion-tree/",
-    "id": 198
+    "id": 213
   },
   {
     "title": "Resize In Iframe",
@@ -11944,7 +12648,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/resize-in-iframe"
     },
     "url": "https://dmccreary.github.io/microsims/sims/resize-in-iframe/",
-    "id": 199
+    "id": 214
   },
   {
     "title": "Resize Test",
@@ -11984,7 +12688,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/resize-test"
     },
     "url": "https://dmccreary.github.io/microsims/sims/resize-test/",
-    "id": 200
+    "id": 215
   },
   {
     "title": "Responsive Design",
@@ -12024,7 +12728,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/responsive-design"
     },
     "url": "https://dmccreary.github.io/microsims/sims/responsive-design/",
-    "id": 201
+    "id": 216
   },
   {
     "title": "Robots",
@@ -12064,7 +12768,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/robots"
     },
     "url": "https://dmccreary.github.io/microsims/sims/robots/",
-    "id": 202
+    "id": 217
   },
   {
     "title": "Rotating Gears",
@@ -12104,7 +12808,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/rotating-gears"
     },
     "url": "https://dmccreary.github.io/microsims/sims/rotating-gears/",
-    "id": 203
+    "id": 218
   },
   {
     "title": "Seven Segment Display",
@@ -12144,7 +12848,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/seven-segment-display"
     },
     "url": "https://dmccreary.github.io/microsims/sims/seven-segment-display/",
-    "id": 204
+    "id": 219
   },
   {
     "title": "Sierpinski",
@@ -12184,7 +12888,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/sierpinski"
     },
     "url": "https://dmccreary.github.io/microsims/sims/sierpinski/",
-    "id": 205
+    "id": 220
   },
   {
     "title": "Simple Tree",
@@ -12224,7 +12928,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/simple-tree"
     },
     "url": "https://dmccreary.github.io/microsims/sims/simple-tree/",
-    "id": 206
+    "id": 221
   },
   {
     "title": "Sine And Cosine",
@@ -12264,7 +12968,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/sine-and-cosine"
     },
     "url": "https://dmccreary.github.io/microsims/sims/sine-and-cosine/",
-    "id": 207
+    "id": 222
   },
   {
     "title": "Sine Wave",
@@ -12304,7 +13008,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/sine-wave"
     },
     "url": "https://dmccreary.github.io/microsims/sims/sine-wave/",
-    "id": 208
+    "id": 223
   },
   {
     "title": "Slope And Intercept",
@@ -12344,7 +13048,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/slope-and-intercept"
     },
     "url": "https://dmccreary.github.io/microsims/sims/slope-and-intercept/",
-    "id": 209
+    "id": 224
   },
   {
     "title": "Snake",
@@ -12384,7 +13088,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/snake"
     },
     "url": "https://dmccreary.github.io/microsims/sims/snake/",
-    "id": 210
+    "id": 225
   },
   {
     "title": "Solar Battery",
@@ -12424,7 +13128,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/solar-battery"
     },
     "url": "https://dmccreary.github.io/microsims/sims/solar-battery/",
-    "id": 211
+    "id": 226
   },
   {
     "title": "Solar Cell",
@@ -12464,7 +13168,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/solar-cell"
     },
     "url": "https://dmccreary.github.io/microsims/sims/solar-cell/",
-    "id": 212
+    "id": 227
   },
   {
     "title": "Sphere",
@@ -12504,7 +13208,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/sphere"
     },
     "url": "https://dmccreary.github.io/microsims/sims/sphere/",
-    "id": 213
+    "id": 228
   },
   {
     "microsim": {
@@ -12622,7 +13326,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/spinning-3d-shapes"
     },
     "url": "https://dmccreary.github.io/microsims/sims/spinning-3d-shapes/",
-    "id": 214
+    "id": 229
   },
   {
     "title": "Star Rating",
@@ -12662,7 +13366,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/star-rating"
     },
     "url": "https://dmccreary.github.io/microsims/sims/star-rating/",
-    "id": 215
+    "id": 230
   },
   {
     "title": "String Harmonics",
@@ -12704,7 +13408,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/string-harmonics"
     },
     "url": "https://dmccreary.github.io/microsims/sims/string-harmonics/",
-    "id": 216
+    "id": 231
   },
   {
     "title": "Supply And Demand",
@@ -12744,7 +13448,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/supply-and-demand"
     },
     "url": "https://dmccreary.github.io/microsims/sims/supply-and-demand/",
-    "id": 217
+    "id": 232
   },
   {
     "microsim": {
@@ -12918,7 +13622,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/temp-and-pressure"
     },
     "url": "https://dmccreary.github.io/microsims/sims/temp-and-pressure/",
-    "id": 218
+    "id": 233
   },
   {
     "title": "Title",
@@ -12958,7 +13662,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/template"
     },
     "url": "https://dmccreary.github.io/microsims/sims/template/",
-    "id": 219
+    "id": 234
   },
   {
     "title": "Virus Spread Simulation",
@@ -13016,7 +13720,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/virus"
     },
     "url": "https://dmccreary.github.io/microsims/sims/virus/",
-    "id": 220
+    "id": 235
   },
   {
     "title": "Wave Sums and Fourier Synthesis",
@@ -13075,7 +13779,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/wave-sums"
     },
     "url": "https://dmccreary.github.io/microsims/sims/wave-sums/",
-    "id": 221
+    "id": 236
   },
   {
     "title": "Yin Yang",
@@ -13115,7 +13819,7 @@
       "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/yin-yang"
     },
     "url": "https://dmccreary.github.io/microsims/sims/yin-yang/",
-    "id": 222
+    "id": 237
   },
   {
     "title": "AI and ML Taxonomy in Healthcare",
@@ -13156,7 +13860,7 @@
       "github_url": "https://github.com/dmccreary/modeling-healthcare-data/tree/main/docs/sims/ai-ml-taxonomy"
     },
     "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/ai-ml-taxonomy/",
-    "id": 223
+    "id": 238
   },
   {
     "title": "Patient Encounter Workflow",
@@ -13263,7 +13967,7 @@
       "github_url": "https://github.com/dmccreary/modeling-healthcare-data/tree/main/docs/sims/encounter-workflow"
     },
     "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/encounter-workflow/",
-    "id": 224
+    "id": 239
   },
   {
     "title": "Yin-Yang: LLM vs Knowledge Graph",
@@ -13369,7 +14073,7 @@
       "github_url": "https://github.com/dmccreary/modeling-healthcare-data/tree/main/docs/sims/yin-yang-llm-kg"
     },
     "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/yin-yang-llm-kg/",
-    "id": 225
+    "id": 240
   },
   {
     "title": "Battery Life Calculator for LED Noodle Costumes",
@@ -13604,7 +14308,7 @@
       "github_url": "https://github.com/dmccreary/moving-rainbow/tree/main/docs/sims/battery-life-calculator"
     },
     "url": "https://dmccreary.github.io/moving-rainbow/sims/battery-life-calculator/",
-    "id": 226
+    "id": 241
   },
   {
     "title": "Interactive Account Reconciliation Process",
@@ -13675,7 +14379,374 @@
       "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/account-reconciliation"
     },
     "url": "https://dmccreary.github.io/personal-finance/sims/account-reconciliation/",
-    "id": 227
+    "id": 242
+  },
+  {
+    "title": "Active vs Indexed Fund Comparison",
+    "description": "Interactive simulation comparing investment growth between actively managed funds with fees and zero-fee index funds over time, demonstrating the compounding impact of investment fees.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Investment Fees",
+      "Index Funds",
+      "Active Management",
+      "Compound Interest",
+      "Personal Finance"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Investment Fees",
+      "Index Funds",
+      "Actively Managed Funds",
+      "Compound Returns",
+      "Long-term Investing"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Percentages"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "active-vs-indexed",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/active-vs-indexed"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/active-vs-indexed/",
+    "id": 243
+  },
+  {
+    "title": "Auto Loan Payback Calculator",
+    "description": "Interactive simulation showing how loan term length affects monthly payments, total interest, and the underwater period when you owe more than the car is worth.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Auto Loans",
+      "Car Financing",
+      "Depreciation",
+      "Personal Finance"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Loan Term",
+      "Monthly Payment",
+      "Interest",
+      "Depreciation",
+      "Underwater Loan"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Loans"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "auto-loan-payback",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/auto-loan-payback"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/auto-loan-payback/",
+    "id": 244
+  },
+  {
+    "title": "Banking Fees Impact Chart",
+    "description": "Interactive stacked bar chart showing the real annual cost of banking fees across three user behavior types, demonstrating how awareness can save hundreds per year.",
+    "creator": "Dan McCreary",
+    "date": "2025-11-20",
+    "subject": [
+      "Banking Fees",
+      "Financial Awareness",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Banking Fees",
+      "Overdraft",
+      "ATM Fees",
+      "Maintenance Fees",
+      "Fee Avoidance"
+    ],
+    "prerequisites": [
+      "Basic Understanding of Bank Accounts"
+    ],
+    "library": "Chart.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "banking-fees-impact",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/banking-fees-impact"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/banking-fees-impact/",
+    "id": 245
+  },
+  {
+    "title": "College Loan Payback Calculator",
+    "description": "Interactive simulation helping students calculate repayment time for college loans based on years in school, tuition costs, interest rates, and monthly payments.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Student Loans",
+      "College Costs",
+      "Loan Repayment",
+      "Personal Finance"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School",
+    "audience": "High School Juniors and Seniors",
+    "bloomLevel": [
+      "Apply",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Student Loans",
+      "Interest Rates",
+      "Monthly Payments",
+      "College Costs"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Loans"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "college-loan-payback",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/college-loan-payback"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/college-loan-payback/",
+    "id": 246
+  },
+  {
+    "title": "Compound Interest Visualizer",
+    "description": "Interactive visualization demonstrating how compound interest grows savings over time with adjustable principal, interest rate, and time period.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Compound Interest",
+      "Savings",
+      "Investing",
+      "Personal Finance"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Compound Interest",
+      "Principal",
+      "Time Value of Money",
+      "Exponential Growth"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Percentages"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "compound-interest-visualizer",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/compound-interest-visualizer"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/compound-interest-visualizer/",
+    "id": 247
+  },
+  {
+    "title": "FICO Credit Score Spectrum",
+    "description": "Interactive visualization showing the FICO credit score ranges from 300-850 with color-coded categories and descriptions of each score range.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Credit Score",
+      "FICO",
+      "Credit Rating",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Remember",
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "FICO Score",
+      "Credit Rating",
+      "Credit Categories",
+      "Creditworthiness"
+    ],
+    "prerequisites": [
+      "Basic Understanding of Borrowing"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "fico-score-spectrum",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/fico-score-spectrum"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/fico-score-spectrum/",
+    "id": 248
+  },
+  {
+    "title": "Learning Graph Viewer",
+    "description": "Interactive visualization tool for exploring concept dependencies in learning graphs with search, filtering, and statistics features.",
+    "creator": "Dan McCreary",
+    "date": "2024-06-15",
+    "subject": [
+      "Learning Graph",
+      "Concept Dependencies",
+      "Educational Technology",
+      "Knowledge Visualization"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "All Levels",
+    "audience": "Students, Educators, Curriculum Designers",
+    "bloomLevel": [
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Concept Dependencies",
+      "Learning Paths",
+      "Prerequisite Knowledge",
+      "Knowledge Graphs"
+    ],
+    "prerequisites": [
+      "Basic Graph Understanding"
+    ],
+    "library": "vis.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "graph-viewer",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/graph-viewer"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/graph-viewer/",
+    "id": 249
+  },
+  {
+    "title": "Annual US Inflation Rate",
+    "description": "Interactive chart showing the annual average inflation rate in the US from 1995 to 2025, demonstrating how prices change over time.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Inflation",
+      "Economics",
+      "Consumer Price Index",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Inflation",
+      "CPI",
+      "Purchasing Power",
+      "Economic Indicators"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Percentages"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "inflation-rate",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/inflation-rate"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/inflation-rate/",
+    "id": 250
+  },
+  {
+    "title": "Annual US Interest Rate for Prior 30 Years",
+    "description": "Interactive chart showing the annual average Federal Funds interest rate in the US from 1995 to 2025, with historical context and economic analysis.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Interest Rates",
+      "Federal Reserve",
+      "Monetary Policy",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Federal Funds Rate",
+      "Monetary Policy",
+      "Economic Cycles",
+      "Interest Rate Impact"
+    ],
+    "prerequisites": [
+      "Basic Economics",
+      "Understanding of Borrowing"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "interest-rate",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/interest-rate"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/interest-rate/",
+    "id": 251
   },
   {
     "title": "Needs vs Wants Categorization Game",
@@ -13825,7 +14896,170 @@
       "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/needs-and-wants"
     },
     "url": "https://dmccreary.github.io/personal-finance/sims/needs-and-wants/",
-    "id": 228
+    "id": 252
+  },
+  {
+    "title": "Social Security Benefits Calculator",
+    "description": "Interactive visualization showing how Social Security claiming age affects lifetime benefits, with breakeven analysis for different starting ages.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Social Security",
+      "Retirement Planning",
+      "Benefits",
+      "Personal Finance"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Adults Planning Retirement",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Social Security",
+      "Claiming Age",
+      "Breakeven Analysis",
+      "Lifetime Benefits",
+      "Retirement Planning"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Retirement Concepts"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "social-security-crossover",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/social-security-crossover"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/social-security-crossover/",
+    "id": 253
+  },
+  {
+    "title": "Historical Stock Market Returns",
+    "description": "Interactive bar chart showing S&P 500 annual returns from 1995 to 2024 with hover tooltips explaining market influences each year.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Stock Market",
+      "Investing",
+      "S&P 500",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Stock Market Returns",
+      "Volatility",
+      "Economic Cycles",
+      "Long-term Investing"
+    ],
+    "prerequisites": [
+      "Basic Math",
+      "Understanding of Percentages"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "stock-market-returns",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/stock-market-returns"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/stock-market-returns/",
+    "id": 254
+  },
+  {
+    "title": "US Treasury Bills Yield",
+    "description": "Interactive chart showing historical Treasury Bill yields and their relationship to Federal Reserve policy and economic conditions.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Treasury Bills",
+      "Fixed Income",
+      "Interest Rates",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Young Adults",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Treasury Bills",
+      "Yield",
+      "Risk-Free Rate",
+      "Government Securities"
+    ],
+    "prerequisites": [
+      "Basic Understanding of Interest Rates"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "t-bills",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/t-bills"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/t-bills/",
+    "id": 255
+  },
+  {
+    "title": "US Treasury Yield Curve Spread Chart",
+    "description": "Interactive visualization showing the spread between 10-year and 2-year Treasury rates, an important economic indicator for predicting recessions.",
+    "creator": "Dan McCreary",
+    "date": "2024-01-15",
+    "subject": [
+      "Yield Curve",
+      "Treasury Securities",
+      "Economic Indicators",
+      "Personal Finance"
+    ],
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "educationalLevel": "High School / Introductory College",
+    "audience": "High School Students, Economics Students, Investors",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Yield Curve",
+      "Interest Rate Spread",
+      "Recession Prediction",
+      "Economic Cycles"
+    ],
+    "prerequisites": [
+      "Basic Understanding of Interest Rates",
+      "Treasury Securities"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "personal-finance",
+      "sim": "yield-curve",
+      "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/yield-curve"
+    },
+    "url": "https://dmccreary.github.io/personal-finance/sims/yield-curve/",
+    "id": 256
   },
   {
     "title": "The Accelerating Pace of AI",
@@ -13868,7 +15102,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/ai-pace-accelerating"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/ai-pace-accelerating/",
-    "id": 229
+    "id": 257
   },
   {
     "title": "Bass and Treble Amplifier Controls",
@@ -13912,7 +15146,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/base-and-treble"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/base-and-treble/",
-    "id": 230
+    "id": 258
   },
   {
     "title": "Bloom's Taxonomy",
@@ -13955,7 +15189,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/blooms-taxonomy"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/blooms-taxonomy/",
-    "id": 231
+    "id": 259
   },
   {
     "title": "Book Build Workflow",
@@ -13998,7 +15232,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/book-gen-workflow"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/book-gen-workflow/",
-    "id": 232
+    "id": 260
   },
   {
     "title": "Book Levels MicroSim",
@@ -14041,7 +15275,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/book-levels"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/book-levels/",
-    "id": 233
+    "id": 261
   },
   {
     "title": "Citation Graph for FFT on Microcontrollers",
@@ -14085,7 +15319,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/citation-graph"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/citation-graph/",
-    "id": 234
+    "id": 262
   },
   {
     "title": "Complex Plane",
@@ -14133,7 +15367,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/complex-plane"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/complex-plane/",
-    "id": 235
+    "id": 263
   },
   {
     "title": "Convolution",
@@ -14179,7 +15413,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/convolution"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/convolution/",
-    "id": 236
+    "id": 264
   },
   {
     "title": "Euler's Formula Explorer",
@@ -14227,7 +15461,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/euler-formula-explorer"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/euler-formula-explorer/",
-    "id": 237
+    "id": 265
   },
   {
     "title": "FFT Three Oscillators",
@@ -14272,7 +15506,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-3-osc"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-3-osc/",
-    "id": 238
+    "id": 266
   },
   {
     "title": "Basic FFT MicroSim",
@@ -14319,7 +15553,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-basic"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-basic/",
-    "id": 239
+    "id": 267
   },
   {
     "title": "FFT Butterfly",
@@ -14363,7 +15597,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-butterfly"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-butterfly/",
-    "id": 240
+    "id": 268
   },
   {
     "title": "FFT Live Audio from Microphone",
@@ -14407,7 +15641,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-live-audio"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-live-audio/",
-    "id": 241
+    "id": 269
   },
   {
     "title": "Microphone Frequency Visualization with FFT",
@@ -14451,7 +15685,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-mic"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-mic/",
-    "id": 242
+    "id": 270
   },
   {
     "title": "FFT Size MicroSim",
@@ -14496,7 +15730,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-size"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-size/",
-    "id": 243
+    "id": 271
   },
   {
     "title": "FFT of Sound File",
@@ -14540,7 +15774,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-sound-file"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-sound-file/",
-    "id": 244
+    "id": 272
   },
   {
     "title": "FFT Waveform Types",
@@ -14587,7 +15821,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-waveform-types"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/fft-waveform-types/",
-    "id": 245
+    "id": 273
   },
   {
     "title": "Learning Graph Viewer",
@@ -14630,7 +15864,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/graph-viewer"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/graph-viewer/",
-    "id": 246
+    "id": 274
   },
   {
     "title": "Learning Graph Viewer V1",
@@ -14672,7 +15906,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/graph-viewer-v1"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/graph-viewer-v1/",
-    "id": 247
+    "id": 275
   },
   {
     "title": "Sound Reverb Effect",
@@ -14715,7 +15949,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/reverb"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/reverb/",
-    "id": 248
+    "id": 276
   },
   {
     "title": "Sine Wave",
@@ -14760,7 +15994,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/sine-wave"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/sine-wave/",
-    "id": 249
+    "id": 277
   },
   {
     "title": "Synth Timeline",
@@ -14802,7 +16036,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/synth-timeline"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/synth-timeline/",
-    "id": 250
+    "id": 278
   },
   {
     "title": "Tone Generator",
@@ -14845,7 +16079,7 @@
       "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/tone-gen"
     },
     "url": "https://dmccreary.github.io/signal-processing/sims/tone-gen/",
-    "id": 251
+    "id": 279
   },
   {
     "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
@@ -14949,7 +16183,7 @@
       "github_url": "https://github.com/dmccreary/systems-thinking/tree/main/docs/sims/leverage-iceberg"
     },
     "url": "https://dmccreary.github.io/systems-thinking/sims/leverage-iceberg/",
-    "id": 252
+    "id": 280
   },
   {
     "title": "AI Benchmarks Timeline",
@@ -14989,7 +16223,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-benchmarks-timeline"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-benchmarks-timeline/",
-    "id": 253
+    "id": 281
   },
   {
     "title": "Causes of AI Acceleration",
@@ -15035,7 +16269,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-causes"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-causes/",
-    "id": 254
+    "id": 282
   },
   {
     "title": "AI Capability Maturity Model Infographic",
@@ -15081,7 +16315,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-cmm"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-cmm/",
-    "id": 255
+    "id": 283
   },
   {
     "title": "AI Doubling Rate",
@@ -15122,7 +16356,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-doubling-rate"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-doubling-rate/",
-    "id": 256
+    "id": 284
   },
   {
     "title": "The AI Flywheel",
@@ -15166,7 +16400,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-flywheel"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-flywheel/",
-    "id": 257
+    "id": 285
   },
   {
     "title": "The Accelerating Pace of AI",
@@ -15204,7 +16438,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-pace-accelerating"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-pace-accelerating/",
-    "id": 258
+    "id": 286
   },
   {
     "title": "AI Task Completion Time Horizons",
@@ -15247,7 +16481,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-task-horizons"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-task-horizons/",
-    "id": 259
+    "id": 287
   },
   {
     "title": "Autoregressive MicroSim",
@@ -15290,7 +16524,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/autoregressive"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/autoregressive/",
-    "id": 260
+    "id": 288
   },
   {
     "title": "Bloom's Taxonomy",
@@ -15333,7 +16567,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/blooms-taxonomy"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/blooms-taxonomy/",
-    "id": 261
+    "id": 289
   },
   {
     "title": "Book Build Workflow",
@@ -15372,7 +16606,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/book-gen-workflow"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-gen-workflow/",
-    "id": 262
+    "id": 290
   },
   {
     "title": "Book Levels MicroSim",
@@ -15413,7 +16647,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/book-levels"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-levels/",
-    "id": 263
+    "id": 291
   },
   {
     "title": "Four AI Futures MicroSim",
@@ -15454,7 +16688,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/four-futures"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/four-futures/",
-    "id": 264
+    "id": 292
   },
   {
     "title": "Technology Hype Cycle Infographic",
@@ -15498,7 +16732,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/hype-cycle"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/hype-cycle/",
-    "id": 265
+    "id": 293
   },
   {
     "title": "Generative AI Idea Funnel",
@@ -15543,7 +16777,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/idea-funnel"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/idea-funnel/",
-    "id": 266
+    "id": 294
   },
   {
     "title": "Learning Graph for Deep Learning Course",
@@ -15582,7 +16816,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/learning-graph"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/learning-graph/",
-    "id": 267
+    "id": 295
   },
   {
     "title": "Language Model Arena Timeline",
@@ -15623,7 +16857,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/lm-arena-timeline"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/lm-arena-timeline/",
-    "id": 268
+    "id": 296
   },
   {
     "title": "MMLU Timeline MicroSim",
@@ -15664,7 +16898,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/mmlu-timeline"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/mmlu-timeline/",
-    "id": 269
+    "id": 297
   },
   {
     "title": "Moore's Law Timeline",
@@ -15707,7 +16941,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/moores-law"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/moores-law/",
-    "id": 270
+    "id": 298
   },
   {
     "title": "Porter's Five Forces Model",
@@ -15751,7 +16985,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/porters-five-forces"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/porters-five-forces/",
-    "id": 271
+    "id": 299
   },
   {
     "title": "Power Wall MicroSim",
@@ -15794,7 +17028,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/power-wall"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/power-wall/",
-    "id": 272
+    "id": 300
   },
   {
     "title": "Projecting AI Task Completion to 2030",
@@ -15839,7 +17073,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/projecting-ai"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/projecting-ai/",
-    "id": 273
+    "id": 301
   },
   {
     "title": "AI SWOT Analysis",
@@ -15884,7 +17118,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/swot"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/swot/",
-    "id": 274
+    "id": 302
   },
   {
     "title": "Technology Adoption Curve Infographic",
@@ -15930,7 +17164,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/technology-adoption"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/technology-adoption/",
-    "id": 275
+    "id": 303
   },
   {
     "title": "Deep Learning Timeline MicroSim",
@@ -15969,7 +17203,7 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/timeline"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/timeline/",
-    "id": 276
+    "id": 304
   },
   {
     "title": "Tokenizer MicroSim",
@@ -16010,6 +17244,6 @@
       "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/tokenizer"
     },
     "url": "https://dmccreary.github.io/tracking-ai-course/sims/tokenizer/",
-    "id": 277
+    "id": 305
   }
 ]
