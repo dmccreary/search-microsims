@@ -95,3 +95,7 @@
 {"timestamp": "2025-12-04T16:20:57.728649Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "tone-gen", "title": "Tone Generator"}
 {"timestamp": "2025-12-04T16:20:58.325797Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "wordcloud", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/wordcloud"}
 {"timestamp": "2025-12-04T16:20:58.336889Z", "event": "update_completed", "repo": "dmccreary/signal-processing", "sims_found": 34, "metadata_found": 23, "metadata_missing": 11, "added": 23, "updated": 0, "errors": 0}
+{"timestamp": "2025-12-04T16:42:33.873560Z", "event": "update_started", "repo": "https://dmccreary.github.io/data-science-course/"}
+{"timestamp": "2025-12-04T16:42:34.579094Z", "event": "update_completed", "repo": "https://dmccreary.github.io/data-science-course/", "message": "No sims found"}
+{"timestamp": "2025-12-04T16:58:35.337026Z", "event": "update_started", "repo": "https://dmccreary.github.io/clocks-and-watches"}
+{"timestamp": "2025-12-04T16:58:36.038878Z", "event": "update_completed", "repo": "https://dmccreary.github.io/clocks-and-watches", "message": "No sims found"}
