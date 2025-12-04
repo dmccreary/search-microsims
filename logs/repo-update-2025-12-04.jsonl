@@ -59,3 +59,39 @@
 {"timestamp": "2025-12-04T14:44:21.269671Z", "event": "metadata_found", "repo": "dmccreary/geometry-course", "sim": "word-cloud", "title": "Geometry Word Cloud"}
 {"timestamp": "2025-12-04T14:44:21.855600Z", "event": "missing_metadata", "repo": "dmccreary/geometry-course", "sim": "workflow", "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/workflow"}
 {"timestamp": "2025-12-04T14:44:21.862899Z", "event": "update_completed", "repo": "dmccreary/geometry-course", "sims_found": 27, "metadata_found": 25, "metadata_missing": 2, "added": 25, "updated": 0, "errors": 0}
+{"timestamp": "2025-12-04T16:20:36.878234Z", "event": "update_started", "repo": "dmccreary/signal-processing"}
+{"timestamp": "2025-12-04T16:20:38.430064Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "ai-pace-accelerating", "title": "The Accelerating Pace of AI"}
+{"timestamp": "2025-12-04T16:20:39.029430Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "analog-mod", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/analog-mod"}
+{"timestamp": "2025-12-04T16:20:39.652407Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "base-and-treble", "title": "Bass and Treble Amplifier Controls"}
+{"timestamp": "2025-12-04T16:20:40.263844Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "blooms-taxonomy", "title": "Bloom's Taxonomy"}
+{"timestamp": "2025-12-04T16:20:40.862592Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "book-gen-workflow", "title": "Book Build Workflow"}
+{"timestamp": "2025-12-04T16:20:41.475293Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "book-levels", "title": "Book Levels MicroSim"}
+{"timestamp": "2025-12-04T16:20:42.099317Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "citation-graph", "title": "Citation Graph for FFT on Microcontrollers"}
+{"timestamp": "2025-12-04T16:20:42.719017Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "complex-plane", "title": "Complex Plane"}
+{"timestamp": "2025-12-04T16:20:43.328758Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "convolution", "title": "Convolution"}
+{"timestamp": "2025-12-04T16:20:43.939594Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "euler-formula-explorer", "title": "Euler's Formula Explorer"}
+{"timestamp": "2025-12-04T16:20:44.526802Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "fft-2-osc", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-2-osc"}
+{"timestamp": "2025-12-04T16:20:45.131275Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-3-osc", "title": "FFT Three Oscillators"}
+{"timestamp": "2025-12-04T16:20:45.750279Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-basic", "title": "Basic FFT MicroSim"}
+{"timestamp": "2025-12-04T16:20:46.360359Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-butterfly", "title": "FFT Butterfly"}
+{"timestamp": "2025-12-04T16:20:46.964854Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-live-audio", "title": "FFT Live Audio from Microphone"}
+{"timestamp": "2025-12-04T16:20:47.581826Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-mic", "title": "Microphone Frequency Visualization with FFT"}
+{"timestamp": "2025-12-04T16:20:48.180202Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-size", "title": "FFT Size MicroSim"}
+{"timestamp": "2025-12-04T16:20:48.785537Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-sound-file", "title": "FFT of Sound File"}
+{"timestamp": "2025-12-04T16:20:49.403962Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "fft-waveform-types", "title": "FFT Waveform Types"}
+{"timestamp": "2025-12-04T16:20:49.984975Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "frequency-detection", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/frequency-detection"}
+{"timestamp": "2025-12-04T16:20:50.589921Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "graph-viewer-v1", "title": "Learning Graph Viewer V1"}
+{"timestamp": "2025-12-04T16:20:51.206189Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2025-12-04T16:20:51.788550Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "mobius-transform", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/mobius-transform"}
+{"timestamp": "2025-12-04T16:20:52.373239Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "nyquist-shannon-sampling", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/nyquist-shannon-sampling"}
+{"timestamp": "2025-12-04T16:20:52.965879Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "openai-gpts", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/openai-gpts"}
+{"timestamp": "2025-12-04T16:20:53.547734Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "rc-lowpass-filter", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/rc-lowpass-filter"}
+{"timestamp": "2025-12-04T16:20:54.145769Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "reverb", "title": "Sound Reverb Effect"}
+{"timestamp": "2025-12-04T16:20:54.776063Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "sine-wave", "title": "Sine Wave"}
+{"timestamp": "2025-12-04T16:20:55.384066Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "synth-timeline", "title": "Synth Timeline"}
+{"timestamp": "2025-12-04T16:20:55.964071Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "template", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/template"}
+{"timestamp": "2025-12-04T16:20:56.544819Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "templates", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/templates"}
+{"timestamp": "2025-12-04T16:20:57.123531Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "timeline-viewer", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/timeline-viewer"}
+{"timestamp": "2025-12-04T16:20:57.728649Z", "event": "metadata_found", "repo": "dmccreary/signal-processing", "sim": "tone-gen", "title": "Tone Generator"}
+{"timestamp": "2025-12-04T16:20:58.325797Z", "event": "missing_metadata", "repo": "dmccreary/signal-processing", "sim": "wordcloud", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/wordcloud"}
+{"timestamp": "2025-12-04T16:20:58.336889Z", "event": "update_completed", "repo": "dmccreary/signal-processing", "sims_found": 34, "metadata_found": 23, "metadata_missing": 11, "added": 23, "updated": 0, "errors": 0}
