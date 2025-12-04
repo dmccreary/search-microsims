@@ -1,0 +1,4344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local MicroSims Report</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; border-bottom: 2px solid #007acc; padding-bottom: 10px; }
+        h2 { color: #007acc; margin-top: 30px; }
+        .timestamp { color: #666; font-size: 0.9em; margin-bottom: 20px; }
+        .summary {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .stat {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .stat-value { font-size: 2.5em; font-weight: bold; color: #007acc; }
+        .stat-label { color: #666; margin-top: 5px; }
+        .repo {
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .repo-header {
+            background: #007acc;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .repo-name { font-weight: bold; font-size: 1.2em; }
+        .repo-count {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        .sim-list { padding: 0; margin: 0; }
+        .sim-item {
+            display: grid;
+            grid-template-columns: 1fr 120px 100px;
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .sim-item:last-child { border-bottom: none; }
+        .sim-item:hover { background: #f8f9fa; }
+        .sim-name { font-weight: 500; }
+        .sim-title { color: #666; font-size: 0.9em; margin-top: 3px; }
+        .status {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            text-align: center;
+        }
+        .status-complete { background: #d4edda; color: #155724; }
+        .status-development { background: #fff3cd; color: #856404; }
+        .status-draft { background: #e2e3e5; color: #383d41; }
+        .status-unknown { background: #f8f9fa; color: #6c757d; }
+        .quality-score {
+            text-align: center;
+            font-weight: bold;
+        }
+        .quality-high { color: #28a745; }
+        .quality-medium { color: #ffc107; }
+        .quality-low { color: #dc3545; }
+        .no-metadata { color: #999; font-style: italic; }
+        .missing { color: #dc3545; }
+        a { color: #007acc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Local MicroSims Report</h1>
+    <p class="timestamp">Generated: 2025-12-04 10:28:06</p>
+    <div class="summary">
+        <h2 style="margin-top: 0;">Summary</h2>
+        <div class="summary-stats">
+            <div class="stat">
+                <div class="stat-value">39</div>
+                <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">489</div>
+                <div class="stat-label">Total Sims</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">252</div>
+                <div class="stat-label">With Metadata</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" style="color: #dc3545">237</div>
+                <div class="stat-label">Missing Metadata</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/agents-course" style="color: white;">agents-course</a></span>
+            <span class="repo-count">5 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">agentic-learning-steps</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">five-textbook-levels</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">llm-control-levels</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/algebra-1" style="color: white;">algebra-1</a></span>
+            <span class="repo-count">11 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">algebra-concept-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">coordinate-plane-explorer</div>
+                    <div class="sim-title">Coordinate Plane Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">expression-explorer</div>
+                    <div class="sim-title">Expression Parts Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">high-school-courses</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">integer-ops-number-line</div>
+                    <div class="sim-title">Integer Operations on the Number Line</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">number-system-venn</div>
+                    <div class="sim-title">Number Systems Hierarchy Diagram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">number-systems-mermaid</div>
+                    <div class="sim-title">Untitled</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">number-types-venn-p5</div>
+                    <div class="sim-title">Number Types Venn Diagram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">prime-factorization-tree</div>
+                    <div class="sim-title">Prime Factorization Tree Builder</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">variable-types</div>
+                    <div class="sim-title">Variable Types Interactive Infographic</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/atam" style="color: white;">atam</a></span>
+            <span class="repo-count">1 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">atam</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/beginning-electronics" style="color: white;">beginning-electronics</a></span>
+            <span class="repo-count">7 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">breadboard</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">flip-flop</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">led-resistor-calc</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">led</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">resistor</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/circuits" style="color: white;">circuits</a></span>
+            <span class="repo-count">18 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">animated-switches</div>
+                    <div class="sim-title">Animated Switches MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">animated-wire</div>
+                    <div class="sim-title">Animated Wire MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">background-grid</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">battery</div>
+                    <div class="sim-title">Battery Drawing MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">capacitor</div>
+                    <div class="sim-title">Capacitor Drawing MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">circuit-lib</div>
+                    <div class="sim-title">Circuit Component Library Test</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">circuit-similarity</div>
+                    <div class="sim-title">Circuit Similarity Map</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">current-meter</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">dc-circuit</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">diode</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">falstad-to-json</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">inductor</div>
+                    <div class="sim-title">Inductor Drawing MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">light-bulb</div>
+                    <div class="sim-title">Light Bulb Circuit MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">resistor</div>
+                    <div class="sim-title">Resistor Drawing MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">switch</div>
+                    <div class="sim-title">Switch Drawing MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">wire</div>
+                    <div class="sim-title">Wire MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/clan-macquarrie" style="color: white;">clan-macquarrie</a></span>
+            <span class="repo-count">5 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">clan-sizes</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">migration</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">population-of-ulva</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">surname-population</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">timeline-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/claude-skills" style="color: white;">claude-skills</a></span>
+            <span class="repo-count">35 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">adding-taxonomy-workflow</div>
+                    <div class="sim-title">Adding Taxonomy to CSV Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">average-dependencies-distribution</div>
+                    <div class="sim-title">Average Dependencies Distribution Bar Chart</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-build-workflow</div>
+                    <div class="sim-title">Book Build Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-levels</div>
+                    <div class="sim-title">Book Levels MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">certificate-generator</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">chapter-content-generation-timeline</div>
+                    <div class="sim-title">Chapter Content Generation Workflow Timeline</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">chapter-index-structure</div>
+                    <div class="sim-title">Chapter Index File Structure</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">chapter-organization-workflow</div>
+                    <div class="sim-title">Chapter Organization Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">claude-code-timeline</div>
+                    <div class="sim-title">Evolution of AI: From Neural Networks to Claude Code</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">claude-code-tshirt-design</div>
+                    <div class="sim-title">Claude Code T-Shirt Design - Workflow Diagram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">color-wheel-with-named-colors</div>
+                    <div class="sim-title">Color Wheel with Named Colors</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">concept-length-histogram</div>
+                    <div class="sim-title">Concept Label Length Histogram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">course-description-quality-workflow</div>
+                    <div class="sim-title">Course Description Quality Impact on Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">faq-pattern-analysis</div>
+                    <div class="sim-title">FAQ Question Pattern Analysis Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">git-workflow-skill-development</div>
+                    <div class="sim-title">Git Workflow for Skill Development</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-color-test</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">graph-viewer</div>
+                    <div class="sim-title">Learning Graph Viewer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">install-book-env</div>
+                    <div class="sim-title">Install Book Environment Dependencies</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">learning-graph-json-schema</div>
+                    <div class="sim-title">Learning Graph JSON Schema</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">linear-chain-vs-network</div>
+                    <div class="sim-title">Linear Chain vs Network Structure Comparison</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">microsim-file-relationship-diagram</div>
+                    <div class="sim-title">MicroSim File Relationship Diagram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">mkdocs-build-process</div>
+                    <div class="sim-title">MkDocs Build Process Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">mkdocs-github-pages-deployment</div>
+                    <div class="sim-title">MkDocs GitHub Pages Deployment Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">orphaned-nodes-identification</div>
+                    <div class="sim-title">Orphaned Nodes Identification Chart</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">p5js-architecture</div>
+                    <div class="sim-title">p5.js Architecture and Execution Model</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">security-zones-diagram</div>
+                    <div class="sim-title">Security Zones Diagram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sine-function-plot</div>
+                    <div class="sim-title">Sine Function Visualization</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">skill-context-window</div>
+                    <div class="sim-title">Skill Context Window</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">skill-directory-structure</div>
+                    <div class="sim-title">Skill Directory Structure</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">skill-impact-chart</div>
+                    <div class="sim-title">Skill Development Priority Matrix Visualization</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">skill-installation-workflow</div>
+                    <div class="sim-title">Skill Installation Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">taxonomy-distribution-pie</div>
+                    <div class="sim-title">Taxonomy Distribution Pie Chart</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">terminal-workflow-textbook</div>
+                    <div class="sim-title">Terminal Workflow for Textbook Development</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">test-world-cities</div>
+                    <div class="sim-title">Major World Cities</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">three-color-dfs</div>
+                    <div class="sim-title">Three-Color DFS Cycle Detection</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/clocks-and-watches" style="color: white;">clocks-and-watches</a></span>
+            <span class="repo-count">12 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">4-digits</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">analog-clock</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">architectural-levels</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">battery-drain</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">binary-clock</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">binary-number</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">seven-segment-display</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">shift-register</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">stopwatch</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">themes</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/conversational-ai" style="color: white;">conversational-ai</a></span>
+            <span class="repo-count">6 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ai-performance-chart</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ai-timeline</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">chatbot-latency-breakdown</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">regex-matcher</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">text-processing-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/data-science-course" style="color: white;">data-science-course</a></span>
+            <span class="repo-count">12 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">bell-curve</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">book-gen-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">data-science-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ds-prog-lang</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">four-types-of-data</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">least-squares</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">microsim-lists</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">normal-dice-distribution</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">pair-dice-sum-distribution</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ten-stats</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/digital-electronics" style="color: white;">digital-electronics</a></span>
+            <span class="repo-count">4 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">flip-flop</div>
+                    <div class="sim-title">Flip Flop MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">logic-gates</div>
+                    <div class="sim-title">Logic Gates MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">shift-register</div>
+                    <div class="sim-title">Shift Register MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/ethics-course" style="color: white;">ethics-course</a></span>
+            <span class="repo-count">8 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ethics-education-timeline</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">harm-bubble-chart</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">leverage-iceberg</div>
+                    <div class="sim-title">Leverage Points Iceberg</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ranking</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">technology-adoption</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">tobacco-system</div>
+                    <div class="sim-title">Tobacco Industry System Components</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/fft-benchmarking" style="color: white;">fft-benchmarking</a></span>
+            <span class="repo-count">1 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/genai-arch-patterns" style="color: white;">genai-arch-patterns</a></span>
+            <span class="repo-count">3 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">arch-pattern-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ea-drawing-tools</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/geometry-course" style="color: white;">geometry-course</a></span>
+            <span class="repo-count">27 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">angle-pairs</div>
+                    <div class="sim-title">Angle Pairs</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">angle-type-explorer</div>
+                    <div class="sim-title">Angle Type Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">area-formulas-quadrilaterals</div>
+                    <div class="sim-title">Area Formulas for Quadrilaterals</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">circle-area-calculator</div>
+                    <div class="sim-title">Circle Area Calculator MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">circle-area-explorer</div>
+                    <div class="sim-title">Circle Area Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">collinear-coplanar-points</div>
+                    <div class="sim-title">Collinear and Coplanar Points</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">comp-and-sup-angles</div>
+                    <div class="sim-title">Complementary and Supplementary Angles</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">cords</div>
+                    <div class="sim-title">Chords</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">cosine</div>
+                    <div class="sim-title">Cosine as a Ratio</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">degrees-vs-radians</div>
+                    <div class="sim-title">Degrees vs Radians</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">distance-formula</div>
+                    <div class="sim-title">Distance Formula Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">graph-viewer</div>
+                    <div class="sim-title">Learning Graph Viewer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">koch-fractal</div>
+                    <div class="sim-title">Koch Fractal</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">line-relationships-3d</div>
+                    <div class="sim-title">Line Relationships in 3D</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">make-lines-parallel</div>
+                    <div class="sim-title">Make Lines Parallel</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">point-line-explorer</div>
+                    <div class="sim-title">Points and Lines Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">point-line-plane</div>
+                    <div class="sim-title">Point, Line, Plane - The Three Undefined Terms</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">pythagorean-theorem</div>
+                    <div class="sim-title">Pythagorean Theorem</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">regular-polygon-explorer-quiz</div>
+                    <div class="sim-title">Regular Polygon Explorer Quiz</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">regular-polygon-explorer</div>
+                    <div class="sim-title">Regular Polygon Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sierpinski-triangles</div>
+                    <div class="sim-title">Untitled</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sine-and-cosine-circle</div>
+                    <div class="sim-title">Sine and Cosine Circle</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">triangle-area-explorer</div>
+                    <div class="sim-title">Triangle Area Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">triangle-congruence</div>
+                    <div class="sim-title">Triangle Congruence</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">word-cloud</div>
+                    <div class="sim-title">Geometry Word Cloud</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/graph-algorithms" style="color: white;">graph-algorithms</a></span>
+            <span class="repo-count">17 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">bfs-vs-dfs</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">bfs</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">clustering</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">dag-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">data-element-match</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">degree-v2</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">degree</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">force</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">legends</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">matching</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">page-rank</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">shortest-path</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">spanning-tree</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">traveling-salesperson</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">weighted-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/graph-data-modeling-course" style="color: white;">graph-data-modeling-course</a></span>
+            <span class="repo-count">3 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">customer-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/graph-lms" style="color: white;">graph-lms</a></span>
+            <span class="repo-count">5 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-ila</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">sample-arch</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">tla-vis</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">xapi-demo</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/intelligent-book-template" style="color: white;">intelligent-book-template</a></span>
+            <span class="repo-count">5 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">name_01</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">name_02</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">name_03</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/intelligent-textbooks" style="color: white;">intelligent-textbooks</a></span>
+            <span class="repo-count">24 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">addie-workflow</div>
+                    <div class="sim-title">ADDIE Workflow Interactive Model</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ai-flywheel</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ai-pace-accelerating</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">blooms-taxonomy</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">book-gen-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">book-levels</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">cognitive-load</div>
+                    <div class="sim-title">Cognitive Load Visualizer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">high-school-courses</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">implementation-matrix</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">kemp-model</div>
+                    <div class="sim-title">Kemp Design Model Interactive Visualization</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">levels-of-interactivity</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">metr-task-horizon</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">privacy-threshold-chart</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">question-color-update</div>
+                    <div class="sim-title">Question-Based Learning Graph Update</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">sae-comparison</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sam-process</div>
+                    <div class="sim-title">SAM: Successive Approximation Model Process</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">sine-wave</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">standards-ecosystem</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">terms-to-ekg</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">textbook-ecosystem-cld</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">three-color-dfs</div>
+                    <div class="sim-title">Three-Color DFS Cycle Detection</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">word-cloud</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/intro-to-graph" style="color: white;">intro-to-graph</a></span>
+            <span class="repo-count">6 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">knowledge-triangle</div>
+                    <div class="sim-title">Knowledge Triangle</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">minimum-spanning-tree</div>
+                    <div class="sim-title">Minimum Spanning Tree Algorithm Visualizer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">multi-hop-comparison</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">org-chart</div>
+                    <div class="sim-title">Organization Chart Visualization</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">rdbms-vs-graph-performance</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/intro-to-physics-course" style="color: white;">intro-to-physics-course</a></span>
+            <span class="repo-count">4 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">branches-of-physics</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer-v1</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">scientific-method</div>
+                    <div class="sim-title">Scientific Method Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/it-management-graph" style="color: white;">it-management-graph</a></span>
+            <span class="repo-count">9 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">deployment-dag</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">it-asset-hierarchy</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">it-graph-nodes</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">itil-framework-diagram</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">p5-infographic-template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">show-icons</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">skill-impact-chart</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">web-app-architecture</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/lambda-graph-visualization" style="color: white;">lambda-graph-visualization</a></span>
+            <span class="repo-count">3 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">lambda-graph-2-p5</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">lambda-graph-2-vis</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/learning-graphs" style="color: white;">learning-graphs</a></span>
+            <span class="repo-count">8 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">blooms-taxonomy</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-build-workflow</div>
+                    <div class="sim-title">Book Build Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">book-gen-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">concept-to-content-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">learning-is-nonlinear</div>
+                    <div class="sim-title">Learning is Nonlinear</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/learning-micropython" style="color: white;">learning-micropython</a></span>
+            <span class="repo-count">3 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">breadboard</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">concept-importance</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/mccreary-heritage" style="color: white;">mccreary-heritage</a></span>
+            <span class="repo-count">8 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">ancestor-locations</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">book-creation-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">cumberland-valley</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">maps</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">migration</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">religion</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">timeline</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/microsims" style="color: white;">microsims</a></span>
+            <span class="repo-count">113 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">555-timer</div>
+                    <div class="sim-title">555 Timer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">a-star</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ac-circuit</div>
+                    <div class="sim-title">Ac Circuit</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-benchmarks-timeline</div>
+                    <div class="sim-title">AI Benchmarks Timeline</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">alu</div>
+                    <div class="sim-title">Alu</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">analog-circuit</div>
+                    <div class="sim-title">Analog Circuit</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">analog-clock</div>
+                    <div class="sim-title">Analog Clock</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">animated-wire</div>
+                    <div class="sim-title">Animated Wire</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">background-grid</div>
+                    <div class="sim-title">Background Grid</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ball-in-rotating-hexagon</div>
+                    <div class="sim-title">Ball In Rotating Hexagon</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">bathtub</div>
+                    <div class="sim-title">Bathtub</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">battery-drain</div>
+                    <div class="sim-title">Battery Drain</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">battery-life</div>
+                    <div class="sim-title">Battery Life</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">bee</div>
+                    <div class="sim-title">Bee</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">bfs-vs-dfs</div>
+                    <div class="sim-title">Bfs Vs Dfs</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">bfs</div>
+                    <div class="sim-title">Bfs</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">binary-number</div>
+                    <div class="sim-title">Binary Number</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-gen-workflow</div>
+                    <div class="sim-title">Book Gen Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">bouncing-ball</div>
+                    <div class="sim-title">Bouncing Ball</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">breadboard</div>
+                    <div class="sim-title">Breadboard</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">brownian-motion</div>
+                    <div class="sim-title">Brownian Motion</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">chemistry</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">circle</div>
+                    <div class="sim-title">Circle</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">circuits</div>
+                    <div class="sim-title">Circuits</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">collision-avoidance-robot</div>
+                    <div class="sim-title">Collision Avoidance Robot</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">color-names</div>
+                    <div class="sim-title">Color Names</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">color-wheel-with-named-colors</div>
+                    <div class="sim-title">Color Wheel with Named Colors</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">color-wheel</div>
+                    <div class="sim-title">Color Wheel Harmonies</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">conway-game-of-life</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">conway-old</div>
+                    <div class="sim-title">Conway</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">css-box-model</div>
+                    <div class="sim-title">CSS Box Model</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">curve</div>
+                    <div class="sim-title">Curve</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">data-element-mapper</div>
+                    <div class="sim-title">Data Element Mapper</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-butterfly</div>
+                    <div class="sim-title">Fft Butterfly</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-mic-v2</div>
+                    <div class="sim-title">Fft Mic V2</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-mic</div>
+                    <div class="sim-title">Microphone Frequency Visualization with FFT</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">fft-simple</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fibonacci-clock</div>
+                    <div class="sim-title">Fibonacci Clock</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">flashcards</div>
+                    <div class="sim-title">Flashcards</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">flex-layout-playground</div>
+                    <div class="sim-title">Flex Layout Playground</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">flower-petal</div>
+                    <div class="sim-title">Flower Petal Designer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">force-directed-graph</div>
+                    <div class="sim-title">Force Directed Graph</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fourier</div>
+                    <div class="sim-title">Fourier</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fractal-tree</div>
+                    <div class="sim-title">Fractal Tree</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">galton-board</div>
+                    <div class="sim-title">Galton Board</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">global-impact</div>
+                    <div class="sim-title">Global Impact of MicroSims</div>
+                </div>
+                <div class="status status-development">in development</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">gold-star</div>
+                    <div class="sim-title">Gold Star</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">h-bridge</div>
+                    <div class="sim-title">H Bridge</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">icons</div>
+                    <div class="sim-title">Icons Demo</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">koch</div>
+                    <div class="sim-title">Koch Curve Fractal</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">lady-bug-walk</div>
+                    <div class="sim-title">Lady Bug Walk</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">larson-scanner</div>
+                    <div class="sim-title">Larson Scanner</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">learning-graph-v1</div>
+                    <div class="sim-title">Learning Graph V1</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">learning-graph</div>
+                    <div class="sim-title">Learning Graph</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-modality-effectiveness</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">least-squares</div>
+                    <div class="sim-title">Least Squares</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">lissajous-figures</div>
+                    <div class="sim-title">Lissajous Figures</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">logic-gates</div>
+                    <div class="sim-title">Logic Gates</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">maze-gen</div>
+                    <div class="sim-title">Maze Gen</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">maze-solver</div>
+                    <div class="sim-title">Maze Solver</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">microsim-creation-workflow</div>
+                    <div class="sim-title">AI-Assisted MicroSim Creation Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">microsim-growth</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">microsim-layout</div>
+                    <div class="sim-title">MicroSim Layout Architecture</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">microsim-library-ecosystem</div>
+                    <div class="sim-title">MicroSim Library Ecosystem</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">microsim-uniqueness</div>
+                    <div class="sim-title">MicroSim Uniqueness Interactive Venn Diagram</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">mobile-buttons</div>
+                    <div class="sim-title">Mobile Buttons</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">motor</div>
+                    <div class="sim-title">Motor</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">named-colors</div>
+                    <div class="sim-title">Named Colors</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">neopixel</div>
+                    <div class="sim-title">Neopixel</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">neural-network</div>
+                    <div class="sim-title">Neural Network</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ooda</div>
+                    <div class="sim-title">OODA Loop</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">p5-animation-loop</div>
+                    <div class="sim-title">p5.js Animation Loop Cycle</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">p5-coordinate-system</div>
+                    <div class="sim-title">p5.js Coordinate System</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">p5-timeline</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">particle-fields</div>
+                    <div class="sim-title">Particle Fields</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">pendulum</div>
+                    <div class="sim-title">Pendulum</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">polygon</div>
+                    <div class="sim-title">Polygon</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">prisoners-dilemma</div>
+                    <div class="sim-title">Prisoners Dilemma</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">projectile-motion-gravity</div>
+                    <div class="sim-title">Projectile Motion with Gravity</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">projectile-motion</div>
+                    <div class="sim-title">Projectile Motion</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">projecting-ai</div>
+                    <div class="sim-title">Projecting AI Task Completion to 2030</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">pwm</div>
+                    <div class="sim-title">Pwm</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">pythagorean-theorem</div>
+                    <div class="sim-title">Pythagorean Theorem MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">rabbits-and-foxes</div>
+                    <div class="sim-title">Rabbits And Foxes</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">rainbow-color-picker</div>
+                    <div class="sim-title">Rainbow Color Picker</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">recursion-tree</div>
+                    <div class="sim-title">Recursion Tree</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">resize-in-iframe</div>
+                    <div class="sim-title">Resize In Iframe</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">resize-test</div>
+                    <div class="sim-title">Resize Test</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">responsive-design</div>
+                    <div class="sim-title">Responsive Design</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">robots</div>
+                    <div class="sim-title">Robots</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">rotating-gears</div>
+                    <div class="sim-title">Rotating Gears</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">seven-segment-display</div>
+                    <div class="sim-title">Seven Segment Display</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sierpinski</div>
+                    <div class="sim-title">Sierpinski</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">simple-tree</div>
+                    <div class="sim-title">Simple Tree</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sine-and-cosine</div>
+                    <div class="sim-title">Sine And Cosine</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sine-wave</div>
+                    <div class="sim-title">Sine Wave</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">slope-and-intercept</div>
+                    <div class="sim-title">Slope And Intercept</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">snake</div>
+                    <div class="sim-title">Snake</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">solar-battery</div>
+                    <div class="sim-title">Solar Battery</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">solar-cell</div>
+                    <div class="sim-title">Solar Cell</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sphere</div>
+                    <div class="sim-title">Sphere</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">spinning-3d-shapes</div>
+                    <div class="sim-title">Spinning 3D Shapes</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">star-rating</div>
+                    <div class="sim-title">Star Rating</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">string-harmonics</div>
+                    <div class="sim-title">String Harmonics</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">supply-and-demand</div>
+                    <div class="sim-title">Supply And Demand</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">temp-and-pressure</div>
+                    <div class="sim-title">Temperature and Pressure</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">template</div>
+                    <div class="sim-title">Title</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">three-web-languages</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">thumbnails</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">virus</div>
+                    <div class="sim-title">Virus Spread Simulation</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">wave-sums</div>
+                    <div class="sim-title">Wave Sums and Fourier Synthesis</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">yin-yang</div>
+                    <div class="sim-title">Yin Yang</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/modeling-healthcare-data" style="color: white;">modeling-healthcare-data</a></span>
+            <span class="repo-count">9 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-ml-taxonomy</div>
+                    <div class="sim-title">AI and ML Taxonomy in Healthcare</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">clinical-care-pathway-dag</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">codes</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">encounter-workflow</div>
+                    <div class="sim-title">Patient Encounter Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">healthcare-graph-fundamentals</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">query-performance-comparison</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">view-hc-icons</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">yin-yang-llm-kg</div>
+                    <div class="sim-title">Yin-Yang: LLM vs Knowledge Graph</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/moving-rainbow" style="color: white;">moving-rainbow</a></span>
+            <span class="repo-count">10 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">animated-wire</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">battery-life-calculator</div>
+                    <div class="sim-title">Battery Life Calculator for LED Noodle Costumes</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">color-wheel</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">current-predictor</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">led-dimmer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">nightlight</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">photoresistor-component</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">solar-powered-nightlight</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/personal-finance" style="color: white;">personal-finance</a></span>
+            <span class="repo-count">18 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">account-reconciliation</div>
+                    <div class="sim-title">Interactive Account Reconciliation Process</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">active-vs-indexed</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">auto-loan-payback</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">banking-fees-impact</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">college-loan-payback</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">compound-interest-visualizer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">convolution</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">fico-score-spectrum</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">graph-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">inflation-rate</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">interest-rate</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">needs-and-wants</div>
+                    <div class="sim-title">Needs vs Wants Categorization Game</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">social-security-crossover</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">stock-market-returns</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">t-bills</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">yield-curve</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/prompt-class" style="color: white;">prompt-class</a></span>
+            <span class="repo-count">1 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">bouncing-ball</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/semiconductor-physics-course" style="color: white;">semiconductor-physics-course</a></span>
+            <span class="repo-count">1 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">pn-junction</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/signal-processing" style="color: white;">signal-processing</a></span>
+            <span class="repo-count">34 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-pace-accelerating</div>
+                    <div class="sim-title">The Accelerating Pace of AI</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">analog-mod</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">base-and-treble</div>
+                    <div class="sim-title">Bass and Treble Amplifier Controls</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">blooms-taxonomy</div>
+                    <div class="sim-title">Bloom's Taxonomy</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-gen-workflow</div>
+                    <div class="sim-title">Book Build Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-levels</div>
+                    <div class="sim-title">Book Levels MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">citation-graph</div>
+                    <div class="sim-title">Citation Graph for FFT on Microcontrollers</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">complex-plane</div>
+                    <div class="sim-title">Complex Plane</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">convolution</div>
+                    <div class="sim-title">Convolution</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">euler-formula-explorer</div>
+                    <div class="sim-title">Euler's Formula Explorer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">fft-2-osc</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-3-osc</div>
+                    <div class="sim-title">FFT Three Oscillators</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-basic</div>
+                    <div class="sim-title">Basic FFT MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-butterfly</div>
+                    <div class="sim-title">FFT Butterfly</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-live-audio</div>
+                    <div class="sim-title">FFT Live Audio from Microphone</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-mic</div>
+                    <div class="sim-title">Microphone Frequency Visualization with FFT</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-size</div>
+                    <div class="sim-title">FFT Size MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-sound-file</div>
+                    <div class="sim-title">FFT of Sound File</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">fft-waveform-types</div>
+                    <div class="sim-title">FFT Waveform Types</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">frequency-detection</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">graph-viewer-v1</div>
+                    <div class="sim-title">Learning Graph Viewer V1</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">graph-viewer</div>
+                    <div class="sim-title">Learning Graph Viewer</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">mobius-transform</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">nyquist-shannon-sampling</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">openai-gpts</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">rc-lowpass-filter</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">reverb</div>
+                    <div class="sim-title">Sound Reverb Effect</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">sine-wave</div>
+                    <div class="sim-title">Sine Wave</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">synth-timeline</div>
+                    <div class="sim-title">Synth Timeline</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">timeline-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">tone-gen</div>
+                    <div class="sim-title">Tone Generator</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">wordcloud</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/spectrum-analyzer" style="color: white;">spectrum-analyzer</a></span>
+            <span class="repo-count">5 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">base-and-treble</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">fft-butterfly</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">tone-generator</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">waveform-types</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/stem-robots" style="color: white;">stem-robots</a></span>
+            <span class="repo-count">5 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">collision-avoidance</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">h-bridge</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">learning-graph</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">pwm</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/systems-thinking" style="color: white;">systems-thinking</a></span>
+            <span class="repo-count">13 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">agent-cld</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">cld-creation-workflow</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">cld-editor</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">cld-viewer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">cmm-for-systems-thinking</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">cmm-template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">leverage-iceberg</div>
+                    <div class="sim-title">Leverage Points Iceberg</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">microsim-growth</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">moores-law</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">node-simulation</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">population-simulator</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">toc</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/tour-maps" style="color: white;">tour-maps</a></span>
+            <span class="repo-count">4 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">tartan-generator</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">template</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">tour-map</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">waypoint-map-visualizer</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="repo">
+        <div class="repo-header">
+            <span class="repo-name"><a href="https://github.com/dmccreary/tracking-ai-course" style="color: white;">tracking-ai-course</a></span>
+            <span class="repo-count">26 sims</span>
+        </div>
+        <div class="sim-list">
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-benchmarks-timeline</div>
+                    <div class="sim-title">AI Benchmarks Timeline</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-causes</div>
+                    <div class="sim-title">Causes of AI Acceleration</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-cmm</div>
+                    <div class="sim-title">AI Capability Maturity Model Infographic</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-doubling-rate</div>
+                    <div class="sim-title">AI Doubling Rate</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-flywheel</div>
+                    <div class="sim-title">The AI Flywheel</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-pace-accelerating</div>
+                    <div class="sim-title">The Accelerating Pace of AI</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">ai-task-horizons</div>
+                    <div class="sim-title">AI Task Completion Time Horizons</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">autoregressive</div>
+                    <div class="sim-title">Autoregressive MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">blooms-taxonomy</div>
+                    <div class="sim-title">Bloom's Taxonomy</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-gen-workflow</div>
+                    <div class="sim-title">Book Build Workflow</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">book-levels</div>
+                    <div class="sim-title">Book Levels MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">four-futures</div>
+                    <div class="sim-title">Four AI Futures MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">hype-cycle</div>
+                    <div class="sim-title">Technology Hype Cycle Infographic</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">idea-funnel</div>
+                    <div class="sim-title">Generative AI Idea Funnel</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">learning-graph</div>
+                    <div class="sim-title">Learning Graph for Deep Learning Course</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">lm-arena-timeline</div>
+                    <div class="sim-title">Language Model Arena Timeline</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">mmlu-timeline</div>
+                    <div class="sim-title">MMLU Timeline MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">moores-law</div>
+                    <div class="sim-title">Moore's Law Timeline</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">porters-five-forces</div>
+                    <div class="sim-title">Porter's Five Forces Model</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">power-wall</div>
+                    <div class="sim-title">Power Wall MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">projecting-ai</div>
+                    <div class="sim-title">Projecting AI Task Completion to 2030</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">swot</div>
+                    <div class="sim-title">AI SWOT Analysis</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">technology-adoption</div>
+                    <div class="sim-title">Technology Adoption Curve Infographic</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name no-metadata">templates</div>
+                    <div class="sim-title missing">Missing metadata.json</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">timeline</div>
+                    <div class="sim-title">Deep Learning Timeline MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+            <div class="sim-item">
+                <div>
+                    <div class="sim-name">tokenizer</div>
+                    <div class="sim-title">Tokenizer MicroSim</div>
+                </div>
+                <div class="status status-unknown">—</div>
+                <div class="quality-score ">—</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
