@@ -2624,5 +2624,1066 @@
     },
     "url": "tobacco-system-microsim-v1",
     "id": 45
+  },
+  {
+    "title": "AI Benchmarks Timeline",
+    "description": "Interactive timeline showing key AI benchmarks and when they were introduced, from early question answering to modern specialized benchmarks for coding, math, and professional exams.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Benchmarks",
+      "AI History",
+      "Performance Metrics",
+      "Machine Learning Evaluation",
+      "AI Progress"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, AI Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Remember",
+      "Understand"
+    ],
+    "concepts": [
+      "AI Benchmarks",
+      "Performance Metrics",
+      "Historical Progress"
+    ],
+    "prerequisites": [],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-benchmarks-timeline",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-benchmarks-timeline"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-benchmarks-timeline/",
+    "id": 46
+  },
+  {
+    "title": "Causes of AI Acceleration",
+    "description": "A causal loop diagram showing how AI feedback loops are accelerating AI progress through training data, new algorithms, and better hardware.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Acceleration",
+      "Causal Loop Diagram",
+      "Systems Thinking",
+      "Feedback Loops",
+      "AI Strategy"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Strategy Planners, Business Executives",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Positive Feedback Loops",
+      "AI Training Data",
+      "Algorithm Development",
+      "Hardware Improvement",
+      "Systems Thinking"
+    ],
+    "prerequisites": [
+      "Basic understanding of AI concepts",
+      "Familiarity with systems thinking"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-causes",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-causes"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-causes/",
+    "id": 47
+  },
+  {
+    "title": "AI Capability Maturity Model Infographic",
+    "description": "Interactive infographic showing the five levels of AI organizational maturity from Ad Hoc to Transformative, with detailed descriptions of each stage.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Maturity Model",
+      "Organizational Readiness",
+      "AI Strategy",
+      "Capability Assessment",
+      "Digital Transformation"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Strategy Committees, Business Leaders",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Maturity Models",
+      "AI Readiness",
+      "Organizational Assessment",
+      "Strategic Planning",
+      "AI Adoption"
+    ],
+    "prerequisites": [
+      "Understanding of organizational processes",
+      "Basic AI concepts"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-cmm",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-cmm"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-cmm/",
+    "id": 48
+  },
+  {
+    "title": "AI Doubling Rate",
+    "description": "Analysis and visualization of the time of doubling for AI task completion capabilities, based on METR research showing a 7-month doubling rate.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Growth Rate",
+      "Exponential Growth",
+      "METR Research",
+      "AI Capabilities"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Strategists, Researchers, Executives",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Doubling Rate",
+      "Exponential Growth",
+      "Task Completion"
+    ],
+    "prerequisites": [
+      "Basic understanding of AI capabilities"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-doubling-rate",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-doubling-rate"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-doubling-rate/",
+    "id": 49
+  },
+  {
+    "title": "The AI Flywheel",
+    "description": "An interactive causal loop diagram visualizing the AI flywheel archetype showing how Data, Model, Prediction, and Feedback create a reinforcing cycle.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Flywheel",
+      "Causal Loop Diagram",
+      "Machine Learning Cycle",
+      "Feedback Systems",
+      "Data-Driven AI"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, AI Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Data Collection",
+      "Model Training",
+      "Predictions",
+      "Feedback Loops",
+      "Continuous Improvement"
+    ],
+    "prerequisites": [
+      "Basic understanding of machine learning"
+    ],
+    "library": "vis.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-flywheel",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-flywheel"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-flywheel/",
+    "id": 50
+  },
+  {
+    "title": "The Accelerating Pace of AI",
+    "description": "Interactive visualization demonstrating how AI capabilities are accelerating over time with exponential growth patterns.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Acceleration",
+      "Exponential Growth",
+      "Technology Trends",
+      "AI Progress"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, General Public",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand"
+    ],
+    "concepts": [
+      "Exponential Growth",
+      "AI Progress",
+      "Technology Acceleration"
+    ],
+    "prerequisites": [],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-pace-accelerating",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-pace-accelerating"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-pace-accelerating/",
+    "id": 51
+  },
+  {
+    "title": "AI Task Completion Time Horizons",
+    "description": "Interactive visualization showing how long different AI models can work on tasks before failing, based on METR's research on measuring AI ability to complete long tasks.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Capabilities",
+      "Task Completion",
+      "AI Benchmarks",
+      "METR Research",
+      "Model Comparison"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Researchers, Developers, Strategists",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Task Horizons",
+      "Model Performance",
+      "Success Probability",
+      "Frontier Models"
+    ],
+    "prerequisites": [
+      "Basic understanding of AI models"
+    ],
+    "library": "Chart.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "ai-task-horizons",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/ai-task-horizons"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-task-horizons/",
+    "id": 52
+  },
+  {
+    "title": "Autoregressive MicroSim",
+    "description": "Interactive simulation showing how autoregressive language models predict the next token from a sequence of words using a neural network visualization.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Autoregressive Models",
+      "Language Models",
+      "Neural Networks",
+      "Token Prediction",
+      "Deep Learning"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, AI Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Token Prediction",
+      "Context Window",
+      "Neural Network Layers",
+      "Autoregressive Generation"
+    ],
+    "prerequisites": [
+      "Basic understanding of neural networks"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "autoregressive",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/autoregressive"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/autoregressive/",
+    "id": 53
+  },
+  {
+    "title": "Bloom's Taxonomy",
+    "description": "Interactive infographic showing the six levels of Bloom's Taxonomy with hover infoboxes explaining each cognitive level from Remember to Create.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Bloom's Taxonomy",
+      "Educational Psychology",
+      "Learning Objectives",
+      "Cognitive Levels",
+      "Instructional Design"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Instructional Designers, Students",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Remember",
+      "Understand"
+    ],
+    "concepts": [
+      "Remember",
+      "Understand",
+      "Apply",
+      "Analyze",
+      "Evaluate",
+      "Create"
+    ],
+    "prerequisites": [],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "blooms-taxonomy",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/blooms-taxonomy"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/blooms-taxonomy/",
+    "id": 54
+  },
+  {
+    "title": "Book Build Workflow",
+    "description": "Interactive infographic showing the workflow for generating intelligent textbooks with AI assistance.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Intelligent Textbooks",
+      "AI-Assisted Publishing",
+      "Educational Content",
+      "Workflow Design"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Content Creators, Publishers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Content Generation",
+      "Workflow Design",
+      "AI-Assisted Publishing"
+    ],
+    "prerequisites": [],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "book-gen-workflow",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/book-gen-workflow"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-gen-workflow/",
+    "id": 55
+  },
+  {
+    "title": "Book Levels MicroSim",
+    "description": "Interactive visualization of the five levels of intelligent textbooks from static content to autonomous AI-driven learning experiences.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Intelligent Textbooks",
+      "Educational Technology",
+      "Adaptive Learning",
+      "AI in Education"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "Educators, EdTech Professionals",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Static Textbooks",
+      "Interactive Content",
+      "Adaptive Learning",
+      "AI Chatbots",
+      "Autonomous AI"
+    ],
+    "prerequisites": [],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "book-levels",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/book-levels"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-levels/",
+    "id": 56
+  },
+  {
+    "title": "Four AI Futures MicroSim",
+    "description": "Interactive line chart showing four possible future scenarios for AI development: Growth and Decline, Growth and Flattening, Linear Growth, and Exponential Growth.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Futures",
+      "Scenario Planning",
+      "Technology Forecasting",
+      "Growth Patterns"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Strategists, Policy Makers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Exponential Growth",
+      "Linear Growth",
+      "Scenario Planning",
+      "Technology Forecasting"
+    ],
+    "prerequisites": [],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "four-futures",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/four-futures"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/four-futures/",
+    "id": 57
+  },
+  {
+    "title": "Technology Hype Cycle Infographic",
+    "description": "Interactive visualization of the Gartner Technology Hype Cycle showing the five phases from Technology Trigger to Plateau of Productivity.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Hype Cycle",
+      "Technology Trends",
+      "Innovation Management",
+      "Market Analysis",
+      "Gartner Framework"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "Technology Leaders, Investors, Strategists",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Technology Trigger",
+      "Peak of Inflated Expectations",
+      "Trough of Disillusionment",
+      "Slope of Enlightenment",
+      "Plateau of Productivity"
+    ],
+    "prerequisites": [
+      "Basic understanding of technology trends"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "hype-cycle",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/hype-cycle"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/hype-cycle/",
+    "id": 58
+  },
+  {
+    "title": "Generative AI Idea Funnel",
+    "description": "Interactive infographic showing the seven stages of a GenAI Center of Excellence idea funnel process from training to deployment.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Governance",
+      "Innovation Management",
+      "Center of Excellence",
+      "Idea Management",
+      "AI Strategy"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Leaders, Innovation Managers, Executives",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "concepts": [
+      "Idea Submission",
+      "Expert Review",
+      "Scoring",
+      "Development",
+      "Deployment"
+    ],
+    "prerequisites": [
+      "Understanding of organizational AI adoption"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "idea-funnel",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/idea-funnel"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/idea-funnel/",
+    "id": 59
+  },
+  {
+    "title": "Learning Graph for Deep Learning Course",
+    "description": "Interactive visualization of the learning graph showing concept dependencies for a Deep Learning course.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Learning Graphs",
+      "Concept Dependencies",
+      "Educational Design",
+      "Deep Learning"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Instructional Designers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Learning Graphs",
+      "Concept Dependencies",
+      "Curriculum Design"
+    ],
+    "prerequisites": [],
+    "library": "vis-network",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "learning-graph",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/learning-graph"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/learning-graph/",
+    "id": 60
+  },
+  {
+    "title": "Language Model Arena Timeline",
+    "description": "Interactive visualization of LMArena benchmark rankings showing crowdsourced AI model comparisons using the Bradley-Terry model.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "LLM Benchmarks",
+      "AI Model Comparison",
+      "Crowdsourced Evaluation",
+      "Bradley-Terry Model"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Researchers, Developers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "LLM Benchmarking",
+      "Model Comparison",
+      "Crowdsourced Evaluation"
+    ],
+    "prerequisites": [
+      "Understanding of language models"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "lm-arena-timeline",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/lm-arena-timeline"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/lm-arena-timeline/",
+    "id": 61
+  },
+  {
+    "title": "MMLU Timeline MicroSim",
+    "description": "Interactive visualization showing the progress of AI models on the MMLU (Massive Multitask Language Understanding) benchmark from 2020 to present.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "MMLU Benchmark",
+      "AI Benchmarks",
+      "Language Models",
+      "AI Progress"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Researchers, Developers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "MMLU Benchmark",
+      "Model Performance",
+      "AI Progress"
+    ],
+    "prerequisites": [
+      "Basic understanding of AI benchmarks"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "mmlu-timeline",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/mmlu-timeline"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/mmlu-timeline/",
+    "id": 62
+  },
+  {
+    "title": "Moore's Law Timeline",
+    "description": "Interactive infographic showing the progress of Moore's Law with transistor count growth over time, displayed in both linear and logarithmic scales.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Moore's Law",
+      "Exponential Growth",
+      "Semiconductor Industry",
+      "Computing History",
+      "Technology Trends"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, Technology Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Exponential Growth",
+      "Transistor Density",
+      "Computing Power",
+      "Technological Progress"
+    ],
+    "prerequisites": [
+      "Basic understanding of computer hardware"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "moores-law",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/moores-law"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/moores-law/",
+    "id": 63
+  },
+  {
+    "title": "Porter's Five Forces Model",
+    "description": "Interactive visualization of Porter's Five Forces framework for analyzing competitive dynamics in an industry, with AI-specific applications.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Porter's Five Forces",
+      "Competitive Analysis",
+      "Business Strategy",
+      "Industry Analysis"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "Business Leaders, Strategists, MBA Students",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Competitive Rivalry",
+      "Supplier Power",
+      "Buyer Power",
+      "Threat of Substitutes",
+      "Threat of New Entrants"
+    ],
+    "prerequisites": [
+      "Basic business strategy concepts"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "porters-five-forces",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/porters-five-forces"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/porters-five-forces/",
+    "id": 64
+  },
+  {
+    "title": "Power Wall MicroSim",
+    "description": "Interactive visualization showing the evolution of CPU clock speeds from 1965 to 2025, highlighting the Power Wall phenomenon where thermal constraints limited frequency increases.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Power Wall",
+      "CPU Clock Speed",
+      "Computing History",
+      "Thermal Constraints",
+      "Multi-core Design"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, Technology Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze"
+    ],
+    "concepts": [
+      "Clock Speed",
+      "Power Wall",
+      "Thermal Constraints",
+      "Multi-core Transition"
+    ],
+    "prerequisites": [
+      "Basic understanding of computer hardware"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "power-wall",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/power-wall"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/power-wall/",
+    "id": 65
+  },
+  {
+    "title": "Projecting AI Task Completion to 2030",
+    "description": "Interactive visualization showing exponential growth of AI task completion capabilities from 2019 to 2030, with time on the horizontal axis and projected horizons based on 7-month doubling time.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "AI Capabilities",
+      "Exponential Growth",
+      "AI Benchmarks",
+      "Future Projections",
+      "METR Research"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Researchers, Strategists, Policy Makers",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Task Completion Horizons",
+      "Exponential Growth",
+      "AI Benchmarking",
+      "Future Projections"
+    ],
+    "prerequisites": [
+      "Understanding of AI capabilities",
+      "Basic statistics"
+    ],
+    "library": "Chart.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "projecting-ai",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/projecting-ai"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/projecting-ai/",
+    "id": 66
+  },
+  {
+    "title": "AI SWOT Analysis",
+    "description": "Interactive SWOT analysis diagram for AI strategy development, showing Strengths, Weaknesses, Opportunities, and Threats with hover descriptions.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "SWOT Analysis",
+      "Strategic Planning",
+      "AI Strategy",
+      "Business Analysis",
+      "Competitive Analysis"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "AI Strategy Committees, Business Leaders",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Strengths",
+      "Weaknesses",
+      "Opportunities",
+      "Threats",
+      "Strategic Planning"
+    ],
+    "prerequisites": [
+      "Basic business strategy concepts"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "swot",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/swot"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/swot/",
+    "id": 67
+  },
+  {
+    "title": "Technology Adoption Curve Infographic",
+    "description": "Interactive visualization of the Technology Adoption Lifecycle showing Innovators, Early Adopters, Early Majority, Late Majority, and Laggards with strategic implications.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Technology Adoption",
+      "Diffusion of Innovation",
+      "Market Segmentation",
+      "Strategic Planning",
+      "Change Management"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "Professional",
+    "learningResourceType": "simulation",
+    "audience": "Business Leaders, Product Managers, Strategists",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Analyze",
+      "Evaluate"
+    ],
+    "concepts": [
+      "Innovators",
+      "Early Adopters",
+      "Early Majority",
+      "Late Majority",
+      "Laggards",
+      "Diffusion of Innovation"
+    ],
+    "prerequisites": [
+      "Basic business strategy concepts"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "technology-adoption",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/technology-adoption"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/technology-adoption/",
+    "id": 68
+  },
+  {
+    "title": "Deep Learning Timeline MicroSim",
+    "description": "Interactive timeline showing over 100 key events in the field of Deep Learning from 1935 to present day.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Deep Learning History",
+      "AI History",
+      "Neural Networks",
+      "Machine Learning"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, AI Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Remember",
+      "Understand"
+    ],
+    "concepts": [
+      "Deep Learning History",
+      "Neural Network Development",
+      "AI Milestones"
+    ],
+    "prerequisites": [],
+    "library": "vis-timeline",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "timeline",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/timeline"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/timeline/",
+    "id": 69
+  },
+  {
+    "title": "Tokenizer MicroSim",
+    "description": "Interactive visualization demonstrating how text is tokenized into smaller units for processing by language models.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-01",
+    "subject": [
+      "Tokenization",
+      "Natural Language Processing",
+      "Language Models",
+      "Text Processing"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Dan McCreary",
+    "educationalLevel": "High School",
+    "learningResourceType": "simulation",
+    "audience": "Students, Educators, NLP Enthusiasts",
+    "version": "1.0.0",
+    "bloomLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "concepts": [
+      "Tokenization",
+      "Subword Units",
+      "Text Encoding"
+    ],
+    "prerequisites": [
+      "Basic understanding of text processing"
+    ],
+    "library": "p5.js",
+    "_source": {
+      "repo": "tracking-ai-course",
+      "sim": "tokenizer",
+      "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/tokenizer"
+    },
+    "url": "https://dmccreary.github.io/tracking-ai-course/sims/tokenizer/",
+    "id": 70
   }
 ]

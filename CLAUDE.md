@@ -21,6 +21,9 @@ export GITHUB_TOKEN=ghp_your_token
 # Crawl all dmccreary/* repos for metadata.json files
 python3 src/crawl-microsims.py
 
+# Update metadata from a single repository (adds/updates, removes duplicates)
+python3 src/update-repo-microsims.py dmccreary/geometry-course
+
 # Analyze missing metadata by repository
 python3 src/analyze-missing-metadata.py
 ```
@@ -64,6 +67,7 @@ The search normalizes both flat legacy format and nested schema format:
 | File | Purpose |
 |------|---------|
 | `src/crawl-microsims.py` | GitHub crawler for metadata collection |
+| `src/update-repo-microsims.py` | Update metadata from a single repo |
 | `src/analyze-missing-metadata.py` | Report repos missing metadata |
 | `docs/search/demo.html` | ItemsJS faceted search UI |
 | `docs/search/microsims-data.json` | Combined metadata (generated) |

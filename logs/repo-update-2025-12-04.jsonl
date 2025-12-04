@@ -1,0 +1,32 @@
+{"timestamp": "2025-12-04T14:24:21.816256Z", "event": "update_started", "repo": "https://github.com/dmccreary/tracking-ai-course"}
+{"timestamp": "2025-12-04T14:24:22.497363Z", "event": "update_completed", "repo": "https://github.com/dmccreary/tracking-ai-course", "message": "No sims found"}
+{"timestamp": "2025-12-04T14:25:08.443166Z", "event": "update_started", "repo": "https://github.com/dmccreary/tracking-ai-course"}
+{"timestamp": "2025-12-04T14:25:09.105781Z", "event": "update_completed", "repo": "https://github.com/dmccreary/tracking-ai-course", "message": "No sims found"}
+{"timestamp": "2025-12-04T14:27:19.045412Z", "event": "update_started", "repo": "dmccreary/tracking-ai-course"}
+{"timestamp": "2025-12-04T14:27:20.553481Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-benchmarks-timeline", "title": "AI Benchmarks Timeline"}
+{"timestamp": "2025-12-04T14:27:21.170136Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-causes", "title": "Causes of AI Acceleration"}
+{"timestamp": "2025-12-04T14:27:21.803205Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-cmm", "title": "AI Capability Maturity Model Infographic"}
+{"timestamp": "2025-12-04T14:27:22.420164Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-doubling-rate", "title": "AI Doubling Rate"}
+{"timestamp": "2025-12-04T14:27:23.030097Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-flywheel", "title": "The AI Flywheel"}
+{"timestamp": "2025-12-04T14:27:23.641813Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-pace-accelerating", "title": "The Accelerating Pace of AI"}
+{"timestamp": "2025-12-04T14:27:24.245011Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "ai-task-horizons", "title": "AI Task Completion Time Horizons"}
+{"timestamp": "2025-12-04T14:27:24.863814Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "autoregressive", "title": "Autoregressive MicroSim"}
+{"timestamp": "2025-12-04T14:27:25.470207Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "blooms-taxonomy", "title": "Bloom's Taxonomy"}
+{"timestamp": "2025-12-04T14:27:26.086904Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "book-gen-workflow", "title": "Book Build Workflow"}
+{"timestamp": "2025-12-04T14:27:26.701760Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "book-levels", "title": "Book Levels MicroSim"}
+{"timestamp": "2025-12-04T14:27:27.336258Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "four-futures", "title": "Four AI Futures MicroSim"}
+{"timestamp": "2025-12-04T14:27:28.022112Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "hype-cycle", "title": "Technology Hype Cycle Infographic"}
+{"timestamp": "2025-12-04T14:27:28.644856Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "idea-funnel", "title": "Generative AI Idea Funnel"}
+{"timestamp": "2025-12-04T14:27:29.328996Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "learning-graph", "title": "Learning Graph for Deep Learning Course"}
+{"timestamp": "2025-12-04T14:27:29.954492Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "lm-arena-timeline", "title": "Language Model Arena Timeline"}
+{"timestamp": "2025-12-04T14:27:30.553524Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "mmlu-timeline", "title": "MMLU Timeline MicroSim"}
+{"timestamp": "2025-12-04T14:27:31.161846Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "moores-law", "title": "Moore's Law Timeline"}
+{"timestamp": "2025-12-04T14:27:31.800688Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "porters-five-forces", "title": "Porter's Five Forces Model"}
+{"timestamp": "2025-12-04T14:27:32.404534Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "power-wall", "title": "Power Wall MicroSim"}
+{"timestamp": "2025-12-04T14:27:33.019672Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "projecting-ai", "title": "Projecting AI Task Completion to 2030"}
+{"timestamp": "2025-12-04T14:27:33.644713Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "swot", "title": "AI SWOT Analysis"}
+{"timestamp": "2025-12-04T14:27:34.279027Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "technology-adoption", "title": "Technology Adoption Curve Infographic"}
+{"timestamp": "2025-12-04T14:27:34.861834Z", "event": "missing_metadata", "repo": "dmccreary/tracking-ai-course", "sim": "templates", "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/templates"}
+{"timestamp": "2025-12-04T14:27:35.470413Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "timeline", "title": "Deep Learning Timeline MicroSim"}
+{"timestamp": "2025-12-04T14:27:36.079045Z", "event": "metadata_found", "repo": "dmccreary/tracking-ai-course", "sim": "tokenizer", "title": "Tokenizer MicroSim"}
+{"timestamp": "2025-12-04T14:27:36.083651Z", "event": "update_completed", "repo": "dmccreary/tracking-ai-course", "sims_found": 26, "metadata_found": 25, "metadata_missing": 1, "added": 25, "updated": 0, "errors": 0}
