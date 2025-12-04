@@ -1,0 +1,2628 @@
+[
+  {
+    "title": "Coordinate Plane Explorer",
+    "description": "An interactive MicroSim that helps students understand the coordinate plane structure, including quadrants, axes, origin, and point location through hands-on exploration and quiz mode.",
+    "subject": "Mathematics",
+    "topic": "Coordinate Plane and Cartesian Coordinates",
+    "gradeLevel": "6-8",
+    "targetAge": "11-14",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Understanding of positive and negative numbers",
+      "Basic number line concepts",
+      "Ability to read and write ordered pairs"
+    ],
+    "learningObjectives": [
+      "Identify and label the x-axis, y-axis, and origin on a coordinate plane",
+      "Understand the structure and numbering of the four quadrants",
+      "Plot points accurately using ordered pairs (x, y)",
+      "Determine which quadrant contains a given point",
+      "Recognize the sign patterns for coordinates in each quadrant",
+      "Use coordinates to describe the location of points on a plane"
+    ],
+    "bloomsTaxonomy": [
+      "Remember",
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "educationalStandards": [
+      "CCSS.MATH.CONTENT.6.NS.C.6 - Understand rational numbers as points on the number line and in the coordinate plane",
+      "CCSS.MATH.CONTENT.6.NS.C.8 - Solve problems by graphing points in all four quadrants",
+      "CCSS.MATH.CONTENT.6.G.A.3 - Draw polygons in the coordinate plane"
+    ],
+    "author": "MicroSim Development Team",
+    "dateCreated": "2025-01-17",
+    "dateModified": "2025-01-17",
+    "version": "1.0.0",
+    "license": "MIT",
+    "language": "en",
+    "format": "text/html",
+    "type": "Interactive Simulation",
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "canvasDimensions": {
+      "width": 700,
+      "height": 700,
+      "responsive": false
+    },
+    "controls": [
+      {
+        "type": "draggable-point",
+        "label": "Point",
+        "description": "Drag the red point anywhere on the coordinate plane to explore different coordinate positions",
+        "initial": {
+          "x": 3,
+          "y": 4
+        },
+        "range": {
+          "x": [
+            -10,
+            10
+          ],
+          "y": [
+            -10,
+            10
+          ]
+        }
+      },
+      {
+        "type": "input",
+        "label": "Enter x",
+        "description": "Input field to enter the x-coordinate directly",
+        "initial": 3,
+        "range": [
+          -10,
+          10
+        ]
+      },
+      {
+        "type": "input",
+        "label": "Enter y",
+        "description": "Input field to enter the y-coordinate directly",
+        "initial": 4,
+        "range": [
+          -10,
+          10
+        ]
+      },
+      {
+        "type": "button",
+        "label": "Plot",
+        "description": "Plot the point at the coordinates entered in the input fields"
+      },
+      {
+        "type": "button",
+        "label": "Random Point",
+        "description": "Generate and plot a random point on the coordinate plane"
+      },
+      {
+        "type": "button",
+        "label": "Quiz Mode",
+        "description": "Toggle quiz mode where students are challenged to plot given coordinates"
+      },
+      {
+        "type": "button",
+        "label": "Check Answer",
+        "description": "Check if the plotted point matches the quiz target (only visible in quiz mode)"
+      },
+      {
+        "type": "checkbox",
+        "label": "Quadrant Shading",
+        "description": "Toggle color-coded shading of the four quadrants",
+        "initial": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Grid Lines",
+        "description": "Toggle visibility of grid lines for easier point placement",
+        "initial": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Reference Lines",
+        "description": "Toggle dotted lines from the point to both axes",
+        "initial": true
+      }
+    ],
+    "visualElements": [
+      "Coordinate grid from -10 to 10 on both axes",
+      "Bold axis lines (x-axis and y-axis)",
+      "Origin marked with dot and (0, 0) label",
+      "Quadrant labels (I, II, III, IV) in Roman numerals",
+      "Color-coded quadrant shading (I: light blue, II: light green, III: light yellow, IV: light pink)",
+      "Draggable red point with shadow effect",
+      "Dotted reference lines from point to axes",
+      "Real-time coordinate display with color coding",
+      "Quadrant identification display"
+    ],
+    "interactiveFeatures": [
+      "Drag point to any location on the plane",
+      "Real-time coordinate updates during dragging",
+      "Smooth animations when plotting new points",
+      "Direct coordinate entry via input fields",
+      "Random point generation",
+      "Quiz mode with target coordinates",
+      "Immediate feedback on quiz answers",
+      "Toggle visual aids on/off"
+    ],
+    "modelType": "Mathematical visualization",
+    "mathematicalConcepts": [
+      "Cartesian coordinate system",
+      "Ordered pairs (x, y)",
+      "Quadrants of the coordinate plane",
+      "Positive and negative number placement",
+      "Distance from axes"
+    ],
+    "colorScheme": {
+      "drawingArea": "aliceblue",
+      "controlArea": "white",
+      "quadrant1": "rgba(173, 216, 230, 0.3)",
+      "quadrant2": "rgba(144, 238, 144, 0.3)",
+      "quadrant3": "rgba(255, 255, 153, 0.3)",
+      "quadrant4": "rgba(255, 182, 193, 0.3)",
+      "point": "red",
+      "axes": "black",
+      "gridLines": "lightgray",
+      "referenceLines": "red (dashed)"
+    },
+    "assessmentOpportunities": [
+      "Quiz mode tracks correct vs. total attempts",
+      "Immediate feedback on coordinate plotting accuracy",
+      "Hints provided when answers are incorrect (which coordinate needs adjustment)",
+      "Observable student exploration patterns",
+      "Exit ticket: Successfully plot 3 points in quiz mode"
+    ],
+    "accessibility": {
+      "screenReader": "Includes describe() function for screen reader support",
+      "keyboardNavigation": "Input fields support keyboard entry",
+      "colorBlindSafe": "Uses high contrast colors and multiple visual cues beyond color",
+      "textSize": "Large 16-32px text for classroom visibility"
+    },
+    "pedagogicalApproach": [
+      "Constructivist learning through exploration",
+      "Immediate visual feedback",
+      "Multiple representations (numeric, visual, geometric)",
+      "Scaffolded complexity (simple to complex)",
+      "Gamification through quiz mode"
+    ],
+    "commonMisconceptions": [
+      {
+        "misconception": "Swapping x and y coordinates",
+        "remedy": "Color-coded display always shows x first; mnemonic 'x before y in alphabet'"
+      },
+      {
+        "misconception": "Difficulty with negative coordinates",
+        "remedy": "Quadrant shading visually shows negative regions; incremental practice"
+      },
+      {
+        "misconception": "Points on axes belong to quadrants",
+        "remedy": "Clear 'On x-axis' or 'On y-axis' messages; discussion of quadrant definitions"
+      }
+    ],
+    "extensionActivities": [
+      "Plot points to create geometric shapes",
+      "Explore reflections across axes",
+      "Calculate distances between points",
+      "Identify patterns in coordinate sequences"
+    ],
+    "technologyRequirements": {
+      "browser": "Modern browser (Chrome, Firefox, Safari, Edge)",
+      "javascript": "Enabled",
+      "internetConnection": "Required for p5.js CDN",
+      "devices": "Desktop, laptop, tablet (700px width minimum recommended)"
+    },
+    "fileStructure": {
+      "mainHTML": "main.html",
+      "javascript": "coordinate-plane-explorer.js",
+      "documentation": "index.md",
+      "metadata": "metadata.json",
+      "screenshot": "coordinate-plane-explorer.png (to be created)"
+    },
+    "keywords": [
+      "coordinate plane",
+      "Cartesian coordinates",
+      "quadrants",
+      "ordered pairs",
+      "graphing",
+      "x-axis",
+      "y-axis",
+      "origin",
+      "plotting points",
+      "negative numbers",
+      "spatial reasoning",
+      "middle school math",
+      "algebra",
+      "geometry"
+    ],
+    "relatedConcepts": [
+      "Number line",
+      "Integer operations",
+      "Linear equations",
+      "Graphing functions",
+      "Distance formula",
+      "Slope",
+      "Transformations"
+    ],
+    "cognitiveLoadConsiderations": {
+      "intrinsic": "Coordinate system with four quadrants and signed numbers",
+      "extraneous": "Minimized through clean interface and optional visual aids",
+      "germane": "Focused on coordinate relationships and spatial reasoning"
+    },
+    "differentiationStrategies": [
+      "Quadrant shading can be toggled for visual learners",
+      "Grid lines assist students who need more structure",
+      "Reference lines show explicit connections to axes",
+      "Quiz mode provides practice with immediate feedback",
+      "Random point generator offers unlimited practice opportunities"
+    ],
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "coordinate-plane-explorer",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/coordinate-plane-explorer"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/coordinate-plane-explorer/",
+    "id": 1
+  },
+  {
+    "title": "Expression Parts Explorer",
+    "description": "An interactive educational MicroSim that helps students identify and understand the different parts of algebraic expressions including coefficients, variables, constants, and terms through color-coding and interactive exploration.",
+    "subject": "Mathematics - Algebra",
+    "topic": "Algebraic Expressions",
+    "creator": "Generated with Claude Code",
+    "date": "2025-11-10",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "gradeLevel": "6-8",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Basic understanding of numbers and arithmetic operations",
+      "Familiarity with the concept of variables in algebra"
+    ],
+    "learningObjectives": [
+      "Identify coefficients, variables, constants, and operations in algebraic expressions",
+      "Distinguish between different types of terms in multi-term expressions",
+      "Analyze the structure of algebraic expressions of varying complexity",
+      "Apply understanding to classify expression parts independently"
+    ],
+    "bloomsTaxonomy": [
+      "Remember",
+      "Understand",
+      "Apply",
+      "Analyze"
+    ],
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": "600",
+      "drawHeight": 400,
+      "controlHeight": 200
+    },
+    "responsive": "Width-responsive",
+    "dependencies": [
+      "p5.js CDN v1.11.10"
+    ],
+    "accessibility": [
+      "Screen reader support via describe() function",
+      "High contrast color-coding",
+      "Clear visual labels",
+      "Hover tooltips for identification"
+    ],
+    "controls": [
+      {
+        "type": "button",
+        "name": "New Expression",
+        "description": "Generates a new random algebraic expression based on the selected complexity level"
+      },
+      {
+        "type": "button",
+        "name": "Quiz Mode",
+        "description": "Toggles quiz mode where users can click on parts to test their understanding without color hints"
+      },
+      {
+        "type": "dropdown",
+        "name": "Complexity Level",
+        "options": [
+          "Simple",
+          "Medium",
+          "Complex"
+        ],
+        "default": "Simple",
+        "description": "Controls the complexity of generated expressions: Simple (2-3 terms), Medium (3-5 terms with exponents), Complex (4-6 terms with exponents)"
+      },
+      {
+        "type": "checkbox",
+        "name": "Show Coefficients",
+        "default": true,
+        "description": "Toggles color highlighting of coefficients in blue"
+      },
+      {
+        "type": "checkbox",
+        "name": "Show Variables",
+        "default": true,
+        "description": "Toggles color highlighting of variables in green"
+      },
+      {
+        "type": "checkbox",
+        "name": "Show Constants",
+        "default": true,
+        "description": "Toggles color highlighting of constants in orange"
+      },
+      {
+        "type": "checkbox",
+        "name": "Highlight Terms",
+        "default": false,
+        "description": "Toggles visual highlighting of individual terms in the expression"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Complexity",
+        "type": "categorical",
+        "values": [
+          "Simple",
+          "Medium",
+          "Complex"
+        ],
+        "default": "Simple",
+        "description": "Determines the number of terms, use of exponents, and coefficient ranges"
+      }
+    ],
+    "simulationModel": {
+      "modelType": "Interactive visualization and classification tool",
+      "variables": [
+        "expressionParts (array of expression components)",
+        "complexityLevel (Simple, Medium, Complex)",
+        "quizMode (boolean)",
+        "hoveredPart (currently hovered expression component)"
+      ],
+      "colorCoding": {
+        "coefficients": "Blue (#2196F3)",
+        "variables": "Green (#4CAF50)",
+        "constants": "Orange (#FF9800)",
+        "operations": "Gray (#757575)",
+        "highlight": "Yellow (#FFEB3B)"
+      },
+      "expressionGeneration": {
+        "Simple": "2-3 terms, single variables, coefficients 1-10",
+        "Medium": "3-5 terms, may include exponents up to ^3, coefficients 1-20",
+        "Complex": "4-6 terms, multiple variables, exponents, coefficients 1-50"
+      }
+    },
+    "educationalStandards": [
+      "CCSS.MATH.CONTENT.6.EE.A.2 - Write, read, and evaluate expressions in which letters stand for numbers",
+      "CCSS.MATH.CONTENT.7.EE.A.1 - Apply properties of operations as strategies to add, subtract, factor, and expand linear expressions"
+    ],
+    "keywords": [
+      "algebra",
+      "expressions",
+      "coefficients",
+      "variables",
+      "constants",
+      "terms",
+      "algebraic notation",
+      "expression analysis"
+    ],
+    "interactionTypes": [
+      "Hover for tooltips",
+      "Click for quiz mode answers",
+      "Checkbox toggling for selective highlighting",
+      "Button press for expression generation",
+      "Dropdown selection for complexity adjustment"
+    ],
+    "assessmentFeatures": [
+      "Quiz mode for independent practice",
+      "Real-time visual feedback",
+      "Interactive identification of parts",
+      "Analysis panel showing expression structure"
+    ],
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "expression-explorer",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/expression-explorer"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/expression-explorer/",
+    "id": 2
+  },
+  {
+    "microsim": {
+      "dublinCore": {
+        "title": "Integer Operations on the Number Line",
+        "creator": [
+          "Dan McCreary",
+          "ChatGPT (GPT-5)"
+        ],
+        "subject": [
+          "Mathematics",
+          "Integers",
+          "Number Line",
+          "Arithmetic"
+        ],
+        "description": "An interactive p5.js simulation that visualizes integer addition and subtraction as movements on a horizontal number line. Users can click buttons to add or subtract values from -10 to +10, observing animated arrows and a cumulative equation.",
+        "date": "2025-11-11T00:00:00Z",
+        "type": "Interactive Simulation",
+        "format": "text/javascript",
+        "language": "en",
+        "rights": "CC BY 4.0"
+      },
+      "search": {
+        "tags": [
+          "integers",
+          "number line",
+          "addition",
+          "subtraction",
+          "math",
+          "integer operations",
+          "animation"
+        ],
+        "visualizationType": [
+          "animation",
+          "simulation",
+          "interactive-demo"
+        ],
+        "interactionLevel": "high",
+        "complexity": 3,
+        "applicationDomains": [
+          "education",
+          "training",
+          "exploration"
+        ]
+      },
+      "educational": {
+        "gradeLevel": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "subjectArea": [
+          "Mathematics"
+        ],
+        "topic": [
+          "Integer Operations",
+          "Addition and Subtraction",
+          "Number Line"
+        ],
+        "learningObjectives": [
+          "Visualize integer addition as movement to the right on a number line.",
+          "Visualize integer subtraction as movement to the left on a number line.",
+          "Interpret a cumulative arithmetic expression such as 0 + 3 - 2 + 4 = 5."
+        ],
+        "bloomsTaxonomy": [
+          "Remember",
+          "Understand",
+          "Apply"
+        ],
+        "prerequisites": [
+          "Understanding of positive and negative numbers",
+          "Basic familiarity with number lines"
+        ],
+        "duration": {
+          "typical": 10,
+          "range": {
+            "min": 5,
+            "max": 15
+          }
+        },
+        "difficulty": "Beginner",
+        "learningTheory": [
+          "constructivism",
+          "experiential"
+        ]
+      },
+      "technical": {
+        "framework": "p5.js",
+        "version": "1.11.10",
+        "canvasDimensions": {
+          "width": 800,
+          "height": 400,
+          "responsive": true
+        },
+        "regions": {
+          "drawHeight": 300,
+          "controlHeight": 100
+        },
+        "dependencies": [
+          "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+        ],
+        "browserCompatibility": [
+          "Chrome",
+          "Firefox",
+          "Safari",
+          "Edge"
+        ],
+        "performance": {
+          "targetFrameRate": 60,
+          "memoryUsage": "low",
+          "computationalComplexity": "O(1)",
+          "loadTime": 300,
+          "optimizations": [
+            "NoLoop when idle",
+            "Efficient arrow drawing",
+            "Responsive resizing"
+          ]
+        },
+        "accessibility": {
+          "screenReader": true,
+          "keyboardNavigation": false,
+          "colorContrast": true,
+          "altText": true,
+          "screenReaderScript": "Simulation that shows integer addition and subtraction as movement along a horizontal number line from -10 to +10. Blue circle shows current value, green arrows for addition, red arrows for subtraction."
+        }
+      },
+      "userInterface": {
+        "layoutType": "responsive-width",
+        "colorScheme": {
+          "drawingArea": "aliceblue",
+          "controlArea": "white",
+          "borders": "silver",
+          "accent": "blue",
+          "text": "black"
+        },
+        "controls": [
+          {
+            "id": "addButtons",
+            "type": "button",
+            "label": "Add Buttons",
+            "description": "Adds positive integers (1\u20135) to the current position",
+            "properties": {
+              "text": "Add n",
+              "style": "success"
+            }
+          },
+          {
+            "id": "subButtons",
+            "type": "button",
+            "label": "Subtract Buttons",
+            "description": "Subtracts positive integers (1\u20135) from the current position",
+            "properties": {
+              "text": "Subtract n",
+              "style": "danger"
+            }
+          },
+          {
+            "id": "resetButton",
+            "type": "button",
+            "label": "Reset",
+            "description": "Resets the simulation back to zero",
+            "properties": {
+              "text": "Reset to Zero",
+              "style": "secondary"
+            }
+          }
+        ],
+        "visualElements": [
+          {
+            "type": "graph",
+            "description": "Horizontal number line from -10 to +10 with labeled tick marks",
+            "interactive": true,
+            "updateTriggers": [
+              "addButtons",
+              "subButtons",
+              "resetButton"
+            ]
+          },
+          {
+            "type": "animation",
+            "description": "Green and red arrows animate integer addition and subtraction.",
+            "interactive": false
+          },
+          {
+            "type": "text-display",
+            "description": "Displays current arithmetic equation (e.g., 0 + 3 - 2 + 4 = 5)",
+            "interactive": false
+          }
+        ]
+      },
+      "simulation": {
+        "model": {
+          "type": "mathematical",
+          "description": "Integer arithmetic model representing cumulative addition and subtraction operations visualized as movements along a number line.",
+          "equations": [
+            "position = start + \u03a3(operations)"
+          ],
+          "assumptions": [
+            "Each operation changes the position by an integer step between -5 and +5.",
+            "Position range is clamped between -10 and +10."
+          ],
+          "limitations": [
+            "Only supports integer values",
+            "Fixed range from -10 to +10"
+          ]
+        },
+        "variables": [
+          {
+            "name": "currentPosition",
+            "type": "output",
+            "description": "Current integer value on the number line",
+            "dataType": "integer",
+            "range": {
+              "min": -10,
+              "max": 10
+            }
+          },
+          {
+            "name": "targetPosition",
+            "type": "intermediate",
+            "description": "Position after the current operation",
+            "dataType": "integer",
+            "range": {
+              "min": -10,
+              "max": 10
+            }
+          },
+          {
+            "name": "equationParts",
+            "type": "output",
+            "description": "String representation of the sequence of operations",
+            "dataType": "array"
+          }
+        ]
+      },
+      "analytics": {
+        "events": [
+          {
+            "name": "operationPerformed",
+            "description": "User clicked an Add or Subtract button",
+            "category": "interaction",
+            "importance": "important",
+            "data": [
+              "operationType",
+              "operationValue",
+              "currentPosition",
+              "timestamp"
+            ],
+            "xAPIverb": "experienced"
+          },
+          {
+            "name": "resetSimulation",
+            "description": "User clicked the Reset button",
+            "category": "interaction",
+            "importance": "moderate",
+            "data": [
+              "currentPosition"
+            ],
+            "xAPIverb": "reset"
+          }
+        ]
+      },
+      "usage": {
+        "recommendedUsage": [
+          "guided-practice",
+          "demonstration",
+          "exploration"
+        ],
+        "instructionalStrategies": [
+          "Predict-Test-Observe",
+          "Guided Discovery",
+          "Collaborative Discussion"
+        ],
+        "assessmentQuestions": [
+          {
+            "question": "If you start at -2 and add 4, what is your new position?",
+            "type": "short-answer",
+            "level": "Understand"
+          },
+          {
+            "question": "Explain why subtraction moves left on the number line.",
+            "type": "essay",
+            "level": "Analyze"
+          }
+        ],
+        "extensions": [
+          "Add sliders for variable step sizes",
+          "Include random problem generator for practice"
+        ]
+      }
+    },
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "integer-ops-number-line",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/integer-ops-number-line"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/integer-ops-number-line/",
+    "id": 3
+  },
+  {
+    "title": "Number Systems Hierarchy Diagram",
+    "description": "An interactive Venn-style diagram showing how natural, whole, integer, rational, and real numbers are nested within each other, highlighting the position of irrational numbers.",
+    "subject": "Mathematics - Number Systems",
+    "creator": "Dan McCreary and Claude AI",
+    "date": "2025-11-11",
+    "type": "Interactive Venn Diagram",
+    "format": "text/html",
+    "language": "en-US",
+    "coverage": "Middle and High School Mathematics",
+    "rights": "CC-BY-4.0 Educational Use",
+    "audience": "Students and Educators",
+    "diagram_type": "venn",
+    "set_count": 6,
+    "intersection_count": 5,
+    "concepts": [
+      "Natural Numbers (N)",
+      "Whole Numbers (W)",
+      "Integers (Z)",
+      "Rational Numbers (Q)",
+      "Real Numbers (R)",
+      "Irrational Numbers (I)"
+    ],
+    "bloom_taxonomy": "Understand",
+    "version": "1.0",
+    "library": "venn.js 0.2.20",
+    "dependencies": [
+      "d3.js 7.9.0",
+      "venn.js 0.2.20"
+    ],
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "number-system-venn",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/number-system-venn"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/number-system-venn/",
+    "id": 4
+  },
+  {
+    "name": "Number Systems Diagram",
+    "type": "diagram",
+    "version": "1.0.0",
+    "description": "Shows the nesting of number systems with clickable drill-down to sections in the Markdown page.",
+    "files": [
+      "index.md",
+      "main.html",
+      "style.css",
+      "script.js"
+    ],
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "number-systems-mermaid",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/number-systems-mermaid"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/number-systems-mermaid/",
+    "id": 5
+  },
+  {
+    "title": "Number Types Venn Diagram",
+    "subject": "Mathematics",
+    "description": "An interactive Venn diagram that visualizes the hierarchical relationships between different types of numbers including Natural, Whole, Integers, Rational, Irrational, and Real numbers. Students can hover over regions to learn about each number type and see examples.",
+    "creator": "Claude (Anthropic)",
+    "publisher": "Educational MicroSims",
+    "date": "2025-11-11",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "identifier": "number-types-venn",
+    "language": "en-US",
+    "audience": "Middle School (6-8), High School (9-12)",
+    "educationLevel": "Grades 6-12",
+    "learningResourceType": "Simulation",
+    "interactivityType": "Active",
+    "typicalLearningTime": "PT10M",
+    "rights": "Open Educational Resource",
+    "keywords": [
+      "mathematics",
+      "number theory",
+      "number types",
+      "sets",
+      "venn diagram",
+      "natural numbers",
+      "whole numbers",
+      "integers",
+      "rational numbers",
+      "irrational numbers",
+      "real numbers",
+      "number classification",
+      "interactive visualization"
+    ],
+    "learningObjectives": [
+      "Identify the hierarchical relationship between different number types",
+      "Understand that each inner set is a subset of the outer sets",
+      "Classify numbers into their appropriate categories",
+      "Recognize examples of each number type",
+      "Distinguish between rational and irrational numbers"
+    ],
+    "prerequisites": [
+      "Basic understanding of positive and negative numbers",
+      "Familiarity with fractions and decimals",
+      "Introduction to number operations"
+    ],
+    "controls": [
+      {
+        "name": "Show Labels",
+        "type": "checkbox",
+        "default": true,
+        "description": "Toggle visibility of number type labels"
+      },
+      {
+        "name": "Show Examples",
+        "type": "checkbox",
+        "default": true,
+        "description": "Toggle visibility of example numbers"
+      },
+      {
+        "name": "Hover Tooltips",
+        "type": "hover",
+        "description": "Hover over any region to see a detailed explanation of that number type"
+      }
+    ],
+    "technicalDetails": {
+      "canvasWidth": 800,
+      "drawHeight": 600,
+      "controlHeight": 100,
+      "totalHeight": 700,
+      "responsive": true,
+      "framework": "p5.js",
+      "version": "1.0.0"
+    },
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "number-types-venn-p5",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/number-types-venn-p5"
+    },
+    "url": "number-types-venn",
+    "id": 6
+  },
+  {
+    "title": "Prime Factorization Tree Builder",
+    "description": "Interactive tool for building factor trees to find prime factorization of composite numbers through step-by-step visual construction.",
+    "subject": "Mathematics",
+    "topic": "Number Theory, Prime Factorization",
+    "gradeLevel": "6-9",
+    "learningObjectives": [
+      "Build factor trees to decompose composite numbers into prime factors",
+      "Identify and distinguish between prime and composite numbers",
+      "Understand that prime factorization is unique for each number (Fundamental Theorem of Arithmetic)",
+      "Apply divisibility rules to find factors efficiently",
+      "Express numbers in prime factorization form using exponential notation"
+    ],
+    "bloomLevels": [
+      "Remember: Recall prime numbers and divisibility rules",
+      "Understand: Explain the relationship between factors and prime factorization",
+      "Apply: Use divisibility rules to factor numbers systematically",
+      "Analyze: Compare different factorization paths leading to same result",
+      "Evaluate: Verify completeness and correctness of factorization",
+      "Create: Build complete factor trees for any composite number"
+    ],
+    "prerequisites": [
+      "Understanding of multiplication",
+      "Knowledge of factors and multiples",
+      "Familiarity with prime and composite numbers",
+      "Basic division skills"
+    ],
+    "duration": "10-15 minutes",
+    "difficulty": "Medium",
+    "interactionType": "Interactive tree construction",
+    "technology": "vis-network, JavaScript, HTML5",
+    "library": "vis-network",
+    "version": "1.0",
+    "dateCreated": "2025-11-17",
+    "dateModified": "2025-11-17",
+    "author": "Claude (Anthropic AI)",
+    "license": "MIT",
+    "language": "en",
+    "keywords": [
+      "prime factorization",
+      "factor tree",
+      "prime numbers",
+      "composite numbers",
+      "number theory",
+      "divisibility",
+      "factoring",
+      "tree diagram",
+      "fundamental theorem of arithmetic"
+    ],
+    "relatedConcepts": [
+      "Prime Numbers",
+      "Composite Numbers",
+      "Factors",
+      "Multiples",
+      "Greatest Common Factor (GCF)",
+      "Least Common Multiple (LCM)",
+      "Exponents",
+      "Divisibility Rules"
+    ],
+    "controls": {
+      "numberInput": "Enter a number between 4 and 200 to factor",
+      "startNewProblem": "Begin factoring the entered number",
+      "difficulty": "Choose difficulty level (Easy: 4-50, Medium: 50-100, Hard: 100-200)",
+      "randomNumber": "Generate a random composite number at selected difficulty",
+      "giveHint": "Highlight a composite number and suggest divisibility rule",
+      "showAnswer": "Display the complete factorization tree with all prime factors",
+      "clickNode": "Click on blue (composite) nodes to enter two factors",
+      "factor1": "Enter first factor (must be >1)",
+      "factor2": "Enter second factor (must be >1)",
+      "submitFactors": "Validate and add factors to the tree"
+    },
+    "visualElements": {
+      "greenNodes": "Prime numbers (cannot be factored further)",
+      "blueNodes": "Composite numbers (click to factor)",
+      "grayNodes": "Already factored parent numbers",
+      "edges": "Lines connecting parent numbers to their factors",
+      "primeList": "Reference list of prime numbers up to 47",
+      "divisibilityRules": "Quick reference for divisibility by 2, 3, and 5"
+    },
+    "features": [
+      "Hierarchical tree visualization",
+      "Interactive node clicking for factorization",
+      "Real-time validation of factors",
+      "Color-coded nodes by number type",
+      "Shake animation for incorrect factors",
+      "Celebration animation on completion",
+      "Prime number reference list",
+      "Divisibility rules reminder",
+      "Hint system with divisibility suggestions",
+      "Show answer feature for complete factorization",
+      "Adjustable difficulty levels",
+      "Random number generation",
+      "Prime factorization in exponential form"
+    ],
+    "pedagogicalApproach": [
+      "Visual learning through tree structures",
+      "Interactive discovery and exploration",
+      "Immediate feedback on student input",
+      "Progressive difficulty levels",
+      "Self-paced learning",
+      "Multiple entry points (input, random, difficulty)",
+      "Scaffolding through hints and reference materials"
+    ],
+    "assessmentOpportunities": [
+      "Predict prime factorization before building tree",
+      "Explain why different trees yield same factorization",
+      "Factor numbers with varying complexity",
+      "Identify patterns in factorizations",
+      "Apply divisibility rules efficiently",
+      "Compare factorization strategies"
+    ],
+    "commonMisconceptions": [
+      "Using 1 as a factor (prevented by validation)",
+      "Stopping factorization before reaching primes (visual feedback)",
+      "Entering incorrect factors (shake animation feedback)",
+      "Confusion about prime vs composite (color coding)"
+    ],
+    "extensions": [
+      "Compare different factorization paths for same number",
+      "Find GCF and LCM using prime factorizations",
+      "Explore perfect squares and their symmetric trees",
+      "Investigate powers of primes",
+      "Apply to finding square roots of perfect squares"
+    ],
+    "technicalDetails": {
+      "framework": "vis-network",
+      "layout": "hierarchical (top-down)",
+      "interactions": "click, hover, select",
+      "animations": "shake on error, celebration on completion",
+      "validation": "real-time factor verification",
+      "algorithms": "prime checking, recursive factorization",
+      "dataStructure": "tree represented as nodes and edges"
+    },
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "prime-factorization-tree",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/prime-factorization-tree"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/prime-factorization-tree/",
+    "id": 7
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "title": "Variable Types Interactive Infographic",
+    "creator": "Claude Code with microsim-p5 skill",
+    "subject": [
+      "Mathematics",
+      "Algebra",
+      "Variable Notation"
+    ],
+    "description": "An interactive visual guide showing four common types of algebraic variables (position, time, counting, and rate) with real-world examples and expandable content in a 2x2 grid layout.",
+    "date": "2025-11-17",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "gradeLevel": "6-10",
+    "subjectArea": "Mathematics",
+    "topic": "Algebraic Variables and Notation",
+    "learningObjectives": [
+      "Identify four main categories of variables used in algebra (position, time, counting, rate)",
+      "Explain the typical usage context for each variable type",
+      "Recognize conventional variable naming patterns in mathematical problems",
+      "Apply appropriate variable choices when setting up equations"
+    ],
+    "bloomsTaxonomyLevels": [
+      "Remember",
+      "Understand",
+      "Apply"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Basic understanding of variables in algebra",
+      "Familiarity with simple algebraic expressions",
+      "Experience with basic word problems"
+    ],
+    "framework": "p5.js",
+    "canvasDimensions": "800\u00d7700 (initial, width-responsive)",
+    "responsive": "Width-responsive",
+    "dependencies": [
+      "p5.js 1.11.10 CDN"
+    ],
+    "accessibility": {
+      "screenReaderSupport": true,
+      "keyboardNavigation": false,
+      "colorblindSafe": true,
+      "highContrast": true
+    },
+    "controls": [
+      {
+        "type": "hover",
+        "name": "Card Hover",
+        "description": "Hover over any of the four category cards to see expanded descriptions",
+        "purpose": "Provides detailed context about variable usage"
+      },
+      {
+        "type": "click",
+        "name": "Card Click",
+        "description": "Click on any card to toggle expanded view with additional examples",
+        "purpose": "Reveals 2-3 more real-world examples for each variable type"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Category Colors",
+        "type": "fixed",
+        "description": "Blue for position, green for time, orange for counting, purple for rate variables"
+      },
+      {
+        "name": "Expanded State",
+        "type": "boolean",
+        "default": false,
+        "description": "Tracks whether each card is showing additional examples"
+      }
+    ],
+    "simulationModel": {
+      "modelType": "Interactive Infographic",
+      "variables": [
+        "Position variables (x, y, z)",
+        "Time variable (t)",
+        "Counting variable (n)",
+        "Rate variables (r, m)"
+      ],
+      "equations": [
+        "2x + 5 = 13",
+        "d = 55t",
+        "C = 12n",
+        "I = Prt"
+      ],
+      "assumptions": [
+        "Variables are presented in their most common conventional usage",
+        "Examples are simplified for educational clarity",
+        "Categories represent common patterns but are not exhaustive"
+      ],
+      "limitations": [
+        "Does not cover all possible variable types in mathematics",
+        "Context-specific usage may vary",
+        "Some variables can serve multiple purposes depending on context"
+      ]
+    },
+    "educationalContext": {
+      "instructionalStrategies": [
+        "Visual organization with color coding",
+        "Progressive disclosure (hover then click)",
+        "Concrete examples for abstract concepts",
+        "Pattern recognition through categorization"
+      ],
+      "assessmentOpportunities": [
+        "Variable type identification",
+        "Context-appropriate variable selection",
+        "Creation of original examples",
+        "Recognition of mathematical conventions"
+      ]
+    },
+    "tags": [
+      "algebra",
+      "variables",
+      "notation",
+      "infographic",
+      "interactive",
+      "categorization",
+      "mathematical-conventions"
+    ],
+    "_source": {
+      "repo": "algebra-1",
+      "sim": "variable-types",
+      "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/variable-types"
+    },
+    "url": "https://dmccreary.github.io/algebra-1/sims/variable-types/",
+    "id": 8
+  },
+  {
+    "title": "Adding Taxonomy to CSV Workflow",
+    "description": "Interactive Mermaid visualization for adding taxonomy to csv workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "adding-taxonomy-workflow",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/adding-taxonomy-workflow"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/adding-taxonomy-workflow/",
+    "id": 9
+  },
+  {
+    "title": "Average Dependencies Distribution Bar Chart",
+    "description": "Interactive Chart.js visualization for average dependencies distribution bar chart",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "chart.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Chart.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "average-dependencies-distribution",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/average-dependencies-distribution"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/average-dependencies-distribution/",
+    "id": 10
+  },
+  {
+    "title": "Book Build Workflow",
+    "description": "Interactive workflow diagram showing the complete process for building an intelligent textbook, from course description through final book metrics",
+    "subject": "Educational Technology",
+    "creator": "Claude AI with Mermaid Generator Skill",
+    "date": "2025-11-23",
+    "type": "Interactive Workflow Diagram",
+    "format": "text/html",
+    "language": "en-US",
+    "coverage": "Comprehensive",
+    "rights": "Educational Use",
+    "audience": "Educators, Instructional Designers, Content Developers",
+    "diagram_type": "flowchart",
+    "direction": "TD",
+    "node_count": "12",
+    "edge_count": "12",
+    "concepts": [
+      "Course Description",
+      "Learning Graph",
+      "Chapter Structure",
+      "Chapter Development",
+      "Content Complete",
+      "Glossary",
+      "FAQ",
+      "Quizzes",
+      "References",
+      "Diagrams",
+      "Book Metrics"
+    ],
+    "bloom_taxonomy": "Understand",
+    "version": "1.2",
+    "style_notes": "Light pastel rainbow color scheme progressing through spectrum (light red, orange, yellow, green, cyan, blue, purple, pink, peach, mint, coral, violet), minimal padding and margins for iframe embedding",
+    "color_palette": {
+      "Course Description": "#ffcccb (light red)",
+      "Learning Graph": "#ffd9b3 (light orange)",
+      "Chapter Structure": "#ffffcc (light yellow)",
+      "Chapter 1": "#d4f1d4 (light green)",
+      "Chapter 2": "#b3e5e5 (light cyan)",
+      "Content Complete": "#cce5ff (light blue)",
+      "Glossary": "#e6ccff (light purple)",
+      "FAQ": "#ffcce6 (light pink)",
+      "Quizzes": "#ffe6cc (light peach)",
+      "References": "#ccffdd (light mint)",
+      "Diagrams": "#ffb3b3 (light coral)",
+      "Book Metrics": "#dab3ff (light violet)"
+    },
+    "educational_context": "Textbook development workflow, project management, educational design process",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "book-build-workflow",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/book-build-workflow"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
+    "id": 11
+  },
+  {
+    "title": "Book Levels MicroSim",
+    "description": "Interactive p5.js visualization for book levels microsim",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "p5.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "p5.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "book-levels",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/book-levels"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/book-levels/",
+    "id": 12
+  },
+  {
+    "title": "Chapter Content Generation Workflow Timeline",
+    "description": "Interactive HTML/CSS/JavaScript visualization for chapter content generation workflow timeline",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "html/css/javascript"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "HTML/CSS/JavaScript",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "chapter-content-generation-timeline",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/chapter-content-generation-timeline"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/chapter-content-generation-timeline/",
+    "id": 13
+  },
+  {
+    "title": "Chapter Index File Structure",
+    "description": "Interactive Mermaid visualization for chapter index file structure",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "chapter-index-structure",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/chapter-index-structure"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/chapter-index-structure/",
+    "id": 14
+  },
+  {
+    "title": "Chapter Organization Workflow",
+    "description": "Interactive Mermaid visualization for chapter organization workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "chapter-organization-workflow",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/chapter-organization-workflow"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/chapter-organization-workflow/",
+    "id": 15
+  },
+  {
+    "title": "Evolution of AI: From Neural Networks to Claude Code",
+    "description": "Interactive HTML/CSS/JavaScript visualization for evolution of ai: from neural networks to claude code",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "html/css/javascript"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "HTML/CSS/JavaScript",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "claude-code-timeline",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/claude-code-timeline"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-timeline/",
+    "id": 16
+  },
+  {
+    "title": "Claude Code T-Shirt Design - Workflow Diagram",
+    "description": "Simple three-box workflow diagram showing the transformation from course description to 500-page textbook using Claude Code Skills, designed for custom t-shirt printing",
+    "subject": "AI-Powered Education, Merchandise Design",
+    "creator": "Claude AI with Mermaid Generator Skill",
+    "date": "2025-11-23",
+    "type": "Interactive Workflow Diagram",
+    "format": "text/html",
+    "language": "en-US",
+    "coverage": "Promotional Design",
+    "rights": "CC BY 4.0 - Attribution required",
+    "audience": "Developers, Educators, AI Enthusiasts",
+    "diagram_type": "flowchart",
+    "direction": "LR",
+    "node_count": "3",
+    "edge_count": "2",
+    "concepts": [
+      "Course Description",
+      "Claude Code Skills",
+      "Intelligent Textbook Generation",
+      "AI-Powered Workflows",
+      "Educational Technology"
+    ],
+    "bloom_taxonomy": "Understand",
+    "version": "1.0",
+    "design_purpose": "T-shirt merchandise",
+    "color_palette": [
+      "#4ECDC4 - Turquoise (Input)",
+      "#DA7857 - Anthropic Brown (Process)",
+      "#6C5CE7 - Purple (Output)"
+    ],
+    "recommended_fabric_colors": [
+      "White",
+      "Light Gray",
+      "Cream",
+      "Light Blue"
+    ],
+    "print_format": "SVG or high-resolution PNG",
+    "optimal_width_inches": "10-12",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "claude-code-tshirt-design",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/claude-code-tshirt-design"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-tshirt-design/",
+    "id": 17
+  },
+  {
+    "title": "Color Wheel with Named Colors",
+    "description": "An interactive color wheel displaying web-safe named colors. Hover over any color dot to see the color name, RGB values, hex code, and hue angle.",
+    "creator": "Dan McCreary",
+    "subject": [
+      "Web Development",
+      "Color Theory",
+      "CSS",
+      "Design"
+    ],
+    "date": "2025-11-28",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+      "gradeLevel": "6-12",
+      "subjectArea": "Computer Science",
+      "topic": "Web Colors and CSS",
+      "learningObjectives": [
+        "Identify web-safe named colors on a color wheel",
+        "Understand the relationship between hue and position on a color wheel",
+        "Compare RGB values of similar colors",
+        "Apply named colors in web design contexts"
+      ],
+      "bloomsLevels": [
+        "Remember",
+        "Understand",
+        "Apply",
+        "Analyze"
+      ],
+      "duration": "15-20 minutes",
+      "prerequisites": [
+        "Basic understanding of HTML/CSS",
+        "Familiarity with RGB color model"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": "400x460",
+      "responsive": true,
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "accessibility": [
+        "Screen reader description via describe() function"
+      ]
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "hover",
+          "description": "Hover over color dots to display color information"
+        }
+      ],
+      "displayElements": [
+        {
+          "name": "Color Wheel",
+          "description": "HSB color wheel background showing full spectrum"
+        },
+        {
+          "name": "Color Dots",
+          "description": "82 dots representing web-safe named colors positioned by hue and saturation"
+        },
+        {
+          "name": "Info Panel",
+          "description": "Shows color name, RGB values, hex code, and hue when hovering"
+        }
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Visualization",
+      "variables": [
+        "hue",
+        "saturation",
+        "RGB values"
+      ],
+      "assumptions": [
+        "Colors positioned by HSL hue value",
+        "Saturation determines radial distance from center"
+      ],
+      "limitations": [
+        "Does not show all 140+ CSS named colors",
+        "Grayscale colors not included as they lack hue"
+      ]
+    },
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "color-wheel-with-named-colors",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/color-wheel-with-named-colors"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
+    "id": 18
+  },
+  {
+    "title": "Concept Label Length Histogram",
+    "description": "Interactive Chart.js visualization for concept label length histogram",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "chart.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Chart.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "concept-length-histogram",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-length-histogram"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/concept-length-histogram/",
+    "id": 19
+  },
+  {
+    "title": "Course Description Quality Impact on Workflow",
+    "description": "Interactive p5.js visualization for course description quality impact on workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "p5.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "p5.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "course-description-quality-workflow",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/course-description-quality-workflow"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/course-description-quality-workflow/",
+    "id": 20
+  },
+  {
+    "title": "FAQ Question Pattern Analysis Workflow",
+    "description": "Interactive Mermaid visualization for faq question pattern analysis workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "faq-pattern-analysis",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/faq-pattern-analysis"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/faq-pattern-analysis/",
+    "id": 21
+  },
+  {
+    "title": "Git Workflow for Skill Development",
+    "description": "Interactive Mermaid visualization for git workflow for skill development",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "git-workflow-skill-development",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/git-workflow-skill-development"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/git-workflow-skill-development/",
+    "id": 22
+  },
+  {
+    "title": "Learning Graph Viewer",
+    "description": "Interactive vis-network visualization for learning graph viewer",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "vis-network"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "vis-network",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "graph-viewer",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/graph-viewer"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/graph-viewer/",
+    "id": 23
+  },
+  {
+    "title": "Install Book Environment Dependencies",
+    "description": "An interactive dependency graph visualization showing all software components required to set up an intelligent textbook development environment using MkDocs Material and Claude Skills.",
+    "creator": "Claude AI",
+    "date": "2025-12-01",
+    "subject": "Software Installation, Dependency Management, Development Environment",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "MIT License",
+    "audience": "Developers, Technical Writers, Educators",
+    "educationLevel": "Intermediate",
+    "keywords": [
+      "dependency graph",
+      "installation",
+      "MkDocs",
+      "Claude Code",
+      "intelligent textbook",
+      "vis-network",
+      "development environment"
+    ],
+    "library": "vis-network",
+    "libraryVersion": "9.x",
+    "controls": {
+      "navigation": "Built-in vis-network navigation buttons for zoom and pan",
+      "hover": "Hover over nodes to see component descriptions",
+      "select": "Click nodes to highlight connected dependencies"
+    },
+    "nodes": 15,
+    "edges": 20,
+    "categories": [
+      "Foundation",
+      "System",
+      "Runtime",
+      "Package Manager",
+      "Python Packages",
+      "Claude Tools",
+      "Goal"
+    ],
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "install-book-env",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/install-book-env"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/install-book-env/",
+    "id": 24
+  },
+  {
+    "title": "Learning Graph JSON Schema",
+    "description": "Interactive Mermaid visualization for learning graph json schema",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "learning-graph-json-schema",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/learning-graph-json-schema"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-json-schema/",
+    "id": 25
+  },
+  {
+    "title": "Linear Chain vs Network Structure Comparison",
+    "description": "Interactive vis-network visualization for linear chain vs network structure comparison",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "vis-network"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "vis-network",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "linear-chain-vs-network",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/linear-chain-vs-network"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/linear-chain-vs-network/",
+    "id": 26
+  },
+  {
+    "title": "MicroSim File Relationship Diagram",
+    "description": "Block diagram showing how the three core MicroSim files (index.md, main.html, metadata.json) relate to each other and integrate into the MkDocs intelligent textbook architecture, including security boundaries and metadata flows",
+    "subject": "Educational Technology",
+    "creator": "Claude AI with Mermaid Generator Skill",
+    "date": "2025-11-17",
+    "type": "Interactive Workflow Diagram",
+    "format": "text/html",
+    "language": "en-US",
+    "coverage": "Introductory",
+    "rights": "Educational Use",
+    "audience": "Undergraduate",
+    "diagram_type": "block-diagram",
+    "direction": "TD",
+    "node_count": "7",
+    "edge_count": "6",
+    "concepts": [
+      "MkDocs Integration",
+      "MicroSim Architecture",
+      "iframe Security",
+      "Dublin Core Metadata",
+      "Document Object Model",
+      "Sandbox Isolation",
+      "p5.js Visualization",
+      "Learning Management Systems"
+    ],
+    "bloom_taxonomy": "Understand",
+    "version": "1.0",
+    "educational_context": "This diagram helps students and developers understand the technical architecture behind MicroSims in intelligent textbooks, including how files relate, security boundaries work, and external systems integrate.",
+    "prerequisites": [
+      "Basic understanding of HTML",
+      "Familiarity with file systems",
+      "Web browser concepts"
+    ],
+    "learning_objectives": [
+      "Understand the three-file structure of a MicroSim package",
+      "Recognize the role of iframes in providing security isolation",
+      "Explain how metadata enables discovery and LMS integration",
+      "Trace the flow from navigation to interactive simulation"
+    ],
+    "components": {
+      "documentation": [
+        "index.md",
+        "MkDocs Navigation"
+      ],
+      "integration": [
+        "iframe element"
+      ],
+      "simulation": [
+        "main.html",
+        "p5.js rendering"
+      ],
+      "metadata": [
+        "metadata.json"
+      ],
+      "external": [
+        "Learning Management System"
+      ]
+    },
+    "color_scheme": {
+      "documentation": "#4dabf7",
+      "integration": "#ff922b",
+      "code": "#51cf66",
+      "simulation": "#ff6b6b",
+      "metadata": "#cc5de8",
+      "navigation": "#e9ecef"
+    },
+    "technical_specifications": {
+      "library": "Mermaid.js",
+      "version": "10.x",
+      "rendering_mode": "SVG",
+      "interactive_features": [
+        "zoom",
+        "pan",
+        "export"
+      ],
+      "responsive": true
+    },
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "microsim-file-relationship-diagram",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/microsim-file-relationship-diagram"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/microsim-file-relationship-diagram/",
+    "id": 27
+  },
+  {
+    "title": "MkDocs Build Process Workflow",
+    "description": "Interactive Mermaid visualization for mkdocs build process workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "mkdocs-build-process",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/mkdocs-build-process"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/mkdocs-build-process/",
+    "id": 28
+  },
+  {
+    "title": "MkDocs GitHub Pages Deployment Workflow",
+    "description": "Interactive Mermaid visualization for mkdocs github pages deployment workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "mkdocs-github-pages-deployment",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/mkdocs-github-pages-deployment"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/mkdocs-github-pages-deployment/",
+    "id": 29
+  },
+  {
+    "title": "Orphaned Nodes Identification Chart",
+    "description": "Interactive Chart.js visualization for orphaned nodes identification chart",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "chart.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Chart.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "orphaned-nodes-identification",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/orphaned-nodes-identification"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/orphaned-nodes-identification/",
+    "id": 30
+  },
+  {
+    "title": "p5.js Architecture and Execution Model",
+    "description": "Interactive p5.js visualization for p5.js architecture and execution model",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "p5.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "p5.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "p5js-architecture",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/p5js-architecture"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/p5js-architecture/",
+    "id": 31
+  },
+  {
+    "title": "Security Zones Diagram",
+    "description": "Interactive Mermaid visualization for security zones diagram",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "security-zones-diagram",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/security-zones-diagram"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/security-zones-diagram/",
+    "id": 32
+  },
+  {
+    "title": "Sine Function Visualization",
+    "description": "Interactive plot of the sine function with slider control to explore points along the curve. Demonstrates periodicity, amplitude, and relationship to the unit circle.",
+    "creator": "Claude Skills - Math Function Plotter",
+    "date": "2025-11-17",
+    "subject": [
+      "mathematics",
+      "trigonometry",
+      "precalculus",
+      "calculus",
+      "visualization",
+      "interactive learning"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "audience": "High school and college students",
+    "educationalLevel": "Grade 10-12, Undergraduate",
+    "learningResourceType": "Interactive Plot",
+    "interactivityType": "active",
+    "typicalLearningTime": "PT10M",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "sine-function-plot",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/sine-function-plot"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/sine-function-plot/",
+    "id": 33
+  },
+  {
+    "title": "Skill Context Window",
+    "description": "Interactive visualization demonstrating the progressive disclosure principle for Claude Skills. Shows how skill components (frontmatter, SKILL.md file, and bundled resources) are loaded into context at different times to manage token efficiency.",
+    "creator": "Dan McCreary",
+    "date": "2025-01-19",
+    "subject": [
+      "AI architecture",
+      "context window management",
+      "progressive disclosure",
+      "Claude skills",
+      "modular design",
+      "software architecture",
+      "prompt engineering"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "audience": "Developers, AI Engineers, Prompt Engineers",
+    "educationalLevel": "Advanced/Professional",
+    "bloomsLevel": [
+      "Understanding",
+      "Applying",
+      "Analyzing"
+    ],
+    "prerequisites": [
+      "Basic understanding of AI language models",
+      "Familiarity with context windows and token limits",
+      "Knowledge of modular software design"
+    ],
+    "concepts": [
+      "progressive disclosure",
+      "context window management",
+      "layered architecture",
+      "token efficiency",
+      "on-demand loading",
+      "modular design",
+      "Claude skills"
+    ],
+    "library": "p5.js",
+    "framework": "p5.js 1.11.10",
+    "canvasDimensions": "600\u00d7550 (responsive width)",
+    "responsive": "Width-responsive",
+    "interactionType": "Hover exploration",
+    "modelType": "Conceptual visualization",
+    "variables": [
+      "frontmatterLayerTop",
+      "skillFileLayerTop",
+      "assetsLayerTop",
+      "hoveredLayer"
+    ],
+    "controls": [
+      {
+        "type": "hover",
+        "description": "Hover over each layer to see loading details"
+      }
+    ],
+    "assumptions": [
+      "Claude uses a three-level progressive disclosure system",
+      "Scripts can execute without loading into context",
+      "Frontmatter is always ~100 words",
+      "SKILL.md files are <5k words"
+    ],
+    "limitations": [
+      "Simplified representation of context management",
+      "Actual token counts may vary",
+      "Does not show runtime context changes"
+    ],
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "skill-context-window",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-context-window"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/skill-context-window/",
+    "id": 34
+  },
+  {
+    "title": "Skill Directory Structure",
+    "description": "Interactive Mermaid visualization for skill directory structure",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "skill-directory-structure",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-directory-structure"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/skill-directory-structure/",
+    "id": 35
+  },
+  {
+    "title": "Skill Development Priority Matrix Visualization",
+    "description": "Interactive Chart.js visualization for skill development priority matrix visualization",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "chart.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Chart.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "skill-impact-chart",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-impact-chart"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/skill-impact-chart/",
+    "id": 36
+  },
+  {
+    "title": "Skill Installation Workflow",
+    "description": "Interactive HTML/CSS/JavaScript visualization for skill installation workflow",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "html/css/javascript"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "HTML/CSS/JavaScript",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "skill-installation-workflow",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-installation-workflow"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/skill-installation-workflow/",
+    "id": 37
+  },
+  {
+    "title": "Taxonomy Distribution Pie Chart",
+    "description": "Interactive Chart.js visualization for taxonomy distribution pie chart",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "chart.js"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Chart.js",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "taxonomy-distribution-pie",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/taxonomy-distribution-pie"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/taxonomy-distribution-pie/",
+    "id": 38
+  },
+  {
+    "title": "Terminal Workflow for Textbook Development",
+    "description": "Interactive Mermaid visualization for terminal workflow for textbook development",
+    "creator": "Dan McCreary",
+    "date": "2025-11-22",
+    "subject": [
+      "educational technology",
+      "data visualization",
+      "mermaid"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers",
+    "version": "1.0.0",
+    "library": "Mermaid",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "terminal-workflow-textbook",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/terminal-workflow-textbook"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/terminal-workflow-textbook/",
+    "id": 39
+  },
+  {
+    "title": "Major World Cities",
+    "description": "Interactive map showcasing ten major cities across different continents",
+    "subject": "Geography, Urban Studies, Global Population",
+    "creator": "Claude AI with Map Generator Skill",
+    "date": "2025-01-16",
+    "type": "Interactive Map Visualization",
+    "format": "text/html",
+    "language": "en-US",
+    "coverage": "Global",
+    "rights": "Educational Use",
+    "audience": "High School, College",
+    "map_type": "interactive",
+    "center_lat": "20",
+    "center_lng": "0",
+    "zoom_level": 2,
+    "marker_count": 10,
+    "base_map": "OpenStreetMap",
+    "has_layers": false,
+    "has_geojson": false,
+    "concepts": [
+      "Geographic Location",
+      "World Cities",
+      "Population Centers",
+      "Continents",
+      "Urban Geography"
+    ],
+    "bloom_taxonomy": "Understand",
+    "difficulty": "Beginner",
+    "prerequisites": [
+      "Basic geography knowledge",
+      "Understanding of continents"
+    ],
+    "learning_objectives": [
+      "Identify major cities on a world map",
+      "Understand the global distribution of population centers",
+      "Recognize cities across different continents"
+    ],
+    "tags": [
+      "geography",
+      "world-cities",
+      "urban-studies",
+      "population",
+      "interactive-map"
+    ],
+    "version": "1.0",
+    "library": "Leaflet",
+    "library_version": "1.9.4",
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "test-world-cities",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/test-world-cities"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/test-world-cities/",
+    "id": 40
+  },
+  {
+    "title": "Three-Color DFS Cycle Detection",
+    "description": "Interactive vis-network visualization demonstrating the three-color DFS algorithm for detecting cycles in directed graphs, specifically for validating learning graph DAG structure",
+    "creator": "Dan McCreary",
+    "date": "2025-12-02",
+    "subject": [
+      "algorithms",
+      "graph theory",
+      "cycle detection",
+      "depth-first search",
+      "learning graphs",
+      "DAG validation"
+    ],
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en-US",
+    "rights": "CC BY 4.0",
+    "publisher": "Claude Skills Repository",
+    "learningResourceType": "simulation",
+    "audience": "Educators, Developers, Computer Science Students",
+    "version": "1.0.0",
+    "library": "vis-network.js",
+    "controls": {
+      "navigation_buttons": "Zoom and pan the network view",
+      "legend": "Shows the three colors (White, Gray, Black) and their meanings",
+      "stack_display": "Shows the current DFS traversal stack",
+      "cycle_alert": "Highlights when a cycle is detected with explanation"
+    },
+    "_source": {
+      "repo": "claude-skills",
+      "sim": "three-color-dfs",
+      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/three-color-dfs"
+    },
+    "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
+    "id": 41
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "dublinCore": {
+      "title": "Cognitive Bias Recognition Quiz",
+      "creator": "Dan McCreary",
+      "subject": [
+        "Ethics",
+        "Critical Thinking",
+        "Cognitive Psychology",
+        "Data Literacy"
+      ],
+      "description": "An interactive quiz game that presents real-world scenarios and asks students to identify which cognitive bias is being demonstrated. Includes 8 scenarios covering cherry picking, availability heuristic, ad hominem bias, anchoring, framing effect, survivorship bias, confirmation bias, and correlation-causation fallacy.",
+      "date": "2025-12-03",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "language": "en",
+      "rights": "CC BY 4.0"
+    },
+    "educational": {
+      "gradeLevel": "9-12, Undergraduate",
+      "subjectArea": "Ethics, Critical Thinking",
+      "topic": "Cognitive Biases in Ethical Reasoning",
+      "learningObjectives": [
+        "Identify common cognitive biases in realistic scenarios",
+        "Distinguish between similar biases such as cherry picking and confirmation bias",
+        "Explain why specific reasoning patterns qualify as biased thinking",
+        "Apply bias recognition skills to evaluate arguments and data presentations"
+      ],
+      "bloomsTaxonomyLevel": "Apply (L3)",
+      "duration": "15-20 minutes",
+      "prerequisites": [
+        "Basic understanding of what cognitive biases are",
+        "Familiarity with concepts of evidence and argumentation"
+      ]
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.11.10",
+      "canvasDimensions": "800x500",
+      "responsive": "Width-responsive",
+      "dependencies": [
+        "p5.js CDN"
+      ],
+      "dataFiles": [
+        "data.json"
+      ],
+      "accessibility": {
+        "screenReaderDescription": true,
+        "keyboardNavigation": false,
+        "highContrast": true
+      }
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "button",
+          "name": "Option buttons",
+          "description": "Four multiple choice buttons for selecting the identified bias"
+        },
+        {
+          "type": "button",
+          "name": "Show Hint",
+          "description": "Displays a hint to help identify the bias (reduces points from 10 to 5)"
+        },
+        {
+          "type": "button",
+          "name": "Explain",
+          "description": "Shows detailed explanation of why the answer is correct"
+        },
+        {
+          "type": "button",
+          "name": "Next Scenario",
+          "description": "Advances to the next quiz scenario"
+        },
+        {
+          "type": "button",
+          "name": "Restart Quiz",
+          "description": "Resets the quiz with randomized question order"
+        }
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Quiz/Assessment",
+      "variables": [
+        "currentScenarioIndex",
+        "score",
+        "answered",
+        "selectedAnswer",
+        "usedHint"
+      ],
+      "scoringSystem": {
+        "correctWithoutHint": 10,
+        "correctWithHint": 5,
+        "incorrect": 0
+      },
+      "assumptions": [
+        "Each scenario demonstrates one primary cognitive bias",
+        "Distractor options are plausible but distinguishable from correct answer"
+      ],
+      "limitations": [
+        "Real-world scenarios may involve multiple overlapping biases",
+        "Quiz format cannot capture nuanced understanding"
+      ]
+    },
+    "contentMetadata": {
+      "biasesCovered": [
+        "Cherry Picking",
+        "Availability Heuristic",
+        "Ad Hominem Bias",
+        "Anchoring",
+        "Framing Effect",
+        "Survivorship Bias",
+        "Confirmation Bias",
+        "Correlation-Causation Fallacy"
+      ],
+      "scenarioCount": 8,
+      "randomizedOrder": true
+    },
+    "_source": {
+      "repo": "ethics-course",
+      "sim": "bias-classifier-quiz",
+      "github_url": "https://github.com/dmccreary/ethics-course/tree/main/docs/sims/bias-classifier-quiz"
+    },
+    "url": "https://dmccreary.github.io/ethics-course/sims/bias-classifier-quiz/",
+    "id": 42
+  },
+  {
+    "title": "Data-Driven Ethics Process Flow",
+    "description": "Interactive workflow diagram showing the six-step systematic process for data-driven ethical analysis: Identify, Quantify, Analyze, Map, Evaluate, and Target",
+    "subject": "Ethics",
+    "creator": "Claude AI with Mermaid Generator Skill",
+    "date": "2025-12-03",
+    "type": "Interactive Workflow Diagram",
+    "format": "text/html",
+    "language": "en-US",
+    "coverage": "Introductory",
+    "rights": "Educational Use",
+    "audience": "High School",
+    "diagram_type": "flowchart",
+    "direction": "TD",
+    "node_count": "7",
+    "edge_count": "7",
+    "concepts": [
+      "Harm Identification",
+      "Harm Quantification",
+      "Causal Analysis",
+      "Systems Mapping",
+      "Intervention Evaluation",
+      "Leverage Points",
+      "Iterative Analysis"
+    ],
+    "bloom_taxonomy": "Apply",
+    "version": "1.0",
+    "_source": {
+      "repo": "ethics-course",
+      "sim": "ethics-process-flow",
+      "github_url": "https://github.com/dmccreary/ethics-course/tree/main/docs/sims/ethics-process-flow"
+    },
+    "url": "https://dmccreary.github.io/ethics-course/sims/ethics-process-flow/",
+    "id": 43
+  },
+  {
+    "$schema": "https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json",
+    "title": "Leverage Points Iceberg",
+    "description": "An interactive visualization of Donella Meadows' 12 Leverage Points using the iceberg metaphor. Surface interventions are visible but have low impact; deeper interventions are hidden but transformative.",
+    "creator": "Dan McCreary",
+    "date": "2025-12-03",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "subject": [
+      "Systems Thinking",
+      "Ethics",
+      "Policy Design",
+      "Leverage Points"
+    ],
+    "educationalMetadata": {
+      "gradeLevel": "High School to Undergraduate",
+      "subjectArea": "Social Sciences / Systems Thinking",
+      "topic": "Donella Meadows' 12 Leverage Points for System Intervention",
+      "learningObjectives": [
+        "Understand the hierarchy of intervention effectiveness in complex systems",
+        "Recognize why surface-level interventions often fail to create lasting change",
+        "Identify which leverage level is appropriate for different change strategies",
+        "Navigate to detailed explanations of each leverage point"
+      ],
+      "bloomsTaxonomy": [
+        "Understand",
+        "Apply",
+        "Analyze"
+      ],
+      "duration": "5-10 minutes",
+      "prerequisites": "Basic understanding of systems thinking concepts"
+    },
+    "technicalMetadata": {
+      "framework": "p5.js",
+      "canvasDimensions": "800x630",
+      "responsive": "Width-responsive (scales to container)",
+      "dependencies": [
+        "p5.js 1.11.10 CDN"
+      ],
+      "accessibility": {
+        "screenReader": "Canvas description provided via describe() function",
+        "colorContrast": "High contrast text, zone colors distinguishable"
+      }
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "hover",
+          "description": "Hover over iceberg layers to see detailed information in the right panel"
+        },
+        {
+          "type": "click",
+          "description": "Click any layer to navigate to its detailed explanation in Chapter 6"
+        }
+      ],
+      "visualElements": [
+        {
+          "name": "Iceberg",
+          "description": "Left side visualization showing 10 leverage point layers with animated waterline"
+        },
+        {
+          "name": "Info Panel",
+          "description": "Right side panel showing layer details on hover or introduction text by default"
+        },
+        {
+          "name": "Zone Legend",
+          "description": "Color-coded legend showing Shallow, Structural, Deep, and Transformative zones"
+        }
+      ]
+    },
+    "simulationModel": {
+      "modelType": "Conceptual hierarchy visualization",
+      "variables": [
+        "Layer hover state",
+        "Wave animation offset",
+        "Glow animation phase"
+      ],
+      "assumptions": [
+        "Leverage points are hierarchical with deeper points being more effective",
+        "The iceberg metaphor accurately represents visibility vs effectiveness tradeoff"
+      ],
+      "limitations": [
+        "Levels 2 and 3 are combined with Level 4 for simplicity",
+        "Actual effectiveness depends heavily on context and implementation"
+      ]
+    },
+    "relatedConcepts": [
+      "Systems Thinking",
+      "Donella Meadows",
+      "Feedback Loops",
+      "Paradigm Shifts",
+      "Policy Design",
+      "Social Change"
+    ],
+    "_source": {
+      "repo": "ethics-course",
+      "sim": "leverage-iceberg",
+      "github_url": "https://github.com/dmccreary/ethics-course/tree/main/docs/sims/leverage-iceberg"
+    },
+    "url": "https://dmccreary.github.io/ethics-course/sims/leverage-iceberg/",
+    "id": 44
+  },
+  {
+    "title": "Tobacco Industry System Components",
+    "description": "An interactive network diagram showing the interconnected stakeholders and dynamics of the tobacco industry as a complex system, including money flows, influence, products, and regulatory relationships.",
+    "creator": "Dan McCreary",
+    "date": "2025-12-03",
+    "subject": "Systems Thinking, Ethics, Public Health",
+    "type": "Interactive Visualization",
+    "format": "text/html",
+    "identifier": "tobacco-system-microsim-v1",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0",
+    "educationalLevel": "High School, Undergraduate",
+    "bloomLevel": "Understand (L2)",
+    "learningObjective": "Students will understand how to identify system components and map their interconnections",
+    "keywords": [
+      "tobacco industry",
+      "systems thinking",
+      "stakeholder analysis",
+      "regulatory capture",
+      "public health",
+      "ethics",
+      "network diagram",
+      "complex systems",
+      "feedback loops"
+    ],
+    "technology": {
+      "library": "vis-network.js",
+      "version": "standalone/umd/vis-network.min.js",
+      "responsive": true,
+      "interactivity": [
+        "node hover",
+        "node click",
+        "edge hover",
+        "connection filtering",
+        "problematic connection highlighting"
+      ]
+    },
+    "relatedChapters": [
+      "04-impact-analysis",
+      "05-systems-thinking",
+      "06-looking-for-leverage"
+    ],
+    "_source": {
+      "repo": "ethics-course",
+      "sim": "tobacco-system",
+      "github_url": "https://github.com/dmccreary/ethics-course/tree/main/docs/sims/tobacco-system"
+    },
+    "url": "tobacco-system-microsim-v1",
+    "id": 45
+  }
+]
