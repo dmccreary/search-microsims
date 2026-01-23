@@ -282,10 +282,94 @@
                 position: static;
             }
         }
+
+        /* Help Modal */
+        .help-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .help-modal {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .help-modal h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .help-modal h3 {
+            color: #3498db;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .help-modal table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .help-modal th, .help-modal td {
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .help-modal th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .help-modal code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .help-modal .example {
+            background: #e8f4fd;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 13px;
+            word-break: break-all;
+        }
+
+        .help-modal .close-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .help-modal .close-btn:hover {
+            background: #2980b9;
+        }
     </style>
 </head>
 <body>
-    <h1>MicroSim Faceted Search</h1>
+    <h1>MicroSim Faceted Search <a href="?help" style="font-size: 14px; color: #3498db; text-decoration: none; vertical-align: middle;">[?]</a></h1>
 
     <div class="container">
         <div class="search-container">
@@ -312,6 +396,45 @@
         </main>
     </div>
 
+    <!-- Help Modal -->
+    <div class="help-overlay" id="help-modal" style="display: none;">
+        <div class="help-modal">
+            <h2>URL Parameters Reference</h2>
+            <p>Use URL parameters to create shareable search links.</p>
+
+            <h3>Search</h3>
+            <table>
+                <tr><th>Parameter</th><th>Description</th><th>Example</th></tr>
+                <tr><td><code>q</code></td><td>Full-text search query</td><td><code>?q=physics</code></td></tr>
+            </table>
+
+            <h3>Facet Filters</h3>
+            <p>Use comma-separated values for multiple selections (OR logic).</p>
+            <table>
+                <tr><th>Parameter</th><th>Description</th><th>Example Values</th></tr>
+                <tr><td><code>subject</code></td><td>Subject Area</td><td>Mathematics, Physics, Computer Science</td></tr>
+                <tr><td><code>level</code></td><td>Grade Level</td><td>K-12, Undergraduate, Graduate</td></tr>
+                <tr><td><code>bloom</code></td><td>Bloom's Taxonomy</td><td>Remember, Understand, Apply, Analyze, Evaluate, Create</td></tr>
+                <tr><td><code>difficulty</code></td><td>Difficulty</td><td>Beginner, Intermediate, Advanced</td></tr>
+                <tr><td><code>framework</code></td><td>JavaScript Framework</td><td>p5.js, d3.js, three.js, vanilla-js</td></tr>
+                <tr><td><code>viz</code></td><td>Visualization Type</td><td>animation, chart, simulation, diagram</td></tr>
+            </table>
+
+            <h3>Sorting</h3>
+            <table>
+                <tr><th>Parameter</th><th>Values</th></tr>
+                <tr><td><code>sort</code></td><td><code>title:asc</code>, <code>title:desc</code>, <code>date:asc</code>, <code>date:desc</code></td></tr>
+            </table>
+
+            <h3>Examples</h3>
+            <div class="example">?q=wave&subject=Physics&level=Undergraduate</div>
+            <div class="example">?framework=p5.js&bloom=Apply,Analyze&sort=date:desc</div>
+            <div class="example">?subject=Mathematics,Computer Science&difficulty=Beginner</div>
+
+            <button class="close-btn" onclick="closeHelp()">Close</button>
+        </div>
+    </div>
+
     <!-- ItemsJS from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/itemsjs@latest/dist/itemsjs.min.js"></script>
 
@@ -321,6 +444,110 @@
         let currentFilters = {};
         let currentQuery = '';
         let currentSort = 'title:asc';
+
+        // URL parameter mappings (URL param -> internal facet name)
+        const urlParamMap = {
+            'subject': 'subjectArea',
+            'level': 'gradeLevel',
+            'bloom': 'bloomsTaxonomy',
+            'difficulty': 'difficulty',
+            'framework': 'framework',
+            'viz': 'visualizationType'
+        };
+
+        // Reverse mapping (internal facet name -> URL param)
+        const facetToUrlParam = Object.fromEntries(
+            Object.entries(urlParamMap).map(([k, v]) => [v, k])
+        );
+
+        // URL parameter helpers
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || '';
+        }
+
+        function updateUrlParams() {
+            const url = new URL(window.location);
+
+            // Update search query
+            if (currentQuery) {
+                url.searchParams.set('q', currentQuery);
+            } else {
+                url.searchParams.delete('q');
+            }
+
+            // Update facet filters
+            for (const [urlParam, facetName] of Object.entries(urlParamMap)) {
+                if (currentFilters[facetName] && currentFilters[facetName].length > 0) {
+                    url.searchParams.set(urlParam, currentFilters[facetName].join(','));
+                } else {
+                    url.searchParams.delete(urlParam);
+                }
+            }
+
+            // Update sort (only if not default)
+            if (currentSort && currentSort !== 'title:asc') {
+                url.searchParams.set('sort', currentSort);
+            } else {
+                url.searchParams.delete('sort');
+            }
+
+            window.history.replaceState({}, '', url);
+        }
+
+        function loadFiltersFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Load search query
+            const q = urlParams.get('q');
+            if (q) {
+                currentQuery = q;
+                document.getElementById('search-input').value = q;
+            }
+
+            // Load facet filters
+            for (const [urlParam, facetName] of Object.entries(urlParamMap)) {
+                const value = urlParams.get(urlParam);
+                if (value) {
+                    currentFilters[facetName] = value.split(',').map(v => v.trim());
+                }
+            }
+
+            // Load sort
+            const sort = urlParams.get('sort');
+            if (sort && ['title:asc', 'title:desc', 'date:asc', 'date:desc'].includes(sort)) {
+                currentSort = sort;
+                document.getElementById('sort-select').value = sort;
+            }
+        }
+
+        // Help modal functions
+        function showHelp() {
+            document.getElementById('help-modal').style.display = 'flex';
+        }
+
+        function closeHelp() {
+            document.getElementById('help-modal').style.display = 'none';
+            // Remove help param from URL
+            const url = new URL(window.location);
+            url.searchParams.delete('help');
+            window.history.replaceState({}, '', url);
+        }
+
+        function checkForHelp() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('help')) {
+                showHelp();
+            }
+        }
+
+        // Close help on Escape key or clicking outside
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeHelp();
+        });
+        document.getElementById('help-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'help-modal') closeHelp();
+        });
 
         // Normalize data to handle varying metadata schemas
         // Supports both flat legacy format and nested schema format (microsim.dublinCore, etc.)
@@ -540,6 +767,13 @@
 
                 itemsjs = window.itemsjs(data, configuration);
                 console.log('ItemsJS initialized');
+
+                // Load filters from URL parameters
+                loadFiltersFromUrl();
+
+                // Check for help parameter
+                checkForHelp();
+
                 render();
                 setupEventListeners();
             } catch (error) {
@@ -665,6 +899,7 @@
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(() => {
                     currentQuery = e.target.value;
+                    updateUrlParams();
                     render();
                 }, 200);
             });
@@ -688,6 +923,7 @@
                         }
                     }
 
+                    updateUrlParams();
                     render();
                 }
             });
@@ -695,6 +931,7 @@
             // Sort
             document.getElementById('sort-select').addEventListener('change', (e) => {
                 currentSort = e.target.value;
+                updateUrlParams();
                 render();
             });
 
@@ -702,7 +939,10 @@
             document.getElementById('clear-filters').addEventListener('click', () => {
                 currentFilters = {};
                 currentQuery = '';
+                currentSort = 'title:asc';
                 document.getElementById('search-input').value = '';
+                document.getElementById('sort-select').value = 'title:asc';
+                updateUrlParams();
                 render();
             });
 
@@ -720,6 +960,7 @@
                             delete currentFilters[facet];
                         }
                     }
+                    updateUrlParams();
                     render();
                 }
             });
