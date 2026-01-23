@@ -1,4 +1,8 @@
-# MicroSim Search
+---
+title: MicroSim Search and Embeddings
+description: Sample frameworks for creating a MicroSim search site that supports in-browser embeddings for similarity
+---
+# MicroSim Search and Embeddings
 
 A faceted search system for educational MicroSims using [ItemsJS](https://github.com/itemsapi/itemsjs).
 
