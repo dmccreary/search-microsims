@@ -28,6 +28,19 @@ python3 src/update-repo-microsims.py dmccreary/geometry-course
 python3 src/analyze-missing-metadata.py
 ```
 
+### Generating Embeddings
+```bash
+# Activate the embeddings virtual environment (requires Python 3.12)
+source .venv-embeddings/bin/activate
+
+# Generate embeddings for all MicroSims
+python src/embeddings/generate-embeddings.py
+
+# Output: data/microsims-embeddings.json (7MB, 384-dim vectors)
+```
+
+See `src/embeddings/README.md` for detailed documentation on the embedding system.
+
 ## Architecture
 
 ### Data Pipeline
@@ -69,7 +82,10 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/crawl-microsims.py` | GitHub crawler for metadata collection |
 | `src/update-repo-microsims.py` | Update metadata from a single repo |
 | `src/analyze-missing-metadata.py` | Report repos missing metadata |
+| `src/embeddings/generate-embeddings.py` | Generate semantic embeddings for MicroSims |
+| `src/embeddings/README.md` | Embeddings documentation |
 | `docs/search/demo.html` | ItemsJS faceted search UI |
 | `docs/search/microsims-data.json` | Combined metadata (generated) |
+| `data/microsims-embeddings.json` | Semantic embeddings for similarity search (generated) |
 | `docs/microsim-schema.md` | Schema documentation |
 | `logs/*.jsonl` | Crawl logs with missing metadata entries |
