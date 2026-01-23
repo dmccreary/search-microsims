@@ -28,6 +28,23 @@ python3 src/update-repo-microsims.py dmccreary/geometry-course
 python3 src/analyze-missing-metadata.py
 ```
 
+### Data Profiling
+```bash
+# Generate quality metrics report
+python3 src/data-profiler/profile-microsims.py
+
+# Output: docs/reports/microsim-metrics.md
+```
+
+### Schema Validation
+```bash
+# Validate a single metadata.json file
+python3 src/microsim-schema/validate-metadata.py path/to/metadata.json
+
+# Validate all collected metadata
+python3 src/microsim-schema/validate-metadata.py --all
+```
+
 ### Generating Embeddings
 ```bash
 # Activate the embeddings virtual environment (requires Python 3.12)
@@ -82,10 +99,14 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/crawl-microsims.py` | GitHub crawler for metadata collection |
 | `src/update-repo-microsims.py` | Update metadata from a single repo |
 | `src/analyze-missing-metadata.py` | Report repos missing metadata |
+| `src/data-profiler/profile-microsims.py` | Generate metadata quality metrics report |
+| `src/microsim-schema/validate-metadata.py` | Validate metadata against JSON schema |
+| `src/microsim-schema/microsim-schema.json` | Official MicroSim metadata JSON schema |
 | `src/embeddings/generate-embeddings.py` | Generate semantic embeddings for MicroSims |
 | `src/embeddings/README.md` | Embeddings documentation |
 | `docs/search/demo.html` | ItemsJS faceted search UI |
 | `docs/search/microsims-data.json` | Combined metadata (generated) |
 | `data/microsims-embeddings.json` | Semantic embeddings for similarity search (generated) |
 | `docs/microsim-schema.md` | Schema documentation |
+| `docs/reports/microsim-metrics.md` | Metadata quality report (generated) |
 | `logs/*.jsonl` | Crawl logs with missing metadata entries |
