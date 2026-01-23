@@ -132,7 +132,7 @@
               "description": "Primary application domains"
             }
           },
-          "required": ["tags", "visualizationType"]
+          "required": ["visualizationType"]
         },
         "educational": {
           "type": "object",
@@ -142,7 +142,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Undergraduate", "Graduate", "Adult"]
+                "enum": ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "K-5", "6-8", "6-12", "9-12", "K-12", "Undergraduate", "Graduate", "Adult"]
               },
               "description": "Target grade levels or educational stages"
             },
@@ -409,7 +409,7 @@
               }
             }
           },
-          "required": ["framework", "canvasDimensions"]
+          "required": ["framework"]
         },
         "userInterface": {
           "type": "object",

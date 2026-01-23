@@ -1,23 +1,25 @@
 # MicroSim Metadata Quality Report
 
-*Generated: 2026-01-23 13:38:58*
+**Version:** 1.0.0  
+**Generated:** 2026-01-23 14:00:36  
+**Source:** [docs/reports/microsim-metrics.md](https://github.com/dmccreary/search-microsims/blob/main/docs/reports/microsim-metrics.md)
 
 ## Executive Summary
 
 - **Total MicroSims**: 873
-- **Average Quality Score**: 64.1%
-- **Median Quality Score**: 55%
+- **Average Quality Score**: 75.7%
+- **Median Quality Score**: 70%
 - **Repositories**: 39
 
 ## Quality Score Distribution
 
 | Quality Level | Count | Percentage |
 |--------------|------:|------------|
-| Excellent (90-100) | 114 | 13.1% |
-| Good (70-89) | 202 | 23.1% |
-| Fair (50-69) | 467 | 53.5% |
-| Poor (30-49) | 72 | 8.2% |
-| Minimal (0-29) | 18 | 2.1% |
+| Excellent (90-100) | 168 | 19.2% |
+| Good (70-89) | 448 | 51.3% |
+| Fair (50-69) | 237 | 27.1% |
+| Poor (30-49) | 3 | 0.3% |
+| Minimal (0-29) | 17 | 1.9% |
 
 ## Field Completeness
 
@@ -35,8 +37,8 @@
 |-------|--------:|------------|
 | subject | 851 / 873 | 97.5% |
 | gradeLevel | 413 / 873 | 47.3% |
-| bloomsTaxonomy | 183 / 873 | 21.0% |
-| learningObjectives | 218 / 873 | 25.0% |
+| bloomsTaxonomy | 873 / 873 | 100.0% |
+| learningObjectives | 873 / 873 | 100.0% |
 
 ### Technical Fields
 
@@ -49,7 +51,7 @@
 
 | Field | Present | Percentage |
 |-------|--------:|------------|
-| visualizationType | 136 / 873 | 15.6% |
+| visualizationType | 873 / 873 | 100.0% |
 | tags | 6 / 873 | 0.7% |
 
 ### Metadata Fields
@@ -109,19 +111,12 @@
 
 | Value | Count |
 |-------|------:|
-| Understand | 172 |
-| Apply | 166 |
-| Remember | 29 |
-| Analyze | 20 |
-| Evaluate | 7 |
-| Create | 4 |
-
-**Non-standard values found:**
-- `Understanding` (2)
-- `Remembering` (1)
-- `Applying` (1)
-- `Analyzing` (1)
-- `Remember - Recall definitions of triangle types` (1)
+| Apply | 853 |
+| Understand | 784 |
+| Create | 691 |
+| Remember | 661 |
+| Evaluate | 368 |
+| Analyze | 351 |
 
 ### framework
 
@@ -131,12 +126,12 @@
 | vis-network | 34 |
 | chart.js | 14 |
 | vanilla-js | 13 |
+| leaflet | 3 |
 | three.js | 1 |
 | mermaid | 1 |
 | d3.js | 1 |
 
 **Non-standard values found:**
-- `leaflet` (3)
 - `p5.js 1.11.10` (1)
 - `HTML/CSS/JavaScript` (1)
 
@@ -144,15 +139,17 @@
 
 | Value | Count |
 |-------|------:|
-| interactive-demo | 124 |
-| graph | 103 |
-| map | 93 |
-| network | 90 |
-| simulation | 81 |
-| animation | 72 |
-| chart | 65 |
-| diagram | 28 |
-| timeline | 28 |
+| interactive-demo | 840 |
+| network | 529 |
+| simulation | 514 |
+| animation | 481 |
+| graph | 477 |
+| map | 470 |
+| diagram | 257 |
+| chart | 120 |
+| timeline | 119 |
+| 3d-model | 92 |
+| data-visualization | 57 |
 
 ### difficulty
 
@@ -167,85 +164,82 @@
 
 | Repository | Count | Avg Score | Min | Max |
 |------------|------:|----------:|----:|----:|
-| geometry-course | 131 | 64.3% | 20% | 80% |
-| linear-algebra | 121 | 72.7% | 55% | 95% |
-| microsims | 113 | 50.6% | 10% | 95% |
-| intro-to-physics-course | 104 | 49.3% | 10% | 80% |
-| automating-instructional-design | 81 | 66.7% | 30% | 95% |
-| claude-skills | 36 | 57.9% | 50% | 95% |
-| reading-for-kindergarten | 25 | 83.4% | 75% | 95% |
-| signal-processing | 25 | 57.9% | 55% | 95% |
-| tracking-ai-course | 25 | 55.0% | 55% | 55% |
-| graph-algorithms | 17 | 55.0% | 55% | 55% |
-| intelligent-textbooks | 17 | 70.6% | 10% | 95% |
-| personal-finance | 16 | 54.7% | 50% | 95% |
-| data-science-course | 14 | 60.7% | 50% | 95% |
-| learning-linux | 14 | 77.1% | 50% | 95% |
-| circuits | 12 | 57.8% | 55% | 88% |
-| algebra-1 | 11 | 65.9% | 10% | 100% |
-| clocks-and-watches | 10 | 55.0% | 55% | 55% |
-| ethics-course | 10 | 77.8% | 50% | 95% |
-| moving-rainbow | 10 | 85.7% | 55% | 95% |
-| conversational-ai | 8 | 89.4% | 50% | 95% |
-| it-management-graph | 8 | 94.1% | 88% | 95% |
-| systems-thinking | 8 | 85.9% | 50% | 95% |
-| intro-to-graph | 6 | 80.8% | 50% | 95% |
-| modeling-healthcare-data | 6 | 77.5% | 55% | 95% |
-| learning-graphs | 5 | 80.6% | 55% | 95% |
-| spectrum-analyzer | 5 | 93.6% | 88% | 95% |
-| clan-macquarrie | 4 | 88.0% | 88% | 88% |
-| mccreary-heritage | 4 | 91.5% | 88% | 95% |
-| tour-maps | 4 | 88.0% | 88% | 88% |
-| digital-electronics | 3 | 55.0% | 55% | 55% |
-| graph-data-modeling-course | 3 | 70.0% | 55% | 95% |
-| graph-lms | 3 | 88.0% | 88% | 88% |
-| lambda-graph-visualization | 3 | 92.7% | 88% | 95% |
-| native-american-crime-novels | 3 | 92.7% | 88% | 95% |
-| agents-course | 2 | 88.0% | 88% | 88% |
-| asl-book | 2 | 95.0% | 95% | 95% |
-| beginning-electronics | 2 | 95.0% | 95% | 95% |
-| fft-benchmarking | 1 | 88.0% | 88% | 88% |
-| intelligent-book-template | 1 | 95.0% | 95% | 95% |
+| geometry-course | 131 | 74.9% | 35% | 85% |
+| linear-algebra | 121 | 84.5% | 70% | 100% |
+| microsims | 113 | 64.2% | 25% | 100% |
+| intro-to-physics-course | 104 | 64.2% | 25% | 90% |
+| automating-instructional-design | 81 | 77.8% | 45% | 100% |
+| claude-skills | 36 | 72.4% | 65% | 100% |
+| reading-for-kindergarten | 25 | 85.6% | 85% | 100% |
+| signal-processing | 25 | 72.1% | 70% | 100% |
+| tracking-ai-course | 25 | 70.0% | 70% | 70% |
+| graph-algorithms | 17 | 70.0% | 70% | 70% |
+| intelligent-textbooks | 17 | 79.1% | 25% | 100% |
+| personal-finance | 16 | 68.8% | 65% | 100% |
+| data-science-course | 14 | 72.9% | 65% | 100% |
+| learning-linux | 14 | 84.3% | 65% | 100% |
+| circuits | 12 | 71.8% | 70% | 92% |
+| algebra-1 | 11 | 74.5% | 25% | 100% |
+| clocks-and-watches | 10 | 70.0% | 70% | 70% |
+| ethics-course | 10 | 86.7% | 65% | 100% |
+| moving-rainbow | 10 | 92.3% | 70% | 100% |
+| conversational-ai | 8 | 95.6% | 65% | 100% |
+| it-management-graph | 8 | 99.0% | 92% | 100% |
+| systems-thinking | 8 | 91.6% | 65% | 100% |
+| intro-to-graph | 6 | 88.3% | 65% | 100% |
+| modeling-healthcare-data | 6 | 87.5% | 70% | 100% |
+| learning-graphs | 5 | 86.4% | 70% | 100% |
+| spectrum-analyzer | 5 | 98.4% | 92% | 100% |
+| clan-macquarrie | 4 | 92.0% | 92% | 92% |
+| mccreary-heritage | 4 | 96.0% | 92% | 100% |
+| tour-maps | 4 | 92.0% | 92% | 92% |
+| digital-electronics | 3 | 70.0% | 70% | 70% |
+| graph-data-modeling-course | 3 | 80.0% | 70% | 100% |
+| graph-lms | 3 | 92.0% | 92% | 92% |
+| lambda-graph-visualization | 3 | 97.3% | 92% | 100% |
+| native-american-crime-novels | 3 | 97.3% | 92% | 100% |
+| agents-course | 2 | 92.0% | 92% | 92% |
+| asl-book | 2 | 100.0% | 100% | 100% |
+| beginning-electronics | 2 | 100.0% | 100% | 100% |
+| fft-benchmarking | 1 | 92.0% | 92% | 92% |
+| intelligent-book-template | 1 | 100.0% | 100% | 100% |
 
 ## Items Needing Improvement
 
-Found 90 items with quality score below 50%.
+Found 20 items with quality score below 50%.
 
 ### Lowest Quality Items
 
 | Score | Repository | Simulation | Missing Fields |
 |------:|------------|------------|----------------|
-| 10% | algebra-1 | integer-ops-number-line | title, description, subject, gradeLevel (+9 more) |
-| 10% | intelligent-textbooks | addie-workflow | title, description, subject, gradeLevel (+9 more) |
-| 10% | intelligent-textbooks | cognitive-load | title, description, subject, gradeLevel (+9 more) |
-| 10% | intelligent-textbooks | kemp-model | title, description, subject, gradeLevel (+9 more) |
-| 10% | intelligent-textbooks | sam-process | title, description, subject, gradeLevel (+9 more) |
-| 10% | intro-to-physics-course | action-reaction | title, description, subject, gradeLevel (+9 more) |
-| 10% | intro-to-physics-course | metric-scale-zoom | title, description, subject, gradeLevel (+9 more) |
-| 10% | intro-to-physics-course | projectile-motion | title, description, subject, gradeLevel (+9 more) |
-| 10% | intro-to-physics-course | projectile-motion-gravity | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | color-wheel | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | flex-layout-playground | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | global-impact | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | microsim-layout | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | p5-coordinate-system | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | rainbow-color-picker | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | spinning-3d-shapes | title, description, subject, gradeLevel (+9 more) |
-| 10% | microsims | temp-and-pressure | title, description, subject, gradeLevel (+9 more) |
-| 20% | geometry-course | sierpinski-triangles | title, description, subject, gradeLevel (+8 more) |
-| 30% | algebra-1 | number-systems-mermaid | title, subject, gradeLevel, bloomsTaxonomy (+7 more) |
-| 30% | automating-instructional-design | iteration-dashboard | title, subject, gradeLevel, bloomsTaxonomy (+7 more) |
+| 25% | algebra-1 | integer-ops-number-line | title, description, subject, gradeLevel (+6 more) |
+| 25% | intelligent-textbooks | addie-workflow | title, description, subject, gradeLevel (+6 more) |
+| 25% | intelligent-textbooks | cognitive-load | title, description, subject, gradeLevel (+6 more) |
+| 25% | intelligent-textbooks | kemp-model | title, description, subject, gradeLevel (+6 more) |
+| 25% | intelligent-textbooks | sam-process | title, description, subject, gradeLevel (+6 more) |
+| 25% | intro-to-physics-course | action-reaction | title, description, subject, gradeLevel (+6 more) |
+| 25% | intro-to-physics-course | metric-scale-zoom | title, description, subject, gradeLevel (+6 more) |
+| 25% | intro-to-physics-course | projectile-motion | title, description, subject, gradeLevel (+6 more) |
+| 25% | intro-to-physics-course | projectile-motion-gravity | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | color-wheel | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | flex-layout-playground | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | global-impact | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | microsim-layout | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | p5-coordinate-system | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | rainbow-color-picker | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | spinning-3d-shapes | title, description, subject, gradeLevel (+6 more) |
+| 25% | microsims | temp-and-pressure | title, description, subject, gradeLevel (+6 more) |
+| 35% | geometry-course | sierpinski-triangles | title, description, subject, gradeLevel (+5 more) |
+| 45% | algebra-1 | number-systems-mermaid | title, subject, gradeLevel, framework (+4 more) |
+| 45% | automating-instructional-design | iteration-dashboard | title, subject, gradeLevel, framework (+4 more) |
 
 ## Recommendations
 
 Based on this analysis:
 
 - **Add `gradeLevel`**: Only 47.3% of items have this field
-- **Add `bloomsTaxonomy`**: Only 21.0% of items have this field
-- **Add `learningObjectives`**: Only 25.0% of items have this field
 - **Add `framework`**: Only 37.0% of items have this field
 - **Add `version`**: Only 45.7% of items have this field
-- **Add `visualizationType`**: Only 15.6% of items have this field
 - **Add `tags`**: Only 0.7% of items have this field
 - **Add `author`**: Only 17.3% of items have this field
 - **Add `dateCreated`**: Only 19.7% of items have this field
@@ -253,4 +247,4 @@ Based on this analysis:
 
 ---
 
-*This report was generated by `src/data-profiler/profile-microsims.py`*
+*This report was generated by `src/data-profiler/profile-microsims.py` v1.0.0*

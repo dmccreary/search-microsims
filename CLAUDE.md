@@ -26,6 +26,11 @@ python3 src/update-repo-microsims.py dmccreary/geometry-course
 
 # Analyze missing metadata by repository
 python3 src/analyze-missing-metadata.py
+
+# Enrich existing metadata with missing fields (learningObjectives, visualizationType)
+python3 src/enrich-metadata.py              # Enrich all repos
+python3 src/enrich-metadata.py --report     # Report what's missing
+python3 src/enrich-metadata.py --dry-run    # Preview changes
 ```
 
 ### Data Profiling
@@ -99,6 +104,7 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/crawl-microsims.py` | GitHub crawler for metadata collection |
 | `src/update-repo-microsims.py` | Update metadata from a single repo |
 | `src/analyze-missing-metadata.py` | Report repos missing metadata |
+| `src/enrich-metadata.py` | Add missing fields to existing metadata |
 | `src/data-profiler/profile-microsims.py` | Generate metadata quality metrics report |
 | `src/microsim-schema/validate-metadata.py` | Validate metadata against JSON schema |
 | `src/microsim-schema/microsim-schema.json` | Official MicroSim metadata JSON schema |
