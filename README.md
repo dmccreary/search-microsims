@@ -10,7 +10,7 @@
 
 ## View the Live Site
 
-Visit the faceted search demo at: [https://dmccreary.github.io/microsim-search/](https://dmccreary.github.io/microsim-search/)
+Visit the faceted search demo at: [https://dmccreary.github.io/search-microsims/](https://dmccreary.github.io/search-microsims/)
 
 ## Overview
 

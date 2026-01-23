@@ -1,15 +1,17 @@
 site_name: Microsim Search
-site_description: 'Microsim Faceted Search CC ShareAlike Attribution Noncommercial'
+site_description: 'MicroSim Faceted Search CC ShareAlike Attribution Noncommercial'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
-site_url: 'https://dmccreary.github.io/microsim-search/'
-repo_url: 'https://github.com/dmccreary/microsim-search'
+site_url: 'https://dmccreary.github.io/search-microsims/'
+repo_url: 'https://github.com/dmccreary/search-microsims'
 edit_uri: 'blob/master/docs'
 
 nav:
   - Home: index.md
+  - About This Project: about.md
   - Search Demo: search/index.md
   - MicroSim Schema: microsim-schema.md
+  - MicroSim Embeddings: microsim-embeddings.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
