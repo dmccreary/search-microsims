@@ -12,6 +12,10 @@ nav:
   - Search Demo: search/index.md
   - MicroSim Schema: microsim-schema.md
   - MicroSim Embeddings: microsim-embeddings.md
+  - Reports:
+      - MicroSim Metrics: reports/microsim-metrics.md
+      - Report 2: reports/report2.md
+      - Report 3: reports/report3.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
