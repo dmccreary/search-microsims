@@ -438,6 +438,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#find-missing-metadata-python-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find Missing Metadata Python Program
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-microsim-standardization-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run the MicroSim Standardization Skill
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -460,19 +486,27 @@
 
 
 <h1 id="add-missing-metadata">Add Missing Metadata</h1>
+<h2 id="find-missing-metadata-python-program">Find Missing Metadata Python Program</h2>
 <div class="admonition prompt">
 <p class="admonition-title">Prompt</p>
-<p>create a new python program that scans all of the             </p>
+<p>create a new python program that scans all of the           <br />
+directories in @/Users/dan/Documents/ws/*/docs/sims and     <br />
+if there is no metadata.json file, it will use the          <br />
+micorsim-util standardization skill to add a new            <br />
+metadata.json file to that sim directory.  Use the source   <br />
+code at @src/update-local-microsims.py for tips on how      <br />
+to scan the local file system to find the MicroSim          <br />
+directories.  If you don't see enough information in the    <br />
+MicroSim directory add a file called TODO.md that has a     <br />
+list of tasks to do to fix the MicroSim metadata later.</p>
 </div>
-<p>directories in @/Users/dan/Documents/ws/*/docs/sims and     <br />
-  if there is no metadata.json file, it will use the          <br />
-  micorsim-util standardization skill to add a new            <br />
-  metadata.json file to that sim directory.  Use the source   <br />
-  code at @src/update-local-microsims.py for tips on how      <br />
-  to scan the local file system to find the MicroSim          <br />
-  directories.  If you don't see enough information in the    <br />
-  MicroSim directory add a file called TODO.md that has a     <br />
-  list of tasks to do to fix the MicroSim metadata later.</p>
+<h2 id="run-the-microsim-standardization-skill">Run the MicroSim Standardization Skill</h2>
+<p>!!! prompt
+    For the MicroSims that had enough information, run the      <br />
+    microsim-standardization skill and create the new           <br />
+    metadata.json file.  Do a git pull before you add the       <br />
+    metadata and checking with git add, git commit and git      <br />
+    push after you create each file      </p>
 
 
 
