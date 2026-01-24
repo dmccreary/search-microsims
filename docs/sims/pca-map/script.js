@@ -28,6 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 xanchor: 'center'
             };
 
+            // Remove axis labels, tick marks, and their reserved space
+            layout.xaxis = layout.xaxis || {};
+            layout.yaxis = layout.yaxis || {};
+            layout.xaxis.title = { text: '', standoff: 0 };
+            layout.yaxis.title = { text: '', standoff: 0 };
+            layout.xaxis.showticklabels = false;
+            layout.yaxis.showticklabels = false;
+            layout.xaxis.ticks = '';
+            layout.yaxis.ticks = '';
+            layout.margin = { t: 35, r: 10, b: 10, l: 10 };
+
+            // Move legend down
+            layout.legend = layout.legend || {};
+            layout.legend.y = 0.95;
+            layout.legend.yanchor = 'top';
+
             // Config for interactivity
             const config = {
                 responsive: true,
@@ -53,6 +69,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // Handle window resize
             window.addEventListener('resize', function() {
                 Plotly.Plots.resize(plotDiv);
+            });
+
+            // Wire up legend control buttons
+            const numTraces = plotData.data.length;
+
+            document.getElementById('btn-check-all').addEventListener('click', function() {
+                Plotly.restyle(plotDiv, 'visible', Array(numTraces).fill(true));
+            });
+
+            document.getElementById('btn-uncheck-all').addEventListener('click', function() {
+                Plotly.restyle(plotDiv, 'visible', Array(numTraces).fill('legendonly'));
             });
         })
         .catch(error => {

@@ -33,8 +33,8 @@ theme:
   name: material
   extra_css:
     - styles/custom.css
-  logo: img/logo.png
-  # favicon: img/my-icon.png
+  logo: img/logo.jpg
+  favicon: img/favicon.ico
   palette:
     primary: 'blue'
     accent: 'orange'

@@ -1,0 +1,15 @@
+{
+  "title": "MicroSim PCA Map",
+  "description": "An interactive 2D visualization of MicroSim semantic embeddings using Principal Component Analysis (PCA) dimensionality reduction. Each point represents a MicroSim, colored by subject area, allowing exploration of semantic clusters and relationships.",
+  "creator": "Dan McCreary",
+  "date": "2025-01-24",
+  "subject": ["data visualization", "PCA", "dimensionality reduction", "embeddings", "semantic similarity", "machine learning"],
+  "type": "Interactive Visualization",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "library": "Plotly.js",
+  "concepts": ["principal component analysis", "semantic embeddings", "clustering", "dimensionality reduction", "scatter plot"],
+  "educationalLevel": "Undergraduate",
+  "bloomsLevel": "Analyze"
+}
