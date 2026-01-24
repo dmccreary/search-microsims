@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/microsim-embeddings/">
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/sims/">
       
       
-        <link rel="prev" href="../microsim-schema/">
+        <link rel="prev" href="pca-map/">
       
       
-        <link rel="next" href="../reports/microsim-metrics/">
+        <link rel="next" href="pca-map/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>MicroSim Embeddings - MicroSim Search and Embeddings</title>
+        <title>List of MicroSims - MicroSim Search and Embeddings</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#microsim-visualizations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MicroSim Embeddings
+              List of MicroSims
             
           </span>
         </div>
@@ -281,17 +286,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../microsim-embeddings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -300,7 +298,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -358,6 +355,8 @@
       
   
   
+    
+  
   
   
     
@@ -375,29 +374,65 @@
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="../sims/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   <span class="md-ellipsis">
     MicroSims
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSims
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pca-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim PCA Map
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -565,6 +600,58 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Visualizations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca-map-data-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA Map Data Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCA Map Data Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regenerating-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regenerating the Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-the-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing the Title
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -579,7 +666,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/microsim-embeddings.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/sims/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -587,9 +674,73 @@
   
 
 
-  <h1>MicroSim Embeddings</h1>
-
-
+<h1 id="microsim-visualizations">MicroSim Visualizations</h1>
+<h2 id="available-visualizations">Available Visualizations</h2>
+<ul>
+<li><a href="./pca-map/">PCA Similarity Map</a> - Interactive 2D projection of MicroSim embeddings</li>
+</ul>
+<h2 id="pca-map-data-pipeline">PCA Map Data Pipeline</h2>
+<p>The PCA Map visualization uses a separation of data and presentation:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>┌─────────────────────────────────────────────────────────────────┐
+│                        Input Files                              │
+├─────────────────────────────────────────────────────────────────┤
+│  data/microsims-embeddings.json     384-dimensional vectors     │
+│  docs/search/microsims-data.json    MicroSim metadata           │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              python src/reports/generate-pca-map.py             │
+│                                                                 │
+│  1. Load embeddings (384D vectors)                              │
+│  2. Load metadata (titles, subjects, URLs)                      │
+│  3. Apply PCA dimensionality reduction (384D → 2D)              │
+│  4. Group points by subject area with colors                    │
+│  5. Generate Plotly-compatible data structure                   │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   docs/sims/pca-map/                            │
+├─────────────────────────────────────────────────────────────────┤
+│  data.json   ← Generated by Python (Plotly data + layout)      │
+│  main.html   ← Manual edits (title lives in &lt;title&gt; tag)       │
+│  script.js   ← Manual edits (loads data.json, renders plot)    │
+│  style.css   ← Manual edits (styling)                          │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre></div></td></tr></table></div>
+<h3 id="regenerating-the-data">Regenerating the Data</h3>
+<p>When embeddings or metadata change, regenerate <code>data.json</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>src/reports/generate-pca-map.py
+</code></pre></div></td></tr></table></div>
+<h3 id="editing-the-title">Editing the Title</h3>
+<p>The chart title is set in <code>main.html</code> via the <code>&lt;title&gt;</code> tag. The JavaScript reads <code>document.title</code> and uses it for the Plotly chart title (single source of truth).</p>
 
 
 
@@ -625,7 +776,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../microsim-schema/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MicroSim Schema">
+          <a href="pca-map/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MicroSim PCA Map">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -635,20 +786,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MicroSim Schema
+                MicroSim PCA Map
               </div>
             </div>
           </a>
         
         
           
-          <a href="../reports/microsim-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: MicroSim Metrics">
+          <a href="pca-map/" class="md-footer__link md-footer__link--next" aria-label="Next: MicroSim PCA Map">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                MicroSim Metrics
+                MicroSim PCA Map
               </div>
             </div>
             <div class="md-footer__button md-icon">

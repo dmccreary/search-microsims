@@ -1,0 +1,1549 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive 2D visualization of MicroSim semantic embeddings using Principal Component Analysis (PCA) dimensionality reduction, showing clusters by subject area.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/sims/pca-map/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../prompts/add-missing-metadata/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>MicroSim PCA Map - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microsim-pca-map" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MicroSim PCA Map
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.jpg" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microsim-schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microsim-embeddings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim Embeddings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSims
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MicroSim PCA Map
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim PCA Map
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About This Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an Embedding?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Similarity?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Clustering?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-dimensionality-reduction-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Dimensionality Reduction (PCA)?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-1-explore-the-map-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 1: Explore the Map (10 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-2-find-surprising-neighbors-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 2: Find Surprising Neighbors (15 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-3-subject-area-investigation-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 3: Subject Area Investigation (15 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-4-cross-disciplinary-connections-20-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 4: Cross-Disciplinary Connections (20 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-5-limitations-discussion-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 5: Limitations Discussion (10 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formative-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formative Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summative-assessment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summative Assessment Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About This Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an Embedding?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Similarity?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Clustering?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-dimensionality-reduction-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Dimensionality Reduction (PCA)?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-1-explore-the-map-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 1: Explore the Map (10 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-2-find-surprising-neighbors-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 2: Find Surprising Neighbors (15 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-3-subject-area-investigation-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 3: Subject Area Investigation (15 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-4-cross-disciplinary-connections-20-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 4: Cross-Disciplinary Connections (20 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-5-limitations-discussion-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity 5: Limitations Discussion (10 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formative-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formative Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summative-assessment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summative Assessment Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/sims/pca-map/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="microsim-pca-map">MicroSim PCA Map</h1>
+<p>An interactive 2D visualization of MicroSim simularity using embeddings and Principal Component Analysis (PCA) for dimensionality reduction.</p>
+<iframe src="./main.html" width="100%" height="700px"></iframe>
+
+<p><a class="md-button md-button--primary" href="main.html">Open Full Screen</a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/microsim-search/sims/pca-map/main.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;700px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="about-this-visualization">About This Visualization</h2>
+<p>This visualization projects 384-dimensional semantic embeddings of MicroSims into a 2D space using PCA. Each point represents a MicroSim, colored by subject area.</p>
+<h3 id="key-statistics">Key Statistics</h3>
+<ul>
+<li><strong>Total MicroSims</strong>: 868</li>
+<li><strong>Subject Areas</strong>: 14 categories</li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li><strong>Hover</strong> over points to see MicroSim details (title, repository)</li>
+<li><strong>Click</strong> on any point to open the MicroSim in a new tab</li>
+<li><strong>Use the legend</strong> to show/hide subject areas</li>
+<li><strong>Zoom and pan</strong> to explore clusters</li>
+</ol>
+<h3 id="interpreting-the-map">Interpreting the Map</h3>
+<ul>
+<li><strong>Clusters</strong> indicate semantically similar MicroSims</li>
+<li><strong>Distance</strong> between points reflects semantic similarity in the embedding space</li>
+<li>Points from the same subject area tend to cluster together, but cross-subject clustering reveals shared educational concepts</li>
+</ul>
+<h2 id="technical-details">Technical Details</h2>
+<p>The embeddings were generated using the <code>all-MiniLM-L6-v2</code> sentence transformer model on combined MicroSim metadata (title, description, learning objectives). PCA reduces the 384-dimensional vectors to 2D for visualization.</p>
+<h3 id="files">Files</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.html</code></td>
+<td>Main HTML page</td>
+</tr>
+<tr>
+<td><code>style.css</code></td>
+<td>CSS styles</td>
+</tr>
+<tr>
+<td><code>script.js</code></td>
+<td>JavaScript for loading data and creating the Plotly visualization</td>
+</tr>
+<tr>
+<td><code>data.json</code></td>
+<td>Plotly data and layout configuration</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="overview">Overview</h3>
+<p>This lesson introduces fundamental concepts in machine learning and data science: embeddings, similarity, clustering, and dimensionality reduction. Students will use this interactive visualization to explore how computers can understand and organize text by meaning.</p>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>By the end of this lesson, students will be able to:</p>
+<ol>
+<li>Explain what an embedding is and why it is useful</li>
+<li>Describe how similarity is measured between items in an embedding space</li>
+<li>Identify clusters in a visualization and explain what they represent</li>
+<li>Understand why dimensionality reduction is necessary for visualization</li>
+<li>Apply these concepts to interpret real-world data visualizations</li>
+</ol>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>High school students (grades 10-12) or college freshmen</li>
+<li>Adult learners interested in AI/ML fundamentals</li>
+<li>No programming experience required</li>
+<li>Basic math familiarity helpful but not required</li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Ability to use a web browser and interact with visualizations</li>
+<li>Understanding of basic concepts like "similar" and "different"</li>
+</ul>
+<h3 id="key-concepts">Key Concepts</h3>
+<h4 id="what-is-an-embedding">What is an Embedding?</h4>
+<p>An <strong>embedding</strong> is a way to represent something (like a word, sentence, or document) as a list of numbers. Think of it like giving everything a unique "address" in a mathematical space.</p>
+<p><strong>Analogy</strong>: Imagine describing a fruit using numbers:</p>
+<ul>
+<li>Sweetness: 1-10</li>
+<li>Size: 1-10</li>
+<li>Color (red to green): 1-10</li>
+</ul>
+<p>An apple might be [7, 5, 8] while an orange might be [8, 6, 2]. These number lists are simple embeddings!</p>
+<p>In this visualization, each MicroSim is represented by 384 numbers that capture its meaning based on its title, description, and learning objectives.</p>
+<h4 id="what-is-similarity">What is Similarity?</h4>
+<p><strong>Similarity</strong> measures how close two items are in the embedding space. Items with similar meanings have similar number patterns.</p>
+<p><strong>In the visualization</strong>: Points that are close together represent MicroSims with similar educational content. Points far apart cover different topics.</p>
+<h4 id="what-is-clustering">What is Clustering?</h4>
+<p>A <strong>cluster</strong> is a group of items that are similar to each other and different from items in other groups. Clusters emerge naturally when similar things group together.</p>
+<p><strong>In the visualization</strong>: You can see clusters of points with the same color (subject area), but also notice how some subjects overlap - this reveals shared concepts across disciplines.</p>
+<h4 id="what-is-dimensionality-reduction-pca">What is Dimensionality Reduction (PCA)?</h4>
+<p>We cannot visualize 384 dimensions on a 2D screen. <strong>Principal Component Analysis (PCA)</strong> is a technique that reduces the 384 numbers to just 2 numbers (x and y coordinates) while preserving as much of the "structure" as possible.</p>
+<p><strong>Analogy</strong>: Imagine taking a 3D object and casting its shadow on a wall. You lose some information, but the shadow still tells you something about the object's shape.</p>
+<h3 id="activities">Activities</h3>
+<h4 id="activity-1-explore-the-map-10-minutes">Activity 1: Explore the Map (10 minutes)</h4>
+<ol>
+<li>Look at the visualization without clicking anything</li>
+<li><strong>Observe</strong>: Which subject areas form tight clusters? Which are spread out?</li>
+<li><strong>Discuss</strong>: Why might "Mathematics" MicroSims cluster together?</li>
+</ol>
+<h4 id="activity-2-find-surprising-neighbors-15-minutes">Activity 2: Find Surprising Neighbors (15 minutes)</h4>
+<ol>
+<li>Click on a MicroSim point to open it</li>
+<li>Find a nearby point from a <em>different</em> subject area</li>
+<li>Open that MicroSim and compare them</li>
+<li><strong>Question</strong>: What do these two MicroSims have in common that made the computer place them near each other?</li>
+<li>Share your findings with the class</li>
+</ol>
+<h4 id="activity-3-subject-area-investigation-15-minutes">Activity 3: Subject Area Investigation (15 minutes)</h4>
+<ol>
+<li>Use the "Uncheck All" button to hide all points</li>
+<li>Check only ONE subject area at a time</li>
+<li><strong>Observe</strong>: Does this subject form one cluster or multiple clusters?</li>
+<li><strong>Hypothesize</strong>: If a subject has multiple clusters, what might explain this?</li>
+<li>Try this with 3-4 different subject areas</li>
+</ol>
+<h4 id="activity-4-cross-disciplinary-connections-20-minutes">Activity 4: Cross-Disciplinary Connections (20 minutes)</h4>
+<ol>
+<li>Check two subject areas that you think might be related (e.g., Physics and Mathematics)</li>
+<li><strong>Find</strong>: Where do they overlap? Where are they separate?</li>
+<li>Check two subject areas you think are unrelated</li>
+<li><strong>Verify</strong>: Are they actually far apart in the visualization?</li>
+<li><strong>Write</strong>: A short paragraph explaining one surprising connection you discovered</li>
+</ol>
+<h4 id="activity-5-limitations-discussion-10-minutes">Activity 5: Limitations Discussion (10 minutes)</h4>
+<ol>
+<li>The visualization only captures 11.2% of the original information (variance explained)</li>
+<li><strong>Discuss</strong>: What information might be lost in this 2D view?</li>
+<li><strong>Consider</strong>: Could two MicroSims appear close in 2D but actually be far apart in the original 384 dimensions?</li>
+</ol>
+<h3 id="discussion-questions">Discussion Questions</h3>
+<ol>
+<li>Why do computers need to convert text into numbers to understand meaning?</li>
+<li>What are the advantages of using embeddings instead of simple keyword matching?</li>
+<li>If you were building a "recommended MicroSims" feature, how could you use this similarity information?</li>
+<li>What other types of content could be visualized using embeddings? (images, music, products?)</li>
+<li>What biases might exist in how the embedding model understands "similarity"?</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<h4 id="formative-assessment">Formative Assessment</h4>
+<ul>
+<li>Observe student interactions with the visualization</li>
+<li>Listen to partner discussions during activities</li>
+<li>Check for accurate use of vocabulary (embedding, similarity, cluster)</li>
+</ul>
+<h4 id="summative-assessment-options">Summative Assessment Options</h4>
+<p><strong>Option A - Written Response</strong>:
+Explain in your own words how this visualization was created, starting from MicroSim descriptions and ending with colored dots on a 2D map. Use the terms: embedding, similarity, dimensionality reduction.</p>
+<p><strong>Option B - Create an Analogy</strong>:
+Create your own analogy for embeddings using a real-world example (like the fruit example above). Explain how your analogy demonstrates similarity and clustering.</p>
+<p><strong>Option C - Analysis Report</strong>:
+Choose one subject area and write a 1-page analysis of its clustering patterns. Include screenshots, identify at least 2 sub-clusters, and hypothesize why they exist.</p>
+<h3 id="extensions">Extensions</h3>
+<ul>
+<li><strong>For advanced students</strong>: Explore the <a href="../../embeddings.md">Embeddings Documentation</a> to learn how embeddings are generated with code</li>
+<li><strong>Cross-curricular</strong>: Connect to biology (taxonomy/classification), library science (cataloging), or social studies (demographic clustering)</li>
+<li><strong>Project idea</strong>: Have students suggest what additional metadata would improve the embeddings (e.g., difficulty level, interactivity type)</li>
+</ul>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="../../search/demo.html">MicroSim Search</a> - Search MicroSims by facets</li>
+<li><a href="../../embeddings.md">Embeddings Documentation</a> - How embeddings are generated</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://plotly.com/javascript/">Plotly.js</a> - Open-source JavaScript graphing library used for the interactive scatter plot visualization</li>
+<li><a href="https://www.sbert.net/">Sentence Transformers</a> - Python framework for state-of-the-art sentence, text, and image embeddings</li>
+<li><a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2 Model</a> - Sentence transformer model that maps sentences to a 384-dimensional dense vector space</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">scikit-learn PCA</a> - Principal Component Analysis implementation used for dimensionality reduction</li>
+<li><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Principal Component Analysis (Wikipedia)</a> - Background on the PCA algorithm for dimensionality reduction</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of MicroSims">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                List of MicroSims
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../prompts/add-missing-metadata/" class="md-footer__link md-footer__link--next" aria-label="Next: Add Missing Metadata">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Add Missing Metadata
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

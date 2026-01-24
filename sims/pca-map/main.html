@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSim Similarity Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="plot-wrapper">
+            <div class="legend-controls">
+                <button id="btn-check-all" class="legend-btn">Check All</button>
+                <button id="btn-uncheck-all" class="legend-btn">Uncheck All</button>
+            </div>
+            <div id="pca-plot"></div>
+        </div>
+
+        <div class="footer">
+            <p>Generated from MicroSim metadata embeddings using PCA dimensionality reduction</p>
+            <div class="instructions">
+                <strong>Tip:</strong> Click on any point to open the MicroSim. Hover for details. Use the legend to filter by subject area.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
