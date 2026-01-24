@@ -1,0 +1,10 @@
+{
+  "title": "MicroSim Search and Similarity",
+  "description": "A comprehensive course on MicroSim search, metadata standards, and retrieval systems for educational simulations with a focus on semantic search and embeddings",
+  "creator": "Dan McCreary",
+  "date": "2026-01-24",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}

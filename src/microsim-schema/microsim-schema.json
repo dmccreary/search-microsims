@@ -150,7 +150,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": ["Mathematics", "Science", "Physics", "Chemistry", "Biology", "Computer Science", "Engineering", "Economics", "Finance", "Statistics", "Psychology", "Social Studies", "Language Arts", "Art", "Music", "Health", "Physical Education", "Other"]
+                "enum": ["Mathematics", "Science", "Physics", "Chemistry", "Biology", "Computer Science", "Engineering", "Economics", "Finance", "Statistics", "Psychology", "Social Studies", "Language Arts", "Art", "Music", "Health", "Physical Education", "Programming", "STEM", "Robotics","Other"]
               },
               "description": "Primary subject areas addressed"
             },
@@ -289,7 +289,7 @@
           "properties": {
             "framework": {
               "type": "string",
-              "enum": ["p5.js", "vanilla-js", "d3.js", "three.js", "chart.js", "plotly.js", "vis-network", "vis-timeline", "mermaid", "leaflet", "other"],
+              "enum": ["p5.js", "mermaid.js", "vis-network.js", "chart.js", "vis-timeline.js", "plotly.js", "leaflet.js", "other"],
               "description": "JavaScript framework or library used"
             },
             "version": {

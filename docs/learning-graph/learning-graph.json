@@ -1,0 +1,1965 @@
+{
+  "metadata": {
+    "title": "MicroSim Search and Similarity",
+    "description": "A comprehensive course on MicroSim search, metadata standards, and retrieval systems for educational simulations with a focus on semantic search and embeddings",
+    "creator": "Dan McCreary",
+    "date": "2026-01-24",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "LightCoral",
+      "font": { "color": "black" }
+    },
+    "META": {
+      "classifierName": "Metadata Standards",
+      "color": "PeachPuff",
+      "font": { "color": "black" }
+    },
+    "DATA": {
+      "classifierName": "Data Formats",
+      "color": "LightYellow",
+      "font": { "color": "black" }
+    },
+    "SRCH": {
+      "classifierName": "Search Methods",
+      "color": "PaleGreen",
+      "font": { "color": "black" }
+    },
+    "EMBED": {
+      "classifierName": "Embeddings & Similarity",
+      "color": "PowderBlue",
+      "font": { "color": "black" }
+    },
+    "EDU": {
+      "classifierName": "Educational Theory",
+      "color": "Plum",
+      "font": { "color": "black" }
+    },
+    "UI": {
+      "classifierName": "User Interface",
+      "color": "LightPink",
+      "font": { "color": "black" }
+    },
+    "TECH": {
+      "classifierName": "Technical Implementation",
+      "color": "LightSteelBlue",
+      "font": { "color": "black" }
+    },
+    "PIPE": {
+      "classifierName": "Data Pipeline",
+      "color": "Thistle",
+      "font": { "color": "black" }
+    },
+    "ANAL": {
+      "classifierName": "Analytics & Assessment",
+      "color": "Aquamarine",
+      "font": { "color": "black" }
+    },
+    "STND": {
+      "classifierName": "Standards & Compliance",
+      "color": "Honeydew",
+      "font": { "color": "black" }
+    },
+    "FILE": {
+      "classifierName": "File Structure",
+      "color": "Lavender",
+      "font": { "color": "black" }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "MicroSim",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Educational Simulation",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Interactivity",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "User Engagement",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "Simplicity",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "AI Generation",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Web Embedding",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Iframe Element",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Search",
+      "group": "SRCH",
+      "shape": "box"
+    },
+    {
+      "id": 10,
+      "label": "Findability",
+      "group": "SRCH"
+    },
+    {
+      "id": 11,
+      "label": "Reuse",
+      "group": "FOUND"
+    },
+    {
+      "id": 12,
+      "label": "Component Reuse",
+      "group": "FOUND"
+    },
+    {
+      "id": 13,
+      "label": "MicroSim Structure",
+      "group": "FILE"
+    },
+    {
+      "id": 14,
+      "label": "File Organization",
+      "group": "FILE"
+    },
+    {
+      "id": 15,
+      "label": "index.md File",
+      "group": "FILE"
+    },
+    {
+      "id": 16,
+      "label": "main.html File",
+      "group": "FILE"
+    },
+    {
+      "id": 17,
+      "label": "style.css File",
+      "group": "FILE"
+    },
+    {
+      "id": 18,
+      "label": "data.json File",
+      "group": "FILE"
+    },
+    {
+      "id": 19,
+      "label": "metadata.json File",
+      "group": "FILE"
+    },
+    {
+      "id": 20,
+      "label": "Metadata",
+      "group": "META",
+      "shape": "box"
+    },
+    {
+      "id": 21,
+      "label": "Metadata Standards",
+      "group": "META"
+    },
+    {
+      "id": 22,
+      "label": "Dublin Core",
+      "group": "META"
+    },
+    {
+      "id": 23,
+      "label": "Dublin Core Elements",
+      "group": "META"
+    },
+    {
+      "id": 24,
+      "label": "Title Element",
+      "group": "META"
+    },
+    {
+      "id": 25,
+      "label": "Creator Element",
+      "group": "META"
+    },
+    {
+      "id": 26,
+      "label": "Subject Element",
+      "group": "META"
+    },
+    {
+      "id": 27,
+      "label": "Description Element",
+      "group": "META"
+    },
+    {
+      "id": 28,
+      "label": "Publisher Element",
+      "group": "META"
+    },
+    {
+      "id": 29,
+      "label": "Contributor Element",
+      "group": "META"
+    },
+    {
+      "id": 30,
+      "label": "Date Element",
+      "group": "META"
+    },
+    {
+      "id": 31,
+      "label": "Type Element",
+      "group": "META"
+    },
+    {
+      "id": 32,
+      "label": "Format Element",
+      "group": "META"
+    },
+    {
+      "id": 33,
+      "label": "Identifier Element",
+      "group": "META"
+    },
+    {
+      "id": 34,
+      "label": "Source Element",
+      "group": "META"
+    },
+    {
+      "id": 35,
+      "label": "Language Element",
+      "group": "META"
+    },
+    {
+      "id": 36,
+      "label": "Relation Element",
+      "group": "META"
+    },
+    {
+      "id": 37,
+      "label": "Coverage Element",
+      "group": "META"
+    },
+    {
+      "id": 38,
+      "label": "Rights Element",
+      "group": "META"
+    },
+    {
+      "id": 39,
+      "label": "JSON",
+      "group": "DATA",
+      "shape": "box"
+    },
+    {
+      "id": 40,
+      "label": "JSON Syntax",
+      "group": "DATA"
+    },
+    {
+      "id": 41,
+      "label": "JSON Objects",
+      "group": "DATA"
+    },
+    {
+      "id": 42,
+      "label": "JSON Arrays",
+      "group": "DATA"
+    },
+    {
+      "id": 43,
+      "label": "JSON Schema",
+      "group": "DATA"
+    },
+    {
+      "id": 44,
+      "label": "Schema Validation",
+      "group": "DATA"
+    },
+    {
+      "id": 45,
+      "label": "Required Fields",
+      "group": "DATA"
+    },
+    {
+      "id": 46,
+      "label": "Optional Fields",
+      "group": "DATA"
+    },
+    {
+      "id": 47,
+      "label": "Data Quality",
+      "group": "DATA"
+    },
+    {
+      "id": 48,
+      "label": "Completeness Score",
+      "group": "DATA"
+    },
+    {
+      "id": 49,
+      "label": "Quality Score",
+      "group": "DATA"
+    },
+    {
+      "id": 50,
+      "label": "Taxonomies",
+      "group": "META"
+    },
+    {
+      "id": 51,
+      "label": "Classification Systems",
+      "group": "META"
+    },
+    {
+      "id": 52,
+      "label": "Subject Normalization",
+      "group": "META"
+    },
+    {
+      "id": 53,
+      "label": "Grade Levels",
+      "group": "EDU"
+    },
+    {
+      "id": 54,
+      "label": "K-12 Education",
+      "group": "EDU"
+    },
+    {
+      "id": 55,
+      "label": "Undergraduate Level",
+      "group": "EDU"
+    },
+    {
+      "id": 56,
+      "label": "Graduate Level",
+      "group": "EDU"
+    },
+    {
+      "id": 57,
+      "label": "Adult Learning",
+      "group": "EDU"
+    },
+    {
+      "id": 58,
+      "label": "Learning Objectives",
+      "group": "EDU"
+    },
+    {
+      "id": 59,
+      "label": "Bloom Taxonomy",
+      "group": "EDU"
+    },
+    {
+      "id": 60,
+      "label": "Remember Level",
+      "group": "EDU"
+    },
+    {
+      "id": 61,
+      "label": "Understand Level",
+      "group": "EDU"
+    },
+    {
+      "id": 62,
+      "label": "Apply Level",
+      "group": "EDU"
+    },
+    {
+      "id": 63,
+      "label": "Analyze Level",
+      "group": "EDU"
+    },
+    {
+      "id": 64,
+      "label": "Evaluate Level",
+      "group": "EDU"
+    },
+    {
+      "id": 65,
+      "label": "Create Level",
+      "group": "EDU"
+    },
+    {
+      "id": 66,
+      "label": "Cognitive Levels",
+      "group": "EDU"
+    },
+    {
+      "id": 67,
+      "label": "Search Fundamentals",
+      "group": "SRCH"
+    },
+    {
+      "id": 68,
+      "label": "Information Retrieval",
+      "group": "SRCH"
+    },
+    {
+      "id": 69,
+      "label": "Precision",
+      "group": "SRCH"
+    },
+    {
+      "id": 70,
+      "label": "Recall",
+      "group": "SRCH"
+    },
+    {
+      "id": 71,
+      "label": "Relevance",
+      "group": "SRCH"
+    },
+    {
+      "id": 72,
+      "label": "Ranking",
+      "group": "SRCH"
+    },
+    {
+      "id": 73,
+      "label": "Keyword Search",
+      "group": "SRCH"
+    },
+    {
+      "id": 74,
+      "label": "Boolean Search",
+      "group": "SRCH"
+    },
+    {
+      "id": 75,
+      "label": "Boolean Operators",
+      "group": "SRCH"
+    },
+    {
+      "id": 76,
+      "label": "AND Operator",
+      "group": "SRCH"
+    },
+    {
+      "id": 77,
+      "label": "OR Operator",
+      "group": "SRCH"
+    },
+    {
+      "id": 78,
+      "label": "NOT Operator",
+      "group": "SRCH"
+    },
+    {
+      "id": 79,
+      "label": "Faceted Search",
+      "group": "SRCH"
+    },
+    {
+      "id": 80,
+      "label": "Facets",
+      "group": "SRCH"
+    },
+    {
+      "id": 81,
+      "label": "Filter Controls",
+      "group": "SRCH"
+    },
+    {
+      "id": 82,
+      "label": "Lightweight Search",
+      "group": "SRCH"
+    },
+    {
+      "id": 83,
+      "label": "Client-Side Search",
+      "group": "SRCH"
+    },
+    {
+      "id": 84,
+      "label": "ItemsJS Library",
+      "group": "SRCH"
+    },
+    {
+      "id": 85,
+      "label": "Search Engines",
+      "group": "SRCH"
+    },
+    {
+      "id": 86,
+      "label": "Indexing",
+      "group": "SRCH"
+    },
+    {
+      "id": 87,
+      "label": "Inverted Index",
+      "group": "SRCH"
+    },
+    {
+      "id": 88,
+      "label": "Semantic Search",
+      "group": "EMBED"
+    },
+    {
+      "id": 89,
+      "label": "Embeddings",
+      "group": "EMBED",
+      "shape": "box"
+    },
+    {
+      "id": 90,
+      "label": "Vector Representations",
+      "group": "EMBED"
+    },
+    {
+      "id": 91,
+      "label": "Cosine Similarity",
+      "group": "EMBED"
+    },
+    {
+      "id": 92,
+      "label": "Similar MicroSims",
+      "group": "EMBED"
+    },
+    {
+      "id": 93,
+      "label": "Similarity Score",
+      "group": "EMBED"
+    },
+    {
+      "id": 94,
+      "label": "Nearest Neighbors",
+      "group": "EMBED"
+    },
+    {
+      "id": 95,
+      "label": "Dimensionality Reduction",
+      "group": "EMBED"
+    },
+    {
+      "id": 96,
+      "label": "PCA",
+      "group": "EMBED"
+    },
+    {
+      "id": 97,
+      "label": "t-SNE",
+      "group": "EMBED"
+    },
+    {
+      "id": 98,
+      "label": "Visualization Maps",
+      "group": "EMBED"
+    },
+    {
+      "id": 99,
+      "label": "Data Gathering",
+      "group": "PIPE",
+      "shape": "box"
+    },
+    {
+      "id": 100,
+      "label": "Web Crawling",
+      "group": "PIPE"
+    },
+    {
+      "id": 101,
+      "label": "GitHub API",
+      "group": "PIPE"
+    },
+    {
+      "id": 102,
+      "label": "Repository Mining",
+      "group": "PIPE"
+    },
+    {
+      "id": 103,
+      "label": "MicroSim Repositories",
+      "group": "PIPE"
+    },
+    {
+      "id": 104,
+      "label": "Data Aggregation",
+      "group": "PIPE"
+    },
+    {
+      "id": 105,
+      "label": "MicroSim Standards",
+      "group": "STND"
+    },
+    {
+      "id": 106,
+      "label": "Schema Compliance",
+      "group": "STND"
+    },
+    {
+      "id": 107,
+      "label": "Tags",
+      "group": "PIPE"
+    },
+    {
+      "id": 108,
+      "label": "Folksonomies",
+      "group": "PIPE"
+    },
+    {
+      "id": 109,
+      "label": "User-Generated Tags",
+      "group": "PIPE"
+    },
+    {
+      "id": 110,
+      "label": "Keywords",
+      "group": "PIPE"
+    },
+    {
+      "id": 111,
+      "label": "Controlled Vocabulary",
+      "group": "PIPE"
+    },
+    {
+      "id": 112,
+      "label": "Visualization Type",
+      "group": "UI",
+      "shape": "box"
+    },
+    {
+      "id": 113,
+      "label": "Animation",
+      "group": "UI"
+    },
+    {
+      "id": 114,
+      "label": "Chart",
+      "group": "UI"
+    },
+    {
+      "id": 115,
+      "label": "Graph Visualization",
+      "group": "UI"
+    },
+    {
+      "id": 116,
+      "label": "Diagram",
+      "group": "UI"
+    },
+    {
+      "id": 117,
+      "label": "Simulation Display",
+      "group": "UI"
+    },
+    {
+      "id": 118,
+      "label": "Interactive Demo",
+      "group": "UI"
+    },
+    {
+      "id": 119,
+      "label": "Data Visualization",
+      "group": "UI"
+    },
+    {
+      "id": 120,
+      "label": "3D Model",
+      "group": "UI"
+    },
+    {
+      "id": 121,
+      "label": "Timeline",
+      "group": "UI"
+    },
+    {
+      "id": 122,
+      "label": "Network Diagram",
+      "group": "UI"
+    },
+    {
+      "id": 123,
+      "label": "Map Visualization",
+      "group": "UI"
+    },
+    {
+      "id": 124,
+      "label": "Dashboard",
+      "group": "UI"
+    },
+    {
+      "id": 125,
+      "label": "Interaction Level",
+      "group": "UI"
+    },
+    {
+      "id": 126,
+      "label": "Passive Viewing",
+      "group": "UI"
+    },
+    {
+      "id": 127,
+      "label": "Low Interaction",
+      "group": "UI"
+    },
+    {
+      "id": 128,
+      "label": "High Interaction",
+      "group": "UI"
+    },
+    {
+      "id": 129,
+      "label": "User Controls",
+      "group": "UI"
+    },
+    {
+      "id": 130,
+      "label": "Slider Control",
+      "group": "UI"
+    },
+    {
+      "id": 131,
+      "label": "Button Control",
+      "group": "UI"
+    },
+    {
+      "id": 132,
+      "label": "Start-Pause Button",
+      "group": "UI"
+    },
+    {
+      "id": 133,
+      "label": "Range Slider",
+      "group": "UI"
+    },
+    {
+      "id": 134,
+      "label": "Dropdown Select",
+      "group": "UI"
+    },
+    {
+      "id": 135,
+      "label": "Multi Select",
+      "group": "UI"
+    },
+    {
+      "id": 136,
+      "label": "Checkbox Control",
+      "group": "UI"
+    },
+    {
+      "id": 137,
+      "label": "Radio Button",
+      "group": "UI"
+    },
+    {
+      "id": 138,
+      "label": "Text Input",
+      "group": "UI"
+    },
+    {
+      "id": 139,
+      "label": "Color Picker",
+      "group": "UI"
+    },
+    {
+      "id": 140,
+      "label": "Complexity",
+      "group": "EDU"
+    },
+    {
+      "id": 141,
+      "label": "Difficulty Levels",
+      "group": "EDU"
+    },
+    {
+      "id": 142,
+      "label": "Beginner Level",
+      "group": "EDU"
+    },
+    {
+      "id": 143,
+      "label": "Intermediate Level",
+      "group": "EDU"
+    },
+    {
+      "id": 144,
+      "label": "Advanced Level",
+      "group": "EDU"
+    },
+    {
+      "id": 145,
+      "label": "Curriculum Standards",
+      "group": "STND"
+    },
+    {
+      "id": 146,
+      "label": "CCSS Standards",
+      "group": "STND"
+    },
+    {
+      "id": 147,
+      "label": "NGSS Standards",
+      "group": "STND"
+    },
+    {
+      "id": 148,
+      "label": "ISTE Standards",
+      "group": "STND"
+    },
+    {
+      "id": 149,
+      "label": "Cognitive Load",
+      "group": "EDU"
+    },
+    {
+      "id": 150,
+      "label": "Intrinsic Load",
+      "group": "EDU"
+    },
+    {
+      "id": 151,
+      "label": "Extraneous Load",
+      "group": "EDU"
+    },
+    {
+      "id": 152,
+      "label": "Germane Load",
+      "group": "EDU"
+    },
+    {
+      "id": 153,
+      "label": "Scaffolding",
+      "group": "EDU"
+    },
+    {
+      "id": 154,
+      "label": "Guided Discovery",
+      "group": "EDU"
+    },
+    {
+      "id": 155,
+      "label": "Worked Examples",
+      "group": "EDU"
+    },
+    {
+      "id": 156,
+      "label": "Hints System",
+      "group": "EDU"
+    },
+    {
+      "id": 157,
+      "label": "Feedback Mechanisms",
+      "group": "EDU"
+    },
+    {
+      "id": 158,
+      "label": "Progressive Disclosure",
+      "group": "EDU"
+    },
+    {
+      "id": 159,
+      "label": "Modeling",
+      "group": "EDU"
+    },
+    {
+      "id": 160,
+      "label": "Coaching",
+      "group": "EDU"
+    },
+    {
+      "id": 161,
+      "label": "Learning Theory",
+      "group": "EDU"
+    },
+    {
+      "id": 162,
+      "label": "Constructivism",
+      "group": "EDU"
+    },
+    {
+      "id": 163,
+      "label": "Behaviorism",
+      "group": "EDU"
+    },
+    {
+      "id": 164,
+      "label": "Cognitivism",
+      "group": "EDU"
+    },
+    {
+      "id": 165,
+      "label": "Experiential Learning",
+      "group": "EDU"
+    },
+    {
+      "id": 166,
+      "label": "Misconceptions",
+      "group": "EDU"
+    },
+    {
+      "id": 167,
+      "label": "Transfer Skills",
+      "group": "EDU"
+    },
+    {
+      "id": 168,
+      "label": "Assessment Rubric",
+      "group": "ANAL"
+    },
+    {
+      "id": 169,
+      "label": "Technical Metadata",
+      "group": "TECH"
+    },
+    {
+      "id": 170,
+      "label": "JavaScript Libraries",
+      "group": "TECH"
+    },
+    {
+      "id": 171,
+      "label": "p5.js Framework",
+      "group": "TECH"
+    },
+    {
+      "id": 172,
+      "label": "mermaid.js Library",
+      "group": "TECH"
+    },
+    {
+      "id": 173,
+      "label": "vis-network.js Library",
+      "group": "TECH"
+    },
+    {
+      "id": 174,
+      "label": "chart.js Library",
+      "group": "TECH"
+    },
+    {
+      "id": 175,
+      "label": "vis-timeline.js Library",
+      "group": "TECH"
+    },
+    {
+      "id": 176,
+      "label": "plotly.js Library",
+      "group": "TECH"
+    },
+    {
+      "id": 177,
+      "label": "leaflet.js Library",
+      "group": "TECH"
+    },
+    {
+      "id": 178,
+      "label": "Responsive Design",
+      "group": "TECH"
+    },
+    {
+      "id": 179,
+      "label": "Width Responsive",
+      "group": "TECH"
+    },
+    {
+      "id": 180,
+      "label": "Fixed Height Iframe",
+      "group": "TECH"
+    },
+    {
+      "id": 181,
+      "label": "Canvas Dimensions",
+      "group": "TECH"
+    },
+    {
+      "id": 182,
+      "label": "Drawing Region",
+      "group": "TECH"
+    },
+    {
+      "id": 183,
+      "label": "Control Region",
+      "group": "TECH"
+    },
+    {
+      "id": 184,
+      "label": "Browser Compatibility",
+      "group": "TECH"
+    },
+    {
+      "id": 185,
+      "label": "Performance Metrics",
+      "group": "TECH"
+    },
+    {
+      "id": 186,
+      "label": "Device Requirements",
+      "group": "TECH"
+    },
+    {
+      "id": 187,
+      "label": "State Management",
+      "group": "TECH"
+    },
+    {
+      "id": 188,
+      "label": "Data Flow",
+      "group": "TECH"
+    },
+    {
+      "id": 189,
+      "label": "Accessibility",
+      "group": "TECH"
+    },
+    {
+      "id": 190,
+      "label": "Screen Reader Support",
+      "group": "TECH"
+    },
+    {
+      "id": 191,
+      "label": "P5 Describe Function",
+      "group": "TECH"
+    },
+    {
+      "id": 192,
+      "label": "Keyboard Navigation",
+      "group": "TECH"
+    },
+    {
+      "id": 193,
+      "label": "Layout Types",
+      "group": "UI"
+    },
+    {
+      "id": 194,
+      "label": "Fixed Layout",
+      "group": "UI"
+    },
+    {
+      "id": 195,
+      "label": "Two Panel Layout",
+      "group": "UI"
+    },
+    {
+      "id": 196,
+      "label": "Three Panel Layout",
+      "group": "UI"
+    },
+    {
+      "id": 197,
+      "label": "Color Scheme",
+      "group": "UI"
+    },
+    {
+      "id": 198,
+      "label": "Analytics",
+      "group": "ANAL"
+    },
+    {
+      "id": 199,
+      "label": "Learning Indicators",
+      "group": "ANAL"
+    },
+    {
+      "id": 200,
+      "label": "Engagement Metrics",
+      "group": "ANAL"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 1
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 1
+    },
+    {
+      "from": 6,
+      "to": 1
+    },
+    {
+      "from": 6,
+      "to": 88
+    },
+    {
+      "from": 7,
+      "to": 1
+    },
+    {
+      "from": 8,
+      "to": 7
+    },
+    {
+      "from": 10,
+      "to": 9
+    },
+    {
+      "from": 11,
+      "to": 1
+    },
+    {
+      "from": 11,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 1
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 14
+    },
+    {
+      "from": 16,
+      "to": 14
+    },
+    {
+      "from": 17,
+      "to": 14
+    },
+    {
+      "from": 18,
+      "to": 14
+    },
+    {
+      "from": 18,
+      "to": 39
+    },
+    {
+      "from": 19,
+      "to": 14
+    },
+    {
+      "from": 19,
+      "to": 20
+    },
+    {
+      "from": 19,
+      "to": 39
+    },
+    {
+      "from": 21,
+      "to": 20
+    },
+    {
+      "from": 22,
+      "to": 21
+    },
+    {
+      "from": 23,
+      "to": 22
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 23
+    },
+    {
+      "from": 26,
+      "to": 23
+    },
+    {
+      "from": 27,
+      "to": 23
+    },
+    {
+      "from": 28,
+      "to": 23
+    },
+    {
+      "from": 29,
+      "to": 23
+    },
+    {
+      "from": 30,
+      "to": 23
+    },
+    {
+      "from": 31,
+      "to": 23
+    },
+    {
+      "from": 32,
+      "to": 23
+    },
+    {
+      "from": 33,
+      "to": 23
+    },
+    {
+      "from": 34,
+      "to": 23
+    },
+    {
+      "from": 35,
+      "to": 23
+    },
+    {
+      "from": 36,
+      "to": 23
+    },
+    {
+      "from": 37,
+      "to": 23
+    },
+    {
+      "from": 38,
+      "to": 23
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 41,
+      "to": 40
+    },
+    {
+      "from": 42,
+      "to": 40
+    },
+    {
+      "from": 43,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 42
+    },
+    {
+      "from": 44,
+      "to": 43
+    },
+    {
+      "from": 45,
+      "to": 43
+    },
+    {
+      "from": 46,
+      "to": 43
+    },
+    {
+      "from": 47,
+      "to": 44
+    },
+    {
+      "from": 47,
+      "to": 48
+    },
+    {
+      "from": 47,
+      "to": 49
+    },
+    {
+      "from": 48,
+      "to": 19
+    },
+    {
+      "from": 48,
+      "to": 44
+    },
+    {
+      "from": 49,
+      "to": 48
+    },
+    {
+      "from": 50,
+      "to": 20
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 51
+    },
+    {
+      "from": 52,
+      "to": 26
+    },
+    {
+      "from": 53,
+      "to": 50
+    },
+    {
+      "from": 54,
+      "to": 53
+    },
+    {
+      "from": 55,
+      "to": 53
+    },
+    {
+      "from": 56,
+      "to": 53
+    },
+    {
+      "from": 57,
+      "to": 53
+    },
+    {
+      "from": 58,
+      "to": 1
+    },
+    {
+      "from": 59,
+      "to": 58
+    },
+    {
+      "from": 60,
+      "to": 59
+    },
+    {
+      "from": 61,
+      "to": 59
+    },
+    {
+      "from": 62,
+      "to": 59
+    },
+    {
+      "from": 63,
+      "to": 59
+    },
+    {
+      "from": 64,
+      "to": 59
+    },
+    {
+      "from": 65,
+      "to": 59
+    },
+    {
+      "from": 66,
+      "to": 59
+    },
+    {
+      "from": 67,
+      "to": 9
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 68
+    },
+    {
+      "from": 70,
+      "to": 68
+    },
+    {
+      "from": 71,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 71
+    },
+    {
+      "from": 73,
+      "to": 67
+    },
+    {
+      "from": 74,
+      "to": 73
+    },
+    {
+      "from": 75,
+      "to": 74
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 77,
+      "to": 75
+    },
+    {
+      "from": 78,
+      "to": 75
+    },
+    {
+      "from": 79,
+      "to": 67
+    },
+    {
+      "from": 79,
+      "to": 80
+    },
+    {
+      "from": 80,
+      "to": 50
+    },
+    {
+      "from": 81,
+      "to": 79
+    },
+    {
+      "from": 81,
+      "to": 129
+    },
+    {
+      "from": 82,
+      "to": 67
+    },
+    {
+      "from": 83,
+      "to": 82
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 85,
+      "to": 67
+    },
+    {
+      "from": 86,
+      "to": 85
+    },
+    {
+      "from": 87,
+      "to": 86
+    },
+    {
+      "from": 88,
+      "to": 67
+    },
+    {
+      "from": 88,
+      "to": 89
+    },
+    {
+      "from": 90,
+      "to": 89
+    },
+    {
+      "from": 91,
+      "to": 90
+    },
+    {
+      "from": 92,
+      "to": 91
+    },
+    {
+      "from": 92,
+      "to": 1
+    },
+    {
+      "from": 93,
+      "to": 91
+    },
+    {
+      "from": 94,
+      "to": 93
+    },
+    {
+      "from": 95,
+      "to": 90
+    },
+    {
+      "from": 96,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 95
+    },
+    {
+      "from": 98,
+      "to": 96
+    },
+    {
+      "from": 98,
+      "to": 97
+    },
+    {
+      "from": 100,
+      "to": 99
+    },
+    {
+      "from": 101,
+      "to": 100
+    },
+    {
+      "from": 102,
+      "to": 101
+    },
+    {
+      "from": 103,
+      "to": 102
+    },
+    {
+      "from": 103,
+      "to": 1
+    },
+    {
+      "from": 104,
+      "to": 99
+    },
+    {
+      "from": 105,
+      "to": 21
+    },
+    {
+      "from": 105,
+      "to": 1
+    },
+    {
+      "from": 106,
+      "to": 105
+    },
+    {
+      "from": 106,
+      "to": 44
+    },
+    {
+      "from": 107,
+      "to": 20
+    },
+    {
+      "from": 108,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 108
+    },
+    {
+      "from": 110,
+      "to": 107
+    },
+    {
+      "from": 111,
+      "to": 110
+    },
+    {
+      "from": 113,
+      "to": 112
+    },
+    {
+      "from": 114,
+      "to": 112
+    },
+    {
+      "from": 115,
+      "to": 112
+    },
+    {
+      "from": 116,
+      "to": 112
+    },
+    {
+      "from": 117,
+      "to": 112
+    },
+    {
+      "from": 117,
+      "to": 1
+    },
+    {
+      "from": 118,
+      "to": 112
+    },
+    {
+      "from": 118,
+      "to": 3
+    },
+    {
+      "from": 119,
+      "to": 112
+    },
+    {
+      "from": 120,
+      "to": 112
+    },
+    {
+      "from": 121,
+      "to": 112
+    },
+    {
+      "from": 122,
+      "to": 112
+    },
+    {
+      "from": 123,
+      "to": 112
+    },
+    {
+      "from": 124,
+      "to": 112
+    },
+    {
+      "from": 124,
+      "to": 119
+    },
+    {
+      "from": 125,
+      "to": 3
+    },
+    {
+      "from": 126,
+      "to": 125
+    },
+    {
+      "from": 127,
+      "to": 125
+    },
+    {
+      "from": 128,
+      "to": 125
+    },
+    {
+      "from": 129,
+      "to": 3
+    },
+    {
+      "from": 130,
+      "to": 129
+    },
+    {
+      "from": 131,
+      "to": 129
+    },
+    {
+      "from": 132,
+      "to": 131
+    },
+    {
+      "from": 133,
+      "to": 130
+    },
+    {
+      "from": 134,
+      "to": 129
+    },
+    {
+      "from": 135,
+      "to": 134
+    },
+    {
+      "from": 136,
+      "to": 129
+    },
+    {
+      "from": 137,
+      "to": 129
+    },
+    {
+      "from": 138,
+      "to": 129
+    },
+    {
+      "from": 139,
+      "to": 129
+    },
+    {
+      "from": 140,
+      "to": 1
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 141
+    },
+    {
+      "from": 143,
+      "to": 141
+    },
+    {
+      "from": 144,
+      "to": 141
+    },
+    {
+      "from": 145,
+      "to": 58
+    },
+    {
+      "from": 146,
+      "to": 145
+    },
+    {
+      "from": 147,
+      "to": 145
+    },
+    {
+      "from": 148,
+      "to": 145
+    },
+    {
+      "from": 149,
+      "to": 58
+    },
+    {
+      "from": 150,
+      "to": 149
+    },
+    {
+      "from": 151,
+      "to": 149
+    },
+    {
+      "from": 152,
+      "to": 149
+    },
+    {
+      "from": 153,
+      "to": 149
+    },
+    {
+      "from": 154,
+      "to": 153
+    },
+    {
+      "from": 155,
+      "to": 153
+    },
+    {
+      "from": 156,
+      "to": 153
+    },
+    {
+      "from": 157,
+      "to": 153
+    },
+    {
+      "from": 158,
+      "to": 153
+    },
+    {
+      "from": 159,
+      "to": 153
+    },
+    {
+      "from": 160,
+      "to": 153
+    },
+    {
+      "from": 161,
+      "to": 58
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 161
+    },
+    {
+      "from": 164,
+      "to": 161
+    },
+    {
+      "from": 165,
+      "to": 161
+    },
+    {
+      "from": 166,
+      "to": 161
+    },
+    {
+      "from": 167,
+      "to": 161
+    },
+    {
+      "from": 168,
+      "to": 58
+    },
+    {
+      "from": 168,
+      "to": 64
+    },
+    {
+      "from": 169,
+      "to": 20
+    },
+    {
+      "from": 170,
+      "to": 1
+    },
+    {
+      "from": 171,
+      "to": 170
+    },
+    {
+      "from": 172,
+      "to": 170
+    },
+    {
+      "from": 173,
+      "to": 170
+    },
+    {
+      "from": 174,
+      "to": 170
+    },
+    {
+      "from": 175,
+      "to": 170
+    },
+    {
+      "from": 176,
+      "to": 170
+    },
+    {
+      "from": 177,
+      "to": 170
+    },
+    {
+      "from": 178,
+      "to": 1
+    },
+    {
+      "from": 179,
+      "to": 178
+    },
+    {
+      "from": 180,
+      "to": 8
+    },
+    {
+      "from": 180,
+      "to": 178
+    },
+    {
+      "from": 181,
+      "to": 178
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 129
+    },
+    {
+      "from": 184,
+      "to": 169
+    },
+    {
+      "from": 185,
+      "to": 169
+    },
+    {
+      "from": 186,
+      "to": 169
+    },
+    {
+      "from": 187,
+      "to": 169
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 1
+    },
+    {
+      "from": 190,
+      "to": 189
+    },
+    {
+      "from": 191,
+      "to": 171
+    },
+    {
+      "from": 191,
+      "to": 189
+    },
+    {
+      "from": 192,
+      "to": 189
+    },
+    {
+      "from": 193,
+      "to": 178
+    },
+    {
+      "from": 194,
+      "to": 193
+    },
+    {
+      "from": 195,
+      "to": 193
+    },
+    {
+      "from": 196,
+      "to": 193
+    },
+    {
+      "from": 197,
+      "to": 178
+    },
+    {
+      "from": 198,
+      "to": 1
+    },
+    {
+      "from": 199,
+      "to": 198
+    },
+    {
+      "from": 200,
+      "to": 198
+    },
+    {
+      "from": 200,
+      "to": 4
+    }
+  ]
+}

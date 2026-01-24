@@ -21,10 +21,19 @@ nav:
     - Search Workflow: sims/search-workflow/index.md
     - Similar MicroSims: sims/list-similar-microsim/index.md
     - PCA Map: sims/pca-map/index.md
+    - Learing Graph Viewer: sims/graph-viewer/index.md
   
   - Prompts:
       - Add Missing Metadata: prompts/add-missing-metadata.md
       - Create Embeddings Report: prompts/create-embeddings-report.md
+  - Learning Graph:
+      - Introduction: learning-graph/index.md
+      - Graph Viewer: sims/graph-viewer/index.md
+      - Course Description Assessment: learning-graph/course-description-assessment.md
+      - Concept List: learning-graph/concept-list.md
+      - Concept Taxonomy: learning-graph/concept-taxonomy.md
+      - Quality Metrics: learning-graph/quality-metrics.md
+      - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
@@ -35,7 +44,7 @@ theme:
   name: material
   extra_css:
     - styles/custom.css
-  logo: img/logo.jpg
+  logo: img/logo.png
   favicon: img/favicon.ico
   palette:
     primary: 'blue'
