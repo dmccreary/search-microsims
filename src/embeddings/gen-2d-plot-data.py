@@ -76,25 +76,22 @@ def apply_pca(embeddings_dict: dict) -> tuple:
 def get_color_by_subject(subject: str) -> str:
     """Map subject area to a color."""
     subject_colors = {
-        'Mathematics': '#1f77b4',      # Blue
-        'Physics': '#ff7f0e',          # Orange
-        'Computer Science': '#2ca02c', # Green
-        'Chemistry': '#d62728',        # Red
-        'Biology': '#9467bd',          # Purple
+        'Mathematics': 'blue',      # Blue
+        'Physics': 'orange',          # Orange
+        'Computer Science': 'green', # Green
+        'Linear Algebra': '#d62728',        # Red
+        'Linux': 'purple',          # Purple
         'Engineering': '#8c564b',      # Brown
         'Statistics': '#e377c2',       # Pink
         'Data Science': '#7f7f7f',     # Gray
         'AI/ML': '#bcbd22',            # Yellow-green
         'Robotics': '#17becf',         # Cyan
         'Economics': '#aec7e8',        # Light blue
-        'Music': '#ffbb78',            # Light orange
-        'Art': '#ff9896',              # Light red
         'Language Arts': '#98df8a',    # Light green
-        'Social Studies': '#c5b0d5',   # Light purple
-        'Earth Science': '#c49c94',    # Light brown
         'Operating Systems': '#f7b6d2', # Light pink
         'Ethics': '#c7c7c7',           # Light gray
         'Healthcare': '#dbdb8d',       # Light yellow
+        'Graph': 'orange',          # Light orange
         'Education': '#9edae5',        # Light cyan
         'Other': '#999999',            # Medium gray
     }
@@ -110,16 +107,22 @@ def normalize_subject(raw_subject: str) -> str:
     s = raw_subject.lower()
 
     # Map to primary categories
-    if 'math' in s or 'algebra' in s or 'geometry' in s or 'calcul' in s or 'linear algebra' in s:
+    if 'geometry' in s:
+        return 'Geometry'
+    if 'linear algebra' in s:
+        return 'Linear Algebra'
+    if 'linux' in s:
+        return 'Linux'
+    if 'algebra' in s:
+        return 'Algebra'
+    if 'math' in s or 'calculus' in s:
         return 'Mathematics'
     if 'physic' in s:
         return 'Physics'
     if 'computer' in s or 'programming' in s or 'software' in s or 'algorithm' in s:
         return 'Computer Science'
-    if 'chem' in s:
-        return 'Chemistry'
-    if 'bio' in s:
-        return 'Biology'
+    if 'signal' in s:
+        return 'Signal Processing'
     if 'engineer' in s or 'electronic' in s or 'circuit' in s:
         return 'Engineering'
     if 'statistic' in s:
@@ -132,17 +135,13 @@ def normalize_subject(raw_subject: str) -> str:
         return 'Robotics'
     if 'econom' in s or 'financ' in s:
         return 'Economics'
-    if 'music' in s:
-        return 'Music'
-    if 'art' in s:
-        return 'Art'
-    if 'language' in s or 'reading' in s:
-        return 'Language Arts'
+    if 'reading' in s:
+        return 'Reading'
     if 'social' in s or 'history' in s or 'geography' in s:
         return 'Social Studies'
-    if 'earth' in s or 'environment' in s:
-        return 'Earth Science'
-    if 'linux' in s or 'operating system' in s:
+    if 'graph' in s:
+        return 'Graph'
+    if 'operating system' in s:
         return 'Operating Systems'
     if 'ethic' in s:
         return 'Ethics'
@@ -150,7 +149,11 @@ def normalize_subject(raw_subject: str) -> str:
         return 'Healthcare'
     if 'education' in s:
         return 'Education'
-
+    if 'chem' in s:
+        return 'Chemistry'
+    if 'bio' in s:
+        return 'Biology'
+    
     return 'Other'
 
 
