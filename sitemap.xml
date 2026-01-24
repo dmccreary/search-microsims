@@ -41,11 +41,39 @@
          <lastmod>2026-01-24</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/concept-list/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/concept-taxonomy/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/course-description-assessment/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/quality-metrics/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/taxonomy-distribution/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/prompts/add-missing-metadata/</loc>
          <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/prompts/create-embeddings-report/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/prompts/list-similar-micrrosims/</loc>
          <lastmod>2026-01-24</lastmod>
     </url>
     <url>
@@ -65,7 +93,19 @@
          <lastmod>2026-01-24</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/graph-viewer/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/list-similar-microsim/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/pca-map/</loc>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/search-workflow/</loc>
          <lastmod>2026-01-24</lastmod>
     </url>
 </urlset>

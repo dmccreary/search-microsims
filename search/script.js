@@ -397,6 +397,7 @@ function renderResults(items) {
                 ${item.difficulty && item.difficulty !== 'Unknown' ? `<span class="tag difficulty">${item.difficulty}</span>` : ''}
             </div>
             <div class="meta">By ${item.creator || 'Unknown'}${item.date ? ' | ' + item.date : ''}</div>
+            ${item.url ? `<a href="../sims/list-similar-microsim/main.html?id=${encodeURIComponent(item.url)}" class="similar-link">Similar MicroSims</a>` : ''}
         </div>
     `).join('');
 }

@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,MicroSim,,FOUND
+2,Educational Simulation,1,FOUND
+3,Interactivity,1,FOUND
+4,User Engagement,3,FOUND
+5,Simplicity,1,FOUND
+6,AI Generation,1|88,FOUND
+7,Web Embedding,1,FOUND
+8,Iframe Element,7,FOUND
+9,Search,,SRCH
+10,Findability,9,SRCH
+11,Reuse,1|10,FOUND
+12,Component Reuse,11,FOUND
+13,MicroSim Structure,1,FILE
+14,File Organization,13,FILE
+15,index.md File,14,FILE
+16,main.html File,14,FILE
+17,style.css File,14,FILE
+18,data.json File,14|39,FILE
+19,metadata.json File,14|20|39,FILE
+20,Metadata,,META
+21,Metadata Standards,20,META
+22,Dublin Core,21,META
+23,Dublin Core Elements,22,META
+24,Title Element,23,META
+25,Creator Element,23,META
+26,Subject Element,23,META
+27,Description Element,23,META
+28,Publisher Element,23,META
+29,Contributor Element,23,META
+30,Date Element,23,META
+31,Type Element,23,META
+32,Format Element,23,META
+33,Identifier Element,23,META
+34,Source Element,23,META
+35,Language Element,23,META
+36,Relation Element,23,META
+37,Coverage Element,23,META
+38,Rights Element,23,META
+39,JSON,,DATA
+40,JSON Syntax,39,DATA
+41,JSON Objects,40,DATA
+42,JSON Arrays,40,DATA
+43,JSON Schema,41|42,DATA
+44,Schema Validation,43,DATA
+45,Required Fields,43,DATA
+46,Optional Fields,43,DATA
+47,Data Quality,44|48|49,DATA
+48,Completeness Score,19|44,DATA
+49,Quality Score,48,DATA
+50,Taxonomies,20,META
+51,Classification Systems,50,META
+52,Subject Normalization,51|26,META
+53,Grade Levels,50,EDU
+54,K-12 Education,53,EDU
+55,Undergraduate Level,53,EDU
+56,Graduate Level,53,EDU
+57,Adult Learning,53,EDU
+58,Learning Objectives,1,EDU
+59,Bloom Taxonomy,58,EDU
+60,Remember Level,59,EDU
+61,Understand Level,59,EDU
+62,Apply Level,59,EDU
+63,Analyze Level,59,EDU
+64,Evaluate Level,59,EDU
+65,Create Level,59,EDU
+66,Cognitive Levels,59,EDU
+67,Search Fundamentals,9,SRCH
+68,Information Retrieval,67,SRCH
+69,Precision,68,SRCH
+70,Recall,68,SRCH
+71,Relevance,69|70,SRCH
+72,Ranking,71,SRCH
+73,Keyword Search,67,SRCH
+74,Boolean Search,73,SRCH
+75,Boolean Operators,74,SRCH
+76,AND Operator,75,SRCH
+77,OR Operator,75,SRCH
+78,NOT Operator,75,SRCH
+79,Faceted Search,67|80,SRCH
+80,Facets,50,SRCH
+81,Filter Controls,79|129,SRCH
+82,Lightweight Search,67,SRCH
+83,Client-Side Search,82,SRCH
+84,ItemsJS Library,83,SRCH
+85,Search Engines,67,SRCH
+86,Indexing,85,SRCH
+87,Inverted Index,86,SRCH
+88,Semantic Search,67|89,EMBED
+89,Embeddings,,EMBED
+90,Vector Representations,89,EMBED
+91,Cosine Similarity,90,EMBED
+92,Similar MicroSims,91|1,EMBED
+93,Similarity Score,91,EMBED
+94,Nearest Neighbors,93,EMBED
+95,Dimensionality Reduction,90,EMBED
+96,PCA,95,EMBED
+97,t-SNE,95,EMBED
+98,Visualization Maps,96|97,EMBED
+99,Data Gathering,,PIPE
+100,Web Crawling,99,PIPE
+101,GitHub API,100,PIPE
+102,Repository Mining,101,PIPE
+103,MicroSim Repositories,102|1,PIPE
+104,Data Aggregation,99,PIPE
+105,MicroSim Standards,21|1,STND
+106,Schema Compliance,105|44,STND
+107,Tags,20,PIPE
+108,Folksonomies,107,PIPE
+109,User-Generated Tags,108,PIPE
+110,Keywords,107,PIPE
+111,Controlled Vocabulary,110,PIPE
+112,Visualization Type,,UI
+113,Animation,112,UI
+114,Chart,112,UI
+115,Graph Visualization,112,UI
+116,Diagram,112,UI
+117,Simulation Display,112|1,UI
+118,Interactive Demo,112|3,UI
+119,Data Visualization,112,UI
+120,3D Model,112,UI
+121,Timeline,112,UI
+122,Network Diagram,112,UI
+123,Map Visualization,112,UI
+124,Dashboard,112|119,UI
+125,Interaction Level,3,UI
+126,Passive Viewing,125,UI
+127,Low Interaction,125,UI
+128,High Interaction,125,UI
+129,User Controls,3,UI
+130,Slider Control,129,UI
+131,Button Control,129,UI
+132,Start-Pause Button,131,UI
+133,Range Slider,130,UI
+134,Dropdown Select,129,UI
+135,Multi Select,134,UI
+136,Checkbox Control,129,UI
+137,Radio Button,129,UI
+138,Text Input,129,UI
+139,Color Picker,129,UI
+140,Complexity,1,EDU
+141,Difficulty Levels,140,EDU
+142,Beginner Level,141,EDU
+143,Intermediate Level,141,EDU
+144,Advanced Level,141,EDU
+145,Curriculum Standards,58,STND
+146,CCSS Standards,145,STND
+147,NGSS Standards,145,STND
+148,ISTE Standards,145,STND
+149,Cognitive Load,58,EDU
+150,Intrinsic Load,149,EDU
+151,Extraneous Load,149,EDU
+152,Germane Load,149,EDU
+153,Scaffolding,149,EDU
+154,Guided Discovery,153,EDU
+155,Worked Examples,153,EDU
+156,Hints System,153,EDU
+157,Feedback Mechanisms,153,EDU
+158,Progressive Disclosure,153,EDU
+159,Modeling,153,EDU
+160,Coaching,153,EDU
+161,Learning Theory,58,EDU
+162,Constructivism,161,EDU
+163,Behaviorism,161,EDU
+164,Cognitivism,161,EDU
+165,Experiential Learning,161,EDU
+166,Misconceptions,161,EDU
+167,Transfer Skills,161,EDU
+168,Assessment Rubric,58|64,ANAL
+169,Technical Metadata,20,TECH
+170,JavaScript Libraries,1,TECH
+171,p5.js Framework,170,TECH
+172,mermaid.js Library,170,TECH
+173,vis-network.js Library,170,TECH
+174,chart.js Library,170,TECH
+175,vis-timeline.js Library,170,TECH
+176,plotly.js Library,170,TECH
+177,leaflet.js Library,170,TECH
+178,Responsive Design,1,TECH
+179,Width Responsive,178,TECH
+180,Fixed Height Iframe,8|178,TECH
+181,Canvas Dimensions,178,TECH
+182,Drawing Region,181,TECH
+183,Control Region,181|129,TECH
+184,Browser Compatibility,169,TECH
+185,Performance Metrics,169,TECH
+186,Device Requirements,169,TECH
+187,State Management,169,TECH
+188,Data Flow,187,TECH
+189,Accessibility,1,TECH
+190,Screen Reader Support,189,TECH
+191,P5 Describe Function,171|189,TECH
+192,Keyboard Navigation,189,TECH
+193,Layout Types,178,UI
+194,Fixed Layout,193,UI
+195,Two Panel Layout,193,UI
+196,Three Panel Layout,193,UI
+197,Color Scheme,178,UI
+198,Analytics,1,ANAL
+199,Learning Indicators,198,ANAL
+200,Engagement Metrics,198|4,ANAL
