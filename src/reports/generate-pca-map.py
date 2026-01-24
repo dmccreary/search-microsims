@@ -6,13 +6,17 @@ This script:
 1. Loads 384-dimensional embeddings from microsims-embeddings.json
 2. Loads metadata from microsims-data.json
 3. Applies PCA to reduce to 2 dimensions
-4. Generates a responsive, interactive Plotly HTML report
+4. Generates split files for a MicroSim-style folder structure
 
 Usage:
     python src/reports/generate-pca-map.py
 
 Output:
-    docs/reports/microsim-pca-map.html
+    docs/sims/pca-map/
+        - data.json   (Plotly data and layout)
+        - main.html   (HTML structure)
+        - style.css   (CSS styles)
+        - script.js   (JavaScript)
 """
 
 import json
@@ -28,7 +32,7 @@ from plotly.subplots import make_subplots
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 EMBEDDINGS_PATH = PROJECT_ROOT / "data" / "microsims-embeddings.json"
 MICROSIMS_PATH = PROJECT_ROOT / "docs" / "search" / "microsims-data.json"
-OUTPUT_PATH = PROJECT_ROOT / "docs" / "reports" / "microsim-pca-map.html"
+OUTPUT_DIR = PROJECT_ROOT / "docs" / "sims" / "pca-map"
 
 # Subject color mapping
 SUBJECT_COLORS = {
@@ -245,7 +249,7 @@ def create_plotly_figure(points: list, explained_variance: np.ndarray) -> go.Fig
             name=f"{subject} ({len(pts)})",
             marker=dict(
                 color=color,
-                size=10,
+                size=12,
                 opacity=0.7,
                 line=dict(color='white', width=1)
             ),
@@ -289,6 +293,8 @@ def create_plotly_figure(points: list, explained_variance: np.ndarray) -> go.Fig
             x=1.02
         ),
         hovermode='closest',
+        hoverdistance=20,
+        spikedistance=20,
         plot_bgcolor='white',
         paper_bgcolor='white',
         margin=dict(l=60, r=200, t=100, b=60),
@@ -304,20 +310,10 @@ def create_plotly_figure(points: list, explained_variance: np.ndarray) -> go.Fig
     return fig
 
 
-def generate_html(fig: go.Figure, points: list, explained_variance: np.ndarray) -> str:
-    """Generate complete HTML with responsive Plotly chart."""
+def generate_split_files(fig: go.Figure, points: list, explained_variance: np.ndarray, output_dir: Path):
+    """Generate split files: data.json, main.html, style.css, script.js."""
 
-    # Get Plotly HTML div
-    plot_div = fig.to_html(
-        full_html=False,
-        include_plotlyjs='cdn',
-        config={
-            'responsive': True,
-            'displayModeBar': True,
-            'modeBarButtonsToRemove': ['lasso2d', 'select2d'],
-            'displaylogo': False
-        }
-    )
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     # Count subjects
     subject_counts = {}
@@ -325,124 +321,241 @@ def generate_html(fig: go.Figure, points: list, explained_variance: np.ndarray) 
         subject_counts[p['subject']] = subject_counts.get(p['subject'], 0) + 1
 
     total_variance = sum(explained_variance) * 100
-    generated_date = datetime.now().strftime('%Y-%m-%d %H:%M')
 
-    html = f'''<!DOCTYPE html>
+    # 1. Generate data.json (Plotly data and layout)
+    plotly_data = {
+        "data": fig.to_dict()['data'],
+        "layout": fig.to_dict()['layout']
+    }
+
+    data_path = output_dir / "data.json"
+    with open(data_path, 'w') as f:
+        json.dump(plotly_data, f, indent=2)
+    print(f"  Saved {data_path.name} ({data_path.stat().st_size / 1024:.1f} KB)")
+
+    # 2. Generate style.css
+    css_content = '''* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8f9fa;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.stat-label {
+    color: #888;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.plot-wrapper {
+    flex: 1;
+    min-height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.plot-wrapper > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.js-plotly-plot, .plotly {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 15px;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.instructions {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #e3f2fd;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+}
+
+.instructions strong {
+    color: #1976d2;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    .stats {
+        gap: 10px;
+    }
+    .stat {
+        padding: 8px 12px;
+    }
+    .stat-value {
+        font-size: 1.1rem;
+    }
+}
+'''
+
+    css_path = output_dir / "style.css"
+    with open(css_path, 'w') as f:
+        f.write(css_content)
+    print(f"  Saved {css_path.name} ({css_path.stat().st_size / 1024:.1f} KB)")
+
+    # 3. Generate script.js
+    js_content = '''// MicroSim PCA Map - Interactive Plotly Visualization
+// Loads data from data.json and renders an interactive scatter plot
+
+document.addEventListener('DOMContentLoaded', function() {
+    const plotDiv = document.getElementById('pca-plot');
+
+    // Load the data
+    fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load data.json');
+            }
+            return response.json();
+        })
+        .then(plotData => {
+            // Update stats from data
+            updateStats(plotData.data);
+
+            // Configure responsive layout
+            const layout = plotData.layout;
+            layout.autosize = true;
+
+            // Config for interactivity
+            const config = {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+                displaylogo: false
+            };
+
+            // Create the plot
+            Plotly.newPlot(plotDiv, plotData.data, layout, config);
+
+            // Handle click events to open MicroSim URLs
+            plotDiv.on('plotly_click', function(data) {
+                const point = data.points[0];
+                if (point.customdata) {
+                    const url = point.customdata;
+                    if (url.startsWith('http')) {
+                        window.open(url, '_blank');
+                    }
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                Plotly.Plots.resize(plotDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading PCA data:', error);
+            plotDiv.innerHTML = '<p style="color: red; padding: 20px;">Error loading visualization data. Please check that data.json exists.</p>';
+        });
+});
+
+function updateStats(data) {
+    // Calculate total MicroSims
+    let totalPoints = 0;
+    let subjectAreas = 0;
+
+    data.forEach(trace => {
+        if (trace.x && Array.isArray(trace.x)) {
+            totalPoints += trace.x.length;
+        }
+        subjectAreas++;
+    });
+
+    // Update stat values if elements exist
+    const microsimsStat = document.getElementById('stat-microsims');
+    const subjectsStat = document.getElementById('stat-subjects');
+
+    if (microsimsStat) microsimsStat.textContent = totalPoints;
+    if (subjectsStat) subjectsStat.textContent = subjectAreas;
+}
+'''
+
+    js_path = output_dir / "script.js"
+    with open(js_path, 'w') as f:
+        f.write(js_content)
+    print(f"  Saved {js_path.name} ({js_path.stat().st_size / 1024:.1f} KB)")
+
+    # 4. Generate main.html
+    html_content = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroSim PCA Map</title>
-    <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-        html, body {{
-            width: 100%;
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8f9fa;
-        }}
-        .container {{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }}
-        .header {{
-            text-align: center;
-            padding-bottom: 15px;
-        }}
-        h1 {{
-            color: #333;
-            font-size: 1.6rem;
-            margin-bottom: 5px;
-        }}
-        .subtitle {{
-            color: #666;
-            font-size: 0.9rem;
-        }}
-        .stats {{
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }}
-        .stat {{
-            background: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            text-align: center;
-        }}
-        .stat-label {{
-            color: #888;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }}
-        .stat-value {{
-            color: #333;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }}
-        .plot-wrapper {{
-            flex: 1;
-            min-height: 500px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 10px;
-            overflow: hidden;
-        }}
-        .plot-wrapper > div {{
-            width: 100% !important;
-            height: 100% !important;
-        }}
-        .js-plotly-plot, .plotly {{
-            width: 100% !important;
-            height: 100% !important;
-        }}
-        .footer {{
-            text-align: center;
-            padding-top: 15px;
-            color: #888;
-            font-size: 0.8rem;
-        }}
-        .instructions {{
-            margin-top: 10px;
-            padding: 10px 16px;
-            background: #e3f2fd;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: #555;
-            text-align: center;
-        }}
-        .instructions strong {{
-            color: #1976d2;
-        }}
-        @media (max-width: 768px) {{
-            .container {{
-                padding: 10px;
-            }}
-            h1 {{
-                font-size: 1.3rem;
-            }}
-            .stats {{
-                gap: 10px;
-            }}
-            .stat {{
-                padding: 8px 12px;
-            }}
-            .stat-value {{
-                font-size: 1.1rem;
-            }}
-        }}
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-3.3.1.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -452,7 +565,7 @@ def generate_html(fig: go.Figure, points: list, explained_variance: np.ndarray) 
             <div class="stats">
                 <div class="stat">
                     <div class="stat-label">MicroSims</div>
-                    <div class="stat-value">{len(points):,}</div>
+                    <div class="stat-value" id="stat-microsims">{len(points):,}</div>
                 </div>
                 <div class="stat">
                     <div class="stat-label">Variance Explained</div>
@@ -460,7 +573,7 @@ def generate_html(fig: go.Figure, points: list, explained_variance: np.ndarray) 
                 </div>
                 <div class="stat">
                     <div class="stat-label">Subject Areas</div>
-                    <div class="stat-value">{len(subject_counts)}</div>
+                    <div class="stat-value" id="stat-subjects">{len(subject_counts)}</div>
                 </div>
                 <div class="stat">
                     <div class="stat-label">PC1 Variance</div>
@@ -474,44 +587,26 @@ def generate_html(fig: go.Figure, points: list, explained_variance: np.ndarray) 
         </div>
 
         <div class="plot-wrapper">
-            {plot_div}
-        </div>
-
-        <div class="instructions">
-            <strong>Interactions:</strong> Hover over points to see MicroSim details.
-            Click and drag to zoom. Double-click to reset view.
-            Click legend items to show/hide subjects.
-            Click a point to open the MicroSim.
+            <div id="pca-plot"></div>
         </div>
 
         <div class="footer">
-            Generated on {generated_date} using PCA dimensionality reduction
+            <p>Generated from MicroSim metadata embeddings using PCA dimensionality reduction</p>
+            <div class="instructions">
+                <strong>Tip:</strong> Click on any point to open the MicroSim. Hover for details. Use the legend to filter by subject area.
+            </div>
         </div>
     </div>
 
-    <script>
-        // Add click handler to open MicroSim URL
-        document.addEventListener('DOMContentLoaded', function() {{
-            var plotDiv = document.querySelector('.js-plotly-plot');
-            if (plotDiv) {{
-                plotDiv.on('plotly_click', function(data) {{
-                    var point = data.points[0];
-                    if (point && point.customdata) {{
-                        window.open(point.customdata, '_blank');
-                    }}
-                }});
-            }}
-
-            // Handle window resize
-            window.addEventListener('resize', function() {{
-                Plotly.Plots.resize(document.querySelector('.js-plotly-plot'));
-            }});
-        }});
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>'''
+</html>
+'''
 
-    return html
+    html_path = output_dir / "main.html"
+    with open(html_path, 'w') as f:
+        f.write(html_content)
+    print(f"  Saved {html_path.name} ({html_path.stat().st_size / 1024:.1f} KB)")
 
 
 def main():
@@ -543,18 +638,12 @@ def main():
     # Create figure
     fig = create_plotly_figure(points, explained_variance)
 
-    # Generate HTML
-    print("Generating HTML report...")
-    html = generate_html(fig, points, explained_variance)
+    # Generate split files
+    print("Generating split files...")
+    generate_split_files(fig, points, explained_variance, OUTPUT_DIR)
 
-    # Save output
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, 'w') as f:
-        f.write(html)
-
-    size_kb = OUTPUT_PATH.stat().st_size / 1024
-    print(f"  Saved to {OUTPUT_PATH}")
-    print(f"  File size: {size_kb:.1f} KB")
+    # Calculate total size
+    total_size = sum((OUTPUT_DIR / f).stat().st_size for f in ['data.json', 'main.html', 'style.css', 'script.js'])
 
     print()
     print("=" * 60)
@@ -562,7 +651,8 @@ def main():
     print(f"  - MicroSims mapped: {len(points)}")
     print(f"  - Subject areas: {len(set(p['subject'] for p in points))}")
     print(f"  - Variance explained: {sum(explained_variance)*100:.1f}%")
-    print(f"  - Output: {OUTPUT_PATH.relative_to(PROJECT_ROOT)}")
+    print(f"  - Output directory: {OUTPUT_DIR.relative_to(PROJECT_ROOT)}")
+    print(f"  - Total size: {total_size / 1024:.1f} KB")
     print("=" * 60)
     print("Done!")
 

@@ -14,7 +14,12 @@ nav:
   - Reports:
       - MicroSim Metrics: reports/microsim-metrics.md
       - Local Metadata Update: reports/local-metadata-update.md
-      - MicroSim PCA Map: reports/microsim-pca-map.html
+      - MicroSim PCA Map: sims/pca-map/index.md
+  
+  - MicroSims:
+    - List of MicroSims: sims/index.md
+    - PCA Map: sims/pca-map/index.md
+  
   - Prompts:
       - Add Missing Metadata: prompts/add-missing-metadata.md
       - Create Embeddings Report: prompts/create-embeddings-report.md
