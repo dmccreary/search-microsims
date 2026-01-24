@@ -79,7 +79,10 @@ def get_color_by_subject(subject: str) -> str:
         'Mathematics': 'blue',      # Blue
         'Physics': 'orange',          # Orange
         'Computer Science': 'green', # Green
+        'Geometry': '#9467bd',       # Purple
         'Linear Algebra': '#d62728',        # Red
+        'Algebra': '#ff7f0e',        # Dark orange
+        'Signal Processing': '#2ca02c', # Dark green
         'Linux': 'purple',          # Purple
         'Engineering': '#8c564b',      # Brown
         'Statistics': '#e377c2',       # Pink
@@ -91,7 +94,9 @@ def get_color_by_subject(subject: str) -> str:
         'Operating Systems': '#f7b6d2', # Light pink
         'Ethics': '#c7c7c7',           # Light gray
         'Healthcare': '#dbdb8d',       # Light yellow
-        'Graph': 'orange',          # Light orange
+        'Graph': 'violet',              # violet
+        'Graph Algorithms': "#d336de",  # deep pink
+        'Graph Modeling': "#ff5ed6",     # bright pink
         'Education': '#9edae5',        # Light cyan
         'Other': '#999999',            # Medium gray
     }
@@ -123,14 +128,18 @@ def normalize_subject(raw_subject: str) -> str:
         return 'Computer Science'
     if 'signal' in s:
         return 'Signal Processing'
-    if 'engineer' in s or 'electronic' in s or 'circuit' in s:
+    if 'engineer' in s or 'electronic' in s:
         return 'Engineering'
+    if 'circuit' in s:
+        return 'Circuits'
     if 'statistic' in s:
         return 'Statistics'
     if 'data science' in s or 'data' in s:
         return 'Data Science'
     if 'machine learning' in s or 'neural' in s or 'deep learning' in s or 'ai' in s:
         return 'AI/ML'
+    if 'program' in s:
+        return 'Programming'
     if 'robot' in s or 'autonomous' in s:
         return 'Robotics'
     if 'econom' in s or 'financ' in s:
