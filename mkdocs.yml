@@ -18,6 +18,8 @@ nav:
   
   - MicroSims:
     - List of MicroSims: sims/index.md
+    - Search Workflow: sims/search-workflow/index.md
+    - Similar MicroSims: sims/list-similar-microsim/index.md
     - PCA Map: sims/pca-map/index.md
   
   - Prompts:

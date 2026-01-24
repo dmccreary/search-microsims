@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSim Search Application Workflow</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .diagram-panel {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            overflow: auto;
+            padding: 10px;
+        }
+        .mermaid {
+            width: 100%;
+            max-height: 100%;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .info-panel {
+            flex: 1;
+            background-color: #f8f9fa;
+            border-left: 2px solid #dee2e6;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .info-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        .info-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .info-content .default-text {
+            color: #888;
+            font-style: italic;
+        }
+        .file-size {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #2980b9;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .node:hover {
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="diagram-panel">
+            <div class="mermaid">
+flowchart TD
+    subgraph Sources["Data Sources"]
+        GitHub[("GitHub Repos<br/>dmccreary/*")]:::sourceNode
+    end
+
+    subgraph Crawl["Step 1: Crawl Metadata"]
+        Crawler["crawl-microsims.py<br/>Fetch metadata.json"]:::processNode
+    end
+
+    subgraph Combine["Step 2: Combine Data"]
+        DataFile[("microsims-data.json<br/>~500 KB")]:::dataNode
+    end
+
+    subgraph Embed["Step 3: Generate Embeddings"]
+        EmbedScript["generate-embeddings.py<br/>384-dim vectors"]:::processNode
+        EmbedFile[("microsims-embeddings.json<br/>7 MB")]:::warningNode
+    end
+
+    subgraph Precompute["Step 4: Precompute Similarities"]
+        SimilarScript["generate-similar-microsims.py<br/>Cosine similarity matrix"]:::processNode
+        SimilarFile[("similar-microsims.json<br/>870 KB")]:::dataNode
+    end
+
+    subgraph PCA["Step 5: Generate PCA Projection"]
+        PCAScript["generate-pca.py<br/>Reduce to 2D"]:::processNode
+        PCAFile[("pca-projection.json<br/>~50 KB")]:::dataNode
+    end
+
+    subgraph WebApps["Step 6: Web Applications"]
+        Search["Faceted Search<br/>demo.html"]:::appNode
+        Similar["Similar MicroSims<br/>list-similar-microsim"]:::appNode
+        PCAMap["2D PCA Map<br/>pca-map"]:::appNode
+    end
+
+    GitHub --> Crawler
+    Crawler --> DataFile
+    DataFile --> EmbedScript
+    EmbedScript --> EmbedFile
+    EmbedFile --> SimilarScript
+    EmbedFile --> PCAScript
+    SimilarScript --> SimilarFile
+    PCAScript --> PCAFile
+    DataFile --> Search
+    SimilarFile --> Similar
+    PCAFile --> PCAMap
+    DataFile --> Similar
+    DataFile --> PCAMap
+
+    classDef sourceNode fill:#9b59b6,stroke:#333,stroke-width:2px,color:#fff,font-size:14px
+    classDef processNode fill:#3498db,stroke:#333,stroke-width:2px,color:#fff,font-size:14px
+    classDef dataNode fill:#27ae60,stroke:#333,stroke-width:2px,color:#fff,font-size:14px
+    classDef warningNode fill:#e74c3c,stroke:#333,stroke-width:2px,color:#fff,font-size:14px
+    classDef appNode fill:#f39c12,stroke:#333,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#666,stroke-width:2px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="info-title">Workflow Details</div>
+            <div class="info-content">
+                <p class="default-text">Hover over a node to see details about that step in the workflow.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const nodeInfo = {
+            'GitHub': {
+                title: 'GitHub Repositories',
+                content: 'Source repositories containing MicroSim projects (dmccreary/*). Each repo has metadata.json files in docs/sims/*/metadata.json describing individual MicroSims.'
+            },
+            'Crawler': {
+                title: 'Metadata Crawler',
+                content: 'Python script that uses GitHub API to crawl all dmccreary/* repositories and collect metadata.json files. Outputs a combined JSON file with all MicroSim metadata.'
+            },
+            'DataFile': {
+                title: 'Combined Metadata <span class="file-size">~500 KB</span>',
+                content: 'Single JSON file containing normalized metadata for all 870+ MicroSims. Includes titles, descriptions, subjects, grade levels, and URLs. Used by the faceted search interface.'
+            },
+            'EmbedScript': {
+                title: 'Embeddings Generator',
+                content: 'Uses sentence-transformers (all-MiniLM-L6-v2) to generate 384-dimensional semantic embeddings for each MicroSim based on title, description, and learning objectives.'
+            },
+            'EmbedFile': {
+                title: 'Embeddings File <span class="file-size">7 MB</span>',
+                content: '<strong style="color:#e74c3c">WARNING: Do not load directly in browser!</strong><br><br>This large file contains 384-dim vectors for 870+ MicroSims. Used only by batch processing scripts, never loaded by web apps.'
+            },
+            'SimilarScript': {
+                title: 'Similarity Precomputer',
+                content: 'Computes cosine similarity matrix between all MicroSim embeddings. For each MicroSim, stores the top 10 most similar items with similarity scores.'
+            },
+            'SimilarFile': {
+                title: 'Similar MicroSims Lookup <span class="file-size">870 KB</span>',
+                content: 'Precomputed lookup table mapping each MicroSim URL to its 10 most similar MicroSims. Small enough to load in browser for instant similarity queries.'
+            },
+            'PCAScript': {
+                title: 'PCA Projection Generator',
+                content: 'Reduces 384-dimensional embeddings to 2D using Principal Component Analysis (PCA). Creates coordinates for visualizing MicroSims on a 2D scatter plot.'
+            },
+            'PCAFile': {
+                title: 'PCA Coordinates <span class="file-size">~50 KB</span>',
+                content: 'Contains 2D (x, y) coordinates for each MicroSim after PCA dimensionality reduction. Used to render the interactive 2D map visualization.'
+            },
+            'Search': {
+                title: 'Faceted Search Application',
+                content: 'Client-side search using ItemsJS. Loads microsims-data.json (~500KB) for instant filtering by subject, grade level, Bloom\'s taxonomy, framework, and more.'
+            },
+            'Similar': {
+                title: 'Similar MicroSims Viewer',
+                content: 'Shows the 10 most similar MicroSims for any given MicroSim. Loads precomputed similar-microsims.json (~870KB) instead of computing similarities at runtime.'
+            },
+            'PCAMap': {
+                title: '2D PCA Map Visualization',
+                content: 'Interactive scatter plot showing all MicroSims positioned by semantic similarity. Nearby points represent conceptually similar simulations.'
+            }
+        };
+
+        const infoPanel = document.querySelector('.info-content');
+        const defaultContent = infoPanel.innerHTML;
+
+        function setupHoverEvents() {
+            const nodes = document.querySelectorAll('.node');
+            nodes.forEach(node => {
+                // Extract node ID from the element ID (format: flowchart-NodeId-123)
+                const match = node.id.match(/flowchart-(\w+)-/);
+                if (match) {
+                    const nodeId = match[1];
+                    if (nodeInfo[nodeId]) {
+                        node.addEventListener('mouseenter', () => {
+                            const info = nodeInfo[nodeId];
+                            infoPanel.innerHTML = `
+                                <h3 style="color:#2c3e50;margin-bottom:10px;">${info.title}</h3>
+                                <p>${info.content}</p>
+                            `;
+                        });
+                        node.addEventListener('mouseleave', () => {
+                            infoPanel.innerHTML = defaultContent;
+                        });
+                    }
+                }
+            });
+        }
+
+        // Robust polling to wait for Mermaid to render
+        function waitForMermaid() {
+            const mermaidDiv = document.querySelector('.mermaid');
+            const svg = mermaidDiv.querySelector('svg');
+            if (svg && document.querySelectorAll('.node').length > 0) {
+                setupHoverEvents();
+            } else {
+                setTimeout(waitForMermaid, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => setTimeout(waitForMermaid, 100));
+        } else {
+            setTimeout(waitForMermaid, 100);
+        }
+    </script>
+</body>
+</html>

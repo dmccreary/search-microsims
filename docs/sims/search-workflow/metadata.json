@@ -1,0 +1,59 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "MicroSim Search Application Workflow",
+      "description": "Interactive workflow diagram showing the complete data pipeline for the MicroSim faceted search system, from crawling GitHub repositories to serving web applications with precomputed similarity data.",
+      "creator": "Dan McCreary",
+      "date": "2026-01-24",
+      "type": "Interactive Workflow Diagram",
+      "format": "text/html",
+      "language": "en-US",
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "educational": {
+      "subjectArea": ["Computer Science", "Data Engineering", "Information Retrieval"],
+      "gradeLevel": ["Undergraduate", "Graduate"],
+      "bloomsTaxonomy": ["Understand", "Analyze"],
+      "difficulty": "Intermediate",
+      "topic": "Data Pipeline Architecture",
+      "learningObjectives": [
+        "Understand the complete workflow of a semantic search application",
+        "Explain the trade-offs between runtime computation and preprocessing",
+        "Identify how embeddings enable similarity search",
+        "Describe the role of PCA in dimensionality reduction"
+      ],
+      "prerequisites": [
+        "Basic understanding of web applications",
+        "Familiarity with JSON data format",
+        "Basic knowledge of vector embeddings"
+      ]
+    },
+    "technical": {
+      "framework": "mermaid",
+      "libraryVersion": "11.x",
+      "fileSize": "12KB",
+      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+    },
+    "search": {
+      "visualizationType": ["flowchart", "workflow", "diagram"],
+      "interactionLevel": "hover",
+      "keywords": [
+        "data pipeline",
+        "embeddings",
+        "similarity search",
+        "PCA",
+        "batch processing",
+        "metadata",
+        "GitHub API",
+        "faceted search"
+      ]
+    }
+  },
+  "diagram": {
+    "type": "flowchart",
+    "direction": "TD",
+    "nodeCount": 12,
+    "edgeCount": 13,
+    "subgraphs": 6
+  }
+}
