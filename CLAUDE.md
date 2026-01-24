@@ -28,9 +28,13 @@ python3 src/update-repo-microsims.py dmccreary/geometry-course
 python3 src/analyze-missing-metadata.py
 
 # Enrich existing metadata with missing fields (learningObjectives, visualizationType)
-python3 src/enrich-metadata.py              # Enrich all repos
-python3 src/enrich-metadata.py --report     # Report what's missing
-python3 src/enrich-metadata.py --dry-run    # Preview changes
+python3 src/enrich-metadata/enrich-metadata.py              # Enrich all repos
+python3 src/enrich-metadata/enrich-metadata.py --report     # Report what's missing
+python3 src/enrich-metadata/enrich-metadata.py --dry-run    # Preview changes
+
+# Commit and push enriched metadata to GitHub
+python3 src/enrich-metadata/commit-enrichments.py           # Commit all changed repos
+python3 src/enrich-metadata/commit-enrichments.py --dry-run # Preview what would be committed
 ```
 
 ### Data Profiling
@@ -104,7 +108,9 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/crawl-microsims.py` | GitHub crawler for metadata collection |
 | `src/update-repo-microsims.py` | Update metadata from a single repo |
 | `src/analyze-missing-metadata.py` | Report repos missing metadata |
-| `src/enrich-metadata.py` | Add missing fields to existing metadata |
+| `src/enrich-metadata/enrich-metadata.py` | Add missing fields to existing metadata |
+| `src/enrich-metadata/commit-enrichments.py` | Commit and push enriched metadata to GitHub |
+| `src/enrich-metadata/README.md` | Enrichment tools documentation |
 | `src/data-profiler/profile-microsims.py` | Generate metadata quality metrics report |
 | `src/microsim-schema/validate-metadata.py` | Validate metadata against JSON schema |
 | `src/microsim-schema/microsim-schema.json` | Official MicroSim metadata JSON schema |
