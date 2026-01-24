@@ -34,27 +34,39 @@ MICROSIMS_PATH = PROJECT_ROOT / "docs" / "search" / "microsims-data.json"
 OUTPUT_DIR = PROJECT_ROOT / "docs" / "sims" / "pca-map"
 
 # Subject color mapping
+# Specific subjects should be listed before broader categories
 SUBJECT_COLORS = {
-    'Mathematics': '#1f77b4',
+    # Specific math subjects (check before general Mathematics)
+    'Geometry': '#ff1493',  # bright pink (deep pink)
+    'Linear Algebra': '#aec7e8',
+    'Calculus': '#6baed6',
+    'Mathematics': '#08519c',
+    # Sciences
     'Physics': '#ff7f0e',
-    'Computer Science': '#2ca02c',
     'Chemistry': '#d62728',
     'Biology': '#9467bd',
-    'Engineering': '#8c564b',
-    'Statistics': '#e377c2',
+    'Earth Science': '#c49c94',
+    # Computing
+    'Computer Science': '#2ca02c',
     'Data Science': '#7f7f7f',
     'AI/ML': '#bcbd22',
     'Robotics': '#17becf',
-    'Economics': '#aec7e8',
-    'Music': '#ffbb78',
-    'Art': '#ff9896',
+    'Operating Systems': '#f7b6d2',
+    # Engineering
+    'Engineering': '#8c564b',
+    'Electronics': '#e7969c',
+    # Education & Design
+    'Instructional Design': '#9edae5',
+    'Education': '#17becf',
+    # Other subjects
+    'Statistics': '#e377c2',
+    'Economics': '#ffbb78',
+    'Music': '#f7b6d2',
+    'Signal Processing': '#ff9896',
     'Language Arts': '#98df8a',
     'Social Studies': '#c5b0d5',
-    'Earth Science': '#c49c94',
-    'Operating Systems': '#f7b6d2',
     'Ethics': '#c7c7c7',
     'Healthcare': '#dbdb8d',
-    'Education': '#9edae5',
     'Other': '#999999',
 }
 
@@ -85,77 +97,133 @@ def load_microsims(path: Path) -> dict:
 
 
 def normalize_subject(raw_subject: str) -> str:
-    """Normalize subject to a primary category."""
+    """Normalize subject to a primary category.
+
+    IMPORTANT: Specific subjects must be checked BEFORE broader categories.
+    E.g., 'Geometry' before 'Mathematics', 'Instructional Design' before 'Education'.
+    """
     if not raw_subject:
         return 'Other'
 
     s = raw_subject.lower()
 
-    if 'math' in s or 'algebra' in s or 'geometry' in s or 'calcul' in s or 'linear algebra' in s:
+    # === SPECIFIC SUBJECTS FIRST (before broader categories) ===
+
+    # Specific math subjects (before general Mathematics)
+    if 'geometry' in s:
+        return 'Geometry'
+    if 'linear algebra' in s:
+        return 'Linear Algebra'
+    if 'calculus' in s or 'calcul' in s:
+        return 'Calculus'
+
+    # Specific education subjects (before general Education)
+    if 'instructional design' in s:
+        return 'Instructional Design'
+
+    # Specific engineering subjects (before general Engineering)
+    if 'electronic' in s or 'circuit' in s:
+        return 'Electronics'
+
+    # === BROADER CATEGORIES ===
+
+    # General Mathematics (after specific math subjects)
+    if 'math' in s or 'algebra' in s or 'trigonometry' in s:
         return 'Mathematics'
+
+    # Sciences
     if 'physic' in s:
         return 'Physics'
-    if 'computer' in s or 'programming' in s or 'software' in s or 'algorithm' in s:
-        return 'Computer Science'
     if 'chem' in s:
         return 'Chemistry'
     if 'bio' in s:
         return 'Biology'
-    if 'engineer' in s or 'electronic' in s or 'circuit' in s:
-        return 'Engineering'
-    if 'statistic' in s:
-        return 'Statistics'
-    if 'data science' in s or 'data' in s:
+    if 'earth' in s or 'environment' in s:
+        return 'Earth Science'
+
+    # Computing
+    if 'computer' in s or 'programming' in s or 'software' in s or 'algorithm' in s:
+        return 'Computer Science'
+    if 'data science' in s:
         return 'Data Science'
     if 'machine learning' in s or 'neural' in s or 'deep learning' in s or 'ai' in s:
         return 'AI/ML'
     if 'robot' in s or 'autonomous' in s:
         return 'Robotics'
+    if 'linux' in s or 'operating system' in s:
+        return 'Operating Systems'
+
+    # Engineering (after specific engineering subjects)
+    if 'engineer' in s:
+        return 'Engineering'
+
+    # Education (after specific education subjects)
+    if 'education' in s:
+        return 'Education'
+
+    # Other subjects
+    if 'statistic' in s:
+        return 'Statistics'
+    if 'data' in s:
+        return 'Data Science'
     if 'econom' in s or 'financ' in s:
         return 'Economics'
     if 'music' in s:
         return 'Music'
-    if 'art' in s:
-        return 'Art'
+    if 'signal processing' in s or 'signal' in s:
+        return 'Signal Processing'
     if 'language' in s or 'reading' in s:
         return 'Language Arts'
     if 'social' in s or 'history' in s or 'geography' in s:
         return 'Social Studies'
-    if 'earth' in s or 'environment' in s:
-        return 'Earth Science'
-    if 'linux' in s or 'operating system' in s:
-        return 'Operating Systems'
     if 'ethic' in s:
         return 'Ethics'
     if 'health' in s:
         return 'Healthcare'
-    if 'education' in s:
-        return 'Education'
 
     return 'Other'
 
 
 def get_subject(sim: dict) -> str:
-    """Extract subject from MicroSim metadata."""
-    raw_subject = None
+    """Extract subject from MicroSim metadata.
+
+    When multiple subjects are provided, checks each one and returns
+    the first that maps to a recognized category (preferring specific
+    subjects over broader ones due to normalize_subject() ordering).
+    """
+    # Collect all subject strings from various metadata formats
+    all_subjects = []
 
     subject = sim.get('subject')
-    if subject and isinstance(subject, str):
-        raw_subject = subject
-    else:
-        subjects = sim.get('subjects')
-        if subjects and isinstance(subjects, list) and len(subjects) > 0:
-            raw_subject = subjects[0]
-        else:
-            educational = sim.get('educational', {})
-            subject_area = educational.get('subjectArea')
-            if subject_area:
-                if isinstance(subject_area, list) and len(subject_area) > 0:
-                    raw_subject = subject_area[0]
-                elif isinstance(subject_area, str):
-                    raw_subject = subject_area
+    if subject:
+        if isinstance(subject, str):
+            all_subjects.append(subject)
+        elif isinstance(subject, list):
+            all_subjects.extend(subject)
 
-    return normalize_subject(raw_subject)
+    subjects = sim.get('subjects')
+    if subjects and isinstance(subjects, list):
+        all_subjects.extend(subjects)
+
+    educational = sim.get('educational', {})
+    subject_area = educational.get('subjectArea')
+    if subject_area:
+        if isinstance(subject_area, str):
+            all_subjects.append(subject_area)
+        elif isinstance(subject_area, list):
+            all_subjects.extend(subject_area)
+
+    # Try each subject and return first that's not 'Other'
+    for raw_subject in all_subjects:
+        normalized = normalize_subject(raw_subject)
+        if normalized != 'Other':
+            return normalized
+
+    # Fall back to first subject normalized, or 'Other'
+    if all_subjects:
+        return normalize_subject(all_subjects[0])
+
+    return 'Other'
 
 
 def apply_pca(embeddings_dict: dict) -> tuple:
