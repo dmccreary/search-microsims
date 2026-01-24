@@ -106,4 +106,10 @@ function updateStats(data) {
 
     if (microsimsStat) microsimsStat.textContent = totalPoints;
     if (subjectsStat) subjectsStat.textContent = subjectAreas;
+
+    // Update footer text with counts
+    const footerStats = document.getElementById('footer-stats');
+    if (footerStats) {
+        footerStats.textContent = `Generated ${totalPoints} datapoints mapped to ${subjectAreas} subjects from MicroSim metadata embeddings using PCA dimensionality reduction`;
+    }
 }

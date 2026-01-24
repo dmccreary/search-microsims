@@ -5,14 +5,20 @@ Generate 2D PCA data for MicroSim embeddings visualization.
 This script:
 1. Loads 384-dimensional embeddings from microsims-embeddings.json
 2. Loads metadata from microsims-data.json
-3. Applies PCA to reduce to 2 dimensions
-4. Generates data.json for the Plotly visualization
+3. Loads subject mapping from config/subject-mapping.json
+4. Applies PCA to reduce to 2 dimensions
+5. Generates data.json for the Plotly visualization
 
 Usage:
     python src/reports/generate-pca-map.py
 
 Output:
     docs/sims/pca-map/data.json
+
+Configuration:
+    config/subject-mapping.json - Edit this file to add/modify subject
+    categories, colors, and pattern matching rules. Order matters -
+    first match wins, so specific subjects should come before broader ones.
 
 Note:
     The presentation files (main.html, style.css, script.js) are maintained
@@ -31,44 +37,36 @@ from plotly.subplots import make_subplots
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 EMBEDDINGS_PATH = PROJECT_ROOT / "data" / "microsims-embeddings.json"
 MICROSIMS_PATH = PROJECT_ROOT / "docs" / "search" / "microsims-data.json"
+SUBJECT_MAPPING_PATH = PROJECT_ROOT / "config" / "subject-mapping.json"
 OUTPUT_DIR = PROJECT_ROOT / "docs" / "sims" / "pca-map"
 
-# Subject color mapping
-# Specific subjects should be listed before broader categories
-SUBJECT_COLORS = {
-    # Specific math subjects (check before general Mathematics)
-    'Geometry': '#ff1493',  # bright pink (deep pink)
-    'Linear Algebra': '#aec7e8',
-    'Calculus': '#6baed6',
-    'Mathematics': '#08519c',
-    # Sciences
-    'Physics': '#ff7f0e',
-    'Chemistry': '#d62728',
-    'Biology': '#9467bd',
-    'Earth Science': '#c49c94',
-    # Computing
-    'Computer Science': '#2ca02c',
-    'Data Science': '#7f7f7f',
-    'AI/ML': '#bcbd22',
-    'Robotics': '#17becf',
-    'Operating Systems': '#f7b6d2',
-    # Engineering
-    'Engineering': '#8c564b',
-    'Electronics': '#e7969c',
-    # Education & Design
-    'Instructional Design': '#9edae5',
-    'Education': '#17becf',
-    # Other subjects
-    'Statistics': '#e377c2',
-    'Economics': '#ffbb78',
-    'Music': '#f7b6d2',
-    'Signal Processing': '#ff9896',
-    'Language Arts': '#98df8a',
-    'Social Studies': '#c5b0d5',
-    'Ethics': '#c7c7c7',
-    'Healthcare': '#dbdb8d',
-    'Other': '#999999',
-}
+# Global variables loaded from config
+SUBJECT_CONFIG = None
+SUBJECT_COLORS = None
+
+
+def load_subject_mapping(path: Path) -> dict:
+    """Load subject mapping configuration from JSON file."""
+    print(f"Loading subject mapping from {path}...")
+    with open(path, 'r') as f:
+        config = json.load(f)
+    print(f"  Loaded {len(config['subjects'])} subject categories")
+    return config
+
+
+def init_subject_config():
+    """Initialize subject configuration from JSON file."""
+    global SUBJECT_CONFIG, SUBJECT_COLORS
+
+    SUBJECT_CONFIG = load_subject_mapping(SUBJECT_MAPPING_PATH)
+
+    # Build color lookup dictionary
+    SUBJECT_COLORS = {}
+    for subject in SUBJECT_CONFIG['subjects']:
+        SUBJECT_COLORS[subject['name']] = subject['color']
+
+    # Add default
+    SUBJECT_COLORS[SUBJECT_CONFIG['default']['name']] = SUBJECT_CONFIG['default']['color']
 
 
 def load_embeddings(path: Path) -> dict:
@@ -97,91 +95,25 @@ def load_microsims(path: Path) -> dict:
 
 
 def normalize_subject(raw_subject: str) -> str:
-    """Normalize subject to a primary category.
+    """Normalize subject to a primary category using config file.
 
-    IMPORTANT: Specific subjects must be checked BEFORE broader categories.
-    E.g., 'Geometry' before 'Mathematics', 'Instructional Design' before 'Education'.
+    Uses patterns from config/subject-mapping.json. Order in the config
+    file determines priority - first match wins. This allows specific
+    subjects (e.g., 'Geometry') to be matched before broader categories
+    (e.g., 'Mathematics').
     """
     if not raw_subject:
-        return 'Other'
+        return SUBJECT_CONFIG['default']['name']
 
     s = raw_subject.lower()
 
-    # === SPECIFIC SUBJECTS FIRST (before broader categories) ===
+    # Check each subject's patterns in order (first match wins)
+    for subject in SUBJECT_CONFIG['subjects']:
+        for pattern in subject['patterns']:
+            if pattern in s:
+                return subject['name']
 
-    # Specific math subjects (before general Mathematics)
-    if 'geometry' in s:
-        return 'Geometry'
-    if 'linear algebra' in s:
-        return 'Linear Algebra'
-    if 'calculus' in s or 'calcul' in s:
-        return 'Calculus'
-
-    # Specific education subjects (before general Education)
-    if 'instructional design' in s:
-        return 'Instructional Design'
-
-    # Specific engineering subjects (before general Engineering)
-    if 'electronic' in s or 'circuit' in s:
-        return 'Electronics'
-
-    # === BROADER CATEGORIES ===
-
-    # General Mathematics (after specific math subjects)
-    if 'math' in s or 'algebra' in s or 'trigonometry' in s:
-        return 'Mathematics'
-
-    # Sciences
-    if 'physic' in s:
-        return 'Physics'
-    if 'chem' in s:
-        return 'Chemistry'
-    if 'bio' in s:
-        return 'Biology'
-    if 'earth' in s or 'environment' in s:
-        return 'Earth Science'
-
-    # Computing
-    if 'computer' in s or 'programming' in s or 'software' in s or 'algorithm' in s:
-        return 'Computer Science'
-    if 'data science' in s:
-        return 'Data Science'
-    if 'machine learning' in s or 'neural' in s or 'deep learning' in s or 'ai' in s:
-        return 'AI/ML'
-    if 'robot' in s or 'autonomous' in s:
-        return 'Robotics'
-    if 'linux' in s or 'operating system' in s:
-        return 'Operating Systems'
-
-    # Engineering (after specific engineering subjects)
-    if 'engineer' in s:
-        return 'Engineering'
-
-    # Education (after specific education subjects)
-    if 'education' in s:
-        return 'Education'
-
-    # Other subjects
-    if 'statistic' in s:
-        return 'Statistics'
-    if 'data' in s:
-        return 'Data Science'
-    if 'econom' in s or 'financ' in s:
-        return 'Economics'
-    if 'music' in s:
-        return 'Music'
-    if 'signal processing' in s or 'signal' in s:
-        return 'Signal Processing'
-    if 'language' in s or 'reading' in s:
-        return 'Language Arts'
-    if 'social' in s or 'history' in s or 'geography' in s:
-        return 'Social Studies'
-    if 'ethic' in s:
-        return 'Ethics'
-    if 'health' in s:
-        return 'Healthcare'
-
-    return 'Other'
+    return SUBJECT_CONFIG['default']['name']
 
 
 def get_subject(sim: dict) -> str:
@@ -397,6 +329,10 @@ def main():
     print()
 
     # Check files exist
+    if not SUBJECT_MAPPING_PATH.exists():
+        print(f"ERROR: Subject mapping config not found: {SUBJECT_MAPPING_PATH}")
+        sys.exit(1)
+
     if not EMBEDDINGS_PATH.exists():
         print(f"ERROR: Embeddings file not found: {EMBEDDINGS_PATH}")
         sys.exit(1)
@@ -404,6 +340,9 @@ def main():
     if not MICROSIMS_PATH.exists():
         print(f"ERROR: MicroSims data not found: {MICROSIMS_PATH}")
         sys.exit(1)
+
+    # Load subject mapping configuration
+    init_subject_config()
 
     # Load data
     embeddings_data = load_embeddings(EMBEDDINGS_PATH)

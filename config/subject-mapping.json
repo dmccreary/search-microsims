@@ -1,0 +1,145 @@
+{
+  "_comment": "Subject mapping configuration for PCA Map visualization. Order matters - first match wins, so specific subjects must come before broader categories.",
+  "subjects": [
+    {
+      "name": "Geometry",
+      "color": "#ff1493",
+      "patterns": ["geometry", "geometric"]
+    },
+    {
+      "name": "Linear Algebra",
+      "color": "#aec7e8",
+      "patterns": ["linear algebra", "matrix", "matrices", "vector space"]
+    },
+    {
+      "name": "Calculus",
+      "color": "#6baed6",
+      "patterns": ["calculus", "calcul", "derivative", "integral"]
+    },
+    {
+      "name": "Instructional Design",
+      "color": "#9edae5",
+      "patterns": ["instructional design", "course design", "curriculum design"]
+    },
+    {
+      "name": "Electronics",
+      "color": "#e7969c",
+      "patterns": ["electronic", "circuit", "arduino", "raspberry pi"]
+    },
+    {
+      "name": "Signal Processing",
+      "color": "#ff9896",
+      "patterns": ["signal processing", "signal", "fourier", "fft"]
+    },
+    
+    {
+      "name": "Physics",
+      "color": "#ff7f0e",
+      "patterns": ["physics", "physic", "mechanics", "thermodynamics", "optics", "quantum"]
+    },
+
+    {
+      "name": "Graph",
+      "color": "purple",
+      "patterns": ["graph"]
+    },
+
+    {
+      "name": "Chemistry",
+      "color": "#d62728",
+      "patterns": ["chemistry", "chem", "molecular", "chemical"]
+    },
+    {
+      "name": "Biology",
+      "color": "#9467bd",
+      "patterns": ["biology", "bio", "genetic", "ecology", "cell"]
+    },
+    {
+      "name": "Earth Science",
+      "color": "#c49c94",
+      "patterns": ["earth", "environment", "geology", "climate", "weather"]
+    },
+    {
+      "name": "Computer Science",
+      "color": "#2ca02c",
+      "patterns": ["computer", "programming", "software", "algorithm", "coding"]
+    },
+    {
+      "name": "Data Science",
+      "color": "#7f7f7f",
+      "patterns": ["data science", "data analysis", "data visualization"]
+    },
+    {
+      "name": "AI/ML",
+      "color": "#bcbd22",
+      "patterns": ["machine learning", "neural", "deep learning", "ai", "artificial intelligence"]
+    },
+    {
+      "name": "Robotics",
+      "color": "#17becf",
+      "patterns": ["robot", "autonomous", "ros"]
+    },
+    {
+      "name": "Operating Systems",
+      "color": "#f7b6d2",
+      "patterns": ["linux", "operating system", "unix", "kernel"]
+    },
+    {
+      "name": "Engineering",
+      "color": "#8c564b",
+      "patterns": ["engineer", "mechanical", "civil"],
+      "_note": "General engineering - must come AFTER Electronics"
+    },
+    {
+      "name": "Education",
+      "color": "#17becf",
+      "patterns": ["education", "teaching", "pedagogy"],
+      "_note": "General education - must come AFTER Instructional Design"
+    },
+    {
+      "name": "Statistics",
+      "color": "#e377c2",
+      "patterns": ["statistic", "probability", "regression"]
+    },
+    {
+      "name": "Economics",
+      "color": "#ffbb78",
+      "patterns": ["econom", "financ", "market"]
+    },
+    {
+      "name": "Music",
+      "color": "#f7b6d2",
+      "patterns": ["music", "audio", "sound", "rhythm"]
+    },
+    {
+      "name": "Language Arts",
+      "color": "#98df8a",
+      "patterns": ["language", "reading", "writing", "literacy", "grammar"]
+    },
+    {
+      "name": "Social Studies",
+      "color": "#c5b0d5",
+      "patterns": ["social", "history", "geography", "civics", "government"]
+    },
+    {
+      "name": "Ethics",
+      "color": "#c7c7c7",
+      "patterns": ["ethic", "moral", "philosophy"]
+    },
+    {
+      "name": "Healthcare",
+      "color": "#dbdb8d",
+      "patterns": ["health", "medical", "medicine", "anatomy"]
+    },
+    {
+      "name": "Mathematics",
+      "color": "#08519c",
+      "patterns": ["math", "trigonometry", "number theory"],
+      "_note": "General math - must come AFTER specific math subjects"
+    }
+  ],
+  "default": {
+    "name": "Other",
+    "color": "#999999"
+  }
+}

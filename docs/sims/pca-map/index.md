@@ -1,14 +1,17 @@
 ---
-title: MicroSim PCA Map
+title: MicroSim Similarity Map
 description: An interactive 2D visualization of MicroSim semantic embeddings using Principal Component Analysis (PCA) dimensionality reduction, showing clusters by subject area.
 image: /sims/pca-map/pca-map.jpg
 og:image: /sims/pca-map/pca-map.jpg
 quality_score: 95
 ---
 
-# MicroSim PCA Map
+# MicroSim Similarity Map
 
-An interactive 2D visualization of MicroSim simularity using embeddings and Principal Component Analysis (PCA) for dimensionality reduction.
+An interactive 2D visualization of MicroSim similarity.  Each dot represents
+a MicroSim and dots that are near each other are more similar.
+
+This plot used embeddings created from the MicroSim metadata JSON file and Principal Component Analysis (PCA) for dimensionality reduction.
 
 <iframe src="./main.html" width="100%" height="700px"></iframe>
 
