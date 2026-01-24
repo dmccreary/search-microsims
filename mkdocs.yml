@@ -34,6 +34,22 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Quality Metrics: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+  - Chapters:
+      - Overview: chapters/index.md
+      - Introduction to MicroSims: chapters/01-intro-to-microsims/index.md
+      - MicroSim File Organization: chapters/02-microsim-file-organization/index.md
+      - Metadata Fundamentals: chapters/03-metadata-fundamentals/index.md
+      - Dublin Core Elements: chapters/04-dublin-core-elements/index.md
+      - JSON and Data Structures: chapters/05-json-and-data-structures/index.md
+      - Search Fundamentals: chapters/06-search-fundamentals/index.md
+      - Faceted Search: chapters/07-faceted-search-client-side/index.md
+      - Embeddings and Semantic Search: chapters/08-embeddings-semantic-search/index.md
+      - Data Pipelines: chapters/09-data-pipelines-aggregation/index.md
+      - Educational Foundations: chapters/10-educational-foundations/index.md
+      - Learning Theory: chapters/11-learning-theory-pedagogy/index.md
+      - Visualization Types: chapters/12-visualization-types/index.md
+      - User Interface and Controls: chapters/13-user-interface-controls/index.md
+      - Technical Implementation: chapters/14-technical-implementation/index.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
