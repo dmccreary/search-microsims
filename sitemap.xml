@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/search-microsims/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/code-highlight-test/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/contact/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/glossary/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/how-we-built-this-site/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/license/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/microsim-embeddings/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/microsim-schema/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/references/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/prompts/add-missing-metadata/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/prompts/create-embeddings-report/</loc>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/reports/local-metadata-update/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/reports/microsim-metrics/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/search/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-24</lastmod>
     </url>
 </urlset>

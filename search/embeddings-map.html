@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSim Embeddings Map</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+        .stat {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .stat-label {
+            color: #888;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .stat-value {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        #plot-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+        #plot {
+            width: 100%;
+            height: 700px;
+        }
+        .legend-container {
+            margin-top: 15px;
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .legend-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .legend-item:hover {
+            background: #f0f0f0;
+        }
+        .legend-item.inactive {
+            opacity: 0.4;
+        }
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+        .legend-label {
+            font-size: 0.85rem;
+            color: #555;
+        }
+        .legend-count {
+            font-size: 0.75rem;
+            color: #999;
+        }
+        .instructions {
+            margin-top: 15px;
+            padding: 12px 16px;
+            background: #e8f4f8;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        .instructions strong {
+            color: #333;
+        }
+        .loading {
+            text-align: center;
+            padding: 100px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MicroSim Embeddings Map</h1>
+            <p class="subtitle">2D PCA projection of 384-dimensional semantic embeddings</p>
+            <div class="stats" id="stats">
+                <div class="stat">
+                    <div class="stat-label">MicroSims</div>
+                    <div class="stat-value" id="stat-count">-</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Variance Explained</div>
+                    <div class="stat-value" id="stat-variance">-</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Subjects</div>
+                    <div class="stat-value" id="stat-subjects">-</div>
+                </div>
+            </div>
+        </header>
+
+        <div id="plot-container">
+            <div id="plot" class="loading">Loading embeddings data...</div>
+        </div>
+
+        <div class="legend-container">
+            <div class="legend-title">Subject Areas (click to toggle)</div>
+            <div class="legend-items" id="legend"></div>
+        </div>
+
+        <div class="instructions">
+            <strong>Interactions:</strong> Hover over points to see MicroSim details.
+            Click and drag to zoom. Double-click to reset view.
+            Click legend items to show/hide subjects.
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let plotData = null;
+        let activeSubjects = new Set();
+
+        async function loadData() {
+            try {
+                const response = await fetch('embeddings-2d.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            } catch (error) {
+                document.getElementById('plot').innerHTML =
+                    `<div style="color: #c00; padding: 50px;">Error loading data: ${error.message}</div>`;
+                throw error;
+            }
+        }
+
+        function updateStats(data) {
+            document.getElementById('stat-count').textContent = data.metadata.count.toLocaleString();
+            document.getElementById('stat-variance').textContent =
+                (data.metadata.explained_variance.total * 100).toFixed(1) + '%';
+            document.getElementById('stat-subjects').textContent =
+                Object.keys(data.colorLegend).length;
+        }
+
+        function buildLegend(data) {
+            const container = document.getElementById('legend');
+            container.innerHTML = '';
+
+            // Count points per subject
+            const counts = {};
+            data.points.forEach(p => {
+                counts[p.subject] = (counts[p.subject] || 0) + 1;
+            });
+
+            // Initialize all subjects as active
+            activeSubjects = new Set(Object.keys(data.colorLegend));
+
+            // Sort by count descending
+            const subjects = Object.keys(data.colorLegend)
+                .sort((a, b) => (counts[b] || 0) - (counts[a] || 0));
+
+            subjects.forEach(subject => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.dataset.subject = subject;
+                item.innerHTML = `
+                    <div class="legend-color" style="background: ${data.colorLegend[subject]}"></div>
+                    <span class="legend-label">${subject}</span>
+                    <span class="legend-count">(${counts[subject] || 0})</span>
+                `;
+                item.addEventListener('click', () => toggleSubject(subject, item));
+                container.appendChild(item);
+            });
+        }
+
+        function toggleSubject(subject, element) {
+            if (activeSubjects.has(subject)) {
+                activeSubjects.delete(subject);
+                element.classList.add('inactive');
+            } else {
+                activeSubjects.add(subject);
+                element.classList.remove('inactive');
+            }
+            updatePlot();
+        }
+
+        function createTraces(data) {
+            // Group points by subject
+            const bySubject = {};
+            data.points.forEach(p => {
+                if (!bySubject[p.subject]) {
+                    bySubject[p.subject] = {
+                        x: [], y: [], text: [], customdata: [],
+                        color: p.color, subject: p.subject
+                    };
+                }
+                const group = bySubject[p.subject];
+                group.x.push(p.x);
+                group.y.push(p.y);
+                group.text.push(p.title);
+                group.customdata.push(p);
+            });
+
+            // Create traces for each subject
+            return Object.values(bySubject).map(group => ({
+                type: 'scatter',
+                mode: 'markers',
+                name: group.subject,
+                x: group.x,
+                y: group.y,
+                text: group.text,
+                customdata: group.customdata,
+                visible: activeSubjects.has(group.subject) ? true : 'legendonly',
+                marker: {
+                    color: group.color,
+                    size: 8,
+                    opacity: 0.7,
+                    line: {
+                        color: 'white',
+                        width: 1
+                    }
+                },
+                hovertemplate:
+                    '<b>%{text}</b><br>' +
+                    '<span style="color: %{marker.color}">%{customdata.subject}</span><br>' +
+                    'Repo: %{customdata.repo}<br>' +
+                    'Grade: %{customdata.gradeLevel}<br>' +
+                    'Framework: %{customdata.framework}<br>' +
+                    '<extra></extra>'
+            }));
+        }
+
+        function createLayout() {
+            return {
+                showlegend: false,
+                hovermode: 'closest',
+                xaxis: {
+                    title: 'PC1',
+                    zeroline: true,
+                    zerolinecolor: '#ddd',
+                    gridcolor: '#eee'
+                },
+                yaxis: {
+                    title: 'PC2',
+                    zeroline: true,
+                    zerolinecolor: '#ddd',
+                    gridcolor: '#eee'
+                },
+                margin: { l: 50, r: 30, t: 30, b: 50 },
+                paper_bgcolor: 'white',
+                plot_bgcolor: 'white'
+            };
+        }
+
+        function updatePlot() {
+            const traces = createTraces(plotData);
+            Plotly.react('plot', traces, createLayout(), { responsive: true });
+        }
+
+        async function init() {
+            plotData = await loadData();
+            updateStats(plotData);
+            buildLegend(plotData);
+
+            const traces = createTraces(plotData);
+            const layout = createLayout();
+
+            Plotly.newPlot('plot', traces, layout, {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['lasso2d', 'select2d']
+            });
+
+            // Add click handler to open MicroSim URL
+            document.getElementById('plot').on('plotly_click', function(data) {
+                const point = data.points[0];
+                if (point && point.customdata && point.customdata.url) {
+                    window.open(point.customdata.url, '_blank');
+                }
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
