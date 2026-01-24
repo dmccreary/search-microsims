@@ -8,14 +8,15 @@ edit_uri: 'blob/master/docs'
 
 nav:
   - Home: index.md
-  - About This Project: about.md
   - Search Demo: search/index.md
   - MicroSim Schema: microsim-schema.md
   - MicroSim Embeddings: microsim-embeddings.md
   - Reports:
       - MicroSim Metrics: reports/microsim-metrics.md
-      - Report 2: reports/report2.md
-      - Report 3: reports/report3.md
+      - Local Metadata Update: reports/local-metadata-update.md
+  - Prompts:
+      - Add Missing Metadata: prompts/add-missing-metadata.md
+      - Create Embeddings Report: prompts/create-embeddings-report.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
