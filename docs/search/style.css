@@ -232,6 +232,23 @@ h1 {
     color: #95a5a6;
 }
 
+.result-card .similar-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #ecf0f1;
+    color: #3498db;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.result-card .similar-link:hover {
+    background: #3498db;
+    color: white;
+}
+
 /* Active Filters */
 .active-filters {
     display: flex;

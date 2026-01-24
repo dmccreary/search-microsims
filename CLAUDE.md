@@ -67,6 +67,20 @@ python src/embeddings/generate-embeddings.py
 
 See `src/embeddings/README.md` for detailed documentation on the embedding system.
 
+**WARNING:** The embeddings file `data/microsims-embeddings.json` is 7MB and should NEVER be read directly by Claude Code as it will crash the context. Use the precomputed similar MicroSims file instead.
+
+### Generating Similar MicroSims Lookup
+```bash
+# Generate precomputed similar MicroSims from embeddings
+python3 src/generate-similar-microsims.py
+
+# Output: docs/search/similar-microsims.json (~870KB)
+```
+
+This script reads the 7MB embeddings file and precomputes the top 10 most similar MicroSims for each item using cosine similarity. The output file is much smaller (~870KB) and is used by the Similar MicroSims web interface at `docs/sims/list-similar-microsim/main.html`.
+
+Run this script after regenerating embeddings.
+
 ## Architecture
 
 ### Data Pipeline
@@ -79,6 +93,12 @@ See `src/embeddings/README.md` for detailed documentation on the embedding syste
 - Uses ItemsJS library from CDN (`window.itemsjs` - lowercase)
 - Normalizes varying metadata schemas to official schema fields
 - Facets: Subject Area, Grade Level, Bloom's Taxonomy, Difficulty, Framework, Visualization Type
+
+### Similar MicroSims
+- `docs/sims/list-similar-microsim/main.html` - Shows similar MicroSims for a given URL
+- Uses precomputed similarity data from `docs/search/similar-microsims.json`
+- URL format: `?id=https://dmccreary.github.io/repo/sims/name/`
+- Displays top 10 similar MicroSims with similarity scores (color-coded badges)
 
 ### MicroSim Metadata Schema
 Official schema: [microsim-schema.json](https://github.com/dmccreary/microsims/blob/main/src/microsim-schema/microsim-schema.json)
@@ -116,9 +136,12 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/microsim-schema/microsim-schema.json` | Official MicroSim metadata JSON schema |
 | `src/embeddings/generate-embeddings.py` | Generate semantic embeddings for MicroSims |
 | `src/embeddings/README.md` | Embeddings documentation |
+| `src/generate-similar-microsims.py` | Precompute similar MicroSims from embeddings |
 | `docs/search/demo.html` | ItemsJS faceted search UI |
 | `docs/search/microsims-data.json` | Combined metadata (generated) |
-| `data/microsims-embeddings.json` | Semantic embeddings for similarity search (generated) |
+| `docs/search/similar-microsims.json` | Precomputed similar MicroSims lookup (~870KB, generated) |
+| `docs/sims/list-similar-microsim/main.html` | Similar MicroSims viewer UI |
+| `data/microsims-embeddings.json` | Semantic embeddings (7MB, generated) - DO NOT READ DIRECTLY |
 | `docs/microsim-schema.md` | Schema documentation |
 | `docs/reports/microsim-metrics.md` | Metadata quality report (generated) |
 | `logs/*.jsonl` | Crawl logs with missing metadata entries |
