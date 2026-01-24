@@ -1,5 +1,9 @@
 # Learning Graph Viewer
 
+[Open Learning Graph Viewer](./main.html){ .md-button .md-button--primary }
+
+<iframe src="./main.html" width="100%" height="600px" scrolling="no"></iframe>
+
 This interactive viewer allows you to explore the learning graph for the MicroSim Search and Similarity course.
 
 ## Features
@@ -30,6 +34,3 @@ This interactive viewer allows you to explore the learning graph for the MicroSi
 
 ## Launch the Viewer
 
-[Open Learning Graph Viewer](./main.html){ .md-button .md-button--primary }
-
-<iframe src="./main.html" width="100%" height="600px" frameborder="0"></iframe>
