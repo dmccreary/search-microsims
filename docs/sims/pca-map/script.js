@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const layout = plotData.layout;
             layout.autosize = true;
 
+            // Use the HTML <title> as the chart title (single source of truth)
+            layout.title = {
+                text: document.title,
+                font: { size: 20 },
+                x: 0.5,
+                xanchor: 'center'
+            };
+
             // Config for interactivity
             const config = {
                 responsive: true,

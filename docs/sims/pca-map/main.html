@@ -3,39 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicroSim PCA Map</title>
+    <title>MicroSim Similarity Map</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.plot.ly/plotly-3.3.1.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>MicroSim Embeddings PCA Map</h1>
-            <p class="subtitle">Interactive 2D projection of 384-dimensional semantic embeddings</p>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-label">MicroSims</div>
-                    <div class="stat-value" id="stat-microsims">868</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-label">Variance Explained</div>
-                    <div class="stat-value">11.2%</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-label">Subject Areas</div>
-                    <div class="stat-value" id="stat-subjects">14</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-label">PC1 Variance</div>
-                    <div class="stat-value">6.5%</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-label">PC2 Variance</div>
-                    <div class="stat-value">4.7%</div>
-                </div>
-            </div>
-        </div>
-
         <div class="plot-wrapper">
             <div id="pca-plot"></div>
         </div>

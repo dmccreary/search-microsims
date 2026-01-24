@@ -5472,7 +5472,7 @@
       "font": {
         "size": 20
       },
-      "text": "MicroSim Embeddings PCA Map<br><sub>2D projection of 384-dimensional semantic embeddings (868 MicroSims, 11.2% variance explained)</sub>",
+      "text": "MicroSim Similarity Map - PCA Projection",
       "x": 0.5,
       "xanchor": "center"
     },
