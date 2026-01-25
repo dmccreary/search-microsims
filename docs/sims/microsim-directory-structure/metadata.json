@@ -2,39 +2,152 @@
   "microsim": {
     "dublinCore": {
       "title": "MicroSim Directory Structure",
-      "description": "Interactive diagram showing the standard file organization for MicroSim packages including index.md, main.html, style.css, data.json, and metadata.json files",
-      "date": "2026-01-24",
+      "description": "Interactive tree diagram showing the standard file organization for MicroSim packages. Visualizes the hierarchical structure from the sims/ root folder through individual MicroSim directories containing index.md, main.html, style.css, script.js, data.json, and metadata.json files. Includes hover-to-reveal descriptions explaining the purpose of each file type.",
+      "date": "2026-01-25",
       "creator": "Dan McCreary",
       "contributor": "Claude AI",
+      "publisher": "MicroSim Search Project",
       "type": "InteractiveResource",
       "format": "text/html",
       "language": "en-US",
-      "rights": "MIT License"
+      "rights": "CC BY-NC-SA 4.0",
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en",
+      "identifier": "https://dmccreary.github.io/microsim-search/sims/microsim-directory-structure/"
     },
     "educational": {
-      "topic": "File Organization",
-      "subjectArea": ["Computer Science", "Web Development"],
+      "topic": "MicroSim File Organization",
+      "subjectArea": ["Computer Science", "Web Development", "Educational Technology"],
       "gradeLevel": ["High School", "Undergraduate"],
-      "bloomsTaxonomy": ["Understand"],
+      "bloomsTaxonomy": ["Remember", "Understand", "Apply"],
       "difficulty": "Beginner",
       "learningObjectives": [
-        "Describe the standard MicroSim directory structure",
-        "Explain the purpose of each file type within the package",
-        "Distinguish between required and optional files"
+        "Describe the standard MicroSim directory structure and naming conventions",
+        "Explain the purpose of each file type within a MicroSim package",
+        "Distinguish between required, optional, and recommended files",
+        "Understand how consistent file organization enables discoverability and reuse",
+        "Apply the structure when creating new MicroSims"
       ],
-      "prerequisites": ["Basic file system concepts", "HTML basics"],
-      "timeRequired": "PT5M"
+      "prerequisites": [
+        "Basic file system concepts",
+        "Understanding of files and folders",
+        "Familiarity with HTML concepts"
+      ],
+      "timeRequired": "PT30M",
+      "instructionalMethod": "Interactive exploration with guided lesson plan",
+      "assessmentIncluded": true,
+      "quizQuestionCount": 6
     },
     "technical": {
       "framework": "vis-network",
       "libraryVersion": "9.1.2",
-      "fileSize": "8KB",
-      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+      "dependencies": [
+        "vis-network (CDN)"
+      ],
+      "fileSize": "12KB",
+      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"],
+      "responsive": true,
+      "accessibility": {
+        "keyboardNavigable": true,
+        "screenReaderSupport": "partial"
+      }
+    },
+    "userInterface": {
+      "controls": [
+        {
+          "type": "hover",
+          "description": "Hover over nodes to see file descriptions in info panel"
+        },
+        {
+          "type": "navigation",
+          "description": "Pan and zoom controls in bottom corners"
+        }
+      ],
+      "layout": "Tree diagram with info panel overlay on right",
+      "colorCoding": {
+        "gold": "Directories/folders",
+        "blue": "Required files (index.md, main.html)",
+        "green": "Optional files (style.css, script.js, data.json, metadata.json)"
+      }
     },
     "search": {
-      "keywords": ["directory structure", "file organization", "MicroSim", "metadata", "index.md", "main.html"],
-      "visualizationType": ["diagram", "network"],
-      "interactionLevel": "low"
+      "keywords": [
+        "directory structure",
+        "file organization",
+        "MicroSim",
+        "metadata",
+        "index.md",
+        "main.html",
+        "style.css",
+        "script.js",
+        "data.json",
+        "metadata.json",
+        "kebab-case",
+        "Dublin Core",
+        "tree diagram",
+        "file hierarchy"
+      ],
+      "visualizationType": ["diagram", "network", "tree", "interactive-demo"],
+      "interactionLevel": "medium"
+    },
+    "content": {
+      "filesShown": [
+        {
+          "name": "sims/",
+          "type": "folder",
+          "status": "required",
+          "description": "Root directory containing all MicroSim packages"
+        },
+        {
+          "name": "microsim-name/",
+          "type": "folder",
+          "status": "required",
+          "description": "Individual MicroSim package directory using kebab-case naming"
+        },
+        {
+          "name": "index.md",
+          "type": "file",
+          "status": "required",
+          "description": "Human-readable documentation with learning objectives and usage instructions"
+        },
+        {
+          "name": "main.html",
+          "type": "file",
+          "status": "required",
+          "description": "Simulation entry point with HTML structure, canvas, and controls"
+        },
+        {
+          "name": "style.css",
+          "type": "file",
+          "status": "optional",
+          "description": "Custom CSS for visual styling and responsive layout"
+        },
+        {
+          "name": "script.js",
+          "type": "file",
+          "status": "optional",
+          "description": "Separate JavaScript file for simulation logic"
+        },
+        {
+          "name": "data.json",
+          "type": "file",
+          "status": "optional",
+          "description": "Structured data loaded by the simulation"
+        },
+        {
+          "name": "metadata.json",
+          "type": "file",
+          "status": "recommended",
+          "description": "Dublin Core metadata for search and discovery"
+        }
+      ]
+    },
+    "relatedContent": {
+      "chapter": "Chapter 2: MicroSim File Organization",
+      "chapterUrl": "../../chapters/02-microsim-file-organization/index.md",
+      "relatedMicroSims": [
+        "microsim-file-relationship-diagram",
+        "metadata-schema"
+      ]
     }
   }
 }

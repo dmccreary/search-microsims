@@ -72,9 +72,9 @@ body {
 
 .right-panel {
     position: absolute;
-    top: 50px;
+    top: 20px;
     right: 10px;
-    width: 280px;
+    width: 180px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -148,6 +148,6 @@ body {
     }
 
     .right-panel {
-        width: 200px;
+        width: 160px;
     }
 }
