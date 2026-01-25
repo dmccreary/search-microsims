@@ -1016,3 +1016,1021 @@
 {"timestamp": "2026-01-25T17:17:49.118677Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "timeline", "title": "Deep Learning Timeline MicroSim"}
 {"timestamp": "2026-01-25T17:17:49.119142Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "tokenizer", "title": "Tokenizer MicroSim"}
 {"timestamp": "2026-01-25T17:17:49.184757Z", "event": "update_completed", "repos_scanned": 47, "sims_found": 1016, "metadata_found": 885, "metadata_missing": 131, "added": 12, "updated": 873, "errors": 0}
+{"timestamp": "2026-01-25T18:19:00.291913Z", "event": "update_started", "workspace": "/Users/dan/Documents/ws"}
+{"timestamp": "2026-01-25T18:19:00.321224Z", "event": "missing_metadata", "repo": "agents-course", "sim": "agentic-learning-steps", "github_url": "https://github.com/dmccreary/agents-course/tree/main/docs/sims/agentic-learning-steps"}
+{"timestamp": "2026-01-25T18:19:00.321343Z", "event": "missing_metadata", "repo": "agents-course", "sim": "five-textbook-levels", "github_url": "https://github.com/dmccreary/agents-course/tree/main/docs/sims/five-textbook-levels"}
+{"timestamp": "2026-01-25T18:19:00.321415Z", "event": "missing_metadata", "repo": "agents-course", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/agents-course/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.321644Z", "event": "metadata_found", "repo": "agents-course", "sim": "llm-control-levels", "title": "LLM Control Levels MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.321822Z", "event": "metadata_found", "repo": "agents-course", "sim": "templates", "title": "MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.322186Z", "event": "missing_metadata", "repo": "algebra-1", "sim": "algebra-concept-viewer", "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/algebra-concept-viewer"}
+{"timestamp": "2026-01-25T18:19:00.322415Z", "event": "metadata_found", "repo": "algebra-1", "sim": "coordinate-plane-explorer", "title": "Coordinate Plane Explorer"}
+{"timestamp": "2026-01-25T18:19:00.322640Z", "event": "metadata_found", "repo": "algebra-1", "sim": "expression-explorer", "title": "Expression Parts Explorer"}
+{"timestamp": "2026-01-25T18:19:00.322805Z", "event": "metadata_found", "repo": "algebra-1", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.322877Z", "event": "missing_metadata", "repo": "algebra-1", "sim": "high-school-courses", "github_url": "https://github.com/dmccreary/algebra-1/tree/main/docs/sims/high-school-courses"}
+{"timestamp": "2026-01-25T18:19:00.323144Z", "event": "metadata_found", "repo": "algebra-1", "sim": "integer-ops-number-line", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.323312Z", "event": "metadata_found", "repo": "algebra-1", "sim": "number-system-venn", "title": "Number Systems Hierarchy Diagram"}
+{"timestamp": "2026-01-25T18:19:00.323464Z", "event": "metadata_found", "repo": "algebra-1", "sim": "number-systems-mermaid", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.323633Z", "event": "metadata_found", "repo": "algebra-1", "sim": "number-systems-p5", "title": "Number Systems Venn Diagram"}
+{"timestamp": "2026-01-25T18:19:00.323797Z", "event": "metadata_found", "repo": "algebra-1", "sim": "number-types-venn-p5", "title": "Number Types Venn Diagram"}
+{"timestamp": "2026-01-25T18:19:00.323955Z", "event": "metadata_found", "repo": "algebra-1", "sim": "polynomial-classifier", "title": "Polynomial Classification Game"}
+{"timestamp": "2026-01-25T18:19:00.324136Z", "event": "metadata_found", "repo": "algebra-1", "sim": "prime-factorization-tree", "title": "Prime Factorization Tree Builder"}
+{"timestamp": "2026-01-25T18:19:00.324309Z", "event": "metadata_found", "repo": "algebra-1", "sim": "variable-types", "title": "Variable Types Interactive Infographic"}
+{"timestamp": "2026-01-25T18:19:00.325136Z", "event": "metadata_found", "repo": "asl-book", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.325315Z", "event": "metadata_found", "repo": "asl-book", "sim": "hand-viewer", "title": "ASL Hand Viewer"}
+{"timestamp": "2026-01-25T18:19:00.326242Z", "event": "missing_metadata", "repo": "atam", "sim": "atam", "github_url": "https://github.com/dmccreary/atam/tree/main/docs/sims/atam"}
+{"timestamp": "2026-01-25T18:19:00.327571Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "acceptance-test-matrix", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/acceptance-test-matrix"}
+{"timestamp": "2026-01-25T18:19:00.327748Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "accessibility-audit-mermaid", "title": "Accessibility Audit Workflow (Mermaid)"}
+{"timestamp": "2026-01-25T18:19:00.327938Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "accessibility-audit-workflow", "title": "Accessibility Audit Workflow"}
+{"timestamp": "2026-01-25T18:19:00.328110Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "accessible-control-layout", "title": "Accessible Control Layout"}
+{"timestamp": "2026-01-25T18:19:00.328271Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "ai-generation-workflow", "title": "AI Generation Workflow"}
+{"timestamp": "2026-01-25T18:19:00.328344Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "animation-control-guide", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/animation-control-guide"}
+{"timestamp": "2026-01-25T18:19:00.328501Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "automated-human-evaluation", "title": "Automated vs Human Evaluation Matrix MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.328669Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "bloom-microsim-types", "title": "Bloom's Taxonomy MicroSim Types"}
+{"timestamp": "2026-01-25T18:19:00.328876Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "bloom-taxonomy", "title": "Bloom's Taxonomy"}
+{"timestamp": "2026-01-25T18:19:00.329080Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "bloom-wheel", "title": "Bloom's Taxonomy Action Verb Wheel"}
+{"timestamp": "2026-01-25T18:19:00.329245Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "blooms-pyramid", "title": "Bloom's Taxonomy Pyramid"}
+{"timestamp": "2026-01-25T18:19:00.329413Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "cause-effect-display", "title": "Cause-Effect Display"}
+{"timestamp": "2026-01-25T18:19:00.329571Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "chapter1-concept-map", "title": "Chapter 1 Concept Map"}
+{"timestamp": "2026-01-25T18:19:00.329737Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "chart-type-selection", "title": "Chart Type Selection Guide"}
+{"timestamp": "2026-01-25T18:19:00.329890Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "classification-matrix", "title": "Classification Matrix MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.330045Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "claude-code-architecture", "title": "Claude Code Skills Architecture"}
+{"timestamp": "2026-01-25T18:19:00.330205Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "cognitive-development-chart", "title": "Cognitive Development Progression Chart"}
+{"timestamp": "2026-01-25T18:19:00.330273Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "cognitive-load-meter", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/cognitive-load-meter"}
+{"timestamp": "2026-01-25T18:19:00.330438Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "cognitive-load-simulator", "title": "Cognitive Load Simulator"}
+{"timestamp": "2026-01-25T18:19:00.330593Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "cognitive-load-types", "title": "Three Types of Cognitive Load"}
+{"timestamp": "2026-01-25T18:19:00.330745Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "color-blindness-simulator", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.330918Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "concept-dependencies", "title": "Concept Dependencies Graph"}
+{"timestamp": "2026-01-25T18:19:00.331071Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "corporate-learning-module", "title": "Corporate Learning Module Workflow"}
+{"timestamp": "2026-01-25T18:19:00.331227Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "design-test-refine-cycle", "title": "Design-Test-Refine Cycle"}
+{"timestamp": "2026-01-25T18:19:00.331391Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "design-tradeoff-tree", "title": "Design Tradeoff Decision Tree"}
+{"timestamp": "2026-01-25T18:19:00.331543Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "early-childhood-pattern", "title": "Early Childhood MicroSim Pattern"}
+{"timestamp": "2026-01-25T18:19:00.332033Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "ed-tech-ecosystem", "title": "Educational Technology Ecosystem"}
+{"timestamp": "2026-01-25T18:19:00.332232Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "edge-case-discovery", "title": "Edge Case Discovery Simulator"}
+{"timestamp": "2026-01-25T18:19:00.332395Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "elementary-scaffolding", "title": "Elementary Scaffolding Progression"}
+{"timestamp": "2026-01-25T18:19:00.332683Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "engagement-learning-tradeoff", "title": "Engagement-Learning Tradeoff"}
+{"timestamp": "2026-01-25T18:19:00.332780Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "evaluation-rubric-builder", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/evaluation-rubric-builder"}
+{"timestamp": "2026-01-25T18:19:00.332957Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.333122Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "human-ai-loop", "title": "Human-AI Collaboration Loop"}
+{"timestamp": "2026-01-25T18:19:00.333332Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "hypothesis-testing-interface", "title": "Hypothesis Testing Interface"}
+{"timestamp": "2026-01-25T18:19:00.333539Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "info-density-spectrum", "title": "Information Density Spectrum"}
+{"timestamp": "2026-01-25T18:19:00.333617Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "intent-preservation-matrix", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/intent-preservation-matrix"}
+{"timestamp": "2026-01-25T18:19:00.333781Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "interaction-spec-template", "title": "Interaction Specification Template"}
+{"timestamp": "2026-01-25T18:19:00.333956Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "interpretation-pitfalls", "title": "Interpretation Pitfalls in User Testing"}
+{"timestamp": "2026-01-25T18:19:00.334133Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "intuition-testing", "title": "Intuition Testing"}
+{"timestamp": "2026-01-25T18:19:00.334204Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "issue-identification-workflow", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/issue-identification-workflow"}
+{"timestamp": "2026-01-25T18:19:00.334364Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "iteration-dashboard", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.334529Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "learning-dependency-network", "title": "Learning Dependency Network"}
+{"timestamp": "2026-01-25T18:19:00.334692Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "learning-pathway", "title": "Learning Pathway Explorer"}
+{"timestamp": "2026-01-25T18:19:00.334848Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "math-relationship-explorer", "title": "Math Relationship Explorer - Logistic Function"}
+{"timestamp": "2026-01-25T18:19:00.335007Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "mental-model-formation", "title": "Mental Model Formation"}
+{"timestamp": "2026-01-25T18:19:00.335077Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "metadata-search", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/metadata-search"}
+{"timestamp": "2026-01-25T18:19:00.335232Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "microsim-bloom-types", "title": "MicroSim Types by Bloom's Taxonomy"}
+{"timestamp": "2026-01-25T18:19:00.335388Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "microsim-generation-workflow", "title": "MicroSim Generation Workflow"}
+{"timestamp": "2026-01-25T18:19:00.335457Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "misconception-catalog", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/misconception-catalog"}
+{"timestamp": "2026-01-25T18:19:00.335618Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "misconception-correction-cycle", "title": "Misconception Correction Cycle"}
+{"timestamp": "2026-01-25T18:19:00.335769Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "model-boundaries", "title": "Model Boundaries - Projectile Motion"}
+{"timestamp": "2026-01-25T18:19:00.335926Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "model-comparison-tool", "title": "Model Comparison Tool - Physics Models"}
+{"timestamp": "2026-01-25T18:19:00.336082Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "objective-decomposition", "title": "Objective Decomposition Tree"}
+{"timestamp": "2026-01-25T18:19:00.336243Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "ohms-law-simulator", "title": "Ohm's Law Circuit Simulator"}
+{"timestamp": "2026-01-25T18:19:00.336396Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "p5-architecture", "title": "p5.js MicroSim Architecture"}
+{"timestamp": "2026-01-25T18:19:00.336553Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "page-view-tracking-comparison", "title": "Page View Tracking vs Simulation Tracking Comparison"}
+{"timestamp": "2026-01-25T18:19:00.336707Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "paradigm-affordance", "title": "Paradigm Affordance Matrix"}
+{"timestamp": "2026-01-25T18:19:00.336775Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "parameter-space-explorer", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/parameter-space-explorer"}
+{"timestamp": "2026-01-25T18:19:00.336936Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "physics-sim-architecture", "title": "Physics Simulation Architecture"}
+{"timestamp": "2026-01-25T18:19:00.337095Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "portfolio-components", "title": "Portfolio Project Components"}
+{"timestamp": "2026-01-25T18:19:00.337250Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "prediction-prompt-interface", "title": "Prediction Prompt Interface"}
+{"timestamp": "2026-01-25T18:19:00.337402Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "prereq-assumed", "title": "Prerequisite vs Assumed Knowledge"}
+{"timestamp": "2026-01-25T18:19:00.337558Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "probability-adaptation", "title": "Probability Concept Adaptation"}
+{"timestamp": "2026-01-25T18:19:00.337730Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "probability-tree-explorer", "title": "Probability Tree Explorer"}
+{"timestamp": "2026-01-25T18:19:00.337904Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "process-timeline", "title": "Process Timeline"}
+{"timestamp": "2026-01-25T18:19:00.338061Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "progressive-disclosure-demo", "title": "Progressive Disclosure Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.338213Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "prompt-engineering-practices", "title": "Prompt Engineering Practices"}
+{"timestamp": "2026-01-25T18:19:00.338369Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "real-world-data-pattern", "title": "Real-World Data Pattern MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.338531Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "relationship-graph-types", "title": "Relationship Graph Types"}
+{"timestamp": "2026-01-25T18:19:00.338693Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "responsive-breakpoint-testing", "title": "Responsive Breakpoint Testing"}
+{"timestamp": "2026-01-25T18:19:00.338851Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "rule-hierarchy-cascade", "title": "Rule Hierarchy Cascade"}
+{"timestamp": "2026-01-25T18:19:00.338921Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "schema-formation-process", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/schema-formation-process"}
+{"timestamp": "2026-01-25T18:19:00.339075Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "sim-readiness", "title": "MicroSim Readiness Assessment"}
+{"timestamp": "2026-01-25T18:19:00.339234Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "sim-vs-microsim", "title": "Traditional Simulation vs MicroSim Architecture"}
+{"timestamp": "2026-01-25T18:19:00.339386Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "smart-objectives", "title": "SMART Learning Objectives Framework"}
+{"timestamp": "2026-01-25T18:19:00.339539Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "sorting-algorithm-race", "title": "Sorting Algorithm Race"}
+{"timestamp": "2026-01-25T18:19:00.339693Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "spatial-viz-types", "title": "Spatial Visualization Types"}
+{"timestamp": "2026-01-25T18:19:00.339763Z", "event": "missing_metadata", "repo": "automating-instructional-design", "sim": "spec-clarity-analyzer", "github_url": "https://github.com/dmccreary/automating-instructional-design/tree/main/docs/sims/spec-clarity-analyzer"}
+{"timestamp": "2026-01-25T18:19:00.339913Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "spec-quality-checklist", "title": "Specification Quality Checklist"}
+{"timestamp": "2026-01-25T18:19:00.340068Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "split-attention-effect", "title": "Split Attention Effect Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.340228Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "standardization-workflow", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.340383Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "state-machine-template", "title": "State Machine Template"}
+{"timestamp": "2026-01-25T18:19:00.340536Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "success-criteria-workflow", "title": "Success Criteria Validation Workflow"}
+{"timestamp": "2026-01-25T18:19:00.340709Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "think-aloud-protocol", "title": "Think-Aloud Protocol"}
+{"timestamp": "2026-01-25T18:19:00.340866Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "three-lens-evaluation", "title": "Three-Lens Evaluation Model"}
+{"timestamp": "2026-01-25T18:19:00.341017Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "venn-builder", "title": "Venn Diagram Builder"}
+{"timestamp": "2026-01-25T18:19:00.341178Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "visual-description-checklist", "title": "Visual Description Completeness Checklist"}
+{"timestamp": "2026-01-25T18:19:00.341332Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "viz-library-decision", "title": "Visualization Library Decision Tree"}
+{"timestamp": "2026-01-25T18:19:00.341494Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "viz-paradigm-selection", "title": "Visualization Paradigm Selection"}
+{"timestamp": "2026-01-25T18:19:00.341655Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "working-memory-architecture", "title": "Working Memory Architecture"}
+{"timestamp": "2026-01-25T18:19:00.341813Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "xapi-data-flow", "title": "xAPI Data Flow"}
+{"timestamp": "2026-01-25T18:19:00.341971Z", "event": "metadata_found", "repo": "automating-instructional-design", "sim": "zpd-visualization", "title": "Zone of Proximal Development Visualization"}
+{"timestamp": "2026-01-25T18:19:00.342276Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "breadboard", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/breadboard"}
+{"timestamp": "2026-01-25T18:19:00.342343Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "flip-flop", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/flip-flop"}
+{"timestamp": "2026-01-25T18:19:00.342402Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.342460Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "led", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/led"}
+{"timestamp": "2026-01-25T18:19:00.342517Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "led-resistor-calc", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/led-resistor-calc"}
+{"timestamp": "2026-01-25T18:19:00.342670Z", "event": "metadata_found", "repo": "beginning-electronics", "sim": "rcl-draw-test", "title": "RCL Draw Test"}
+{"timestamp": "2026-01-25T18:19:00.342817Z", "event": "metadata_found", "repo": "beginning-electronics", "sim": "resistor", "title": "Drawing Resistor Symbols in a MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.342881Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "resistor-physical", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/resistor-physical"}
+{"timestamp": "2026-01-25T18:19:00.342942Z", "event": "missing_metadata", "repo": "beginning-electronics", "sim": "template", "github_url": "https://github.com/dmccreary/beginning-electronics/tree/main/docs/sims/template"}
+{"timestamp": "2026-01-25T18:19:00.344496Z", "event": "metadata_found", "repo": "circuits", "sim": "animated-switches", "title": "Animated Switches MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.344684Z", "event": "metadata_found", "repo": "circuits", "sim": "animated-wire", "title": "Animated Wire MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.345052Z", "event": "missing_metadata", "repo": "circuits", "sim": "background-grid", "github_url": "https://github.com/dmccreary/circuits/tree/main/docs/sims/background-grid"}
+{"timestamp": "2026-01-25T18:19:00.345264Z", "event": "metadata_found", "repo": "circuits", "sim": "battery", "title": "Battery Drawing MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.345441Z", "event": "metadata_found", "repo": "circuits", "sim": "capacitor", "title": "Capacitor Drawing MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.345635Z", "event": "metadata_found", "repo": "circuits", "sim": "circuit-lib", "title": "Circuit Component Library Test"}
+{"timestamp": "2026-01-25T18:19:00.345815Z", "event": "metadata_found", "repo": "circuits", "sim": "circuit-similarity", "title": "Circuit Similarity Map"}
+{"timestamp": "2026-01-25T18:19:00.346127Z", "event": "missing_metadata", "repo": "circuits", "sim": "current-meter", "github_url": "https://github.com/dmccreary/circuits/tree/main/docs/sims/current-meter"}
+{"timestamp": "2026-01-25T18:19:00.346526Z", "event": "missing_metadata", "repo": "circuits", "sim": "dc-circuit", "github_url": "https://github.com/dmccreary/circuits/tree/main/docs/sims/dc-circuit"}
+{"timestamp": "2026-01-25T18:19:00.346838Z", "event": "missing_metadata", "repo": "circuits", "sim": "diode", "github_url": "https://github.com/dmccreary/circuits/tree/main/docs/sims/diode"}
+{"timestamp": "2026-01-25T18:19:00.346934Z", "event": "missing_metadata", "repo": "circuits", "sim": "falstad-to-json", "github_url": "https://github.com/dmccreary/circuits/tree/main/docs/sims/falstad-to-json"}
+{"timestamp": "2026-01-25T18:19:00.347131Z", "event": "metadata_found", "repo": "circuits", "sim": "inductor", "title": "Inductor Drawing MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.347211Z", "event": "missing_metadata", "repo": "circuits", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/circuits/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.347385Z", "event": "metadata_found", "repo": "circuits", "sim": "light-bulb", "title": "Light Bulb Circuit MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.347585Z", "event": "metadata_found", "repo": "circuits", "sim": "resistor", "title": "Resistor Drawing MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.347753Z", "event": "metadata_found", "repo": "circuits", "sim": "switch", "title": "Switch Drawing MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.347938Z", "event": "metadata_found", "repo": "circuits", "sim": "templates", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.348116Z", "event": "metadata_found", "repo": "circuits", "sim": "wire", "title": "Wire MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.349540Z", "event": "missing_metadata", "repo": "clan-macquarrie", "sim": "clan-sizes", "github_url": "https://github.com/dmccreary/clan-macquarrie/tree/main/docs/sims/clan-sizes"}
+{"timestamp": "2026-01-25T18:19:00.349765Z", "event": "metadata_found", "repo": "clan-macquarrie", "sim": "migration", "title": "Migration Map"}
+{"timestamp": "2026-01-25T18:19:00.349943Z", "event": "metadata_found", "repo": "clan-macquarrie", "sim": "population-of-ulva", "title": "Population of Ulva"}
+{"timestamp": "2026-01-25T18:19:00.350114Z", "event": "metadata_found", "repo": "clan-macquarrie", "sim": "surname-population", "title": "MacQuarrie Surname Population Estimates 1400-2000"}
+{"timestamp": "2026-01-25T18:19:00.350300Z", "event": "metadata_found", "repo": "clan-macquarrie", "sim": "timeline-viewer", "title": "Clan MacQuarrie Timeline Viewer"}
+{"timestamp": "2026-01-25T18:19:00.351817Z", "event": "metadata_found", "repo": "claude-skills", "sim": "adding-taxonomy-workflow", "title": "Adding Taxonomy to CSV Workflow"}
+{"timestamp": "2026-01-25T18:19:00.352000Z", "event": "metadata_found", "repo": "claude-skills", "sim": "average-dependencies-distribution", "title": "Average Dependencies Distribution Bar Chart"}
+{"timestamp": "2026-01-25T18:19:00.352186Z", "event": "metadata_found", "repo": "claude-skills", "sim": "book-build-workflow", "title": "Book Build Workflow"}
+{"timestamp": "2026-01-25T18:19:00.352355Z", "event": "metadata_found", "repo": "claude-skills", "sim": "book-levels", "title": "Book Levels MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.352518Z", "event": "metadata_found", "repo": "claude-skills", "sim": "certificate-generator", "title": "Certificate of Completion Generator"}
+{"timestamp": "2026-01-25T18:19:00.352689Z", "event": "metadata_found", "repo": "claude-skills", "sim": "chapter-content-generation-timeline", "title": "Chapter Content Generation Workflow Timeline"}
+{"timestamp": "2026-01-25T18:19:00.352854Z", "event": "metadata_found", "repo": "claude-skills", "sim": "chapter-index-structure", "title": "Chapter Index File Structure"}
+{"timestamp": "2026-01-25T18:19:00.353016Z", "event": "metadata_found", "repo": "claude-skills", "sim": "chapter-organization-workflow", "title": "Chapter Organization Workflow"}
+{"timestamp": "2026-01-25T18:19:00.353192Z", "event": "metadata_found", "repo": "claude-skills", "sim": "claude-code-memory-layers", "title": "Claude Code Memory Layers"}
+{"timestamp": "2026-01-25T18:19:00.353356Z", "event": "metadata_found", "repo": "claude-skills", "sim": "claude-code-timeline", "title": "Evolution of AI: From Neural Networks to Claude Code"}
+{"timestamp": "2026-01-25T18:19:00.353517Z", "event": "metadata_found", "repo": "claude-skills", "sim": "claude-code-tshirt-design", "title": "Claude Code T-Shirt Design - Workflow Diagram"}
+{"timestamp": "2026-01-25T18:19:00.353690Z", "event": "metadata_found", "repo": "claude-skills", "sim": "color-wheel-with-named-colors", "title": "Color Wheel with Named Colors"}
+{"timestamp": "2026-01-25T18:19:00.353855Z", "event": "metadata_found", "repo": "claude-skills", "sim": "concept-length-histogram", "title": "Concept Label Length Histogram"}
+{"timestamp": "2026-01-25T18:19:00.354014Z", "event": "metadata_found", "repo": "claude-skills", "sim": "course-description-quality-workflow", "title": "Course Description Quality Impact on Workflow"}
+{"timestamp": "2026-01-25T18:19:00.354178Z", "event": "metadata_found", "repo": "claude-skills", "sim": "faq-pattern-analysis", "title": "FAQ Question Pattern Analysis Workflow"}
+{"timestamp": "2026-01-25T18:19:00.354335Z", "event": "metadata_found", "repo": "claude-skills", "sim": "git-workflow-skill-development", "title": "Git Workflow for Skill Development"}
+{"timestamp": "2026-01-25T18:19:00.354496Z", "event": "metadata_found", "repo": "claude-skills", "sim": "graph-color-test", "title": "Learning Graph Color Test"}
+{"timestamp": "2026-01-25T18:19:00.354657Z", "event": "metadata_found", "repo": "claude-skills", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.354834Z", "event": "metadata_found", "repo": "claude-skills", "sim": "install-book-env", "title": "Install Book Environment Dependencies"}
+{"timestamp": "2026-01-25T18:19:00.354998Z", "event": "metadata_found", "repo": "claude-skills", "sim": "learning-graph-json-schema", "title": "Learning Graph JSON Schema"}
+{"timestamp": "2026-01-25T18:19:00.355160Z", "event": "metadata_found", "repo": "claude-skills", "sim": "linear-chain-vs-network", "title": "Linear Chain vs Network Structure Comparison"}
+{"timestamp": "2026-01-25T18:19:00.355333Z", "event": "metadata_found", "repo": "claude-skills", "sim": "microsim-file-relationship-diagram", "title": "MicroSim File Relationship Diagram"}
+{"timestamp": "2026-01-25T18:19:00.355493Z", "event": "metadata_found", "repo": "claude-skills", "sim": "mkdocs-build-process", "title": "MkDocs Build Process Workflow"}
+{"timestamp": "2026-01-25T18:19:00.355656Z", "event": "metadata_found", "repo": "claude-skills", "sim": "mkdocs-github-pages-deployment", "title": "MkDocs GitHub Pages Deployment Workflow"}
+{"timestamp": "2026-01-25T18:19:00.355814Z", "event": "metadata_found", "repo": "claude-skills", "sim": "orphaned-nodes-identification", "title": "Orphaned Nodes Identification Chart"}
+{"timestamp": "2026-01-25T18:19:00.355972Z", "event": "metadata_found", "repo": "claude-skills", "sim": "p5js-architecture", "title": "p5.js Architecture and Execution Model"}
+{"timestamp": "2026-01-25T18:19:00.356257Z", "event": "metadata_found", "repo": "claude-skills", "sim": "security-zones-diagram", "title": "Security Zones Diagram"}
+{"timestamp": "2026-01-25T18:19:00.356451Z", "event": "metadata_found", "repo": "claude-skills", "sim": "sine-function-plot", "title": "Sine Function Visualization"}
+{"timestamp": "2026-01-25T18:19:00.356636Z", "event": "metadata_found", "repo": "claude-skills", "sim": "skill-context-window", "title": "Skill Context Window"}
+{"timestamp": "2026-01-25T18:19:00.356810Z", "event": "metadata_found", "repo": "claude-skills", "sim": "skill-directory-structure", "title": "Skill Directory Structure"}
+{"timestamp": "2026-01-25T18:19:00.356977Z", "event": "metadata_found", "repo": "claude-skills", "sim": "skill-impact-chart", "title": "Skill Development Priority Matrix Visualization"}
+{"timestamp": "2026-01-25T18:19:00.357139Z", "event": "metadata_found", "repo": "claude-skills", "sim": "skill-installation-workflow", "title": "Skill Installation Workflow"}
+{"timestamp": "2026-01-25T18:19:00.357299Z", "event": "metadata_found", "repo": "claude-skills", "sim": "taxonomy-distribution-pie", "title": "Taxonomy Distribution Pie Chart"}
+{"timestamp": "2026-01-25T18:19:00.357461Z", "event": "metadata_found", "repo": "claude-skills", "sim": "terminal-workflow-textbook", "title": "Terminal Workflow for Textbook Development"}
+{"timestamp": "2026-01-25T18:19:00.357647Z", "event": "metadata_found", "repo": "claude-skills", "sim": "test-world-cities", "title": "Major World Cities"}
+{"timestamp": "2026-01-25T18:19:00.357857Z", "event": "metadata_found", "repo": "claude-skills", "sim": "three-color-dfs", "title": "Three-Color DFS Cycle Detection"}
+{"timestamp": "2026-01-25T18:19:00.358898Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "4-digits", "title": "Four-Digit Digital Clock"}
+{"timestamp": "2026-01-25T18:19:00.359098Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "analog-clock", "title": "Analog Clock"}
+{"timestamp": "2026-01-25T18:19:00.359295Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "architectural-levels", "title": "Architectural Levels Zoom"}
+{"timestamp": "2026-01-25T18:19:00.359469Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "battery-drain", "title": "Battery Drain"}
+{"timestamp": "2026-01-25T18:19:00.359637Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "binary-clock", "title": "Binary Clock"}
+{"timestamp": "2026-01-25T18:19:00.359802Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "binary-number", "title": "Binary Number"}
+{"timestamp": "2026-01-25T18:19:00.359984Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "learning-graph", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.360159Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "seven-segment-display", "title": "Seven-Segment Display"}
+{"timestamp": "2026-01-25T18:19:00.360329Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "shift-register", "title": "Shift Register"}
+{"timestamp": "2026-01-25T18:19:00.360493Z", "event": "metadata_found", "repo": "clocks-and-watches", "sim": "stopwatch", "title": "Stopwatch"}
+{"timestamp": "2026-01-25T18:19:00.360931Z", "event": "missing_metadata", "repo": "clocks-and-watches", "sim": "templates", "github_url": "https://github.com/dmccreary/clocks-and-watches/tree/main/docs/sims/templates"}
+{"timestamp": "2026-01-25T18:19:00.361027Z", "event": "missing_metadata", "repo": "clocks-and-watches", "sim": "themes", "github_url": "https://github.com/dmccreary/clocks-and-watches/tree/main/docs/sims/themes"}
+{"timestamp": "2026-01-25T18:19:00.361963Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "ai-performance-chart", "title": "AI Performance Improvement Exceeds Moore's Law"}
+{"timestamp": "2026-01-25T18:19:00.362161Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "ai-timeline", "title": "Evolution of Artificial Intelligence Timeline"}
+{"timestamp": "2026-01-25T18:19:00.362400Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "chatbot-latency-breakdown", "title": "Chatbot Response Latency Breakdown"}
+{"timestamp": "2026-01-25T18:19:00.362577Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.362749Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "regex-matcher", "title": "Interactive Regular Expression Pattern Matcher"}
+{"timestamp": "2026-01-25T18:19:00.362921Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "text-processing-workflow", "title": "Text Processing Pipeline Workflow"}
+{"timestamp": "2026-01-25T18:19:00.363110Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "text-to-graph", "title": "Text2KGBench Model Comparison"}
+{"timestamp": "2026-01-25T18:19:00.363283Z", "event": "metadata_found", "repo": "conversational-ai", "sim": "text-to-graph-timeline", "title": "Text2KGBench-LettrIA F1 Scores Timeline"}
+{"timestamp": "2026-01-25T18:19:00.364701Z", "event": "metadata_found", "repo": "data-science-course", "sim": "bell-curve", "title": "Bell Curve Emergence"}
+{"timestamp": "2026-01-25T18:19:00.364888Z", "event": "metadata_found", "repo": "data-science-course", "sim": "book-gen-workflow", "title": "Book Generation Workflow"}
+{"timestamp": "2026-01-25T18:19:00.365360Z", "event": "missing_metadata", "repo": "data-science-course", "sim": "chapter-1-concept-map", "github_url": "https://github.com/dmccreary/data-science-course/tree/main/docs/sims/chapter-1-concept-map"}
+{"timestamp": "2026-01-25T18:19:00.365601Z", "event": "metadata_found", "repo": "data-science-course", "sim": "data-science-heros-journey", "title": "Data Science Hero's Journey"}
+{"timestamp": "2026-01-25T18:19:00.365807Z", "event": "metadata_found", "repo": "data-science-course", "sim": "data-science-superpower", "title": "Data Science Superpower Concept Map"}
+{"timestamp": "2026-01-25T18:19:00.365991Z", "event": "metadata_found", "repo": "data-science-course", "sim": "data-science-workflow", "title": "Six-Step Data Science Workflow"}
+{"timestamp": "2026-01-25T18:19:00.366166Z", "event": "metadata_found", "repo": "data-science-course", "sim": "ds-prog-lang", "title": "Data Science Programming Language Popularity"}
+{"timestamp": "2026-01-25T18:19:00.366339Z", "event": "metadata_found", "repo": "data-science-course", "sim": "four-types-of-data", "title": "Four Types of Data Science Data"}
+{"timestamp": "2026-01-25T18:19:00.366511Z", "event": "metadata_found", "repo": "data-science-course", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.366681Z", "event": "metadata_found", "repo": "data-science-course", "sim": "independent-dependent-variables", "title": "Independent vs Dependent Variables"}
+{"timestamp": "2026-01-25T18:19:00.367101Z", "event": "missing_metadata", "repo": "data-science-course", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/data-science-course/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.367282Z", "event": "metadata_found", "repo": "data-science-course", "sim": "least-squares", "title": "Least Squares MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.367648Z", "event": "missing_metadata", "repo": "data-science-course", "sim": "measurement-scales-pyramid", "github_url": "https://github.com/dmccreary/data-science-course/tree/main/docs/sims/measurement-scales-pyramid"}
+{"timestamp": "2026-01-25T18:19:00.368130Z", "event": "missing_metadata", "repo": "data-science-course", "sim": "microsim-lists", "github_url": "https://github.com/dmccreary/data-science-course/tree/main/docs/sims/microsim-lists"}
+{"timestamp": "2026-01-25T18:19:00.368309Z", "event": "metadata_found", "repo": "data-science-course", "sim": "normal-dice-distribution", "title": "Normal Dice Distribution"}
+{"timestamp": "2026-01-25T18:19:00.368487Z", "event": "metadata_found", "repo": "data-science-course", "sim": "pair-dice-sum-distribution", "title": "Two-Dice Sum Distribution"}
+{"timestamp": "2026-01-25T18:19:00.368656Z", "event": "metadata_found", "repo": "data-science-course", "sim": "template", "title": "MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.368817Z", "event": "metadata_found", "repo": "data-science-course", "sim": "ten-stats", "title": "Ten Basic Statistics MicroSims"}
+{"timestamp": "2026-01-25T18:19:00.369172Z", "event": "missing_metadata", "repo": "data-science-course", "sim": "variable-type-sorter", "github_url": "https://github.com/dmccreary/data-science-course/tree/main/docs/sims/variable-type-sorter"}
+{"timestamp": "2026-01-25T18:19:00.369656Z", "event": "missing_metadata", "repo": "data-science-course", "sim": "variable-types-decision-tree", "github_url": "https://github.com/dmccreary/data-science-course/tree/main/docs/sims/variable-types-decision-tree"}
+{"timestamp": "2026-01-25T18:19:00.369992Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "ai-pace-accelerating", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/ai-pace-accelerating"}
+{"timestamp": "2026-01-25T18:19:00.370059Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "chicken-road", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/chicken-road"}
+{"timestamp": "2026-01-25T18:19:00.370119Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "conv-filter-mult", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/conv-filter-mult"}
+{"timestamp": "2026-01-25T18:19:00.370175Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "convo-with-filters", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/convo-with-filters"}
+{"timestamp": "2026-01-25T18:19:00.370262Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "convolution", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/convolution"}
+{"timestamp": "2026-01-25T18:19:00.370322Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "four-futures", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/four-futures"}
+{"timestamp": "2026-01-25T18:19:00.370378Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.370434Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "param-count", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/param-count"}
+{"timestamp": "2026-01-25T18:19:00.370490Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "sliding-window", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/sliding-window"}
+{"timestamp": "2026-01-25T18:19:00.370545Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "templates", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/templates"}
+{"timestamp": "2026-01-25T18:19:00.370600Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "timeline", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/timeline"}
+{"timestamp": "2026-01-25T18:19:00.370654Z", "event": "missing_metadata", "repo": "deep-learning-course", "sim": "wordcloud", "github_url": "https://github.com/dmccreary/deep-learning-course/tree/main/docs/sims/wordcloud"}
+{"timestamp": "2026-01-25T18:19:00.371527Z", "event": "metadata_found", "repo": "digital-electronics", "sim": "flip-flop", "title": "Flip Flop MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.371698Z", "event": "metadata_found", "repo": "digital-electronics", "sim": "logic-gates", "title": "Logic Gates MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.371863Z", "event": "metadata_found", "repo": "digital-electronics", "sim": "shift-register", "title": "Shift Register MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.372068Z", "event": "missing_metadata", "repo": "digital-electronics", "sim": "template", "github_url": "https://github.com/dmccreary/digital-electronics/tree/main/docs/sims/template"}
+{"timestamp": "2026-01-25T18:19:00.373100Z", "event": "metadata_found", "repo": "ethics-course", "sim": "bias-classifier-quiz", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.373306Z", "event": "metadata_found", "repo": "ethics-course", "sim": "critical-thinking", "title": "Critical Thinking Framework for Ethical Analysis"}
+{"timestamp": "2026-01-25T18:19:00.373482Z", "event": "metadata_found", "repo": "ethics-course", "sim": "ethics-education-timeline", "title": "Evolution of Ethics Education Timeline"}
+{"timestamp": "2026-01-25T18:19:00.373663Z", "event": "metadata_found", "repo": "ethics-course", "sim": "ethics-process-flow", "title": "Data-Driven Ethics Process Flow"}
+{"timestamp": "2026-01-25T18:19:00.373833Z", "event": "metadata_found", "repo": "ethics-course", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.374000Z", "event": "metadata_found", "repo": "ethics-course", "sim": "harm-bubble-chart", "title": "Harmful Industries Bubble Chart"}
+{"timestamp": "2026-01-25T18:19:00.374184Z", "event": "metadata_found", "repo": "ethics-course", "sim": "leverage-iceberg", "title": "Leverage Points Iceberg"}
+{"timestamp": "2026-01-25T18:19:00.374259Z", "event": "missing_metadata", "repo": "ethics-course", "sim": "ranking", "github_url": "https://github.com/dmccreary/ethics-course/tree/main/docs/sims/ranking"}
+{"timestamp": "2026-01-25T18:19:00.374432Z", "event": "metadata_found", "repo": "ethics-course", "sim": "technology-adoption", "title": "Technology Adoption Curve Infographic"}
+{"timestamp": "2026-01-25T18:19:00.374598Z", "event": "metadata_found", "repo": "ethics-course", "sim": "template", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.374771Z", "event": "metadata_found", "repo": "ethics-course", "sim": "tobacco-system", "title": "Tobacco Industry System Components"}
+{"timestamp": "2026-01-25T18:19:00.375048Z", "event": "metadata_found", "repo": "fft-benchmarking", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.375118Z", "event": "missing_metadata", "repo": "fft-benchmarking", "sim": "timeline", "github_url": "https://github.com/dmccreary/fft-benchmarking/tree/main/docs/sims/timeline"}
+{"timestamp": "2026-01-25T18:19:00.376257Z", "event": "missing_metadata", "repo": "genai-arch-patterns", "sim": "arch-pattern-viewer", "github_url": "https://github.com/dmccreary/genai-arch-patterns/tree/main/docs/sims/arch-pattern-viewer"}
+{"timestamp": "2026-01-25T18:19:00.376714Z", "event": "missing_metadata", "repo": "genai-arch-patterns", "sim": "ea-drawing-tools", "github_url": "https://github.com/dmccreary/genai-arch-patterns/tree/main/docs/sims/ea-drawing-tools"}
+{"timestamp": "2026-01-25T18:19:00.376783Z", "event": "missing_metadata", "repo": "genai-arch-patterns", "sim": "graph", "github_url": "https://github.com/dmccreary/genai-arch-patterns/tree/main/docs/sims/graph"}
+{"timestamp": "2026-01-25T18:19:00.378664Z", "event": "metadata_found", "repo": "geometry-course", "sim": "adjacent-angles-comparison", "title": "Adjacent vs Non-Adjacent Angles"}
+{"timestamp": "2026-01-25T18:19:00.378818Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-bisector", "title": "Angle Bisector"}
+{"timestamp": "2026-01-25T18:19:00.379029Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-bisector-construction", "title": "Angle Bisector Construction"}
+{"timestamp": "2026-01-25T18:19:00.379206Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-builder", "title": "Angle Builder"}
+{"timestamp": "2026-01-25T18:19:00.379373Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-classification-quiz", "title": "Angle Classification Quiz"}
+{"timestamp": "2026-01-25T18:19:00.379532Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-pair-finder", "title": "Angle Pair Finder"}
+{"timestamp": "2026-01-25T18:19:00.379689Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-pairs", "title": "Angle Pairs"}
+{"timestamp": "2026-01-25T18:19:00.379852Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-parts-notation", "title": "Angle Parts and Notation"}
+{"timestamp": "2026-01-25T18:19:00.380013Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-problem-solver", "title": "Angle Problem Solver"}
+{"timestamp": "2026-01-25T18:19:00.380170Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-relationships-summary", "title": "Angle Relationships Summary"}
+{"timestamp": "2026-01-25T18:19:00.380319Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angle-type-explorer", "title": "Angle Type Explorer"}
+{"timestamp": "2026-01-25T18:19:00.380480Z", "event": "metadata_found", "repo": "geometry-course", "sim": "angles-real-world", "title": "Angles in the Real World"}
+{"timestamp": "2026-01-25T18:19:00.380656Z", "event": "metadata_found", "repo": "geometry-course", "sim": "area-formulas-quadrilaterals", "title": "Area Formulas for Quadrilaterals"}
+{"timestamp": "2026-01-25T18:19:00.380835Z", "event": "metadata_found", "repo": "geometry-course", "sim": "barnsleys-fern", "title": "Barnsley's Fern"}
+{"timestamp": "2026-01-25T18:19:00.380988Z", "event": "metadata_found", "repo": "geometry-course", "sim": "bisect-angle-steps", "title": "Bisect Angle Steps"}
+{"timestamp": "2026-01-25T18:19:00.381137Z", "event": "metadata_found", "repo": "geometry-course", "sim": "bisect-segment-steps", "title": "Bisect Segment Steps"}
+{"timestamp": "2026-01-25T18:19:00.381289Z", "event": "metadata_found", "repo": "geometry-course", "sim": "centroid-explorer", "title": "Centroid Explorer"}
+{"timestamp": "2026-01-25T18:19:00.381514Z", "event": "metadata_found", "repo": "geometry-course", "sim": "cesaro-curve", "title": "Cesaro Curve"}
+{"timestamp": "2026-01-25T18:19:00.381701Z", "event": "metadata_found", "repo": "geometry-course", "sim": "chapter-01-concept-map", "title": "Chapter 1 Concept Map"}
+{"timestamp": "2026-01-25T18:19:00.381877Z", "event": "metadata_found", "repo": "geometry-course", "sim": "chapter-03-concept-map", "title": "Chapter 03 Concept Map"}
+{"timestamp": "2026-01-25T18:19:00.382050Z", "event": "metadata_found", "repo": "geometry-course", "sim": "circle-area-calculator", "title": "Circle Area Calculator MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.382414Z", "event": "metadata_found", "repo": "geometry-course", "sim": "circle-area-explorer", "title": "Circle Area Explorer"}
+{"timestamp": "2026-01-25T18:19:00.382609Z", "event": "metadata_found", "repo": "geometry-course", "sim": "circle-parts-explorer", "title": "Circle Parts Explorer"}
+{"timestamp": "2026-01-25T18:19:00.382780Z", "event": "metadata_found", "repo": "geometry-course", "sim": "circumcenter-explorer", "title": "Circumcenter Explorer"}
+{"timestamp": "2026-01-25T18:19:00.382960Z", "event": "metadata_found", "repo": "geometry-course", "sim": "collinear-coplanar-points", "title": "Collinear and Coplanar Points"}
+{"timestamp": "2026-01-25T18:19:00.383124Z", "event": "metadata_found", "repo": "geometry-course", "sim": "comp-and-sup-angles", "title": "Complementary and Supplementary Angles"}
+{"timestamp": "2026-01-25T18:19:00.383278Z", "event": "metadata_found", "repo": "geometry-course", "sim": "compass-parts", "title": "Compass Parts and Circle Construction"}
+{"timestamp": "2026-01-25T18:19:00.383431Z", "event": "metadata_found", "repo": "geometry-course", "sim": "complementary-angles-visual", "title": "Complementary Angles Visual"}
+{"timestamp": "2026-01-25T18:19:00.383584Z", "event": "metadata_found", "repo": "geometry-course", "sim": "composition-transformations", "title": "Composition of Transformations"}
+{"timestamp": "2026-01-25T18:19:00.383883Z", "event": "metadata_found", "repo": "geometry-course", "sim": "conditional-statement-structure", "title": "Conditional Statement Structure"}
+{"timestamp": "2026-01-25T18:19:00.384058Z", "event": "metadata_found", "repo": "geometry-course", "sim": "conditional-transformer", "title": "Conditional Statement Transformer"}
+{"timestamp": "2026-01-25T18:19:00.384217Z", "event": "metadata_found", "repo": "geometry-course", "sim": "conditional-truth-explorer", "title": "Conditional Statement Truth Explorer"}
+{"timestamp": "2026-01-25T18:19:00.384374Z", "event": "metadata_found", "repo": "geometry-course", "sim": "congruence-criteria-reference", "title": "Triangle Congruence Criteria Reference"}
+{"timestamp": "2026-01-25T18:19:00.384526Z", "event": "metadata_found", "repo": "geometry-course", "sim": "congruent-triangles-parts", "title": "Congruent Triangles with Corresponding Parts"}
+{"timestamp": "2026-01-25T18:19:00.384676Z", "event": "metadata_found", "repo": "geometry-course", "sim": "construction-design-challenge", "title": "Construction Design Challenge"}
+{"timestamp": "2026-01-25T18:19:00.384826Z", "event": "metadata_found", "repo": "geometry-course", "sim": "construction-practice-workbench", "title": "Construction Practice Workbench"}
+{"timestamp": "2026-01-25T18:19:00.384972Z", "event": "metadata_found", "repo": "geometry-course", "sim": "construction-reference-chart", "title": "Construction Techniques Reference Chart"}
+{"timestamp": "2026-01-25T18:19:00.385118Z", "event": "metadata_found", "repo": "geometry-course", "sim": "coordinate-plane-quadrants", "title": "Coordinate Plane and Quadrants"}
+{"timestamp": "2026-01-25T18:19:00.385326Z", "event": "metadata_found", "repo": "geometry-course", "sim": "coordinate-proof-diagonals", "title": "Coordinate Proof - Rectangle Diagonals"}
+{"timestamp": "2026-01-25T18:19:00.385502Z", "event": "metadata_found", "repo": "geometry-course", "sim": "coordinate-proof-lab", "title": "Coordinate Proof Laboratory"}
+{"timestamp": "2026-01-25T18:19:00.385662Z", "event": "metadata_found", "repo": "geometry-course", "sim": "copy-angle", "title": "Copy an Angle Construction"}
+{"timestamp": "2026-01-25T18:19:00.385817Z", "event": "metadata_found", "repo": "geometry-course", "sim": "copy-segment", "title": "Copy a Segment Construction"}
+{"timestamp": "2026-01-25T18:19:00.385972Z", "event": "metadata_found", "repo": "geometry-course", "sim": "copy-segment-steps", "title": "Copy Segment Steps"}
+{"timestamp": "2026-01-25T18:19:00.386119Z", "event": "metadata_found", "repo": "geometry-course", "sim": "cords", "title": "Chords"}
+{"timestamp": "2026-01-25T18:19:00.386270Z", "event": "metadata_found", "repo": "geometry-course", "sim": "cosine", "title": "Cosine as a Ratio"}
+{"timestamp": "2026-01-25T18:19:00.386420Z", "event": "metadata_found", "repo": "geometry-course", "sim": "degrees-vs-radians", "title": "Degrees vs Radians"}
+{"timestamp": "2026-01-25T18:19:00.386563Z", "event": "metadata_found", "repo": "geometry-course", "sim": "dilation-scale-factors", "title": "Dilations with Different Scale Factors"}
+{"timestamp": "2026-01-25T18:19:00.386759Z", "event": "metadata_found", "repo": "geometry-course", "sim": "distance-formula", "title": "Distance Formula Explorer"}
+{"timestamp": "2026-01-25T18:19:00.386907Z", "event": "metadata_found", "repo": "geometry-course", "sim": "distance-formula-visualization", "title": "Distance Formula Visualization"}
+{"timestamp": "2026-01-25T18:19:00.387059Z", "event": "metadata_found", "repo": "geometry-course", "sim": "euler-line-explorer", "title": "Euler Line Explorer"}
+{"timestamp": "2026-01-25T18:19:00.387207Z", "event": "metadata_found", "repo": "geometry-course", "sim": "exterior-angle-theorem", "title": "Exterior Angle Theorem"}
+{"timestamp": "2026-01-25T18:19:00.387356Z", "event": "metadata_found", "repo": "geometry-course", "sim": "flow-chart-proof", "title": "Flow Chart Proof"}
+{"timestamp": "2026-01-25T18:19:00.387499Z", "event": "metadata_found", "repo": "geometry-course", "sim": "four-conditionals", "title": "Four Related Conditional Statements"}
+{"timestamp": "2026-01-25T18:19:00.387644Z", "event": "metadata_found", "repo": "geometry-course", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.387787Z", "event": "metadata_found", "repo": "geometry-course", "sim": "hinge-theorem", "title": "Hinge Theorem Visualization"}
+{"timestamp": "2026-01-25T18:19:00.387938Z", "event": "metadata_found", "repo": "geometry-course", "sim": "impossible-constructions", "title": "The Three Impossible Constructions"}
+{"timestamp": "2026-01-25T18:19:00.388084Z", "event": "metadata_found", "repo": "geometry-course", "sim": "incircle-explorer", "title": "Incircle Explorer"}
+{"timestamp": "2026-01-25T18:19:00.388227Z", "event": "metadata_found", "repo": "geometry-course", "sim": "indirect-proof-explorer", "title": "Indirect Proof Explorer"}
+{"timestamp": "2026-01-25T18:19:00.388369Z", "event": "metadata_found", "repo": "geometry-course", "sim": "inscribed-angle-theorem", "title": "Inscribed Angle Theorem"}
+{"timestamp": "2026-01-25T18:19:00.388528Z", "event": "metadata_found", "repo": "geometry-course", "sim": "isosceles-triangle-properties", "title": "Isosceles Triangle Properties"}
+{"timestamp": "2026-01-25T18:19:00.388747Z", "event": "metadata_found", "repo": "geometry-course", "sim": "koch-fractal", "title": "Koch Fractal"}
+{"timestamp": "2026-01-25T18:19:00.388912Z", "event": "metadata_found", "repo": "geometry-course", "sim": "koch-snowflake", "title": "Koch Snowflake"}
+{"timestamp": "2026-01-25T18:19:00.389316Z", "event": "metadata_found", "repo": "geometry-course", "sim": "levy-c-curve", "title": "Levy C Curve"}
+{"timestamp": "2026-01-25T18:19:00.389501Z", "event": "metadata_found", "repo": "geometry-course", "sim": "line-relationships-3d", "title": "Line Relationships in 3D"}
+{"timestamp": "2026-01-25T18:19:00.389659Z", "event": "metadata_found", "repo": "geometry-course", "sim": "linear-pair-structure", "title": "Linear Pair Structure"}
+{"timestamp": "2026-01-25T18:19:00.389842Z", "event": "metadata_found", "repo": "geometry-course", "sim": "make-lines-parallel", "title": "Make Lines Parallel"}
+{"timestamp": "2026-01-25T18:19:00.390015Z", "event": "metadata_found", "repo": "geometry-course", "sim": "midpoint-explorer", "title": "Midpoint Explorer with Verification"}
+{"timestamp": "2026-01-25T18:19:00.390169Z", "event": "metadata_found", "repo": "geometry-course", "sim": "midpoint-formula-visualization", "title": "Midpoint Formula Visualization"}
+{"timestamp": "2026-01-25T18:19:00.390318Z", "event": "metadata_found", "repo": "geometry-course", "sim": "nine-point-circle", "title": "Nine-Point Circle"}
+{"timestamp": "2026-01-25T18:19:00.390464Z", "event": "metadata_found", "repo": "geometry-course", "sim": "orthocenter-explorer", "title": "Orthocenter Explorer"}
+{"timestamp": "2026-01-25T18:19:00.390612Z", "event": "metadata_found", "repo": "geometry-course", "sim": "parallel-lines-challenge", "title": "Parallel Lines Construction Challenge"}
+{"timestamp": "2026-01-25T18:19:00.390759Z", "event": "metadata_found", "repo": "geometry-course", "sim": "parallel-lines-construction", "title": "Parallel Lines Construction"}
+{"timestamp": "2026-01-25T18:19:00.390908Z", "event": "metadata_found", "repo": "geometry-course", "sim": "parallel-lines-coordinate", "title": "Parallel Lines in the Coordinate Plane"}
+{"timestamp": "2026-01-25T18:19:00.391058Z", "event": "metadata_found", "repo": "geometry-course", "sim": "parallel-perpendicular-explorer", "title": "Parallel and Perpendicular Line Explorer"}
+{"timestamp": "2026-01-25T18:19:00.391202Z", "event": "metadata_found", "repo": "geometry-course", "sim": "parallel-postulate-history", "title": "Parallel Postulate History"}
+{"timestamp": "2026-01-25T18:19:00.391351Z", "event": "metadata_found", "repo": "geometry-course", "sim": "parallel-transversal-explorer", "title": "Parallel Lines & Transversal Explorer"}
+{"timestamp": "2026-01-25T18:19:00.391508Z", "event": "metadata_found", "repo": "geometry-course", "sim": "peano-gosper-fractal", "title": "Peano-Gosper Fractal"}
+{"timestamp": "2026-01-25T18:19:00.391658Z", "event": "metadata_found", "repo": "geometry-course", "sim": "perpendicular-bisector-explorer", "title": "Perpendicular Bisector Explorer"}
+{"timestamp": "2026-01-25T18:19:00.391806Z", "event": "metadata_found", "repo": "geometry-course", "sim": "perpendicular-construction-selector", "title": "Perpendicular Construction Selector"}
+{"timestamp": "2026-01-25T18:19:00.391947Z", "event": "metadata_found", "repo": "geometry-course", "sim": "perpendicular-constructions", "title": "Two Types of Perpendicular Constructions"}
+{"timestamp": "2026-01-25T18:19:00.392088Z", "event": "metadata_found", "repo": "geometry-course", "sim": "perpendicular-lines-slopes", "title": "Perpendicular Lines with Negative Reciprocal Slopes"}
+{"timestamp": "2026-01-25T18:19:00.392256Z", "event": "metadata_found", "repo": "geometry-course", "sim": "point-line-explorer", "title": "Points and Lines Explorer"}
+{"timestamp": "2026-01-25T18:19:00.392439Z", "event": "metadata_found", "repo": "geometry-course", "sim": "point-line-plane", "title": "Point, Line, Plane - The Three Undefined Terms"}
+{"timestamp": "2026-01-25T18:19:00.392594Z", "event": "metadata_found", "repo": "geometry-course", "sim": "point-slope-builder", "title": "Point-Slope Form Builder"}
+{"timestamp": "2026-01-25T18:19:00.392747Z", "event": "metadata_found", "repo": "geometry-course", "sim": "polygon-interior-angles", "title": "Polygon Interior Angles Explorer"}
+{"timestamp": "2026-01-25T18:19:00.392890Z", "event": "metadata_found", "repo": "geometry-course", "sim": "postulate-gallery", "title": "Postulate Visualization Gallery"}
+{"timestamp": "2026-01-25T18:19:00.393039Z", "event": "metadata_found", "repo": "geometry-course", "sim": "preimage-image-notation", "title": "Pre-Image and Image Notation"}
+{"timestamp": "2026-01-25T18:19:00.393184Z", "event": "metadata_found", "repo": "geometry-course", "sim": "proof-anatomy", "title": "The Anatomy of a Proof"}
+{"timestamp": "2026-01-25T18:19:00.393334Z", "event": "metadata_found", "repo": "geometry-course", "sim": "pythagorean-theorem", "title": "Pythagorean Theorem"}
+{"timestamp": "2026-01-25T18:19:00.393475Z", "event": "metadata_found", "repo": "geometry-course", "sim": "quadrilateral-hierarchy", "title": "Quadrilateral Family Hierarchy"}
+{"timestamp": "2026-01-25T18:19:00.393616Z", "event": "metadata_found", "repo": "geometry-course", "sim": "rays-and-segments", "title": "Rays and Segments Comparison"}
+{"timestamp": "2026-01-25T18:19:00.393767Z", "event": "metadata_found", "repo": "geometry-course", "sim": "reasoning-detective", "title": "Reasoning Detective"}
+{"timestamp": "2026-01-25T18:19:00.393910Z", "event": "metadata_found", "repo": "geometry-course", "sim": "reflection-explorer", "title": "Reflection Explorer"}
+{"timestamp": "2026-01-25T18:19:00.394049Z", "event": "metadata_found", "repo": "geometry-course", "sim": "reflection-lines", "title": "Reflections Over Different Lines"}
+{"timestamp": "2026-01-25T18:19:00.394194Z", "event": "metadata_found", "repo": "geometry-course", "sim": "regular-polygon-explorer", "title": "Regular Polygon Explorer"}
+{"timestamp": "2026-01-25T18:19:00.394340Z", "event": "metadata_found", "repo": "geometry-course", "sim": "regular-polygon-explorer-quiz", "title": "Regular Polygon Explorer Quiz"}
+{"timestamp": "2026-01-25T18:19:00.394484Z", "event": "metadata_found", "repo": "geometry-course", "sim": "right-angle-contexts", "title": "Right Angles in Real-World Contexts"}
+{"timestamp": "2026-01-25T18:19:00.394627Z", "event": "metadata_found", "repo": "geometry-course", "sim": "rigid-motion-summary", "title": "Rigid Motion Summary"}
+{"timestamp": "2026-01-25T18:19:00.394772Z", "event": "metadata_found", "repo": "geometry-course", "sim": "rotation-explorer", "title": "Rotation Explorer"}
+{"timestamp": "2026-01-25T18:19:00.394911Z", "event": "metadata_found", "repo": "geometry-course", "sim": "rotation-origin", "title": "Rotation Around Origin"}
+{"timestamp": "2026-01-25T18:19:00.395058Z", "event": "metadata_found", "repo": "geometry-course", "sim": "sas-congruence", "title": "SAS Congruence Visualization"}
+{"timestamp": "2026-01-25T18:19:00.395214Z", "event": "metadata_found", "repo": "geometry-course", "sim": "sierpinski-carpet", "title": "Sierpinski Carpet"}
+{"timestamp": "2026-01-25T18:19:00.395389Z", "event": "metadata_found", "repo": "geometry-course", "sim": "sierpinski-triangles", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.395539Z", "event": "metadata_found", "repo": "geometry-course", "sim": "similar-triangles-comparison", "title": "Similar Triangles Comparison"}
+{"timestamp": "2026-01-25T18:19:00.395686Z", "event": "metadata_found", "repo": "geometry-course", "sim": "sine-and-cosine-circle", "title": "Sine and Cosine Circle"}
+{"timestamp": "2026-01-25T18:19:00.395832Z", "event": "metadata_found", "repo": "geometry-course", "sim": "slope-explorer", "title": "Slope Explorer and Calculator"}
+{"timestamp": "2026-01-25T18:19:00.395977Z", "event": "metadata_found", "repo": "geometry-course", "sim": "slope-intercept-explorer", "title": "Slope-Intercept Form Explorer"}
+{"timestamp": "2026-01-25T18:19:00.396119Z", "event": "metadata_found", "repo": "geometry-course", "sim": "slope-intercept-form", "title": "Slope-Intercept Form Visualization"}
+{"timestamp": "2026-01-25T18:19:00.396260Z", "event": "metadata_found", "repo": "geometry-course", "sim": "slope-types", "title": "Four Types of Slope"}
+{"timestamp": "2026-01-25T18:19:00.396445Z", "event": "metadata_found", "repo": "geometry-course", "sim": "soccer-ball", "title": "Soccer Ball - Truncated Icosahedron"}
+{"timestamp": "2026-01-25T18:19:00.396612Z", "event": "metadata_found", "repo": "geometry-course", "sim": "special-segments", "title": "Special Segments in Triangles"}
+{"timestamp": "2026-01-25T18:19:00.396759Z", "event": "metadata_found", "repo": "geometry-course", "sim": "sss-congruence", "title": "SSS Congruence Visualization"}
+{"timestamp": "2026-01-25T18:19:00.396931Z", "event": "metadata_found", "repo": "geometry-course", "sim": "straightedge-vs-ruler", "title": "Straightedge vs Ruler"}
+{"timestamp": "2026-01-25T18:19:00.397000Z", "event": "missing_metadata", "repo": "geometry-course", "sim": "templates", "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/templates"}
+{"timestamp": "2026-01-25T18:19:00.397152Z", "event": "metadata_found", "repo": "geometry-course", "sim": "tessellation-explorer", "title": "Tessellation Explorer"}
+{"timestamp": "2026-01-25T18:19:00.397298Z", "event": "metadata_found", "repo": "geometry-course", "sim": "translation-examples", "title": "Translation Examples"}
+{"timestamp": "2026-01-25T18:19:00.397444Z", "event": "metadata_found", "repo": "geometry-course", "sim": "translation-explorer", "title": "Translation Explorer"}
+{"timestamp": "2026-01-25T18:19:00.397590Z", "event": "metadata_found", "repo": "geometry-course", "sim": "transversal-coordinate-analysis", "title": "Transversal Coordinate Analysis"}
+{"timestamp": "2026-01-25T18:19:00.397768Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-area-explorer", "title": "Triangle Area Explorer"}
+{"timestamp": "2026-01-25T18:19:00.397916Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-centers-comparison", "title": "Four Triangle Centers"}
+{"timestamp": "2026-01-25T18:19:00.398062Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-classification-angles", "title": "Triangle Classification by Angles"}
+{"timestamp": "2026-01-25T18:19:00.398206Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-classification-sides", "title": "Triangle Classification by Sides"}
+{"timestamp": "2026-01-25T18:19:00.398349Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-classifier", "title": "Interactive Triangle Classifier"}
+{"timestamp": "2026-01-25T18:19:00.398490Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-congruence", "title": "Triangle Congruence"}
+{"timestamp": "2026-01-25T18:19:00.398633Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-congruence-criteria", "title": "Triangle Congruence Criteria"}
+{"timestamp": "2026-01-25T18:19:00.398780Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-congruence-identifier", "title": "Triangle Congruence Identifier"}
+{"timestamp": "2026-01-25T18:19:00.398921Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-inequality-explorer", "title": "Triangle Inequality Explorer"}
+{"timestamp": "2026-01-25T18:19:00.399063Z", "event": "metadata_found", "repo": "geometry-course", "sim": "triangle-sum-theorem", "title": "Triangle Sum Theorem Proof"}
+{"timestamp": "2026-01-25T18:19:00.399207Z", "event": "metadata_found", "repo": "geometry-course", "sim": "trig-ratios-explorer", "title": "Trigonometric Ratios Explorer"}
+{"timestamp": "2026-01-25T18:19:00.399350Z", "event": "metadata_found", "repo": "geometry-course", "sim": "two-column-proof-builder", "title": "Two-Column Proof Builder"}
+{"timestamp": "2026-01-25T18:19:00.399499Z", "event": "metadata_found", "repo": "geometry-course", "sim": "vertical-angles-explorer", "title": "Vertical Angles Explorer"}
+{"timestamp": "2026-01-25T18:19:00.399640Z", "event": "metadata_found", "repo": "geometry-course", "sim": "word-cloud", "title": "Geometry Word Cloud"}
+{"timestamp": "2026-01-25T18:19:00.399706Z", "event": "missing_metadata", "repo": "geometry-course", "sim": "workflow", "github_url": "https://github.com/dmccreary/geometry-course/tree/main/docs/sims/workflow"}
+{"timestamp": "2026-01-25T18:19:00.400180Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "bfs", "title": "Breadth First Search"}
+{"timestamp": "2026-01-25T18:19:00.400333Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "bfs-vs-dfs", "title": "BFS vs DFS Comparison"}
+{"timestamp": "2026-01-25T18:19:00.400482Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "clustering", "title": "Graph Clustering"}
+{"timestamp": "2026-01-25T18:19:00.400630Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "dag-viewer", "title": "DAG Viewer"}
+{"timestamp": "2026-01-25T18:19:00.400776Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "data-element-match", "title": "Data Element Matcher"}
+{"timestamp": "2026-01-25T18:19:00.400918Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "degree", "title": "Graph Degree"}
+{"timestamp": "2026-01-25T18:19:00.401060Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "degree-v2", "title": "Degree V2"}
+{"timestamp": "2026-01-25T18:19:00.401219Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "force", "title": "Force Directed Graph Layout"}
+{"timestamp": "2026-01-25T18:19:00.401365Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "learning-graph", "title": "Learning Graph"}
+{"timestamp": "2026-01-25T18:19:00.401511Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "legends", "title": "Graph Legends"}
+{"timestamp": "2026-01-25T18:19:00.401653Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "matching", "title": "Graph Matching"}
+{"timestamp": "2026-01-25T18:19:00.401798Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "page-rank", "title": "PageRank"}
+{"timestamp": "2026-01-25T18:19:00.401937Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "shortest-path", "title": "Shortest Path"}
+{"timestamp": "2026-01-25T18:19:00.402078Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "spanning-tree", "title": "Spanning Trees"}
+{"timestamp": "2026-01-25T18:19:00.402221Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "template", "title": "MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.402364Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "traveling-salesperson", "title": "Traveling Salesperson Problem"}
+{"timestamp": "2026-01-25T18:19:00.402505Z", "event": "metadata_found", "repo": "graph-algorithms", "sim": "weighted-graph", "title": "Weighted Graph"}
+{"timestamp": "2026-01-25T18:19:00.403705Z", "event": "missing_metadata", "repo": "graph-data-modeling-course", "sim": "customer-graph", "github_url": "https://github.com/dmccreary/graph-data-modeling-course/tree/main/docs/sims/customer-graph"}
+{"timestamp": "2026-01-25T18:19:00.403904Z", "event": "metadata_found", "repo": "graph-data-modeling-course", "sim": "customer-models", "title": "Customer Entity Types"}
+{"timestamp": "2026-01-25T18:19:00.404086Z", "event": "metadata_found", "repo": "graph-data-modeling-course", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.404297Z", "event": "metadata_found", "repo": "graph-data-modeling-course", "sim": "learning-graph", "title": "Learning Graph for Graph Data Modeling Course"}
+{"timestamp": "2026-01-25T18:19:00.404376Z", "event": "missing_metadata", "repo": "graph-data-modeling-course", "sim": "templates", "github_url": "https://github.com/dmccreary/graph-data-modeling-course/tree/main/docs/sims/templates"}
+{"timestamp": "2026-01-25T18:19:00.404728Z", "event": "metadata_found", "repo": "graph-lms", "sim": "graph-ila", "title": "Graph Integrated Learning Architecture"}
+{"timestamp": "2026-01-25T18:19:00.404802Z", "event": "missing_metadata", "repo": "graph-lms", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/graph-lms/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.404974Z", "event": "metadata_found", "repo": "graph-lms", "sim": "sample-arch", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.405048Z", "event": "missing_metadata", "repo": "graph-lms", "sim": "templates", "github_url": "https://github.com/dmccreary/graph-lms/tree/main/docs/sims/templates"}
+{"timestamp": "2026-01-25T18:19:00.405224Z", "event": "metadata_found", "repo": "graph-lms", "sim": "tla-vis", "title": "Graph TLA via vis.js"}
+{"timestamp": "2026-01-25T18:19:00.405296Z", "event": "missing_metadata", "repo": "graph-lms", "sim": "xapi-demo", "github_url": "https://github.com/dmccreary/graph-lms/tree/main/docs/sims/xapi-demo"}
+{"timestamp": "2026-01-25T18:19:00.406628Z", "event": "missing_metadata", "repo": "intelligent-book-template", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/intelligent-book-template/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.407010Z", "event": "missing_metadata", "repo": "intelligent-book-template", "sim": "name_01", "github_url": "https://github.com/dmccreary/intelligent-book-template/tree/main/docs/sims/name_01"}
+{"timestamp": "2026-01-25T18:19:00.407108Z", "event": "missing_metadata", "repo": "intelligent-book-template", "sim": "name_02", "github_url": "https://github.com/dmccreary/intelligent-book-template/tree/main/docs/sims/name_02"}
+{"timestamp": "2026-01-25T18:19:00.407181Z", "event": "missing_metadata", "repo": "intelligent-book-template", "sim": "name_03", "github_url": "https://github.com/dmccreary/intelligent-book-template/tree/main/docs/sims/name_03"}
+{"timestamp": "2026-01-25T18:19:00.407380Z", "event": "metadata_found", "repo": "intelligent-book-template", "sim": "template", "title": "MicroSim Name in 120 chars or less"}
+{"timestamp": "2026-01-25T18:19:00.408443Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "addie-workflow", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.408623Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "ai-flywheel", "title": "The AI Flywheel"}
+{"timestamp": "2026-01-25T18:19:00.408699Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "ai-pace-accelerating", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/ai-pace-accelerating"}
+{"timestamp": "2026-01-25T18:19:00.408873Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "blooms-taxonomy", "title": "MicroSim Folder index.md Template"}
+{"timestamp": "2026-01-25T18:19:00.409038Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "book-gen-workflow", "title": "Workflow for Generating Intelligent Textbooks"}
+{"timestamp": "2026-01-25T18:19:00.409201Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "book-levels", "title": "Book Levels MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.409414Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "cognitive-load", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.409814Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "high-school-courses", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/high-school-courses"}
+{"timestamp": "2026-01-25T18:19:00.410031Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "implementation-matrix", "title": "Implementation Decision Matrix"}
+{"timestamp": "2026-01-25T18:19:00.410284Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "kemp-model", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.410671Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.411039Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "levels-of-interactivity", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/levels-of-interactivity"}
+{"timestamp": "2026-01-25T18:19:00.411251Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "metr-task-horizon", "title": "METR Task Horizon Growth"}
+{"timestamp": "2026-01-25T18:19:00.411633Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "privacy-threshold-chart", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/privacy-threshold-chart"}
+{"timestamp": "2026-01-25T18:19:00.411849Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "question-color-update", "title": "Question-Based Learning Graph Update"}
+{"timestamp": "2026-01-25T18:19:00.412042Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "sae-comparison", "title": "SAE J3016 vs Intelligent Textbook Levels"}
+{"timestamp": "2026-01-25T18:19:00.412301Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "sam-process", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.412384Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "sine-wave", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/sine-wave"}
+{"timestamp": "2026-01-25T18:19:00.412566Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "standards-ecosystem", "title": "Educational Technology Standards Ecosystem"}
+{"timestamp": "2026-01-25T18:19:00.412737Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "templates", "title": "Workflow for Generating Intelligent Textbooks"}
+{"timestamp": "2026-01-25T18:19:00.412913Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "terms-to-ekg", "title": "Terms to Enterprise Knowledge Graph"}
+{"timestamp": "2026-01-25T18:19:00.413083Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "textbook-ecosystem-cld", "title": "Intelligent Textbook Ecosystem Dynamics"}
+{"timestamp": "2026-01-25T18:19:00.413261Z", "event": "metadata_found", "repo": "intelligent-textbooks", "sim": "three-color-dfs", "title": "Three-Color DFS Cycle Detection"}
+{"timestamp": "2026-01-25T18:19:00.413650Z", "event": "missing_metadata", "repo": "intelligent-textbooks", "sim": "word-cloud", "github_url": "https://github.com/dmccreary/intelligent-textbooks/tree/main/docs/sims/word-cloud"}
+{"timestamp": "2026-01-25T18:19:00.414942Z", "event": "missing_metadata", "repo": "intro-to-graph", "sim": "graph-tutorial-layout", "github_url": "https://github.com/dmccreary/intro-to-graph/tree/main/docs/sims/graph-tutorial-layout"}
+{"timestamp": "2026-01-25T18:19:00.415217Z", "event": "metadata_found", "repo": "intro-to-graph", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.415455Z", "event": "metadata_found", "repo": "intro-to-graph", "sim": "knowledge-triangle", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.415735Z", "event": "metadata_found", "repo": "intro-to-graph", "sim": "minimum-spanning-tree", "title": "Minimum Spanning Tree Algorithm Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.415947Z", "event": "metadata_found", "repo": "intro-to-graph", "sim": "multi-hop-comparison", "title": "Query Performance Comparison: RDBMS vs Graph Database"}
+{"timestamp": "2026-01-25T18:19:00.416125Z", "event": "metadata_found", "repo": "intro-to-graph", "sim": "org-chart", "title": "Organization Chart Visualization"}
+{"timestamp": "2026-01-25T18:19:00.416296Z", "event": "metadata_found", "repo": "intro-to-graph", "sim": "rdbms-vs-graph-performance", "title": "RDBMS vs Graph Database Performance Comparison"}
+{"timestamp": "2026-01-25T18:19:00.418668Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "2d-collision-vectors", "title": "2D Collision Vectors"}
+{"timestamp": "2026-01-25T18:19:00.418876Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "action-reaction", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.419050Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "angled-projectile", "title": "Angled Projectile Motion Explorer"}
+{"timestamp": "2026-01-25T18:19:00.419220Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "angled-tension", "title": "Angled Tension Components"}
+{"timestamp": "2026-01-25T18:19:00.419395Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "angular-displacement", "title": "Angular Displacement Visualization"}
+{"timestamp": "2026-01-25T18:19:00.419562Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "angular-momentum-vector", "title": "Angular Momentum Vector Visualization"}
+{"timestamp": "2026-01-25T18:19:00.419731Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "angular-velocities-chart", "title": "Comparative Angular Velocities Chart"}
+{"timestamp": "2026-01-25T18:19:00.420129Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "atwood-fbd", "title": "Atwood Machine Free-Body Diagram"}
+{"timestamp": "2026-01-25T18:19:00.420304Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "atwood-machine", "title": "Atwood Machine"}
+{"timestamp": "2026-01-25T18:19:00.420469Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "banked-curve-forces", "title": "Banked Curve Force Analysis"}
+{"timestamp": "2026-01-25T18:19:00.420633Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "banked-curve-speed", "title": "Banked Curve Speed Analysis"}
+{"timestamp": "2026-01-25T18:19:00.420878Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "base-and-treble", "title": "Bass and Treble Amplifier Controls"}
+{"timestamp": "2026-01-25T18:19:00.421099Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "branches-of-physics", "title": "Branches of Physics Dependency Graph"}
+{"timestamp": "2026-01-25T18:19:00.421301Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "capacitor-charging-discharging", "title": "Capacitor Charging and Discharging"}
+{"timestamp": "2026-01-25T18:19:00.421525Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "car-on-curve", "title": "Car on Curve MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.421745Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "centripetal-force-viz", "title": "Centripetal Force Visualization"}
+{"timestamp": "2026-01-25T18:19:00.421975Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "charging-induction", "title": "Charging by Induction Simulation"}
+{"timestamp": "2026-01-25T18:19:00.422152Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "collision-types", "title": "Collision Types Comparison MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.422332Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "collisions", "title": "Elastic Collisions"}
+{"timestamp": "2026-01-25T18:19:00.422503Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "coulombs-law", "title": "Coulomb's Law Force Calculator"}
+{"timestamp": "2026-01-25T18:19:00.422671Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "current-animation", "title": "Circuit Current Simulation"}
+{"timestamp": "2026-01-25T18:19:00.422837Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "damping-types", "title": "Types of Damping Comparison"}
+{"timestamp": "2026-01-25T18:19:00.423003Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "dc-motor", "title": "DC Motor Operation"}
+{"timestamp": "2026-01-25T18:19:00.423170Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "distance-displacement", "title": "Distance vs Displacement"}
+{"timestamp": "2026-01-25T18:19:00.423337Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "doppler-effect", "title": "Doppler Effect Simulation"}
+{"timestamp": "2026-01-25T18:19:00.423500Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "driven-oscillator", "title": "Driven Oscillator Interactive MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.423681Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "elasticity", "title": "Elasticity"}
+{"timestamp": "2026-01-25T18:19:00.423852Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "electric-field-lines", "title": "Electric Field Lines Visualization"}
+{"timestamp": "2026-01-25T18:19:00.424022Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "energy-diagram-explorer", "title": "Energy Diagram Explorer"}
+{"timestamp": "2026-01-25T18:19:00.424188Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "energy-efficiency", "title": "Energy Efficiency Comparison"}
+{"timestamp": "2026-01-25T18:19:00.424356Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "equilibrium-workflow", "title": "Equilibrium Classification Workflow"}
+{"timestamp": "2026-01-25T18:19:00.424524Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "exoplanet", "title": "Exoplanet Transit Detection"}
+{"timestamp": "2026-01-25T18:19:00.424690Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "fft-basic", "title": "Basic FFT MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.424856Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "fft-mic", "title": "Microphone Frequency Visualization with FFT"}
+{"timestamp": "2026-01-25T18:19:00.425018Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "figure-skater-spin", "title": "Figure Skater Angular Momentum Conservation"}
+{"timestamp": "2026-01-25T18:19:00.425187Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "fluid-dynamics", "title": "Fluid Dynamics"}
+{"timestamp": "2026-01-25T18:19:00.425352Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "force-time-impulse", "title": "Force vs Time - Impulse Comparison"}
+{"timestamp": "2026-01-25T18:19:00.425517Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "free-body-diagram", "title": "Free-Body Diagram Tutorial"}
+{"timestamp": "2026-01-25T18:19:00.425676Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "free-fall", "title": "Free Fall Motion"}
+{"timestamp": "2026-01-25T18:19:00.425835Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "friction-coefficient-chart", "title": "Friction Coefficient Comparison Chart"}
+{"timestamp": "2026-01-25T18:19:00.426005Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "graph-analysis", "title": "Interactive Graph Analysis MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.426165Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.426256Z", "event": "missing_metadata", "repo": "intro-to-physics-course", "sim": "graph-viewer-v1", "github_url": "https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/graph-viewer-v1"}
+{"timestamp": "2026-01-25T18:19:00.426426Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "gravitational-attractor", "title": "Gravitational Attractor"}
+{"timestamp": "2026-01-25T18:19:00.426591Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "hookes-law-demo", "title": "Hooke's Law Interactive Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.426758Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "horizontal-projection", "title": "Horizontal Projection"}
+{"timestamp": "2026-01-25T18:19:00.426918Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "inclined-plane-forces", "title": "Inclined Plane Force Decomposition"}
+{"timestamp": "2026-01-25T18:19:00.427092Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "inclined-plane-motion", "title": "Inclined Plane Motion"}
+{"timestamp": "2026-01-25T18:19:00.427254Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "inertia-demo", "title": "Inertia Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.427413Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "kinematic-selector", "title": "Kinematic Equation Selector"}
+{"timestamp": "2026-01-25T18:19:00.427575Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "law-of-reflection", "title": "Law of Reflection"}
+{"timestamp": "2026-01-25T18:19:00.427736Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "longitudinal-wave", "title": "Longitudinal Wave Animation"}
+{"timestamp": "2026-01-25T18:19:00.427964Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "metric-scale-zoom", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.428134Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "microscopic-surface-contact", "title": "Microscopic View of Surface Contact"}
+{"timestamp": "2026-01-25T18:19:00.428300Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "momentum-comparison", "title": "Momentum Comparison"}
+{"timestamp": "2026-01-25T18:19:00.428465Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "multistage-rocket", "title": "Multistage Rocket Efficiency"}
+{"timestamp": "2026-01-25T18:19:00.428627Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "newtons-second-law", "title": "Newton's Second Law"}
+{"timestamp": "2026-01-25T18:19:00.428787Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "normal-force-incline", "title": "Normal Force on Inclined Planes"}
+{"timestamp": "2026-01-25T18:19:00.428975Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "ohms-law", "title": "Ohm's Law Interactive Calculator"}
+{"timestamp": "2026-01-25T18:19:00.429139Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "oscillation-applications", "title": "Applications of Oscillations Across Fields"}
+{"timestamp": "2026-01-25T18:19:00.429298Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "pendulum-comparison", "title": "Simple vs. Physical Pendulum Comparison"}
+{"timestamp": "2026-01-25T18:19:00.429462Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "period-frequency-relationship", "title": "Period, Frequency, and Angular Frequency Relationships"}
+{"timestamp": "2026-01-25T18:19:00.429626Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "position-time-analyzer", "title": "Position-Time Graph Analyzer"}
+{"timestamp": "2026-01-25T18:19:00.429789Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "potential-energy-chart", "title": "Potential Energy Comparison Chart"}
+{"timestamp": "2026-01-25T18:19:00.429953Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "precision-accuracy", "title": "Precision vs Accuracy Target Diagram"}
+{"timestamp": "2026-01-25T18:19:00.430162Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "projectile-motion", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.430433Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "projectile-motion-gravity", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.430620Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "pulley-mechanical-advantage", "title": "Pulley Mechanical Advantage"}
+{"timestamp": "2026-01-25T18:19:00.430793Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "relative-velocity", "title": "Relative Velocity"}
+{"timestamp": "2026-01-25T18:19:00.430960Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "resonance-graph", "title": "Resonance Graph"}
+{"timestamp": "2026-01-25T18:19:00.431120Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "river-crossing", "title": "River Crossing"}
+{"timestamp": "2026-01-25T18:19:00.431283Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "rocket-propulsion", "title": "Rocket Propulsion"}
+{"timestamp": "2026-01-25T18:19:00.431446Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "roller-coaster-energy", "title": "Roller Coaster Energy"}
+{"timestamp": "2026-01-25T18:19:00.431616Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "rolling-energy-distribution", "title": "Rolling Energy Distribution"}
+{"timestamp": "2026-01-25T18:19:00.431782Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "rolling-velocity-vectors", "title": "Rolling Velocity Vectors"}
+{"timestamp": "2026-01-25T18:19:00.431954Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "rotational-applications", "title": "Rotational Motion Applications"}
+{"timestamp": "2026-01-25T18:19:00.432121Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "rotational-inertia-race", "title": "Rotational Inertia Race"}
+{"timestamp": "2026-01-25T18:19:00.432286Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "rotational-kinematics-solver", "title": "Rotational Kinematics Solver"}
+{"timestamp": "2026-01-25T18:19:00.432463Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "scientific-method", "title": "Scientific Method Workflow"}
+{"timestamp": "2026-01-25T18:19:00.432998Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "series-parallel", "title": "Series and Parallel Circuits"}
+{"timestamp": "2026-01-25T18:19:00.433199Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "shm-energy", "title": "Simple Harmonic Motion Energy"}
+{"timestamp": "2026-01-25T18:19:00.433376Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "shm-motion-graphs", "title": "SHM Motion Graphs"}
+{"timestamp": "2026-01-25T18:19:00.433598Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "simple-pendulum", "title": "Simple Pendulum Period Investigation"}
+{"timestamp": "2026-01-25T18:19:00.433787Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "sine-wave", "title": "Sine Wave"}
+{"timestamp": "2026-01-25T18:19:00.433959Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "snells-law", "title": "Snell's Law"}
+{"timestamp": "2026-01-25T18:19:00.434126Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "solar-system", "title": "Solar System"}
+{"timestamp": "2026-01-25T18:19:00.434287Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "standing-waves", "title": "Standing Waves"}
+{"timestamp": "2026-01-25T18:19:00.434448Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "static-friction", "title": "Static Friction"}
+{"timestamp": "2026-01-25T18:19:00.434614Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "tacoma-narrows-timeline", "title": "Tacoma Narrows Timeline"}
+{"timestamp": "2026-01-25T18:19:00.434793Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "tension-force-diagram", "title": "Tension Force Diagram"}
+{"timestamp": "2026-01-25T18:19:00.434954Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "three-graph-analyzer", "title": "Three Graph Analyzer"}
+{"timestamp": "2026-01-25T18:19:00.435115Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "tone-gen", "title": "Tone Generator"}
+{"timestamp": "2026-01-25T18:19:00.435272Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "torque-diagram", "title": "Torque Diagram"}
+{"timestamp": "2026-01-25T18:19:00.435428Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "transverse-wave", "title": "Transverse Wave Animation"}
+{"timestamp": "2026-01-25T18:19:00.435587Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "uniform-accelerated-motion", "title": "Uniform Accelerated Motion"}
+{"timestamp": "2026-01-25T18:19:00.435748Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "variable-force-work", "title": "Variable Force Work Calculation"}
+{"timestamp": "2026-01-25T18:19:00.435907Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "vector-addition", "title": "Vector Addition"}
+{"timestamp": "2026-01-25T18:19:00.436064Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "vector-basics", "title": "Vector Basics"}
+{"timestamp": "2026-01-25T18:19:00.436230Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "vector-components", "title": "Vector Components"}
+{"timestamp": "2026-01-25T18:19:00.436389Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "velocity-speed-comparison", "title": "Velocity vs Speed Comparison"}
+{"timestamp": "2026-01-25T18:19:00.436551Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "velocity-time-area", "title": "Velocity-Time Graph Area"}
+{"timestamp": "2026-01-25T18:19:00.436725Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "wave-interference", "title": "Wave Interference"}
+{"timestamp": "2026-01-25T18:19:00.437121Z", "event": "missing_metadata", "repo": "intro-to-physics-course", "sim": "wave-properties", "github_url": "https://github.com/dmccreary/intro-to-physics-course/tree/main/docs/sims/wave-properties"}
+{"timestamp": "2026-01-25T18:19:00.437335Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "weight-gravity", "title": "Weight and Gravity"}
+{"timestamp": "2026-01-25T18:19:00.437514Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "work-energy-theorem", "title": "Work-Energy Theorem"}
+{"timestamp": "2026-01-25T18:19:00.437690Z", "event": "metadata_found", "repo": "intro-to-physics-course", "sim": "work-scenarios", "title": "Work Scenarios"}
+{"timestamp": "2026-01-25T18:19:00.438650Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "deployment-dag", "title": "Deployment Dependencies DAG"}
+{"timestamp": "2026-01-25T18:19:00.438836Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.439010Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "it-asset-hierarchy", "title": "IT Assets Hierarchy - Interactive Infographic"}
+{"timestamp": "2026-01-25T18:19:00.439184Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "it-graph-nodes", "title": "IT Infrastructure Graph Nodes"}
+{"timestamp": "2026-01-25T18:19:00.439622Z", "event": "missing_metadata", "repo": "it-management-graph", "sim": "itil-framework-diagram", "github_url": "https://github.com/dmccreary/it-management-graph/tree/main/docs/sims/itil-framework-diagram"}
+{"timestamp": "2026-01-25T18:19:00.439869Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "p5-infographic-template", "title": "P5.js Funnel Infographic Template"}
+{"timestamp": "2026-01-25T18:19:00.440050Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "show-icons", "title": "IT Icons Gallery"}
+{"timestamp": "2026-01-25T18:19:00.440224Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "skill-impact-chart", "title": "Skill Development Priority Matrix Visualization"}
+{"timestamp": "2026-01-25T18:19:00.440393Z", "event": "metadata_found", "repo": "it-management-graph", "sim": "web-app-architecture", "title": "High-Volume Web Application Architecture"}
+{"timestamp": "2026-01-25T18:19:00.441190Z", "event": "metadata_found", "repo": "lambda-graph-visualization", "sim": "lambda-graph-2-p5", "title": "P5.js Graph Animation of Lambda Process"}
+{"timestamp": "2026-01-25T18:19:00.441377Z", "event": "metadata_found", "repo": "lambda-graph-visualization", "sim": "lambda-graph-2-vis", "title": "Lambda Graph Version 2 in Vis.js"}
+{"timestamp": "2026-01-25T18:19:00.441555Z", "event": "metadata_found", "repo": "lambda-graph-visualization", "sim": "template", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.442502Z", "event": "metadata_found", "repo": "learning-graphs", "sim": "blooms-taxonomy", "title": "MicroSim Folder index.md Template"}
+{"timestamp": "2026-01-25T18:19:00.442693Z", "event": "metadata_found", "repo": "learning-graphs", "sim": "book-build-workflow", "title": "Book Build Workflow"}
+{"timestamp": "2026-01-25T18:19:00.443198Z", "event": "missing_metadata", "repo": "learning-graphs", "sim": "book-gen-workflow", "github_url": "https://github.com/dmccreary/learning-graphs/tree/main/docs/sims/book-gen-workflow"}
+{"timestamp": "2026-01-25T18:19:00.443323Z", "event": "missing_metadata", "repo": "learning-graphs", "sim": "concept-to-content-viewer", "github_url": "https://github.com/dmccreary/learning-graphs/tree/main/docs/sims/concept-to-content-viewer"}
+{"timestamp": "2026-01-25T18:19:00.443513Z", "event": "metadata_found", "repo": "learning-graphs", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.443829Z", "event": "missing_metadata", "repo": "learning-graphs", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/learning-graphs/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.444060Z", "event": "metadata_found", "repo": "learning-graphs", "sim": "learning-is-nonlinear", "title": "Learning is Nonlinear"}
+{"timestamp": "2026-01-25T18:19:00.444245Z", "event": "metadata_found", "repo": "learning-graphs", "sim": "template", "title": "MicroSim Folder index.md Template"}
+{"timestamp": "2026-01-25T18:19:00.445794Z", "event": "metadata_found", "repo": "learning-linux", "sim": "bash-vs-zsh", "title": "Bash vs Zsh Comparison"}
+{"timestamp": "2026-01-25T18:19:00.445978Z", "event": "metadata_found", "repo": "learning-linux", "sim": "command-syntax", "title": "Command Syntax Visual Guide"}
+{"timestamp": "2026-01-25T18:19:00.446156Z", "event": "metadata_found", "repo": "learning-linux", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.446359Z", "event": "metadata_found", "repo": "learning-linux", "sim": "linux-distro-comparison", "title": "Linux Distribution Comparison"}
+{"timestamp": "2026-01-25T18:19:00.446543Z", "event": "metadata_found", "repo": "learning-linux", "sim": "linux-help-flowchart", "title": "Linux Help System Decision Flowchart"}
+{"timestamp": "2026-01-25T18:19:00.446737Z", "event": "metadata_found", "repo": "learning-linux", "sim": "linux-marketshare", "title": "Web Server OS Market Share"}
+{"timestamp": "2026-01-25T18:19:00.446954Z", "event": "metadata_found", "repo": "learning-linux", "sim": "linux-timeline", "title": "Linux Timeline - From Hobby to World Domination"}
+{"timestamp": "2026-01-25T18:19:00.447174Z", "event": "metadata_found", "repo": "learning-linux", "sim": "open-vs-closed", "title": "Open Source vs Proprietary Software"}
+{"timestamp": "2026-01-25T18:19:00.447365Z", "event": "metadata_found", "repo": "learning-linux", "sim": "shell-kernel-flow", "title": "Shell and Kernel Flow"}
+{"timestamp": "2026-01-25T18:19:00.447544Z", "event": "metadata_found", "repo": "learning-linux", "sim": "shell-prompt-anatomy", "title": "Shell Prompt Anatomy"}
+{"timestamp": "2026-01-25T18:19:00.447729Z", "event": "metadata_found", "repo": "learning-linux", "sim": "tab-completion", "title": "Tab Completion Practice"}
+{"timestamp": "2026-01-25T18:19:00.447899Z", "event": "metadata_found", "repo": "learning-linux", "sim": "unix-family-tree", "title": "UNIX Family Tree (1969-2025)"}
+{"timestamp": "2026-01-25T18:19:00.448084Z", "event": "metadata_found", "repo": "learning-linux", "sim": "unix-pipe-diagram", "title": "UNIX Philosophy Pipe Diagram"}
+{"timestamp": "2026-01-25T18:19:00.448250Z", "event": "metadata_found", "repo": "learning-linux", "sim": "vm-timeline", "title": "History of Virtual Machines & Containers"}
+{"timestamp": "2026-01-25T18:19:00.449153Z", "event": "missing_metadata", "repo": "learning-micropython", "sim": "breadboard", "github_url": "https://github.com/dmccreary/learning-micropython/tree/main/docs/sims/breadboard"}
+{"timestamp": "2026-01-25T18:19:00.449237Z", "event": "missing_metadata", "repo": "learning-micropython", "sim": "concept-importance", "github_url": "https://github.com/dmccreary/learning-micropython/tree/main/docs/sims/concept-importance"}
+{"timestamp": "2026-01-25T18:19:00.449307Z", "event": "missing_metadata", "repo": "learning-micropython", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/learning-micropython/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.452138Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "2d-rotation", "title": "2D Rotation Matrix Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.452337Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "activation-functions", "title": "Activation Functions"}
+{"timestamp": "2026-01-25T18:19:00.452513Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "attention-mechanism", "title": "Attention Mechanism Step-by-Step"}
+{"timestamp": "2026-01-25T18:19:00.452696Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "backpropagation", "title": "Backpropagation"}
+{"timestamp": "2026-01-25T18:19:00.452885Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "basis-coordinate-visualizer", "title": "Basis and Coordinate System Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.453062Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "block-matrix", "title": "Block Matrix Partitioning"}
+{"timestamp": "2026-01-25T18:19:00.453248Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "camera-calibration", "title": "Camera Calibration Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.453419Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "camera-model-visualizer", "title": "Camera Model Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.453591Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "change-of-basis", "title": "Change of Basis Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.454013Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "characteristic-polynomial", "title": "Characteristic Polynomial Explorer"}
+{"timestamp": "2026-01-25T18:19:00.454200Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "cofactor-expansion", "title": "Cofactor Expansion Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.454392Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "complex-eigenvalue", "title": "Complex Eigenvalue Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.454561Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "condition-number", "title": "Condition Number Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.454939Z", "event": "missing_metadata", "repo": "linear-algebra", "sim": "convex-function-visualizer", "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/convex-function-visualizer"}
+{"timestamp": "2026-01-25T18:19:00.455158Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "convolution-operation", "title": "Convolution Operation"}
+{"timestamp": "2026-01-25T18:19:00.455337Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "convolution-visualizer", "title": "Convolution Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.455511Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "coordinate-system-3d", "title": "3D Coordinate System Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.455678Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "corner-detection-visualizer", "title": "Corner Detection Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.455848Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "cosine-euclidean-similarity", "title": "Cosine vs Euclidean Similarity"}
+{"timestamp": "2026-01-25T18:19:00.456025Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "covariance-correlation", "title": "Covariance and Correlation Matrix Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.456204Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "cramers-rule", "title": "Cramer's Rule Interactive Solver"}
+{"timestamp": "2026-01-25T18:19:00.456381Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "data-matrix-structure", "title": "Data Matrix Structure Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.456552Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "decomposition-guide", "title": "Matrix Decomposition Selection Guide"}
+{"timestamp": "2026-01-25T18:19:00.456729Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "det-2x2-calculator", "title": "2\u00d72 Determinant Calculator"}
+{"timestamp": "2026-01-25T18:19:00.456902Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "det-properties", "title": "Determinant Properties Explorer"}
+{"timestamp": "2026-01-25T18:19:00.457075Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "diagonalization-workflow", "title": "Diagonalization Process Workflow"}
+{"timestamp": "2026-01-25T18:19:00.457259Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "dot-cross-product-visualizer", "title": "Dot Product and Cross Product Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.457426Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "edge-detection-visualizer", "title": "Edge Detection Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.457598Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "eigenspace-visualization", "title": "Eigenspace Visualization"}
+{"timestamp": "2026-01-25T18:19:00.457772Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "eigenvalue-applications", "title": "Eigenvalue Applications Map"}
+{"timestamp": "2026-01-25T18:19:00.457943Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "eigenvector-transformation", "title": "Eigenvector Transformation Visualization"}
+{"timestamp": "2026-01-25T18:19:00.458507Z", "event": "missing_metadata", "repo": "linear-algebra", "sim": "embedding-space-visualizer", "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/embedding-space-visualizer"}
+{"timestamp": "2026-01-25T18:19:00.458721Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "epipolar-geometry", "title": "Epipolar Geometry Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.458898Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "euler-angles-visualizer", "title": "Euler Angles Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.459070Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "filter-effects-gallery", "title": "Filter Effects Gallery"}
+{"timestamp": "2026-01-25T18:19:00.459253Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "forward-propagation", "title": "Forward Propagation"}
+{"timestamp": "2026-01-25T18:19:00.459434Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "four-subspaces", "title": "Four Fundamental Subspaces Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.459604Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "fourier-transform-visualizer", "title": "Fourier Transform Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.459784Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "gaussian-elimination", "title": "Gaussian Elimination Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.459955Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "gimbal-lock-demo", "title": "Gimbal Lock Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.460144Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "gradient-descent", "title": "Gradient Descent Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.460344Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "gram-schmidt", "title": "Gram-Schmidt Process Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.460539Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "gram-schmidt-ch8", "title": "Gram-Schmidt Step-by-Step Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.460741Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.460927Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "hessian-curvature-visualizer", "title": "Hessian and Curvature Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.461111Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "homogeneous-systems", "title": "Homogeneous System Explorer"}
+{"timestamp": "2026-01-25T18:19:00.461281Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "homography-demo", "title": "Homography Transformation Demo"}
+{"timestamp": "2026-01-25T18:19:00.461448Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "image-matrix-visualizer", "title": "Image Matrix Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.461633Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "inner-product-visualizer", "title": "Inner Product Space Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.461811Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "kalman-filter", "title": "Kalman Filter Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.461997Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "kernel-range", "title": "Kernel and Range Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.462203Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "kkt-conditions-visualizer", "title": "KKT Conditions Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.462748Z", "event": "missing_metadata", "repo": "linear-algebra", "sim": "lagrange-multiplier-geometry", "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/lagrange-multiplier-geometry"}
+{"timestamp": "2026-01-25T18:19:00.462959Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "latent-space-interpolation", "title": "Latent Space Interpolation Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.463183Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "learning-rate-effect", "title": "Learning Rate Effect on Convergence"}
+{"timestamp": "2026-01-25T18:19:00.463390Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "least-squares-visualizer", "title": "Least Squares Problem Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.463587Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "lidar-point-cloud", "title": "LIDAR Point Cloud Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.463773Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "linear-combination-explorer", "title": "Linear Combination Explorer"}
+{"timestamp": "2026-01-25T18:19:00.463974Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "linear-regression", "title": "Linear Regression Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.464156Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "linear-transform-basics", "title": "Linear Transformation Fundamentals Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.464340Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "lora-visualizer", "title": "LoRA Low-Rank Adaptation Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.464531Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "lu-decomposition", "title": "LU Decomposition Algorithm Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.464711Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "matrix-basic-ops", "title": "Matrix Addition and Scalar Multiplication"}
+{"timestamp": "2026-01-25T18:19:00.464892Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "matrix-inverse", "title": "Matrix Inverse Explorer"}
+{"timestamp": "2026-01-25T18:19:00.465077Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "matrix-multiplication", "title": "Matrix Multiplication Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.465253Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "matrix-power-calculator", "title": "Matrix Power Calculator"}
+{"timestamp": "2026-01-25T18:19:00.465433Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "matrix-rank-visualizer", "title": "Matrix Rank Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.465607Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "ml-pipeline", "title": "Machine Learning Pipeline Workflow"}
+{"timestamp": "2026-01-25T18:19:00.465996Z", "event": "missing_metadata", "repo": "linear-algebra", "sim": "momentum-dynamics-visualizer", "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/momentum-dynamics-visualizer"}
+{"timestamp": "2026-01-25T18:19:00.466241Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "multi-head-attention", "title": "Multi-Head Attention Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.466436Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "multiplicity-comparison", "title": "Multiplicity Comparison Chart"}
+{"timestamp": "2026-01-25T18:19:00.466614Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "neural-network-architecture", "title": "Neural Network Architecture"}
+{"timestamp": "2026-01-25T18:19:00.466802Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "neural-network-layer", "title": "Neural Network Layer"}
+{"timestamp": "2026-01-25T18:19:00.466977Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "newton-vs-gradient-descent", "title": "Newton vs Gradient Descent"}
+{"timestamp": "2026-01-25T18:19:00.467157Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "norm-comparison-visualizer", "title": "Norm Comparison Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.467330Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "normalization-comparison", "title": "Normalization Comparison"}
+{"timestamp": "2026-01-25T18:19:00.467512Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "numerical-stability", "title": "Numerical Stability Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.467688Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "object-tracking", "title": "Object Tracking Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.468119Z", "event": "missing_metadata", "repo": "linear-algebra", "sim": "optimizer-comparison-arena", "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/optimizer-comparison-arena"}
+{"timestamp": "2026-01-25T18:19:00.468337Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "orthogonal-projection", "title": "Orthogonal Projection Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.468533Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "orthogonal-transform", "title": "Orthogonal Matrix Transformation"}
+{"timestamp": "2026-01-25T18:19:00.468718Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "orthonormal-basis-finder", "title": "Orthonormal Basis Coordinate Finder"}
+{"timestamp": "2026-01-25T18:19:00.468914Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "path-planning", "title": "Path Planning Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.469101Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "pca-explorer", "title": "PCA Step-by-Step Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.469287Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "perceptron-decision-boundary", "title": "Perceptron Decision Boundary"}
+{"timestamp": "2026-01-25T18:19:00.469464Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "point-cloud-visualizer", "title": "Point Cloud Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.469644Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "positive-definiteness", "title": "Positive Definiteness Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.469820Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "power-iteration", "title": "Power Iteration Algorithm"}
+{"timestamp": "2026-01-25T18:19:00.469996Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "projection-subspace", "title": "Projection onto Subspace Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.470183Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "pseudoinverse-solver", "title": "Pseudoinverse Solver MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.470352Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "quaternion-rotation", "title": "Quaternion Rotation Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.470529Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "ref-vs-rref", "title": "REF vs RREF Comparison"}
+{"timestamp": "2026-01-25T18:19:00.470709Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "regularization-geometry", "title": "Regularization Geometry Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.470884Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "rgb-channel-decomposition", "title": "RGB Channel Decomposition"}
+{"timestamp": "2026-01-25T18:19:00.471056Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "rigid-body-transform", "title": "Rigid Body Transform Chain"}
+{"timestamp": "2026-01-25T18:19:00.471239Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "row-column-vectors", "title": "Row and Column Vectors"}
+{"timestamp": "2026-01-25T18:19:00.471419Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "row-operations", "title": "Row Operations Practice"}
+{"timestamp": "2026-01-25T18:19:00.471602Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "sarrus-rule", "title": "Rule of Sarrus Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.471784Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "scree-plot", "title": "Scree Plot and Component Selection"}
+{"timestamp": "2026-01-25T18:19:00.471978Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "sensor-fusion", "title": "Sensor Fusion Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.472169Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "sgd-trajectory-visualizer", "title": "SGD Trajectory Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.472350Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "signed-area", "title": "Signed Area Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.472633Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "singular-matrix", "title": "Singular vs Non-Singular Matrix Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.472840Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "slam-visualizer", "title": "SLAM Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.473018Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "solution-sets", "title": "Solution Set Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.473211Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "sparse-dense-matrices", "title": "Sparse vs Dense Matrices"}
+{"timestamp": "2026-01-25T18:19:00.473393Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "special-matrices", "title": "Special Matrix Types Gallery"}
+{"timestamp": "2026-01-25T18:19:00.473569Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "spectral-theorem", "title": "Spectral Theorem Demonstration"}
+{"timestamp": "2026-01-25T18:19:00.473754Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "subspace-tester", "title": "Subspace Tester"}
+{"timestamp": "2026-01-25T18:19:00.473933Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "svd-compression-visualizer", "title": "SVD Compression Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.474100Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "svd-forms-comparison", "title": "SVD Forms Comparison"}
+{"timestamp": "2026-01-25T18:19:00.474330Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "svd-geometry", "title": "SVD Geometric Interpretation"}
+{"timestamp": "2026-01-25T18:19:00.474535Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "svd-image-compression", "title": "SVD Image Compression"}
+{"timestamp": "2026-01-25T18:19:00.474718Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "symmetric-matrix", "title": "Symmetric Matrix"}
+{"timestamp": "2026-01-25T18:19:00.474905Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "system-geometry", "title": "System of Equations Geometry"}
+{"timestamp": "2026-01-25T18:19:00.475081Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "tensor-operations", "title": "Tensor Operations"}
+{"timestamp": "2026-01-25T18:19:00.475253Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "trajectory-optimization", "title": "Trajectory Optimization Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.475430Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "transform-composition", "title": "Transformation Composition Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.475608Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "transform-gallery", "title": "Geometric Transformations Interactive Gallery"}
+{"timestamp": "2026-01-25T18:19:00.475772Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "transformer-block", "title": "Transformer Block Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.475937Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "triangulation-visualizer", "title": "Triangulation Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.476117Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "vector-2d-3d-visualizer", "title": "2D and 3D Vector Visualization"}
+{"timestamp": "2026-01-25T18:19:00.476297Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "vector-operations-playground", "title": "Vector Operations Playground"}
+{"timestamp": "2026-01-25T18:19:00.476471Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "vector-space-axiom-explorer", "title": "Vector Space Axiom Explorer"}
+{"timestamp": "2026-01-25T18:19:00.484719Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "vector-space-gallery", "title": "Vector Space Examples Gallery"}
+{"timestamp": "2026-01-25T18:19:00.485080Z", "event": "metadata_found", "repo": "linear-algebra", "sim": "volume-scaling-3d", "title": "3D Volume Scaling Interactive Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.486338Z", "event": "metadata_found", "repo": "mccreary-heritage", "sim": "ancestor-locations", "title": "Ancestor Locations Interactive Map"}
+{"timestamp": "2026-01-25T18:19:00.486590Z", "event": "metadata_found", "repo": "mccreary-heritage", "sim": "book-creation-workflow", "title": "Book Creation Workflow Visualization"}
+{"timestamp": "2026-01-25T18:19:00.487011Z", "event": "missing_metadata", "repo": "mccreary-heritage", "sim": "cumberland-valley", "github_url": "https://github.com/dmccreary/mccreary-heritage/tree/main/docs/sims/cumberland-valley"}
+{"timestamp": "2026-01-25T18:19:00.487389Z", "event": "missing_metadata", "repo": "mccreary-heritage", "sim": "maps", "github_url": "https://github.com/dmccreary/mccreary-heritage/tree/main/docs/sims/maps"}
+{"timestamp": "2026-01-25T18:19:00.487637Z", "event": "metadata_found", "repo": "mccreary-heritage", "sim": "migration", "title": "McCreary Clan Migrations"}
+{"timestamp": "2026-01-25T18:19:00.488101Z", "event": "missing_metadata", "repo": "mccreary-heritage", "sim": "religion", "github_url": "https://github.com/dmccreary/mccreary-heritage/tree/main/docs/sims/religion"}
+{"timestamp": "2026-01-25T18:19:00.488353Z", "event": "metadata_found", "repo": "mccreary-heritage", "sim": "template", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.488731Z", "event": "missing_metadata", "repo": "mccreary-heritage", "sim": "timeline", "github_url": "https://github.com/dmccreary/mccreary-heritage/tree/main/docs/sims/timeline"}
+{"timestamp": "2026-01-25T18:19:00.490819Z", "event": "metadata_found", "repo": "microsims", "sim": "555-timer", "title": "555 Timer"}
+{"timestamp": "2026-01-25T18:19:00.491022Z", "event": "metadata_found", "repo": "microsims", "sim": "a-star", "title": "A* Graph Search Algorithm"}
+{"timestamp": "2026-01-25T18:19:00.491208Z", "event": "metadata_found", "repo": "microsims", "sim": "ac-circuit", "title": "Ac Circuit"}
+{"timestamp": "2026-01-25T18:19:00.491397Z", "event": "metadata_found", "repo": "microsims", "sim": "ai-benchmarks-timeline", "title": "AI Benchmarks Timeline"}
+{"timestamp": "2026-01-25T18:19:00.491586Z", "event": "metadata_found", "repo": "microsims", "sim": "alu", "title": "Arithmetic Logic Unit (ALU)"}
+{"timestamp": "2026-01-25T18:19:00.491771Z", "event": "metadata_found", "repo": "microsims", "sim": "analog-circuit", "title": "Analog Circuit"}
+{"timestamp": "2026-01-25T18:19:00.491952Z", "event": "metadata_found", "repo": "microsims", "sim": "analog-clock", "title": "Analog Clock"}
+{"timestamp": "2026-01-25T18:19:00.492144Z", "event": "metadata_found", "repo": "microsims", "sim": "animated-wire", "title": "Animated Wire"}
+{"timestamp": "2026-01-25T18:19:00.492322Z", "event": "metadata_found", "repo": "microsims", "sim": "background-grid", "title": "Background Grid"}
+{"timestamp": "2026-01-25T18:19:00.492506Z", "event": "metadata_found", "repo": "microsims", "sim": "ball-in-rotating-hexagon", "title": "Bouncing Ball in a Rotating Hexagon"}
+{"timestamp": "2026-01-25T18:19:00.492685Z", "event": "metadata_found", "repo": "microsims", "sim": "bathtub", "title": "Bathtub"}
+{"timestamp": "2026-01-25T18:19:00.492887Z", "event": "metadata_found", "repo": "microsims", "sim": "battery-drain", "title": "Battery Drain"}
+{"timestamp": "2026-01-25T18:19:00.493057Z", "event": "metadata_found", "repo": "microsims", "sim": "battery-life", "title": "Battery Life"}
+{"timestamp": "2026-01-25T18:19:00.493229Z", "event": "metadata_found", "repo": "microsims", "sim": "bee", "title": "Bee"}
+{"timestamp": "2026-01-25T18:19:00.493403Z", "event": "metadata_found", "repo": "microsims", "sim": "bfs", "title": "Bfs"}
+{"timestamp": "2026-01-25T18:19:00.493582Z", "event": "metadata_found", "repo": "microsims", "sim": "bfs-vs-dfs", "title": "Bfs Vs Dfs"}
+{"timestamp": "2026-01-25T18:19:00.493758Z", "event": "metadata_found", "repo": "microsims", "sim": "binary-number", "title": "Binary Number"}
+{"timestamp": "2026-01-25T18:19:00.493934Z", "event": "metadata_found", "repo": "microsims", "sim": "book-gen-workflow", "title": "Book Gen Workflow"}
+{"timestamp": "2026-01-25T18:19:00.494114Z", "event": "metadata_found", "repo": "microsims", "sim": "bouncing-ball", "title": "Bouncing Ball"}
+{"timestamp": "2026-01-25T18:19:00.494286Z", "event": "metadata_found", "repo": "microsims", "sim": "breadboard", "title": "Breadboard"}
+{"timestamp": "2026-01-25T18:19:00.494462Z", "event": "metadata_found", "repo": "microsims", "sim": "brownian-motion", "title": "Brownian Motion"}
+{"timestamp": "2026-01-25T18:19:00.494543Z", "event": "missing_metadata", "repo": "microsims", "sim": "chemistry", "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/chemistry"}
+{"timestamp": "2026-01-25T18:19:00.494715Z", "event": "metadata_found", "repo": "microsims", "sim": "circle", "title": "Circle"}
+{"timestamp": "2026-01-25T18:19:00.494897Z", "event": "metadata_found", "repo": "microsims", "sim": "circuits", "title": "Circuits"}
+{"timestamp": "2026-01-25T18:19:00.495073Z", "event": "metadata_found", "repo": "microsims", "sim": "collision-avoidance-robot", "title": "Collision Avoidance Robot"}
+{"timestamp": "2026-01-25T18:19:00.495239Z", "event": "metadata_found", "repo": "microsims", "sim": "color-names", "title": "Color Names"}
+{"timestamp": "2026-01-25T18:19:00.495436Z", "event": "metadata_found", "repo": "microsims", "sim": "color-wheel", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.495629Z", "event": "metadata_found", "repo": "microsims", "sim": "color-wheel-with-named-colors", "title": "Color Wheel with Named Colors"}
+{"timestamp": "2026-01-25T18:19:00.495814Z", "event": "metadata_found", "repo": "microsims", "sim": "conway-game-of-life", "title": "Conway's Game of Life"}
+{"timestamp": "2026-01-25T18:19:00.495987Z", "event": "metadata_found", "repo": "microsims", "sim": "conway-old", "title": "Conway"}
+{"timestamp": "2026-01-25T18:19:00.496176Z", "event": "metadata_found", "repo": "microsims", "sim": "css-box-model", "title": "CSS Box Model"}
+{"timestamp": "2026-01-25T18:19:00.496355Z", "event": "metadata_found", "repo": "microsims", "sim": "curve", "title": "Curve"}
+{"timestamp": "2026-01-25T18:19:00.496533Z", "event": "metadata_found", "repo": "microsims", "sim": "data-element-mapper", "title": "Data Element Mapper"}
+{"timestamp": "2026-01-25T18:19:00.496701Z", "event": "metadata_found", "repo": "microsims", "sim": "fft-butterfly", "title": "Fft Butterfly"}
+{"timestamp": "2026-01-25T18:19:00.496877Z", "event": "metadata_found", "repo": "microsims", "sim": "fft-mic", "title": "Microphone Frequency Visualization with FFT"}
+{"timestamp": "2026-01-25T18:19:00.497059Z", "event": "metadata_found", "repo": "microsims", "sim": "fft-mic-v2", "title": "Fft Mic V2"}
+{"timestamp": "2026-01-25T18:19:00.497139Z", "event": "missing_metadata", "repo": "microsims", "sim": "fft-simple", "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/fft-simple"}
+{"timestamp": "2026-01-25T18:19:00.497314Z", "event": "metadata_found", "repo": "microsims", "sim": "fibonacci-clock", "title": "Fibonacci Clock"}
+{"timestamp": "2026-01-25T18:19:00.497486Z", "event": "metadata_found", "repo": "microsims", "sim": "flashcards", "title": "Flashcards"}
+{"timestamp": "2026-01-25T18:19:00.497704Z", "event": "metadata_found", "repo": "microsims", "sim": "flex-layout-playground", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.497883Z", "event": "metadata_found", "repo": "microsims", "sim": "flower-petal", "title": "Flower Petal Designer"}
+{"timestamp": "2026-01-25T18:19:00.498062Z", "event": "metadata_found", "repo": "microsims", "sim": "force-directed-graph", "title": "Force Directed Graph"}
+{"timestamp": "2026-01-25T18:19:00.498273Z", "event": "metadata_found", "repo": "microsims", "sim": "fourier", "title": "Fourier"}
+{"timestamp": "2026-01-25T18:19:00.498463Z", "event": "metadata_found", "repo": "microsims", "sim": "fractal-tree", "title": "Fractal Tree"}
+{"timestamp": "2026-01-25T18:19:00.498645Z", "event": "metadata_found", "repo": "microsims", "sim": "galton-board", "title": "Galton Board"}
+{"timestamp": "2026-01-25T18:19:00.498960Z", "event": "metadata_found", "repo": "microsims", "sim": "global-impact", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.499191Z", "event": "metadata_found", "repo": "microsims", "sim": "gold-star", "title": "Gold Star"}
+{"timestamp": "2026-01-25T18:19:00.499390Z", "event": "metadata_found", "repo": "microsims", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.499575Z", "event": "metadata_found", "repo": "microsims", "sim": "h-bridge", "title": "H Bridge"}
+{"timestamp": "2026-01-25T18:19:00.499769Z", "event": "metadata_found", "repo": "microsims", "sim": "icons", "title": "Icons Demo"}
+{"timestamp": "2026-01-25T18:19:00.500089Z", "event": "metadata_found", "repo": "microsims", "sim": "koch", "title": "Koch Curve Fractal"}
+{"timestamp": "2026-01-25T18:19:00.500280Z", "event": "metadata_found", "repo": "microsims", "sim": "lady-bug-walk", "title": "Lady Bug Walk"}
+{"timestamp": "2026-01-25T18:19:00.500463Z", "event": "metadata_found", "repo": "microsims", "sim": "larson-scanner", "title": "Larson Scanner"}
+{"timestamp": "2026-01-25T18:19:00.500739Z", "event": "metadata_found", "repo": "microsims", "sim": "learning-graph", "title": "Learning Graph"}
+{"timestamp": "2026-01-25T18:19:00.501011Z", "event": "metadata_found", "repo": "microsims", "sim": "learning-graph-v1", "title": "Learning Graph V1"}
+{"timestamp": "2026-01-25T18:19:00.501119Z", "event": "missing_metadata", "repo": "microsims", "sim": "learning-modality-effectiveness", "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/learning-modality-effectiveness"}
+{"timestamp": "2026-01-25T18:19:00.501316Z", "event": "metadata_found", "repo": "microsims", "sim": "least-squares", "title": "Least Squares"}
+{"timestamp": "2026-01-25T18:19:00.501507Z", "event": "metadata_found", "repo": "microsims", "sim": "lissajous-figures", "title": "Lissajous Figures"}
+{"timestamp": "2026-01-25T18:19:00.501697Z", "event": "metadata_found", "repo": "microsims", "sim": "logic-gates", "title": "Logic Gates"}
+{"timestamp": "2026-01-25T18:19:00.501896Z", "event": "metadata_found", "repo": "microsims", "sim": "maze-gen", "title": "Maze Gen"}
+{"timestamp": "2026-01-25T18:19:00.502088Z", "event": "metadata_found", "repo": "microsims", "sim": "maze-solver", "title": "Maze Solver"}
+{"timestamp": "2026-01-25T18:19:00.502278Z", "event": "metadata_found", "repo": "microsims", "sim": "microsim-creation-workflow", "title": "AI-Assisted MicroSim Creation Workflow"}
+{"timestamp": "2026-01-25T18:19:00.502468Z", "event": "metadata_found", "repo": "microsims", "sim": "microsim-growth", "title": "MicroSim Growth Network Effect"}
+{"timestamp": "2026-01-25T18:19:00.502678Z", "event": "metadata_found", "repo": "microsims", "sim": "microsim-layout", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.502883Z", "event": "metadata_found", "repo": "microsims", "sim": "microsim-library-ecosystem", "title": "MicroSim Library Ecosystem"}
+{"timestamp": "2026-01-25T18:19:00.503071Z", "event": "metadata_found", "repo": "microsims", "sim": "microsim-uniqueness", "title": "MicroSim Uniqueness Interactive Venn Diagram"}
+{"timestamp": "2026-01-25T18:19:00.503260Z", "event": "metadata_found", "repo": "microsims", "sim": "mobile-buttons", "title": "Mobile Buttons"}
+{"timestamp": "2026-01-25T18:19:00.503439Z", "event": "metadata_found", "repo": "microsims", "sim": "motor", "title": "Motor"}
+{"timestamp": "2026-01-25T18:19:00.503622Z", "event": "metadata_found", "repo": "microsims", "sim": "named-colors", "title": "Named Colors"}
+{"timestamp": "2026-01-25T18:19:00.503798Z", "event": "metadata_found", "repo": "microsims", "sim": "neopixel", "title": "Neopixel"}
+{"timestamp": "2026-01-25T18:19:00.503985Z", "event": "metadata_found", "repo": "microsims", "sim": "neural-network", "title": "Neural Network Structure"}
+{"timestamp": "2026-01-25T18:19:00.504168Z", "event": "metadata_found", "repo": "microsims", "sim": "ooda", "title": "OODA Loop"}
+{"timestamp": "2026-01-25T18:19:00.504347Z", "event": "metadata_found", "repo": "microsims", "sim": "p5-animation-loop", "title": "p5.js Animation Loop Cycle"}
+{"timestamp": "2026-01-25T18:19:00.504536Z", "event": "metadata_found", "repo": "microsims", "sim": "p5-coordinate-system", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.504720Z", "event": "metadata_found", "repo": "microsims", "sim": "p5-timeline", "title": "History of p5.js and Creative Coding"}
+{"timestamp": "2026-01-25T18:19:00.504910Z", "event": "metadata_found", "repo": "microsims", "sim": "particle-fields", "title": "Particle Fields"}
+{"timestamp": "2026-01-25T18:19:00.505081Z", "event": "metadata_found", "repo": "microsims", "sim": "pendulum", "title": "Pendulum"}
+{"timestamp": "2026-01-25T18:19:00.505281Z", "event": "metadata_found", "repo": "microsims", "sim": "polygon", "title": "Polygon"}
+{"timestamp": "2026-01-25T18:19:00.505452Z", "event": "metadata_found", "repo": "microsims", "sim": "prisoners-dilemma", "title": "Prisoners Dilemma"}
+{"timestamp": "2026-01-25T18:19:00.505626Z", "event": "metadata_found", "repo": "microsims", "sim": "profit-maximum", "title": "Profit Maximum"}
+{"timestamp": "2026-01-25T18:19:00.505802Z", "event": "metadata_found", "repo": "microsims", "sim": "projectile-motion", "title": "Projectile Motion"}
+{"timestamp": "2026-01-25T18:19:00.505977Z", "event": "metadata_found", "repo": "microsims", "sim": "projectile-motion-gravity", "title": "Projectile Motion with Gravity"}
+{"timestamp": "2026-01-25T18:19:00.506159Z", "event": "metadata_found", "repo": "microsims", "sim": "projecting-ai", "title": "Projecting AI Task Completion to 2030"}
+{"timestamp": "2026-01-25T18:19:00.506333Z", "event": "metadata_found", "repo": "microsims", "sim": "pwm", "title": "Pwm"}
+{"timestamp": "2026-01-25T18:19:00.506502Z", "event": "metadata_found", "repo": "microsims", "sim": "pythagorean-theorem", "title": "Pythagorean Theorem MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.506677Z", "event": "metadata_found", "repo": "microsims", "sim": "rabbits-and-foxes", "title": "Rabbits And Foxes"}
+{"timestamp": "2026-01-25T18:19:00.506882Z", "event": "metadata_found", "repo": "microsims", "sim": "rainbow-color-picker", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.507051Z", "event": "metadata_found", "repo": "microsims", "sim": "recursion-tree", "title": "Recursion Tree"}
+{"timestamp": "2026-01-25T18:19:00.507219Z", "event": "metadata_found", "repo": "microsims", "sim": "resize-in-iframe", "title": "Resize In Iframe"}
+{"timestamp": "2026-01-25T18:19:00.507384Z", "event": "metadata_found", "repo": "microsims", "sim": "resize-test", "title": "Resize Test"}
+{"timestamp": "2026-01-25T18:19:00.507548Z", "event": "metadata_found", "repo": "microsims", "sim": "responsive-design", "title": "Responsive Design"}
+{"timestamp": "2026-01-25T18:19:00.507712Z", "event": "metadata_found", "repo": "microsims", "sim": "revenue-maximum", "title": "Revenue Maximum"}
+{"timestamp": "2026-01-25T18:19:00.507882Z", "event": "metadata_found", "repo": "microsims", "sim": "robots", "title": "Robots"}
+{"timestamp": "2026-01-25T18:19:00.508042Z", "event": "metadata_found", "repo": "microsims", "sim": "rotating-gears", "title": "Rotating Gears"}
+{"timestamp": "2026-01-25T18:19:00.508205Z", "event": "metadata_found", "repo": "microsims", "sim": "seven-segment-display", "title": "7-Segment Display"}
+{"timestamp": "2026-01-25T18:19:00.508364Z", "event": "metadata_found", "repo": "microsims", "sim": "sierpinski", "title": "Sierpinski"}
+{"timestamp": "2026-01-25T18:19:00.508524Z", "event": "metadata_found", "repo": "microsims", "sim": "simple-tree", "title": "Simple Tree"}
+{"timestamp": "2026-01-25T18:19:00.508678Z", "event": "metadata_found", "repo": "microsims", "sim": "sine-and-cosine", "title": "Sine And Cosine"}
+{"timestamp": "2026-01-25T18:19:00.508849Z", "event": "metadata_found", "repo": "microsims", "sim": "sine-wave", "title": "Sine Wave"}
+{"timestamp": "2026-01-25T18:19:00.508994Z", "event": "metadata_found", "repo": "microsims", "sim": "slope-and-intercept", "title": "Slope And Intercept"}
+{"timestamp": "2026-01-25T18:19:00.509154Z", "event": "metadata_found", "repo": "microsims", "sim": "snake", "title": "Snake"}
+{"timestamp": "2026-01-25T18:19:00.509304Z", "event": "metadata_found", "repo": "microsims", "sim": "solar-battery", "title": "Solar Battery"}
+{"timestamp": "2026-01-25T18:19:00.509457Z", "event": "metadata_found", "repo": "microsims", "sim": "solar-cell", "title": "Solar Cell"}
+{"timestamp": "2026-01-25T18:19:00.509611Z", "event": "metadata_found", "repo": "microsims", "sim": "sphere", "title": "Sphere"}
+{"timestamp": "2026-01-25T18:19:00.509798Z", "event": "metadata_found", "repo": "microsims", "sim": "spinning-3d-shapes", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.509947Z", "event": "metadata_found", "repo": "microsims", "sim": "star-rating", "title": "Star Rating"}
+{"timestamp": "2026-01-25T18:19:00.510099Z", "event": "metadata_found", "repo": "microsims", "sim": "string-harmonics", "title": "String Harmonics"}
+{"timestamp": "2026-01-25T18:19:00.510248Z", "event": "metadata_found", "repo": "microsims", "sim": "supply-and-demand", "title": "Supply And Demand"}
+{"timestamp": "2026-01-25T18:19:00.510465Z", "event": "metadata_found", "repo": "microsims", "sim": "temp-and-pressure", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.510636Z", "event": "metadata_found", "repo": "microsims", "sim": "template", "title": "Title"}
+{"timestamp": "2026-01-25T18:19:00.510811Z", "event": "metadata_found", "repo": "microsims", "sim": "terms-to-ekg", "title": "Terms to Enterprise Knowledge Graph"}
+{"timestamp": "2026-01-25T18:19:00.510885Z", "event": "missing_metadata", "repo": "microsims", "sim": "three-web-languages", "github_url": "https://github.com/dmccreary/microsims/tree/main/docs/sims/three-web-languages"}
+{"timestamp": "2026-01-25T18:19:00.511102Z", "event": "metadata_found", "repo": "microsims", "sim": "triangle-types", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.511261Z", "event": "metadata_found", "repo": "microsims", "sim": "us-state-quality-map", "title": "US State Quality of Life Index Map"}
+{"timestamp": "2026-01-25T18:19:00.511420Z", "event": "metadata_found", "repo": "microsims", "sim": "virus", "title": "Virus Spread Simulation"}
+{"timestamp": "2026-01-25T18:19:00.511577Z", "event": "metadata_found", "repo": "microsims", "sim": "wave-sums", "title": "Wave Sums and Fourier Synthesis"}
+{"timestamp": "2026-01-25T18:19:00.511729Z", "event": "metadata_found", "repo": "microsims", "sim": "yin-yang", "title": "Yin Yang"}
+{"timestamp": "2026-01-25T18:19:00.513055Z", "event": "metadata_found", "repo": "modeling-healthcare-data", "sim": "ai-ml-taxonomy", "title": "AI and ML Taxonomy in Healthcare"}
+{"timestamp": "2026-01-25T18:19:00.513250Z", "event": "metadata_found", "repo": "modeling-healthcare-data", "sim": "clinical-care-pathway-dag", "title": "Clinical Care Pathway DAG"}
+{"timestamp": "2026-01-25T18:19:00.513565Z", "event": "missing_metadata", "repo": "modeling-healthcare-data", "sim": "codes", "github_url": "https://github.com/dmccreary/modeling-healthcare-data/tree/main/docs/sims/codes"}
+{"timestamp": "2026-01-25T18:19:00.513788Z", "event": "metadata_found", "repo": "modeling-healthcare-data", "sim": "encounter-workflow", "title": "Patient Encounter Workflow"}
+{"timestamp": "2026-01-25T18:19:00.513971Z", "event": "metadata_found", "repo": "modeling-healthcare-data", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.514051Z", "event": "missing_metadata", "repo": "modeling-healthcare-data", "sim": "healthcare-graph-fundamentals", "github_url": "https://github.com/dmccreary/modeling-healthcare-data/tree/main/docs/sims/healthcare-graph-fundamentals"}
+{"timestamp": "2026-01-25T18:19:00.514232Z", "event": "metadata_found", "repo": "modeling-healthcare-data", "sim": "query-performance-comparison", "title": "Query Performance Comparison: RDBMS vs Graph Database"}
+{"timestamp": "2026-01-25T18:19:00.514543Z", "event": "missing_metadata", "repo": "modeling-healthcare-data", "sim": "view-hc-icons", "github_url": "https://github.com/dmccreary/modeling-healthcare-data/tree/main/docs/sims/view-hc-icons"}
+{"timestamp": "2026-01-25T18:19:00.514763Z", "event": "metadata_found", "repo": "modeling-healthcare-data", "sim": "yin-yang-llm-kg", "title": "Yin-Yang: LLM vs Knowledge Graph"}
+{"timestamp": "2026-01-25T18:19:00.515199Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "animated-wire", "title": "MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.515404Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "battery-life-calculator", "title": "Battery Life Calculator for LED Noodle Costumes"}
+{"timestamp": "2026-01-25T18:19:00.515569Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "claude-code-hooks-workflow", "title": "Claude Code Hooks Workflow"}
+{"timestamp": "2026-01-25T18:19:00.515730Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "color-wheel", "title": "Color Wheel MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.516088Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "current-predictor", "title": "LED Current Predictor"}
+{"timestamp": "2026-01-25T18:19:00.516166Z", "event": "missing_metadata", "repo": "moving-rainbow", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/moving-rainbow/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.516330Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "led-dimmer", "title": "LED Dimmer Circuit"}
+{"timestamp": "2026-01-25T18:19:00.516488Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "nightlight", "title": "LED Nightlight Circuit"}
+{"timestamp": "2026-01-25T18:19:00.516640Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "photoresistor-component", "title": "Photoresistor Component Visualization"}
+{"timestamp": "2026-01-25T18:19:00.516789Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "pico-light-sensor", "title": "Pico Light Sensor Circuit"}
+{"timestamp": "2026-01-25T18:19:00.516863Z", "event": "missing_metadata", "repo": "moving-rainbow", "sim": "solar-powered-nightlight", "github_url": "https://github.com/dmccreary/moving-rainbow/tree/main/docs/sims/solar-powered-nightlight"}
+{"timestamp": "2026-01-25T18:19:00.517010Z", "event": "metadata_found", "repo": "moving-rainbow", "sim": "templates", "title": "Title of this MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.517662Z", "event": "metadata_found", "repo": "native-american-crime-novels", "sim": "book-sales", "title": "Tony Hillerman Book Sales"}
+{"timestamp": "2026-01-25T18:19:00.517843Z", "event": "metadata_found", "repo": "native-american-crime-novels", "sim": "concept-graph", "title": "Native American Crime Concept Graph"}
+{"timestamp": "2026-01-25T18:19:00.518016Z", "event": "metadata_found", "repo": "native-american-crime-novels", "sim": "timeline", "title": "Tony Hillerman Timeline"}
+{"timestamp": "2026-01-25T18:19:00.519251Z", "event": "metadata_found", "repo": "personal-finance", "sim": "account-reconciliation", "title": "Interactive Account Reconciliation Process"}
+{"timestamp": "2026-01-25T18:19:00.519436Z", "event": "metadata_found", "repo": "personal-finance", "sim": "active-vs-indexed", "title": "Active vs Indexed Fund Comparison"}
+{"timestamp": "2026-01-25T18:19:00.519615Z", "event": "metadata_found", "repo": "personal-finance", "sim": "auto-loan-payback", "title": "Auto Loan Payback Calculator"}
+{"timestamp": "2026-01-25T18:19:00.519784Z", "event": "metadata_found", "repo": "personal-finance", "sim": "banking-fees-impact", "title": "Banking Fees Impact Chart"}
+{"timestamp": "2026-01-25T18:19:00.519948Z", "event": "metadata_found", "repo": "personal-finance", "sim": "college-loan-payback", "title": "College Loan Payback Calculator"}
+{"timestamp": "2026-01-25T18:19:00.520112Z", "event": "metadata_found", "repo": "personal-finance", "sim": "compound-interest-visualizer", "title": "Compound Interest Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.520487Z", "event": "missing_metadata", "repo": "personal-finance", "sim": "convolution", "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/convolution"}
+{"timestamp": "2026-01-25T18:19:00.520693Z", "event": "metadata_found", "repo": "personal-finance", "sim": "fico-score-spectrum", "title": "FICO Credit Score Spectrum"}
+{"timestamp": "2026-01-25T18:19:00.520875Z", "event": "metadata_found", "repo": "personal-finance", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.521076Z", "event": "metadata_found", "repo": "personal-finance", "sim": "inflation-rate", "title": "Annual US Inflation Rate"}
+{"timestamp": "2026-01-25T18:19:00.521247Z", "event": "metadata_found", "repo": "personal-finance", "sim": "interest-rate", "title": "Annual US Interest Rate for Prior 30 Years"}
+{"timestamp": "2026-01-25T18:19:00.521639Z", "event": "missing_metadata", "repo": "personal-finance", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/personal-finance/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.521891Z", "event": "metadata_found", "repo": "personal-finance", "sim": "needs-and-wants", "title": "Needs vs Wants Categorization Game"}
+{"timestamp": "2026-01-25T18:19:00.522095Z", "event": "metadata_found", "repo": "personal-finance", "sim": "social-security-crossover", "title": "Social Security Benefits Calculator"}
+{"timestamp": "2026-01-25T18:19:00.522369Z", "event": "metadata_found", "repo": "personal-finance", "sim": "stock-market-returns", "title": "Historical Stock Market Returns"}
+{"timestamp": "2026-01-25T18:19:00.522567Z", "event": "metadata_found", "repo": "personal-finance", "sim": "t-bills", "title": "US Treasury Bills Yield"}
+{"timestamp": "2026-01-25T18:19:00.522739Z", "event": "metadata_found", "repo": "personal-finance", "sim": "templates", "title": "Personal Finance MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.522910Z", "event": "metadata_found", "repo": "personal-finance", "sim": "yield-curve", "title": "US Treasury Yield Curve Spread Chart"}
+{"timestamp": "2026-01-25T18:19:00.523427Z", "event": "missing_metadata", "repo": "prompt-class", "sim": "bouncing-ball", "github_url": "https://github.com/dmccreary/prompt-class/tree/main/docs/sims/bouncing-ball"}
+{"timestamp": "2026-01-25T18:19:00.524379Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "animation-lib-tester", "title": "Animation Library Tester"}
+{"timestamp": "2026-01-25T18:19:00.524578Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "celebration-animation-tester", "title": "Celebration Animation Tester"}
+{"timestamp": "2026-01-25T18:19:00.524763Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "consonant-sound-match", "title": "Consonant Sound Match"}
+{"timestamp": "2026-01-25T18:19:00.524945Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "cvc-word-builder", "title": "CVC Word Builder"}
+{"timestamp": "2026-01-25T18:19:00.525120Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "first-sound-finder", "title": "First Sound Finder"}
+{"timestamp": "2026-01-25T18:19:00.525292Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.525474Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "letter-hunt", "title": "Letter Hunt"}
+{"timestamp": "2026-01-25T18:19:00.525657Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "letter-matching-game", "title": "Letter Matching Game"}
+{"timestamp": "2026-01-25T18:19:00.525836Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "letter-motion-maker", "title": "Letter Motion Maker"}
+{"timestamp": "2026-01-25T18:19:00.526012Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "letter-sound-keyboard", "title": "Letter Sound Keyboard"}
+{"timestamp": "2026-01-25T18:19:00.526182Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "letter-tracing", "title": "Letter Tracing"}
+{"timestamp": "2026-01-25T18:19:00.526354Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "nonsense-word-generator", "title": "Nonsense Word Generator"}
+{"timestamp": "2026-01-25T18:19:00.526529Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "reading-progress-path", "title": "Reading Progress Path"}
+{"timestamp": "2026-01-25T18:19:00.526706Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "rhyme-time", "title": "Rhyme Time"}
+{"timestamp": "2026-01-25T18:19:00.527451Z", "event": "missing_metadata", "repo": "reading-for-kindergarten", "sim": "shared", "github_url": "https://github.com/dmccreary/reading-for-kindergarten/tree/main/docs/sims/shared"}
+{"timestamp": "2026-01-25T18:19:00.527667Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "sight-word-bingo", "title": "Sight Word Bingo"}
+{"timestamp": "2026-01-25T18:19:00.527855Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "sight-word-flashcards", "title": "Sight Word Flashcards"}
+{"timestamp": "2026-01-25T18:19:00.528036Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "sight-word-memory", "title": "Sight Word Memory"}
+{"timestamp": "2026-01-25T18:19:00.528213Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "sound-counter", "title": "Sound Counter"}
+{"timestamp": "2026-01-25T18:19:00.528388Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "sound-slider", "title": "Sound Slider"}
+{"timestamp": "2026-01-25T18:19:00.528565Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "sound-to-letter-match", "title": "Sound-to-Letter Match"}
+{"timestamp": "2026-01-25T18:19:00.528737Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "talking-letters", "title": "Talking Letters"}
+{"timestamp": "2026-01-25T18:19:00.528973Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "vc-word-blender", "title": "VC Word Blender"}
+{"timestamp": "2026-01-25T18:19:00.529189Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "vowel-sound-explorer", "title": "Vowel Sound Explorer"}
+{"timestamp": "2026-01-25T18:19:00.529372Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "word-counter", "title": "Word Counter"}
+{"timestamp": "2026-01-25T18:19:00.529551Z", "event": "metadata_found", "repo": "reading-for-kindergarten", "sim": "word-machine", "title": "Word Machine"}
+{"timestamp": "2026-01-25T18:19:00.530043Z", "event": "metadata_found", "repo": "search-microsims", "sim": "difficulty-progression", "title": "Difficulty Level Progression"}
+{"timestamp": "2026-01-25T18:19:00.530221Z", "event": "metadata_found", "repo": "search-microsims", "sim": "dublin-core-elements", "title": "Dublin Core Elements"}
+{"timestamp": "2026-01-25T18:19:00.530394Z", "event": "metadata_found", "repo": "search-microsims", "sim": "faceted-classification", "title": "Faceted Classification"}
+{"timestamp": "2026-01-25T18:19:00.530474Z", "event": "missing_metadata", "repo": "search-microsims", "sim": "graph-viewer", "github_url": "https://github.com/dmccreary/search-microsims/tree/main/docs/sims/graph-viewer"}
+{"timestamp": "2026-01-25T18:19:00.530648Z", "event": "metadata_found", "repo": "search-microsims", "sim": "html-architecture", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.530821Z", "event": "metadata_found", "repo": "search-microsims", "sim": "interaction-feedback-loop", "title": "Interaction Feedback Loop"}
+{"timestamp": "2026-01-25T18:19:00.530993Z", "event": "metadata_found", "repo": "search-microsims", "sim": "keyword-search-flow", "title": "Keywords to Search Results Flow"}
+{"timestamp": "2026-01-25T18:19:00.531071Z", "event": "missing_metadata", "repo": "search-microsims", "sim": "keyword-search-flow-v1-concept", "github_url": "https://github.com/dmccreary/search-microsims/tree/main/docs/sims/keyword-search-flow-v1-concept"}
+{"timestamp": "2026-01-25T18:19:00.531142Z", "event": "missing_metadata", "repo": "search-microsims", "sim": "list-similar-microsim", "github_url": "https://github.com/dmccreary/search-microsims/tree/main/docs/sims/list-similar-microsim"}
+{"timestamp": "2026-01-25T18:19:00.531313Z", "event": "metadata_found", "repo": "search-microsims", "sim": "metadata-schema", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.531509Z", "event": "metadata_found", "repo": "search-microsims", "sim": "microsim-directory-structure", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.531720Z", "event": "metadata_found", "repo": "search-microsims", "sim": "microsim-search-workflow", "title": "MicroSim Search Workflow"}
+{"timestamp": "2026-01-25T18:19:00.531935Z", "event": "metadata_found", "repo": "search-microsims", "sim": "microsim-web-architecture", "title": "MicroSim Web Architecture"}
+{"timestamp": "2026-01-25T18:19:00.532111Z", "event": "metadata_found", "repo": "search-microsims", "sim": "pca-map", "title": "MicroSim PCA Map"}
+{"timestamp": "2026-01-25T18:19:00.532290Z", "event": "metadata_found", "repo": "search-microsims", "sim": "search-workflow", "title": "Unknown"}
+{"timestamp": "2026-01-25T18:19:00.533152Z", "event": "missing_metadata", "repo": "semiconductor-physics-course", "sim": "pn-junction", "github_url": "https://github.com/dmccreary/semiconductor-physics-course/tree/main/docs/sims/pn-junction"}
+{"timestamp": "2026-01-25T18:19:00.533914Z", "event": "metadata_found", "repo": "signal-processing", "sim": "ai-pace-accelerating", "title": "The Accelerating Pace of AI"}
+{"timestamp": "2026-01-25T18:19:00.533988Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "analog-mod", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/analog-mod"}
+{"timestamp": "2026-01-25T18:19:00.534146Z", "event": "metadata_found", "repo": "signal-processing", "sim": "base-and-treble", "title": "Bass and Treble Amplifier Controls"}
+{"timestamp": "2026-01-25T18:19:00.534300Z", "event": "metadata_found", "repo": "signal-processing", "sim": "blooms-taxonomy", "title": "Bloom's Taxonomy"}
+{"timestamp": "2026-01-25T18:19:00.534454Z", "event": "metadata_found", "repo": "signal-processing", "sim": "book-gen-workflow", "title": "Book Build Workflow"}
+{"timestamp": "2026-01-25T18:19:00.534609Z", "event": "metadata_found", "repo": "signal-processing", "sim": "book-levels", "title": "Book Levels MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.534759Z", "event": "metadata_found", "repo": "signal-processing", "sim": "citation-graph", "title": "Citation Graph for FFT on Microcontrollers"}
+{"timestamp": "2026-01-25T18:19:00.534919Z", "event": "metadata_found", "repo": "signal-processing", "sim": "complex-plane", "title": "Complex Plane"}
+{"timestamp": "2026-01-25T18:19:00.535071Z", "event": "metadata_found", "repo": "signal-processing", "sim": "convolution", "title": "Convolution"}
+{"timestamp": "2026-01-25T18:19:00.535223Z", "event": "metadata_found", "repo": "signal-processing", "sim": "euler-formula-explorer", "title": "Euler's Formula Explorer"}
+{"timestamp": "2026-01-25T18:19:00.535290Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "fft-2-osc", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/fft-2-osc"}
+{"timestamp": "2026-01-25T18:19:00.535444Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-3-osc", "title": "FFT Three Oscillators"}
+{"timestamp": "2026-01-25T18:19:00.535591Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-basic", "title": "Basic FFT MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.535736Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-butterfly", "title": "FFT Butterfly"}
+{"timestamp": "2026-01-25T18:19:00.535882Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-live-audio", "title": "FFT Live Audio from Microphone"}
+{"timestamp": "2026-01-25T18:19:00.536026Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-mic", "title": "Microphone Frequency Visualization with FFT"}
+{"timestamp": "2026-01-25T18:19:00.536170Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-size", "title": "FFT Size MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.536320Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-sound-file", "title": "FFT of Sound File"}
+{"timestamp": "2026-01-25T18:19:00.536466Z", "event": "metadata_found", "repo": "signal-processing", "sim": "fft-waveform-types", "title": "FFT Waveform Types"}
+{"timestamp": "2026-01-25T18:19:00.536532Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "frequency-detection", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/frequency-detection"}
+{"timestamp": "2026-01-25T18:19:00.536685Z", "event": "metadata_found", "repo": "signal-processing", "sim": "graph-viewer", "title": "Learning Graph Viewer"}
+{"timestamp": "2026-01-25T18:19:00.536831Z", "event": "metadata_found", "repo": "signal-processing", "sim": "graph-viewer-v1", "title": "Learning Graph Viewer V1"}
+{"timestamp": "2026-01-25T18:19:00.536899Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "mobius-transform", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/mobius-transform"}
+{"timestamp": "2026-01-25T18:19:00.536999Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "nyquist-shannon-sampling", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/nyquist-shannon-sampling"}
+{"timestamp": "2026-01-25T18:19:00.537061Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "openai-gpts", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/openai-gpts"}
+{"timestamp": "2026-01-25T18:19:00.537120Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "rc-lowpass-filter", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/rc-lowpass-filter"}
+{"timestamp": "2026-01-25T18:19:00.537271Z", "event": "metadata_found", "repo": "signal-processing", "sim": "reverb", "title": "Sound Reverb Effect"}
+{"timestamp": "2026-01-25T18:19:00.537431Z", "event": "metadata_found", "repo": "signal-processing", "sim": "sine-wave", "title": "Sine Wave"}
+{"timestamp": "2026-01-25T18:19:00.537592Z", "event": "metadata_found", "repo": "signal-processing", "sim": "synth-timeline", "title": "Synth Timeline"}
+{"timestamp": "2026-01-25T18:19:00.537768Z", "event": "metadata_found", "repo": "signal-processing", "sim": "template", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.537926Z", "event": "metadata_found", "repo": "signal-processing", "sim": "templates", "title": "MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.537998Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "timeline-viewer", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/timeline-viewer"}
+{"timestamp": "2026-01-25T18:19:00.538165Z", "event": "metadata_found", "repo": "signal-processing", "sim": "tone-gen", "title": "Tone Generator"}
+{"timestamp": "2026-01-25T18:19:00.538233Z", "event": "missing_metadata", "repo": "signal-processing", "sim": "wordcloud", "github_url": "https://github.com/dmccreary/signal-processing/tree/main/docs/sims/wordcloud"}
+{"timestamp": "2026-01-25T18:19:00.538553Z", "event": "metadata_found", "repo": "spectrum-analyzer", "sim": "base-and-treble", "title": "Base and Treble Amplifier Controls"}
+{"timestamp": "2026-01-25T18:19:00.538718Z", "event": "metadata_found", "repo": "spectrum-analyzer", "sim": "fft-butterfly", "title": "FFT Butterfly MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.538871Z", "event": "metadata_found", "repo": "spectrum-analyzer", "sim": "templates", "title": "MicroSim Template"}
+{"timestamp": "2026-01-25T18:19:00.539022Z", "event": "metadata_found", "repo": "spectrum-analyzer", "sim": "tone-generator", "title": "Tone Generator MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.539174Z", "event": "metadata_found", "repo": "spectrum-analyzer", "sim": "waveform-types", "title": "Waveform Types MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.539411Z", "event": "missing_metadata", "repo": "stem-robots", "sim": "collision-avoidance", "github_url": "https://github.com/dmccreary/stem-robots/tree/main/docs/sims/collision-avoidance"}
+{"timestamp": "2026-01-25T18:19:00.539480Z", "event": "missing_metadata", "repo": "stem-robots", "sim": "h-bridge", "github_url": "https://github.com/dmccreary/stem-robots/tree/main/docs/sims/h-bridge"}
+{"timestamp": "2026-01-25T18:19:00.539540Z", "event": "missing_metadata", "repo": "stem-robots", "sim": "learning-graph", "github_url": "https://github.com/dmccreary/stem-robots/tree/main/docs/sims/learning-graph"}
+{"timestamp": "2026-01-25T18:19:00.539599Z", "event": "missing_metadata", "repo": "stem-robots", "sim": "pwm", "github_url": "https://github.com/dmccreary/stem-robots/tree/main/docs/sims/pwm"}
+{"timestamp": "2026-01-25T18:19:00.539659Z", "event": "missing_metadata", "repo": "stem-robots", "sim": "template", "github_url": "https://github.com/dmccreary/stem-robots/tree/main/docs/sims/template"}
+{"timestamp": "2026-01-25T18:19:00.541228Z", "event": "missing_metadata", "repo": "systems-thinking", "sim": "agent-cld", "github_url": "https://github.com/dmccreary/systems-thinking/tree/main/docs/sims/agent-cld"}
+{"timestamp": "2026-01-25T18:19:00.541506Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "cld-creation-workflow", "title": "Infographic Workflow for Creating a Causal Loop Diagram"}
+{"timestamp": "2026-01-25T18:19:00.541702Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "cld-editor", "title": "CLD Editor"}
+{"timestamp": "2026-01-25T18:19:00.542131Z", "event": "missing_metadata", "repo": "systems-thinking", "sim": "cld-viewer", "github_url": "https://github.com/dmccreary/systems-thinking/tree/main/docs/sims/cld-viewer"}
+{"timestamp": "2026-01-25T18:19:00.542390Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "cmm-for-systems-thinking", "title": "Capability Maturity Model for Systems Thinking"}
+{"timestamp": "2026-01-25T18:19:00.542717Z", "event": "missing_metadata", "repo": "systems-thinking", "sim": "cmm-template", "github_url": "https://github.com/dmccreary/systems-thinking/tree/main/docs/sims/cmm-template"}
+{"timestamp": "2026-01-25T18:19:00.542949Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "leverage-iceberg", "title": "Leverage Points Iceberg"}
+{"timestamp": "2026-01-25T18:19:00.543135Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "microsim-growth", "title": "MicroSim Growth Network Effect"}
+{"timestamp": "2026-01-25T18:19:00.543446Z", "event": "missing_metadata", "repo": "systems-thinking", "sim": "moores-law", "github_url": "https://github.com/dmccreary/systems-thinking/tree/main/docs/sims/moores-law"}
+{"timestamp": "2026-01-25T18:19:00.543655Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "node-simulation", "title": "Node Simulator Test"}
+{"timestamp": "2026-01-25T18:19:00.543830Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "population-simulator", "title": "Population Simulator with Causal Loop Diagram"}
+{"timestamp": "2026-01-25T18:19:00.544004Z", "event": "metadata_found", "repo": "systems-thinking", "sim": "template", "title": "The Tragedy of the Commons"}
+{"timestamp": "2026-01-25T18:19:00.544085Z", "event": "missing_metadata", "repo": "systems-thinking", "sim": "toc", "github_url": "https://github.com/dmccreary/systems-thinking/tree/main/docs/sims/toc"}
+{"timestamp": "2026-01-25T18:19:00.544412Z", "event": "metadata_found", "repo": "tour-maps", "sim": "tartan-generator", "title": "Clan MacQuarie Tartan Generator"}
+{"timestamp": "2026-01-25T18:19:00.544573Z", "event": "metadata_found", "repo": "tour-maps", "sim": "template", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.544726Z", "event": "metadata_found", "repo": "tour-maps", "sim": "tour-map", "title": "A title under 60 characters."}
+{"timestamp": "2026-01-25T18:19:00.544876Z", "event": "metadata_found", "repo": "tour-maps", "sim": "waypoint-map-visualizer", "title": "Waypoint Visualizer"}
+{"timestamp": "2026-01-25T18:19:00.546623Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-benchmarks-timeline", "title": "AI Benchmarks Timeline"}
+{"timestamp": "2026-01-25T18:19:00.546825Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-causes", "title": "Causes of AI Acceleration"}
+{"timestamp": "2026-01-25T18:19:00.547003Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-cmm", "title": "AI Capability Maturity Model Infographic"}
+{"timestamp": "2026-01-25T18:19:00.547178Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-doubling-rate", "title": "AI Doubling Rate"}
+{"timestamp": "2026-01-25T18:19:00.547343Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-flywheel", "title": "The AI Flywheel"}
+{"timestamp": "2026-01-25T18:19:00.547507Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-pace-accelerating", "title": "The Accelerating Pace of AI"}
+{"timestamp": "2026-01-25T18:19:00.547670Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "ai-task-horizons", "title": "AI Task Completion Time Horizons"}
+{"timestamp": "2026-01-25T18:19:00.547833Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "autoregressive", "title": "Autoregressive MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.548007Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "blooms-taxonomy", "title": "Bloom's Taxonomy"}
+{"timestamp": "2026-01-25T18:19:00.548169Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "book-gen-workflow", "title": "Book Build Workflow"}
+{"timestamp": "2026-01-25T18:19:00.548567Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "book-levels", "title": "Book Levels MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.548762Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "four-futures", "title": "Four AI Futures MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.548938Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "hype-cycle", "title": "Technology Hype Cycle Infographic"}
+{"timestamp": "2026-01-25T18:19:00.549184Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "idea-funnel", "title": "Generative AI Idea Funnel"}
+{"timestamp": "2026-01-25T18:19:00.549372Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "learning-graph", "title": "Learning Graph for Deep Learning Course"}
+{"timestamp": "2026-01-25T18:19:00.549542Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "lm-arena-timeline", "title": "Language Model Arena Timeline"}
+{"timestamp": "2026-01-25T18:19:00.549708Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "mmlu-timeline", "title": "MMLU Timeline MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.549875Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "moores-law", "title": "Moore's Law Timeline"}
+{"timestamp": "2026-01-25T18:19:00.550036Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "porters-five-forces", "title": "Porter's Five Forces Model"}
+{"timestamp": "2026-01-25T18:19:00.550199Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "power-wall", "title": "Power Wall MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.550366Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "projecting-ai", "title": "Projecting AI Task Completion to 2030"}
+{"timestamp": "2026-01-25T18:19:00.550528Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "swot", "title": "AI SWOT Analysis"}
+{"timestamp": "2026-01-25T18:19:00.550692Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "technology-adoption", "title": "Technology Adoption Curve Infographic"}
+{"timestamp": "2026-01-25T18:19:00.551488Z", "event": "missing_metadata", "repo": "tracking-ai-course", "sim": "templates", "github_url": "https://github.com/dmccreary/tracking-ai-course/tree/main/docs/sims/templates"}
+{"timestamp": "2026-01-25T18:19:00.551822Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "timeline", "title": "Deep Learning Timeline MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.552016Z", "event": "metadata_found", "repo": "tracking-ai-course", "sim": "tokenizer", "title": "Tokenizer MicroSim"}
+{"timestamp": "2026-01-25T18:19:00.622534Z", "event": "update_completed", "repos_scanned": 47, "sims_found": 1016, "metadata_found": 885, "metadata_missing": 131, "added": 0, "updated": 885, "errors": 0}

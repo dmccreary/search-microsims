@@ -763,11 +763,6 @@
           "Visualize integer subtraction as movement to the left on a number line.",
           "Interpret a cumulative arithmetic expression such as 0 + 3 - 2 + 4 = 5."
         ],
-        "bloomsTaxonomy": [
-          "Remember",
-          "Understand",
-          "Apply"
-        ],
         "prerequisites": [
           "Understanding of positive and negative numbers",
           "Basic familiarity with number lines"
@@ -987,6 +982,13 @@
         "extensions": [
           "Add sliders for variable step sizes",
           "Include random problem generator for practice"
+        ]
+      },
+      "pedagogical": {
+        "bloomsTaxonomy": [
+          "Remember",
+          "Understand",
+          "Apply"
         ]
       }
     },
@@ -24332,12 +24334,6 @@
         "Connect geometric transformations with fractal generation",
         "Calculate fractal dimensions and understand dimensions beyond integers"
       ],
-      "bloomsTaxonomy": [
-        "Remember",
-        "Understand",
-        "Apply",
-        "Analyze"
-      ],
       "duration": "15-20 minutes",
       "prerequisites": [
         "Basic understanding of line segments and geometric transformations",
@@ -24474,7 +24470,13 @@
         "corrective",
         "explanatory"
       ],
-      "interactionStyle": "construct"
+      "interactionStyle": "construct",
+      "bloomsTaxonomy": [
+        "Remember",
+        "Understand",
+        "Apply",
+        "Analyze"
+      ]
     },
     "_source": {
       "repo": "geometry-course",
@@ -26766,10 +26768,6 @@
         "Recognize proper geometric notation for naming points, lines, and planes",
         "Distinguish between the three undefined terms based on their dimensional properties"
       ],
-      "bloomsTaxonomy": [
-        "Remembering",
-        "Understanding"
-      ],
       "duration": "10-15 minutes",
       "prerequisites": [
         "Basic understanding of spatial relationships",
@@ -26868,6 +26866,10 @@
         "Name geometric objects using proper notation",
         "Explain dimensional properties of each term",
         "Distinguish between defined and undefined terms"
+      ],
+      "bloomsTaxonomy": [
+        "Remembering",
+        "Understanding"
       ]
     },
     "visualizationType": [
@@ -29260,11 +29262,6 @@
         "Apply Euler's formula (V - E + F = 2) to verify the soccer ball structure",
         "Analyze why exactly 12 pentagons are needed to close a sphere"
       ],
-      "bloomsTaxonomy": [
-        "Understanding",
-        "Applying",
-        "Analyzing"
-      ],
       "duration": "15-20 minutes",
       "prerequisites": [
         "Understanding of polygons (pentagons and hexagons)",
@@ -29359,6 +29356,11 @@
         "Buckminsterfullerene (C60) molecule structure",
         "Geodesic dome architecture",
         "Viral capsid structures in biology"
+      ],
+      "bloomsTaxonomy": [
+        "Understanding",
+        "Applying",
+        "Analyzing"
       ]
     },
     "visualizationType": [
@@ -66091,7 +66093,6 @@
           "Explain how knowledge flows from creators through libraries to students",
           "Appreciate the role of peer sharing in educational networks"
         ],
-        "bloomsTaxonomy": "Understand",
         "difficultyLevel": "Very Hard"
       },
       "technical": {
@@ -66190,7 +66191,10 @@
           "Middle East"
         ]
       },
-      "status": "in development"
+      "status": "in development",
+      "pedagogical": {
+        "bloomsTaxonomy": "Understand"
+      }
     },
     "visualizationType": [
       "animation",
@@ -69686,12 +69690,6 @@
           "Identify RGB values for primary and secondary colors",
           "Explore how colors transition smoothly in digital representations"
         ],
-        "bloomsTaxonomy": [
-          "Remember",
-          "Understand",
-          "Apply",
-          "Analyze"
-        ],
         "duration": "5-10 minutes",
         "prerequisites": [
           "Basic understanding of colors",
@@ -69743,6 +69741,14 @@
         "limitations": [
           "Does not show variations in saturation or brightness",
           "Digital rainbow differs from natural continuous spectrum"
+        ]
+      },
+      "pedagogical": {
+        "bloomsTaxonomy": [
+          "Remember",
+          "Understand",
+          "Apply",
+          "Analyze"
         ]
       }
     },
@@ -71607,11 +71613,6 @@
           "Connect microscopic molecular behavior to macroscopic properties",
           "Recognize the significance of 0\u00b0C as a phase transition point"
         ],
-        "bloomsTaxonomy": [
-          "Understanding",
-          "Applying",
-          "Analyzing"
-        ],
         "duration": "10-15 minutes",
         "prerequisites": [
           "Basic understanding of atoms and molecules",
@@ -71738,6 +71739,13 @@
           "No modeling of phase changes beyond visual indicator",
           "2D representation of 3D molecular motion",
           "Does not account for relativistic effects at extreme speeds"
+        ]
+      },
+      "pedagogical": {
+        "bloomsTaxonomy": [
+          "Understanding",
+          "Applying",
+          "Analyzing"
         ]
       }
     },
@@ -71975,12 +71983,6 @@
         "Explore how changing vertex positions affects triangle properties",
         "Apply classification knowledge to categorize triangles based on their characteristics"
       ],
-      "bloomsTaxonomy": [
-        "Remember - Recall definitions of triangle types",
-        "Understand - Explain properties of different triangle types",
-        "Apply - Classify triangles based on measurements",
-        "Analyze - Determine how side lengths affect angles"
-      ],
       "duration": "10-15 minutes",
       "prerequisites": [
         "Understanding of basic geometry concepts (points, lines, triangles)",
@@ -72186,7 +72188,13 @@
         "corrective",
         "explanatory"
       ],
-      "interactionStyle": "construct"
+      "interactionStyle": "construct",
+      "bloomsTaxonomy": [
+        "Remember - Recall definitions of triangle types",
+        "Understand - Explain properties of different triangle types",
+        "Apply - Classify triangles based on measurements",
+        "Analyze - Determine how side lengths affect angles"
+      ]
     },
     "_source": {
       "repo": "microsims",

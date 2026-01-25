@@ -1,0 +1,13 @@
+Bloom's Taxonomy Migration Log
+Date: 2026-01-25T12:18:51.570874
+Dry Run: False
+============================================================
+
+algebra-1/integer-ops-number-line: Moved ['Remember', 'Understand', 'Apply'] from educational to pedagogical
+geometry-course/koch-fractal: Moved ['Remember', 'Understand', 'Apply', 'Analyze'] from educational to pedagogical
+geometry-course/soccer-ball: Moved ['Understanding', 'Applying', 'Analyzing'] from educational to pedagogical
+geometry-course/point-line-plane: Moved ['Remembering', 'Understanding'] from educational to pedagogical
+microsims/temp-and-pressure: Moved ['Understanding', 'Applying', 'Analyzing'] from educational to pedagogical
+microsims/global-impact: Moved Understand from educational to pedagogical
+microsims/rainbow-color-picker: Moved ['Remember', 'Understand', 'Apply', 'Analyze'] from educational to pedagogical
+microsims/triangle-types: Moved ['Remember - Recall definitions of triangle types', 'Understand - Explain properties of different triangle types', 'Apply - Classify triangles based on measurements', 'Analyze - Determine how side lengths affect angles'] from educational to pedagogical
