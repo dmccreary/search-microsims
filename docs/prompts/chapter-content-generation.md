@@ -103,17 +103,20 @@ Use an upbeat positive tone with a good sense of humor and a feeling that this i
 
 Write the session log to logs/ch-10.md
 
-## Chapter 10
+## Chapter 11, 12, 13 and 14
 
-Run the generate-chapter-content skill on @docs/chapters/10-educational-foundations/index.md
-
-The reading level is a freshman in college.
-
-Use an upbeat positive tone with a good sense of humor and a feeling that this is a powerful technology that will transform education.  MicroSim search can be a superpower for all educators.
-
-Write the session log to logs/ch-10.md
+Continue generating the content for the remaining chapters.
 
 11-learning-theory-pedagogy
 12-visualization-types
 13-user-interface-controls
 14-technical-implementation
+
+Run the generate-chapter-content skill on each chapter
+
+The reading level is a freshman in college.
+
+Use an upbeat positive tone with a good sense of humor and a feeling that this is a powerful technology that will transform education.  MicroSim search can be a superpower for all educators.
+
+Write the session log to logs
+
