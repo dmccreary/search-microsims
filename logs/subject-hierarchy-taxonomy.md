@@ -147,10 +147,82 @@ Since the specification explicitly requires **vis-network with hierarchical layo
 **Decision:** Use vis-network's built-in title property for hover text
 **Rationale:** Simple, native behavior; matches "Hover to see definition"
 
-## Files to Generate
+## Files Generated
 
 1. `docs/sims/subject-taxonomy-explorer/main.html` - Main HTML structure
 2. `docs/sims/subject-taxonomy-explorer/style.css` - Styling
 3. `docs/sims/subject-taxonomy-explorer/script.js` - vis-network logic
-4. `docs/sims/subject-taxonomy-explorer/metadata.json` - MicroSim metadata
+4. `docs/sims/subject-taxonomy-explorer/index.md` - Documentation page
+5. `docs/sims/subject-taxonomy-explorer/metadata.json` - Dublin Core metadata
+
+## Implementation Notes
+
+### Template Code Adopted
+
+**From Chapter 1 Concept Map:**
+- Color scheme structure with background/border/font/highlight properties
+- Node info panel HTML structure and styling
+- Right panel layout with controls and status
+- Legend styling with color indicators
+
+**From Learning Graph Viewer:**
+- Search input with dropdown results pattern
+- Physics configuration for radial layout (forceAtlas2Based)
+- Stabilization handling (disable physics after layout settles)
+- Statistics/info panel structure
+
+### Custom Implementations
+
+**Expand/Collapse System:**
+- `expandedNodes` Set tracks which nodes are expanded
+- `getVisibleNodes()` calculates which nodes should be shown based on expanded state
+- `refreshNetwork()` rebuilds DataSets when visibility changes
+- Node labels show `[+]` or `[-]` indicators for expandable nodes
+
+**Breadcrumb Trail:**
+- `getAncestors()` walks up the parent chain
+- `showBreadcrumb()` renders path with color-coded spans matching node types
+- Separator arrows between path segments
+
+**Layout Toggle:**
+- `isHierarchical` boolean state
+- Button toggles between hierarchical layout options and force-directed physics
+- Full network reinitialization on toggle to apply new layout
+
+### Data Structure
+
+Used inline `taxonomyData` object with:
+- `nodes[]` array with id, label, type, parent, description, example
+- `edges[]` array built dynamically from parent relationships
+- Three disciplines (Physics, Mathematics, Biology) with domains and topics
+
+### Specification Compliance Checklist
+
+| Requirement | Implementation |
+|-------------|----------------|
+| Click node to expand/collapse | `handleNodeClick()` toggles `expandedNodes` |
+| Hover for definition | vis-network `title` property + custom info panel |
+| Search box | Live search with dropdown, highlights path on select |
+| Breadcrumb trail | `showBreadcrumb()` with color-coded path |
+| Tree/Radial toggle | Layout button switches hierarchical/physics modes |
+| Blue disciplines | `#2196F3` (40px circles) |
+| Green domains | `#4CAF50` (30px circles) |
+| Orange topics | `#FF9800` (22px circles) |
+| vis-network hierarchical | `layout.hierarchical.direction: 'UD'` |
+
+## Testing
+
+Test locally at:
+```
+http://127.0.0.1:8000/search-microsims/sims/subject-taxonomy-explorer/
+```
+
+Verify:
+- [ ] Hierarchy displays correctly on load (3 disciplines expanded)
+- [ ] Click expands/collapses children
+- [ ] Search finds nodes and highlights path
+- [ ] Layout toggle switches between tree and radial
+- [ ] Breadcrumb shows path for selected node
+- [ ] Hover shows node info
+- [ ] Responsive in iframe context
 

@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "title": "Subject Hierarchy Taxonomy",
+    "description": "Hierarchical classification of academic subjects for Dublin Core metadata",
+    "lastUpdated": "2026-01-25"
+  },
+  "nodes": [
+    {
+      "id": "physics",
+      "label": "Physics",
+      "type": "discipline",
+      "description": "Study of matter, energy, and their interactions",
+      "example": "Subject tag: \"Physics\""
+    },
+    {
+      "id": "mathematics",
+      "label": "Mathematics",
+      "type": "discipline",
+      "description": "Study of numbers, quantities, structures, and patterns",
+      "example": "Subject tag: \"Mathematics\""
+    },
+    {
+      "id": "biology",
+      "label": "Biology",
+      "type": "discipline",
+      "description": "Study of living organisms and life processes",
+      "example": "Subject tag: \"Biology\""
+    },
+    {
+      "id": "mechanics",
+      "label": "Mechanics",
+      "type": "domain",
+      "parent": "physics",
+      "description": "Branch of physics dealing with motion and forces",
+      "example": "Subject tag: \"Mechanics\""
+    },
+    {
+      "id": "waves",
+      "label": "Waves",
+      "type": "domain",
+      "parent": "physics",
+      "description": "Study of oscillations and wave propagation",
+      "example": "Subject tag: \"Waves\""
+    },
+    {
+      "id": "electricity",
+      "label": "Electricity",
+      "type": "domain",
+      "parent": "physics",
+      "description": "Study of electric charges and electromagnetic phenomena",
+      "example": "Subject tag: \"Electricity\""
+    },
+    {
+      "id": "algebra",
+      "label": "Algebra",
+      "type": "domain",
+      "parent": "mathematics",
+      "description": "Branch dealing with symbols and rules for manipulating them",
+      "example": "Subject tag: \"Algebra\""
+    },
+    {
+      "id": "geometry",
+      "label": "Geometry",
+      "type": "domain",
+      "parent": "mathematics",
+      "description": "Study of shapes, sizes, and properties of space",
+      "example": "Subject tag: \"Geometry\""
+    },
+    {
+      "id": "calculus",
+      "label": "Calculus",
+      "type": "domain",
+      "parent": "mathematics",
+      "description": "Study of continuous change and accumulation",
+      "example": "Subject tag: \"Calculus\""
+    },
+    {
+      "id": "ecology",
+      "label": "Ecology",
+      "type": "domain",
+      "parent": "biology",
+      "description": "Study of organisms and their environment interactions",
+      "example": "Subject tag: \"Ecology\""
+    },
+    {
+      "id": "genetics",
+      "label": "Genetics",
+      "type": "domain",
+      "parent": "biology",
+      "description": "Study of heredity and variation in organisms",
+      "example": "Subject tag: \"Genetics\""
+    },
+    {
+      "id": "cellbiology",
+      "label": "Cell Biology",
+      "type": "domain",
+      "parent": "biology",
+      "description": "Study of cell structure and function",
+      "example": "Subject tag: \"Cell Biology\""
+    },
+    {
+      "id": "projectile",
+      "label": "Projectile\nMotion",
+      "type": "topic",
+      "parent": "mechanics",
+      "description": "Motion of objects under gravity",
+      "example": "Subject tags: \"Physics\", \"Mechanics\", \"Projectile Motion\""
+    },
+    {
+      "id": "circular",
+      "label": "Circular\nMotion",
+      "type": "topic",
+      "parent": "mechanics",
+      "description": "Motion along a circular path",
+      "example": "Subject tags: \"Physics\", \"Mechanics\", \"Circular Motion\""
+    },
+    {
+      "id": "newtons",
+      "label": "Newton's\nLaws",
+      "type": "topic",
+      "parent": "mechanics",
+      "description": "Three fundamental laws of motion",
+      "example": "Subject tags: \"Physics\", \"Mechanics\", \"Newton's Laws\""
+    },
+    {
+      "id": "soundwaves",
+      "label": "Sound\nWaves",
+      "type": "topic",
+      "parent": "waves",
+      "description": "Mechanical waves traveling through a medium",
+      "example": "Subject tags: \"Physics\", \"Waves\", \"Sound Waves\""
+    },
+    {
+      "id": "lightwaves",
+      "label": "Light\nWaves",
+      "type": "topic",
+      "parent": "waves",
+      "description": "Electromagnetic waves in the visible spectrum",
+      "example": "Subject tags: \"Physics\", \"Waves\", \"Light Waves\""
+    },
+    {
+      "id": "interference",
+      "label": "Interference",
+      "type": "topic",
+      "parent": "waves",
+      "description": "Superposition of two or more waves",
+      "example": "Subject tags: \"Physics\", \"Waves\", \"Interference\""
+    },
+    {
+      "id": "circuits",
+      "label": "Circuits",
+      "type": "topic",
+      "parent": "electricity",
+      "description": "Closed paths for electric current flow",
+      "example": "Subject tags: \"Physics\", \"Electricity\", \"Circuits\""
+    },
+    {
+      "id": "ohmslaw",
+      "label": "Ohm's\nLaw",
+      "type": "topic",
+      "parent": "electricity",
+      "description": "Relationship between voltage, current, and resistance",
+      "example": "Subject tags: \"Physics\", \"Electricity\", \"Ohm's Law\""
+    },
+    {
+      "id": "quadratic",
+      "label": "Quadratic\nEquations",
+      "type": "topic",
+      "parent": "algebra",
+      "description": "Polynomial equations of degree 2",
+      "example": "Subject tags: \"Mathematics\", \"Algebra\", \"Quadratic Equations\""
+    },
+    {
+      "id": "linear",
+      "label": "Linear\nEquations",
+      "type": "topic",
+      "parent": "algebra",
+      "description": "Equations forming straight lines",
+      "example": "Subject tags: \"Mathematics\", \"Algebra\", \"Linear Equations\""
+    },
+    {
+      "id": "triangles",
+      "label": "Triangles",
+      "type": "topic",
+      "parent": "geometry",
+      "description": "Three-sided polygons and their properties",
+      "example": "Subject tags: \"Mathematics\", \"Geometry\", \"Triangles\""
+    },
+    {
+      "id": "circles",
+      "label": "Circles",
+      "type": "topic",
+      "parent": "geometry",
+      "description": "Set of points equidistant from a center",
+      "example": "Subject tags: \"Mathematics\", \"Geometry\", \"Circles\""
+    },
+    {
+      "id": "derivatives",
+      "label": "Derivatives",
+      "type": "topic",
+      "parent": "calculus",
+      "description": "Rate of change of a function",
+      "example": "Subject tags: \"Mathematics\", \"Calculus\", \"Derivatives\""
+    },
+    {
+      "id": "integrals",
+      "label": "Integrals",
+      "type": "topic",
+      "parent": "calculus",
+      "description": "Accumulation of quantities",
+      "example": "Subject tags: \"Mathematics\", \"Calculus\", \"Integrals\""
+    },
+    {
+      "id": "foodwebs",
+      "label": "Food\nWebs",
+      "type": "topic",
+      "parent": "ecology",
+      "description": "Interconnected food chains in an ecosystem",
+      "example": "Subject tags: \"Biology\", \"Ecology\", \"Food Webs\""
+    },
+    {
+      "id": "populations",
+      "label": "Populations",
+      "type": "topic",
+      "parent": "ecology",
+      "description": "Groups of organisms of the same species",
+      "example": "Subject tags: \"Biology\", \"Ecology\", \"Populations\""
+    },
+    {
+      "id": "dna",
+      "label": "DNA",
+      "type": "topic",
+      "parent": "genetics",
+      "description": "Molecule carrying genetic instructions",
+      "example": "Subject tags: \"Biology\", \"Genetics\", \"DNA\""
+    },
+    {
+      "id": "heredity",
+      "label": "Heredity",
+      "type": "topic",
+      "parent": "genetics",
+      "description": "Passing of traits from parents to offspring",
+      "example": "Subject tags: \"Biology\", \"Genetics\", \"Heredity\""
+    },
+    {
+      "id": "mitosis",
+      "label": "Mitosis",
+      "type": "topic",
+      "parent": "cellbiology",
+      "description": "Cell division producing identical daughter cells",
+      "example": "Subject tags: \"Biology\", \"Cell Biology\", \"Mitosis\""
+    },
+    {
+      "id": "respiration",
+      "label": "Cellular\nRespiration",
+      "type": "topic",
+      "parent": "cellbiology",
+      "description": "Process of converting nutrients to energy",
+      "example": "Subject tags: \"Biology\", \"Cell Biology\", \"Cellular Respiration\""
+    }
+  ]
+}

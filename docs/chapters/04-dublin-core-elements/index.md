@@ -137,9 +137,10 @@ Good subjects work at multiple levels:
 #### Diagram: Subject Hierarchy Taxonomy
 
 <iframe src="../../sims/subject-taxonomy-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+[View Fullscreen](../../sims/subject-taxonomy-explorer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
-<summary>Subject Hierarchy Taxonomy Explorer</summary>
+<summary>Subject Hierarchy Explorer</summary>
 Type: graph-model
 
 Bloom Level: Understand (L2)
