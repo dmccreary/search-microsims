@@ -45,7 +45,6 @@ nav:
     - MicroSim Search Workflow: sims/microsim-search-workflow/index.md
     - Difficulty Progression: sims/difficulty-progression/index.md
     - MicroSim Schema: microsim-schema.md
-    - MicroSim Embeddings: microsim-embeddings.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
