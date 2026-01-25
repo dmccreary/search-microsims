@@ -311,10 +311,14 @@ function initializeNetwork() {
     const data = { nodes: nodes, edges: edges };
     network = new vis.Network(container, data, options);
 
-    // Click to show info
+    // Click to show info or hide panel
     network.on('click', function(params) {
+        const rightPanel = document.querySelector('.right-panel');
         if (params.nodes.length > 0) {
+            rightPanel.style.display = 'flex';
             showFieldInfo(params.nodes[0]);
+        } else {
+            rightPanel.style.display = 'none';
         }
     });
 
@@ -326,14 +330,17 @@ function initializeNetwork() {
         document.body.style.cursor = 'default';
     });
 
-    // Position the view
-    setTimeout(() => {
+    // Wait for network to render, then pan to make room for info panel on right
+    network.once('afterDrawing', function() {
+        // Get current view position
+        const currentPosition = network.getViewPosition();
+        // Move camera right so diagram appears on left side
         network.moveTo({
-            position: { x: -20, y: -20 },
+            position: { x: currentPosition.x, y: currentPosition.y - 80 },
             scale: 0.95,
             animation: false
         });
-    }, 100);
+    });
 }
 
 function showFieldInfo(fieldId) {

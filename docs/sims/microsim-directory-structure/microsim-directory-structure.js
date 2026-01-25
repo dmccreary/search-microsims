@@ -223,18 +223,16 @@ function initializeNetwork() {
         hideNodeInfo();
     });
 
-    // Position the view with asymmetric padding (more on right for info panel)
-    setTimeout(() => {
-        network.fit({
-            animation: false,
-            padding: {
-                top: 50,
-                bottom: 50,
-                left: 50,
-                right: 220  // Leave room for the info panel
-            }
+    // Wait for network to render, then pan to make room for info panel on right
+    network.once('afterDrawing', function() {
+        // Get current view position
+        const currentPosition = network.getViewPosition();
+        // Move camera right so diagram appears on left side
+        network.moveTo({
+            position: { x: currentPosition.x + 80, y: currentPosition.y + 20 },
+            animation: false
         });
-    }, 100);
+    });
 }
 
 function showNodeInfo(nodeId) {

@@ -302,9 +302,37 @@ Centered all nodes around x=0 for balanced layout:
 - Right panel top position: 50px → 20px
 - Network container: Full width with overlay info panel
 
-### Key Learning
+### Key Learnings
 
-**vis-network auto-centering behavior**: Node x/y positions define relative layout, but vis-network automatically fits and centers content to the viewport. To control visible area, use `fit()` with padding options rather than trying to offset node positions.
+#### vis-network Auto-Centering Behavior
+
+Node x/y positions define relative layout, but vis-network automatically fits and centers content to the viewport.
+
+**What DOESN'T work:**
+- Changing node x/y positions (vis-network re-centers anyway)
+- Using `fit()` with asymmetric padding (doesn't reliably offset the view)
+- Using `moveTo()` immediately after initialization (runs before auto-centering completes)
+
+**What DOES work - Pan after rendering:**
+
+```javascript
+// Wait for network to render, then pan to make room for info panel on right
+network.once('afterDrawing', function() {
+    // Get current view position AFTER auto-centering
+    const currentPosition = network.getViewPosition();
+    // Move camera right so diagram appears on left side
+    network.moveTo({
+        position: { x: currentPosition.x + 100, y: currentPosition.y },
+        animation: false
+    });
+});
+```
+
+**Key insight:** In vis-network, `moveTo()` moves the CAMERA, not the diagram. So:
+- `position.x + 100` = camera moves RIGHT = diagram appears LEFT
+- `position.x - 100` = camera moves LEFT = diagram appears RIGHT
+
+Use the `'afterDrawing'` event (with `.once()`) to ensure the pan happens AFTER vis-network completes its auto-centering.
 
 ---
 

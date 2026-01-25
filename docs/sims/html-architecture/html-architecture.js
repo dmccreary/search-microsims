@@ -104,18 +104,18 @@ const colors = {
 };
 
 const nodeData = [
-    { id: 'doctype', label: '<!DOCTYPE html>', x: -250, y: -180, type: 'document' },
-    { id: 'html', label: '<html>', x: -250, y: -100, type: 'document' },
-    { id: 'head', label: '<head>', x: -350, y: -20, type: 'head' },
-    { id: 'body', label: '<body>', x: -150, y: -20, type: 'body' },
-    { id: 'meta-charset', label: 'charset', x: -450, y: 60, type: 'head' },
-    { id: 'meta-viewport', label: 'viewport', x: -380, y: 60, type: 'head' },
-    { id: 'title', label: '<title>', x: -310, y: 60, type: 'head' },
-    { id: 'link-css', label: 'style.css', x: -420, y: 130, type: 'script' },
-    { id: 'script-lib', label: 'p5.js CDN', x: -340, y: 130, type: 'script' },
-    { id: 'canvas-div', label: 'canvas', x: -200, y: 60, type: 'body' },
-    { id: 'controls-div', label: 'controls', x: -120, y: 60, type: 'body' },
-    { id: 'script-app', label: 'sketch.js', x: -160, y: 130, type: 'script' }
+    { id: 'doctype', label: '<!DOCTYPE html>', x: -350, y: -180, type: 'document' },
+    { id: 'html', label: '<html>', x: -350, y: -100, type: 'document' },
+    { id: 'head', label: '<head>', x: -450, y: -20, type: 'head' },
+    { id: 'body', label: '<body>', x: -250, y: -20, type: 'body' },
+    { id: 'meta-charset', label: 'charset', x: -550, y: 60, type: 'head' },
+    { id: 'meta-viewport', label: 'viewport', x: -480, y: 60, type: 'head' },
+    { id: 'title', label: '<title>', x: -410, y: 60, type: 'head' },
+    { id: 'link-css', label: 'style.css', x: -520, y: 130, type: 'script' },
+    { id: 'script-lib', label: 'p5.js CDN', x: -440, y: 130, type: 'script' },
+    { id: 'canvas-div', label: 'canvas', x: -300, y: 60, type: 'body' },
+    { id: 'controls-div', label: 'controls', x: -220, y: 60, type: 'body' },
+    { id: 'script-app', label: 'sketch.js', x: -260, y: 130, type: 'script' }
 ];
 
 const edgeData = [
@@ -225,14 +225,16 @@ function initializeNetwork() {
         document.body.style.cursor = 'default';
     });
 
-    // Position the view
-    setTimeout(() => {
+    // Wait for network to render, then pan to make room for info panel on right
+    network.once('afterDrawing', function() {
+        // Get current view position
+        const currentPosition = network.getViewPosition();
+        // Move camera right so diagram appears on left side
         network.moveTo({
-            position: { x: -280, y: -20 },
-            scale: 1.0,
+            position: { x: currentPosition.x + 80, y: currentPosition.y + 20 },
             animation: false
         });
-    }, 100);
+    });
 }
 
 function showNodeInfo(nodeId) {
