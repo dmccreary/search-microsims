@@ -28,7 +28,6 @@ nav:
       - 13. User Interface and Controls: chapters/13-user-interface-controls/index.md
       - 14. Technical Implementation: chapters/14-technical-implementation/index.md
   
-
   - Reports:
       - MicroSim Metrics: reports/microsim-metrics.md
       - Local Metadata Update: reports/local-metadata-update.md
@@ -57,6 +56,7 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Quality Metrics: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Chapter Design: learning-graph/chapter-design.md
       - Diagram Table: learning-graph/diagram-table.md
       - Diagram Details: learning-graph/diagram-details.md
 
