@@ -3,8 +3,8 @@
 Pedagogical Distribution Report Generator
 
 Analyzes the distribution of pedagogical metadata across all MicroSims,
-comparing bloomsTaxonomy (educational) vs bloomAlignment (pedagogical)
-to determine overlap and differences.
+comparing bloomsTaxonomy (content scope) vs bloomAlignment (pattern effectiveness)
+within the pedagogical section to determine overlap and differences.
 
 Usage:
     python src/reports/pedagogical-distribution.py
@@ -82,19 +82,19 @@ def analyze_microsims(microsims: list) -> dict:
     """Analyze pedagogical metadata across all MicroSims."""
     stats = {
         "total": len(microsims),
-        "has_educational_blooms": 0,
-        "has_pedagogical_alignment": 0,
+        "has_blooms_taxonomy": 0,
+        "has_bloom_alignment": 0,
         "has_both": 0,
         "has_neither": 0,
         "exact_match": 0,
-        "subset_match": 0,  # pedagogical is subset of educational
-        "superset_match": 0,  # pedagogical is superset of educational
+        "subset_match": 0,  # bloomAlignment is subset of bloomsTaxonomy
+        "superset_match": 0,  # bloomAlignment is superset of bloomsTaxonomy
         "partial_overlap": 0,
         "no_overlap": 0,
-        "educational_only": Counter(),
-        "pedagogical_only": Counter(),
-        "educational_distribution": Counter(),
-        "pedagogical_distribution": Counter(),
+        "taxonomy_only": Counter(),
+        "alignment_only": Counter(),
+        "taxonomy_distribution": Counter(),
+        "alignment_distribution": Counter(),
         "pattern_distribution": Counter(),
         "pacing_distribution": Counter(),
         "bloom_verbs_distribution": Counter(),
@@ -102,42 +102,42 @@ def analyze_microsims(microsims: list) -> dict:
     }
 
     for ms in microsims:
-        # Extract bloomsTaxonomy from educational section
-        edu_blooms = extract_bloom_levels(ms, ["educational", "bloomsTaxonomy"])
-        # Also check flat format
-        if not edu_blooms:
-            edu_blooms = extract_bloom_levels(ms, ["bloomsTaxonomy"])
-        if not edu_blooms:
-            edu_blooms = extract_bloom_levels(ms, ["bloomLevel"])
+        # Extract bloomsTaxonomy from pedagogical section (content scope)
+        taxonomy_blooms = extract_bloom_levels(ms, ["pedagogical", "bloomsTaxonomy"])
+        # Also check legacy flat format
+        if not taxonomy_blooms:
+            taxonomy_blooms = extract_bloom_levels(ms, ["bloomsTaxonomy"])
+        if not taxonomy_blooms:
+            taxonomy_blooms = extract_bloom_levels(ms, ["bloomLevel"])
 
-        # Extract bloomAlignment from pedagogical section
-        ped_blooms = extract_bloom_levels(ms, ["pedagogical", "bloomAlignment"])
+        # Extract bloomAlignment from pedagogical section (pattern effectiveness)
+        alignment_blooms = extract_bloom_levels(ms, ["pedagogical", "bloomAlignment"])
 
         # Track presence
-        has_edu = len(edu_blooms) > 0
-        has_ped = len(ped_blooms) > 0
+        has_taxonomy = len(taxonomy_blooms) > 0
+        has_alignment = len(alignment_blooms) > 0
 
-        if has_edu:
-            stats["has_educational_blooms"] += 1
-            for level in edu_blooms:
-                stats["educational_distribution"][level] += 1
+        if has_taxonomy:
+            stats["has_blooms_taxonomy"] += 1
+            for level in taxonomy_blooms:
+                stats["taxonomy_distribution"][level] += 1
 
-        if has_ped:
-            stats["has_pedagogical_alignment"] += 1
-            for level in ped_blooms:
-                stats["pedagogical_distribution"][level] += 1
+        if has_alignment:
+            stats["has_bloom_alignment"] += 1
+            for level in alignment_blooms:
+                stats["alignment_distribution"][level] += 1
 
-        if has_edu and has_ped:
+        if has_taxonomy and has_alignment:
             stats["has_both"] += 1
 
             # Compare the sets
-            if edu_blooms == ped_blooms:
+            if taxonomy_blooms == alignment_blooms:
                 stats["exact_match"] += 1
-            elif ped_blooms.issubset(edu_blooms):
+            elif alignment_blooms.issubset(taxonomy_blooms):
                 stats["subset_match"] += 1
-            elif ped_blooms.issuperset(edu_blooms):
+            elif alignment_blooms.issuperset(taxonomy_blooms):
                 stats["superset_match"] += 1
-            elif len(edu_blooms & ped_blooms) > 0:
+            elif len(taxonomy_blooms & alignment_blooms) > 0:
                 stats["partial_overlap"] += 1
             else:
                 stats["no_overlap"] += 1
@@ -145,17 +145,17 @@ def analyze_microsims(microsims: list) -> dict:
                 title = ms.get("title") or ms.get("dublinCore", {}).get("title", "Unknown")
                 stats["comparison_details"].append({
                     "title": title,
-                    "educational": sorted(edu_blooms),
-                    "pedagogical": sorted(ped_blooms),
+                    "taxonomy": sorted(taxonomy_blooms),
+                    "alignment": sorted(alignment_blooms),
                 })
-        elif has_edu and not has_ped:
-            stats["educational_only"]["count"] += 1
-            for level in edu_blooms:
-                stats["educational_only"][level] += 1
-        elif has_ped and not has_edu:
-            stats["pedagogical_only"]["count"] += 1
-            for level in ped_blooms:
-                stats["pedagogical_only"][level] += 1
+        elif has_taxonomy and not has_alignment:
+            stats["taxonomy_only"]["count"] += 1
+            for level in taxonomy_blooms:
+                stats["taxonomy_only"][level] += 1
+        elif has_alignment and not has_taxonomy:
+            stats["alignment_only"]["count"] += 1
+            for level in alignment_blooms:
+                stats["alignment_only"][level] += 1
         else:
             stats["has_neither"] += 1
 
@@ -190,8 +190,8 @@ def generate_report(stats: dict) -> str:
     lines.append("# Pedagogical Metadata Distribution Report")
     lines.append("")
     lines.append("This report analyzes the distribution of pedagogical metadata across all MicroSims,")
-    lines.append("comparing `bloomsTaxonomy` (educational section) vs `bloomAlignment` (pedagogical section)")
-    lines.append("to determine overlap and potential redundancy.")
+    lines.append("comparing `bloomsTaxonomy` (content scope) vs `bloomAlignment` (pattern effectiveness)")
+    lines.append("within the `pedagogical` section to determine overlap and differences.")
     lines.append("")
 
     # Overview
@@ -201,23 +201,23 @@ def generate_report(stats: dict) -> str:
     lines.append("")
     lines.append("| Metric | Count | Percentage |")
     lines.append("|--------|-------|------------|")
-    lines.append(f"| Has educational.bloomsTaxonomy | {stats['has_educational_blooms']} | {100*stats['has_educational_blooms']/stats['total']:.1f}% |")
-    lines.append(f"| Has pedagogical.bloomAlignment | {stats['has_pedagogical_alignment']} | {100*stats['has_pedagogical_alignment']/stats['total']:.1f}% |")
+    lines.append(f"| Has pedagogical.bloomsTaxonomy | {stats['has_blooms_taxonomy']} | {100*stats['has_blooms_taxonomy']/stats['total']:.1f}% |")
+    lines.append(f"| Has pedagogical.bloomAlignment | {stats['has_bloom_alignment']} | {100*stats['has_bloom_alignment']/stats['total']:.1f}% |")
     lines.append(f"| Has both fields | {stats['has_both']} | {100*stats['has_both']/stats['total']:.1f}% |")
     lines.append(f"| Has neither field | {stats['has_neither']} | {100*stats['has_neither']/stats['total']:.1f}% |")
     lines.append("")
 
     # Comparison of both
     if stats['has_both'] > 0:
-        lines.append("## Comparison: Educational vs Pedagogical Bloom Levels")
+        lines.append("## Comparison: bloomsTaxonomy vs bloomAlignment")
         lines.append("")
         lines.append("For MicroSims that have **both** fields populated:")
         lines.append("")
         lines.append("| Relationship | Count | Percentage |")
         lines.append("|--------------|-------|------------|")
         lines.append(f"| Exact match (identical sets) | {stats['exact_match']} | {100*stats['exact_match']/stats['has_both']:.1f}% |")
-        lines.append(f"| Pedagogical ⊂ Educational (subset) | {stats['subset_match']} | {100*stats['subset_match']/stats['has_both']:.1f}% |")
-        lines.append(f"| Pedagogical ⊃ Educational (superset) | {stats['superset_match']} | {100*stats['superset_match']/stats['has_both']:.1f}% |")
+        lines.append(f"| bloomAlignment ⊂ bloomsTaxonomy (subset) | {stats['subset_match']} | {100*stats['subset_match']/stats['has_both']:.1f}% |")
+        lines.append(f"| bloomAlignment ⊃ bloomsTaxonomy (superset) | {stats['superset_match']} | {100*stats['superset_match']/stats['has_both']:.1f}% |")
         lines.append(f"| Partial overlap | {stats['partial_overlap']} | {100*stats['partial_overlap']/stats['has_both']:.1f}% |")
         lines.append(f"| No overlap (completely different) | {stats['no_overlap']} | {100*stats['no_overlap']/stats['has_both']:.1f}% |")
         lines.append("")
@@ -230,20 +230,20 @@ def generate_report(stats: dict) -> str:
         lines.append("")
 
     # Distribution tables
-    lines.append("## Bloom Level Distribution by Section")
+    lines.append("## Bloom Level Distribution by Field")
     lines.append("")
 
     # Combine all levels
     all_levels = ["remember", "understand", "apply", "analyze", "evaluate", "create"]
 
-    lines.append("| Bloom Level | Educational | Pedagogical | Difference |")
-    lines.append("|-------------|-------------|-------------|------------|")
+    lines.append("| Bloom Level | bloomsTaxonomy | bloomAlignment | Difference |")
+    lines.append("|-------------|----------------|----------------|------------|")
     for level in all_levels:
-        edu_count = stats['educational_distribution'].get(level, 0)
-        ped_count = stats['pedagogical_distribution'].get(level, 0)
-        diff = ped_count - edu_count
+        taxonomy_count = stats['taxonomy_distribution'].get(level, 0)
+        alignment_count = stats['alignment_distribution'].get(level, 0)
+        diff = alignment_count - taxonomy_count
         diff_str = f"+{diff}" if diff > 0 else str(diff)
-        lines.append(f"| {level.capitalize()} | {edu_count} | {ped_count} | {diff_str} |")
+        lines.append(f"| {level.capitalize()} | {taxonomy_count} | {alignment_count} | {diff_str} |")
     lines.append("")
 
     # Pattern distribution
@@ -282,16 +282,16 @@ def generate_report(stats: dict) -> str:
     if stats['comparison_details']:
         lines.append("## MicroSims with No Overlap Between Fields")
         lines.append("")
-        lines.append("These MicroSims have completely different values in educational.bloomsTaxonomy")
+        lines.append("These MicroSims have completely different values in pedagogical.bloomsTaxonomy")
         lines.append("and pedagogical.bloomAlignment, which may indicate data quality issues:")
         lines.append("")
-        lines.append("| Title | Educational | Pedagogical |")
-        lines.append("|-------|-------------|-------------|")
+        lines.append("| Title | bloomsTaxonomy | bloomAlignment |")
+        lines.append("|-------|----------------|----------------|")
         for detail in stats['comparison_details'][:20]:  # Limit to 20
-            edu_str = ", ".join(detail['educational'])
-            ped_str = ", ".join(detail['pedagogical'])
+            taxonomy_str = ", ".join(detail['taxonomy'])
+            alignment_str = ", ".join(detail['alignment'])
             title = detail['title'][:40] + "..." if len(detail['title']) > 40 else detail['title']
-            lines.append(f"| {title} | {edu_str} | {ped_str} |")
+            lines.append(f"| {title} | {taxonomy_str} | {alignment_str} |")
         if len(stats['comparison_details']) > 20:
             lines.append(f"| ... and {len(stats['comparison_details']) - 20} more | | |")
         lines.append("")
@@ -307,10 +307,10 @@ def generate_report(stats: dict) -> str:
         if exact_pct > 80:
             lines.append("### High Redundancy Detected")
             lines.append("")
-            lines.append(f"With {exact_pct:.1f}% exact matches between educational.bloomsTaxonomy and")
-            lines.append("pedagogical.bloomAlignment, there is significant redundancy. Consider:")
+            lines.append(f"With {exact_pct:.1f}% exact matches between bloomsTaxonomy and")
+            lines.append("bloomAlignment, there is significant redundancy. Consider:")
             lines.append("")
-            lines.append("1. **Remove bloomAlignment from pedagogical** - The educational field already captures this")
+            lines.append("1. **Remove one field** - If they are always the same, keep only one")
             lines.append("2. **Keep only bloomVerbs in pedagogical** - More specific and useful for matching")
             lines.append("")
         elif overlap_pct > 70:
@@ -320,8 +320,9 @@ def generate_report(stats: dict) -> str:
             lines.append("The fields often agree but not always. Consider:")
             lines.append("")
             lines.append("1. **Clarify the distinction** - Document when they should differ")
-            lines.append("2. **Use pedagogical.bloomAlignment for pattern matching** - Move educational.bloomsTaxonomy there")
-            lines.append("3. **Keep bloomVerbs as the primary matching field** - More granular than levels")
+            lines.append("2. **Use bloomsTaxonomy for content scope** - All levels the content can address")
+            lines.append("3. **Use bloomAlignment for pattern effectiveness** - Levels the interaction pattern supports")
+            lines.append("4. **Keep bloomVerbs as the primary matching field** - More granular than levels")
             lines.append("")
         else:
             lines.append("### Low Agreement Detected")
@@ -329,16 +330,16 @@ def generate_report(stats: dict) -> str:
             lines.append(f"With only {overlap_pct:.1f}% overlap, the fields capture different information.")
             lines.append("This suggests they serve genuinely different purposes:")
             lines.append("")
-            lines.append("- **educational.bloomsTaxonomy**: What the content teaches")
-            lines.append("- **pedagogical.bloomAlignment**: What the interaction pattern supports")
+            lines.append("- **bloomsTaxonomy**: All Bloom levels the content can address (content scope)")
+            lines.append("- **bloomAlignment**: Bloom levels the interaction pattern effectively supports (pattern effectiveness)")
             lines.append("")
 
     lines.append("### Field Purpose Summary")
     lines.append("")
     lines.append("| Field | Section | Purpose | Used For |")
     lines.append("|-------|---------|---------|----------|")
-    lines.append("| bloomsTaxonomy | educational | Content cognitive levels | Semantic search |")
-    lines.append("| bloomAlignment | pedagogical | Pattern-appropriate levels | Template matching |")
+    lines.append("| bloomsTaxonomy | pedagogical | Content cognitive scope | Semantic search |")
+    lines.append("| bloomAlignment | pedagogical | Pattern effectiveness levels | Template matching |")
     lines.append("| bloomVerbs | pedagogical | Specific action verbs | Precise matching |")
     lines.append("")
 
@@ -381,8 +382,8 @@ def main():
     print("\n" + "=" * 50)
     print("Summary:")
     print(f"  - Total MicroSims: {stats['total']}")
-    print(f"  - Has educational.bloomsTaxonomy: {stats['has_educational_blooms']}")
-    print(f"  - Has pedagogical.bloomAlignment: {stats['has_pedagogical_alignment']}")
+    print(f"  - Has pedagogical.bloomsTaxonomy: {stats['has_blooms_taxonomy']}")
+    print(f"  - Has pedagogical.bloomAlignment: {stats['has_bloom_alignment']}")
     print(f"  - Has both: {stats['has_both']}")
     if stats['has_both'] > 0:
         print(f"  - Exact match: {stats['exact_match']} ({100*stats['exact_match']/stats['has_both']:.1f}%)")
