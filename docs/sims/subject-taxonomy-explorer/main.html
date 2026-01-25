@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Hierarchy Taxonomy Explorer</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="network"></div>
+
+        <div class="title">Subject Hierarchy Taxonomy Explorer</div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color color-discipline"></div>
+                <span><strong>Discipline</strong> - Broad field</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-domain"></div>
+                <span><strong>Domain</strong> - Subject area</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-topic"></div>
+                <span><strong>Topic</strong> - Specific concept</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search subjects...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="layout-btn">Radial View</button>
+                <button class="btn btn-secondary" id="expand-all-btn">Expand All</button>
+                <button class="btn btn-secondary" id="collapse-all-btn">Collapse All</button>
+            </div>
+
+            <div class="breadcrumb" id="breadcrumb" style="display: none;">
+                <div class="breadcrumb-title">Path:</div>
+                <div class="breadcrumb-path" id="breadcrumb-path"></div>
+            </div>
+
+            <div class="node-info" id="node-info" style="display: none;">
+                <div class="node-info-title" id="info-title"></div>
+                <div class="node-info-type" id="info-type"></div>
+                <div class="node-info-desc" id="info-desc"></div>
+                <div class="node-info-example" id="info-example"></div>
+            </div>
+
+            <div class="status-info">
+                <div class="status-title">Instructions:</div>
+                <div class="status-text">
+                    Click a node to expand/collapse its children.
+                    Hover to see details. Use search to find specific subjects.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
