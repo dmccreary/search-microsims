@@ -35,5 +35,29 @@
   "prerequisites": [
     "Basic understanding of learning concepts"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "calculate",
+      "demonstrate"
+    ],
+    "pacing": "continuous",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "construct"
+  }
 }

@@ -13,28 +13,77 @@
     },
     "educational": {
       "topic": "Metadata Standards",
-      "subjectArea": ["Computer Science", "Information Science"],
-      "gradeLevel": ["High School", "Undergraduate"],
-      "bloomsTaxonomy": ["Analyze"],
+      "subjectArea": [
+        "Computer Science",
+        "Information Science"
+      ],
+      "gradeLevel": [
+        "High School",
+        "Undergraduate"
+      ],
+      "bloomsTaxonomy": [
+        "Analyze"
+      ],
       "difficulty": "Intermediate",
       "learningObjectives": [
         "Organize understanding of the metadata.json schema",
         "Identify the four main sections of the schema",
         "Explain the purpose of each field"
       ],
-      "prerequisites": ["JSON basics", "Understanding of metadata concepts"],
+      "prerequisites": [
+        "JSON basics",
+        "Understanding of metadata concepts"
+      ],
       "timeRequired": "PT10M"
     },
     "technical": {
       "framework": "vis-network",
       "libraryVersion": "9.1.2",
       "fileSize": "12KB",
-      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+      "browserSupport": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ]
     },
     "search": {
-      "keywords": ["metadata", "JSON schema", "Dublin Core", "educational metadata", "search indexing"],
-      "visualizationType": ["diagram", "network", "infographic"],
+      "keywords": [
+        "metadata",
+        "JSON schema",
+        "Dublin Core",
+        "educational metadata",
+        "search indexing"
+      ],
+      "visualizationType": [
+        "diagram",
+        "network",
+        "infographic"
+      ],
       "interactionLevel": "medium"
     }
+  },
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "remember",
+      "understand",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "identify",
+      "list",
+      "recall",
+      "recognize",
+      "compare"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "observe"
   }
 }
