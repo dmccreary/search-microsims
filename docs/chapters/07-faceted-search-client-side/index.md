@@ -1104,4 +1104,4 @@ The combination of faceted search (structured) and semantic search (conceptual) 
 
 ---
 
-*Ready to unlock semantic understanding? Continue to [Chapter 8: Semantic Search and Embeddings](../08-semantic-search-embeddings/index.md).*
+*Ready to unlock semantic understanding? Continue to [Chapter 8: Embeddings and Semantic Search](../08-embeddings-semantic-search/index.md).*

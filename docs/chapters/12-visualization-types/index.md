@@ -33,7 +33,7 @@ This chapter covers the following 15 concepts from the learning graph:
 
 ## Prerequisites
 
-This chapter assumes only the prerequisites listed in the [course description](../course-description.md). The Visualization Type concept is foundational with no dependencies within this textbook.
+This chapter assumes only the prerequisites listed in the [course description](../../course-description.md). The Visualization Type concept is foundational with no dependencies within this textbook.
 
 ---
 

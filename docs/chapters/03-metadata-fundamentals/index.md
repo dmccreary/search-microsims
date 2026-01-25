@@ -707,4 +707,4 @@ This metadata enables:
 
 ---
 
-*Ready to learn how educational context shapes metadata? Continue to [Chapter 4: Educational Metadata](../04-educational-metadata/index.md).*
+*Ready to learn about the Dublin Core standard? Continue to [Chapter 4: Dublin Core Elements](../04-dublin-core-elements/index.md).*

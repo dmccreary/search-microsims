@@ -935,4 +935,4 @@ Even experienced creators make metadata mistakes. Here are the most common pitfa
 
 ---
 
-*Ready to explore how metadata enables powerful search? Continue to [Chapter 5: Search Fundamentals](../05-search-fundamentals/index.md).*
+*Ready to learn how metadata is structured? Continue to [Chapter 5: JSON and Data Structures](../05-json-and-data-structures/index.md).*

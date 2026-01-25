@@ -586,4 +586,4 @@ One teacher creating one well-organized MicroSim might impact thousands of stude
 
 ---
 
-*Ready to dive into metadata standards? Continue to [Chapter 3: Dublin Core Metadata](../03-dublin-core/index.md).*
+*Ready to dive into metadata standards? Continue to [Chapter 3: Metadata Fundamentals](../03-metadata-fundamentals/index.md).*

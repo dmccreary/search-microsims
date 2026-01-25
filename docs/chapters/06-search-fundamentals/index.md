@@ -35,7 +35,7 @@ This chapter covers the following 15 concepts from the learning graph:
 
 ## Prerequisites
 
-This chapter assumes only the prerequisites listed in the [course description](../course-description.md). The Search concept is foundational and has no dependencies within this textbook.
+This chapter assumes only the prerequisites listed in the [course description](../../course-description.md). The Search concept is foundational and has no dependencies within this textbook.
 
 ---
 
@@ -1029,4 +1029,4 @@ Your search superpower is just getting started.
 
 ---
 
-*Ready to go beyond keywords? Continue to [Chapter 7: Faceted Search](../07-faceted-search/index.md).*
+*Ready to go beyond keywords? Continue to [Chapter 7: Faceted Search](../07-faceted-search-client-side/index.md).*

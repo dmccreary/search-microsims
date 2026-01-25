@@ -26,7 +26,7 @@ This chapter covers the following 14 concepts from the learning graph:
 
 ## Prerequisites
 
-This chapter assumes only the prerequisites listed in the [course description](../course-description.md). The Data Gathering concept is foundational with no dependencies within this textbook.
+This chapter assumes only the prerequisites listed in the [course description](../../course-description.md). The Data Gathering concept is foundational with no dependencies within this textbook.
 
 ---
 
@@ -1353,4 +1353,4 @@ The infrastructure is ready—now let's make it shine for users!
 
 ---
 
-*Ready to see it all come together? Continue to [Chapter 10: Putting It All Together](../10-putting-it-all-together/index.md).*
+*Ready to explore educational foundations? Continue to [Chapter 10: Educational Foundations](../10-educational-foundations/index.md).*

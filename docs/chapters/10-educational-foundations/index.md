@@ -1006,4 +1006,4 @@ The educational foundations you've learned here will be enriched with technical 
 
 ---
 
-*Ready to add technical depth? Continue to [Chapter 11: Technical Metadata](../11-technical-metadata/index.md).*
+*Ready to explore learning theory? Continue to [Chapter 11: Learning Theory and Pedagogy](../11-learning-theory-pedagogy/index.md).*

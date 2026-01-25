@@ -1205,4 +1205,4 @@ Your well-crafted JSON metadata will be the fuel for all of these powerful capab
 
 ---
 
-*Ready to see metadata in action? Continue to [Chapter 6: Keyword and Boolean Search](../06-keyword-boolean-search/index.md).*
+*Ready to see metadata in action? Continue to [Chapter 6: Search Fundamentals](../06-search-fundamentals/index.md).*

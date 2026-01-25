@@ -185,14 +185,14 @@ Choose one subject area and write a 1-page analysis of its clustering patterns. 
 
 ### Extensions
 
-- **For advanced students**: Explore the [Embeddings Documentation](../../embeddings.md) to learn how embeddings are generated with code
+- **For advanced students**: Explore the [Embeddings Documentation](../../chapters/08-embeddings-semantic-search/index.md) to learn how embeddings are generated with code
 - **Cross-curricular**: Connect to biology (taxonomy/classification), library science (cataloging), or social studies (demographic clustering)
 - **Project idea**: Have students suggest what additional metadata would improve the embeddings (e.g., difficulty level, interactivity type)
 
 ## Related
 
 - [MicroSim Search](../../search/demo.html) - Search MicroSims by facets
-- [Embeddings Documentation](../../embeddings.md) - How embeddings are generated
+- [Embeddings Documentation](../../chapters/08-embeddings-semantic-search/index.md) - How embeddings are generated
 
 ## References
 

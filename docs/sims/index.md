@@ -6,7 +6,7 @@
 
 ## Search Workflow
 
-[Search Workflow](./search-workflow/)
+[Search Workflow](./search-workflow/index.md)
 
 ## List Similar MicroSims
 
