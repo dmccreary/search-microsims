@@ -1,0 +1,54 @@
+{
+  "dublinCore": {
+    "title": "Coverage Applications Map",
+    "description": "Interactive world map showing how the Dublin Core Coverage element applies to region-specific educational content. Students explore geographic and temporal coverage constraints across different educational jurisdictions.",
+    "creator": "MicroSim Generator",
+    "date": "2026-01-25",
+    "subject": [
+      "Metadata",
+      "Dublin Core",
+      "Coverage Element",
+      "Educational Standards",
+      "Curriculum Alignment",
+      "Information Science"
+    ],
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "language": "en",
+    "rights": "MIT License"
+  },
+  "educational": {
+    "subjectArea": "Information Science",
+    "gradeLevel": "Undergraduate",
+    "difficulty": "Intermediate",
+    "learningObjective": "Students will differentiate between global versus regional coverage needs by exploring how educational content may have geographic or jurisdictional constraints."
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Analyze",
+    "bloomLevel": 4,
+    "bloomVerbs": ["differentiate", "compare", "examine", "explore"],
+    "pattern": "exploration",
+    "pacing": "self-paced",
+    "bloomAlignment": ["analyze", "understand"]
+  },
+  "technical": {
+    "framework": "Leaflet.js",
+    "dependencies": ["leaflet@1.9.4"],
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"],
+    "responsive": true
+  },
+  "search": {
+    "visualizationType": ["map", "interactive-demo", "exploration"],
+    "keywords": [
+      "coverage",
+      "dublin core",
+      "metadata",
+      "geographic",
+      "temporal",
+      "curriculum",
+      "standards",
+      "world map",
+      "regions"
+    ]
+  }
+}

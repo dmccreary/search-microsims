@@ -57,7 +57,20 @@ Run the microsim-generator skill using as your specification the input the text 
 Run the Python program @src/find-similar-templates/find-similar-templates.py to 
 find similar MicroSim templates you can use as an initial template.
 
-
 Keep a detailed log of your decision of what parts of what templates you use to      
 generate the new MicroSim and put your design decisions in @logs/coverage-applications-map
+
+
+## Creative Commons License Chooser
+
+Focus on the diagram here:
+@docs/chapters/04-dublin-core-elements/#diagram-creative-commons-license-chooser
+
+Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.
+
+Run the Python program @src/find-similar-templates/find-similar-templates.py to 
+find similar MicroSim templates you can use as an initial template.
+
+Keep a detailed log of your decision of what parts of what templates you use to      
+generate the new MicroSim and put your design decisions in @logs/creative-commons-license-chooser
 

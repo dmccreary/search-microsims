@@ -1,0 +1,47 @@
+Type: microsim
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: recommend
+
+Learning Objective: Students will recommend appropriate Creative Commons licenses for different MicroSim sharing scenarios by analyzing use case requirements against license permissions.
+
+Canvas layout:
+- Left panel (300px): Decision questions
+- Center panel (250px): License visualization
+- Right panel (200px): Result and explanation
+
+Visual elements:
+- Flowchart decision tree showing license paths
+- License icons (CC, BY, NC, SA, ND) with visual representations
+- Result card showing recommended license with summary
+
+Interactive controls:
+- Radio buttons: "Allow commercial use?" (Yes/No)
+- Radio buttons: "Allow modifications?" (Yes/ShareAlike/No)
+- Checkbox: "Require attribution?" (locked to Yes except CC0)
+- Button: "I want maximum freedom for users" (presets CC0)
+- Button: "Reset"
+
+Decision logic:
+- Commercial: Yes + Modifications: Yes → CC BY
+- Commercial: Yes + Modifications: ShareAlike → CC BY-SA
+- Commercial: No + Modifications: Yes → CC BY-NC
+- Commercial: No + Modifications: ShareAlike → CC BY-NC-SA
+- Commercial: No + Modifications: No → CC BY-NC-ND
+- Maximum freedom → CC0
+
+Result display:
+- Large license badge
+- Plain English summary: "Others can..."
+- Link to full license text
+- Copy-paste JSON snippet for metadata
+
+Default state: All questions unanswered, no recommendation shown
+
+Behavior:
+- As user answers questions, flowchart path highlights
+- Recommendation updates immediately
+- Incompatible combinations show warning
+- Hover over license badges for quick explanations
+
+Implementation: p5.js with interactive form elements
