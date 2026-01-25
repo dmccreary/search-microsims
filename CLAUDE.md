@@ -81,6 +81,32 @@ This script reads the 7MB embeddings file and precomputes the top 10 most simila
 
 Run this script after regenerating embeddings.
 
+### Finding Similar Templates (for microsim-generator)
+```bash
+# Activate the embeddings virtual environment (requires Python 3.12)
+source .venv-embeddings/bin/activate
+
+# Find templates from a specification file
+python src/find-similar-templates/find-similar-templates.py --file spec.txt
+
+# Find templates from stdin
+cat spec.txt | python src/find-similar-templates/find-similar-templates.py
+
+# Direct specification text
+python src/find-similar-templates/find-similar-templates.py --spec "Type: microsim
+Learning Objective: Students will understand pendulum motion..."
+
+# JSON output for programmatic use (used by microsim-generator skill)
+python src/find-similar-templates/find-similar-templates.py --file spec.txt --json --quiet
+
+# Return more results (default is 5)
+python src/find-similar-templates/find-similar-templates.py --file spec.txt --top 10
+```
+
+This service takes SPECIFICATION blocks (from chapter `index.md` files) and returns the most similar existing MicroSims as templates. It uses the same embedding model to create a query embedding, then computes cosine similarity against all existing MicroSim embeddings. Returns GitHub repository URLs for viewing the source code.
+
+See `src/find-similar-templates/README.md` for detailed documentation.
+
 ## Architecture
 
 ### Data Pipeline
@@ -137,6 +163,8 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/embeddings/generate-embeddings.py` | Generate semantic embeddings for MicroSims |
 | `src/embeddings/README.md` | Embeddings documentation |
 | `src/generate-similar-microsims.py` | Precompute similar MicroSims from embeddings |
+| `src/find-similar-templates/find-similar-templates.py` | Find template MicroSims from specifications |
+| `src/find-similar-templates/README.md` | Template finder documentation |
 | `docs/search/demo.html` | ItemsJS faceted search UI |
 | `docs/search/microsims-data.json` | Combined metadata (generated) |
 | `docs/search/similar-microsims.json` | Precomputed similar MicroSims lookup (~870KB, generated) |
