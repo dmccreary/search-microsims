@@ -1,0 +1,35 @@
+Type: map
+
+Bloom Level: Analyze (L4)
+Bloom Verb: differentiate
+
+Learning Objective: Students will differentiate between global versus regional coverage needs by exploring how educational content may have geographic or jurisdictional constraints.
+
+Purpose: Illustrate how the Coverage element applies to region-specific educational content
+
+Geographic scope: World map with major regions
+
+Regions marked:
+- United States (blue) - "Common Core, NGSS"
+- European Union (green) - "Bologna Process standards"
+- United Kingdom (purple) - "GCSE, A-Level curricula"
+- Asia-Pacific (orange) - "Various national curricula"
+- Latin America (teal) - "Regional educational standards"
+
+Interactive elements:
+- Click region to see example Coverage values
+- Toggle between "Geographic" and "Temporal" views
+- Search for curriculum standards by region
+- Examples panel shows MicroSims relevant to selected region
+
+Coverage examples by click:
+- US: "Common Core Math, NGSS Science, US History to 1877"
+- UK: "Key Stage 3-4, GCSE Physics specification"
+- EU: "European scientific notation conventions"
+- Global: "Universal physics principles, math concepts"
+
+Visual style: Clean world map with regional highlighting
+Color scheme: Distinct colors per region, gray for unselected
+Animation: Smooth region highlighting and panel transitions
+
+Implementation: Leaflet.js with GeoJSON regions
