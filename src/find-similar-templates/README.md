@@ -262,3 +262,105 @@ Run the prerequisite scripts:
 python src/crawl-microsims.py
 python src/embeddings/generate-embeddings.py
 ```
+
+---
+
+## TODO: Pedagogical Pattern Alignment (Major Enhancement)
+
+**Priority:** High
+**Complexity:** Large project
+
+### Problem Statement
+
+The current template matching system matches on **visual/structural similarity** (keywords, visualization types, frameworks) but does NOT match on **pedagogical alignment** (how well the interaction pattern supports the learning objective).
+
+This leads to poor template recommendations. For example:
+- A specification with Bloom Level "Understand (L2)" and verb "explain" might match an animated flow diagram template
+- But continuous animation is pedagogically inappropriate for "explain" objectives
+- A step-through worked example template would be better, even if visually different
+
+### Proposed Enhancement
+
+Add pedagogical metadata to MicroSim embeddings and incorporate pedagogical alignment scoring:
+
+#### 1. Extend Metadata Schema
+
+Add to each MicroSim's metadata:
+```json
+{
+  "pedagogical": {
+    "pattern": "worked-example | exploration | practice | assessment | reference",
+    "bloom_alignment": ["remember", "understand", "apply", "analyze", "evaluate", "create"],
+    "supports_prediction": true | false,
+    "data_visibility": "high | medium | low",
+    "pacing": "self-paced | continuous | timed"
+  }
+}
+```
+
+#### 2. Crawl/Enrich Existing MicroSims
+
+- Analyze existing MicroSims to classify their pedagogical patterns
+- Add pedagogical metadata to metadata.json files
+- Regenerate embeddings with pedagogical features
+
+#### 3. Modify Embedding Generation
+
+Incorporate pedagogical features into the embedding text:
+```python
+def create_embedding_text(microsim):
+    parts = [
+        f"Title: {microsim['title']}",
+        f"Pedagogical Pattern: {microsim['pedagogical']['pattern']}",
+        f"Bloom Alignment: {', '.join(microsim['pedagogical']['bloom_alignment'])}",
+        f"Supports Prediction: {microsim['pedagogical']['supports_prediction']}",
+        # ... existing fields
+    ]
+```
+
+#### 4. Add Pedagogical Alignment Score
+
+Modify `find_similar_templates()` to compute a weighted score:
+```python
+def compute_match_score(spec, template):
+    semantic_score = cosine_similarity(spec_embedding, template_embedding)
+    pedagogical_score = compute_pedagogical_alignment(spec, template)
+
+    # Weight pedagogical alignment heavily
+    final_score = 0.6 * semantic_score + 0.4 * pedagogical_score
+    return final_score
+```
+
+#### 5. Filter/Boost Based on Bloom Level
+
+```python
+def find_similar_templates(spec_text, top_n=5):
+    spec = parse_specification(spec_text)
+    bloom_level = spec.get('bloom_level', '').lower()
+
+    # Filter out pedagogically inappropriate templates
+    if 'understand' in bloom_level:
+        # Boost step-through/worked-example templates
+        # Penalize continuous animation templates
+        pass
+```
+
+### Expected Benefits
+
+- Templates matched on pedagogical appropriateness, not just visual similarity
+- Fewer instructional design failures like the v1 Keywords-to-Search-Results-Flow
+- Better learning outcomes from generated MicroSims
+
+### Implementation Notes
+
+This is a significant project requiring:
+1. Metadata schema extension
+2. Crawling/classification of 500+ existing MicroSims
+3. Embedding regeneration
+4. Scoring algorithm changes
+5. Testing with diverse specifications
+
+Consider phased rollout:
+- Phase 1: Add manual pedagogical tags to 50 high-quality templates
+- Phase 2: Build classifier to auto-tag remaining MicroSims
+- Phase 3: Integrate into find-similar-templates scoring

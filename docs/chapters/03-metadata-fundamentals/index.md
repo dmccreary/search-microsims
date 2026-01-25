@@ -479,7 +479,7 @@ Notice how this includes both technical terms ("kinematics," "ballistics") and e
 
 #### Diagram: Keywords to Search Results Flow
 
-<iframe src="../../sims/keyword-search-flow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/keyword-search-flow/main.html" width="100%" height="552px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Keywords to Search Results Flow Diagram</summary>

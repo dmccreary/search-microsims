@@ -1,0 +1,48 @@
+{
+  "title": "Faceted Classification",
+  "description": "Interactive demonstration of multi-dimensional classification showing how faceted search filters combine to narrow results. Features 20 sample MicroSims filterable by Subject, Grade Level, Difficulty, and Type with real-time updates, smooth fade animations, and active filter badges.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-25",
+  "subject": [
+    "Information Science",
+    "Search",
+    "Classification",
+    "Faceted Search",
+    "User Interface"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/microsim-search/sims/faceted-classification/",
+  "publisher": "MicroSims Educational Platform",
+  "educationalLevel": "High School, Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators, Librarians, Developers",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Faceted Search",
+    "Multi-dimensional Classification",
+    "Filter Logic",
+    "AND Operations",
+    "Result Sets",
+    "User Interface Controls"
+  ],
+  "prerequisites": [
+    "Basic understanding of categories",
+    "Familiarity with web interfaces"
+  ],
+  "library": "p5.js",
+  "visualizationType": [
+    "simulation",
+    "interactive-demo",
+    "diagram"
+  ]
+}

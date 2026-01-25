@@ -46,6 +46,9 @@ nav:
     - MicroSim Directory Structure: sims/microsim-directory-structure/index.md
     - HTML Architecture: sims/html-architecture/index.md
     - Metadata Schema: sims/metadata-schema/index.md
+    - Dublin Core Elements: sims/dublin-core-elements/index.md
+    - Faceted Classification: sims/faceted-classification/index.md
+    - Keyword Search Flow: sims/keyword-search-flow/index.md
     - MicroSim Schema: microsim-schema.md
 
   - Learning Graph:

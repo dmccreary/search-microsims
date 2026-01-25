@@ -14,5 +14,34 @@ Result:
 [MicroSim](../sims/microsim-directory-structure/index.md)
 [Log File](https://github.com/dmccreary/search-microsims/blob/main/logs/generate-microsim-directory-structure-microsim.md)
 
+###
 
-                         
+Focus on the diagram here:
+@docs/chapters/03-metadata-fundamentals/#diagram-dublin-core-element-relationships
+
+Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.
+
+Run the Python program @src/find-similar-templates/find-similar-templates.py to 
+find similar MicroSim templates you can use as an initial template.
+
+If it is a p5.js MicroSim, add the following to the index.md
+[Edit the {NAME} }MicroSim Using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/)
+
+Keep a detailed log of your decision of what parts of what templates you use to      
+generate the new MicroSim and put your design decisions in @logs/dublin-core-element-relationships-microsim.md
+
+
+
+Focus on the diagram here:
+@docs/chapters/03-metadata-fundamentals/#diagram-keywords-to-search-results-flow
+
+Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.
+
+Run the Python program @src/find-similar-templates/find-similar-templates.py to 
+find similar MicroSim templates you can use as an initial template.
+
+If it is a p5.js MicroSim, add the following to the index.md
+[Edit the {NAME} }MicroSim Using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/)
+
+Keep a detailed log of your decision of what parts of what templates you use to      
+generate the new MicroSim and put your design decisions in @logs/keywords-to-search-results-flow
