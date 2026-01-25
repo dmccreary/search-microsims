@@ -23,7 +23,7 @@ from pathlib import Path
 
 # Configuration
 WORKSPACE_DIR = Path(os.environ.get("HOME")) / "Documents" / "ws"
-COMMIT_MESSAGE = "chore: enrich metadata with learningObjectives and visualizationType"
+COMMIT_MESSAGE = "Added pedagogical metadata to MicroSim metadata.json files"
 
 # Paths relative to script location
 SCRIPT_DIR = Path(__file__).parent.parent.parent

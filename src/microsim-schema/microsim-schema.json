@@ -814,6 +814,68 @@
               "description": "Suggestions for extending or modifying the simulation"
             }
           }
+        },
+        "pedagogical": {
+          "type": "object",
+          "description": "Pedagogical pattern metadata for template matching and instructional alignment",
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "enum": ["worked-example", "exploration", "practice", "assessment", "reference", "demonstration", "guided-discovery"],
+              "description": "Primary pedagogical pattern the MicroSim follows"
+            },
+            "bloomAlignment": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["remember", "understand", "apply", "analyze", "evaluate", "create"]
+              },
+              "description": "Bloom's taxonomy levels this interaction pattern best supports (lowercase for matching)"
+            },
+            "bloomVerbs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "define", "identify", "list", "recall", "recognize", "state",
+                  "classify", "compare", "describe", "explain", "interpret", "summarize",
+                  "apply", "calculate", "demonstrate", "illustrate", "implement", "solve", "use",
+                  "analyze", "differentiate", "examine", "experiment", "investigate", "test",
+                  "assess", "critique", "evaluate", "judge", "justify", "predict",
+                  "construct", "create", "design", "develop", "formulate", "generate"
+                ]
+              },
+              "description": "Specific Bloom's taxonomy verbs this MicroSim supports (for precise matching)"
+            },
+            "supportsPrediction": {
+              "type": "boolean",
+              "description": "Whether the MicroSim allows students to make predictions before seeing results"
+            },
+            "dataVisibility": {
+              "type": "string",
+              "enum": ["high", "medium", "low"],
+              "description": "How much underlying data/calculations are shown to the learner"
+            },
+            "pacing": {
+              "type": "string",
+              "enum": ["self-paced", "continuous", "timed", "step-through"],
+              "description": "How the learner controls progression through the content"
+            },
+            "feedbackType": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["immediate", "delayed", "corrective", "explanatory", "none"]
+              },
+              "description": "Types of feedback provided to the learner"
+            },
+            "interactionStyle": {
+              "type": "string",
+              "enum": ["observe", "manipulate", "construct", "respond", "explore"],
+              "description": "Primary way learners interact with the content"
+            }
+          },
+          "required": ["pattern", "bloomAlignment", "pacing"]
         }
       },
       "required": ["dublinCore", "search", "educational", "technical", "userInterface"]

@@ -33,6 +33,33 @@ python src/enrich-metadata/enrich-metadata.py --dry-run
 python src/enrich-metadata/enrich-metadata.py --report
 ```
 
+### enrich-pedagogical.py
+
+Adds pedagogical classification metadata for template matching and instructional alignment:
+
+- **pattern** - Instructional pattern (worked-example, exploration, practice, assessment, reference, demonstration, guided-discovery)
+- **bloomAlignment** - Which Bloom's levels the interaction supports (lowercase)
+- **bloomVerbs** - Specific action verbs (demonstrate, calculate, experiment, predict, etc.)
+- **pacing** - How learner controls progression (self-paced, continuous, timed, step-through)
+- **supportsPrediction** - Whether students can make predictions before seeing results
+- **dataVisibility** - How much data/calculations shown (high, medium, low)
+- **feedbackType** - Types of feedback provided (immediate, delayed, corrective, explanatory, none)
+- **interactionStyle** - Primary interaction mode (observe, manipulate, construct, respond, explore)
+
+```bash
+# Enrich all repos
+python src/enrich-metadata/enrich-pedagogical.py
+
+# Enrich a specific repo
+python src/enrich-metadata/enrich-pedagogical.py geometry-course
+
+# Preview changes without modifying files
+python src/enrich-metadata/enrich-pedagogical.py --dry-run
+
+# Report what's missing (no changes)
+python src/enrich-metadata/enrich-pedagogical.py --report
+```
+
 ### commit-enrichments.py
 
 Finds repositories with uncommitted metadata changes and pushes them to GitHub:
@@ -109,6 +136,55 @@ Inferred from content keywords:
 - Analyze: differentiate, examine, compare
 - Evaluate: assess, judge, critique
 - Create: design, construct, develop
+
+## Pedagogical Patterns (enrich-pedagogical.py)
+
+### Pattern Detection
+
+| Pattern | Detection Indicators |
+|---------|---------------------|
+| worked-example | step-by-step, walkthrough, demonstration with steps |
+| exploration | explore, discover, experiment, sandbox |
+| practice | drill, exercise, repeat, try again |
+| assessment | quiz, test, score, correct/wrong |
+| reference | lookup, table, chart, formula sheet |
+| demonstration | show, display, illustrate, animation |
+| guided-discovery | guided, hint, scaffold, prediction prompt |
+
+### Pacing Detection
+
+| Pacing | Detection Indicators |
+|--------|---------------------|
+| self-paced | slider, button, click, drag controls |
+| continuous | animate, auto-play, frameRate, setInterval |
+| timed | timer, countdown, time limit |
+| step-through | next/previous buttons, step numbers |
+
+### Bloom Verbs Detection
+
+Verbs are detected based on content patterns and limited to those matching the detected Bloom levels:
+
+| Level | Verbs | Detection Patterns |
+|-------|-------|-------------------|
+| Remember | define, identify, list, recall, recognize, state | definition, find the, name the, match |
+| Understand | classify, compare, describe, explain, interpret, summarize | categorize, side-by-side, why does |
+| Apply | apply, calculate, demonstrate, illustrate, implement, solve, use | formula, step-by-step, solution |
+| Analyze | analyze, differentiate, examine, experiment, investigate, test | slider, try different, what happens |
+| Evaluate | assess, critique, evaluate, judge, justify, predict | quiz, score, hypothesis, estimate |
+| Create | construct, create, design, develop, formulate, generate | build, make, produce |
+
+### Pedagogical Alignment
+
+The pedagogical metadata enables better template matching:
+
+| Bloom Level | Appropriate Patterns | Inappropriate Patterns |
+|-------------|---------------------|------------------------|
+| remember | reference, demonstration | exploration, create |
+| understand | worked-example, demonstration | practice, assessment |
+| apply | practice, guided-discovery | reference |
+| analyze | exploration, guided-discovery | worked-example |
+| evaluate | assessment, exploration | demonstration |
+| create | exploration | worked-example, reference |
 
 ## Logs
 

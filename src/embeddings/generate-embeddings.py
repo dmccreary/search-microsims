@@ -139,6 +139,25 @@ def create_embedding_text(microsim: dict) -> str:
         else:
             parts.append(f"Cognitive Level: {blooms}")
 
+    # Pedagogical metadata (for template matching)
+    pedagogical = microsim.get("pedagogical", {})
+    if pedagogical:
+        pattern = pedagogical.get("pattern", "")
+        if pattern:
+            parts.append(f"Pedagogical Pattern: {pattern}")
+
+        bloom_verbs = pedagogical.get("bloomVerbs", [])
+        if bloom_verbs:
+            parts.append(f"Bloom Verbs: {', '.join(bloom_verbs[:5])}")
+
+        pacing = pedagogical.get("pacing", "")
+        if pacing:
+            parts.append(f"Pacing: {pacing}")
+
+        interaction_style = pedagogical.get("interactionStyle", "")
+        if interaction_style:
+            parts.append(f"Interaction Style: {interaction_style}")
+
     # Source repo (helps with context)
     source = microsim.get("_source", {})
     if source:

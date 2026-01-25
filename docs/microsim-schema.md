@@ -6,7 +6,7 @@ This document describes the official JSON schema for MicroSim metadata, used for
 
 ## Overview
 
-The MicroSim metadata schema is a comprehensive JSON Schema (Draft 07) that organizes metadata into eight primary sections:
+The MicroSim metadata schema is a comprehensive JSON Schema (Draft 07) that organizes metadata into nine primary sections:
 
 | Section | Purpose |
 |---------|---------|
@@ -18,6 +18,7 @@ The MicroSim metadata schema is a comprehensive JSON Schema (Draft 07) that orga
 | `simulation` | Physics/math model, variables, equations |
 | `analytics` | Event tracking, learning indicators |
 | `usage` | Pedagogical guidance, assessment questions |
+| `pedagogical` | Instructional patterns for template matching |
 
 ## Dublin Core Metadata
 
@@ -170,6 +171,100 @@ p5.js | vanilla-js | d3.js | three.js | other
 | `deviceRequirements` | object | Touch, keyboard, screen size |
 | `accessibility` | object | WCAG level, screen reader support |
 
+## Pedagogical Patterns
+
+Metadata for template matching and instructional alignment. This section enables the `find-similar-templates` service to recommend MicroSims based on pedagogical appropriateness, not just visual similarity.
+
+### Pattern (Required)
+
+The primary pedagogical pattern the MicroSim follows:
+
+```
+worked-example    - Step-through demonstrations with explanations
+exploration       - Open-ended discovery with minimal guidance
+practice          - Repeated skill application with feedback
+assessment        - Testing/evaluation of understanding
+reference         - Static information display or lookup
+demonstration     - Instructor-led showing of concepts
+guided-discovery  - Scaffolded exploration with hints
+```
+
+### Bloom Alignment (Required)
+
+Which Bloom's taxonomy levels this interaction pattern best supports (lowercase):
+
+```
+remember | understand | apply | analyze | evaluate | create
+```
+
+### Bloom Verbs (Optional)
+
+Specific action verbs the MicroSim supports, enabling more precise template matching:
+
+| Level | Verbs |
+|-------|-------|
+| Remember | define, identify, list, recall, recognize, state |
+| Understand | classify, compare, describe, explain, interpret, summarize |
+| Apply | apply, calculate, demonstrate, illustrate, implement, solve, use |
+| Analyze | analyze, differentiate, examine, experiment, investigate, test |
+| Evaluate | assess, critique, evaluate, judge, justify, predict |
+| Create | construct, create, design, develop, formulate, generate |
+
+**Why Bloom Verbs Matter:**
+
+Two MicroSims at the same Bloom level may require different interaction patterns:
+
+| Verb | Best Pattern | Reason |
+|------|--------------|--------|
+| demonstrate | worked-example, step-through | Show process sequentially |
+| calculate | practice | Repeated skill application with feedback |
+| solve | exploration, guided-discovery | Open-ended problem solving |
+| explain | worked-example | Step-through with explanations |
+| experiment | exploration | Parameter manipulation |
+| predict | guided-discovery | Hypothesis testing |
+
+**Pedagogical Alignment Guidelines:**
+
+| Bloom Level | Appropriate Patterns | Inappropriate Patterns |
+|-------------|---------------------|------------------------|
+| remember | reference, demonstration | exploration, create |
+| understand | worked-example, demonstration | practice, assessment |
+| apply | practice, guided-discovery | reference |
+| analyze | exploration, guided-discovery | worked-example |
+| evaluate | assessment, exploration | demonstration |
+| create | exploration | worked-example, reference |
+
+### Pacing (Required)
+
+How the learner controls progression:
+
+```
+self-paced   - Learner controls all timing
+continuous   - Animation runs automatically
+timed        - Fixed time constraints
+step-through - Discrete steps with explicit advancement
+```
+
+### Optional Pedagogical Fields
+
+| Field | Type | Values | Description |
+|-------|------|--------|-------------|
+| `bloomVerbs` | array | see table above | Specific verbs for precise matching |
+| `supportsPrediction` | boolean | true/false | Allows predictions before seeing results |
+| `dataVisibility` | enum | high, medium, low | How much data/calculations shown |
+| `feedbackType` | array | immediate, delayed, corrective, explanatory, none | Types of feedback |
+| `interactionStyle` | enum | observe, manipulate, construct, respond, explore | Primary interaction mode |
+
+### Interaction Style
+
+```
+observe     - Watch without direct manipulation
+manipulate  - Adjust parameters and see effects
+construct   - Build or create something
+respond     - Answer questions or prompts
+explore     - Free-form investigation
+```
+
 ## Example Metadata
 
 ```json
@@ -210,6 +305,16 @@ p5.js | vanilla-js | d3.js | three.js | other
         "height": 450,
         "responsive": true
       }
+    },
+    "pedagogical": {
+      "pattern": "exploration",
+      "bloomAlignment": ["understand", "apply", "analyze"],
+      "bloomVerbs": ["experiment", "analyze", "predict"],
+      "pacing": "self-paced",
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "feedbackType": ["immediate"],
+      "interactionStyle": "manipulate"
     }
   }
 }
@@ -228,6 +333,8 @@ The following fields are used for faceted filtering in the search interface:
 | Framework | `technical.framework` | p5.js, d3.js, three.js, etc. |
 | Visualization Type | `search.visualizationType` | 13 visualization types |
 | Interaction Level | `search.interactionLevel` | 5 levels |
+| Pedagogical Pattern | `pedagogical.pattern` | 7 instructional patterns |
+| Pacing | `pedagogical.pacing` | 4 pacing modes |
 
 ## Schema Validation
 

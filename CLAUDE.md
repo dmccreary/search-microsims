@@ -15,13 +15,16 @@ mkdocs serve                    # Start dev server at http://127.0.0.1:8000/micr
 
 ### Crawling MicroSims
 ```bash
+# FAST: Update from local repos (use this after enriching metadata locally)
+python3 src/update-local-microsims.py              # Scan all local repos
+python3 src/update-local-microsims.py geometry-course  # Scan specific repo
+
+# SLOW: Crawl from GitHub (use only if local repos not available)
 # Set GitHub token for higher rate limits (recommended)
 export GITHUB_TOKEN=ghp_your_token
-
-# Crawl all dmccreary/* repos for metadata.json files
 python3 src/crawl-microsims.py
 
-# Update metadata from a single repository (adds/updates, removes duplicates)
+# Update metadata from a single GitHub repository (adds/updates, removes duplicates)
 python3 src/update-repo-microsims.py dmccreary/geometry-course
 
 # Analyze missing metadata by repository
@@ -31,6 +34,11 @@ python3 src/analyze-missing-metadata.py
 python3 src/enrich-metadata/enrich-metadata.py              # Enrich all repos
 python3 src/enrich-metadata/enrich-metadata.py --report     # Report what's missing
 python3 src/enrich-metadata/enrich-metadata.py --dry-run    # Preview changes
+
+# Enrich with pedagogical classification (pattern, bloomAlignment, pacing, etc.)
+python3 src/enrich-metadata/enrich-pedagogical.py           # Enrich all repos
+python3 src/enrich-metadata/enrich-pedagogical.py --report  # Report what's missing
+python3 src/enrich-metadata/enrich-pedagogical.py --dry-run # Preview changes
 
 # Commit and push enriched metadata to GitHub
 python3 src/enrich-metadata/commit-enrichments.py           # Commit all changed repos
@@ -151,10 +159,12 @@ The search normalizes both flat legacy format and nested schema format:
 
 | File | Purpose |
 |------|---------|
-| `src/crawl-microsims.py` | GitHub crawler for metadata collection |
-| `src/update-repo-microsims.py` | Update metadata from a single repo |
+| `src/crawl-microsims.py` | GitHub crawler for metadata collection (slow) |
+| `src/update-local-microsims.py` | Update from local repos (fast, preferred) |
+| `src/update-repo-microsims.py` | Update metadata from a single GitHub repo |
 | `src/analyze-missing-metadata.py` | Report repos missing metadata |
 | `src/enrich-metadata/enrich-metadata.py` | Add missing fields to existing metadata |
+| `src/enrich-metadata/enrich-pedagogical.py` | Add pedagogical classification to metadata |
 | `src/enrich-metadata/commit-enrichments.py` | Commit and push enriched metadata to GitHub |
 | `src/enrich-metadata/README.md` | Enrichment tools documentation |
 | `src/data-profiler/profile-microsims.py` | Generate metadata quality metrics report |
