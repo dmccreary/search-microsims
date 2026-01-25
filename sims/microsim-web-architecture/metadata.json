@@ -1,0 +1,40 @@
+{
+  "title": "MicroSim Web Architecture",
+  "description": "Technical diagram showing how MicroSims are embedded in web pages using iframes, with animated HTTP request/response flow between server and browser.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-24",
+  "subject": [
+    "Web Development",
+    "Computer Science",
+    "Web Architecture",
+    "HTML"
+  ],
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/search-microsims/sims/microsim-web-architecture/",
+  "publisher": "MicroSims Educational Platform",
+  "educationalLevel": "High School, Undergraduate",
+  "learningResourceType": "diagram",
+  "audience": "Web Developers, Educators, Students",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand"
+  ],
+  "concepts": [
+    "Iframe Element",
+    "Web Embedding",
+    "HTTP Request",
+    "HTTP Response",
+    "Client-Server Architecture"
+  ],
+  "prerequisites": [
+    "Basic HTML knowledge",
+    "Understanding of web browsers"
+  ],
+  "library": "p5.js"
+}

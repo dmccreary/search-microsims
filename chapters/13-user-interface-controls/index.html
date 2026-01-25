@@ -1,0 +1,4036 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Design intuitive MicroSim interfaces with appropriate interaction levels, control widgets, and layout patterns that enhance rather than hinder learning">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/13-user-interface-controls/">
+      
+      
+        <link rel="prev" href="../12-visualization-types/">
+      
+      
+        <link rel="next" href="../14-technical-implementation/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>User Interface and Controls - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-interface-and-controls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Interface and Controls
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-interface-design-is-your-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Interface Design Is Your Superpower
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-levels-how-much-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Levels: How Much Control?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction Levels: How Much Control?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-interaction-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Interaction Spectrum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passive-viewing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passive Viewing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Low Interaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Interaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interaction-level-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interaction Level Spectrum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-controls-the-interface-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Controls: The Interface Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Controls: The Interface Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-control-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Control Toolkit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slider-control-continuous-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slider Control: Continuous Adjustment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slider Control: Continuous Adjustment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slider-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slider Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slider-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slider Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-slider-selecting-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Range Slider: Selecting Intervals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button-control-discrete-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Control: Discrete Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Button Control: Discrete Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#button-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-start-pause-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Start-Pause Button
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Design Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Button Design Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-button-state-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Button State Design
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropdown-select-choosing-from-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dropdown Select: Choosing from Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dropdown Select: Choosing from Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-dropdowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Dropdowns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropdown-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dropdown Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-select-choosing-several" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi Select: Choosing Several
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox-control-boolean-toggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox Control: Boolean Toggles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checkbox Control: Boolean Toggles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checkbox-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkbox-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radio-button-exclusive-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button: Exclusive Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radio Button: Exclusive Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radio-button-vs-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button vs. Dropdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radio-button-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radio-button-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-input-precise-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Input: Precise Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Input: Precise Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-text-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Text Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-input-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Input Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-picker-visual-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Picker: Visual Selection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Picker: Visual Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-picker-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Picker Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-picker-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Picker Design
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout-types-organizing-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout Types: Organizing the Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout Types: Organizing the Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-standard-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Standard Layouts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-panel-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Panel Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-panel-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Three-Panel Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Three-Panel Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-layout-pattern-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Layout Pattern Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-scheme-visual-harmony" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Scheme: Visual Harmony
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Scheme: Visual Harmony">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-scheme-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Scheme Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-color-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Color Palette
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-color-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Color Conventions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dark Mode Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsive-design-adapting-to-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive Design: Adapting to Devices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responsive Design: Adapting to Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsive-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsim-responsive-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Responsive Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Touch Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-organization-grouping-and-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Organization: Grouping and Hierarchy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Organization: Grouping and Hierarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouping-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-organized-control-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Organized Control Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labels-and-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labels and Instructions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Labels and Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#label-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instruction-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruction Placement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Messages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-interface-design-is-your-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Interface Design Is Your Superpower
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-levels-how-much-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Levels: How Much Control?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction Levels: How Much Control?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-interaction-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Interaction Spectrum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passive-viewing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passive Viewing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Low Interaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Interaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interaction-level-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interaction Level Spectrum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-controls-the-interface-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Controls: The Interface Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Controls: The Interface Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-control-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Control Toolkit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slider-control-continuous-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slider Control: Continuous Adjustment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slider Control: Continuous Adjustment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slider-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slider Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slider-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slider Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-slider-selecting-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Range Slider: Selecting Intervals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button-control-discrete-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Control: Discrete Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Button Control: Discrete Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#button-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-start-pause-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Start-Pause Button
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Design Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Button Design Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-button-state-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Button State Design
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropdown-select-choosing-from-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dropdown Select: Choosing from Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dropdown Select: Choosing from Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-dropdowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Dropdowns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropdown-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dropdown Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-select-choosing-several" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi Select: Choosing Several
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox-control-boolean-toggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox Control: Boolean Toggles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checkbox Control: Boolean Toggles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checkbox-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkbox-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radio-button-exclusive-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button: Exclusive Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radio Button: Exclusive Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radio-button-vs-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button vs. Dropdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radio-button-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radio-button-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radio Button Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-input-precise-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Input: Precise Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Input: Precise Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-text-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Text Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-input-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Input Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-picker-visual-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Picker: Visual Selection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Picker: Visual Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-picker-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Picker Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-picker-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Picker Design
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout-types-organizing-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout Types: Organizing the Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layout Types: Organizing the Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-standard-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Standard Layouts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-panel-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Panel Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-panel-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Three-Panel Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Three-Panel Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-layout-pattern-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Layout Pattern Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-scheme-visual-harmony" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Scheme: Visual Harmony
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Scheme: Visual Harmony">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-scheme-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Scheme Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-color-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Color Palette
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-color-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Color Conventions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dark Mode Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsive-design-adapting-to-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive Design: Adapting to Devices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responsive Design: Adapting to Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsive-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsim-responsive-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Responsive Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Touch Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-organization-grouping-and-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Organization: Grouping and Hierarchy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Organization: Grouping and Hierarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouping-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-organized-control-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Organized Control Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labels-and-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labels and Instructions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Labels and Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#label-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instruction-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruction Placement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Messages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/13-user-interface-controls/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="user-interface-and-controls">User Interface and Controls</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers user interaction levels, control widgets, and layout patterns for MicroSim interfaces. You'll learn about interaction levels from passive viewing through high interaction, and the various user controls including sliders, buttons, dropdowns, checkboxes, radio buttons, text inputs, and color pickers. The chapter also covers layout types including fixed, two-panel, and three-panel layouts, as well as color scheme considerations. After completing this chapter, students will be able to design effective user interfaces for MicroSims.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 18 concepts from the learning graph:</p>
+<ol>
+<li>Interaction Level</li>
+<li>Passive Viewing</li>
+<li>Low Interaction</li>
+<li>High Interaction</li>
+<li>User Controls</li>
+<li>Slider Control</li>
+<li>Button Control</li>
+<li>Start-Pause Button</li>
+<li>Range Slider</li>
+<li>Dropdown Select</li>
+<li>Multi Select</li>
+<li>Checkbox Control</li>
+<li>Radio Button</li>
+<li>Text Input</li>
+<li>Color Picker</li>
+<li>Layout Types</li>
+<li>Fixed Layout</li>
+<li>Two Panel Layout</li>
+<li>Three Panel Layout</li>
+<li>Color Scheme</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-microsims/">Chapter 1: Introduction to MicroSims</a></li>
+<li><a href="../12-visualization-types/">Chapter 12: Visualization Types</a></li>
+</ul>
+<hr />
+<h2 id="why-interface-design-is-your-superpower">Why Interface Design Is Your Superpower</h2>
+<p>You've created an amazing simulation with perfect physics, beautiful visuals, and sound pedagogy. But students open it and immediately ask: "What do I do?" They can't find the controls. They don't know what's clickable. They accidentally reset their work. Frustration mounts. Learning plummets.</p>
+<p>Sound familiar? This is what happens when brilliant content meets poor interface design. The content itself might be perfect, but the <em>interface</em> stands between students and learning.</p>
+<p>Great interface design is invisible—users don't notice it because everything just works. Poor interface design is painfully visible—users constantly fight it instead of learning. Your goal is invisibility.</p>
+<p>This is where interface design becomes your superpower. When you master interaction levels, control widgets, and layout patterns, your MicroSims become intuitive. Students focus on the physics, not the controls. Teachers recommend your work because "students just get it."</p>
+<p>Let's design some interfaces!</p>
+<hr />
+<h2 id="interaction-levels-how-much-control">Interaction Levels: How Much Control?</h2>
+<p><strong>Interaction level</strong> describes how much user control a MicroSim provides, ranging from passive viewing (no control) to high interaction (extensive control).</p>
+<h3 id="the-interaction-spectrum">The Interaction Spectrum</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>User Role</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Passive Viewing</strong></td>
+<td>Watch only</td>
+<td>Auto-playing animation</td>
+</tr>
+<tr>
+<td><strong>Low Interaction</strong></td>
+<td>Minimal control</td>
+<td>Play/pause, hover for info</td>
+</tr>
+<tr>
+<td><strong>Medium Interaction</strong></td>
+<td>Some parameters</td>
+<td>A few sliders, presets</td>
+</tr>
+<tr>
+<td><strong>High Interaction</strong></td>
+<td>Full control</td>
+<td>Many parameters, custom scenarios</td>
+</tr>
+</tbody>
+</table>
+<h3 id="choosing-the-right-level">Choosing the Right Level</h3>
+<table>
+<thead>
+<tr>
+<th>Learning Goal</th>
+<th>Appropriate Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduction/overview</strong></td>
+<td>Passive or low</td>
+</tr>
+<tr>
+<td><strong>Concept demonstration</strong></td>
+<td>Low to medium</td>
+</tr>
+<tr>
+<td><strong>Guided exploration</strong></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Free experimentation</strong></td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Assessment/practice</strong></td>
+<td>Varies by task</td>
+</tr>
+</tbody>
+</table>
+<h3 id="passive-viewing">Passive Viewing</h3>
+<p><strong>Passive viewing</strong> means the user watches without input. The MicroSim runs automatically or follows a scripted sequence.</p>
+<p><strong>When passive works:</strong></p>
+<ul>
+<li>Initial concept introduction</li>
+<li>Showing a complete process</li>
+<li>When interaction would distract</li>
+<li>Background demonstrations</li>
+</ul>
+<p><strong>When passive fails:</strong></p>
+<ul>
+<li>When exploration aids understanding</li>
+<li>When individual pacing matters</li>
+<li>When discovery is the goal</li>
+<li>For extended learning sessions</li>
+</ul>
+<p>Even "passive" MicroSims should include:</p>
+<ul>
+<li>Play/pause control (at minimum)</li>
+<li>Restart option</li>
+<li>Speed control if timing matters</li>
+</ul>
+<h3 id="low-interaction">Low Interaction</h3>
+<p><strong>Low interaction</strong> provides minimal controls—typically play/pause, reset, and perhaps hover for details.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>1-3 controls maximum</li>
+<li>Simple, obvious actions</li>
+<li>No parameter adjustment</li>
+<li>Focus stays on content</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Beginners to a topic</li>
+<li>Short attention spans</li>
+<li>Clear learning paths</li>
+<li>Demonstrations with optional pausing</li>
+</ul>
+<h3 id="high-interaction">High Interaction</h3>
+<p><strong>High interaction</strong> gives users extensive control over parameters, modes, and scenarios.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Multiple adjustable parameters</li>
+<li>Mode switches or scenarios</li>
+<li>Data input capabilities</li>
+<li>Custom configurations</li>
+<li>Often includes reset and save</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Deep exploration</li>
+<li>What-if analysis</li>
+<li>Advanced learners</li>
+<li>Open-ended investigation</li>
+<li>Research and experimentation</li>
+</ul>
+<p><strong>Caution:</strong> High interaction increases cognitive load. Use progressive disclosure to prevent overwhelm.</p>
+<h4 id="diagram-interaction-level-spectrum">Diagram: Interaction Level Spectrum</h4>
+<iframe src="../../sims/interaction-spectrum/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Interaction Level Spectrum Visualization</summary>
+Type: infographic
+
+Bloom Level: Understand (L2)
+Bloom Verb: classify
+
+Learning Objective: Students will classify MicroSims by interaction level by examining examples along a spectrum from passive to highly interactive.
+
+Layout: Horizontal spectrum with example MicroSims positioned
+
+Visual elements:
+- Horizontal gradient bar from blue (passive) to green (high interaction)
+- Spectrum labels: Passive → Low → Medium → High
+- Example MicroSim thumbnails positioned on spectrum:
+  - Passive: Auto-playing cell division animation
+  - Low: Pendulum with play/pause only
+  - Medium: Pendulum with length slider
+  - High: Full physics simulator with many parameters
+- Callout boxes describing characteristics of each level
+- Control icons showing what controls each level includes
+
+Interactive elements:
+- Click any example to see detailed description
+- Drag examples to test your classification
+- Toggle: "Show control panels" (reveals interface for each)
+- Quiz mode: Position new examples on spectrum
+
+Spectrum detail:
+
+**Passive (Left):**
+- Icon: Play button only
+- Controls: None or auto-play
+- User role: Observer
+- Example: "Watch cell division"
+
+**Low (Left-center):**
+- Icon: Play + Restart
+- Controls: Play/pause, reset, hover
+- User role: Controller
+- Example: "Play/pause the pendulum"
+
+**Medium (Center-right):**
+- Icon: Play + 2-3 sliders
+- Controls: Few parameters, presets
+- User role: Explorer
+- Example: "Adjust pendulum length"
+
+**High (Right):**
+- Icon: Many controls
+- Controls: Many parameters, modes
+- User role: Experimenter
+- Example: "Full pendulum lab"
+
+Color scheme:
+- Passive: Blue
+- Low: Light blue
+- Medium: Green
+- High: Dark green
+- Examples: White cards with colored borders
+
+Implementation: p5.js with draggable classification
+</details>
+
+<hr />
+<h2 id="user-controls-the-interface-toolkit">User Controls: The Interface Toolkit</h2>
+<p><strong>User controls</strong> are the interactive elements that let users adjust parameters and trigger actions. Each control type has strengths and appropriate use cases.</p>
+<h3 id="the-control-toolkit">The Control Toolkit</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Best For</th>
+<th>Example Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slider</strong></td>
+<td>Continuous values</td>
+<td>Pendulum length (0.1-2.0m)</td>
+</tr>
+<tr>
+<td><strong>Button</strong></td>
+<td>Discrete actions</td>
+<td>Start, Reset, Export</td>
+</tr>
+<tr>
+<td><strong>Dropdown</strong></td>
+<td>One of many options</td>
+<td>Select planet gravity</td>
+</tr>
+<tr>
+<td><strong>Checkbox</strong></td>
+<td>On/off toggles</td>
+<td>Show velocity vectors</td>
+</tr>
+<tr>
+<td><strong>Radio buttons</strong></td>
+<td>One of few options</td>
+<td>Select mode: A, B, or C</td>
+</tr>
+<tr>
+<td><strong>Text input</strong></td>
+<td>Precise values</td>
+<td>Enter exact mass value</td>
+</tr>
+<tr>
+<td><strong>Color picker</strong></td>
+<td>Color selection</td>
+<td>Choose background color</td>
+</tr>
+<tr>
+<td><strong>Range slider</strong></td>
+<td>Value range</td>
+<td>Filter results 10-50</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="slider-control-continuous-adjustment">Slider Control: Continuous Adjustment</h2>
+<p><strong>Sliders</strong> let users adjust continuous values by dragging along a track. They're the most common MicroSim control because many parameters vary continuously.</p>
+<h3 id="slider-anatomy">Slider Anatomy</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>      Label: Pendulum Length
+      ├────────────●─────────┤
+      0.1m                  2.0m
+                Current: 1.2m
+</code></pre></div></td></tr></table></div>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Label</strong>: What this controls</li>
+<li><strong>Track</strong>: The draggable range</li>
+<li><strong>Thumb/handle</strong>: Current position</li>
+<li><strong>Min/max labels</strong>: Range endpoints</li>
+<li><strong>Current value display</strong>: Shows exact current value</li>
+</ul>
+<h3 id="slider-design-principles">Slider Design Principles</h3>
+<p><strong>Appropriate range</strong>: Don't include impossible values</p>
+<ul>
+<li>✓ Pendulum length: 0.1m to 2.0m (realistic)</li>
+<li>✗ Pendulum length: 0 to 100m (includes impossible values)</li>
+</ul>
+<p><strong>Sensible defaults</strong>: Start with educational values</p>
+<ul>
+<li>Not too extreme (edge cases are confusing)</li>
+<li>Not arbitrary (pick meaningful defaults)</li>
+<li>Often a "standard" or "canonical" case</li>
+</ul>
+<p><strong>Appropriate step size</strong>: Match precision needs</p>
+<ul>
+<li>Temperature: 1° steps (fine enough)</li>
+<li>Probability: 0.01 steps (percentages)</li>
+<li>Discrete counts: 1 step (integers only)</li>
+</ul>
+<p><strong>Real-time feedback</strong>: Update visualization immediately</p>
+<ul>
+<li>User drags → display updates instantly</li>
+<li>No "Apply" button needed for exploration</li>
+<li>Responsive feel encourages experimentation</li>
+</ul>
+<h3 id="range-slider-selecting-intervals">Range Slider: Selecting Intervals</h3>
+<p>A <strong>range slider</strong> selects a range (min and max) rather than a single value. It has two handles.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>      Price Range
+      ├───●──────────────●───┤
+      $0                    $100
+           $20        $75
+</code></pre></div></td></tr></table></div>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li>Filter results by range</li>
+<li>Select time intervals</li>
+<li>Define boundaries</li>
+<li>Set minimum and maximum thresholds</li>
+</ul>
+<hr />
+<h2 id="button-control-discrete-actions">Button Control: Discrete Actions</h2>
+<p><strong>Buttons</strong> trigger discrete actions—things that happen once when clicked, not continuous adjustments.</p>
+<h3 id="button-types">Button Types</h3>
+<table>
+<thead>
+<tr>
+<th>Button Type</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action</strong></td>
+<td>Do something now</td>
+<td>"Start Simulation"</td>
+</tr>
+<tr>
+<td><strong>Toggle</strong></td>
+<td>Switch between states</td>
+<td>"Play/Pause"</td>
+</tr>
+<tr>
+<td><strong>Reset</strong></td>
+<td>Return to initial state</td>
+<td>"Reset"</td>
+</tr>
+<tr>
+<td><strong>Navigation</strong></td>
+<td>Move somewhere</td>
+<td>"Next Step"</td>
+</tr>
+<tr>
+<td><strong>Confirmation</strong></td>
+<td>Confirm intent</td>
+<td>"Apply Changes"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-start-pause-button">The Start-Pause Button</h3>
+<p>The <strong>start-pause button</strong> is essential for any animated MicroSim. It toggles between running and paused states.</p>
+<p><strong>Design patterns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Icon (Running)</th>
+<th>Icon (Paused)</th>
+<th>Pros</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Toggle icon</strong></td>
+<td>⏸ Pause</td>
+<td>▶ Play</td>
+<td>Clear state indication</td>
+</tr>
+<tr>
+<td><strong>Static icon</strong></td>
+<td>▶ (always)</td>
+<td>▶ (always)</td>
+<td>Simpler, less clear</td>
+</tr>
+<tr>
+<td><strong>Text toggle</strong></td>
+<td>"Pause"</td>
+<td>"Play"</td>
+<td>Explicit, uses more space</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best practice</strong>: Toggle the icon to show <em>what will happen</em> when clicked, not current state. When running, show pause icon (clicking will pause). When paused, show play icon (clicking will play).</p>
+<h3 id="button-design-principles">Button Design Principles</h3>
+<p><strong>Clear labeling</strong>: Say what happens</p>
+<ul>
+<li>✓ "Reset Simulation"</li>
+<li>✗ "Go" (ambiguous)</li>
+</ul>
+<p><strong>Obvious clickability</strong>: Look like buttons</p>
+<ul>
+<li>Raised/bordered appearance</li>
+<li>Hover effects</li>
+<li>Cursor changes</li>
+</ul>
+<p><strong>Consistent placement</strong>: Same position across MicroSims</p>
+<ul>
+<li>Transport controls (play/pause) often bottom or top</li>
+<li>Reset often near other controls</li>
+<li>Dangerous actions (clear all) isolated or confirmed</li>
+</ul>
+<p><strong>Appropriate prominence</strong>: Important buttons stand out</p>
+<ul>
+<li>Primary actions: Large, colored</li>
+<li>Secondary actions: Smaller, muted</li>
+<li>Dangerous actions: Red, with confirmation</li>
+</ul>
+<h4 id="diagram-button-state-design">Diagram: Button State Design</h4>
+<iframe src="../../sims/button-states/main.html" width="100%" height="400px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Button State Design Patterns</summary>
+Type: diagram
+
+Bloom Level: Remember (L1)
+Bloom Verb: identify
+
+Learning Objective: Students will identify the different states of interactive buttons by examining visual changes across normal, hover, active, and disabled states.
+
+Layout: Grid showing button types and their states
+
+Visual elements:
+- 4 rows (button types): Primary, Secondary, Toggle, Destructive
+- 4 columns (states): Normal, Hover, Active/Pressed, Disabled
+- Each cell shows button appearance in that state
+- Annotations explaining visual changes
+
+Button type rows:
+
+**Primary Button (Blue):**
+- Normal: Blue background, white text
+- Hover: Darker blue, slight lift shadow
+- Active: Even darker, pressed appearance
+- Disabled: Gray background, low opacity
+
+**Secondary Button (Outlined):**
+- Normal: White background, blue border
+- Hover: Light blue fill
+- Active: Darker blue fill
+- Disabled: Gray border, faded
+
+**Toggle Button (Play/Pause):**
+- Normal (paused): Play icon, blue
+- Normal (playing): Pause icon, blue
+- Hover: Darker shade
+- Disabled: Gray
+
+**Destructive Button (Red):**
+- Normal: Red background
+- Hover: Darker red
+- Active: Very dark red
+- Disabled: Gray
+
+Interactive elements:
+- Hover over cells to see state change
+- Click to see active state
+- Toggle: "Show focus states" (accessibility)
+- Annotations appear on hover
+
+Color scheme:
+- Primary: Blue (#3498db)
+- Secondary: White with blue border
+- Destructive: Red (#e74c3c)
+- Disabled: Gray (#95a5a6)
+- Hover states: 15% darker
+- Active states: 25% darker
+
+Implementation: p5.js with interactive state demonstration
+</details>
+
+<hr />
+<h2 id="dropdown-select-choosing-from-options">Dropdown Select: Choosing from Options</h2>
+<p><strong>Dropdowns</strong> (select menus) let users choose one option from a list. They're space-efficient for many options.</p>
+<h3 id="when-to-use-dropdowns">When to Use Dropdowns</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Use Dropdown?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2-3 options</td>
+<td>No—use radio buttons</td>
+</tr>
+<tr>
+<td>4-12 options</td>
+<td>Yes—ideal range</td>
+</tr>
+<tr>
+<td>13+ options</td>
+<td>Yes, with search/filter</td>
+</tr>
+<tr>
+<td>Common option used 90%+ of time</td>
+<td>Maybe—consider default with "change" option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dropdown-design-principles">Dropdown Design Principles</h3>
+<p><strong>Clear labeling</strong>: What are you selecting?</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  Gravitational Setting: [Earth (9.8 m/s²) ▼]
+</code></pre></div></td></tr></table></div>
+<p><strong>Logical ordering</strong>: Make options findable</p>
+<ul>
+<li>Alphabetical for long lists</li>
+<li>Frequency for common selections</li>
+<li>Logical sequence (e.g., small to large)</li>
+</ul>
+<p><strong>Include current value</strong>: Show what's selected</p>
+<p><strong>Accessible sizing</strong>: Large enough to tap on mobile</p>
+<h3 id="multi-select-choosing-several">Multi Select: Choosing Several</h3>
+<p><strong>Multi select</strong> allows selecting multiple options from a list. Uses checkboxes within dropdown or tags interface.</p>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li>Select multiple subjects</li>
+<li>Choose visible layers</li>
+<li>Pick several filters simultaneously</li>
+</ul>
+<hr />
+<h2 id="checkbox-control-boolean-toggles">Checkbox Control: Boolean Toggles</h2>
+<p><strong>Checkboxes</strong> control on/off, show/hide, or true/false settings. Each checkbox is independent.</p>
+<h3 id="checkbox-use-cases">Checkbox Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Show/hide elements</strong></td>
+<td>☑ Show velocity vectors</td>
+</tr>
+<tr>
+<td><strong>Enable/disable features</strong></td>
+<td>☑ Enable sound effects</td>
+</tr>
+<tr>
+<td><strong>Filter options</strong></td>
+<td>☑ Include archived items</td>
+</tr>
+<tr>
+<td><strong>Agreement/confirmation</strong></td>
+<td>☑ I understand the risks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="checkbox-design-principles">Checkbox Design Principles</h3>
+<p><strong>Clear labels</strong>: Describe the "on" state</p>
+<ul>
+<li>✓ "Show grid lines"</li>
+<li>✗ "Grid" (unclear what happens)</li>
+</ul>
+<p><strong>Positive framing</strong>: Checking should enable/show</p>
+<ul>
+<li>✓ "Show labels" (check to show)</li>
+<li>✗ "Hide labels" (confusing—check to hide?)</li>
+</ul>
+<p><strong>Group related checkboxes</strong>: Visual clustering aids scanning</p>
+<p><strong>Immediate effect</strong>: Changes apply without "Submit"</p>
+<hr />
+<h2 id="radio-button-exclusive-choices">Radio Button: Exclusive Choices</h2>
+<p><strong>Radio buttons</strong> let users select exactly one option from a group. Selecting one deselects others.</p>
+<h3 id="radio-button-vs-dropdown">Radio Button vs. Dropdown</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Radio Buttons</th>
+<th>Dropdown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Options visible</strong></td>
+<td>All visible at once</td>
+<td>Only selected visible</td>
+</tr>
+<tr>
+<td><strong>Space needed</strong></td>
+<td>More (all shown)</td>
+<td>Less (collapsed)</td>
+</tr>
+<tr>
+<td><strong>Number of options</strong></td>
+<td>2-5 ideal</td>
+<td>4+ ideal</td>
+</tr>
+<tr>
+<td><strong>Speed of selection</strong></td>
+<td>One click</td>
+<td>Two clicks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radio-button-use-cases">Radio Button Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mode selection</strong></td>
+<td>◉ Explore Mode ○ Quiz Mode</td>
+</tr>
+<tr>
+<td><strong>Speed presets</strong></td>
+<td>○ Slow ◉ Normal ○ Fast</td>
+</tr>
+<tr>
+<td><strong>View options</strong></td>
+<td>○ Graph ◉ Table ○ Both</td>
+</tr>
+<tr>
+<td><strong>Difficulty levels</strong></td>
+<td>○ Easy ◉ Medium ○ Hard</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radio-button-design-principles">Radio Button Design Principles</h3>
+<p><strong>Always show all options</strong>: Unlike dropdowns, radio buttons display every choice</p>
+<p><strong>Default selection</strong>: One option should start selected</p>
+<p><strong>Logical grouping</strong>: Related options together</p>
+<p><strong>Clear differentiation</strong>: Options should be distinct, not overlapping</p>
+<hr />
+<h2 id="text-input-precise-values">Text Input: Precise Values</h2>
+<p><strong>Text input</strong> fields accept typed values—for when sliders aren't precise enough or values need exact specification.</p>
+<h3 id="when-to-use-text-input">When to Use Text Input</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Appropriate?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precise numerical value needed</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Value might be copied/pasted</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Range is very large</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>User comfort with typing</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Quick exploration is goal</td>
+<td>No—use slider</td>
+</tr>
+<tr>
+<td>Avoiding typos is critical</td>
+<td>No—use constrained controls</td>
+</tr>
+</tbody>
+</table>
+<h3 id="text-input-design-principles">Text Input Design Principles</h3>
+<p><strong>Validate input</strong>: Check for valid values</p>
+<ul>
+<li>Number inputs: Reject letters</li>
+<li>Range validation: Flag out-of-bounds</li>
+<li>Format hints: Show expected format</li>
+</ul>
+<p><strong>Provide feedback</strong>: Show validation status</p>
+<ul>
+<li>Green border: Valid</li>
+<li>Red border: Invalid</li>
+<li>Error message: What's wrong</li>
+</ul>
+<p><strong>Connect to visualization</strong>: Update on valid input</p>
+<p><strong>Include units</strong>: Show expected units</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  Mass: [2.5] kg    ← Clear unit label
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="color-picker-visual-selection">Color Picker: Visual Selection</h2>
+<p><strong>Color pickers</strong> let users select colors for customization, visualization mapping, or aesthetic preferences.</p>
+<h3 id="color-picker-use-cases">Color Picker Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Customization</strong></td>
+<td>Choose background color</td>
+</tr>
+<tr>
+<td><strong>Object identification</strong></td>
+<td>Pick color for my pendulum</td>
+</tr>
+<tr>
+<td><strong>Data mapping</strong></td>
+<td>Select color scale</td>
+</tr>
+<tr>
+<td><strong>Accessibility</strong></td>
+<td>High contrast mode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="color-picker-design">Color Picker Design</h3>
+<p><strong>Common patterns:</strong></p>
+<ul>
+<li><strong>Native picker</strong>: Browser's built-in color selector</li>
+<li><strong>Preset palette</strong>: Grid of predefined colors</li>
+<li><strong>Spectrum picker</strong>: Full color space selection</li>
+<li><strong>Named colors</strong>: Dropdown of color names</li>
+</ul>
+<p><strong>For educational MicroSims</strong>: Preset palettes usually suffice. Full spectrum pickers add complexity without learning benefit.</p>
+<hr />
+<h2 id="layout-types-organizing-the-interface">Layout Types: Organizing the Interface</h2>
+<p><strong>Layout</strong> determines how controls and visualization areas are arranged. Good layout makes interfaces intuitive; poor layout creates confusion.</p>
+<h3 id="the-three-standard-layouts">The Three Standard Layouts</h3>
+<table>
+<thead>
+<tr>
+<th>Layout</th>
+<th>Structure</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fixed</strong></td>
+<td>Single area, no panels</td>
+<td>Simple visualizations</td>
+</tr>
+<tr>
+<td><strong>Two-panel</strong></td>
+<td>Visualization + Controls</td>
+<td>Most MicroSims</td>
+</tr>
+<tr>
+<td><strong>Three-panel</strong></td>
+<td>Viz + Controls + Info</td>
+<td>Complex simulations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fixed-layout">Fixed Layout</h3>
+<p><strong>Fixed layout</strong> uses a single area with minimal structure. Controls may overlay the visualization or sit below.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>┌────────────────────────────┐
+│                            │
+│      VISUALIZATION         │
+│                            │
+│    [Play] [Reset]          │
+│                            │
+└────────────────────────────┘
+</code></pre></div></td></tr></table></div>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Simple, uncluttered</li>
+<li>Controls minimal or overlaid</li>
+<li>Works for low-interaction MicroSims</li>
+<li>Maximum space for visualization</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Animations with few controls</li>
+<li>Demonstrations</li>
+<li>Mobile-first designs</li>
+<li>Passive or low-interaction levels</li>
+</ul>
+<h3 id="two-panel-layout">Two-Panel Layout</h3>
+<p><strong>Two-panel layout</strong> separates visualization from controls. Most common MicroSim layout.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>┌────────────────────┬───────────┐
+│                    │ Controls  │
+│   VISUALIZATION    │           │
+│                    │ [Slider]  │
+│                    │ [Slider]  │
+│                    │ [Button]  │
+└────────────────────┴───────────┘
+</code></pre></div></td></tr></table></div>
+<p><strong>Variations:</strong></p>
+<ul>
+<li>Controls on right (most common)</li>
+<li>Controls on left</li>
+<li>Controls below</li>
+<li>Controls above</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Clear separation of view and control</li>
+<li>Scales well with more controls</li>
+<li>Works for medium interaction</li>
+<li>Controls always visible</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Parameter exploration</li>
+<li>Most simulations</li>
+<li>Teaching interfaces</li>
+<li>Medium-interaction levels</li>
+</ul>
+<h3 id="three-panel-layout">Three-Panel Layout</h3>
+<p><strong>Three-panel layout</strong> adds an information/output area separate from controls and visualization.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>┌────────────────────┬───────────┐
+│                    │ Controls  │
+│   VISUALIZATION    ├───────────┤
+│                    │ Info/     │
+│                    │ Output    │
+└────────────────────┴───────────┘
+</code></pre></div></td></tr></table></div>
+<p><strong>The third panel shows:</strong></p>
+<ul>
+<li>Calculated values</li>
+<li>Status information</li>
+<li>Data tables</li>
+<li>Instructions or guidance</li>
+<li>Feedback messages</li>
+</ul>
+<p><strong>Best for:</strong></p>
+<ul>
+<li>Complex simulations</li>
+<li>When output data matters</li>
+<li>Teaching with explicit feedback</li>
+<li>High-interaction levels</li>
+</ul>
+<h4 id="diagram-layout-pattern-gallery">Diagram: Layout Pattern Gallery</h4>
+<iframe src="../../sims/layout-patterns/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Layout Pattern Gallery</summary>
+Type: infographic
+
+Bloom Level: Apply (L3)
+Bloom Verb: select
+
+Learning Objective: Students will select appropriate layout patterns for different MicroSim scenarios by examining layout options and matching them to requirements.
+
+Layout: Three-column gallery with interactive examples
+
+Visual elements:
+- Three columns for Fixed, Two-Panel, Three-Panel
+- Each column shows:
+  - Layout diagram (schematic)
+  - Live mini-example (functional)
+  - Pros and cons list
+  - "Best for" summary
+- Comparison table below
+
+Column content:
+
+**Fixed Layout:**
+- Diagram: Single rectangle
+- Mini-example: Simple pendulum animation with overlay controls
+- Pros: Maximum viz space, simple, mobile-friendly
+- Cons: Limited controls, overlay can obscure
+- Best for: Animations, demos, passive viewing
+
+**Two-Panel Layout:**
+- Diagram: Large left rectangle + narrow right rectangle
+- Mini-example: Pendulum with control sidebar
+- Pros: Clear separation, scalable controls, always visible
+- Cons: Uses horizontal space, less viz area
+- Best for: Most simulations, exploration, medium interaction
+
+**Three-Panel Layout:**
+- Diagram: Large left + narrow right (split top/bottom)
+- Mini-example: Full pendulum lab with data output
+- Pros: Dedicated info area, rich feedback, comprehensive
+- Cons: Complex, crowded on small screens
+- Best for: Complex labs, high interaction, data-rich
+
+Interactive elements:
+- Click any layout to see full-size example
+- Toggle: "Show on mobile" (responsive behavior)
+- Match quiz: Given scenario, pick best layout
+- Resize demo: See how layouts adapt
+
+Comparison table:
+| Aspect | Fixed | Two-Panel | Three-Panel |
+|--------|-------|-----------|-------------|
+| Viz space | Maximum | Good | Less |
+| Control capacity | Minimal | Medium | High |
+| Info display | Overlay | Limited | Dedicated |
+| Mobile-friendly | Best | Good | Challenging |
+| Complexity | Low | Medium | High |
+
+Color scheme:
+- Visualization area: Blue
+- Control area: Green
+- Info area: Orange
+- Inactive: Gray
+
+Implementation: p5.js with switchable layouts and mini-examples
+</details>
+
+<hr />
+<h2 id="color-scheme-visual-harmony">Color Scheme: Visual Harmony</h2>
+<p><strong>Color scheme</strong> affects usability, aesthetics, and accessibility. Thoughtful color choices enhance learning; poor choices distract or exclude.</p>
+<h3 id="color-scheme-functions">Color Scheme Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>How Color Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grouping</strong></td>
+<td>Same color = related elements</td>
+</tr>
+<tr>
+<td><strong>Emphasis</strong></td>
+<td>Bright/contrasting = important</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Red = error, green = success</td>
+</tr>
+<tr>
+<td><strong>Hierarchy</strong></td>
+<td>Darker = primary, lighter = secondary</td>
+</tr>
+<tr>
+<td><strong>Aesthetics</strong></td>
+<td>Pleasing colors = positive experience</td>
+</tr>
+</tbody>
+</table>
+<h3 id="choosing-a-color-palette">Choosing a Color Palette</h3>
+<p><strong>Start with brand/context colors</strong> if any exist. Otherwise:</p>
+<ol>
+<li><strong>Pick a primary color</strong>: Main action/emphasis color</li>
+<li><strong>Choose 1-2 accent colors</strong>: Secondary emphasis</li>
+<li><strong>Define neutrals</strong>: Backgrounds, text, borders</li>
+<li><strong>Add semantic colors</strong>: Success, error, warning</li>
+</ol>
+<h3 id="semantic-color-conventions">Semantic Color Conventions</h3>
+<table>
+<thead>
+<tr>
+<th>Meaning</th>
+<th>Typical Color</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Success</strong></td>
+<td>Green</td>
+<td>Correct answer, success message</td>
+</tr>
+<tr>
+<td><strong>Error</strong></td>
+<td>Red</td>
+<td>Wrong answer, error message</td>
+</tr>
+<tr>
+<td><strong>Warning</strong></td>
+<td>Yellow/Orange</td>
+<td>Caution, partial</td>
+</tr>
+<tr>
+<td><strong>Information</strong></td>
+<td>Blue</td>
+<td>Neutral info, hints</td>
+</tr>
+<tr>
+<td><strong>Disabled</strong></td>
+<td>Gray</td>
+<td>Unavailable options</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accessibility-considerations">Accessibility Considerations</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Color blindness</strong></td>
+<td>Don't rely on color alone; add icons/text</td>
+</tr>
+<tr>
+<td><strong>Low contrast</strong></td>
+<td>Ensure 4.5:1 text contrast ratio</td>
+</tr>
+<tr>
+<td><strong>Busy backgrounds</strong></td>
+<td>Use solid backgrounds for text</td>
+</tr>
+<tr>
+<td><strong>Too many colors</strong></td>
+<td>Limit palette to 5-7 colors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dark-mode-support">Dark Mode Support</h3>
+<p>Consider supporting both light and dark color schemes:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Light Mode</th>
+<th>Dark Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Background</td>
+<td>White/light gray</td>
+<td>Dark gray/black</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Dark gray/black</td>
+<td>White/light gray</td>
+</tr>
+<tr>
+<td>Primary</td>
+<td>Saturated blue</td>
+<td>Lighter blue</td>
+</tr>
+<tr>
+<td>Borders</td>
+<td>Light gray</td>
+<td>Dark gray</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Test with Simulation Tools</p>
+<p>Use browser developer tools or online simulators to check how your colors appear to color-blind users. What's obvious to you might be invisible to others.</p>
+</div>
+<hr />
+<h2 id="responsive-design-adapting-to-devices">Responsive Design: Adapting to Devices</h2>
+<p>MicroSims should work across devices—from large monitors to tablets to phones. This requires <strong>responsive design</strong>.</p>
+<h3 id="responsive-strategies">Responsive Strategies</h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>How It Works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fluid sizing</strong></td>
+<td>Elements resize with window</td>
+</tr>
+<tr>
+<td><strong>Breakpoints</strong></td>
+<td>Different layouts at different widths</td>
+</tr>
+<tr>
+<td><strong>Stacking</strong></td>
+<td>Side-by-side becomes vertical on narrow</td>
+</tr>
+<tr>
+<td><strong>Hiding</strong></td>
+<td>Less important elements hidden on small</td>
+</tr>
+<tr>
+<td><strong>Touch optimization</strong></td>
+<td>Larger targets on touch devices</td>
+</tr>
+</tbody>
+</table>
+<h3 id="microsim-responsive-patterns">MicroSim Responsive Patterns</h3>
+<p><strong>Common adaptations for narrow screens:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Desktop</th>
+<th>Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two-panel side-by-side</td>
+<td>Stacked (viz above controls)</td>
+</tr>
+<tr>
+<td>Small buttons</td>
+<td>Large touch targets</td>
+</tr>
+<tr>
+<td>Hover tooltips</td>
+<td>Tap-to-reveal info</td>
+</tr>
+<tr>
+<td>Many controls visible</td>
+<td>Progressive disclosure</td>
+</tr>
+<tr>
+<td>Mouse dragging</td>
+<td>Touch dragging</td>
+</tr>
+</tbody>
+</table>
+<h3 id="touch-considerations">Touch Considerations</h3>
+<table>
+<thead>
+<tr>
+<th>Mouse</th>
+<th>Touch Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hover</td>
+<td>Tap and hold</td>
+</tr>
+<tr>
+<td>Click</td>
+<td>Tap</td>
+</tr>
+<tr>
+<td>Drag</td>
+<td>Swipe/drag</td>
+</tr>
+<tr>
+<td>Scroll wheel</td>
+<td>Pinch zoom</td>
+</tr>
+<tr>
+<td>Right-click</td>
+<td>Long press</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Touch-friendly design:</strong></p>
+<ul>
+<li>Minimum 44×44 pixel touch targets</li>
+<li>Spacing between targets</li>
+<li>No hover-only information (provide alternatives)</li>
+<li>Gestures that don't conflict with browser</li>
+</ul>
+<hr />
+<h2 id="control-organization-grouping-and-hierarchy">Control Organization: Grouping and Hierarchy</h2>
+<p>When MicroSims have many controls, organization becomes critical. Users should find what they need quickly.</p>
+<h3 id="grouping-strategies">Grouping Strategies</h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>How It Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spatial grouping</strong></td>
+<td>Related controls near each other</td>
+</tr>
+<tr>
+<td><strong>Visual borders</strong></td>
+<td>Boxes or dividers separate groups</td>
+</tr>
+<tr>
+<td><strong>Labeled sections</strong></td>
+<td>Headers identify control groups</td>
+</tr>
+<tr>
+<td><strong>Tabs</strong></td>
+<td>Different groups on different tabs</td>
+</tr>
+<tr>
+<td><strong>Accordions</strong></td>
+<td>Expandable sections hide complexity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-organized-control-panel">Example: Organized Control Panel</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>┌─ Pendulum Properties ─────────┐
+│ Length    ├────●────┤  1.5m  │
+│ Mass      ├──●──────┤  0.5kg │
+└───────────────────────────────┘
+
+┌─ Environment ─────────────────┐
+│ Gravity   [Earth (9.8)    ▼]  │
+│ ☑ Show air resistance         │
+└───────────────────────────────┘
+
+┌─ Display Options ─────────────┐
+│ ☑ Show velocity vector        │
+│ ☐ Show acceleration vector    │
+│ ☐ Show energy graph           │
+└───────────────────────────────┘
+
+     [▶ Start]    [↺ Reset]
+</code></pre></div></td></tr></table></div>
+<p><strong>Organization principles applied:</strong></p>
+<ul>
+<li>Related controls grouped (Pendulum, Environment, Display)</li>
+<li>Section headers identify groups</li>
+<li>Most-used controls first</li>
+<li>Action buttons at bottom</li>
+</ul>
+<h3 id="control-hierarchy">Control Hierarchy</h3>
+<p><strong>Primary controls</strong>: Always visible, most-used</p>
+<ul>
+<li>Start/pause, main parameters</li>
+</ul>
+<p><strong>Secondary controls</strong>: Visible but less prominent</p>
+<ul>
+<li>Additional parameters, display options</li>
+</ul>
+<p><strong>Tertiary controls</strong>: Hidden until needed</p>
+<ul>
+<li>Advanced settings, export options</li>
+</ul>
+<p>Use progressive disclosure: Start simple, reveal more on request.</p>
+<hr />
+<h2 id="labels-and-instructions">Labels and Instructions</h2>
+<p>Good labels and instructions reduce confusion and cognitive load.</p>
+<h3 id="label-design-principles">Label Design Principles</h3>
+<p><strong>Be specific</strong>: Say exactly what it controls</p>
+<ul>
+<li>✓ "Pendulum Length (m)"</li>
+<li>✗ "Length"</li>
+</ul>
+<p><strong>Include units</strong>: Prevent conversion confusion</p>
+<ul>
+<li>✓ "Mass: 2.5 kg"</li>
+<li>✗ "Mass: 2.5"</li>
+</ul>
+<p><strong>Use standard terms</strong>: Match domain vocabulary</p>
+<ul>
+<li>✓ "Period" (physics term)</li>
+<li>✗ "Swing time" (informal)</li>
+</ul>
+<p><strong>Abbreviate carefully</strong>: Only well-known abbreviations</p>
+<ul>
+<li>✓ "kg" for kilogram</li>
+<li>✗ "pen. len." for pendulum length</li>
+</ul>
+<h3 id="instruction-placement">Instruction Placement</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Placement</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overall purpose</strong></td>
+<td>Top of MicroSim</td>
+<td>"Explore how pendulum length affects period"</td>
+</tr>
+<tr>
+<td><strong>Control instructions</strong></td>
+<td>Near control</td>
+<td>"Drag slider to adjust"</td>
+</tr>
+<tr>
+<td><strong>Tooltips</strong></td>
+<td>On hover/tap</td>
+<td>"Length of pendulum string in meters"</td>
+</tr>
+<tr>
+<td><strong>Guided steps</strong></td>
+<td>Prominent panel</td>
+<td>"Step 1: Set length to 1m"</td>
+</tr>
+<tr>
+<td><strong>Help panel</strong></td>
+<td>Expandable section</td>
+<td>Detailed instructions if needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-messages">Error Messages</h3>
+<p>When users make errors (invalid input, impossible values):</p>
+<p><strong>Be helpful, not scolding:</strong></p>
+<ul>
+<li>✓ "Please enter a value between 0 and 10"</li>
+<li>✗ "Invalid input!"</li>
+</ul>
+<p><strong>Be specific about what's wrong:</strong></p>
+<ul>
+<li>✓ "Mass must be positive (you entered -5)"</li>
+<li>✗ "Value error"</li>
+</ul>
+<p><strong>Suggest correction:</strong></p>
+<ul>
+<li>✓ "Try a value like 2.5"</li>
+<li>✗ "Fix your input"</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Interaction level</strong> ranges from passive viewing through high interaction—choose based on learning goal and audience</p>
+</li>
+<li>
+<p><strong>Low interaction</strong> focuses attention on content; <strong>high interaction</strong> enables exploration but increases cognitive load</p>
+</li>
+<li>
+<p><strong>Sliders</strong> are ideal for continuous parameters—ensure sensible range, step size, and real-time feedback</p>
+</li>
+<li>
+<p><strong>Buttons</strong> trigger discrete actions—use clear labels and appropriate visual prominence</p>
+</li>
+<li>
+<p><strong>Start-pause buttons</strong> should show what will happen when clicked, not current state</p>
+</li>
+<li>
+<p><strong>Dropdowns</strong> work for 4+ options; use radio buttons for 2-3 mutually exclusive choices</p>
+</li>
+<li>
+<p><strong>Checkboxes</strong> control independent on/off settings; label with the "on" state positively</p>
+</li>
+<li>
+<p><strong>Text inputs</strong> provide precision but require validation and clear error handling</p>
+</li>
+<li>
+<p><strong>Fixed layout</strong> maximizes visualization space; <strong>two-panel</strong> is the workhorse; <strong>three-panel</strong> handles complex data output</p>
+</li>
+<li>
+<p><strong>Color schemes</strong> should use semantic colors consistently (red=error, green=success) and ensure accessibility</p>
+</li>
+<li>
+<p><strong>Responsive design</strong> adapts layouts for different devices—stack panels and enlarge touch targets on mobile</p>
+</li>
+<li>
+<p><strong>Group related controls</strong> with visual organization and clear section headers</p>
+</li>
+<li>
+<p><strong>Labels should be specific, include units</strong>, and use domain-appropriate terminology</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>You now understand how to design intuitive MicroSim interfaces—choosing appropriate interaction levels, selecting the right controls, organizing layouts, and using color effectively. Good interface design makes the technology invisible so learning can shine.</p>
+<p>In the next chapter, we'll explore <strong>Technical Implementation</strong>:</p>
+<ul>
+<li>JavaScript libraries for MicroSim development</li>
+<li>Responsive design techniques</li>
+<li>Accessibility requirements</li>
+<li>Performance optimization</li>
+</ul>
+<p>The interface design principles you've learned here will be implemented through specific technologies and best practices.</p>
+<hr />
+<p><em>Ready to build? Continue to <a href="../14-technical-implementation/">Chapter 14: Technical Implementation</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12-visualization-types/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12. Visualization Types">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                12. Visualization Types
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14-technical-implementation/" class="md-footer__link md-footer__link--next" aria-label="Next: 14. Technical Implementation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                14. Technical Implementation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

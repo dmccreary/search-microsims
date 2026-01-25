@@ -1,0 +1,3513 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apply cognitive load theory, scaffolding techniques, and proven learning theories to design MicroSims that optimize learning while avoiding common pitfalls and misconceptions">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/11-learning-theory-pedagogy/">
+      
+      
+        <link rel="prev" href="../10-educational-foundations/">
+      
+      
+        <link rel="next" href="../12-visualization-types/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Learning Theory and Pedagogy - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-theory-and-pedagogy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Learning Theory and Pedagogy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-pedagogy-is-your-secret-weapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pedagogy Is Your Secret Weapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cognitive-load-theory-protecting-the-learning-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cognitive Load Theory: Protecting the Learning Brain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cognitive Load Theory: Protecting the Learning Brain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-cognitive-load-matters-for-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Cognitive Load Matters for MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-types-of-cognitive-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Types of Cognitive Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intrinsic-load-the-concepts-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intrinsic Load: The Concept's Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraneous-load-design-waste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extraneous Load: Design Waste
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#germane-load-where-learning-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Germane Load: Where Learning Happens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Germane Load: Where Learning Happens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cognitive-load-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cognitive Load Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaffolding-building-bridges-to-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaffolding: Building Bridges to Understanding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaffolding: Building Bridges to Understanding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scaffolding-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Scaffolding Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-scaffolding-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Scaffolding in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guided-discovery-structured-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guided Discovery: Structured Exploration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guided Discovery: Structured Exploration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-not-pure-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Not Pure Discovery?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-not-pure-instruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Not Pure Instruction?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guided-discovery-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guided Discovery in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guided Discovery in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-guided-discovery-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Guided Discovery Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-examples-learning-from-demonstrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Examples: Learning from Demonstrations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Examples: Learning from Demonstrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-worked-example-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Worked Example Effect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-examples-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Examples in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fading-worked-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fading Worked Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hints-system-just-in-time-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hints System: Just-in-Time Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hints System: Just-in-Time Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#designing-effective-hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Designing Effective Hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-progression-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint Progression Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback-mechanisms-closing-the-learning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Mechanisms: Closing the Learning Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feedback Mechanisms: Closing the Learning Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-feedback-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Feedback in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback in Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feedback in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feedback-loop-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feedback Loop Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressive-disclosure-revealing-complexity-gradually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Disclosure: Revealing Complexity Gradually
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progressive Disclosure: Revealing Complexity Gradually">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-progressive-disclosure-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Progressive Disclosure Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressive-disclosure-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Disclosure Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-pendulum-microsim-progressive-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Pendulum MicroSim Progressive Disclosure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-and-coaching-expert-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling and Coaching: Expert Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling and Coaching: Expert Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modeling-watch-the-expert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling: Watch the Expert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coaching-practice-with-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coaching: Practice with Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-modeling-to-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Modeling to Independence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-theories-frameworks-for-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Theories: Frameworks for Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Theories: Frameworks for Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructivism-building-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructivism: Building Understanding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behaviorism-shaping-through-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behaviorism: Shaping Through Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cognitivism-processing-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cognitivism: Processing Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiential-learning-learning-by-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiential Learning: Learning by Doing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiential Learning: Learning by Doing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-learning-theories-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Learning Theories Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Misconceptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Addressing Misconceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-misconceptions-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Misconceptions Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-physics-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Physics Misconceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-misconceptions-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Misconceptions in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-skills-beyond-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Skills: Beyond the Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Skills: Beyond the Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designing-for-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Designing for Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer in Practice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-pedagogy-is-your-secret-weapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pedagogy Is Your Secret Weapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cognitive-load-theory-protecting-the-learning-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cognitive Load Theory: Protecting the Learning Brain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cognitive Load Theory: Protecting the Learning Brain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-cognitive-load-matters-for-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Cognitive Load Matters for MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-types-of-cognitive-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Types of Cognitive Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intrinsic-load-the-concepts-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intrinsic Load: The Concept's Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraneous-load-design-waste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extraneous Load: Design Waste
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#germane-load-where-learning-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Germane Load: Where Learning Happens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Germane Load: Where Learning Happens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cognitive-load-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cognitive Load Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaffolding-building-bridges-to-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaffolding: Building Bridges to Understanding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaffolding: Building Bridges to Understanding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scaffolding-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Scaffolding Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-scaffolding-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Scaffolding in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guided-discovery-structured-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guided Discovery: Structured Exploration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guided Discovery: Structured Exploration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-not-pure-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Not Pure Discovery?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-not-pure-instruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Not Pure Instruction?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guided-discovery-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guided Discovery in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guided Discovery in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-guided-discovery-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Guided Discovery Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-examples-learning-from-demonstrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Examples: Learning from Demonstrations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Examples: Learning from Demonstrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-worked-example-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Worked Example Effect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-examples-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Examples in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fading-worked-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fading Worked Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hints-system-just-in-time-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hints System: Just-in-Time Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hints System: Just-in-Time Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#designing-effective-hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Designing Effective Hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-progression-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint Progression Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback-mechanisms-closing-the-learning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Mechanisms: Closing the Learning Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feedback Mechanisms: Closing the Learning Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-feedback-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Feedback in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Design Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback in Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feedback in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feedback-loop-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feedback Loop Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressive-disclosure-revealing-complexity-gradually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Disclosure: Revealing Complexity Gradually
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progressive Disclosure: Revealing Complexity Gradually">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-progressive-disclosure-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Progressive Disclosure Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressive-disclosure-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Disclosure Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-pendulum-microsim-progressive-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Pendulum MicroSim Progressive Disclosure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-and-coaching-expert-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling and Coaching: Expert Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling and Coaching: Expert Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modeling-watch-the-expert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling: Watch the Expert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coaching-practice-with-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coaching: Practice with Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-modeling-to-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Modeling to Independence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-theories-frameworks-for-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Theories: Frameworks for Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Theories: Frameworks for Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructivism-building-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructivism: Building Understanding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behaviorism-shaping-through-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behaviorism: Shaping Through Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cognitivism-processing-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cognitivism: Processing Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiential-learning-learning-by-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiential Learning: Learning by Doing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiential Learning: Learning by Doing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-learning-theories-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Learning Theories Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Misconceptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Addressing Misconceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-misconceptions-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Misconceptions Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-physics-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Physics Misconceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-misconceptions-in-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Misconceptions in MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-skills-beyond-the-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Skills: Beyond the Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Skills: Beyond the Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designing-for-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Designing for Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer in Practice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/11-learning-theory-pedagogy/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="learning-theory-and-pedagogy">Learning Theory and Pedagogy</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter explores cognitive load theory, scaffolding techniques, and learning theories relevant to effective MicroSim design. You'll learn about intrinsic, extraneous, and germane cognitive load, and how to manage them through scaffolding approaches including guided discovery, worked examples, hints, feedback mechanisms, and progressive disclosure. The chapter also covers major learning theories (constructivism, behaviorism, cognitivism, experiential learning) and addresses misconceptions and transfer skills. After completing this chapter, students will be able to apply pedagogical principles to MicroSim design.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 18 concepts from the learning graph:</p>
+<ol>
+<li>Cognitive Load</li>
+<li>Intrinsic Load</li>
+<li>Extraneous Load</li>
+<li>Germane Load</li>
+<li>Scaffolding</li>
+<li>Guided Discovery</li>
+<li>Worked Examples</li>
+<li>Hints System</li>
+<li>Feedback Mechanisms</li>
+<li>Progressive Disclosure</li>
+<li>Modeling</li>
+<li>Coaching</li>
+<li>Learning Theory</li>
+<li>Constructivism</li>
+<li>Behaviorism</li>
+<li>Cognitivism</li>
+<li>Experiential Learning</li>
+<li>Misconceptions</li>
+<li>Transfer Skills</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../10-educational-foundations/">Chapter 10: Educational Foundations</a></li>
+</ul>
+<hr />
+<h2 id="why-pedagogy-is-your-secret-weapon">Why Pedagogy Is Your Secret Weapon</h2>
+<p>You've built a MicroSim with all the right educational metadata—grade levels, learning objectives, Bloom's taxonomy alignment, and curriculum standards. It looks beautiful and runs smoothly. But when students use it, they struggle. Some give up in frustration. Others click randomly without learning anything. A few brave souls persist but still fail the assessment.</p>
+<p>What went wrong? The simulation might be technically perfect and educationally classified, but it's <em>pedagogically</em> broken. It doesn't account for how human brains actually learn.</p>
+<p>This is where learning theory becomes your superpower. Understanding cognitive load helps you avoid overwhelming learners. Scaffolding techniques guide students from confusion to competence. Learning theories inform whether to show, tell, or let students discover. When you design MicroSims with pedagogy in mind, they don't just <em>present</em> information—they <em>transform</em> how students think.</p>
+<p>The best MicroSims feel almost magical: students play with them for five minutes and suddenly <em>get it</em>. That magic isn't accident—it's applied learning science. Let's learn how to cast those spells!</p>
+<hr />
+<h2 id="cognitive-load-theory-protecting-the-learning-brain">Cognitive Load Theory: Protecting the Learning Brain</h2>
+<p><strong>Cognitive load</strong> refers to the mental effort required to process information. Your working memory—where active thinking happens—has limited capacity. Overload it, and learning stops.</p>
+<h3 id="why-cognitive-load-matters-for-microsims">Why Cognitive Load Matters for MicroSims</h3>
+<p>MicroSims are rich, interactive environments with:</p>
+<ul>
+<li>Visual elements to observe</li>
+<li>Controls to manipulate</li>
+<li>Concepts to understand</li>
+<li>Relationships to discover</li>
+<li>Interfaces to navigate</li>
+</ul>
+<p>Each element demands cognitive resources. Poor design can exhaust those resources on interface navigation, leaving nothing for actual learning. Great design minimizes unnecessary load, leaving maximum capacity for the concepts that matter.</p>
+<h3 id="the-three-types-of-cognitive-load">The Three Types of Cognitive Load</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Source</th>
+<th>Goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intrinsic</strong></td>
+<td>Inherent complexity of the material</td>
+<td>Accept it (can't reduce the concept's complexity)</td>
+</tr>
+<tr>
+<td><strong>Extraneous</strong></td>
+<td>Poor instructional design</td>
+<td>Minimize it (eliminate distractions)</td>
+</tr>
+<tr>
+<td><strong>Germane</strong></td>
+<td>Mental effort spent on learning</td>
+<td>Maximize it (this is where learning happens)</td>
+</tr>
+</tbody>
+</table>
+<p>Think of working memory as a glass of water. Intrinsic load is water you must pour (the concept's complexity). Extraneous load is water you accidentally spill (wasted effort). Germane load is the water you drink (actual learning). Your glass has fixed capacity—every drop of extraneous load steals from germane learning.</p>
+<h3 id="intrinsic-load-the-concepts-complexity">Intrinsic Load: The Concept's Complexity</h3>
+<p><strong>Intrinsic load</strong> comes from the material itself. Some concepts are inherently complex because they involve many interacting elements.</p>
+<p><strong>Low intrinsic load:</strong>
+- Identifying a single pendulum component
+- Recognizing a specific color
+- Naming a shape</p>
+<p><strong>High intrinsic load:</strong>
+- Understanding how length, mass, and gravity interact in pendulum motion
+- Predicting wave interference patterns
+- Analyzing multi-variable systems</p>
+<p>You can't reduce intrinsic load without simplifying the concept itself. However, you can <em>sequence</em> learning to build up to complex concepts gradually.</p>
+<h3 id="extraneous-load-design-waste">Extraneous Load: Design Waste</h3>
+<p><strong>Extraneous load</strong> is cognitive effort wasted on poor design—confusing interfaces, unclear instructions, or unnecessary complexity.</p>
+<p><strong>Examples of extraneous load in MicroSims:</strong></p>
+<ul>
+<li>Unlabeled controls (what does this slider do?)</li>
+<li>Cluttered interfaces (too many options at once)</li>
+<li>Inconsistent conventions (sometimes click, sometimes drag)</li>
+<li>Distracting decorations (purely aesthetic elements that add no learning value)</li>
+<li>Buried information (finding help requires multiple clicks)</li>
+</ul>
+<p><strong>Reducing extraneous load:</strong></p>
+<ul>
+<li>Label everything clearly</li>
+<li>Start with minimal interface, add complexity gradually</li>
+<li>Use consistent interaction patterns</li>
+<li>Remove purely decorative elements</li>
+<li>Place help information where it's needed</li>
+</ul>
+<h3 id="germane-load-where-learning-happens">Germane Load: Where Learning Happens</h3>
+<p><strong>Germane load</strong> is the productive mental effort spent building mental schemas—organized knowledge structures that enable understanding and transfer.</p>
+<p><strong>Promoting germane load:</strong></p>
+<ul>
+<li>Connect new concepts to prior knowledge</li>
+<li>Use multiple representations (text, visual, interactive)</li>
+<li>Encourage active processing (predict, then observe)</li>
+<li>Provide immediate, specific feedback</li>
+<li>Support reflection ("What did you notice?")</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">The Cognitive Load Equation</p>
+<p>Total Load = Intrinsic + Extraneous + Germane. Since total capacity is fixed, reducing extraneous load creates space for more germane learning. This is why simple, clear interfaces often outperform feature-rich ones.</p>
+</div>
+<h4 id="diagram-cognitive-load-visualizer">Diagram: Cognitive Load Visualizer</h4>
+<iframe src="../../sims/cognitive-load-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Cognitive Load Balance Visualizer</summary>
+Type: microsim
+
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+
+Learning Objective: Students will explain how the three types of cognitive load compete for limited working memory capacity by manipulating load levels and observing when overload occurs.
+
+Canvas layout:
+- Left panel (60%): Visualization of cognitive capacity
+- Right panel (40%): Controls and explanation
+
+Visual elements:
+- Container representing working memory capacity (like a beaker)
+- Three colored "liquids" representing load types:
+  - Intrinsic load: Blue (pours in from concept complexity)
+  - Extraneous load: Red (pours in from poor design)
+  - Germane load: Green (actual learning)
+- Fill level shows total capacity usage
+- Overflow animation when capacity exceeded
+- Learning indicator (lightbulb) that dims as germane load decreases
+
+Interactive controls:
+- Slider: "Concept Complexity" (intrinsic load, 1-10)
+- Slider: "Interface Confusion" (extraneous load, 0-10)
+- Display: Remaining capacity for learning (germane)
+- Display: "Learning Effectiveness" percentage
+- Preset scenarios:
+  - "Well-designed simple concept"
+  - "Well-designed complex concept"
+  - "Poorly-designed simple concept"
+  - "Overload scenario"
+
+Behavior:
+- Intrinsic + extraneous = total load
+- If total < capacity, germane fills remaining space
+- If total >= capacity, overflow animation, learning = 0
+- Learning effectiveness = germane / (germane + extraneous) × 100
+- Lightbulb brightness proportional to learning effectiveness
+
+Visual feedback:
+- Green glow when learning is effective
+- Yellow warning when approaching capacity
+- Red overflow when exceeded
+- Lightbulb animation (bright to dim)
+
+Animation:
+- Liquids pour/drain smoothly when sliders move
+- Overflow spills over edges
+- Lightbulb flickers when learning compromised
+
+Color scheme:
+- Intrinsic: Blue (#3498db)
+- Extraneous: Red (#e74c3c)
+- Germane: Green (#27ae60)
+- Container: Gray glass effect
+
+Implementation: p5.js with animated fluid simulation
+</details>
+
+<hr />
+<h2 id="scaffolding-building-bridges-to-understanding">Scaffolding: Building Bridges to Understanding</h2>
+<p><strong>Scaffolding</strong> is temporary support that helps learners accomplish tasks they couldn't complete independently. Like construction scaffolding, it's removed once the structure can stand alone.</p>
+<h3 id="the-scaffolding-principle">The Scaffolding Principle</h3>
+<p>When learners face a gap between current ability and target skill, scaffolding bridges that gap:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Current State ──── [SCAFFOLDING] ──── Target State
+(can&#39;t do it)     (guided support)    (can do it)
+</code></pre></div></td></tr></table></div>
+<p>Good scaffolding:</p>
+<ul>
+<li>Provides just enough support to enable success</li>
+<li>Gradually fades as competence grows</li>
+<li>Keeps the learner doing the cognitive work</li>
+<li>Adjusts to individual needs</li>
+</ul>
+<h3 id="types-of-scaffolding-in-microsims">Types of Scaffolding in MicroSims</h3>
+<table>
+<thead>
+<tr>
+<th>Scaffolding Type</th>
+<th>How It Works</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Guided Discovery</strong></td>
+<td>Structured exploration with prompts</td>
+<td>Concept exploration</td>
+</tr>
+<tr>
+<td><strong>Worked Examples</strong></td>
+<td>Step-by-step demonstrations</td>
+<td>Procedural learning</td>
+</tr>
+<tr>
+<td><strong>Hints System</strong></td>
+<td>Progressive clues on request</td>
+<td>Problem-solving</td>
+</tr>
+<tr>
+<td><strong>Feedback</strong></td>
+<td>Information about performance</td>
+<td>Skill refinement</td>
+</tr>
+<tr>
+<td><strong>Progressive Disclosure</strong></td>
+<td>Revealing complexity gradually</td>
+<td>Complex interfaces</td>
+</tr>
+<tr>
+<td><strong>Modeling</strong></td>
+<td>Expert demonstration</td>
+<td>New procedures</td>
+</tr>
+<tr>
+<td><strong>Coaching</strong></td>
+<td>Real-time guidance during practice</td>
+<td>Skill development</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guided-discovery-structured-exploration">Guided Discovery: Structured Exploration</h2>
+<p><strong>Guided discovery</strong> balances pure discovery learning (students figure everything out alone) with direct instruction (teacher explains everything). Students explore, but with carefully designed structure that guides them toward insights.</p>
+<h3 id="why-not-pure-discovery">Why Not Pure Discovery?</h3>
+<p>Research shows that pure discovery learning often fails because:</p>
+<ul>
+<li>Students may never discover the key concept</li>
+<li>They may form incorrect mental models</li>
+<li>Exploration without guidance wastes cognitive resources</li>
+<li>Frustration leads to disengagement</li>
+</ul>
+<h3 id="why-not-pure-instruction">Why Not Pure Instruction?</h3>
+<p>Direct instruction alone can fail because:</p>
+<ul>
+<li>Passive reception doesn't build deep understanding</li>
+<li>Students don't learn <em>how</em> to discover</li>
+<li>Knowledge doesn't transfer to new situations</li>
+<li>Motivation suffers without agency</li>
+</ul>
+<h3 id="guided-discovery-in-practice">Guided Discovery in Practice</h3>
+<p>Effective guided discovery in MicroSims:</p>
+<ol>
+<li><strong>Sets clear goals</strong>: "Discover what affects pendulum period"</li>
+<li><strong>Constrains exploration</strong>: Limit variables to relevant ones</li>
+<li><strong>Prompts reflection</strong>: "What changed when you increased length?"</li>
+<li><strong>Confirms discoveries</strong>: "You found it! Longer = slower"</li>
+<li><strong>Connects to theory</strong>: "This follows T = 2π√(L/g)"</li>
+</ol>
+<p><strong>Example sequence:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Student Action</th>
+<th>Guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Explore freely</td>
+<td>"Try changing the pendulum length"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Notice pattern</td>
+<td>"What happens to the swing speed?"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Form hypothesis</td>
+<td>"Complete: Longer pendulums swing ___"</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Test hypothesis</td>
+<td>"Try extreme values to check"</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Generalize</td>
+<td>"This is called the period-length relationship"</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-guided-discovery-path">Diagram: Guided Discovery Path</h4>
+<iframe src="../../sims/guided-discovery-path/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Guided Discovery Learning Path</summary>
+Type: workflow
+
+Bloom Level: Apply (L3)
+Bloom Verb: implement
+
+Learning Objective: Students will implement a guided discovery sequence by stepping through a structured exploration that leads to concept understanding.
+
+Visual style: Path diagram showing journey from question to understanding
+
+Steps along path:
+1. "Pose Question" (start node)
+   - Icon: Question mark
+   - Hover: "What affects how fast a pendulum swings?"
+
+2. "Constrain Variables"
+   - Icon: Filter
+   - Hover: "Focus on length only - mass and amplitude are locked"
+
+3. "Explore Freely"
+   - Icon: Play/explore
+   - Hover: "Change the length slider and watch what happens"
+
+4. "Prompt Observation"
+   - Icon: Eye
+   - Hover: "What pattern do you notice? Longer means..."
+
+5. "Form Hypothesis"
+   - Icon: Lightbulb
+   - Hover: "Complete: I think longer pendulums swing [slower/faster]"
+
+6. "Test Prediction"
+   - Icon: Experiment flask
+   - Hover: "Try extreme values - very short and very long"
+
+7. "Confirm Discovery"
+   - Icon: Checkmark
+   - Hover: "You discovered it! Longer = slower period"
+
+8. "Connect to Theory"
+   - Icon: Book/formula
+   - Hover: "This relationship follows T = 2π√(L/g)"
+
+9. "Transfer"
+   - Icon: Arrow pointing outward
+   - Hover: "Apply this to predict: a 4m pendulum vs 1m..."
+
+Interactive elements:
+- Click each node to see detailed guidance examples
+- Animated path showing progression
+- Side panel shows current step's MicroSim interface state
+- Toggle: "Show pure discovery comparison" (why each step helps)
+
+Color scheme:
+- Path: Gradient from blue (question) to green (understanding)
+- Current step: Gold highlight
+- Completed steps: Filled circles
+- Future steps: Empty circles
+
+Implementation: p5.js with interactive path visualization
+</details>
+
+<hr />
+<h2 id="worked-examples-learning-from-demonstrations">Worked Examples: Learning from Demonstrations</h2>
+<p><strong>Worked examples</strong> are step-by-step demonstrations of how to solve a problem or complete a procedure. They reduce cognitive load by showing the process explicitly before asking students to perform it.</p>
+<h3 id="the-worked-example-effect">The Worked Example Effect</h3>
+<p>Research consistently shows that studying worked examples before practicing leads to better learning than practice alone. Why?</p>
+<ul>
+<li>Examples show the <em>process</em>, not just the answer</li>
+<li>Learners see expert thinking made visible</li>
+<li>Cognitive resources focus on understanding, not struggling</li>
+<li>Correct procedures are encoded before errors occur</li>
+</ul>
+<h3 id="worked-examples-in-microsims">Worked Examples in MicroSims</h3>
+<p>Effective worked examples in simulations:</p>
+<ol>
+<li><strong>Show the goal</strong>: What are we trying to find?</li>
+<li><strong>Demonstrate each step</strong>: With narration or annotation</li>
+<li><strong>Highlight key decisions</strong>: Why this approach?</li>
+<li><strong>Connect steps to outcome</strong>: How each step contributes</li>
+<li><strong>Invite practice</strong>: Now try a similar problem</li>
+</ol>
+<p><strong>Example: Calculating Pendulum Period</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"Find the period of a 2m pendulum on Earth"</td>
+<td>Goal statement</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"Use T = 2π√(L/g)"</td>
+<td>Identify relevant formula</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"L = 2m, g = 9.8 m/s²"</td>
+<td>Identify known values</td>
+</tr>
+<tr>
+<td>4</td>
+<td>"T = 2π√(2/9.8) = 2π√(0.204)"</td>
+<td>Substitute values</td>
+</tr>
+<tr>
+<td>5</td>
+<td>"T = 2π × 0.452 = 2.84 seconds"</td>
+<td>Calculate result</td>
+</tr>
+<tr>
+<td>6</td>
+<td>"Verify: Watch the simulation—about 2.8s per swing!"</td>
+<td>Connect to visual</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fading-worked-examples">Fading Worked Examples</h3>
+<p>The most effective approach gradually removes scaffolding:</p>
+<ol>
+<li><strong>Complete example</strong>: All steps shown</li>
+<li><strong>Completion problem</strong>: Some steps missing, student fills in</li>
+<li><strong>Guided problem</strong>: Hints available, student does all steps</li>
+<li><strong>Independent practice</strong>: Student solves alone</li>
+</ol>
+<p>This "fading" transitions learners from observers to performers.</p>
+<hr />
+<h2 id="hints-system-just-in-time-support">Hints System: Just-in-Time Support</h2>
+<p>A <strong>hints system</strong> provides progressive clues when students get stuck. Unlike worked examples (shown upfront), hints are available on request—supporting agency while preventing frustration.</p>
+<h3 id="designing-effective-hints">Designing Effective Hints</h3>
+<p>Good hint systems follow these principles:</p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Progressive</strong></td>
+<td>Start vague, get specific</td>
+<td>"Think about the formula" → "T = 2π√(?)" → "What goes under the square root?"</td>
+</tr>
+<tr>
+<td><strong>On-demand</strong></td>
+<td>Student chooses when to use</td>
+<td>"Hint" button, not automatic popup</td>
+</tr>
+<tr>
+<td><strong>Cost-aware</strong></td>
+<td>Hints may reduce score/credit</td>
+<td>Encourages genuine attempt first</td>
+</tr>
+<tr>
+<td><strong>Specific</strong></td>
+<td>Address the actual confusion</td>
+<td>Different hints for different errors</td>
+</tr>
+<tr>
+<td><strong>Instructive</strong></td>
+<td>Teach, don't just solve</td>
+<td>Explain why, not just what</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hint-progression-example">Hint Progression Example</h3>
+<p>For a student stuck on calculating pendulum period:</p>
+<table>
+<thead>
+<tr>
+<th>Hint Level</th>
+<th>Content</th>
+<th>Cognitive Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hint 1</strong></td>
+<td>"Which variable affects period: length, mass, or amplitude?"</td>
+<td>Narrows focus</td>
+</tr>
+<tr>
+<td><strong>Hint 2</strong></td>
+<td>"The formula involves length and gravity: T = 2π√(?/?)"</td>
+<td>Shows structure</td>
+</tr>
+<tr>
+<td><strong>Hint 3</strong></td>
+<td>"Put length on top, gravity on bottom: T = 2π√(L/g)"</td>
+<td>Reveals formula</td>
+</tr>
+<tr>
+<td><strong>Hint 4</strong></td>
+<td>"With L=2m and g=9.8: T = 2π√(2/9.8). Calculate the square root first."</td>
+<td>Guides calculation</td>
+</tr>
+</tbody>
+</table>
+<p>Each hint reveals more while still requiring student processing.</p>
+<hr />
+<h2 id="feedback-mechanisms-closing-the-learning-loop">Feedback Mechanisms: Closing the Learning Loop</h2>
+<p><strong>Feedback</strong> is information about performance that helps learners adjust their understanding or behavior. Effective feedback is the difference between practice and <em>deliberate</em> practice.</p>
+<h3 id="types-of-feedback-in-microsims">Types of Feedback in MicroSims</h3>
+<table>
+<thead>
+<tr>
+<th>Feedback Type</th>
+<th>What It Tells</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Immediate</strong></td>
+<td>Right/wrong instantly</td>
+<td>Drill and practice</td>
+</tr>
+<tr>
+<td><strong>Delayed</strong></td>
+<td>After completing a section</td>
+<td>Complex problem-solving</td>
+</tr>
+<tr>
+<td><strong>Elaborated</strong></td>
+<td>Why something is right/wrong</td>
+<td>Concept development</td>
+</tr>
+<tr>
+<td><strong>Directive</strong></td>
+<td>What to do next</td>
+<td>Procedural learning</td>
+</tr>
+<tr>
+<td><strong>Facilitative</strong></td>
+<td>Questions to prompt thinking</td>
+<td>Discovery learning</td>
+</tr>
+<tr>
+<td><strong>Verification</strong></td>
+<td>Correct or incorrect only</td>
+<td>Self-assessment</td>
+</tr>
+</tbody>
+</table>
+<h3 id="feedback-design-principles">Feedback Design Principles</h3>
+<p><strong>Be specific</strong>: Not "Wrong" but "Your calculation is off—check your unit conversion."</p>
+<p><strong>Be timely</strong>: Immediate feedback for facts, slightly delayed for complex reasoning (gives time to self-correct).</p>
+<p><strong>Be constructive</strong>: Focus on improvement, not just error identification.</p>
+<p><strong>Be actionable</strong>: Include what to do differently.</p>
+<p><strong>Be encouraging</strong>: Maintain motivation while correcting.</p>
+<h3 id="feedback-in-action">Feedback in Action</h3>
+<p><strong>Poor feedback:</strong></p>
+<blockquote>
+<p>❌ "Incorrect. Try again."</p>
+</blockquote>
+<p><strong>Better feedback:</strong></p>
+<blockquote>
+<p>⚠️ "Not quite. The period is longer than your answer. Hint: Did you use the correct value for g?"</p>
+</blockquote>
+<p><strong>Best feedback:</strong></p>
+<blockquote>
+<p>✅ "Your approach is right, but you used g=10 instead of g=9.8. This matters! Recalculate with g=9.8 and you'll get: T = 2π√(2/9.8) = 2.84 seconds."</p>
+</blockquote>
+<h4 id="diagram-feedback-loop-simulator">Diagram: Feedback Loop Simulator</h4>
+<iframe src="../../sims/feedback-loop-sim/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Feedback Quality Comparison Simulator</summary>
+Type: microsim
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: critique
+
+Learning Objective: Students will critique different feedback approaches by comparing their effectiveness in a simulated learning scenario.
+
+Canvas layout:
+- Top panel (30%): Problem and student answer display
+- Middle panel (50%): Three feedback panels side by side
+- Bottom panel (20%): Effectiveness ratings and analysis
+
+Visual elements:
+- Problem statement: "Calculate the period of a 1.5m pendulum (g=9.8)"
+- Student answer input: Editable value
+- Three feedback panels showing:
+  1. "Minimal" feedback: Just correct/incorrect
+  2. "Directive" feedback: What to fix
+  3. "Elaborated" feedback: Why and how
+- Effectiveness meter for each approach
+- Learner emotion indicators (confused/neutral/confident)
+
+Sample scenarios (selectable):
+1. Correct answer: How each feedback type responds
+2. Minor error (unit conversion): Different guidance levels
+3. Conceptual error (wrong formula): Different support
+4. Random guess: Different responses
+
+Interactive controls:
+- Dropdown: Select student error scenario
+- Input: Enter custom student answer
+- Button: "Show Feedback Comparison"
+- Toggle: "Show research findings" (why elaborated works better)
+- Rating sliders: "Rate each feedback's helpfulness"
+
+Behavior:
+- All three feedbacks appear simultaneously for comparison
+- Error type determines feedback content
+- Effectiveness meters show research-based ratings
+- Student can rate and compare to research findings
+
+Feedback examples for "minor calculation error":
+1. Minimal: "Incorrect. Try again."
+2. Directive: "Recheck your square root calculation."
+3. Elaborated: "Your formula is correct but the calculation has a small error. You wrote √(0.153) = 0.45, but √(0.153) = 0.391. Try again with this corrected value."
+
+Animation:
+- Feedback panels reveal sequentially
+- Effectiveness bars fill based on quality
+- Learner expression changes with feedback quality
+
+Color scheme:
+- Minimal: Gray (neutral)
+- Directive: Yellow (partial)
+- Elaborated: Green (effective)
+- Error highlighting: Red
+- Success: Green
+
+Implementation: p5.js with comparative panel layout
+</details>
+
+<hr />
+<h2 id="progressive-disclosure-revealing-complexity-gradually">Progressive Disclosure: Revealing Complexity Gradually</h2>
+<p><strong>Progressive disclosure</strong> is an interface design pattern that hides complexity until it's needed. Advanced features are available but not overwhelming beginners.</p>
+<h3 id="why-progressive-disclosure-works">Why Progressive Disclosure Works</h3>
+<p>New users face two challenges:</p>
+<ol>
+<li><strong>Interface complexity</strong>: Too many options overwhelm</li>
+<li><strong>Concept complexity</strong>: Too much information confuses</li>
+</ol>
+<p>Progressive disclosure addresses both by revealing information and options as users become ready.</p>
+<h3 id="progressive-disclosure-patterns">Progressive Disclosure Patterns</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>How It Works</th>
+<th>Example in MicroSim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Staged reveal</strong></td>
+<td>Features unlock as you progress</td>
+<td>"Complete Level 1 to unlock mass variable"</td>
+</tr>
+<tr>
+<td><strong>Expandable sections</strong></td>
+<td>Details hidden until clicked</td>
+<td>"Advanced settings ▼"</td>
+</tr>
+<tr>
+<td><strong>Default simplicity</strong></td>
+<td>Starts minimal, complexity optional</td>
+<td>Single slider initially, "More controls" button</td>
+</tr>
+<tr>
+<td><strong>Contextual appearance</strong></td>
+<td>Options appear when relevant</td>
+<td>"Compare mode" only after first value entered</td>
+</tr>
+<tr>
+<td><strong>Difficulty progression</strong></td>
+<td>Complexity increases over time</td>
+<td>Simple problems → multi-variable problems</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-pendulum-microsim-progressive-disclosure">Example: Pendulum MicroSim Progressive Disclosure</h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Visible Elements</th>
+<th>Hidden (Available on Request)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Beginner</strong></td>
+<td>Length slider, period display</td>
+<td>Mass, amplitude, gravity, formula</td>
+</tr>
+<tr>
+<td><strong>Intermediate</strong></td>
+<td>+ Mass slider, amplitude slider</td>
+<td>Gravity, formula, data export</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>+ Gravity selector, formula display</td>
+<td>Data export, custom scenarios</td>
+</tr>
+<tr>
+<td><strong>Expert</strong></td>
+<td>+ All features, comparison mode</td>
+<td>Nothing hidden</td>
+</tr>
+</tbody>
+</table>
+<p>The MicroSim can auto-progress or let users unlock manually.</p>
+<hr />
+<h2 id="modeling-and-coaching-expert-support">Modeling and Coaching: Expert Support</h2>
+<p><strong>Modeling</strong> and <strong>coaching</strong> are scaffolding techniques from cognitive apprenticeship—learning through expert demonstration and guided practice.</p>
+<h3 id="modeling-watch-the-expert">Modeling: Watch the Expert</h3>
+<p>In <strong>modeling</strong>, an expert demonstrates a skill while making thinking visible:</p>
+<ul>
+<li>Performs the task while explaining</li>
+<li>Highlights key decision points</li>
+<li>Shows how to handle difficulties</li>
+<li>Demonstrates both <em>what</em> and <em>why</em></li>
+</ul>
+<p><strong>Modeling in MicroSims:</strong></p>
+<ul>
+<li>Animated walkthroughs showing expert procedure</li>
+<li>"Auto-solve" feature with narration</li>
+<li>Video overlays of expert using the simulation</li>
+<li>Thought bubbles explaining decisions</li>
+</ul>
+<h3 id="coaching-practice-with-support">Coaching: Practice with Support</h3>
+<p>In <strong>coaching</strong>, the learner performs while receiving guidance:</p>
+<ul>
+<li>Expert observes student practice</li>
+<li>Provides hints and feedback in real-time</li>
+<li>Points out errors before they compound</li>
+<li>Gradually reduces intervention</li>
+</ul>
+<p><strong>Coaching in MicroSims:</strong></p>
+<ul>
+<li>Real-time feedback on student actions</li>
+<li>Error prevention ("Are you sure? This will reset...")</li>
+<li>Performance tracking with suggestions</li>
+<li>Adaptive hints based on behavior patterns</li>
+</ul>
+<h3 id="from-modeling-to-independence">From Modeling to Independence</h3>
+<p>The transition follows this sequence:</p>
+<ol>
+<li><strong>Modeling</strong>: Expert does, student watches</li>
+<li><strong>Coached practice</strong>: Student does, expert guides</li>
+<li><strong>Scaffolded practice</strong>: Student does, support available</li>
+<li><strong>Independent practice</strong>: Student does alone</li>
+<li><strong>Mastery application</strong>: Student applies to new contexts</li>
+</ol>
+<hr />
+<h2 id="learning-theories-frameworks-for-design">Learning Theories: Frameworks for Design</h2>
+<p>Different <strong>learning theories</strong> suggest different MicroSim design approaches. Understanding these theories helps you choose techniques that match your educational goals.</p>
+<h3 id="constructivism-building-understanding">Constructivism: Building Understanding</h3>
+<p><strong>Constructivism</strong> holds that learners actively construct knowledge through experience rather than passively receiving it.</p>
+<p><strong>Key principles:</strong></p>
+<ul>
+<li>Learning is an active process</li>
+<li>Knowledge is built on prior knowledge</li>
+<li>Social interaction enhances learning</li>
+<li>Context matters for meaning</li>
+</ul>
+<p><strong>MicroSim implications:</strong></p>
+<ul>
+<li>Provide exploration opportunities</li>
+<li>Connect to existing knowledge</li>
+<li>Enable peer discussion/comparison</li>
+<li>Use authentic, meaningful contexts</li>
+</ul>
+<p><strong>Example design</strong>: Simulation where students discover relationships through exploration rather than being told.</p>
+<h3 id="behaviorism-shaping-through-response">Behaviorism: Shaping Through Response</h3>
+<p><strong>Behaviorism</strong> focuses on observable behaviors shaped through stimulus-response conditioning and reinforcement.</p>
+<p><strong>Key principles:</strong></p>
+<ul>
+<li>Behavior is shaped by consequences</li>
+<li>Positive reinforcement increases behavior</li>
+<li>Practice with feedback develops skills</li>
+<li>Complex behaviors built from simple components</li>
+</ul>
+<p><strong>MicroSim implications:</strong></p>
+<ul>
+<li>Immediate feedback on actions</li>
+<li>Rewards for correct responses</li>
+<li>Drill-and-practice for automaticity</li>
+<li>Step-by-step skill building</li>
+</ul>
+<p><strong>Example design</strong>: Flash card MicroSim with points, streaks, and achievement badges.</p>
+<h3 id="cognitivism-processing-information">Cognitivism: Processing Information</h3>
+<p><strong>Cognitivism</strong> emphasizes mental processes—attention, memory, problem-solving—as the basis for learning.</p>
+<p><strong>Key principles:</strong></p>
+<ul>
+<li>Learning is information processing</li>
+<li>Working memory has limited capacity</li>
+<li>Organization aids retention</li>
+<li>Meaningful connections enhance memory</li>
+</ul>
+<p><strong>MicroSim implications:</strong></p>
+<ul>
+<li>Manage cognitive load carefully</li>
+<li>Organize information clearly</li>
+<li>Use multiple representations</li>
+<li>Support chunking and schemas</li>
+</ul>
+<p><strong>Example design</strong>: Structured problem-solving with visual organization and worked examples.</p>
+<h3 id="experiential-learning-learning-by-doing">Experiential Learning: Learning by Doing</h3>
+<p><strong>Experiential learning</strong> emphasizes direct experience and reflection as the foundation of learning.</p>
+<p><strong>Key principles:</strong></p>
+<ul>
+<li>Experience is the source of learning</li>
+<li>Reflection transforms experience into knowledge</li>
+<li>Active experimentation tests understanding</li>
+<li>Cycle of experience → reflection → theory → action</li>
+</ul>
+<p><strong>MicroSim implications:</strong></p>
+<ul>
+<li>Hands-on interaction is central</li>
+<li>Include reflection prompts</li>
+<li>Connect experience to abstract concepts</li>
+<li>Enable experimentation and testing</li>
+</ul>
+<p><strong>Example design</strong>: Simulation with built-in reflection questions after each exploration.</p>
+<h4 id="diagram-learning-theories-comparison">Diagram: Learning Theories Comparison</h4>
+<iframe src="../../sims/learning-theories-compare/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Learning Theories Interactive Comparison</summary>
+Type: infographic
+
+Bloom Level: Analyze (L4)
+Bloom Verb: compare
+
+Learning Objective: Students will compare the four major learning theories by examining how each would approach the same MicroSim design challenge.
+
+Layout: Four quadrant display with central challenge
+
+Visual elements:
+- Central circle: "Design Challenge: Teach pendulum period"
+- Four quadrants around center:
+  - Top-left: Constructivism (blue)
+  - Top-right: Behaviorism (green)
+  - Bottom-left: Cognitivism (purple)
+  - Bottom-right: Experiential (orange)
+- Each quadrant shows:
+  - Theory name and icon
+  - Key principle (1 sentence)
+  - MicroSim design approach
+  - Screenshot/mockup of resulting design
+
+Quadrant content:
+
+**Constructivism (Blue):**
+- Icon: Building blocks
+- Principle: "Learners construct knowledge through exploration"
+- Approach: "Open-ended simulation, discover period-length relationship"
+- Features: Free exploration, minimal instructions, "What did you notice?" prompts
+
+**Behaviorism (Green):**
+- Icon: Star/reward
+- Principle: "Behavior is shaped through reinforcement"
+- Approach: "Drill with immediate feedback and rewards"
+- Features: Points for correct answers, achievement badges, streak counters
+
+**Cognitivism (Purple):**
+- Icon: Brain/gears
+- Principle: "Learning is information processing"
+- Approach: "Structured presentation managing cognitive load"
+- Features: Worked examples, organized interface, step-by-step progression
+
+**Experiential (Orange):**
+- Icon: Hands/cycle
+- Principle: "Experience and reflection create knowledge"
+- Approach: "Hands-on experimentation with reflection"
+- Features: Experiment mode, reflection questions, predict-then-test cycle
+
+Interactive elements:
+- Click each quadrant to expand detailed view
+- Toggle: "Show same MicroSim in each style" (visual mockups)
+- Compare button: Select two theories to see side-by-side
+- Quiz: "Match the design feature to the theory"
+
+Animation:
+- Quadrants highlight on hover
+- Central challenge pulses
+- Expanded views slide out smoothly
+
+Color scheme:
+- Constructivism: Blue family
+- Behaviorism: Green family
+- Cognitivism: Purple family
+- Experiential: Orange family
+
+Implementation: p5.js with quadrant layout and interactive expansion
+</details>
+
+<hr />
+<h2 id="addressing-misconceptions">Addressing Misconceptions</h2>
+<p><strong>Misconceptions</strong> are incorrect beliefs that students bring to learning or develop during instruction. They're stubborn because they often "work" in limited contexts, making them resistant to correction.</p>
+<h3 id="why-misconceptions-matter">Why Misconceptions Matter</h3>
+<p>Misconceptions don't just represent missing knowledge—they're <em>active interference</em> with correct understanding:</p>
+<ul>
+<li>Students interpret new information through their misconception</li>
+<li>Correct explanations are filtered or distorted</li>
+<li>Misconceptions predict and explain (wrongly) in familiar contexts</li>
+<li>Direct contradiction often fails to change beliefs</li>
+</ul>
+<h3 id="common-physics-misconceptions">Common Physics Misconceptions</h3>
+<table>
+<thead>
+<tr>
+<th>Misconception</th>
+<th>Correct Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Heavier pendulums swing faster"</td>
+<td>Period is independent of mass</td>
+</tr>
+<tr>
+<td>"Higher amplitude = faster swing"</td>
+<td>Period is independent of amplitude (small angles)</td>
+</tr>
+<tr>
+<td>"Objects fall faster if heavier"</td>
+<td>All objects fall at same rate (without air resistance)</td>
+</tr>
+<tr>
+<td>"Force is needed for motion"</td>
+<td>Force is needed for <em>change</em> in motion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="addressing-misconceptions-in-microsims">Addressing Misconceptions in MicroSims</h3>
+<p>Effective misconception-busting strategies:</p>
+<ol>
+<li><strong>Elicit the misconception</strong>: Ask for predictions first</li>
+<li><strong>Create cognitive conflict</strong>: Show simulation contradicting prediction</li>
+<li><strong>Explain the conflict</strong>: Why intuition was wrong</li>
+<li><strong>Provide correct model</strong>: How it actually works</li>
+<li><strong>Consolidate</strong>: Practice with the correct understanding</li>
+</ol>
+<p><strong>Example: "Heavier swings faster" misconception</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>MicroSim Action</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"Before you start: Which will swing faster—a light or heavy pendulum? Why?"</td>
+<td>Surface the misconception</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"Run the simulation with different masses"</td>
+<td>Test their prediction</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"Surprise! They're the same. The mass doesn't affect period."</td>
+<td>Create cognitive conflict</td>
+</tr>
+<tr>
+<td>4</td>
+<td>"Here's why: The extra force from more mass is exactly offset by..."</td>
+<td>Provide correct explanation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>"Now predict: What if we try on the moon?"</td>
+<td>Consolidate understanding</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Don't Just Tell</p>
+<p>Simply telling students the correct answer rarely changes misconceptions. They need to experience the conflict between their prediction and reality. MicroSims are perfect for this—predictions meet simulations!</p>
+</div>
+<hr />
+<h2 id="transfer-skills-beyond-the-simulation">Transfer Skills: Beyond the Simulation</h2>
+<p><strong>Transfer</strong> is the ability to apply learning from one context to new, different contexts. It's the ultimate goal of education—not just knowing, but being able to <em>use</em> knowledge flexibly.</p>
+<h3 id="types-of-transfer">Types of Transfer</h3>
+<table>
+<thead>
+<tr>
+<th>Transfer Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Near transfer</strong></td>
+<td>Similar context, similar skills</td>
+<td>Calculating period for different pendulum lengths</td>
+</tr>
+<tr>
+<td><strong>Far transfer</strong></td>
+<td>Different context, underlying principles</td>
+<td>Applying period formula to spring-mass systems</td>
+</tr>
+<tr>
+<td><strong>Negative transfer</strong></td>
+<td>Prior learning interferes</td>
+<td>Confusing pendulum and spring formulas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="designing-for-transfer">Designing for Transfer</h3>
+<p>MicroSims can promote transfer through:</p>
+<ol>
+<li><strong>Multiple examples</strong>: Show concept in varied contexts</li>
+<li><strong>Abstract principles</strong>: Emphasize underlying rules, not just procedures</li>
+<li><strong>Comparison</strong>: What's similar/different across cases?</li>
+<li><strong>Application prompts</strong>: "Where else might this apply?"</li>
+<li><strong>Varied practice</strong>: Same principle, different surface features</li>
+</ol>
+<h3 id="transfer-in-practice">Transfer in Practice</h3>
+<p><strong>Poor for transfer:</strong></p>
+<blockquote>
+<p>"Practice calculating T = 2π√(L/g) for pendulums of different lengths."</p>
+</blockquote>
+<p>Only practices one context. Near transfer only.</p>
+<p><strong>Better for transfer:</strong></p>
+<blockquote>
+<p>"You've learned that period depends on system properties. Now explore this spring-mass simulation. What's similar? What's the analogous formula?"</p>
+</blockquote>
+<p>Prompts connection across contexts. Promotes far transfer.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Cognitive load</strong> has three types: intrinsic (concept complexity), extraneous (design waste), and germane (actual learning)</p>
+</li>
+<li>
+<p><strong>Reducing extraneous load</strong> creates space for more germane learning—simple, clear interfaces often outperform complex ones</p>
+</li>
+<li>
+<p><strong>Scaffolding</strong> provides temporary support that enables learners to accomplish tasks beyond their current independent ability</p>
+</li>
+<li>
+<p><strong>Guided discovery</strong> balances exploration with structure—students discover, but within carefully designed constraints</p>
+</li>
+<li>
+<p><strong>Worked examples</strong> show the process explicitly before asking students to perform, reducing cognitive load during initial learning</p>
+</li>
+<li>
+<p><strong>Hints systems</strong> provide progressive support on demand—start vague, get specific, teach rather than just solve</p>
+</li>
+<li>
+<p><strong>Effective feedback</strong> is specific, timely, constructive, and actionable—not just "right" or "wrong"</p>
+</li>
+<li>
+<p><strong>Progressive disclosure</strong> reveals complexity gradually, preventing beginner overwhelm while supporting advanced use</p>
+</li>
+<li>
+<p><strong>Learning theories</strong> (constructivism, behaviorism, cognitivism, experiential) suggest different design approaches for different goals</p>
+</li>
+<li>
+<p><strong>Misconceptions</strong> require cognitive conflict to change—elicit predictions, show contradictions, explain why, then consolidate</p>
+</li>
+<li>
+<p><strong>Transfer</strong> is the ultimate goal—design for varied contexts, abstract principles, and explicit connection-making</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>You now understand the learning science that makes MicroSims educationally effective. Cognitive load theory helps you protect learning capacity. Scaffolding techniques guide students from confusion to competence. Learning theories inform your design choices. Misconception strategies create "aha!" moments.</p>
+<p>In the next chapter, we'll explore <strong>Visualization Types</strong>:</p>
+<ul>
+<li>Choosing the right visual format for your content</li>
+<li>Animations, charts, diagrams, and simulations</li>
+<li>Interactive vs. static visualizations</li>
+<li>When to use each type</li>
+</ul>
+<p>The pedagogy you've learned here will be enriched with visualization design principles that bring your educational vision to life.</p>
+<hr />
+<p><em>Ready to explore visual design? Continue to <a href="../12-visualization-types/">Chapter 12: Visualization Types</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-educational-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Educational Foundations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Educational Foundations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-visualization-types/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. Visualization Types">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. Visualization Types
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

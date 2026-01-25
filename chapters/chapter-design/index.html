@@ -1,0 +1,1359 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MicroSim Faceted Search CC ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/chapter-design/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter Design for MicroSim Search and Similarity - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-design-for-microsim-search-and-similarity" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter Design for MicroSim Search and Similarity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-chapter-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proposed Chapter Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposed Chapter Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapters:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-challenges-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Challenges &amp; Solutions:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-assignments-by-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Assignments by Chapter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Assignments by Chapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-1-introduction-to-microsims-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Introduction to MicroSims (15 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-2-microsim-file-organization-7-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: MicroSim File Organization (7 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-3-metadata-fundamentals-17-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Metadata Fundamentals (17 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-4-dublin-core-elements-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Dublin Core Elements (15 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-5-json-and-data-structures-13-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: JSON and Data Structures (13 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-6-search-fundamentals-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Search Fundamentals (15 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-7-faceted-search-and-client-side-search-12-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Faceted Search and Client-Side Search (12 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-8-embeddings-and-semantic-search-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Embeddings and Semantic Search (15 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-9-data-pipelines-and-aggregation-14-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Data Pipelines and Aggregation (14 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-10-educational-foundations-20-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10: Educational Foundations (20 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-11-learning-theory-and-pedagogy-18-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 11: Learning Theory and Pedagogy (18 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-12-visualization-types-15-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 12: Visualization Types (15 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-13-user-interface-and-controls-18-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 13: User Interface and Controls (18 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-14-technical-implementation-26-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 14: Technical Implementation (26 concepts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/chapter-design.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-design-for-microsim-search-and-similarity">Chapter Design for MicroSim Search and Similarity</h1>
+<h2 id="proposed-chapter-structure">Proposed Chapter Structure</h2>
+<p>I've designed a <strong>14-chapter structure</strong> for the textbook covering all <strong>200 concepts</strong>.</p>
+<h3 id="chapters">Chapters:</h3>
+<ol>
+<li>
+<p><strong>Introduction to MicroSims</strong> (15 concepts)
+   This chapter introduces the foundational concepts of MicroSims including their purpose, structure, and role in education.</p>
+</li>
+<li>
+<p><strong>MicroSim File Organization</strong> (7 concepts)
+   This chapter covers the directory structure and essential files that comprise a MicroSim package.</p>
+</li>
+<li>
+<p><strong>Metadata Fundamentals</strong> (17 concepts)
+   This chapter introduces metadata concepts and the Dublin Core standard that provides the foundation for MicroSim discoverability.</p>
+</li>
+<li>
+<p><strong>Dublin Core Elements</strong> (15 concepts)
+   This chapter provides detailed coverage of all 15 Dublin Core metadata elements used to describe MicroSims.</p>
+</li>
+<li>
+<p><strong>JSON and Data Structures</strong> (13 concepts)
+   This chapter covers JSON syntax, schema validation, and data quality concepts essential for MicroSim metadata.</p>
+</li>
+<li>
+<p><strong>Search Fundamentals</strong> (15 concepts)
+   This chapter introduces core search concepts including information retrieval, keyword search, and boolean operations.</p>
+</li>
+<li>
+<p><strong>Faceted Search and Client-Side Search</strong> (12 concepts)
+   This chapter covers faceted search implementation, filter controls, and lightweight client-side search using ItemsJS.</p>
+</li>
+<li>
+<p><strong>Embeddings and Semantic Search</strong> (15 concepts)
+   This chapter introduces vector embeddings, similarity measures, and semantic search techniques for finding related MicroSims.</p>
+</li>
+<li>
+<p><strong>Data Pipelines and Aggregation</strong> (14 concepts)
+   This chapter covers web crawling, GitHub API usage, repository mining, and data aggregation techniques.</p>
+</li>
+<li>
+<p><strong>Educational Foundations</strong> (20 concepts)
+    This chapter covers learning objectives, Bloom's Taxonomy, grade levels, and cognitive complexity concepts.</p>
+</li>
+<li>
+<p><strong>Learning Theory and Pedagogy</strong> (18 concepts)
+    This chapter explores cognitive load theory, scaffolding techniques, and learning theories relevant to MicroSim design.</p>
+</li>
+<li>
+<p><strong>Visualization Types</strong> (15 concepts)
+    This chapter covers the various visualization types supported by MicroSims including animations, charts, diagrams, and interactive displays.</p>
+</li>
+<li>
+<p><strong>User Interface and Controls</strong> (18 concepts)
+    This chapter covers user interaction levels, control widgets, and layout patterns for MicroSim interfaces.</p>
+</li>
+<li>
+<p><strong>Technical Implementation</strong> (26 concepts)
+    This chapter covers JavaScript libraries, responsive design, accessibility, analytics, and curriculum standards.</p>
+</li>
+</ol>
+<hr />
+<h2 id="design-challenges-solutions">Design Challenges &amp; Solutions:</h2>
+<ul>
+<li>
+<p><strong>Challenge</strong>: Foundational concepts (MicroSim, Search, Metadata, JSON, Embeddings, Data Gathering, Visualization Type) have no dependencies
+  <strong>Solution</strong>: Distributed across Chapters 1, 3, 5, 6, 8, 9, and 12 as chapter openers</p>
+</li>
+<li>
+<p><strong>Challenge</strong>: Dublin Core has 15 tightly related elements
+  <strong>Solution</strong>: Dedicated Chapter 4 for Dublin Core elements after introducing Dublin Core in Chapter 3</p>
+</li>
+<li>
+<p><strong>Challenge</strong>: EDU taxonomy category contains 38 concepts
+  <strong>Solution</strong>: Split across Chapters 10 (grades, Bloom's) and 11 (learning theory, scaffolding)</p>
+</li>
+<li>
+<p><strong>Challenge</strong>: TECH category (24 concepts) covers diverse topics
+  <strong>Solution</strong>: Concentrated in Chapter 14 with clear progression from libraries to accessibility</p>
+</li>
+<li>
+<p><strong>Challenge</strong>: UI category (33 concepts) is large
+  <strong>Solution</strong>: Split between Chapter 12 (visualization types) and Chapter 13 (controls/layout)</p>
+</li>
+</ul>
+<hr />
+<h2 id="statistics">Statistics:</h2>
+<ul>
+<li>Total chapters: 14</li>
+<li>Average concepts per chapter: 14.3</li>
+<li>Range: 7-26 concepts per chapter</li>
+<li>All 200 concepts covered: ✓</li>
+<li>All dependencies respected: ✓</li>
+</ul>
+<h2 id="concept-assignments-by-chapter">Concept Assignments by Chapter</h2>
+<h3 id="chapter-1-introduction-to-microsims-15-concepts">Chapter 1: Introduction to MicroSims (15 concepts)</h3>
+<ol>
+<li>MicroSim</li>
+<li>Educational Simulation</li>
+<li>Interactivity</li>
+<li>User Engagement</li>
+<li>Simplicity</li>
+<li>AI Generation</li>
+<li>Web Embedding</li>
+<li>Iframe Element</li>
+<li>Findability</li>
+<li>Reuse</li>
+<li>Component Reuse</li>
+<li>Complexity</li>
+<li>Difficulty Levels</li>
+<li>Beginner Level</li>
+<li>Intermediate Level</li>
+</ol>
+<h3 id="chapter-2-microsim-file-organization-7-concepts">Chapter 2: MicroSim File Organization (7 concepts)</h3>
+<ol>
+<li>MicroSim Structure</li>
+<li>File Organization</li>
+<li>index.md File</li>
+<li>main.html File</li>
+<li>style.css File</li>
+<li>data.json File</li>
+<li>metadata.json File</li>
+</ol>
+<h3 id="chapter-3-metadata-fundamentals-17-concepts">Chapter 3: Metadata Fundamentals (17 concepts)</h3>
+<ol>
+<li>Metadata</li>
+<li>Metadata Standards</li>
+<li>Dublin Core</li>
+<li>Dublin Core Elements</li>
+<li>Taxonomies</li>
+<li>Classification Systems</li>
+<li>Subject Normalization</li>
+<li>MicroSim Standards</li>
+<li>Schema Compliance</li>
+<li>Tags</li>
+<li>Folksonomies</li>
+<li>User-Generated Tags</li>
+<li>Keywords</li>
+<li>Controlled Vocabulary</li>
+<li>Technical Metadata</li>
+<li>Advanced Level</li>
+</ol>
+<h3 id="chapter-4-dublin-core-elements-15-concepts">Chapter 4: Dublin Core Elements (15 concepts)</h3>
+<ol>
+<li>Title Element</li>
+<li>Creator Element</li>
+<li>Subject Element</li>
+<li>Description Element</li>
+<li>Publisher Element</li>
+<li>Contributor Element</li>
+<li>Date Element</li>
+<li>Type Element</li>
+<li>Format Element</li>
+<li>Identifier Element</li>
+<li>Source Element</li>
+<li>Language Element</li>
+<li>Relation Element</li>
+<li>Coverage Element</li>
+<li>Rights Element</li>
+</ol>
+<h3 id="chapter-5-json-and-data-structures-13-concepts">Chapter 5: JSON and Data Structures (13 concepts)</h3>
+<ol>
+<li>JSON</li>
+<li>JSON Syntax</li>
+<li>JSON Objects</li>
+<li>JSON Arrays</li>
+<li>JSON Schema</li>
+<li>Schema Validation</li>
+<li>Required Fields</li>
+<li>Optional Fields</li>
+<li>Data Quality</li>
+<li>Completeness Score</li>
+<li>Quality Score</li>
+</ol>
+<h3 id="chapter-6-search-fundamentals-15-concepts">Chapter 6: Search Fundamentals (15 concepts)</h3>
+<ol>
+<li>Search</li>
+<li>Search Fundamentals</li>
+<li>Information Retrieval</li>
+<li>Precision</li>
+<li>Recall</li>
+<li>Relevance</li>
+<li>Ranking</li>
+<li>Keyword Search</li>
+<li>Boolean Search</li>
+<li>Boolean Operators</li>
+<li>AND Operator</li>
+<li>OR Operator</li>
+<li>NOT Operator</li>
+<li>Search Engines</li>
+<li>Indexing</li>
+</ol>
+<h3 id="chapter-7-faceted-search-and-client-side-search-12-concepts">Chapter 7: Faceted Search and Client-Side Search (12 concepts)</h3>
+<ol>
+<li>Faceted Search</li>
+<li>Facets</li>
+<li>Filter Controls</li>
+<li>Lightweight Search</li>
+<li>Client-Side Search</li>
+<li>ItemsJS Library</li>
+<li>Inverted Index</li>
+<li>Semantic Search</li>
+</ol>
+<h3 id="chapter-8-embeddings-and-semantic-search-15-concepts">Chapter 8: Embeddings and Semantic Search (15 concepts)</h3>
+<ol>
+<li>Embeddings</li>
+<li>Vector Representations</li>
+<li>Cosine Similarity</li>
+<li>Similar MicroSims</li>
+<li>Similarity Score</li>
+<li>Nearest Neighbors</li>
+<li>Dimensionality Reduction</li>
+<li>PCA</li>
+<li>t-SNE</li>
+<li>Visualization Maps</li>
+</ol>
+<h3 id="chapter-9-data-pipelines-and-aggregation-14-concepts">Chapter 9: Data Pipelines and Aggregation (14 concepts)</h3>
+<ol>
+<li>Data Gathering</li>
+<li>Web Crawling</li>
+<li>GitHub API</li>
+<li>Repository Mining</li>
+<li>MicroSim Repositories</li>
+<li>Data Aggregation</li>
+</ol>
+<h3 id="chapter-10-educational-foundations-20-concepts">Chapter 10: Educational Foundations (20 concepts)</h3>
+<ol>
+<li>Grade Levels</li>
+<li>K-12 Education</li>
+<li>Undergraduate Level</li>
+<li>Graduate Level</li>
+<li>Adult Learning</li>
+<li>Learning Objectives</li>
+<li>Bloom Taxonomy</li>
+<li>Remember Level</li>
+<li>Understand Level</li>
+<li>Apply Level</li>
+<li>Analyze Level</li>
+<li>Evaluate Level</li>
+<li>Create Level</li>
+<li>Cognitive Levels</li>
+<li>Curriculum Standards</li>
+<li>CCSS Standards</li>
+<li>NGSS Standards</li>
+<li>ISTE Standards</li>
+<li>Assessment Rubric</li>
+</ol>
+<h3 id="chapter-11-learning-theory-and-pedagogy-18-concepts">Chapter 11: Learning Theory and Pedagogy (18 concepts)</h3>
+<ol>
+<li>Cognitive Load</li>
+<li>Intrinsic Load</li>
+<li>Extraneous Load</li>
+<li>Germane Load</li>
+<li>Scaffolding</li>
+<li>Guided Discovery</li>
+<li>Worked Examples</li>
+<li>Hints System</li>
+<li>Feedback Mechanisms</li>
+<li>Progressive Disclosure</li>
+<li>Modeling</li>
+<li>Coaching</li>
+<li>Learning Theory</li>
+<li>Constructivism</li>
+<li>Behaviorism</li>
+<li>Cognitivism</li>
+<li>Experiential Learning</li>
+<li>Misconceptions</li>
+<li>Transfer Skills</li>
+</ol>
+<h3 id="chapter-12-visualization-types-15-concepts">Chapter 12: Visualization Types (15 concepts)</h3>
+<ol>
+<li>Visualization Type</li>
+<li>Animation</li>
+<li>Chart</li>
+<li>Graph Visualization</li>
+<li>Diagram</li>
+<li>Simulation Display</li>
+<li>Interactive Demo</li>
+<li>Data Visualization</li>
+<li>3D Model</li>
+<li>Timeline</li>
+<li>Network Diagram</li>
+<li>Map Visualization</li>
+<li>Dashboard</li>
+</ol>
+<h3 id="chapter-13-user-interface-and-controls-18-concepts">Chapter 13: User Interface and Controls (18 concepts)</h3>
+<ol>
+<li>Interaction Level</li>
+<li>Passive Viewing</li>
+<li>Low Interaction</li>
+<li>High Interaction</li>
+<li>User Controls</li>
+<li>Slider Control</li>
+<li>Button Control</li>
+<li>Start-Pause Button</li>
+<li>Range Slider</li>
+<li>Dropdown Select</li>
+<li>Multi Select</li>
+<li>Checkbox Control</li>
+<li>Radio Button</li>
+<li>Text Input</li>
+<li>Color Picker</li>
+<li>Layout Types</li>
+<li>Fixed Layout</li>
+<li>Two Panel Layout</li>
+<li>Three Panel Layout</li>
+<li>Color Scheme</li>
+</ol>
+<h3 id="chapter-14-technical-implementation-26-concepts">Chapter 14: Technical Implementation (26 concepts)</h3>
+<ol>
+<li>JavaScript Libraries</li>
+<li>p5.js Framework</li>
+<li>mermaid.js Library</li>
+<li>vis-network.js Library</li>
+<li>chart.js Library</li>
+<li>vis-timeline.js Library</li>
+<li>plotly.js Library</li>
+<li>leaflet.js Library</li>
+<li>Responsive Design</li>
+<li>Width Responsive</li>
+<li>Fixed Height Iframe</li>
+<li>Canvas Dimensions</li>
+<li>Drawing Region</li>
+<li>Control Region</li>
+<li>Browser Compatibility</li>
+<li>Performance Metrics</li>
+<li>Device Requirements</li>
+<li>State Management</li>
+<li>Data Flow</li>
+<li>Accessibility</li>
+<li>Screen Reader Support</li>
+<li>P5 Describe Function</li>
+<li>Keyboard Navigation</li>
+<li>Analytics</li>
+<li>Learning Indicators</li>
+<li>Engagement Metrics</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

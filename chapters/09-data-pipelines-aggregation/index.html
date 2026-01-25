@@ -1,0 +1,4487 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn to build automated data pipelines that crawl GitHub repositories, extract MicroSim metadata using APIs, and aggregate content from multiple sources to keep searchable collections current">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/09-data-pipelines-aggregation/">
+      
+      
+        <link rel="prev" href="../08-embeddings-semantic-search/">
+      
+      
+        <link rel="next" href="../10-educational-foundations/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Data Pipelines and Aggregation - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-pipelines-and-aggregation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Pipelines and Aggregation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-data-pipelines-are-your-secret-weapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Data Pipelines Are Your Secret Weapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-data-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Data Gathering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Data Gathering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-challenge-of-distributed-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Challenge of Distributed Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-data-gathering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Data Gathering Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Data Sources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-crawling-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Crawling Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Crawling Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-web-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Web Crawler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crawling-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crawling Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-prefer-apis-over-crawling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why We Prefer APIs Over Crawling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-github-api-your-gateway-to-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GitHub API: Your Gateway to MicroSims
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The GitHub API: Your Gateway to MicroSims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Rate Limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-api-endpoints-for-microsim-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key API Endpoints for MicroSim Discovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-listing-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Listing Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Listing Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-github-api-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: GitHub API Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-mining-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Mining Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Mining Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-standard-microsim-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Standard MicroSim Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mining-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mining Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-missing-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Missing Metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mining-a-single-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Mining a Single Repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-repositories-finding-the-treasure" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Repositories: Finding the Treasure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MicroSim Repositories: Finding the Treasure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discovery-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovery Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#our-primary-approach-known-user-mining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Primary Approach: Known User Mining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-microsim-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifying MicroSim Repositories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-repository-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking Repository Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tracking Repository Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-repository-discovery-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Repository Discovery Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-aggregation-building-the-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Aggregation: Building the Collection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Aggregation: Building the Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-aggregation-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Aggregation Challenge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-pipeline-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregation Pipeline Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-speaking-the-same-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization: Speaking the Same Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deduplication-one-copy-of-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deduplication: One Copy of Each
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation: Quality Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrichment-adding-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrichment: Adding Value
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrichment: Adding Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-aggregation-pipeline-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Aggregation Pipeline Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-crawler-a-practical-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Crawler: A Practical Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the Crawler: A Practical Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-main-crawler-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Main Crawler Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Crawler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incremental-updates-staying-fresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental Updates: Staying Fresh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incremental Updates: Staying Fresh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-incremental" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Incremental?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detecting Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-repository-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-Repository Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging and Monitoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging and Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-logging-jsonl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Logging (JSONL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-metrics-and-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Metrics and Profiling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Metrics and Profiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-data-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Data Profiler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating Reports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-collection-quality-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Collection Quality Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-and-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling and Automation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduling and Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling and Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling and Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Failure Modes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-with-exponential-backoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry with Exponential Backoff
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing-for-long-crawls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkpointing for Long Crawls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-data-pipelines-are-your-secret-weapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Data Pipelines Are Your Secret Weapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-data-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Data Gathering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Data Gathering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-challenge-of-distributed-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Challenge of Distributed Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-data-gathering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Data Gathering Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Data Sources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-crawling-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Crawling Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Crawling Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-web-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Web Crawler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crawling-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crawling Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-prefer-apis-over-crawling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why We Prefer APIs Over Crawling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-github-api-your-gateway-to-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GitHub API: Your Gateway to MicroSims
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The GitHub API: Your Gateway to MicroSims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Rate Limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-api-endpoints-for-microsim-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key API Endpoints for MicroSim Discovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-listing-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Listing Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Listing Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-github-api-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: GitHub API Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-mining-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Mining Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Mining Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-standard-microsim-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Standard MicroSim Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mining-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mining Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-missing-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Missing Metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mining-a-single-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Mining a Single Repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-repositories-finding-the-treasure" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Repositories: Finding the Treasure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MicroSim Repositories: Finding the Treasure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discovery-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovery Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#our-primary-approach-known-user-mining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Primary Approach: Known User Mining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-microsim-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifying MicroSim Repositories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-repository-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking Repository Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tracking Repository Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-repository-discovery-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Repository Discovery Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-aggregation-building-the-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Aggregation: Building the Collection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Aggregation: Building the Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-aggregation-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Aggregation Challenge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregation-pipeline-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregation Pipeline Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization-speaking-the-same-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization: Speaking the Same Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deduplication-one-copy-of-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deduplication: One Copy of Each
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation: Quality Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrichment-adding-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrichment: Adding Value
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrichment: Adding Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-aggregation-pipeline-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Aggregation Pipeline Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-crawler-a-practical-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Crawler: A Practical Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the Crawler: A Practical Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-main-crawler-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Main Crawler Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-crawler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Crawler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incremental-updates-staying-fresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental Updates: Staying Fresh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incremental Updates: Staying Fresh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-incremental" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Incremental?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detecting Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-repository-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-Repository Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging and Monitoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging and Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-logging-jsonl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Logging (JSONL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-metrics-and-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Metrics and Profiling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Metrics and Profiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-data-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Data Profiler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating Reports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-collection-quality-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Collection Quality Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-and-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling and Automation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduling and Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling and Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling and Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Failure Modes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-with-exponential-backoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry with Exponential Backoff
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing-for-long-crawls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkpointing for Long Crawls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/09-data-pipelines-aggregation/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="data-pipelines-and-aggregation">Data Pipelines and Aggregation</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers the data gathering and aggregation techniques used to build a searchable collection of MicroSims. You'll learn about web crawling approaches, using the GitHub API to discover repositories, repository mining techniques for extracting metadata, and strategies for aggregating data from multiple sources. The chapter focuses on building automated pipelines that keep MicroSim collections current. After completing this chapter, students will be able to design and implement data collection pipelines for MicroSim metadata.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 14 concepts from the learning graph:</p>
+<ol>
+<li>Data Gathering</li>
+<li>Web Crawling</li>
+<li>GitHub API</li>
+<li>Repository Mining</li>
+<li>MicroSim Repositories</li>
+<li>Data Aggregation</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../course-description.md">course description</a>. The Data Gathering concept is foundational with no dependencies within this textbook.</p>
+<hr />
+<h2 id="why-data-pipelines-are-your-secret-weapon">Why Data Pipelines Are Your Secret Weapon</h2>
+<p>Imagine you're an educator who just discovered 500 amazing MicroSims scattered across 40 different GitHub repositories. Manually copying metadata from each one would take days—and by the time you finished, new simulations would already be published. You'd be trapped in an endless game of catch-up!</p>
+<p>This is where <strong>data pipelines</strong> become your superpower. A well-designed pipeline automatically discovers new MicroSims, extracts their metadata, validates quality, and delivers a fresh, searchable collection—all while you're sipping coffee or teaching your next class.</p>
+<p>In this chapter, you'll learn to build the data infrastructure that powers MicroSim search. Think of it as creating a network of friendly robots that tirelessly explore GitHub, find educational treasures, and organize them for easy discovery. By the end, you'll understand how our search system maintains an up-to-date collection of 400+ MicroSims from dozens of repositories.</p>
+<p>Let's build some pipelines!</p>
+<hr />
+<h2 id="understanding-data-gathering">Understanding Data Gathering</h2>
+<p><strong>Data gathering</strong> is the systematic collection of information from various sources. For MicroSim search, this means finding and extracting metadata from wherever simulations are published.</p>
+<h3 id="the-challenge-of-distributed-content">The Challenge of Distributed Content</h3>
+<p>MicroSims aren't stored in one central location—they're scattered across:</p>
+<ul>
+<li>Individual GitHub repositories</li>
+<li>Course websites and educational platforms</li>
+<li>Personal project pages</li>
+<li>Organizational collections</li>
+</ul>
+<p>Each source has its own structure, format, and update schedule. Your data gathering strategy must handle this diversity gracefully.</p>
+<h3 id="key-data-gathering-principles">Key Data Gathering Principles</h3>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Minimize manual intervention</td>
+<td>Scripts that run on schedule</td>
+</tr>
+<tr>
+<td><strong>Reliability</strong></td>
+<td>Handle errors gracefully</td>
+<td>Retry failed requests, log issues</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Don't waste resources</td>
+<td>Cache responses, avoid redundant calls</td>
+</tr>
+<tr>
+<td><strong>Respect</strong></td>
+<td>Honor rate limits and terms</td>
+<td>Wait between API calls</td>
+</tr>
+<tr>
+<td><strong>Freshness</strong></td>
+<td>Keep data current</td>
+<td>Incremental updates, not full rebuilds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="types-of-data-sources">Types of Data Sources</h3>
+<p>Different sources require different gathering techniques:</p>
+<ul>
+<li>
+<p><strong>APIs (Application Programming Interfaces)</strong>: Structured endpoints that return data in predictable formats. Ideal for programmatic access. GitHub's API is our primary source.</p>
+</li>
+<li>
+<p><strong>Web Pages</strong>: Human-readable HTML that must be parsed. Useful when APIs aren't available, but more fragile.</p>
+</li>
+<li>
+<p><strong>File Systems</strong>: Direct access to files in known locations. Works when you control the source.</p>
+</li>
+<li>
+<p><strong>Databases</strong>: Structured data stores with query interfaces. Relevant for enterprise deployments.</p>
+</li>
+</ul>
+<p>For MicroSim gathering, we focus primarily on APIs because GitHub provides excellent programmatic access to repository contents.</p>
+<hr />
+<h2 id="web-crawling-fundamentals">Web Crawling Fundamentals</h2>
+<p><strong>Web crawling</strong> is the automated process of visiting web pages, extracting information, and following links to discover more pages. While our primary approach uses the GitHub API, understanding crawling concepts helps you adapt to sources without good API support.</p>
+<h3 id="anatomy-of-a-web-crawler">Anatomy of a Web Crawler</h3>
+<p>A basic crawler performs three operations in a loop:</p>
+<ol>
+<li><strong>Fetch</strong>: Request a URL and receive the response</li>
+<li><strong>Parse</strong>: Extract useful information from the response</li>
+<li><strong>Discover</strong>: Find new URLs to visit</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code>┌────────────────────────────────────────────────────────────┐
+│                    CRAWLING LOOP                            │
+├────────────────────────────────────────────────────────────┤
+│                                                             │
+│     ┌──────────┐                                           │
+│     │  URL     │                                           │
+│     │  Queue   │◄────────────────────────────┐            │
+│     └────┬─────┘                             │            │
+│          │                                    │            │
+│          │ Pop next URL                       │            │
+│          ▼                                    │            │
+│     ┌──────────┐                             │            │
+│     │  FETCH   │  Request page               │            │
+│     └────┬─────┘                             │            │
+│          │                                    │            │
+│          │ Receive response                   │            │
+│          ▼                                    │            │
+│     ┌──────────┐                             │            │
+│     │  PARSE   │  Extract data               │            │
+│     └────┬─────┘                             │            │
+│          │                                    │            │
+│          │ Find more URLs                     │            │
+│          ▼                                    │            │
+│     ┌──────────┐                             │            │
+│     │ DISCOVER │  Add new URLs ──────────────┘            │
+│     └────┬─────┘                                          │
+│          │                                                 │
+│          │ Store results                                   │
+│          ▼                                                 │
+│     ┌──────────┐                                          │
+│     │ DATABASE │                                          │
+│     └──────────┘                                          │
+│                                                             │
+└────────────────────────────────────────────────────────────┘
+</code></pre></div></td></tr></table></div>
+<h3 id="crawling-best-practices">Crawling Best Practices</h3>
+<p>Being a "good citizen" of the web means following these practices:</p>
+<ul>
+<li><strong>Respect robots.txt</strong>: Check what the site allows crawlers to access</li>
+<li><strong>Rate limiting</strong>: Don't bombard servers with rapid requests</li>
+<li><strong>User-Agent identification</strong>: Identify your crawler so administrators can contact you</li>
+<li><strong>Error handling</strong>: Don't crash on bad responses</li>
+<li><strong>Incremental crawling</strong>: Only fetch what's changed since last time</li>
+</ul>
+<h3 id="why-we-prefer-apis-over-crawling">Why We Prefer APIs Over Crawling</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Web Crawling</th>
+<th>API Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reliability</strong></td>
+<td>Breaks when HTML changes</td>
+<td>Stable, versioned contracts</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Downloads entire pages</td>
+<td>Returns only needed data</td>
+</tr>
+<tr>
+<td><strong>Respect</strong></td>
+<td>May strain servers</td>
+<td>Designed for programmatic use</td>
+</tr>
+<tr>
+<td><strong>Structure</strong></td>
+<td>Must parse HTML</td>
+<td>Returns structured JSON</td>
+</tr>
+<tr>
+<td><strong>Updates</strong></td>
+<td>Hard to detect changes</td>
+<td>Often includes modification timestamps</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSim collection, the GitHub API provides everything we need—no HTML parsing required!</p>
+<div class="admonition tip">
+<p class="admonition-title">When Crawling Is Necessary</p>
+<p>Sometimes APIs don't exist or don't provide the data you need. In those cases, web crawling with libraries like BeautifulSoup (Python) or Puppeteer (JavaScript) can extract information from HTML pages. Just be extra careful about rate limiting and error handling.</p>
+</div>
+<hr />
+<h2 id="the-github-api-your-gateway-to-microsims">The GitHub API: Your Gateway to MicroSims</h2>
+<p>The <strong>GitHub API</strong> is a powerful interface that lets you programmatically access repository information, file contents, and metadata. It's the backbone of our MicroSim data pipeline.</p>
+<h3 id="api-basics">API Basics</h3>
+<p>GitHub's REST API uses simple HTTP requests to access data:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>GET https://api.github.com/repos/dmccreary/geometry-course/contents/docs/sims
+</code></pre></div></td></tr></table></div>
+<p>This request returns a JSON array listing all items in that directory. It's like asking GitHub: "What's in this folder?"</p>
+<h3 id="authentication-and-rate-limits">Authentication and Rate Limits</h3>
+<p>GitHub enforces rate limits to prevent abuse:</p>
+<table>
+<thead>
+<tr>
+<th>Access Type</th>
+<th>Rate Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unauthenticated</strong></td>
+<td>60 requests/hour</td>
+</tr>
+<tr>
+<td><strong>Authenticated</strong></td>
+<td>5,000 requests/hour</td>
+</tr>
+<tr>
+<td><strong>GitHub Actions</strong></td>
+<td>1,000 requests/hour</td>
+</tr>
+</tbody>
+</table>
+<p>For any serious data gathering, you need authentication. A GitHub Personal Access Token gives you 83× more capacity!</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Set your token as an environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span>ghp_your_token_here
+
+<span class="c1"># Now API calls include authentication</span>
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GITHUB_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.github.com/repos/dmccreary/geometry-course
+</code></pre></div></td></tr></table></div>
+<h3 id="key-api-endpoints-for-microsim-discovery">Key API Endpoints for MicroSim Discovery</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/users/{username}/repos</code></td>
+<td>List user's repositories</td>
+<td>Find all dmccreary/* repos</td>
+</tr>
+<tr>
+<td><code>/repos/{owner}/{repo}/contents/{path}</code></td>
+<td>Get directory contents</td>
+<td>List sims in a repo</td>
+</tr>
+<tr>
+<td><code>/repos/{owner}/{repo}/contents/{path}</code></td>
+<td>Get file contents</td>
+<td>Fetch metadata.json</td>
+</tr>
+<tr>
+<td><code>/search/code</code></td>
+<td>Search for files</td>
+<td>Find metadata.json files</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-listing-repositories">Example: Listing Repositories</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GITHUB_TOKEN&#39;</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">}</span> <span class="k">if</span> <span class="n">token</span> <span class="k">else</span> <span class="p">{}</span>
+
+<span class="c1"># Get all public repositories for a user</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://api.github.com/users/dmccreary/repos&#39;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;per_page&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">repos</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">repo</span> <span class="ow">in</span> <span class="n">repos</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found: </span><span class="si">{</span><span class="n">repo</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">repo</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>This simple script discovers all repositories owned by a user—the first step in finding MicroSims.</p>
+<h4 id="diagram-github-api-workflow">Diagram: GitHub API Workflow</h4>
+<iframe src="../../sims/github-api-workflow/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>GitHub API Workflow Visualization</summary>
+Type: workflow
+
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+
+Learning Objective: Students will explain the sequence of GitHub API calls needed to discover MicroSims by tracing the workflow from user repositories through directory contents to metadata extraction.
+
+Visual style: Flowchart with numbered steps and API call boxes
+
+Steps:
+1. Start: "Discover MicroSims"
+   Hover text: "Begin the data gathering process"
+
+2. Process: "List User Repositories"
+   API call: GET /users/{username}/repos
+   Hover text: "Find all repositories owned by the target user"
+
+3. Process: "Filter Course Repositories"
+   Hover text: "Select repos likely to contain MicroSims (name contains 'course', 'microsim', etc.)"
+
+4. Loop: "For Each Repository"
+   Hover text: "Process each discovered repository"
+
+5. Process: "Check for /docs/sims Directory"
+   API call: GET /repos/{owner}/{repo}/contents/docs/sims
+   Hover text: "Verify the standard MicroSim location exists"
+
+6. Decision: "Directory Exists?"
+   Hover text: "Handle repos with and without MicroSims"
+
+7a. Process: "List MicroSim Directories"
+   Hover text: "Enumerate all simulation folders"
+
+7b. Process: "Skip Repository"
+   Hover text: "No MicroSims here, continue to next repo"
+
+8. Loop: "For Each MicroSim Directory"
+   Hover text: "Process each discovered simulation"
+
+9. Process: "Fetch metadata.json"
+   API call: GET /repos/{owner}/{repo}/contents/docs/sims/{sim}/metadata.json
+   Hover text: "Retrieve the simulation's metadata file"
+
+10. Decision: "Metadata Valid?"
+    Hover text: "Validate against schema, check required fields"
+
+11a. Process: "Store Metadata"
+    Hover text: "Add to aggregated collection"
+
+11b. Process: "Log Warning"
+    Hover text: "Record missing or invalid metadata for review"
+
+12. End: "Aggregated Collection Complete"
+    Hover text: "All discovered metadata ready for search indexing"
+
+Color coding:
+- Blue: API call steps
+- Yellow: Decision points
+- Green: Success outcomes
+- Orange: Warning/alternative paths
+
+Implementation: p5.js with interactive hover explanations for each step
+</details>
+
+<hr />
+<h2 id="repository-mining-techniques">Repository Mining Techniques</h2>
+<p><strong>Repository mining</strong> is the process of extracting structured information from code repositories. For MicroSims, this means finding metadata.json files and parsing their contents.</p>
+<h3 id="the-standard-microsim-structure">The Standard MicroSim Structure</h3>
+<p>Our crawler expects MicroSims to follow a predictable structure:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>repository/
+├── docs/
+│   └── sims/
+│       ├── pendulum/
+│       │   ├── index.md
+│       │   ├── main.html
+│       │   ├── style.css
+│       │   └── metadata.json    ← Target!
+│       ├── wave-motion/
+│       │   ├── index.md
+│       │   ├── main.html
+│       │   └── metadata.json    ← Target!
+│       └── ...
+└── ...
+</code></pre></div></td></tr></table></div>
+<p>The crawler navigates this structure to find all metadata.json files.</p>
+<h3 id="mining-strategy">Mining Strategy</h3>
+<p>Our repository mining follows this strategy:</p>
+<ol>
+<li><strong>Enumerate repositories</strong>: Get list of all repos for target users/organizations</li>
+<li><strong>Check structure</strong>: Look for <code>docs/sims/</code> directory</li>
+<li><strong>List simulations</strong>: Get contents of the sims directory</li>
+<li><strong>Extract metadata</strong>: Fetch and parse each metadata.json</li>
+<li><strong>Validate</strong>: Check required fields, flag incomplete entries</li>
+<li><strong>Aggregate</strong>: Combine into single searchable collection</li>
+</ol>
+<h3 id="handling-missing-metadata">Handling Missing Metadata</h3>
+<p>Not every simulation has metadata yet. The crawler tracks these gaps:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;found&#39;</span><span class="p">:</span> <span class="p">[],</span>      <span class="c1"># Complete metadata entries</span>
+    <span class="s1">&#39;partial&#39;</span><span class="p">:</span> <span class="p">[],</span>    <span class="c1"># Missing some fields</span>
+    <span class="s1">&#39;missing&#39;</span><span class="p">:</span> <span class="p">[],</span>    <span class="c1"># No metadata.json at all</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This categorization helps prioritize metadata improvement efforts.</p>
+<h3 id="example-mining-a-single-repository">Example: Mining a Single Repository</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mine_repository</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">headers</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract all MicroSim metadata from a repository.&quot;&quot;&quot;</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">owner</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">microsims</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Check for sims directory</span>
+    <span class="n">sims_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/contents/docs/sims&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sims_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>  <span class="c1"># No sims directory</span>
+
+    <span class="n">sims</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="n">sims</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sim</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;dir&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># Skip files, only process directories</span>
+
+        <span class="c1"># Fetch metadata.json</span>
+        <span class="n">metadata_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/contents/docs/sims/</span><span class="si">{</span><span class="n">sim</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/metadata.json&quot;</span>
+        <span class="n">meta_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">metadata_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">meta_response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="c1"># Decode base64 content from GitHub API</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">meta_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;content&#39;</span><span class="p">])</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;_source_repo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">owner</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;_source_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;docs/sims/</span><span class="si">{</span><span class="n">sim</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">microsims</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">microsims</span>
+</code></pre></div></td></tr></table></div>
+<p>This function encapsulates the core mining logic for a single repository.</p>
+<div class="admonition note">
+<p class="admonition-title">GitHub Returns Base64</p>
+<p>When fetching file contents via the GitHub API, the content is base64-encoded. Don't forget to decode it before parsing as JSON!</p>
+</div>
+<hr />
+<h2 id="microsim-repositories-finding-the-treasure">MicroSim Repositories: Finding the Treasure</h2>
+<p><strong>MicroSim repositories</strong> are the source of our educational simulations. Understanding how to discover and track them is essential for maintaining a comprehensive collection.</p>
+<h3 id="discovery-strategies">Discovery Strategies</h3>
+<p>Finding repositories with MicroSims requires multiple approaches:</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Description</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Known Users</strong></td>
+<td>Track specific creators</td>
+<td>Reliable, high quality</td>
+<td>Limited scope</td>
+</tr>
+<tr>
+<td><strong>Code Search</strong></td>
+<td>Search for metadata.json files</td>
+<td>Discovers new sources</td>
+<td>Many false positives</td>
+</tr>
+<tr>
+<td><strong>Topic Tags</strong></td>
+<td>Search by repository topics</td>
+<td>Self-organized</td>
+<td>Inconsistent tagging</td>
+</tr>
+<tr>
+<td><strong>Fork Networks</strong></td>
+<td>Follow forks of template repos</td>
+<td>Finds derivatives</td>
+<td>May be abandoned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="our-primary-approach-known-user-mining">Our Primary Approach: Known User Mining</h3>
+<p>For the MicroSim search system, we focus on repositories from known contributors:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">MICROSIM_CREATORS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;dmccreary&#39;</span><span class="p">,</span>        <span class="c1"># Primary creator</span>
+    <span class="s1">&#39;microsim-org&#39;</span><span class="p">,</span>     <span class="c1"># Organization account</span>
+    <span class="c1"># Add more contributors as discovered</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">discover_all_repos</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find all repositories from known MicroSim creators.&quot;&quot;&quot;</span>
+    <span class="n">all_repos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">creator</span> <span class="ow">in</span> <span class="n">MICROSIM_CREATORS</span><span class="p">:</span>
+        <span class="n">repos</span> <span class="o">=</span> <span class="n">list_user_repos</span><span class="p">(</span><span class="n">creator</span><span class="p">)</span>
+        <span class="c1"># Filter for likely MicroSim-containing repos</span>
+        <span class="n">microsim_repos</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">repos</span> <span class="k">if</span> <span class="n">is_likely_microsim_repo</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span>
+        <span class="n">all_repos</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">microsim_repos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">all_repos</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="identifying-microsim-repositories">Identifying MicroSim Repositories</h3>
+<p>Not every repository contains MicroSims. We use heuristics to filter candidates:</p>
+<ul>
+<li><strong>Name patterns</strong>: Contains "course", "tutorial", "microsim", "simulation"</li>
+<li><strong>Description keywords</strong>: Mentions "interactive", "visualization", "p5.js"</li>
+<li><strong>File structure</strong>: Has <code>docs/sims/</code> directory</li>
+<li><strong>Recent activity</strong>: Updated within the last year</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_likely_microsim_repo</span><span class="p">(</span><span class="n">repo</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Heuristic: Does this repository probably contain MicroSims?&quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="p">(</span><span class="n">repo</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Check name patterns</span>
+    <span class="n">name_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;course&#39;</span><span class="p">,</span> <span class="s1">&#39;tutorial&#39;</span><span class="p">,</span> <span class="s1">&#39;microsim&#39;</span><span class="p">,</span> <span class="s1">&#39;simulation&#39;</span><span class="p">,</span> <span class="s1">&#39;demo&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">kw</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">name_keywords</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># Check description keywords</span>
+    <span class="n">desc_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;interactive&#39;</span><span class="p">,</span> <span class="s1">&#39;visualization&#39;</span><span class="p">,</span> <span class="s1">&#39;p5.js&#39;</span><span class="p">,</span> <span class="s1">&#39;simulation&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">kw</span> <span class="ow">in</span> <span class="n">description</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">desc_keywords</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="tracking-repository-status">Tracking Repository Status</h3>
+<p>Maintain a registry of known repositories and their status:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;repositories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;full_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dmccreary/geometry-course&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;last_crawled&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-24T12:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;microsim_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;quality_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;full_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dmccreary/physics-simulations&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;last_crawled&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-24T12:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;microsim_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;quality_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This registry enables incremental updates—only crawl repositories that have changed.</p>
+<h4 id="diagram-repository-discovery-flow">Diagram: Repository Discovery Flow</h4>
+<iframe src="../../sims/repo-discovery-flow/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Repository Discovery Flow Visualization</summary>
+Type: diagram
+
+Bloom Level: Analyze (L4)
+Bloom Verb: examine
+
+Learning Objective: Students will examine the repository discovery process by tracing how candidate repositories are filtered and validated to identify MicroSim collections.
+
+Visual layout: Funnel diagram showing filtering stages
+
+Stages (top to bottom):
+1. "All User Repositories" (100 repos)
+   - Wide funnel entrance
+   - Gray color
+   - Tooltip: "Starting point: all public repositories for known creators"
+
+2. "Name/Description Filter" (40 repos)
+   - Narrower section
+   - Light blue
+   - Tooltip: "Filter by keywords: course, tutorial, microsim, simulation"
+
+3. "Structure Check" (25 repos)
+   - Narrower
+   - Medium blue
+   - Tooltip: "Verify docs/sims/ directory exists"
+
+4. "Metadata Presence" (18 repos)
+   - Narrower
+   - Dark blue
+   - Tooltip: "At least one valid metadata.json found"
+
+5. "Active Repositories" (15 repos)
+   - Narrow
+   - Green
+   - Tooltip: "Updated within the last year, not archived"
+
+Visual elements:
+- Repository icons flowing through funnel
+- Count labels at each stage
+- Arrows showing flow direction
+- Side annotations explaining each filter
+- Rejected repos shown fading off to sides
+
+Interactive controls:
+- Hover over each stage for detailed explanation
+- Click stage to see example repositories at that level
+- Toggle: "Show rejected repos" (displays what was filtered out)
+- Slider: "Animate flow" (shows repos moving through funnel)
+
+Color scheme:
+- Funnel gradient from gray to green
+- Rejected items: red/orange
+- Selected/active: gold highlight
+
+Implementation: p5.js with animated funnel visualization
+</details>
+
+<hr />
+<h2 id="data-aggregation-building-the-collection">Data Aggregation: Building the Collection</h2>
+<p><strong>Data aggregation</strong> combines data from multiple sources into a unified collection. For MicroSim search, this means merging metadata from dozens of repositories into a single searchable JSON file.</p>
+<h3 id="the-aggregation-challenge">The Aggregation Challenge</h3>
+<p>Each repository might have:</p>
+<ul>
+<li>Different metadata completeness levels</li>
+<li>Slightly different field naming conventions</li>
+<li>Overlapping or duplicate simulations (forks)</li>
+<li>Varying quality scores</li>
+</ul>
+<p>The aggregator must normalize, deduplicate, and validate while preserving information.</p>
+<h3 id="aggregation-pipeline-architecture">Aggregation Pipeline Architecture</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code>┌────────────────────────────────────────────────────────────────┐
+│                    AGGREGATION PIPELINE                         │
+├────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐           │
+│   │   Repo 1    │  │   Repo 2    │  │   Repo N    │           │
+│   │  metadata   │  │  metadata   │  │  metadata   │           │
+│   └──────┬──────┘  └──────┬──────┘  └──────┬──────┘           │
+│          │                │                │                   │
+│          └────────────────┼────────────────┘                   │
+│                           │                                    │
+│                           ▼                                    │
+│                   ┌───────────────┐                           │
+│                   │   NORMALIZE   │                           │
+│                   │  field names  │                           │
+│                   │  data types   │                           │
+│                   └───────┬───────┘                           │
+│                           │                                    │
+│                           ▼                                    │
+│                   ┌───────────────┐                           │
+│                   │  DEDUPLICATE  │                           │
+│                   │  by URL/ID    │                           │
+│                   │  prefer newest │                          │
+│                   └───────┬───────┘                           │
+│                           │                                    │
+│                           ▼                                    │
+│                   ┌───────────────┐                           │
+│                   │   VALIDATE    │                           │
+│                   │ schema check  │                           │
+│                   │ required fields│                          │
+│                   └───────┬───────┘                           │
+│                           │                                    │
+│                           ▼                                    │
+│                   ┌───────────────┐                           │
+│                   │   ENRICH      │                           │
+│                   │ compute scores │                          │
+│                   │ add timestamps │                          │
+│                   └───────┬───────┘                           │
+│                           │                                    │
+│                           ▼                                    │
+│                  ┌────────────────┐                           │
+│                  │ microsims-     │                           │
+│                  │ data.json      │                           │
+│                  │ (unified       │                           │
+│                  │  collection)   │                           │
+│                  └────────────────┘                           │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+</code></pre></div></td></tr></table></div>
+<h3 id="normalization-speaking-the-same-language">Normalization: Speaking the Same Language</h3>
+<p>Different repositories might use different field names for the same concept:</p>
+<table>
+<thead>
+<tr>
+<th>Source Variation</th>
+<th>Normalized Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code>, <code>name</code>, <code>dublinCore.title</code></td>
+<td><code>title</code></td>
+</tr>
+<tr>
+<td><code>subject</code>, <code>topic</code>, <code>educational.subjectArea</code></td>
+<td><code>subjectArea</code></td>
+</tr>
+<tr>
+<td><code>library</code>, <code>framework</code>, <code>technical.framework</code></td>
+<td><code>framework</code></td>
+</tr>
+<tr>
+<td><code>creator</code>, <code>author</code>, <code>dublinCore.creator</code></td>
+<td><code>creator</code></td>
+</tr>
+</tbody>
+</table>
+<p>The normalizer maps all variations to our standard schema:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">normalize_metadata</span><span class="p">(</span><span class="n">raw_metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert varying field names to standard schema.&quot;&quot;&quot;</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Title normalization</span>
+    <span class="n">normalized</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dublinCore&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Subject area normalization</span>
+    <span class="n">normalized</span><span class="p">[</span><span class="s1">&#39;subjectArea&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subjectArea&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;educational&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subjectArea&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Framework normalization</span>
+    <span class="n">normalized</span><span class="p">[</span><span class="s1">&#39;framework&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;library&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">raw_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;technical&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">normalized</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="deduplication-one-copy-of-each">Deduplication: One Copy of Each</h3>
+<p>Simulations might appear in multiple repositories (forks, mirrors). We deduplicate by URL:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">deduplicate_microsims</span><span class="p">(</span><span class="n">all_microsims</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove duplicates, keeping the newest version.&quot;&quot;&quot;</span>
+    <span class="n">by_url</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">microsim</span> <span class="ow">in</span> <span class="n">all_microsims</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">microsim</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">url</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">by_url</span><span class="p">:</span>
+            <span class="n">by_url</span><span class="p">[</span><span class="n">url</span><span class="p">]</span> <span class="o">=</span> <span class="n">microsim</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Keep the one with more recent modification date</span>
+            <span class="n">existing_date</span> <span class="o">=</span> <span class="n">by_url</span><span class="p">[</span><span class="n">url</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_last_modified&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">new_date</span> <span class="o">=</span> <span class="n">microsim</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_last_modified&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">new_date</span> <span class="o">&gt;</span> <span class="n">existing_date</span><span class="p">:</span>
+                <span class="n">by_url</span><span class="p">[</span><span class="n">url</span><span class="p">]</span> <span class="o">=</span> <span class="n">microsim</span>
+
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">by_url</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="validation-quality-gates">Validation: Quality Gates</h3>
+<p>Before including a MicroSim in the collection, validate it meets minimum requirements:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">REQUIRED_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">validate_microsim</span><span class="p">(</span><span class="n">metadata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if metadata meets minimum requirements.&quot;&quot;&quot;</span>
+    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">REQUIRED_FIELDS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field</span><span class="p">):</span>
+            <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing required field: </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Type validation</span>
+    <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;gradeLevel&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;gradeLevel&#39;</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;gradeLevel should be a list&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">errors</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="enrichment-adding-value">Enrichment: Adding Value</h3>
+<p>After normalization, enrich the data with computed fields:</p>
+<ul>
+<li><strong>Quality score</strong>: Based on metadata completeness</li>
+<li><strong>Last updated</strong>: When the metadata was last modified</li>
+<li><strong>Source repository</strong>: Where this MicroSim came from</li>
+<li><strong>URL construction</strong>: Build full URL from repository and path</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">enrich_metadata</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">repo_info</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add computed fields to metadata.&quot;&quot;&quot;</span>
+    <span class="c1"># Quality score (0-100 based on field completeness)</span>
+    <span class="n">filled_fields</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">metadata</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;_quality_score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">filled_fields</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># Source tracking</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;_source_repo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">repo_info</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;_last_crawled&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+    <span class="c1"># URL construction</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">):</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">repo_info</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.github.io/&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">repo_info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/sims/</span><span class="si">{</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;_source_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">metadata</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-aggregation-pipeline-simulator">Diagram: Aggregation Pipeline Simulator</h4>
+<iframe src="../../sims/aggregation-pipeline-sim/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Data Aggregation Pipeline Simulator</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: execute
+
+Learning Objective: Students will execute a simulated data aggregation pipeline by processing sample MicroSim records through normalization, deduplication, and validation stages, observing how each stage transforms the data.
+
+Canvas layout:
+- Left panel (30%): Input queue with sample records
+- Center panel (50%): Pipeline visualization with stages
+- Right panel (20%): Output and statistics
+
+Visual elements:
+- Input queue showing 8-10 sample metadata records as cards:
+  - Some with missing fields (red highlight)
+  - Some duplicates (yellow highlight)
+  - Some with varying field names (blue highlight)
+  - Some complete and valid (green highlight)
+- Pipeline stages as connected processing boxes:
+  - Normalize (blue)
+  - Deduplicate (purple)
+  - Validate (orange)
+  - Enrich (green)
+- Output collection showing final records
+- Statistics panel:
+  - Records processed
+  - Duplicates removed
+  - Validation failures
+  - Quality score distribution
+
+Sample input records:
+1. Complete geometry MicroSim (valid)
+2. Physics sim with "name" instead of "title" (needs normalization)
+3. Duplicate of #1 from forked repo (will be deduplicated)
+4. Chemistry sim missing description (validation failure)
+5. Math sim with nested dublinCore fields (needs normalization)
+6. Complete biology MicroSim (valid)
+7. Empty metadata object (validation failure)
+8. CS sim with legacy field names (needs normalization)
+
+Interactive controls:
+- Button: "Process Next Record" (step through one at a time)
+- Button: "Process All" (run entire pipeline)
+- Button: "Reset"
+- Toggle: "Show detailed logs"
+- Speed slider: Animation speed
+
+Behavior:
+- Record cards animate through pipeline stages
+- Each stage shows transformation applied
+- Failed records divert to "rejected" bin with explanation
+- Duplicates merge into single record
+- Statistics update in real-time
+- Detailed logs show exact transformations
+
+Animation:
+- Cards slide through pipeline
+- Stage boxes pulse when active
+- Transformation details appear as overlay
+- Rejected records fade out or move to error bin
+
+Color scheme:
+- Valid records: Green
+- Needs normalization: Blue
+- Duplicates: Yellow
+- Validation failures: Red
+- Pipeline stages: Gradient from blue to green
+
+Implementation: p5.js with animated card flow and real-time statistics
+</details>
+
+<hr />
+<h2 id="building-the-crawler-a-practical-example">Building the Crawler: A Practical Example</h2>
+<p>Let's walk through building a complete MicroSim crawler. This is the actual approach used for our search system.</p>
+<h3 id="project-structure">Project Structure</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>src/
+├── crawl-microsims.py      # Main crawler script
+├── update-repo-microsims.py # Single-repo updater
+├── config.py               # Configuration settings
+└── utils/
+    ├── github.py           # GitHub API helpers
+    ├── normalize.py        # Field normalization
+    └── validate.py         # Schema validation
+</code></pre></div></td></tr></table></div>
+<h3 id="the-main-crawler-script">The Main Crawler Script</h3>
+<p>Here's a simplified version of our crawler:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Crawl GitHub repositories to gather MicroSim metadata.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Configuration</span>
+<span class="n">GITHUB_TOKEN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GITHUB_TOKEN&#39;</span><span class="p">)</span>
+<span class="n">TARGET_USERS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dmccreary&#39;</span><span class="p">]</span>
+<span class="n">OUTPUT_FILE</span> <span class="o">=</span> <span class="s1">&#39;docs/search/microsims-data.json&#39;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main crawler entry point.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting MicroSim crawl at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">GITHUB_TOKEN</span><span class="p">:</span>
+        <span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="n">GITHUB_TOKEN</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using authenticated requests (5000 req/hour)&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: Unauthenticated (60 req/hour limit)&quot;</span><span class="p">)</span>
+
+    <span class="n">all_microsims</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Process each target user</span>
+    <span class="k">for</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">TARGET_USERS</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing user: </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">repos</span> <span class="o">=</span> <span class="n">get_user_repos</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">repo</span> <span class="ow">in</span> <span class="n">repos</span><span class="p">:</span>
+            <span class="n">microsims</span> <span class="o">=</span> <span class="n">mine_repository</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">repo</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">microsims</span><span class="p">)</span><span class="si">}</span><span class="s2"> MicroSims&quot;</span><span class="p">)</span>
+            <span class="n">all_microsims</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">microsims</span><span class="p">)</span>
+
+    <span class="c1"># Normalize and deduplicate</span>
+    <span class="n">all_microsims</span> <span class="o">=</span> <span class="p">[</span><span class="n">normalize_metadata</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">all_microsims</span><span class="p">]</span>
+    <span class="n">all_microsims</span> <span class="o">=</span> <span class="n">deduplicate_microsims</span><span class="p">(</span><span class="n">all_microsims</span><span class="p">)</span>
+
+    <span class="c1"># Validate and filter</span>
+    <span class="n">valid_microsims</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">microsim</span> <span class="ow">in</span> <span class="n">all_microsims</span><span class="p">:</span>
+        <span class="n">is_valid</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">validate_microsim</span><span class="p">(</span><span class="n">microsim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_valid</span><span class="p">:</span>
+            <span class="n">valid_microsims</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">microsim</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log_validation_errors</span><span class="p">(</span><span class="n">microsim</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+
+    <span class="c1"># Save output</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">OUTPUT_FILE</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">valid_microsims</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Crawl complete!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total MicroSims: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">valid_microsims</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="running-the-crawler">Running the Crawler</h3>
+<p>Execute the crawler from the command line:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Set your GitHub token (required for reasonable rate limits)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span>ghp_your_token_here
+
+<span class="c1"># Run the crawler</span>
+python3<span class="w"> </span>src/crawl-microsims.py
+</code></pre></div></td></tr></table></div>
+<p>Expected output:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Starting MicroSim crawl at 2026-01-24 14:30:00
+Using authenticated requests (5000 req/hour)
+
+Processing user: dmccreary
+  geometry-course: 45 MicroSims
+  physics-simulations: 38 MicroSims
+  chemistry-visualizations: 22 MicroSims
+  ...
+
+Crawl complete!
+Total MicroSims: 432
+</code></pre></div></td></tr></table></div>
+<div class="admonition success">
+<p class="admonition-title">Automation Ready</p>
+<p>This crawler can run on a schedule (GitHub Actions, cron job) to keep your collection automatically updated. No manual intervention required!</p>
+</div>
+<hr />
+<h2 id="incremental-updates-staying-fresh">Incremental Updates: Staying Fresh</h2>
+<p>Rather than re-crawling everything each time, incremental updates process only what's changed.</p>
+<h3 id="why-incremental">Why Incremental?</h3>
+<table>
+<thead>
+<tr>
+<th>Full Crawl</th>
+<th>Incremental Update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Processes all repositories</td>
+<td>Only changed repositories</td>
+</tr>
+<tr>
+<td>Uses many API calls</td>
+<td>Minimal API calls</td>
+</tr>
+<tr>
+<td>Slow (minutes to hours)</td>
+<td>Fast (seconds to minutes)</td>
+</tr>
+<tr>
+<td>Good for initial load</td>
+<td>Good for regular updates</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detecting-changes">Detecting Changes</h3>
+<p>GitHub provides metadata to detect changes:</p>
+<ul>
+<li><strong><code>pushed_at</code></strong>: When the repository was last pushed to</li>
+<li><strong><code>updated_at</code></strong>: When the repository was last updated</li>
+<li><strong>Commit SHA</strong>: Hash of the latest commit</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">needs_update</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">last_crawled</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if repository has changed since last crawl.&quot;&quot;&quot;</span>
+    <span class="n">repo_updated</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">repo</span><span class="p">[</span><span class="s1">&#39;pushed_at&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;+00:00&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">repo_updated</span> <span class="o">&gt;</span> <span class="n">last_crawled</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="single-repository-updates">Single-Repository Updates</h3>
+<p>For quick updates when you know what changed:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Update metadata from a single repository</span>
+python3<span class="w"> </span>src/update-repo-microsims.py<span class="w"> </span>dmccreary/geometry-course
+</code></pre></div></td></tr></table></div>
+<p>This is perfect for:</p>
+<ul>
+<li>After publishing new MicroSims</li>
+<li>Fixing metadata errors</li>
+<li>Testing changes before full crawl</li>
+</ul>
+<hr />
+<h2 id="logging-and-monitoring">Logging and Monitoring</h2>
+<p>Good pipelines provide visibility into their operation through logging.</p>
+<h3 id="log-levels">Log Levels</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>INFO</strong></td>
+<td>Normal operation</td>
+<td>"Processing repository X"</td>
+</tr>
+<tr>
+<td><strong>WARNING</strong></td>
+<td>Non-critical issues</td>
+<td>"Missing optional field Y"</td>
+</tr>
+<tr>
+<td><strong>ERROR</strong></td>
+<td>Failed operations</td>
+<td>"Could not fetch metadata.json"</td>
+</tr>
+<tr>
+<td><strong>DEBUG</strong></td>
+<td>Detailed diagnostics</td>
+<td>"API response: {...}"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="structured-logging-jsonl">Structured Logging (JSONL)</h3>
+<p>Our crawler logs to JSONL (JSON Lines) format for easy analysis:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-24T14:30:01Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;geometry-course&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Starting repository crawl&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-24T14:30:02Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WARNING&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;geometry-course&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;sim&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;angle-bisector&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing field: learningObjectives&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-24T14:30:03Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;geometry-course&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Completed: 45 MicroSims found&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>JSONL files are:</p>
+<ul>
+<li>Easy to append (one line per entry)</li>
+<li>Easy to filter (grep, jq)</li>
+<li>Easy to analyze (load into pandas)</li>
+</ul>
+<h3 id="log-analysis">Log Analysis</h3>
+<p>Find issues quickly:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Count warnings per repository</span>
+grep<span class="w"> </span><span class="s1">&#39;&quot;level&quot;: &quot;WARNING&quot;&#39;</span><span class="w"> </span>logs/microsim-crawl-2026-01-24.jsonl<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.repo&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rn
+
+<span class="c1"># Find all missing metadata</span>
+grep<span class="w"> </span><span class="s1">&#39;&quot;message&quot;: &quot;No metadata.json&quot;&#39;</span><span class="w"> </span>logs/*.jsonl<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.repo + &quot;/&quot; + .sim&#39;</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="quality-metrics-and-profiling">Quality Metrics and Profiling</h2>
+<p>Data profiling helps you understand your collection's quality and completeness.</p>
+<h3 id="key-metrics">Key Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total count</strong></td>
+<td>Number of MicroSims</td>
+<td>Growing!</td>
+</tr>
+<tr>
+<td><strong>Completeness</strong></td>
+<td>% of fields filled</td>
+<td>&gt;80%</td>
+</tr>
+<tr>
+<td><strong>Required fields</strong></td>
+<td>% with all required fields</td>
+<td>100%</td>
+</tr>
+<tr>
+<td><strong>Subject coverage</strong></td>
+<td>Distribution across subjects</td>
+<td>Balanced</td>
+</tr>
+<tr>
+<td><strong>Grade coverage</strong></td>
+<td>Distribution across levels</td>
+<td>Balanced</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-data-profiler">The Data Profiler</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">profile_collection</span><span class="p">(</span><span class="n">microsims</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate quality metrics for the collection.&quot;&quot;&quot;</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;total_count&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">microsims</span><span class="p">),</span>
+        <span class="s1">&#39;by_subject&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;by_grade&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;field_coverage&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;quality_distribution&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;high&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;low&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">microsim</span> <span class="ow">in</span> <span class="n">microsims</span><span class="p">:</span>
+        <span class="c1"># Count by subject</span>
+        <span class="n">subject</span> <span class="o">=</span> <span class="n">microsim</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subjectArea&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>
+        <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;by_subject&#39;</span><span class="p">][</span><span class="n">subject</span><span class="p">]</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;by_subject&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="c1"># Count by grade</span>
+        <span class="n">grades</span> <span class="o">=</span> <span class="n">microsim</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;gradeLevel&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Unknown&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">:</span>
+            <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;by_grade&#39;</span><span class="p">][</span><span class="n">grade</span><span class="p">]</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;by_grade&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">grade</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="c1"># Quality categorization</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">microsim</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_quality_score&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+            <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;quality_distribution&#39;</span><span class="p">][</span><span class="s1">&#39;high&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+            <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;quality_distribution&#39;</span><span class="p">][</span><span class="s1">&#39;medium&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;quality_distribution&#39;</span><span class="p">][</span><span class="s1">&#39;low&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">profile</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="generating-reports">Generating Reports</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Generate the profiling report</span>
+python3<span class="w"> </span>src/data-profiler/profile-microsims.py
+
+<span class="c1"># Output: docs/reports/microsim-metrics.md</span>
+</code></pre></div></td></tr></table></div>
+<p>The report helps identify:</p>
+<ul>
+<li>Underrepresented subjects (need more content)</li>
+<li>Quality issues (need metadata enrichment)</li>
+<li>Missing required fields (need corrections)</li>
+</ul>
+<h4 id="diagram-collection-quality-dashboard">Diagram: Collection Quality Dashboard</h4>
+<iframe src="../../sims/quality-dashboard/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Collection Quality Dashboard</summary>
+Type: infographic
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: assess
+
+Learning Objective: Students will assess MicroSim collection quality by interpreting dashboard metrics and identifying areas needing improvement.
+
+Canvas layout: Dashboard with multiple visualization panels
+
+Panels:
+
+1. "Collection Overview" (top-left, 25%):
+   - Big number: Total MicroSims count
+   - Trend indicator (up/down from last crawl)
+   - Subtitle: "From X repositories"
+
+2. "Subject Distribution" (top-right, 25%):
+   - Horizontal bar chart showing count per subject
+   - Subjects: Math, Physics, Chemistry, Biology, CS, Other
+   - Color coded by subject
+   - Tooltip on hover: exact count and percentage
+
+3. "Quality Score Distribution" (middle-left, 25%):
+   - Pie or donut chart
+   - Segments: High (80+), Medium (50-79), Low (<50)
+   - Colors: Green, Yellow, Red
+   - Center text: Average score
+
+4. "Grade Level Coverage" (middle-right, 25%):
+   - Stacked bar or area chart
+   - Levels: K-5, 6-8, 9-12, Undergraduate, Graduate
+   - Shows balance across educational levels
+
+5. "Field Completeness" (bottom-left, 25%):
+   - Grid of field names with completion percentage
+   - Color intensity indicates completeness
+   - Required fields marked with asterisk
+   - Fields: title*, description*, subject, gradeLevel, framework, learningObjectives, etc.
+
+6. "Repository Contributions" (bottom-right, 25%):
+   - Treemap showing MicroSims per repository
+   - Size = count, color = average quality
+   - Click to see repository details
+
+Interactive controls:
+- Dropdown: "Time period" (current, last week, last month)
+- Filter by subject (checkboxes)
+- Toggle: "Show only issues" (highlight problem areas)
+- Button: "Export report"
+
+Hover behavior:
+- All charts show detailed tooltips
+- Clicking drills down to details
+
+Color scheme:
+- Quality: Red (low) → Yellow (medium) → Green (high)
+- Subjects: Consistent with other visualizations
+- Trend indicators: Red (down), Green (up), Gray (unchanged)
+
+Data updates:
+- Dashboard reflects current collection state
+- Compare to previous crawl to show trends
+
+Implementation: p5.js or Chart.js with multiple coordinated charts
+</details>
+
+<hr />
+<h2 id="scheduling-and-automation">Scheduling and Automation</h2>
+<p>Manual crawling doesn't scale. Automation keeps your collection fresh without constant attention.</p>
+<h3 id="scheduling-options">Scheduling Options</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Best For</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cron job</strong></td>
+<td>Server-based scheduling</td>
+<td><code>0 2 * * * /path/to/crawl.sh</code></td>
+</tr>
+<tr>
+<td><strong>GitHub Actions</strong></td>
+<td>Free, integrated with repos</td>
+<td>Workflow file in <code>.github/</code></td>
+</tr>
+<tr>
+<td><strong>Cloud Functions</strong></td>
+<td>Serverless, event-driven</td>
+<td>AWS Lambda, Google Cloud Functions</td>
+</tr>
+<tr>
+<td><strong>CI/CD pipeline</strong></td>
+<td>Part of deployment process</td>
+<td>Run after merge to main</td>
+</tr>
+</tbody>
+</table>
+<h3 id="github-actions-example">GitHub Actions Example</h3>
+<p>Our crawler runs daily via GitHub Actions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Crawl MicroSims</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0</span><span class="nv"> </span><span class="s">6</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&#39;</span><span class="w">  </span><span class="c1"># Daily at 6 AM UTC</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">  </span><span class="c1"># Allow manual trigger</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">crawl</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.11&#39;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run crawler</span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.CRAWL_TOKEN }}</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 src/crawl-microsims.py</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commit changes</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">git config user.name &quot;MicroSim Crawler&quot;</span>
+<span class="w">          </span><span class="no">git config user.email &quot;crawler@example.com&quot;</span>
+<span class="w">          </span><span class="no">git add docs/search/microsims-data.json</span>
+<span class="w">          </span><span class="no">git commit -m &quot;Update MicroSim collection&quot; || exit 0</span>
+<span class="w">          </span><span class="no">git push</span>
+</code></pre></div></td></tr></table></div>
+<p>This workflow:</p>
+<ol>
+<li>Runs automatically every day at 6 AM</li>
+<li>Uses a secure GitHub token for API access</li>
+<li>Commits updated data back to the repository</li>
+<li>Can be triggered manually when needed</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">The <code>|| exit 0</code> Pattern</p>
+<p>The <code>git commit ... || exit 0</code> pattern prevents the workflow from failing when there are no changes to commit. Smart pipelines handle "nothing to do" gracefully.</p>
+</div>
+<hr />
+<h2 id="error-handling-and-recovery">Error Handling and Recovery</h2>
+<p>Robust pipelines handle failures gracefully without losing progress.</p>
+<h3 id="common-failure-modes">Common Failure Modes</h3>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Cause</th>
+<th>Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rate limit exceeded</strong></td>
+<td>Too many API calls</td>
+<td>Wait and retry with backoff</td>
+</tr>
+<tr>
+<td><strong>Network timeout</strong></td>
+<td>Slow/unreliable connection</td>
+<td>Retry with longer timeout</td>
+</tr>
+<tr>
+<td><strong>Invalid JSON</strong></td>
+<td>Malformed metadata.json</td>
+<td>Log error, skip entry</td>
+</tr>
+<tr>
+<td><strong>Missing directory</strong></td>
+<td>Repo structure changed</td>
+<td>Log warning, continue</td>
+</tr>
+<tr>
+<td><strong>Authentication failure</strong></td>
+<td>Expired/invalid token</td>
+<td>Alert, fail fast</td>
+</tr>
+</tbody>
+</table>
+<h3 id="retry-with-exponential-backoff">Retry with Exponential Backoff</h3>
+<p>When requests fail, retry with increasing delays:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">fetch_with_retry</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch URL with exponential backoff on failure.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_retries</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">403</span><span class="p">:</span>
+                <span class="c1"># Rate limited - wait and retry</span>
+                <span class="n">wait_time</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">attempt</span><span class="p">)</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate limited, waiting </span><span class="si">{</span><span class="n">wait_time</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s...&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait_time</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">response</span>
+
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">attempt</span> <span class="o">&lt;</span> <span class="n">max_retries</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">wait_time</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">attempt</span><span class="p">)</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request failed, retrying in </span><span class="si">{</span><span class="n">wait_time</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait_time</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="checkpointing-for-long-crawls">Checkpointing for Long Crawls</h3>
+<p>For large crawls, save progress periodically:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">crawl_with_checkpoints</span><span class="p">(</span><span class="n">repos</span><span class="p">,</span> <span class="n">checkpoint_file</span><span class="o">=</span><span class="s1">&#39;crawl_checkpoint.json&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Crawl with periodic checkpointing.&quot;&quot;&quot;</span>
+    <span class="c1"># Load checkpoint if exists</span>
+    <span class="n">processed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">processed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;processed&#39;</span><span class="p">])</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">repo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">repos</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">repo</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">processed</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># Already done</span>
+
+        <span class="c1"># Process repository</span>
+        <span class="n">microsims</span> <span class="o">=</span> <span class="n">mine_repository</span><span class="p">(</span><span class="n">repo</span><span class="p">)</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">microsims</span><span class="p">)</span>
+        <span class="n">processed</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">repo</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Checkpoint every 10 repos</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span>
+                    <span class="s1">&#39;processed&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">processed</span><span class="p">),</span>
+                    <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="n">results</span>
+                <span class="p">},</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># Clean up checkpoint on success</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Data gathering</strong> systematically collects information from distributed sources—essential for building comprehensive MicroSim collections</p>
+</li>
+<li>
+<p><strong>Web crawling</strong> automates page fetching and parsing, but APIs are preferred when available for reliability and efficiency</p>
+</li>
+<li>
+<p><strong>The GitHub API</strong> provides structured access to repository contents, with authenticated requests enabling 5,000 calls per hour</p>
+</li>
+<li>
+<p><strong>Repository mining</strong> extracts metadata.json files from known directory structures, tracking completeness and gaps</p>
+</li>
+<li>
+<p><strong>MicroSim repositories</strong> are discovered through known creators, code search, and heuristic filtering of repository characteristics</p>
+</li>
+<li>
+<p><strong>Data aggregation</strong> combines multi-source data through normalization, deduplication, validation, and enrichment stages</p>
+</li>
+<li>
+<p><strong>Incremental updates</strong> process only changed repositories, dramatically reducing API calls and execution time</p>
+</li>
+<li>
+<p><strong>Structured logging</strong> (JSONL format) provides visibility into pipeline operation for debugging and monitoring</p>
+</li>
+<li>
+<p><strong>Quality metrics</strong> reveal collection health—completeness, coverage, and areas needing improvement</p>
+</li>
+<li>
+<p><strong>Automation</strong> through GitHub Actions or cron keeps collections current without manual intervention</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>You've learned to build data pipelines that automatically discover, extract, and aggregate MicroSim metadata. Your search system can now maintain a fresh, comprehensive collection with minimal manual effort.</p>
+<p>In the final chapter, we'll bring everything together:</p>
+<ul>
+<li>Building complete search interfaces</li>
+<li>Deployment strategies</li>
+<li>Future directions for MicroSim search</li>
+<li>How AI agents can leverage MicroSim search for generation</li>
+</ul>
+<p>The infrastructure is ready—now let's make it shine for users!</p>
+<hr />
+<p><em>Ready to see it all come together? Continue to <a href="../10-putting-it-all-together/index.md">Chapter 10: Putting It All Together</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../08-embeddings-semantic-search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Embeddings and Semantic Search">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                8. Embeddings and Semantic Search
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../10-educational-foundations/" class="md-footer__link md-footer__link--next" aria-label="Next: 10. Educational Foundations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                10. Educational Foundations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

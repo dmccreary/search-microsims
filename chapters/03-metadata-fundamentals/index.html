@@ -1,0 +1,2550 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Understanding metadata concepts, standards, taxonomies, and classification systems that enable MicroSim discoverability and search">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/03-metadata-fundamentals/">
+      
+      
+        <link rel="prev" href="../02-microsim-file-organization/">
+      
+      
+        <link rel="next" href="../04-dublin-core-elements/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Metadata Fundamentals - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metadata-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metadata Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-invisible-force-behind-findability" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Invisible Force Behind Findability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-metadata-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Metadata Standards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dublin-core-the-universal-language-of-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dublin Core: The Universal Language of Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dublin Core: The Universal Language of Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dublin-core-element-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Dublin Core Element Relationships
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxonomies-organizing-knowledge-hierarchically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomies: Organizing Knowledge Hierarchically
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-systems-categorizing-with-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification Systems: Categorizing with Purpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification Systems: Categorizing with Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multi-dimensional-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Multi-Dimensional Classification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject-normalization-speaking-the-same-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject Normalization: Speaking the Same Language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-standards-purpose-built-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Standards: Purpose-Built Metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-compliance-playing-by-the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Compliance: Playing by the Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags-flexible-labels-for-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags: Flexible Labels for Discovery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folksonomies-wisdom-of-the-crowd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folksonomies: Wisdom of the Crowd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keywords-the-search-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keywords: The Search Connection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keywords: The Search Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-keywords-to-search-results-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Keywords to Search Results Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlled-vocabulary-curated-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Vocabulary: Curated Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-metadata-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Metadata: Under the Hood
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-metadata-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: The Metadata Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-invisible-force-behind-findability" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Invisible Force Behind Findability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-metadata-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Metadata Standards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dublin-core-the-universal-language-of-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dublin Core: The Universal Language of Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dublin Core: The Universal Language of Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dublin-core-element-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Dublin Core Element Relationships
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxonomies-organizing-knowledge-hierarchically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomies: Organizing Knowledge Hierarchically
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-systems-categorizing-with-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification Systems: Categorizing with Purpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification Systems: Categorizing with Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multi-dimensional-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Multi-Dimensional Classification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject-normalization-speaking-the-same-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject Normalization: Speaking the Same Language
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-standards-purpose-built-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Standards: Purpose-Built Metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-compliance-playing-by-the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Compliance: Playing by the Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags-flexible-labels-for-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags: Flexible Labels for Discovery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folksonomies-wisdom-of-the-crowd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folksonomies: Wisdom of the Crowd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keywords-the-search-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keywords: The Search Connection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keywords: The Search Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-keywords-to-search-results-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Keywords to Search Results Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlled-vocabulary-curated-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Vocabulary: Curated Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-metadata-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Metadata: Under the Hood
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-metadata-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: The Metadata Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/03-metadata-fundamentals/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="metadata-fundamentals">Metadata Fundamentals</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces metadata concepts and standards that provide the foundation for MicroSim discoverability. You'll learn about metadata standards including the Dublin Core framework, taxonomies and classification systems, and how subject normalization enables consistent searching. The chapter also covers MicroSim-specific standards, schema compliance, tagging approaches including folksonomies and controlled vocabularies. After completing this chapter, students will understand how metadata enables search and discovery of educational resources.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 16 concepts from the learning graph:</p>
+<ol>
+<li>Metadata</li>
+<li>Metadata Standards</li>
+<li>Metadata Standards</li>
+<li>Dublin Core</li>
+<li>Dublin Core Elements</li>
+<li>Taxonomies</li>
+<li>Classification Systems</li>
+<li>Subject Normalization</li>
+<li>MicroSim Standards</li>
+<li>Schema Compliance</li>
+<li>Tags</li>
+<li>Folksonomies</li>
+<li>User-Generated Tags</li>
+<li>Keywords</li>
+<li>Controlled Vocabulary</li>
+<li>Technical Metadata</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-microsims/">Chapter 1: Introduction to MicroSims</a></li>
+<li><a href="../02-microsim-file-organization/">Chapter 2: MicroSim File Organization</a></li>
+</ul>
+<hr />
+<h2 id="the-invisible-force-behind-findability">The Invisible Force Behind Findability</h2>
+<p>You've probably had this experience: you <em>know</em> that perfect teaching resource exists somewhere on the internet, but after twenty minutes of increasingly creative search queries, you're ready to give up and create it yourself. That frustration? It's almost always a metadata problem.</p>
+<p><strong>Metadata</strong> is data about data—information that describes, explains, and categorizes your content so that both humans and machines can find it. When you search for "interactive pendulum simulation for high school physics," you're searching through metadata. The simulation itself doesn't contain those words in its JavaScript code. Instead, someone thoughtfully added that descriptive information, and a search engine matched your query against it.</p>
+<p>Think of metadata as the ultimate wingman for your MicroSim. The simulation might be brilliant, but if nobody can find it, it's doing its groundbreaking educational work in complete isolation. Metadata introduces your MicroSim to the world.</p>
+<div class="admonition tip">
+<p class="admonition-title">The Findability Equation</p>
+<p>Quality MicroSim + Zero Metadata = Hidden Treasure Nobody Finds</p>
+<p>Average MicroSim + Excellent Metadata = Widely Used Teaching Tool</p>
+<p>Quality MicroSim + Excellent Metadata = Educational Superpower</p>
+</div>
+<h2 id="understanding-metadata-standards">Understanding Metadata Standards</h2>
+<p>Creating metadata sounds simple enough—just describe what your MicroSim does, right? But here's the challenge: if everyone describes their resources differently, search becomes chaos. One person calls their subject "Physics," another calls it "Physical Science," a third uses "Mechanics." Same topic, three different labels, and now your search only finds one-third of the relevant results.</p>
+<p><strong>Metadata standards</strong> solve this problem by establishing agreed-upon ways to describe resources. They define:</p>
+<ul>
+<li>Which fields to include (title, creator, subject, etc.)</li>
+<li>What values are acceptable (standardized subject lists, date formats)</li>
+<li>How fields relate to each other (hierarchies, dependencies)</li>
+<li>Required versus optional information</li>
+</ul>
+<p>When everyone follows the same standard, magic happens. A teacher in Tokyo can find a MicroSim created by a professor in Toronto because they both used "Trigonometry" from the same standardized subject list. The machines can compare apples to apples instead of apples to "circular fruit of the genus Malus."</p>
+<p>Major metadata standards you'll encounter include:</p>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Primary Use</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dublin Core</td>
+<td>General resources</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>IEEE LOM</td>
+<td>Learning objects</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Schema.org</td>
+<td>Web content</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>LRMI</td>
+<td>Learning resources</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Custom schemas</td>
+<td>Domain-specific</td>
+<td>Varies</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSims, we build on Dublin Core as our foundation and add educational and technical extensions specific to interactive simulations.</p>
+<h2 id="dublin-core-the-universal-language-of-metadata">Dublin Core: The Universal Language of Metadata</h2>
+<p><strong>Dublin Core</strong> is the lingua franca of metadata—a simple, flexible standard that emerged from a 1995 workshop in Dublin, Ohio (not Ireland, despite what you might assume). Its genius lies in its simplicity: just 15 core elements that can describe virtually any resource.</p>
+<p>Why Dublin Core became dominant:</p>
+<ul>
+<li><strong>Simple enough to use</strong>: You don't need a PhD to fill it out</li>
+<li><strong>Flexible enough to extend</strong>: Add your own fields as needed</li>
+<li><strong>Widely adopted</strong>: Libraries, museums, and digital repositories worldwide</li>
+<li><strong>Machine-readable</strong>: Easy for software to parse and index</li>
+</ul>
+<p>Dublin Core operates on a principle of "dumb-down": even if you don't understand specialized fields, you can always fall back to simple descriptions. This means a MicroSim's metadata remains useful even to systems that don't understand educational extensions.</p>
+<p>The 15 <strong>Dublin Core Elements</strong> form the backbone of resource description:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>MicroSim Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>Name of the resource</td>
+<td>"Pendulum Period Explorer"</td>
+</tr>
+<tr>
+<td>Creator</td>
+<td>Who made it</td>
+<td>"Dr. Maria Santos"</td>
+</tr>
+<tr>
+<td>Subject</td>
+<td>Topic or keywords</td>
+<td>"Physics, Harmonic Motion"</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Summary of content</td>
+<td>"Interactive simulation demonstrating..."</td>
+</tr>
+<tr>
+<td>Publisher</td>
+<td>Who distributes it</td>
+<td>"OpenEd Simulations"</td>
+</tr>
+<tr>
+<td>Contributor</td>
+<td>Others who helped</td>
+<td>"Reviewed by Physics Dept."</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>When created/modified</td>
+<td>"2026-01-15"</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Nature of resource</td>
+<td>"Interactive Simulation"</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>File format</td>
+<td>"text/html"</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td>Unique ID</td>
+<td>"https://example.com/sims/pendulum"</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Derived from</td>
+<td>"Based on PhET simulation"</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>Language used</td>
+<td>"en-US"</td>
+</tr>
+<tr>
+<td>Relation</td>
+<td>Related resources</td>
+<td>"Part of Physics series"</td>
+</tr>
+<tr>
+<td>Coverage</td>
+<td>Scope (time/place)</td>
+<td>"Classical mechanics era"</td>
+</tr>
+<tr>
+<td>Rights</td>
+<td>Usage permissions</td>
+<td>"CC BY-NC-SA 4.0"</td>
+</tr>
+</tbody>
+</table>
+<p>Not every MicroSim needs every element. At minimum, you want Title, Creator, Subject, Description, Date, Format, and Rights. The others add richness when relevant.</p>
+<h4 id="diagram-dublin-core-element-relationships">Diagram: Dublin Core Element Relationships</h4>
+<iframe src="../../sims/dublin-core-elements/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Dublin Core Element Relationships Diagram</summary>
+Type: infographic
+
+Bloom Level: Understand (L2)
+Bloom Verb: classify
+
+Learning Objective: Students will classify Dublin Core elements into categories (content description, intellectual property, instantiation) and explain how they relate to MicroSim metadata.
+
+Purpose: Visualize the 15 Dublin Core elements organized by category with examples
+
+Layout: Three-column layout representing Dublin Core's three categories
+
+Categories (columns):
+1. Content (left column - blue)
+   - Title, Subject, Description, Type, Source, Relation, Coverage
+2. Intellectual Property (center column - green)
+   - Creator, Publisher, Contributor, Rights
+3. Instantiation (right column - orange)
+   - Date, Format, Identifier, Language
+
+Interactive elements:
+- Hover over any element to see:
+  - Definition
+  - Example value for a MicroSim
+  - Whether required or optional
+- Click to see extended description
+- Color intensity indicates how commonly used in MicroSims
+
+Visual style: Card-based layout with clear category headers
+Color scheme: Blue for content, green for IP, orange for instantiation
+Animation: Cards lift slightly on hover with shadow effect
+
+Implementation: HTML/CSS/JavaScript with card components
+</details>
+
+<h2 id="taxonomies-organizing-knowledge-hierarchically">Taxonomies: Organizing Knowledge Hierarchically</h2>
+<p>A <strong>taxonomy</strong> is a hierarchical classification system—a tree structure that organizes concepts from broad to specific. You use taxonomies constantly without thinking about it: the biological taxonomy (Kingdom → Phylum → Class → Order → Family → Genus → Species) is perhaps the most famous example.</p>
+<p>For educational resources, taxonomies help answer questions like:</p>
+<ul>
+<li>Is this MicroSim about "Science" or specifically about "Physics"?</li>
+<li>Is "Physics" part of "Physical Sciences" or separate?</li>
+<li>Where does "Astrophysics" fit relative to "Physics"?</li>
+</ul>
+<p>Here's a simplified educational subject taxonomy:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>STEM
+├── Science
+│   ├── Physical Sciences
+│   │   ├── Physics
+│   │   │   ├── Mechanics
+│   │   │   ├── Thermodynamics
+│   │   │   └── Electromagnetism
+│   │   └── Chemistry
+│   ├── Life Sciences
+│   │   ├── Biology
+│   │   └── Ecology
+│   └── Earth Sciences
+├── Technology
+├── Engineering
+└── Mathematics
+    ├── Algebra
+    ├── Geometry
+    └── Calculus
+</code></pre></div></td></tr></table></div>
+<p>Taxonomies enable powerful search features:</p>
+<ul>
+<li><strong>Hierarchical search</strong>: Find all "Science" MicroSims, including Physics, Chemistry, and Biology</li>
+<li><strong>Specificity</strong>: Search narrowly for just "Mechanics" simulations</li>
+<li><strong>Browse navigation</strong>: Explore categories without knowing exact terms</li>
+<li><strong>Automatic expansion</strong>: A search for "Physical Sciences" automatically includes "Physics"</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Taxonomy vs. Folksonomy</p>
+<p>Taxonomies are created top-down by experts who define the structure in advance. Folksonomies (covered later) emerge bottom-up from user-generated tags. Both have their place in MicroSim discovery.</p>
+</div>
+<h2 id="classification-systems-categorizing-with-purpose">Classification Systems: Categorizing with Purpose</h2>
+<p><strong>Classification systems</strong> are broader frameworks that assign resources to categories based on defined criteria. While taxonomies focus on hierarchical relationships, classification systems can use multiple dimensions simultaneously.</p>
+<p>Consider how you might classify MicroSims:</p>
+<p><strong>By Subject Area:</strong>
+- Mathematics, Physics, Chemistry, Biology, Computer Science...</p>
+<p><strong>By Grade Level:</strong>
+- Elementary, Middle School, High School, Undergraduate, Graduate</p>
+<p><strong>By Bloom's Taxonomy Level:</strong>
+- Remember, Understand, Apply, Analyze, Evaluate, Create</p>
+<p><strong>By Difficulty:</strong>
+- Beginner, Intermediate, Advanced</p>
+<p><strong>By Visualization Type:</strong>
+- Animation, Simulation, Chart, Diagram, Game, Quiz</p>
+<p>A single MicroSim can be classified along all these dimensions simultaneously. A pendulum simulator might be:</p>
+<ul>
+<li><strong>Subject</strong>: Physics</li>
+<li><strong>Grade Level</strong>: High School, Undergraduate</li>
+<li><strong>Bloom's Level</strong>: Understand, Apply</li>
+<li><strong>Difficulty</strong>: Intermediate</li>
+<li><strong>Type</strong>: Simulation, Animation</li>
+</ul>
+<p>This multi-dimensional classification is what makes <strong>faceted search</strong> possible—the ability to filter by subject AND grade level AND difficulty all at once. It's like having multiple file folders that a single document can live in simultaneously.</p>
+<h4 id="diagram-multi-dimensional-classification">Diagram: Multi-Dimensional Classification</h4>
+<iframe src="../../sims/faceted-classification/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Multi-Dimensional Classification Interactive</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: demonstrate
+
+Learning Objective: Students will demonstrate how multi-dimensional classification enables faceted search by exploring different filter combinations and observing how result sets change.
+
+Canvas layout:
+- Left panel (200px): Filter controls for 4 dimensions
+- Center panel (400px): Visualization showing MicroSim cards
+- Right panel (150px): Results count and active filters display
+
+Visual elements:
+- Grid of MicroSim cards (20 sample items)
+- Each card shows title and icons for its classifications
+- Cards fade out when filtered, remain bright when matching
+- Venn-diagram-style overlay showing intersection
+
+Interactive controls:
+- Subject dropdown: All, Physics, Math, Chemistry, Biology
+- Grade Level checkboxes: Elementary, Middle, High, College
+- Difficulty radio buttons: All, Beginner, Intermediate, Advanced
+- Type checkboxes: Animation, Simulation, Chart, Quiz
+
+Default parameters:
+- All filters set to "All" (showing all 20 items)
+- Pre-populated sample data with varied classifications
+
+Behavior:
+- Changing any filter immediately updates visible cards
+- Count display shows "X of 20 MicroSims match"
+- Active filter badges appear in right panel
+- Clear All button resets filters
+- Smooth fade animations on filter changes
+
+Implementation notes:
+- p5.js for card rendering
+- JSON data array with sample MicroSims
+- Real-time filter function combining all dimensions
+- Responsive layout adapts to container width
+</details>
+
+<h2 id="subject-normalization-speaking-the-same-language">Subject Normalization: Speaking the Same Language</h2>
+<p>Here's a real problem: one creator tags their MicroSim as "Math," another uses "Mathematics," a third uses "Maths," and a fourth uses "mathematical sciences." All mean the same thing, but a search for "Mathematics" only finds one of them.</p>
+<p><strong>Subject normalization</strong> is the process of mapping variant terms to standard forms. It's like having a universal translator that knows "Math" = "Mathematics" = "Maths" and routes all searches to the same canonical term.</p>
+<p>Normalization typically works through:</p>
+<ol>
+<li><strong>Synonym mapping</strong>: "Math" → "Mathematics"</li>
+<li><strong>Abbreviation expansion</strong>: "CS" → "Computer Science"</li>
+<li><strong>Spelling variants</strong>: "Colour" → "Color" (for English-US systems)</li>
+<li><strong>Hierarchical mapping</strong>: "Quantum Physics" → "Physics &gt; Quantum Physics"</li>
+<li><strong>Common misspellings</strong>: "Mathmatics" → "Mathematics"</li>
+</ol>
+<p>Here's a normalization table excerpt:</p>
+<table>
+<thead>
+<tr>
+<th>Input Term</th>
+<th>Normalized To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Math</td>
+<td>Mathematics</td>
+</tr>
+<tr>
+<td>Maths</td>
+<td>Mathematics</td>
+</tr>
+<tr>
+<td>Mathematical Sciences</td>
+<td>Mathematics</td>
+</tr>
+<tr>
+<td>Arithmetic</td>
+<td>Mathematics &gt; Arithmetic</td>
+</tr>
+<tr>
+<td>Physics</td>
+<td>Physics</td>
+</tr>
+<tr>
+<td>Physical Science</td>
+<td>Physics</td>
+</tr>
+<tr>
+<td>Mechanics</td>
+<td>Physics &gt; Mechanics</td>
+</tr>
+<tr>
+<td>CS</td>
+<td>Computer Science</td>
+</tr>
+<tr>
+<td>CompSci</td>
+<td>Computer Science</td>
+</tr>
+<tr>
+<td>Programming</td>
+<td>Computer Science &gt; Programming</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSim search to work across thousands of resources from different creators, subject normalization is essential. Without it, teachers would need to try every possible spelling and synonym to find what they need.</p>
+<div class="admonition tip">
+<p class="admonition-title">Write Once, Find Many Ways</p>
+<p>Good normalization means creators can use familiar terms while searchers find everything relevant. The system does the translation work, not the humans.</p>
+</div>
+<h2 id="microsim-standards-purpose-built-metadata">MicroSim Standards: Purpose-Built Metadata</h2>
+<p>While Dublin Core provides a solid foundation, educational simulations have unique needs that generic standards don't address. <strong>MicroSim standards</strong> extend the basic metadata framework with fields specifically designed for interactive learning resources.</p>
+<p>MicroSim-specific metadata includes:</p>
+<p><strong>Educational Fields:</strong>
+- Learning objectives (what students should achieve)
+- Bloom's taxonomy level (cognitive complexity)
+- Prerequisites (what students should know first)
+- Grade level (target audience)
+- Subject area (curriculum alignment)
+- Estimated time to complete</p>
+<p><strong>Technical Fields:</strong>
+- JavaScript framework (p5.js, D3.js, etc.)
+- Browser compatibility
+- Device requirements
+- Responsive behavior
+- File size</p>
+<p><strong>Interaction Fields:</strong>
+- Visualization type (animation, simulation, chart)
+- Interaction level (view-only, adjustable, explorable)
+- Control types (sliders, buttons, drag-and-drop)
+- Accessibility features</p>
+<p><strong>Quality Fields:</strong>
+- Completeness score
+- Peer review status
+- Usage statistics
+- User ratings</p>
+<p>This extended schema transforms a simple "description of a web page" into a rich educational profile that search systems can leverage for sophisticated matching.</p>
+<h2 id="schema-compliance-playing-by-the-rules">Schema Compliance: Playing by the Rules</h2>
+<p>A <strong>schema</strong> defines the structure and rules for valid metadata. <strong>Schema compliance</strong> means your metadata follows those rules—using the right field names, correct data types, and valid values.</p>
+<p>Think of a schema like a form at the DMV. It specifies:</p>
+<ul>
+<li>Which fields are required (you can't skip "Name")</li>
+<li>What format each field accepts (date must be YYYY-MM-DD)</li>
+<li>Which values are valid (state must be from the approved list)</li>
+<li>How fields relate (if Country is "USA," State must be a US state)</li>
+</ul>
+<p>For MicroSim metadata, schema compliance ensures:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">],</span><span class="w">       </span><span class="c1">// Must be from approved list</span>
+<span class="w">    </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;High School&quot;</span><span class="p">],</span><span class="w">    </span><span class="c1">// Must be from approved list</span>
+<span class="w">    </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Apply&quot;</span><span class="p">],</span><span class="w">      </span><span class="c1">// Must be from: Remember, Understand, Apply, Analyze, Evaluate, Create</span>
+<span class="w">    </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Intermediate&quot;</span><span class="w">       </span><span class="c1">// Must be: Beginner, Intermediate, or Advanced</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Why does compliance matter?</p>
+<ul>
+<li><strong>Search accuracy</strong>: Systems can trust field values are valid</li>
+<li><strong>Interoperability</strong>: Different platforms can exchange metadata reliably</li>
+<li><strong>Aggregation</strong>: Large-scale indexing works when data is consistent</li>
+<li><strong>Validation</strong>: Errors caught early, before they cause search problems</li>
+<li><strong>Future-proofing</strong>: Structured data adapts to new features</li>
+</ul>
+<p>Modern MicroSim systems use JSON Schema validation to automatically check compliance when metadata is submitted or updated.</p>
+<h2 id="tags-flexible-labels-for-discovery">Tags: Flexible Labels for Discovery</h2>
+<p><strong>Tags</strong> are simple labels attached to content for categorization and discovery. Unlike taxonomies with their rigid hierarchies, tags are flat, flexible, and often user-generated.</p>
+<p>Tags work well for:</p>
+<ul>
+<li><strong>Cross-cutting concepts</strong>: "climate-change" applies to Biology, Chemistry, and Economics simulations</li>
+<li><strong>Pedagogical approaches</strong>: "worked-example," "discovery-learning," "gamified"</li>
+<li><strong>Technical features</strong>: "responsive," "mobile-friendly," "offline-capable"</li>
+<li><strong>Temporal relevance</strong>: "2026-curriculum," "NGSS-aligned"</li>
+</ul>
+<p>Example tags for a photosynthesis MicroSim:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;biology&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;photosynthesis&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;plants&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;chloroplast&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;light-reactions&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;carbon-dioxide&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;middle-school&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interactive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;animation&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Tags complement structured metadata. While <code>subjectArea: "Biology"</code> provides official classification, tags like "chloroplast" and "light-reactions" capture specific details that enable long-tail searches.</p>
+<div class="admonition note">
+<p class="admonition-title">The Tag Explosion Problem</p>
+<p>Unrestricted tagging leads to inconsistency. Ten creators might use "Physics," "physics," "PHYSICS," "Phys," "PhySci," and "physical-science." This is where controlled vocabularies and folksonomies come in.</p>
+</div>
+<h2 id="folksonomies-wisdom-of-the-crowd">Folksonomies: Wisdom of the Crowd</h2>
+<p>A <strong>folksonomy</strong> is a classification system that emerges from user-generated tags rather than expert-defined categories. The term combines "folk" (people) and "taxonomy" (classification)—it's taxonomy by the masses.</p>
+<p>Folksonomies have real advantages:</p>
+<ul>
+<li><strong>Low barrier</strong>: Anyone can add tags, no training required</li>
+<li><strong>Evolving vocabulary</strong>: New terms emerge as fields evolve</li>
+<li><strong>User language</strong>: People use terms they actually search for</li>
+<li><strong>Serendipitous discovery</strong>: Unexpected tag connections lead to useful finds</li>
+<li><strong>Community building</strong>: Shared tags create implicit relationships</li>
+</ul>
+<p>Popular examples include hashtags on social media, tags on Stack Overflow, and bookmarking tags on sites like Pinboard.</p>
+<p>For MicroSims, folksonomies might reveal:</p>
+<ul>
+<li>Emerging topics ("quantum-computing" before it's in official curricula)</li>
+<li>Teaching contexts ("flipped-classroom," "homework-helper")</li>
+<li>Student perspectives ("confusing-topic," "test-prep")</li>
+<li>Regional terminology differences</li>
+</ul>
+<p>The challenge with folksonomies is inconsistency. <strong>User-generated tags</strong> reflect how individuals think, which varies wildly. Solutions include:</p>
+<ul>
+<li>Tag suggestion systems (autocomplete with existing tags)</li>
+<li>Synonym mapping (treating similar tags as equivalent)</li>
+<li>Popularity weighting (commonly-used tags get priority)</li>
+<li>Moderation (curating the most useful tags)</li>
+</ul>
+<h2 id="keywords-the-search-connection">Keywords: The Search Connection</h2>
+<p><strong>Keywords</strong> are specific terms that connect content to search queries. While related to tags, keywords are specifically chosen to match what users type into search boxes.</p>
+<p>Effective keywords consider:</p>
+<ul>
+<li><strong>What users search for</strong>: Not what experts call things, but what regular people type</li>
+<li><strong>Synonyms and variants</strong>: Including common alternative terms</li>
+<li><strong>Related concepts</strong>: Terms that searchers might also want</li>
+<li><strong>Long-tail phrases</strong>: Specific multi-word queries</li>
+</ul>
+<p>For a projectile motion MicroSim, keywords might include:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;projectile motion&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;trajectory&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;ballistics&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;throwing&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;angle of launch&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;parabola&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;physics simulation&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;kinematics&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;gravity effect&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;range equation&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Notice how this includes both technical terms ("kinematics," "ballistics") and everyday language ("throwing," "gravity effect"). The goal is to catch searches from physics professors AND from students googling "how far does a ball go when you throw it."</p>
+<h4 id="diagram-keywords-to-search-results-flow">Diagram: Keywords to Search Results Flow</h4>
+<iframe src="../../sims/keyword-search-flow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Keywords to Search Results Flow Diagram</summary>
+Type: workflow
+
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+
+Learning Objective: Students will explain how keywords in metadata connect user search queries to relevant MicroSim results through matching and ranking processes.
+
+Purpose: Visualize the journey from user query through keyword matching to ranked results
+
+Steps (left to right flow):
+1. User Query (person icon with search box)
+   - Example: "physics ball throwing simulation"
+   - Shows query being tokenized into words
+
+2. Query Processing (gear icon)
+   - Tokenization: ["physics", "ball", "throwing", "simulation"]
+   - Normalization: lowercase, stemming
+   - Synonym expansion: "throwing" → ["throwing", "projectile", "launch"]
+
+3. Keyword Matching (database icon with arrows)
+   - Compare query terms against MicroSim keywords
+   - Calculate match scores
+   - Show multiple MicroSims being evaluated
+
+4. Ranking (sorting icon)
+   - Score: keyword matches + metadata quality
+   - Factors: exact match > partial match > synonym match
+   - Freshness, popularity bonuses
+
+5. Results (list with thumbnails)
+   - Ordered list of matching MicroSims
+   - Match score badges
+   - Highlighted matching keywords
+
+Interactive elements:
+- Enter custom search query and see matching process
+- Hover over each stage for detailed explanation
+- Click to see sample data at each stage
+
+Visual style: Horizontal flow diagram with stages as rounded rectangles
+Color scheme: Blue for user side, green for processing, orange for results
+Animation: Data flows between stages with subtle particle effects
+
+Implementation: HTML/CSS/JavaScript with animated flow visualization
+</details>
+
+<h2 id="controlled-vocabulary-curated-consistency">Controlled Vocabulary: Curated Consistency</h2>
+<p>A <strong>controlled vocabulary</strong> is a predefined list of terms that must be used for a particular metadata field. Unlike free-form tags where anything goes, controlled vocabularies enforce consistency by limiting choices to approved options.</p>
+<p>Examples of controlled vocabularies in MicroSim metadata:</p>
+<p><strong>Subject Areas (controlled):</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Mathematics, Physics, Chemistry, Biology, Computer Science,
+Earth Science, Engineering, Economics, History, Language Arts
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Grade Levels (controlled):</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>K-2, 3-5, 6-8, 9-12, Undergraduate, Graduate, Professional
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Bloom's Taxonomy (controlled):</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Remember, Understand, Apply, Analyze, Evaluate, Create
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Difficulty (controlled):</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Beginner, Intermediate, Advanced
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Visualization Types (controlled):</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>animation, simulation, chart, diagram, game, quiz,
+timeline, map, graph-model, infographic
+</code></pre></div></td></tr></table></div></p>
+<p>Controlled vocabularies provide:</p>
+<ul>
+<li><strong>Consistency</strong>: Everyone uses the same terms</li>
+<li><strong>Completeness</strong>: No missing variations</li>
+<li><strong>Searchability</strong>: Exact matching works reliably</li>
+<li><strong>Faceted filtering</strong>: Clean categories for filter UI</li>
+<li><strong>Analytics</strong>: Meaningful aggregation and reporting</li>
+</ul>
+<p>The tradeoff is flexibility. New concepts (like "machine learning" becoming a subject area) require updating the vocabulary. Good systems balance controlled fields for core categories with free-form tags for emerging concepts.</p>
+<h2 id="technical-metadata-under-the-hood">Technical Metadata: Under the Hood</h2>
+<p><strong>Technical metadata</strong> describes the implementation details that affect how a MicroSim runs, displays, and performs. This information helps both automated systems and human users understand compatibility requirements.</p>
+<p>Key technical metadata fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+<th>Example Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>framework</td>
+<td>JavaScript library used</td>
+<td>p5.js, D3.js, Three.js, Chart.js</td>
+</tr>
+<tr>
+<td>libraryVersion</td>
+<td>Specific version</td>
+<td>1.9.0, 7.8.5</td>
+</tr>
+<tr>
+<td>fileSize</td>
+<td>Total size of assets</td>
+<td>45KB, 1.2MB</td>
+</tr>
+<tr>
+<td>browserSupport</td>
+<td>Compatible browsers</td>
+<td>Chrome, Firefox, Safari, Edge</td>
+</tr>
+<tr>
+<td>mobileSupport</td>
+<td>Works on mobile?</td>
+<td>true, false, partial</td>
+</tr>
+<tr>
+<td>accessibility</td>
+<td>A11y features</td>
+<td>screen-reader, keyboard-nav</td>
+</tr>
+<tr>
+<td>offline</td>
+<td>Works without internet?</td>
+<td>true, false</td>
+</tr>
+<tr>
+<td>performance</td>
+<td>Resource requirements</td>
+<td>low, medium, high</td>
+</tr>
+</tbody>
+</table>
+<p>Why technical metadata matters:</p>
+<ol>
+<li><strong>Compatibility filtering</strong>: Teachers can find MicroSims that work on school Chromebooks</li>
+<li><strong>Performance expectations</strong>: Know before loading a 10MB simulation on slow WiFi</li>
+<li><strong>Accessibility compliance</strong>: Schools can verify WCAG compliance</li>
+<li><strong>Development insights</strong>: Creators can learn from similar implementations</li>
+<li><strong>Maintenance planning</strong>: Track which simulations need library updates</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p5.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;libraryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.9.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fileSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;67KB&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;browserSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Chrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firefox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Safari&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Edge&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;mobileSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accessibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;keyboardNavigable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;screenReaderSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;partial&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;highContrastMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;performance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;low&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="putting-it-all-together-the-metadata-ecosystem">Putting It All Together: The Metadata Ecosystem</h2>
+<p>Let's see how all these concepts combine in a real MicroSim metadata profile:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;microsim&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wave Interference Simulator&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dr. Sarah Chen&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive simulation showing constructive and destructive interference patterns when two wave sources interact&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-10&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive Simulation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rights&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CC BY-SA 4.0&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;High School&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Undergraduate&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Understand&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Analyze&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Intermediate&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wave Physics&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;learningObjectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Explain how wave interference creates patterns&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Predict constructive vs destructive interference locations&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Analyze the effect of wavelength on interference patterns&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;prerequisites&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Basic wave concepts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Understanding of wavelength and frequency&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p5.js&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;libraryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.9.0&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fileSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;52KB&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;browserSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Chrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firefox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Safari&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Edge&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;mobileSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;visualizationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;simulation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;animation&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;interactionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;wave interference&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;constructive interference&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;destructive interference&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;superposition&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;wave patterns&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;physics simulation&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ripple tank&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;waves&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;interference&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;physics&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;interactive&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;NGSS-aligned&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;college-prep&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This metadata enables:</p>
+<ul>
+<li><strong>Dublin Core</strong>: Basic discoverability in any system</li>
+<li><strong>Educational fields</strong>: Precise curriculum matching</li>
+<li><strong>Technical fields</strong>: Compatibility verification</li>
+<li><strong>Keywords</strong>: Natural language search</li>
+<li><strong>Tags</strong>: Community categorization</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">The Superpower Unlocked</p>
+<p>With comprehensive metadata, a teacher searching "wave interference simulation for AP Physics" instantly finds this MicroSim. The search matches "wave interference" from keywords, "Physics" from subject, "High School" from grade level, and ranks it highly due to learning objectives that match AP curriculum expectations.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li><strong>Metadata</strong> is data about data that makes resources findable and usable</li>
+<li><strong>Metadata standards</strong> like Dublin Core provide consistent, interoperable frameworks</li>
+<li><strong>Dublin Core's 15 elements</strong> cover content, intellectual property, and instantiation</li>
+<li><strong>Taxonomies</strong> organize subjects hierarchically for browse and search</li>
+<li><strong>Classification systems</strong> enable multi-dimensional categorization and faceted search</li>
+<li><strong>Subject normalization</strong> maps variant terms to standard forms</li>
+<li><strong>MicroSim standards</strong> extend generic metadata with educational and technical fields</li>
+<li><strong>Schema compliance</strong> ensures data quality and interoperability</li>
+<li><strong>Tags</strong> provide flexible, informal categorization</li>
+<li><strong>Folksonomies</strong> emerge from user-generated tags, capturing real-world language</li>
+<li><strong>Keywords</strong> optimize content for search query matching</li>
+<li><strong>Controlled vocabularies</strong> enforce consistency in critical fields</li>
+<li><strong>Technical metadata</strong> describes compatibility and performance characteristics</li>
+</ol>
+<hr />
+<p><em>Ready to learn how educational context shapes metadata? Continue to <a href="../04-educational-metadata/index.md">Chapter 4: Educational Metadata</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-microsim-file-organization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. MicroSim File Organization">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. MicroSim File Organization
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-dublin-core-elements/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Dublin Core Elements">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Dublin Core Elements
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

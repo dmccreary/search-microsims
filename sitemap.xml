@@ -2,110 +2,206 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/search-microsims/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/code-highlight-test/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/contact/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/course-description/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/glossary/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/how-we-built-this-site/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/license/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/microsim-embeddings/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/microsim-schema/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/references/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/chapter-design/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/01-intro-to-microsims/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/02-microsim-file-organization/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/03-metadata-fundamentals/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/04-dublin-core-elements/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/06-search-fundamentals/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/07-faceted-search-client-side/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/08-embeddings-semantic-search/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/09-data-pipelines-aggregation/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/10-educational-foundations/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/11-learning-theory-pedagogy/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/12-visualization-types/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/13-user-interface-controls/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/chapters/14-technical-implementation/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/learning-graph/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/learning-graph/concept-list/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/learning-graph/concept-taxonomy/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/learning-graph/course-description-assessment/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/diagram-details/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/learning-graph/diagram-table/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/learning-graph/quality-metrics/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/learning-graph/taxonomy-distribution/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/prompts/add-missing-metadata/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/prompts/chapter-content-generation/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/prompts/create-embeddings-report/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/search-microsims/prompts/list-similar-micrrosims/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <loc>https://dmccreary.github.io/search-microsims/prompts/generate-microsims-for-each-chapter/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/prompts/list-similar-microsims/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/reports/local-metadata-update/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/reports/microsim-metrics/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/search/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/difficulty-progression/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/graph-viewer/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/interaction-feedback-loop/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/list-similar-microsim/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/microsim-search-workflow/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/microsim-web-architecture/</loc>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/pca-map/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/search-workflow/</loc>
-         <lastmod>2026-01-24</lastmod>
+         <lastmod>2026-01-25</lastmod>
     </url>
 </urlset>

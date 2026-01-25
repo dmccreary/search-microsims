@@ -1,0 +1,2297 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Foundational concepts of MicroSims including their purpose, structure, interactivity, and role in transforming education">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/01-intro-to-microsims/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-microsim-file-organization/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Introduction to MicroSims - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-microsims" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to MicroSims
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#welcome-to-the-microsim-revolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome to the MicroSim Revolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-makes-something-an-educational-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes Something an Educational Simulation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-interactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Interactivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Power of Interactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interaction-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interaction Feedback Loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturing-and-keeping-user-engagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capturing and Keeping User Engagement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-beauty-of-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Beauty of Simplicity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-generation-your-creative-partner" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Generation: Your Creative Partner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-embedding-microsims-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Embedding: MicroSims Everywhere
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Embedding: MicroSims Everywhere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-web-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Web Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-iframe-element-your-embedding-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Iframe Element: Your Embedding Tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findability-the-hidden-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Findability: The Hidden Superpower
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Findability: The Hidden Superpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-search-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Search Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-write-once-teach-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reuse: Write Once, Teach Everywhere
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-reuse-building-blocks-for-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Reuse: Building Blocks for Efficiency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Complexity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difficulty-levels-meeting-students-where-they-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difficulty Levels: Meeting Students Where They Are
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Difficulty Levels: Meeting Students Where They Are">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beginner Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intermediate Level
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intermediate Level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-difficulty-level-progression-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Difficulty Level Progression MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bringing-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bringing It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#welcome-to-the-microsim-revolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome to the MicroSim Revolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-makes-something-an-educational-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes Something an Educational Simulation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-interactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Interactivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Power of Interactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interaction-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interaction Feedback Loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturing-and-keeping-user-engagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capturing and Keeping User Engagement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-beauty-of-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Beauty of Simplicity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-generation-your-creative-partner" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Generation: Your Creative Partner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-embedding-microsims-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Embedding: MicroSims Everywhere
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Embedding: MicroSims Everywhere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-web-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Web Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-iframe-element-your-embedding-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Iframe Element: Your Embedding Tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findability-the-hidden-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Findability: The Hidden Superpower
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Findability: The Hidden Superpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-search-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Search Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-write-once-teach-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reuse: Write Once, Teach Everywhere
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-reuse-building-blocks-for-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Reuse: Building Blocks for Efficiency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Complexity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difficulty-levels-meeting-students-where-they-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difficulty Levels: Meeting Students Where They Are
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Difficulty Levels: Meeting Students Where They Are">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beginner Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intermediate Level
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intermediate Level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-difficulty-level-progression-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Difficulty Level Progression MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bringing-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bringing It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/01-intro-to-microsims/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="introduction-to-microsims">Introduction to MicroSims</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces the foundational concepts of MicroSims - small, focused educational simulations designed for web embedding. You'll learn what makes a MicroSim effective, including interactivity, user engagement, and simplicity principles. The chapter also covers how MicroSims can be generated with AI assistance, embedded in web pages using iframes, and designed for reuse across educational contexts. After completing this chapter, students will understand the core characteristics that define a MicroSim and be able to identify levels of complexity and difficulty.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<ol>
+<li>MicroSim</li>
+<li>Educational Simulation</li>
+<li>Interactivity</li>
+<li>User Engagement</li>
+<li>Simplicity</li>
+<li>AI Generation</li>
+<li>Web Embedding</li>
+<li>Iframe Element</li>
+<li>Findability</li>
+<li>Reuse</li>
+<li>Component Reuse</li>
+<li>Complexity</li>
+<li>Difficulty Levels</li>
+<li>Beginner Level</li>
+<li>Intermediate Level</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>. No prior chapters are required.</p>
+<hr />
+<h2 id="welcome-to-the-microsim-revolution">Welcome to the MicroSim Revolution</h2>
+<p>Imagine having a magic wand that could transform any abstract concept into something students can <em>see</em>, <em>touch</em>, and <em>play with</em>. That's essentially what MicroSims offer educators - and the best part? You don't need a computer science degree to wield this power.</p>
+<p>A <strong>MicroSim</strong> (short for "Micro Simulation") is a small, focused, interactive visualization designed to teach a single concept or explore one idea. Think of it as the educational equivalent of a perfectly-crafted espresso shot - concentrated, powerful, and exactly what you need to get the job done. Unlike sprawling educational software that tries to do everything, a MicroSim does one thing exceptionally well.</p>
+<p>MicroSims are changing how we think about educational content. Instead of static diagrams in textbooks or passive videos, students can manipulate variables, see immediate results, and build intuition through experimentation. When a student can drag a slider and watch how changing the coefficient affects a quadratic equation in real-time, something magical happens in their brain - the concept <em>clicks</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Why MicroSims Matter</p>
+<p>Research consistently shows that interactive learning increases retention by up to 75% compared to passive reading. MicroSims put students in the driver's seat of their own learning journey.</p>
+</div>
+<h2 id="what-makes-something-an-educational-simulation">What Makes Something an Educational Simulation?</h2>
+<p>An <strong>educational simulation</strong> is any digital environment where learners can experiment with concepts without real-world consequences. Medical students practice surgery on virtual patients. Pilots train in flight simulators before taking the controls of real aircraft. These simulations share a common goal: creating safe spaces for learning through doing.</p>
+<p>MicroSims bring this same philosophy to everyday education, but with a crucial difference - they're <em>micro</em>. While a flight simulator might take months to develop and require specialized hardware, a MicroSim can be created in hours and runs in any web browser.</p>
+<p>Here's how MicroSims compare to other educational tools:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Textbook Diagram</th>
+<th>Video</th>
+<th>Full Simulation</th>
+<th>MicroSim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interactive</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Focused on one concept</td>
+<td>Usually</td>
+<td>Sometimes</td>
+<td>Rarely</td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Easy to create</td>
+<td>Yes</td>
+<td>Medium</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Embeddable in web pages</td>
+<td>Limited</td>
+<td>Yes</td>
+<td>Difficult</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Student controls parameters</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Development time</td>
+<td>Hours</td>
+<td>Days</td>
+<td>Months</td>
+<td>Hours</td>
+</tr>
+</tbody>
+</table>
+<p>The sweet spot for MicroSims is clear: they combine the interactivity of full simulations with the simplicity and focus of static content.</p>
+<h2 id="the-power-of-interactivity">The Power of Interactivity</h2>
+<p><strong>Interactivity</strong> is the secret sauce that makes MicroSims so effective. When students can interact with content - clicking, dragging, adjusting, experimenting - they shift from passive consumers to active participants in their learning.</p>
+<p>Consider the difference between these two learning experiences:</p>
+<ol>
+<li><em>Reading</em>: "The period of a pendulum increases as its length increases."</li>
+<li><em>Doing</em>: Dragging a slider to make a virtual pendulum longer and watching it swing slower.</li>
+</ol>
+<p>Both convey the same information, but the second approach creates a visceral understanding that sticks. The student doesn't just <em>know</em> the relationship - they <em>feel</em> it.</p>
+<p>Interactivity in MicroSims typically involves:</p>
+<ul>
+<li><strong>Sliders</strong> that adjust numerical parameters</li>
+<li><strong>Buttons</strong> that start, stop, or reset animations</li>
+<li><strong>Dropdown menus</strong> for selecting options</li>
+<li><strong>Direct manipulation</strong> of objects on screen</li>
+<li><strong>Real-time feedback</strong> showing results immediately</li>
+</ul>
+<h4 id="diagram-interaction-feedback-loop">Diagram: Interaction Feedback Loop</h4>
+<iframe src="../../sims/interaction-feedback-loop/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Interaction Feedback Loop Diagram</summary>
+Type: diagram
+
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+
+Learning Objective: Students will explain how interactive feedback creates deeper learning engagement compared to passive content consumption.
+
+Purpose: Visualize the cognitive feedback loop that makes interactive learning effective
+
+Components to show:
+- Student (person icon, left side)
+- MicroSim interface (center, showing slider and visualization)
+- Brain processing (thought bubble with gears)
+- Feedback arrows creating a cycle
+
+Flow:
+1. Student adjusts parameter (arrow from student to MicroSim)
+2. MicroSim updates visualization (internal arrow)
+3. Student observes change (arrow from MicroSim to brain)
+4. Brain forms hypothesis (internal processing)
+5. Student tests new idea (arrow back to MicroSim)
+
+Visual style: Clean flowchart with rounded rectangles and circular flow
+Color scheme: Blue for student actions, green for MicroSim responses, orange for cognitive processing
+Animation: Gentle pulse effect on active elements to show the continuous cycle
+
+Implementation: p5.js with animated flow indicators
+</details>
+
+<h2 id="capturing-and-keeping-user-engagement">Capturing and Keeping User Engagement</h2>
+<p><strong>User engagement</strong> measures how effectively content captures and maintains student attention. A beautifully designed MicroSim is worthless if students click away after two seconds. The good news? Well-designed MicroSims naturally promote engagement through several psychological principles.</p>
+<p>First, there's the <em>curiosity gap</em>. When students see a slider labeled "Friction Coefficient," many can't resist finding out what happens when they drag it to the maximum. This natural curiosity drives exploration.</p>
+<p>Second, MicroSims provide <em>immediate gratification</em>. Unlike homework problems where feedback comes days later, MicroSims respond instantly. Change a variable, see the effect. This rapid feedback loop keeps students in a state of flow.</p>
+<p>Third, MicroSims support <em>self-directed learning</em>. Students can explore at their own pace, revisit confusing concepts, and take ownership of their learning journey. Nobody's watching if they need to try something ten times to understand it.</p>
+<div class="admonition note">
+<p class="admonition-title">The Engagement Formula</p>
+<p>Engagement = Curiosity + Immediate Feedback + Personal Control</p>
+<p>MicroSims maximize all three components, creating learning experiences that students actually <em>want</em> to use.</p>
+</div>
+<p>Research on educational technology has identified several engagement patterns:</p>
+<ul>
+<li><strong>Initial hook</strong>: The first 5 seconds determine whether students stay or leave</li>
+<li><strong>Progressive discovery</strong>: Layered complexity keeps advanced students interested</li>
+<li><strong>Achievement signals</strong>: Visual confirmation when students achieve understanding</li>
+<li><strong>Low barrier to entry</strong>: Students should be doing something meaningful within 10 seconds</li>
+</ul>
+<h2 id="the-beauty-of-simplicity">The Beauty of Simplicity</h2>
+<p>Here's a counterintuitive truth about educational design: <strong>simplicity</strong> often leads to deeper learning than complexity. A MicroSim that does one thing brilliantly outperforms one that does ten things adequately.</p>
+<p>Simplicity in MicroSims manifests in several ways:</p>
+<ol>
+<li><strong>Single concept focus</strong>: Each MicroSim teaches exactly one idea</li>
+<li><strong>Clean interface</strong>: Only essential controls are visible</li>
+<li><strong>Obvious interactions</strong>: Students shouldn't need instructions to get started</li>
+<li><strong>Limited scope</strong>: Better to fully explain a small topic than partially explain a large one</li>
+</ol>
+<p>Think about the most effective teachers you've had. Chances are, they had a gift for making complex topics seem simple. MicroSims should embody this same philosophy - taking sophisticated concepts and making them accessible through thoughtful design.</p>
+<p>The "one concept, one MicroSim" principle also has practical benefits. Simpler simulations are:</p>
+<ul>
+<li>Faster to create</li>
+<li>Easier to maintain</li>
+<li>More likely to work across different devices</li>
+<li>Simpler for students to understand</li>
+<li>More reusable in different contexts</li>
+</ul>
+<h2 id="ai-generation-your-creative-partner">AI Generation: Your Creative Partner</h2>
+<p>Here's where things get exciting. <strong>AI generation</strong> is revolutionizing how MicroSims are created, making this powerful teaching tool accessible to educators who have never written a line of code.</p>
+<p>Modern AI assistants like Claude can generate complete, working MicroSims from natural language descriptions. Imagine typing:</p>
+<blockquote>
+<p>"Create a MicroSim that shows how compound interest grows over time, with sliders for principal, interest rate, and years."</p>
+</blockquote>
+<p>And receiving a fully functional simulation within minutes. This isn't science fiction - it's happening right now.</p>
+<p>AI-assisted MicroSim creation offers several advantages:</p>
+<ul>
+<li><strong>Accessibility</strong>: No programming knowledge required</li>
+<li><strong>Speed</strong>: Create simulations in minutes instead of days</li>
+<li><strong>Customization</strong>: Easily modify generated code for specific needs</li>
+<li><strong>Iteration</strong>: Quickly generate variations to find the best approach</li>
+<li><strong>Learning</strong>: Study generated code to build your own skills</li>
+</ul>
+<p>Of course, AI generation isn't magic. You'll get better results by:</p>
+<ul>
+<li>Being specific about what you want</li>
+<li>Describing the learning objective clearly</li>
+<li>Specifying the controls and visual elements</li>
+<li>Providing context about your students</li>
+<li>Iterating on initial results</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Pro Tip: The SPEC Framework</p>
+<p>When requesting AI-generated MicroSims, use SPEC:</p>
+<ul>
+<li><strong>S</strong>ubject: What concept are you teaching?</li>
+<li><strong>P</strong>urpose: What should students understand after using it?</li>
+<li><strong>E</strong>lements: What controls and visuals do you want?</li>
+<li><strong>C</strong>ontext: What's the student's background level?</li>
+</ul>
+</div>
+<h2 id="web-embedding-microsims-everywhere">Web Embedding: MicroSims Everywhere</h2>
+<p>A MicroSim that only works on your computer is like a book that only opens in one library. <strong>Web embedding</strong> is what makes MicroSims truly powerful - the ability to place interactive simulations anywhere on the web.</p>
+<p>Web embedding means:</p>
+<ul>
+<li>Inserting MicroSims directly into online textbooks</li>
+<li>Sharing simulations via simple links</li>
+<li>Embedding in learning management systems (Canvas, Moodle, etc.)</li>
+<li>Including in blog posts and online articles</li>
+<li>Adding to presentation slides</li>
+</ul>
+<p>The key technology enabling this is the <strong>iframe element</strong> - a simple HTML tag that creates a "window" into another web page. When you embed a MicroSim, you're essentially telling the browser: "Display this simulation right here, as if it were part of this page."</p>
+<p>Here's what an iframe embedding looks like in practice:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;sims/pendulum/main.html&quot;</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>That's it - four lines of code to embed a fully interactive simulation into any web page. The <code>width="100%"</code> makes it responsive, automatically adjusting to fit different screen sizes.</p>
+<h4 id="diagram-microsim-web-architecture">Diagram: MicroSim Web Architecture</h4>
+<iframe src="../../sims/microsim-web-architecture/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Web Architecture Diagram</summary>
+Type: diagram
+
+Bloom Level: Understand (L2)
+Bloom Verb: interpret
+
+Learning Objective: Students will interpret how MicroSims are embedded and displayed within web pages using iframe technology.
+
+Purpose: Show the relationship between host pages, iframes, and MicroSim files
+
+Components to show:
+- Browser window (outer container)
+- Host web page (e.g., online textbook)
+- Iframe container (highlighted border)
+- MicroSim files (main.html, script.js, style.css)
+- Server delivering files
+
+Layout:
+- Left side: Server with file icons for MicroSim components
+- Center: Browser displaying host page with embedded iframe
+- Right side: Zoomed view of iframe showing MicroSim running
+
+Arrows showing:
+- HTTP request from iframe to server
+- Response delivering MicroSim files
+- Rendering within iframe boundary
+
+Visual style: Technical diagram with layered elements
+Color scheme: Blue for browser/iframe, green for MicroSim content, gray for server
+Labels: Clear annotations explaining each component
+
+Implementation: Mermaid.js or vis-network for clean technical diagram
+</details>
+
+<h2 id="the-iframe-element-your-embedding-tool">The Iframe Element: Your Embedding Tool</h2>
+<p>The <strong>iframe element</strong> (inline frame) is one of HTML's most useful features for education. It creates an independent document within a document - a sandbox where your MicroSim can run without interfering with the rest of the page.</p>
+<p>Key iframe concepts:</p>
+<ul>
+<li><strong>Source (<code>src</code>)</strong>: The URL of the MicroSim to display</li>
+<li><strong>Width</strong>: How wide the frame should be (pixels or percentage)</li>
+<li><strong>Height</strong>: How tall the frame should be (usually fixed pixels)</li>
+<li><strong>Scrolling</strong>: Whether scrollbars appear (usually set to "no" for MicroSims)</li>
+<li><strong>Border</strong>: Visual boundary (often removed for seamless integration)</li>
+</ul>
+<p>Iframes provide important benefits for MicroSims:</p>
+<ol>
+<li><strong>Isolation</strong>: The MicroSim's JavaScript won't conflict with the host page</li>
+<li><strong>Security</strong>: Controlled interaction between frame and parent</li>
+<li><strong>Portability</strong>: Same MicroSim can be embedded anywhere</li>
+<li><strong>Responsive design</strong>: Width can adapt to container size</li>
+</ol>
+<p>One consideration: iframe heights are typically fixed because the parent page can't automatically detect how tall the content inside should be. This is why MicroSims are designed with specific height requirements in mind.</p>
+<h2 id="findability-the-hidden-superpower">Findability: The Hidden Superpower</h2>
+<p>Creating amazing MicroSims is only half the battle. If educators can't <em>find</em> them, they might as well not exist. <strong>Findability</strong> refers to how easily users can discover and locate relevant MicroSims.</p>
+<p>Think about it: there are thousands of educational simulations scattered across the internet. How does a physics teacher find the perfect pendulum simulation for tomorrow's class? How does a math teacher locate an interactive graphing tool that matches their curriculum?</p>
+<p>This is where MicroSim search becomes a superpower for teachers. Good findability requires:</p>
+<ul>
+<li><strong>Descriptive metadata</strong>: Clear titles, descriptions, and keywords</li>
+<li><strong>Standardized categories</strong>: Consistent subject area and grade level tags</li>
+<li><strong>Quality indicators</strong>: Ratings, usage statistics, and peer reviews</li>
+<li><strong>Semantic understanding</strong>: Search that understands meaning, not just keywords</li>
+</ul>
+<p>When a teacher can type "show how area changes with perimeter for rectangles, middle school" and immediately find three perfect options, that's findability done right.</p>
+<h4 id="diagram-microsim-search-workflow">Diagram: MicroSim Search Workflow</h4>
+<iframe src="../../sims/microsim-search-workflow/main.html" width="100%" height="400px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Search Workflow Infographic</summary>
+Type: infographic
+
+Bloom Level: Apply (L3)
+Bloom Verb: demonstrate
+
+Learning Objective: Students will demonstrate understanding of how faceted search enables efficient MicroSim discovery.
+
+Purpose: Show the workflow from teacher need to MicroSim discovery
+
+Layout: Horizontal flow diagram with 4 stages
+
+Stages:
+1. Teacher Need (icon: person with thought bubble)
+   - "I need something to teach quadratic equations"
+
+2. Search Interface (icon: search box with filters)
+   - Subject: Mathematics
+   - Grade: High School
+   - Topic: Quadratic equations
+   - Interactive: Yes
+
+3. Results Ranked (icon: list with star ratings)
+   - Top matches displayed
+   - Sorted by relevance
+   - Quality scores shown
+
+4. MicroSim Found! (icon: celebration/checkmark)
+   - Preview available
+   - One-click embed
+   - Save to collection
+
+Interactive elements:
+- Hover over each stage for detailed explanation
+- Click to see example searches
+
+Visual style: Modern flat design with icons
+Color scheme: Blue gradient from left to right showing progression
+Animation: Gentle flow animation between stages
+
+Implementation: HTML/CSS/JavaScript with SVG icons
+</details>
+
+<h2 id="reuse-write-once-teach-everywhere">Reuse: Write Once, Teach Everywhere</h2>
+<p>One of the most powerful aspects of MicroSims is their <strong>reusability</strong>. A well-designed MicroSim can be used by thousands of teachers in millions of classrooms - the educational equivalent of compound interest for your effort.</p>
+<p>Reuse happens at multiple levels:</p>
+<ol>
+<li><strong>Same teacher, different classes</strong>: Use the same simulation year after year</li>
+<li><strong>Same school, different teachers</strong>: Share among colleagues</li>
+<li><strong>Same district, different schools</strong>: Standardized curriculum resources</li>
+<li><strong>Global community</strong>: Open educational resources used worldwide</li>
+</ol>
+<p>For reuse to work effectively, MicroSims need:</p>
+<ul>
+<li><strong>Platform independence</strong>: Works on any device with a web browser</li>
+<li><strong>Self-contained design</strong>: Doesn't rely on external dependencies that might disappear</li>
+<li><strong>Clear documentation</strong>: Others can understand how to use and modify it</li>
+<li><strong>Permissive licensing</strong>: Legal clarity for sharing and adaptation</li>
+<li><strong>Stable hosting</strong>: Available when teachers need them</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">The Multiplier Effect</p>
+<p>A single well-crafted MicroSim can impact education far beyond what its creator imagined. The pendulum simulation you create this weekend might help a student in another country finally understand physics next year.</p>
+</div>
+<h2 id="component-reuse-building-blocks-for-efficiency">Component Reuse: Building Blocks for Efficiency</h2>
+<p><strong>Component reuse</strong> takes the idea further by making MicroSim <em>pieces</em> reusable, not just complete simulations. Just as LEGO bricks can be assembled into countless creations, MicroSim components can be combined in new ways.</p>
+<p>Common reusable components include:</p>
+<ul>
+<li><strong>Slider controls</strong>: Standard interface for adjusting numerical values</li>
+<li><strong>Play/pause buttons</strong>: Consistent animation controls</li>
+<li><strong>Coordinate systems</strong>: Reusable graphing areas</li>
+<li><strong>Color pickers</strong>: Standard color selection interface</li>
+<li><strong>Data displays</strong>: Formatted number output areas</li>
+</ul>
+<p>When you create a particularly elegant slider design, you can use it in every future MicroSim. When you perfect an animation control panel, it becomes part of your toolkit. Over time, experienced MicroSim creators build libraries of components that dramatically accelerate development.</p>
+<p>Component reuse also improves consistency for students. When the play button always looks the same and works the same way across different MicroSims, students spend less time figuring out the interface and more time engaging with the content.</p>
+<h2 id="understanding-complexity">Understanding Complexity</h2>
+<p>While simplicity is a virtue, educational content inherently varies in <strong>complexity</strong>. Some concepts are genuinely more complex than others, and MicroSims need to accommodate this range.</p>
+<p>Complexity in MicroSims can be measured along several dimensions:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Low Complexity</th>
+<th>High Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variables</td>
+<td>1-2 parameters</td>
+<td>5+ parameters</td>
+</tr>
+<tr>
+<td>Relationships</td>
+<td>Linear, direct</td>
+<td>Nonlinear, indirect</td>
+</tr>
+<tr>
+<td>Visualization</td>
+<td>2D, static elements</td>
+<td>3D, dynamic systems</td>
+</tr>
+<tr>
+<td>Interactivity</td>
+<td>Single control</td>
+<td>Multiple coordinated controls</td>
+</tr>
+<tr>
+<td>Prerequisites</td>
+<td>None</td>
+<td>Several concepts required</td>
+</tr>
+</tbody>
+</table>
+<p>The key insight is that complexity should match the learning objective. A MicroSim teaching basic addition needs minimal complexity. A MicroSim demonstrating chaos theory legitimately requires more moving parts.</p>
+<p>Effective complexity management strategies:</p>
+<ul>
+<li><strong>Progressive disclosure</strong>: Start simple, reveal complexity as students master basics</li>
+<li><strong>Optional depth</strong>: Advanced features available but not required</li>
+<li><strong>Layered explanations</strong>: Basic description first, detailed explanation available</li>
+<li><strong>Scaffolded learning paths</strong>: Simpler MicroSims as prerequisites for complex ones</li>
+</ul>
+<h2 id="difficulty-levels-meeting-students-where-they-are">Difficulty Levels: Meeting Students Where They Are</h2>
+<p>Related to complexity but distinct, <strong>difficulty levels</strong> describe how challenging a MicroSim is for its intended audience. The same complexity might be easy for graduate students but difficult for middle schoolers.</p>
+<p>Difficulty levels help both teachers and students:</p>
+<ul>
+<li>Teachers can select appropriate content for their classes</li>
+<li>Students can find challenges at their level</li>
+<li>Search systems can filter by difficulty</li>
+<li>Curriculum designers can sequence learning appropriately</li>
+</ul>
+<p>Most educational content uses a three-tier system:</p>
+<h3 id="beginner-level">Beginner Level</h3>
+<p><strong>Beginner level</strong> MicroSims assume minimal background knowledge. They're designed to introduce new concepts with maximum scaffolding:</p>
+<ul>
+<li>Clear, simple instructions</li>
+<li>Limited number of controls</li>
+<li>Obvious cause-and-effect relationships</li>
+<li>Forgiving of experimentation</li>
+<li>Built-in guidance and hints</li>
+</ul>
+<p>A beginner-level pendulum MicroSim might have just one slider (pendulum length) and show only the basic relationship between length and period.</p>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<p><strong>Intermediate level</strong> MicroSims build on foundational understanding. They offer:</p>
+<ul>
+<li>Multiple interacting variables</li>
+<li>Less explicit guidance</li>
+<li>Opportunity for discovery learning</li>
+<li>Some prerequisite knowledge assumed</li>
+<li>More nuanced relationships to explore</li>
+</ul>
+<p>An intermediate pendulum MicroSim might add gravity as a second variable and show how both length and gravity affect the period.</p>
+<h4 id="diagram-difficulty-level-progression-microsim">Diagram: Difficulty Level Progression MicroSim</h4>
+<iframe src="../../sims/difficulty-progression/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Difficulty Level Progression Interactive</summary>
+Type: microsim
+
+Bloom Level: Analyze (L4)
+Bloom Verb: compare
+
+Learning Objective: Students will compare how the same concept (e.g., pendulum motion) can be presented at beginner vs. intermediate levels with different controls and complexity.
+
+Canvas layout:
+- Left panel (300px): Beginner version - single slider for pendulum length
+- Right panel (300px): Intermediate version - sliders for length and gravity
+- Bottom (100px): Control panel with difficulty toggle and comparison metrics
+
+Visual elements:
+- Two side-by-side pendulum animations
+- Clear labels: "Beginner" and "Intermediate"
+- Identical starting positions
+- Period display for each pendulum
+- Highlight differences between versions
+
+Interactive controls:
+- Toggle switch: Show Beginner / Show Both / Show Intermediate
+- Slider (Beginner side): Pendulum Length (0.5m - 2.0m)
+- Slider (Intermediate side): Pendulum Length (0.5m - 2.0m)
+- Slider (Intermediate side): Gravity (1 - 20 m/s²)
+- Button: "Reset Both"
+- Button: "Sync Length" (makes both pendulums same length)
+
+Default parameters:
+- Length: 1.0m for both
+- Gravity: 9.8 m/s² (Earth) for intermediate
+- Animation speed: Real-time
+
+Behavior:
+- Both pendulums animate continuously
+- Changing parameters updates animation in real-time
+- Display shows period calculation for each
+- Visual indicators highlight that beginner has fewer controls
+- Information panel explains what's different between levels
+
+Implementation notes:
+- p5.js for physics simulation
+- Use simple harmonic motion formula: T = 2π√(L/g)
+- Responsive layout adjusts panels for mobile
+- Smooth transitions when toggling views
+</details>
+
+<h2 id="bringing-it-all-together">Bringing It All Together</h2>
+<p>You've now been introduced to the foundational concepts that make MicroSims such a powerful tool for education. Let's recap the key ideas:</p>
+<ul>
+<li><strong>MicroSims</strong> are small, focused interactive simulations that teach single concepts</li>
+<li><strong>Educational simulations</strong> provide safe environments for learning through experimentation</li>
+<li><strong>Interactivity</strong> transforms passive learners into active participants</li>
+<li><strong>User engagement</strong> keeps students focused and motivated</li>
+<li><strong>Simplicity</strong> in design leads to deeper learning</li>
+<li><strong>AI generation</strong> makes MicroSim creation accessible to everyone</li>
+<li><strong>Web embedding</strong> through <strong>iframes</strong> allows simulations to appear anywhere</li>
+<li><strong>Findability</strong> helps teachers discover the right resources</li>
+<li><strong>Reuse</strong> and <strong>component reuse</strong> multiply the impact of every creation</li>
+<li><strong>Complexity</strong> and <strong>difficulty levels</strong> help match content to learners</li>
+</ul>
+<p>The combination of these concepts creates something greater than the sum of its parts. Teachers gain superpowers - the ability to transform any concept into an interactive experience that students actually want to explore.</p>
+<div class="admonition quote">
+<p class="admonition-title">The Promise of MicroSims</p>
+<p>"Tell me and I forget. Teach me and I remember. Involve me and I learn."
+- Benjamin Franklin (attributed)</p>
+<p>MicroSims are tools for involvement at scale.</p>
+</div>
+<h2 id="whats-next">What's Next?</h2>
+<p>In the upcoming chapters, you'll learn how to:</p>
+<ul>
+<li>Organize MicroSim files for easy management and sharing</li>
+<li>Create metadata that makes your MicroSims findable</li>
+<li>Understand the Dublin Core standard for educational resources</li>
+<li>Work with JSON data structures</li>
+<li>Implement search systems that help teachers find what they need</li>
+</ul>
+<p>The journey from understanding MicroSims to creating and sharing them is one of the most rewarding paths in educational technology. Welcome aboard!</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>MicroSims are small, focused interactive simulations designed to teach single concepts</li>
+<li>Interactivity creates a feedback loop that deepens understanding</li>
+<li>Simplicity in design often leads to more effective learning</li>
+<li>AI tools can generate MicroSims from natural language descriptions</li>
+<li>Web embedding via iframes makes MicroSims universally accessible</li>
+<li>Good metadata and search capabilities are essential for findability</li>
+<li>Reusable components accelerate MicroSim development</li>
+<li>Difficulty levels help match content to student readiness</li>
+</ol>
+<hr />
+<p><em>Ready to see how MicroSims are organized? Continue to <a href="../02-microsim-file-organization/">Chapter 2: MicroSim File Organization</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Table of Contents">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Table of Contents
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-microsim-file-organization/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. MicroSim File Organization">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. MicroSim File Organization
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

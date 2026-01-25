@@ -1,0 +1,4078 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Master JSON syntax, objects, arrays, schemas, and validation to create high-quality MicroSim metadata that powers search and discovery">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/">
+      
+      
+        <link rel="prev" href="../04-dublin-core-elements/">
+      
+      
+        <link rel="next" href="../06-search-fundamentals/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>JSON and Data Structures - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#json-and-data-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JSON and Data Structures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-language-that-runs-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Language That Runs the Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-the-universal-data-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON: The Universal Data Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-syntax-the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Syntax: The Building Blocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Syntax: The Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-six-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Six Data Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax Rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-json-syntax-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: JSON Syntax Validator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-objects-the-heart-of-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Objects: The Heart of Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Objects: The Heart of Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-object-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Object Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-microsim-metadata-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MicroSim Metadata Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MicroSim Metadata Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-json-object-structure-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: JSON Object Structure Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-arrays-ordered-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Arrays: Ordered Collections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Arrays: Ordered Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-array-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Array Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-element-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Element Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-in-microsim-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays in MicroSim Metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-arrays-vs-single-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Arrays vs. Single Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Arrays vs. Single Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-array-operations-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Array Operations Playground
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-schema-defining-structure-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Schema: Defining Structure Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Schema: Defining Structure Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-json-schema-defines" class="md-nav__link">
+    <span class="md-ellipsis">
+      What JSON Schema Defines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-schema-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Schema Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Keywords
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-microsim-schema-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MicroSim Schema Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MicroSim Schema Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-schema-structure-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Schema Structure Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-validation-checking-your-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Validation: Checking Your Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Validation: Checking Your Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-validation-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Validation Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Outcomes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-validation-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Validation Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-validation-feedback-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Validation Feedback Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-vs-optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required vs. Optional Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required vs. Optional Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-in-microsim-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Fields in MicroSim Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-fields-that-add-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Fields That Add Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balancing-required-and-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancing Required and Optional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality-measuring-metadata-excellence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Quality: Measuring Metadata Excellence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Quality: Measuring Metadata Excellence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensions-of-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensions of Data Quality
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completeness-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completeness Score
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completeness Score">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Completeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weighted Completeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeness-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completeness Targets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completeness Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-completeness-score-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Completeness Score Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Score
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Score">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quality-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Factors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-vs-completeness-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality vs. Completeness Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality vs. Completeness Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quality-score-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Quality Score Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-quality-metadata-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: The Quality Metadata Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: The Quality Metadata Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-start-with-the-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Start with the Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fill-required-fields-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Fill Required Fields First
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-high-value-optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Add High-Value Optional Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-validate-against-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Validate Against Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-check-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Check Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-iterate-and-improve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Iterate and Improve
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-language-that-runs-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Language That Runs the Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-the-universal-data-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON: The Universal Data Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-syntax-the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Syntax: The Building Blocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Syntax: The Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-six-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Six Data Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax Rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-json-syntax-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: JSON Syntax Validator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-objects-the-heart-of-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Objects: The Heart of Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Objects: The Heart of Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-object-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Object Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-microsim-metadata-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MicroSim Metadata Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MicroSim Metadata Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-json-object-structure-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: JSON Object Structure Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-arrays-ordered-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Arrays: Ordered Collections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Arrays: Ordered Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-array-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Array Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-element-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Element Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-in-microsim-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays in MicroSim Metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-arrays-vs-single-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Arrays vs. Single Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Arrays vs. Single Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-array-operations-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Array Operations Playground
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-schema-defining-structure-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Schema: Defining Structure Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Schema: Defining Structure Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-json-schema-defines" class="md-nav__link">
+    <span class="md-ellipsis">
+      What JSON Schema Defines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-schema-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Schema Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Keywords
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-microsim-schema-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MicroSim Schema Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MicroSim Schema Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-schema-structure-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Schema Structure Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-validation-checking-your-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Validation: Checking Your Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Validation: Checking Your Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-validation-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Validation Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Outcomes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-validation-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Validation Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-validation-feedback-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Validation Feedback Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-vs-optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required vs. Optional Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required vs. Optional Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-in-microsim-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Fields in MicroSim Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-fields-that-add-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Fields That Add Value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balancing-required-and-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancing Required and Optional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality-measuring-metadata-excellence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Quality: Measuring Metadata Excellence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Quality: Measuring Metadata Excellence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dimensions-of-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensions of Data Quality
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completeness-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completeness Score
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completeness Score">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Completeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weighted Completeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeness-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completeness Targets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completeness Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-completeness-score-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Completeness Score Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Score
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Score">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quality-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Factors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-vs-completeness-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality vs. Completeness Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality vs. Completeness Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quality-score-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Quality Score Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-quality-metadata-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: The Quality Metadata Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: The Quality Metadata Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-start-with-the-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Start with the Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fill-required-fields-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Fill Required Fields First
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-high-value-optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Add High-Value Optional Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-validate-against-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Validate Against Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-check-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Check Quality Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-iterate-and-improve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Iterate and Improve
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/05-json-and-data-structures/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="json-and-data-structures">JSON and Data Structures</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers JSON (JavaScript Object Notation) syntax, structure, and validation concepts essential for MicroSim metadata. You'll learn about JSON objects and arrays, JSON Schema for defining data structure requirements, schema validation techniques, and the distinction between required and optional fields. The chapter also addresses data quality metrics including completeness and quality scores. After completing this chapter, students will be able to create valid JSON metadata files and validate them against schemas.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 11 concepts from the learning graph:</p>
+<ol>
+<li>JSON</li>
+<li>JSON Syntax</li>
+<li>JSON Objects</li>
+<li>JSON Arrays</li>
+<li>JSON Schema</li>
+<li>Schema Validation</li>
+<li>Required Fields</li>
+<li>Optional Fields</li>
+<li>Data Quality</li>
+<li>Completeness Score</li>
+<li>Quality Score</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../02-microsim-file-organization/">Chapter 2: MicroSim File Organization</a></li>
+<li><a href="../03-metadata-fundamentals/">Chapter 3: Metadata Fundamentals</a></li>
+</ul>
+<hr />
+<h2 id="the-language-that-runs-the-web">The Language That Runs the Web</h2>
+<p>Welcome to the chapter where everything clicks together. You've learned about metadata concepts and Dublin Core elements—now it's time to meet JSON, the format that transforms those ideas into something computers (and AI agents!) can actually use. Think of JSON as the Rosetta Stone of the digital world: it's how your MicroSim metadata speaks to search engines, AI generators, and educational platforms across the globe.</p>
+<p>Here's the exciting part: JSON is remarkably simple. Unlike many technical formats that seem designed to confuse, JSON was built for humans AND machines to read. In about 20 minutes, you'll go from "What's a curly brace?" to "I can write metadata that makes my MicroSims discoverable worldwide." That's a superpower worth having.</p>
+<p>Why does this matter for education? When you write clean, valid JSON metadata, you're not just organizing files—you're enabling:</p>
+<ul>
+<li><strong>Search engines</strong> to find your MicroSims instantly</li>
+<li><strong>AI generators</strong> to learn from your examples</li>
+<li><strong>Teachers</strong> to discover exactly what they need</li>
+<li><strong>Students</strong> to access simulations matched to their level</li>
+<li><strong>Researchers</strong> to analyze educational resource patterns</li>
+</ul>
+<p>Let's unlock this capability together.</p>
+<hr />
+<h2 id="json-the-universal-data-format">JSON: The Universal Data Format</h2>
+<p><strong>JSON</strong> (JavaScript Object Notation) is a lightweight text format for storing and exchanging structured data. Despite "JavaScript" in its name, JSON is language-independent—Python, Java, Ruby, and virtually every programming language can read and write it. It has become the lingua franca of web APIs, configuration files, and yes, metadata.</p>
+<p>JSON's design philosophy is elegant simplicity:</p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human-readable</td>
+<td>You can open a JSON file in any text editor and understand it</td>
+</tr>
+<tr>
+<td>Lightweight</td>
+<td>Minimal syntax overhead—no verbose tags</td>
+</tr>
+<tr>
+<td>Hierarchical</td>
+<td>Naturally represents nested structures</td>
+</tr>
+<tr>
+<td>Language-neutral</td>
+<td>Works with any programming language</td>
+</tr>
+<tr>
+<td>Self-describing</td>
+<td>Data includes its structure</td>
+</tr>
+</tbody>
+</table>
+<p>A brief history: Douglas Crockford popularized JSON in the early 2000s as a simpler alternative to XML. While XML required verbose opening and closing tags (<code>&lt;title&gt;My Sim&lt;/title&gt;</code>), JSON achieved the same with <code>"title": "My Sim"</code>. Web developers embraced it enthusiastically, and by 2013 it surpassed XML as the dominant data exchange format.</p>
+<div class="admonition tip">
+<p class="admonition-title">JSON vs. Other Formats</p>
+<p>You might encounter XML, YAML, or TOML in other contexts. JSON strikes the best balance for metadata: more structured than plain text, less verbose than XML, more widely supported than YAML. For MicroSim metadata, JSON is the clear winner.</p>
+</div>
+<hr />
+<h2 id="json-syntax-the-building-blocks">JSON Syntax: The Building Blocks</h2>
+<p>JSON syntax consists of just a few simple rules. Master these, and you can write any JSON document.</p>
+<h3 id="the-six-data-types">The Six Data Types</h3>
+<p>JSON supports exactly six data types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>String</strong></td>
+<td>Text in double quotes</td>
+<td><code>"Hello World"</code></td>
+</tr>
+<tr>
+<td><strong>Number</strong></td>
+<td>Integer or decimal</td>
+<td><code>42</code> or <code>3.14159</code></td>
+</tr>
+<tr>
+<td><strong>Boolean</strong></td>
+<td>True or false</td>
+<td><code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td><strong>Null</strong></td>
+<td>Empty/no value</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><strong>Object</strong></td>
+<td>Collection of key-value pairs</td>
+<td><code>{"name": "value"}</code></td>
+</tr>
+<tr>
+<td><strong>Array</strong></td>
+<td>Ordered list of values</td>
+<td><code>[1, 2, 3]</code></td>
+</tr>
+</tbody>
+</table>
+<p>That's it. Six types. Everything in JSON is built from these primitives.</p>
+<h3 id="syntax-rules">Syntax Rules</h3>
+<p>JSON follows strict syntax rules (which is actually good—it means errors are easy to catch):</p>
+<p><strong>1. Strings must use double quotes:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pendulum Simulator&quot;</span><span class="w">    </span><span class="err">✅</span><span class="w"> </span><span class="err">Correc</span><span class="kc">t</span>
+<span class="err">&#39;</span><span class="kc">t</span><span class="err">i</span><span class="kc">tle</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Pe</span><span class="kc">n</span><span class="err">dulum</span><span class="w"> </span><span class="err">Simula</span><span class="kc">t</span><span class="err">or&#39;</span><span class="w">    </span><span class="err">❌</span><span class="w"> </span><span class="err">Si</span><span class="kc">n</span><span class="err">gle</span><span class="w"> </span><span class="err">quo</span><span class="kc">tes</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">allowed</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>2. Keys must be strings:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;valid&quot;</span><span class="p">}</span><span class="w">     </span><span class="err">✅</span><span class="w"> </span><span class="err">Correc</span><span class="kc">t</span>
+<span class="p">{</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid&quot;</span><span class="p">}</span><span class="w">     </span><span class="err">❌</span><span class="w"> </span><span class="err">U</span><span class="kc">n</span><span class="err">quo</span><span class="kc">te</span><span class="err">d</span><span class="w"> </span><span class="err">keys</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">allowed</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>3. No trailing commas:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span><span class="w">      </span><span class="err">✅</span><span class="w"> </span><span class="err">Correc</span><span class="kc">t</span>
+<span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,}</span><span class="w">     </span><span class="err">❌</span><span class="w"> </span><span class="err">Traili</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">comma</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">allowed</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>4. Numbers cannot have leading zeros:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">}</span><span class="w">         </span><span class="err">✅</span><span class="w"> </span><span class="err">Correc</span><span class="kc">t</span>
+<span class="p">{</span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">042</span><span class="p">}</span><span class="w">        </span><span class="err">❌</span><span class="w"> </span><span class="err">Leadi</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">zero</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">allowed</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>5. No comments allowed:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sim&quot;</span><span class="p">}</span><span class="w">      </span><span class="err">✅</span><span class="w"> </span><span class="err">Correc</span><span class="kc">t</span>
+<span class="p">{</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sim&quot;</span><span class="p">}</span><span class="w"> </span><span class="c1">// comment  ❌ Comments not allowed in JSON</span>
+</code></pre></div></td></tr></table></div></p>
+<h4 id="diagram-json-syntax-validator">Diagram: JSON Syntax Validator</h4>
+<iframe src="../../sims/json-syntax-validator/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>JSON Syntax Validator Interactive Tool</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: use
+
+Learning Objective: Students will use JSON syntax rules to identify and fix common syntax errors in real-time, building muscle memory for correct JSON formatting.
+
+Canvas layout:
+- Left panel (55%): JSON text editor with syntax highlighting
+- Right panel (45%): Validation results and error explanations
+
+Visual elements:
+- Code editor with line numbers
+- Syntax highlighting: strings (green), numbers (blue), booleans (orange), null (gray), keys (purple)
+- Red underlines for syntax errors
+- Green checkmark or red X status indicator
+- Error message panel with line numbers and fix suggestions
+
+Interactive controls:
+- Text area for entering/editing JSON
+- "Validate" button
+- "Format/Prettify" button
+- "Load Example" dropdown (valid example, missing quote, trailing comma, single quotes, invalid number)
+- "Clear" button
+- Toggle: "Live validation" (validates as you type)
+
+Example errors to demonstrate:
+- Missing closing brace
+- Trailing comma
+- Single quotes instead of double
+- Unquoted keys
+- Leading zeros on numbers
+- Missing comma between elements
+
+Validation feedback:
+- Success: "✅ Valid JSON! Your document contains X objects and Y arrays"
+- Error: "❌ Line 5, Column 12: Expected double quote, found single quote"
+- Suggestion: "Fix: Replace ' with \" around string values"
+
+Default state: Empty editor with placeholder text showing basic JSON structure
+
+Behavior:
+- Live validation mode highlights errors as user types
+- Click on error message to jump to that line
+- Format button properly indents the JSON
+- Successful validation shows celebratory animation
+
+Implementation: p5.js with custom text editor component
+</details>
+
+<hr />
+<h2 id="json-objects-the-heart-of-metadata">JSON Objects: The Heart of Metadata</h2>
+<p>A <strong>JSON object</strong> is an unordered collection of key-value pairs, wrapped in curly braces <code>{}</code>. Objects are the workhorses of JSON—they represent entities with properties. In metadata terms, a JSON object represents your MicroSim with all its attributes.</p>
+<h3 id="basic-object-structure">Basic Object Structure</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wave Interference Simulator&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dr. Physics&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;isInteractive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Let's break this down:</p>
+<ul>
+<li><code>{</code> and <code>}</code> mark the object boundaries</li>
+<li><code>"title"</code> is a <strong>key</strong> (always a string)</li>
+<li><code>:</code> separates key from value</li>
+<li><code>"Wave Interference Simulator"</code> is a <strong>value</strong> (string type)</li>
+<li><code>,</code> separates key-value pairs</li>
+</ul>
+<h3 id="nested-objects">Nested Objects</h3>
+<p>Objects can contain other objects, creating hierarchical structures perfect for organized metadata:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pendulum Period Calculator&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maria Santos&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p5.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;canvasSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This nesting mirrors real-world organization: a MicroSim has Dublin Core metadata, which has a title and creator. It also has technical metadata, which includes canvas size with width and height. The structure is both logical and self-documenting.</p>
+<div class="admonition note">
+<p class="admonition-title">Nesting Best Practices</p>
+<p>While JSON allows unlimited nesting depth, keep your structures reasonably flat (3-4 levels max). Deeply nested JSON becomes hard to read and maintain. Our MicroSim schema uses logical groupings (dublinCore, technical, educational) without excessive depth.</p>
+</div>
+<h3 id="the-microsim-metadata-object">The MicroSim Metadata Object</h3>
+<p>Here's a realistic metadata object showing how concepts from previous chapters come together:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ohm&#39;s Law Circuit Explorer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Prof. Elena Rodriguez&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Electricity&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Circuits&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive simulation for exploring voltage, current, and resistance relationships&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-15&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rights&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CC BY-SA 4.0&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Undergraduate&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Intermediate&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Physics&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p5.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;responsive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Notice how the object groups related information. A search engine can quickly find all physics simulations for undergraduates. An AI generator can learn from examples at the same difficulty level. A teacher can filter by grade level. The structure enables all of this.</p>
+<h4 id="diagram-json-object-structure-visualizer">Diagram: JSON Object Structure Visualizer</h4>
+<iframe src="../../sims/json-object-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>JSON Object Structure Visualizer</summary>
+Type: graph-model
+
+Bloom Level: Understand (L2)
+Bloom Verb: interpret
+
+Learning Objective: Students will interpret the hierarchical structure of JSON objects by visualizing nested key-value relationships as an interactive tree.
+
+Purpose: Transform abstract JSON text into a visual tree structure showing parent-child relationships
+
+Node types:
+1. Root node (large blue circle)
+   - Represents the top-level object
+   - Label: "root" or object name if provided
+
+2. Object nodes (medium green rectangles)
+   - Represent nested objects
+   - Label: key name
+   - Show number of children
+
+3. Array nodes (medium orange rectangles with rounded corners)
+   - Represent arrays
+   - Label: key name + [length]
+   - Show element count
+
+4. Primitive nodes (small circles)
+   - String: green
+   - Number: blue
+   - Boolean: orange
+   - Null: gray
+   - Label: key name, hover shows value
+
+Edge types:
+- Solid lines from parent to children
+- Labeled with key names where helpful
+
+Interactive features:
+- Paste JSON in text area to visualize
+- Click nodes to expand/collapse
+- Hover to see full values (especially long strings)
+- Drag nodes to rearrange layout
+- Zoom with mouse wheel
+- "Show Values" toggle displays values inline
+- "Collapse All" / "Expand All" buttons
+
+Sample data: Pre-loaded with MicroSim metadata example
+
+Layout: Hierarchical tree, left-to-right
+Color scheme: Consistent with JSON data types
+Animation: Smooth expand/collapse transitions
+
+Implementation: vis-network with custom node rendering
+</details>
+
+<hr />
+<h2 id="json-arrays-ordered-collections">JSON Arrays: Ordered Collections</h2>
+<p>A <strong>JSON array</strong> is an ordered list of values, wrapped in square brackets <code>[]</code>. Arrays are perfect for representing multiple items of the same type: subjects, keywords, contributors, or learning objectives.</p>
+<h3 id="basic-array-structure">Basic Array Structure</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;subjects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mechanics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Forces&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;High School&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Undergraduate&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;contributors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Carol&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Arrays preserve order—the first element is at index 0, the second at index 1, and so on. This matters when order is significant (like step-by-step instructions).</p>
+<h3 id="array-element-types">Array Element Types</h3>
+<p>Arrays can contain any JSON data type:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;strings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;green&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;numbers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;booleans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;mixed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;objects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;First&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Second&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;nested&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>While mixed-type arrays are valid JSON, they're generally poor practice for metadata. Keep array elements consistent—an array of subjects should all be strings, an array of parameters should all be objects with the same structure.</p>
+<h3 id="arrays-in-microsim-metadata">Arrays in MicroSim Metadata</h3>
+<p>Arrays appear throughout our metadata schema:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Kinematics&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Projectile Motion&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;contributor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Dr. James Chen (lead developer)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Maria Santos (UX design)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Physics Education Group (testing)&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;learningObjectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Calculate projectile range given initial velocity and angle&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Predict maximum height of projectile trajectory&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Explain the independence of horizontal and vertical motion&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;browserSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Chrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firefox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Safari&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Edge&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Each array serves a purpose: subjects enable faceted search, contributors credit multiple people, learning objectives guide usage, and browser support informs compatibility.</p>
+<h3 id="when-to-use-arrays-vs-single-values">When to Use Arrays vs. Single Values</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Only one value ever</td>
+<td>Single value</td>
+<td><code>"title": "My Sim"</code></td>
+</tr>
+<tr>
+<td>Usually one, sometimes more</td>
+<td>Array</td>
+<td><code>"creator": ["Alice", "Bob"]</code></td>
+</tr>
+<tr>
+<td>Always multiple values</td>
+<td>Array</td>
+<td><code>"subjects": ["Math", "Algebra"]</code></td>
+</tr>
+<tr>
+<td>Ordered sequence matters</td>
+<td>Array</td>
+<td><code>"steps": ["Step 1", "Step 2"]</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Future-Proofing with Arrays</p>
+<p>When designing metadata, prefer arrays even if you expect single values. A MicroSim might have one creator today but two tomorrow. Starting with <code>"creator": ["Alice"]</code> makes adding Bob easier than changing <code>"creator": "Alice"</code> to an array later.</p>
+</div>
+<h4 id="diagram-array-operations-playground">Diagram: Array Operations Playground</h4>
+<iframe src="../../sims/json-array-playground/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Array Operations Playground</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: demonstrate
+
+Learning Objective: Students will demonstrate understanding of JSON array operations by adding, removing, and reordering elements while observing the resulting JSON structure.
+
+Canvas layout:
+- Left panel (40%): Visual array representation
+- Center panel (30%): Operation controls
+- Right panel (30%): Live JSON output
+
+Visual elements:
+- Array displayed as connected boxes (like train cars)
+- Each element shows type icon and value
+- Index numbers displayed below each element
+- Bracket indicators at array start/end
+- Highlight animation when elements added/removed
+
+Interactive controls:
+- "Add Element" button with type selector (string/number/boolean)
+- Text input for new element value
+- "Add at Position" dropdown (beginning, end, or specific index)
+- Click element to select, "Remove Selected" button
+- Drag and drop to reorder elements
+- "Add Nested Array" button
+- "Clear Array" button
+
+Array visualization:
+- Strings: green boxes
+- Numbers: blue boxes
+- Booleans: orange boxes (shows true/false icon)
+- Nested arrays: boxes containing smaller boxes
+
+Live JSON output:
+- Shows current array as formatted JSON
+- Syntax highlighted
+- Updates in real-time
+- "Copy JSON" button
+
+Sample scenarios:
+- Build a subject array: ["Physics", "Mechanics", "Forces"]
+- Build a mixed array (demonstrate why it's not ideal)
+- Reorder learning objectives by dragging
+- Nest arrays to show 2D data
+
+Default state: Empty array `[]` ready for elements
+
+Animation: Elements smoothly slide into position, removed elements fade out
+
+Implementation: p5.js with drag-and-drop support
+</details>
+
+<hr />
+<h2 id="json-schema-defining-structure-requirements">JSON Schema: Defining Structure Requirements</h2>
+<p>So far, we've written JSON freely—any valid syntax works. But for MicroSim metadata, we need consistency. If one person uses <code>"subject"</code> and another uses <code>"topics"</code>, search breaks. This is where <strong>JSON Schema</strong> becomes essential.</p>
+<p><strong>JSON Schema</strong> is a vocabulary that defines the structure, content, and format constraints for JSON documents. Think of it as a blueprint that specifies what valid metadata must look like.</p>
+<h3 id="what-json-schema-defines">What JSON Schema Defines</h3>
+<p>A schema specifies:</p>
+<ul>
+<li><strong>Required fields</strong>: What must be present</li>
+<li><strong>Data types</strong>: String, number, array, etc.</li>
+<li><strong>Value constraints</strong>: Allowed values, patterns, ranges</li>
+<li><strong>Structure</strong>: Nested object shapes</li>
+<li><strong>Documentation</strong>: Descriptions of each field</li>
+</ul>
+<h3 id="basic-schema-example">Basic Schema Example</h3>
+<p>Here's a simple schema for a MicroSim title and creator:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Name of the MicroSim&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;maxLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Person who created the MicroSim&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;creator&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This schema says: "A valid document is an object with a <code>title</code> (string, 3-100 characters) and <code>creator</code> (string), both required."</p>
+<h3 id="schema-keywords">Schema Keywords</h3>
+<p>Common schema keywords you'll encounter:</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Data type required</td>
+<td><code>"type": "string"</code></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td>Define object keys</td>
+<td><code>"properties": {"name": {...}}</code></td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td>List mandatory fields</td>
+<td><code>"required": ["title"]</code></td>
+</tr>
+<tr>
+<td><code>enum</code></td>
+<td>Allowed values</td>
+<td><code>"enum": ["Low", "Medium", "High"]</code></td>
+</tr>
+<tr>
+<td><code>minimum/maximum</code></td>
+<td>Number range</td>
+<td><code>"minimum": 0, "maximum": 100</code></td>
+</tr>
+<tr>
+<td><code>minLength/maxLength</code></td>
+<td>String length</td>
+<td><code>"minLength": 1</code></td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td>Regex match</td>
+<td><code>"pattern": "^[A-Z]"</code></td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>Array element schema</td>
+<td><code>"items": {"type": "string"}</code></td>
+</tr>
+<tr>
+<td><code>$ref</code></td>
+<td>Reference other schemas</td>
+<td><code>"$ref": "#/definitions/person"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-microsim-schema-structure">The MicroSim Schema Structure</h3>
+<p>Our official MicroSim schema organizes metadata into eight sections:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Standard Dublin Core metadata elements&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">}}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;creator&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subject&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;description&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fields optimized for search and discovery&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pedagogical information&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Implementation details&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;userInterface&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UI controls and layout&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;simulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Simulation parameters and models&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;analytics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Learning analytics configuration&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Usage statistics and feedback&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dublinCore&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This schema enforces organization: Dublin Core is required, other sections optional. Within Dublin Core, title, creator, subject, and description are required. This ensures every MicroSim has minimum discoverable metadata.</p>
+<h4 id="diagram-schema-structure-map">Diagram: Schema Structure Map</h4>
+<iframe src="../../sims/microsim-schema-map/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Schema Structure Map</summary>
+Type: graph-model
+
+Bloom Level: Analyze (L4)
+Bloom Verb: examine
+
+Learning Objective: Students will examine the relationships between schema sections by exploring an interactive visualization of the complete MicroSim metadata schema structure.
+
+Purpose: Visualize the full MicroSim schema showing all eight sections and their key fields
+
+Node types:
+1. Root node (large gold circle)
+   - Label: "MicroSim Metadata"
+   - Central position
+
+2. Section nodes (large colored rectangles)
+   - dublinCore: blue
+   - search: green
+   - educational: orange
+   - technical: purple
+   - userInterface: teal
+   - simulation: pink
+   - analytics: brown
+   - usage: gray
+   - Shows required badge if section is required
+
+3. Field nodes (small circles)
+   - Required fields: solid fill
+   - Optional fields: outline only
+   - Color matches parent section
+   - Label: field name
+
+Edge types:
+- Section to root: thick lines
+- Field to section: thin lines
+- Field dependencies: dashed lines (e.g., subject references subjectArea)
+
+Interactive features:
+- Click section to expand/collapse fields
+- Hover field to see type, description, constraints
+- Filter: "Show required only" checkbox
+- Filter: "Show section" dropdown
+- Search box to find specific fields
+- "Expand All" / "Collapse All" buttons
+- Legend showing color coding and symbols
+
+Sample field details on hover:
+- "title" → Type: string, Required: yes, Min length: 3, Max length: 100
+- "gradeLevel" → Type: string, Enum: ["K-12", "Undergraduate", "Graduate", "Adult"]
+- "subject" → Type: array of strings, Min items: 1
+
+Layout: Radial with root in center, sections around it
+Animation: Smooth expand/collapse, fields radiate outward
+
+Implementation: vis-network with custom layout
+</details>
+
+<hr />
+<h2 id="schema-validation-checking-your-work">Schema Validation: Checking Your Work</h2>
+<p><strong>Schema validation</strong> is the process of checking whether a JSON document conforms to a schema. Valid documents match all schema requirements; invalid documents have errors that must be fixed.</p>
+<h3 id="why-validation-matters">Why Validation Matters</h3>
+<p>Consider this scenario: You create metadata for 50 MicroSims. Without validation, you might:</p>
+<ul>
+<li>Spell "gradeLevel" as "grade_level" in some files</li>
+<li>Forget the required "description" field in others</li>
+<li>Use "Beginner" sometimes and "beginner" other times</li>
+<li>Put strings where numbers should be</li>
+</ul>
+<p>Search breaks. AI generators get confused. Your carefully crafted MicroSims become unfindable. Validation prevents this chaos.</p>
+<h3 id="validation-outcomes">Validation Outcomes</h3>
+<p>When you validate JSON against a schema, you get one of three results:</p>
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Meaning</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Valid</td>
+<td>Document matches schema completely</td>
+<td>Ready to use</td>
+</tr>
+<tr>
+<td>⚠️ Warning</td>
+<td>Valid but with quality suggestions</td>
+<td>Consider improvements</td>
+</tr>
+<tr>
+<td>❌ Invalid</td>
+<td>Document violates schema rules</td>
+<td>Must fix errors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="common-validation-errors">Common Validation Errors</h3>
+<p>Here are frequent mistakes and their error messages:</p>
+<p><strong>Missing required field:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Error: Required property &#39;description&#39; is missing
+Location: /dublinCore
+Fix: Add &quot;description&quot;: &quot;Your description here&quot;
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Wrong data type:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Error: Expected string, got number
+Location: /dublinCore/title
+Value: 12345
+Fix: Change to &quot;12345&quot; (with quotes)
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Invalid enum value:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Error: Value must be one of: Beginner, Intermediate, Advanced
+Location: /educational/difficulty
+Value: &quot;Easy&quot;
+Fix: Use &quot;Beginner&quot; instead of &quot;Easy&quot;
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Array constraint violation:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Error: Array must have at least 1 item
+Location: /dublinCore/subject
+Value: []
+Fix: Add at least one subject: [&quot;Physics&quot;]
+</code></pre></div></td></tr></table></div></p>
+<h3 id="validation-tools">Validation Tools</h3>
+<p>You can validate JSON Schema using:</p>
+<ul>
+<li><strong>Online validators</strong>: jsonschemavalidator.net, jsonschema.dev</li>
+<li><strong>Command-line tools</strong>: ajv-cli, jsonschema (Python)</li>
+<li><strong>IDE plugins</strong>: VS Code JSON Schema extension</li>
+<li><strong>Programming libraries</strong>: Ajv (JavaScript), jsonschema (Python)</li>
+</ul>
+<p>For MicroSim development, we provide a validation script:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Validate a single metadata.json file</span>
+python3<span class="w"> </span>src/microsim-schema/validate-metadata.py<span class="w"> </span>path/to/metadata.json
+
+<span class="c1"># Validate all collected metadata</span>
+python3<span class="w"> </span>src/microsim-schema/validate-metadata.py<span class="w"> </span>--all
+</code></pre></div></td></tr></table></div>
+<div class="admonition success">
+<p class="admonition-title">Validation is Your Friend</p>
+<p>Don't think of validation as a annoying gatekeeper—think of it as a helpful reviewer that catches mistakes before they cause problems. Run validation early and often. Fix errors immediately. Your future self will thank you.</p>
+</div>
+<h4 id="diagram-validation-feedback-simulator">Diagram: Validation Feedback Simulator</h4>
+<iframe src="../../sims/validation-simulator/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Schema Validation Feedback Simulator</summary>
+Type: microsim
+
+Bloom Level: Analyze (L4)
+Bloom Verb: distinguish
+
+Learning Objective: Students will distinguish between valid and invalid JSON metadata by analyzing validation feedback and correcting errors to produce schema-compliant documents.
+
+Canvas layout:
+- Left panel (50%): JSON editor with line numbers
+- Right panel (50%): Validation results panel
+
+Visual elements:
+- Code editor with syntax highlighting
+- Error markers in line gutter (red circles with X)
+- Warning markers (yellow triangles)
+- Valid indicator (green checkmark)
+- Error list with clickable entries
+- Progress bar showing "X of Y issues fixed"
+
+Interactive controls:
+- Dropdown: "Load Example" (valid, missing required, wrong type, invalid enum, array error)
+- Button: "Validate"
+- Button: "Auto-fix" (fixes simple errors like wrong quotes)
+- Checkbox: "Show hints" (displays fix suggestions)
+- Button: "Reset to Original"
+
+Validation feedback display:
+- List of errors with:
+  - Severity icon (error/warning)
+  - Error message
+  - Location (path like /dublinCore/title)
+  - Current value (if applicable)
+  - Expected value/type
+  - "Show Fix" button that highlights correction
+
+Example scenarios:
+1. Missing required "description" field
+2. "gradeLevel" is number instead of string
+3. "difficulty" is "Easy" instead of "Beginner"
+4. Empty subject array
+5. Misspelled key "tittle" instead of "title"
+
+Success state:
+- All green checkmarks
+- Confetti animation
+- Message: "🎉 Valid metadata! Ready for submission"
+
+Default state: Loaded with example containing 3 errors
+
+Behavior:
+- Click error to jump to line in editor
+- Live re-validation as user edits
+- Errors disappear as fixed
+- Progress bar updates
+
+Implementation: p5.js with validation logic matching MicroSim schema
+</details>
+
+<hr />
+<h2 id="required-vs-optional-fields">Required vs. Optional Fields</h2>
+<p>Not all metadata fields carry equal weight. <strong>Required fields</strong> must be present for a document to be valid; <strong>optional fields</strong> enhance quality but aren't mandatory. Understanding this distinction helps you prioritize effort and enables flexible schema design.</p>
+<h3 id="required-fields-in-microsim-schema">Required Fields in MicroSim Schema</h3>
+<p>These fields are mandatory—validation fails without them:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Section</th>
+<th>Why Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>dublinCore</td>
+<td>Can't search without a name</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>dublinCore</td>
+<td>Attribution is essential</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>dublinCore</td>
+<td>Enables topic-based discovery</td>
+</tr>
+<tr>
+<td>description</td>
+<td>dublinCore</td>
+<td>Users need to know what it does</td>
+</tr>
+<tr>
+<td>date</td>
+<td>dublinCore</td>
+<td>Currency assessment</td>
+</tr>
+<tr>
+<td>format</td>
+<td>dublinCore</td>
+<td>Technical compatibility</td>
+</tr>
+<tr>
+<td>rights</td>
+<td>dublinCore</td>
+<td>Legal clarity for reuse</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-fields-that-add-value">Optional Fields That Add Value</h3>
+<p>Optional fields improve searchability and user experience:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Section</th>
+<th>Enhancement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>publisher</td>
+<td>dublinCore</td>
+<td>Institutional credibility</td>
+</tr>
+<tr>
+<td>gradeLevel</td>
+<td>educational</td>
+<td>Audience matching</td>
+</tr>
+<tr>
+<td>bloomsTaxonomy</td>
+<td>educational</td>
+<td>Pedagogical alignment</td>
+</tr>
+<tr>
+<td>framework</td>
+<td>technical</td>
+<td>Technical filtering</td>
+</tr>
+<tr>
+<td>visualizationType</td>
+<td>search</td>
+<td>Discovery refinement</td>
+</tr>
+<tr>
+<td>learningObjectives</td>
+<td>educational</td>
+<td>Instructional design</td>
+</tr>
+</tbody>
+</table>
+<h3 id="balancing-required-and-optional">Balancing Required and Optional</h3>
+<p>Schema design involves tradeoffs:</p>
+<p><strong>Too many required fields:</strong>
+- High barrier to entry
+- Many incomplete/invalid documents
+- Creators skip metadata entirely</p>
+<p><strong>Too few required fields:</strong>
+- Low metadata quality
+- Search becomes unreliable
+- Inconsistent records</p>
+<p>The MicroSim schema strikes a balance: 7 required fields ensure minimum searchability, while 30+ optional fields allow rich description for creators who invest the time.</p>
+<div class="admonition tip">
+<p class="admonition-title">The 80/20 Rule of Metadata</p>
+<p>About 80% of search value comes from 20% of fields. Get the required fields right, and your MicroSim is discoverable. Add optional fields to stand out in search results and help AI generators learn from your example.</p>
+</div>
+<hr />
+<h2 id="data-quality-measuring-metadata-excellence">Data Quality: Measuring Metadata Excellence</h2>
+<p>Having valid metadata is the minimum bar. <strong>Data quality</strong> measures how good your metadata is—how complete, accurate, and useful for its purpose. High-quality metadata powers better search, smarter AI generation, and more effective education.</p>
+<h3 id="dimensions-of-data-quality">Dimensions of Data Quality</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Question</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Completeness</strong></td>
+<td>How many fields are filled?</td>
+<td>85% of fields populated</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Is the information correct?</td>
+<td>Creator name spelled right</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Same format throughout?</td>
+<td>Dates all use YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><strong>Timeliness</strong></td>
+<td>Is it current?</td>
+<td>Last updated this year</td>
+</tr>
+<tr>
+<td><strong>Relevance</strong></td>
+<td>Does it serve user needs?</td>
+<td>Subjects match actual content</td>
+</tr>
+<tr>
+<td><strong>Uniqueness</strong></td>
+<td>No unwanted duplicates?</td>
+<td>One record per MicroSim</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSim metadata, we focus primarily on <strong>completeness</strong> and <strong>quality</strong> scores.</p>
+<hr />
+<h2 id="completeness-score">Completeness Score</h2>
+<p>The <strong>completeness score</strong> measures what percentage of metadata fields are populated. It's a straightforward metric: filled fields divided by total possible fields.</p>
+<h3 id="calculating-completeness">Calculating Completeness</h3>
+<p>Basic formula:</p>
+<p>$$\text{Completeness Score} = \frac{\text{Fields Populated}}{\text{Total Possible Fields}} \times 100$$</p>
+<p>For MicroSim metadata with 40 possible fields:</p>
+<ul>
+<li>20 fields filled → 50% completeness</li>
+<li>32 fields filled → 80% completeness</li>
+<li>40 fields filled → 100% completeness</li>
+</ul>
+<h3 id="weighted-completeness">Weighted Completeness</h3>
+<p>Not all fields matter equally. A weighted approach assigns importance:</p>
+<table>
+<thead>
+<tr>
+<th>Field Category</th>
+<th>Weight</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required fields</td>
+<td>3x</td>
+<td>Essential for function</td>
+</tr>
+<tr>
+<td>Recommended fields</td>
+<td>2x</td>
+<td>High search impact</td>
+</tr>
+<tr>
+<td>Optional fields</td>
+<td>1x</td>
+<td>Nice to have</td>
+</tr>
+</tbody>
+</table>
+<p>Weighted formula:</p>
+<p>$$\text{Weighted Completeness} = \frac{\sum (\text{weight} \times \text{filled})}{\sum (\text{weight} \times \text{total})} \times 100$$</p>
+<p>Example:
+- 7 required fields (weight 3), 5 filled: 5 × 3 = 15 / 21 possible = 71%
+- 8 recommended fields (weight 2), 6 filled: 6 × 2 = 12 / 16 possible = 75%
+- 25 optional fields (weight 1), 10 filled: 10 × 1 = 10 / 25 possible = 40%
+- <strong>Total: (15 + 12 + 10) / (21 + 16 + 25) = 37 / 62 = 60% weighted completeness</strong></p>
+<h3 id="completeness-targets">Completeness Targets</h3>
+<table>
+<thead>
+<tr>
+<th>Score</th>
+<th>Rating</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90-100%</td>
+<td>Excellent</td>
+<td>Comprehensive, exemplary</td>
+</tr>
+<tr>
+<td>70-89%</td>
+<td>Good</td>
+<td>Well-documented, searchable</td>
+</tr>
+<tr>
+<td>50-69%</td>
+<td>Fair</td>
+<td>Basic discoverability</td>
+</tr>
+<tr>
+<td>Below 50%</td>
+<td>Poor</td>
+<td>Limited usefulness</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Completeness vs. Quality</p>
+<p>High completeness doesn't guarantee quality. You could fill every field with "TBD" and achieve 100% completeness with 0% usefulness. Completeness is necessary but not sufficient.</p>
+</div>
+<h4 id="diagram-completeness-score-calculator">Diagram: Completeness Score Calculator</h4>
+<iframe src="../../sims/completeness-calculator/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Metadata Completeness Score Calculator</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: calculate
+
+Learning Objective: Students will calculate completeness scores for MicroSim metadata by filling in fields and observing how the score changes based on field weights and population.
+
+Canvas layout:
+- Left panel (45%): Field checklist grouped by section
+- Center panel (25%): Score gauges and breakdown
+- Right panel (30%): Recommendations and tips
+
+Visual elements:
+- Checklist with sections (dublinCore, educational, technical, etc.)
+- Checkbox for each field, color-coded by weight (red=required, yellow=recommended, gray=optional)
+- Circular gauge showing overall score (0-100%)
+- Bar chart showing score by section
+- Star rating (1-5) based on score thresholds
+
+Interactive controls:
+- Click checkboxes to mark fields as filled
+- "Load Sample" buttons: "Minimal", "Good", "Excellent"
+- Toggle: "Show weighted" vs "Show unweighted" score
+- "Calculate" button (for dramatic reveal)
+- "Reset All" button
+
+Score display:
+- Large percentage in center gauge
+- Color coding: red (<50%), yellow (50-69%), green (70-89%), gold (90%+)
+- Breakdown panel showing required/recommended/optional percentages
+- Formula display showing calculation
+
+Recommendations panel:
+- "Add these fields to reach 70%:" with list
+- "High-impact fields you're missing:" prioritized list
+- Tips for improving score efficiently
+
+Default state: Minimal fields checked (required only)
+
+Behavior:
+- Score updates in real-time as checkboxes change
+- Gauge animates smoothly
+- Recommendations update dynamically
+- Celebration animation at 90%+
+
+Implementation: p5.js with gauge rendering
+</details>
+
+<hr />
+<h2 id="quality-score">Quality Score</h2>
+<p>While completeness measures quantity, the <strong>quality score</strong> measures usefulness—how well the metadata serves its purpose. Quality considers not just presence but value.</p>
+<h3 id="quality-factors">Quality Factors</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Description</th>
+<th>Good Example</th>
+<th>Poor Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title specificity</strong></td>
+<td>Descriptive vs vague</td>
+<td>"Fourier Transform Visualizer"</td>
+<td>"Math Animation"</td>
+</tr>
+<tr>
+<td><strong>Description length</strong></td>
+<td>Adequate detail</td>
+<td>75 words explaining features</td>
+<td>"A simulation"</td>
+</tr>
+<tr>
+<td><strong>Subject coverage</strong></td>
+<td>Multiple relevant terms</td>
+<td>5 specific subjects</td>
+<td>1 generic subject</td>
+</tr>
+<tr>
+<td><strong>Freshness</strong></td>
+<td>Recently updated</td>
+<td>Date within 1 year</td>
+<td>Date 5+ years old</td>
+</tr>
+<tr>
+<td><strong>Rights clarity</strong></td>
+<td>Explicit license</td>
+<td>"CC BY-SA 4.0"</td>
+<td>Empty or "Contact author"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calculating-quality-score">Calculating Quality Score</h3>
+<p>Quality scoring uses heuristics that can be automated:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>Quality Score Components:
+- Title quality (0-20 points)
+  - Length 3-10 words: 10 points
+  - Contains specific terms: 10 points
+
+- Description quality (0-25 points)
+  - Length 50-150 words: 15 points
+  - Mentions interactions: 5 points
+  - Mentions learning outcomes: 5 points
+
+- Subject quality (0-20 points)
+  - 3+ subjects: 10 points
+  - Mix of broad and specific: 10 points
+
+- Freshness (0-15 points)
+  - Updated within 1 year: 15 points
+  - Updated within 2 years: 10 points
+  - Updated within 5 years: 5 points
+
+- Rights clarity (0-20 points)
+  - Standard license specified: 20 points
+  - Custom rights text: 10 points
+
+Total possible: 100 points
+</code></pre></div></td></tr></table></div>
+<h3 id="quality-benchmarks">Quality Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Score</th>
+<th>Rating</th>
+<th>What It Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80-100</td>
+<td>Exemplary</td>
+<td>Model metadata, use as reference</td>
+</tr>
+<tr>
+<td>60-79</td>
+<td>Good</td>
+<td>Effective for search and reuse</td>
+</tr>
+<tr>
+<td>40-59</td>
+<td>Acceptable</td>
+<td>Functions but could improve</td>
+</tr>
+<tr>
+<td>Below 40</td>
+<td>Needs Work</td>
+<td>Limited discoverability</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quality-vs-completeness-matrix">Quality vs. Completeness Matrix</h3>
+<p>The best metadata scores high on both dimensions:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Low Completeness</th>
+<th>High Completeness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High Quality</strong></td>
+<td>Hidden gem—expand it</td>
+<td>⭐ Excellent</td>
+</tr>
+<tr>
+<td><strong>Low Quality</strong></td>
+<td>Needs major work</td>
+<td>Quantity over quality—improve</td>
+</tr>
+</tbody>
+</table>
+<p>Your goal: upper right quadrant. Complete AND quality metadata makes MicroSims truly discoverable and reusable.</p>
+<h4 id="diagram-quality-score-dashboard">Diagram: Quality Score Dashboard</h4>
+<iframe src="../../sims/quality-dashboard/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Metadata Quality Score Dashboard</summary>
+Type: microsim
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: assess
+
+Learning Objective: Students will assess metadata quality by analyzing multiple quality factors and identifying specific improvements to increase the overall quality score.
+
+Canvas layout:
+- Top panel (25%): Overall score and rating
+- Middle panel (50%): Factor breakdown with sliders
+- Bottom panel (25%): Improvement suggestions
+
+Visual elements:
+- Large circular gauge for overall quality score
+- Five smaller gauges for each factor (title, description, subjects, freshness, rights)
+- Color-coded bars showing contribution of each factor
+- Star rating (1-5 stars) with label
+- Quality vs Completeness quadrant chart showing current position
+
+Interactive controls:
+- Paste JSON textarea to analyze existing metadata
+- "Load Example" dropdown (exemplary, good, poor)
+- Individual factor sliders to simulate improvements
+- "What if I improve...?" mode to test changes
+- "Generate Report" button for detailed analysis
+- "Show Details" toggles for each factor
+
+Factor analysis display:
+For each factor show:
+- Current score / max possible
+- Specific feedback (e.g., "Title is only 2 words—aim for 4-7")
+- Improvement action (e.g., "Add 'Interactive' and topic keywords")
+- Potential points gained
+
+Quadrant chart:
+- X-axis: Completeness (0-100%)
+- Y-axis: Quality (0-100%)
+- Current position marked with dot
+- Quadrant labels: "Needs Work", "Quantity>Quality", "Hidden Gem", "Excellent"
+- Trail showing improvement path
+
+Recommendations panel:
+- Ordered list of highest-impact improvements
+- Estimated new score if implemented
+- Quick-fix buttons for common issues
+
+Default state: Example with score ~65 (Good rating)
+
+Behavior:
+- Live analysis as user edits JSON
+- Gauges animate when scores change
+- Recommendations update dynamically
+- Celebratory animation when reaching 80+
+
+Implementation: p5.js with chart components
+</details>
+
+<hr />
+<h2 id="putting-it-all-together-the-quality-metadata-workflow">Putting It All Together: The Quality Metadata Workflow</h2>
+<p>Now you understand JSON syntax, objects, arrays, schemas, validation, and quality metrics. Here's the workflow for creating high-quality MicroSim metadata:</p>
+<h3 id="step-1-start-with-the-template">Step 1: Start with the Template</h3>
+<p>Begin with a template containing all schema sections:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rights&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;responsive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="step-2-fill-required-fields-first">Step 2: Fill Required Fields First</h3>
+<p>Prioritize the seven required Dublin Core fields. Get these right before moving on.</p>
+<h3 id="step-3-add-high-value-optional-fields">Step 3: Add High-Value Optional Fields</h3>
+<p>Focus on fields that most impact searchability:</p>
+<ul>
+<li>educational.gradeLevel</li>
+<li>educational.bloomsTaxonomy</li>
+<li>educational.subjectArea</li>
+<li>technical.framework</li>
+<li>search.visualizationType</li>
+</ul>
+<h3 id="step-4-validate-against-schema">Step 4: Validate Against Schema</h3>
+<p>Run validation to catch syntax errors and missing requirements:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python3<span class="w"> </span>src/microsim-schema/validate-metadata.py<span class="w"> </span>metadata.json
+</code></pre></div></td></tr></table></div>
+<p>Fix any errors before proceeding.</p>
+<h3 id="step-5-check-quality-score">Step 5: Check Quality Score</h3>
+<p>Analyze your metadata quality:</p>
+<ul>
+<li>Is the title specific and searchable?</li>
+<li>Is the description 50-150 words with feature details?</li>
+<li>Do you have 3+ relevant subjects?</li>
+<li>Is the date current?</li>
+<li>Is the license explicit?</li>
+</ul>
+<h3 id="step-6-iterate-and-improve">Step 6: Iterate and Improve</h3>
+<p>Review, revise, repeat. Quality metadata is worth the investment—it determines whether your educational creation reaches learners worldwide or languishes unfound.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>JSON is simple</strong>: Six data types, strict but learnable syntax, human and machine readable</p>
+</li>
+<li>
+<p><strong>Objects</strong> (<code>{}</code>) represent entities with properties—perfect for MicroSim metadata with its many attributes</p>
+</li>
+<li>
+<p><strong>Arrays</strong> (<code>[]</code>) represent ordered collections—ideal for subjects, contributors, and learning objectives</p>
+</li>
+<li>
+<p><strong>JSON Schema</strong> defines structural rules that ensure consistency across all metadata</p>
+</li>
+<li>
+<p><strong>Validation</strong> catches errors early—run it often, fix issues immediately</p>
+</li>
+<li>
+<p><strong>Required fields</strong> (7 for Dublin Core) ensure minimum searchability; optional fields add richness</p>
+</li>
+<li>
+<p><strong>Completeness score</strong> measures field population; aim for 70%+ with weighted scoring</p>
+</li>
+<li>
+<p><strong>Quality score</strong> measures usefulness; specific titles, detailed descriptions, and clear rights matter most</p>
+</li>
+<li>
+<p><strong>The goal is upper-right quadrant</strong>: High completeness AND high quality metadata</p>
+</li>
+<li>
+<p><strong>Good metadata is a superpower</strong>: It makes your MicroSims discoverable by teachers, learnable by AI, and impactful for students worldwide</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>You now have the technical foundation for creating excellent MicroSim metadata. In the next chapters, we'll explore how this metadata powers search and discovery:</p>
+<ul>
+<li><strong>Keyword search</strong> using the terms you've carefully chosen</li>
+<li><strong>Faceted search</strong> filtering by grade level, subject, and difficulty</li>
+<li><strong>Semantic search</strong> using AI to find conceptually similar simulations</li>
+</ul>
+<p>Your well-crafted JSON metadata will be the fuel for all of these powerful capabilities.</p>
+<hr />
+<p><em>Ready to see metadata in action? Continue to <a href="../06-keyword-boolean-search/index.md">Chapter 6: Keyword and Boolean Search</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-dublin-core-elements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Dublin Core Elements">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Dublin Core Elements
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-search-fundamentals/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Search Fundamentals">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Search Fundamentals
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

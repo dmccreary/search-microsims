@@ -1,0 +1,39 @@
+{
+  "title": "MicroSim Search Workflow",
+  "description": "Infographic showing the four-stage workflow from teacher need to MicroSim discovery through faceted search: Teacher Need, Search Interface, Results Ranked, and MicroSim Found.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-24",
+  "subject": [
+    "Information Science",
+    "Search Systems",
+    "Instructional Design",
+    "Educational Technology"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/search-microsims/sims/microsim-search-workflow/",
+  "publisher": "MicroSims Educational Platform",
+  "educationalLevel": "Undergraduate, Graduate, Professional",
+  "learningResourceType": "infographic",
+  "audience": "Educators, Instructional Designers, Librarians",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Apply"
+  ],
+  "concepts": [
+    "Faceted Search",
+    "Information Discovery",
+    "Search Workflow",
+    "Educational Resources",
+    "Findability"
+  ],
+  "prerequisites": [
+    "Basic understanding of search systems"
+  ],
+  "library": "p5.js"
+}

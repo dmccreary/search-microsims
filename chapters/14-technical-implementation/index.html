@@ -1,0 +1,4333 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build production-ready MicroSims using JavaScript libraries, responsive design techniques, accessibility features, and performance optimization strategies">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/14-technical-implementation/">
+      
+      
+        <link rel="prev" href="../13-user-interface-controls/">
+      
+      
+        <link rel="next" href="../../reports/microsim-metrics/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Technical Implementation - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#technical-implementation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Implementation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-technical-excellence-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Technical Excellence Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-libraries-your-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Libraries: Your Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript Libraries: Your Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Libraries?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Library
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5js-framework-the-microsim-workhorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      p5.js Framework: The MicroSim Workhorse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="p5.js Framework: The MicroSim Workhorse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-p5js-for-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why p5.js for MicroSims?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p5js-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      p5.js Core Concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsive-p5js-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive p5.js Canvas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responsive p5.js Canvas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-p5js-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: p5.js Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mermaidjs-diagrams-from-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid.js: Diagrams from Text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mermaid.js: Diagrams from Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-diagram-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid Diagram Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Mermaid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vis-networkjs-network-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-network.js: Network Graphs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="vis-network.js: Network Graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vis-network-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-network Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-vis-network-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic vis-network Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vis-network-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-network Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chartjs-data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart.js: Data Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chart.js: Data Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chart-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chartjs-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart.js Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-chartjs-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Chart.js Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vis-timelinejs-temporal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-timeline.js: Temporal Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="vis-timeline.js: Temporal Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeline-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotlyjs-scientific-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotly.js: Scientific Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotly.js: Scientific Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotly-advantages-over-chartjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotly Advantages Over Chart.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-plotly" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Plotly
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafletjs-map-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaflet.js: Map Visualizations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaflet.js: Map Visualizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leaflet-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaflet Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaflet-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaflet Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaflet Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-library-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Library Selection Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsive-design-fitting-every-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive Design: Fitting Every Screen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responsive Design: Fitting Every Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#width-responsive-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Width-Responsive Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-fixed-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Fixed Height?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas Regions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-responsive-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Responsive Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-height-iframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Height Iframes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browser-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser Compatibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Browsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibility Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-compatibility-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Compatibility Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Performance Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization Techniques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is State?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-management-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Management Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset Functionality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessibility-including-everyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility: Including Everyone
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessibility: Including Everyone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-accessibility-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Accessibility Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-reader-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Reader Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-and-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color and Contrast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics-measuring-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics: Measuring Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics: Measuring Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Track
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Indicators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privacy-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-technical-excellence-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Technical Excellence Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-libraries-your-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript Libraries: Your Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript Libraries: Your Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Libraries?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Library
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5js-framework-the-microsim-workhorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      p5.js Framework: The MicroSim Workhorse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="p5.js Framework: The MicroSim Workhorse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-p5js-for-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why p5.js for MicroSims?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p5js-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      p5.js Core Concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsive-p5js-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive p5.js Canvas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responsive p5.js Canvas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-p5js-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: p5.js Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mermaidjs-diagrams-from-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid.js: Diagrams from Text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mermaid.js: Diagrams from Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-diagram-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid Diagram Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mermaid Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Mermaid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vis-networkjs-network-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-network.js: Network Graphs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="vis-network.js: Network Graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vis-network-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-network Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-vis-network-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic vis-network Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vis-network-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-network Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chartjs-data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart.js: Data Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chart.js: Data Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chart-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chartjs-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart.js Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-chartjs-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Chart.js Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vis-timelinejs-temporal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      vis-timeline.js: Temporal Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="vis-timeline.js: Temporal Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeline-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotlyjs-scientific-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotly.js: Scientific Visualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotly.js: Scientific Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotly-advantages-over-chartjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotly Advantages Over Chart.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-plotly" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Plotly
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafletjs-map-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaflet.js: Map Visualizations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaflet.js: Map Visualizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leaflet-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaflet Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaflet-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaflet Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaflet Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-library-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Library Selection Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsive-design-fitting-every-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsive Design: Fitting Every Screen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responsive Design: Fitting Every Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#width-responsive-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Width-Responsive Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-fixed-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Fixed Height?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas Regions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-responsive-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating Responsive Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-height-iframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Height Iframes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browser-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser Compatibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Browsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibility Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-compatibility-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Compatibility Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Performance Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization Techniques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is State?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-management-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Management Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset Functionality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessibility-including-everyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility: Including Everyone
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessibility: Including Everyone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-accessibility-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Accessibility Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-reader-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Reader Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-and-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color and Contrast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics-measuring-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics: Measuring Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics: Measuring Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Track
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Indicators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privacy-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/14-technical-implementation/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="technical-implementation">Technical Implementation</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers the technical aspects of MicroSim development including JavaScript libraries, responsive design, accessibility, and analytics. You'll learn about popular frameworks (p5.js, mermaid.js, vis-network.js, chart.js, vis-timeline.js, plotly.js, leaflet.js), responsive design techniques for width-responsive and fixed-height layouts, canvas and control regions, browser compatibility, and performance considerations. The chapter also covers accessibility features including screen reader support and keyboard navigation, as well as analytics for measuring learning indicators and engagement. After completing this chapter, students will be able to implement technically sound MicroSims.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 26 concepts from the learning graph:</p>
+<ol>
+<li>JavaScript Libraries</li>
+<li>p5.js Framework</li>
+<li>mermaid.js Library</li>
+<li>vis-network.js Library</li>
+<li>chart.js Library</li>
+<li>vis-timeline.js Library</li>
+<li>plotly.js Library</li>
+<li>leaflet.js Library</li>
+<li>Responsive Design</li>
+<li>Width Responsive</li>
+<li>Fixed Height Iframe</li>
+<li>Canvas Dimensions</li>
+<li>Drawing Region</li>
+<li>Control Region</li>
+<li>Browser Compatibility</li>
+<li>Performance Metrics</li>
+<li>Device Requirements</li>
+<li>State Management</li>
+<li>Data Flow</li>
+<li>Accessibility</li>
+<li>Screen Reader Support</li>
+<li>P5 Describe Function</li>
+<li>Keyboard Navigation</li>
+<li>Analytics</li>
+<li>Learning Indicators</li>
+<li>Engagement Metrics</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-microsims/">Chapter 1: Introduction to MicroSims</a></li>
+<li><a href="../02-microsim-file-organization/">Chapter 2: MicroSim File Organization</a></li>
+<li><a href="../03-metadata-fundamentals/">Chapter 3: Metadata Fundamentals</a></li>
+<li><a href="../13-user-interface-controls/">Chapter 13: User Interface and Controls</a></li>
+</ul>
+<hr />
+<h2 id="why-technical-excellence-matters">Why Technical Excellence Matters</h2>
+<p>You've designed the perfect educational experience—clear learning objectives, appropriate visualization type, intuitive interface. Now comes the moment of truth: building it. And here's where dreams often crash against reality.</p>
+<p>A simulation that lags frustrates learners. One that doesn't work on tablets excludes students. One that screen readers can't interpret fails visually impaired users. One that crashes browsers gets abandoned.</p>
+<p>Technical implementation is where your educational vision meets engineering reality. The good news? Modern JavaScript libraries handle most heavy lifting. The challenge? Knowing which library to use, how to make your work responsive, and how to ensure accessibility.</p>
+<p>This is where technical skills become your superpower. When you can confidently build MicroSims that work everywhere, load fast, and include everyone, your educational impact multiplies. Teachers trust your work. Students succeed on any device. Your simulations get shared and recommended.</p>
+<p>Let's build things that work!</p>
+<hr />
+<h2 id="javascript-libraries-your-toolkit">JavaScript Libraries: Your Toolkit</h2>
+<p><strong>JavaScript libraries</strong> are collections of pre-written code that solve common problems. Instead of building visualization engines from scratch, you leverage tested, optimized code.</p>
+<h3 id="why-use-libraries">Why Use Libraries?</h3>
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Faster development</strong></td>
+<td>Draw circles in one line, not hundreds</td>
+</tr>
+<tr>
+<td><strong>Tested code</strong></td>
+<td>Bugs already found and fixed</td>
+</tr>
+<tr>
+<td><strong>Community support</strong></td>
+<td>Tutorials, forums, examples</td>
+</tr>
+<tr>
+<td><strong>Cross-browser</strong></td>
+<td>Works on Chrome, Firefox, Safari, Edge</td>
+</tr>
+<tr>
+<td><strong>Optimized</strong></td>
+<td>Performance already tuned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="choosing-the-right-library">Choosing the Right Library</h3>
+<table>
+<thead>
+<tr>
+<th>If You Need...</th>
+<th>Use This Library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General-purpose drawing/animation</td>
+<td><strong>p5.js</strong></td>
+</tr>
+<tr>
+<td>Flowcharts and diagrams</td>
+<td><strong>Mermaid.js</strong></td>
+</tr>
+<tr>
+<td>Network/graph visualizations</td>
+<td><strong>vis-network.js</strong></td>
+</tr>
+<tr>
+<td>Charts (bar, line, pie)</td>
+<td><strong>Chart.js</strong></td>
+</tr>
+<tr>
+<td>Timelines</td>
+<td><strong>vis-timeline.js</strong></td>
+</tr>
+<tr>
+<td>Scientific/data plots</td>
+<td><strong>Plotly.js</strong></td>
+</tr>
+<tr>
+<td>Maps</td>
+<td><strong>Leaflet.js</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Let's explore each library in detail.</p>
+<hr />
+<h2 id="p5js-framework-the-microsim-workhorse">p5.js Framework: The MicroSim Workhorse</h2>
+<p><strong>p5.js</strong> is a JavaScript library for creative coding that makes it easy to draw graphics, create animations, and handle user input. It's the most popular choice for educational simulations.</p>
+<h3 id="why-p5js-for-microsims">Why p5.js for MicroSims?</h3>
+<table>
+<thead>
+<tr>
+<th>Strength</th>
+<th>How It Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Beginner-friendly</strong></td>
+<td>Simple syntax, forgiving errors</td>
+</tr>
+<tr>
+<td><strong>Immediate visual feedback</strong></td>
+<td>Draw first shapes in minutes</td>
+</tr>
+<tr>
+<td><strong>Animation built-in</strong></td>
+<td><code>draw()</code> loop handles frames</td>
+</tr>
+<tr>
+<td><strong>Input handling</strong></td>
+<td>Mouse, keyboard, touch</td>
+</tr>
+<tr>
+<td><strong>Large community</strong></td>
+<td>Tutorials, examples, forums</td>
+</tr>
+<tr>
+<td><strong>Educational focus</strong></td>
+<td>Designed for teaching coding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p5js-core-concepts">p5.js Core Concepts</h3>
+<p><strong>The setup() and draw() functions:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span><span class="w">  </span><span class="c1">// Create drawing area</span>
+<span class="w">  </span><span class="c1">// Run once at start</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">240</span><span class="p">);</span><span class="w">  </span><span class="c1">// Clear each frame</span>
+<span class="w">  </span><span class="nx">ellipse</span><span class="p">(</span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span><span class="w">  </span><span class="c1">// Draw circle</span>
+<span class="w">  </span><span class="c1">// Runs continuously (60fps by default)</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Drawing primitives:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>What It Draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ellipse(x, y, w, h)</code></td>
+<td>Oval or circle</td>
+</tr>
+<tr>
+<td><code>rect(x, y, w, h)</code></td>
+<td>Rectangle</td>
+</tr>
+<tr>
+<td><code>line(x1, y1, x2, y2)</code></td>
+<td>Line between points</td>
+</tr>
+<tr>
+<td><code>text(str, x, y)</code></td>
+<td>Text string</td>
+</tr>
+<tr>
+<td><code>arc(x, y, w, h, start, stop)</code></td>
+<td>Arc or partial circle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsive-p5js-canvas">Responsive p5.js Canvas</h3>
+<p>For width-responsive MicroSims, resize the canvas with the container:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">container</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;canvas-container&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;canvas-container&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">windowResized</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">resizeCanvas</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This pattern ensures the MicroSim adapts to any screen width.</p>
+<h4 id="diagram-p5js-architecture">Diagram: p5.js Architecture</h4>
+<iframe src="../../sims/p5-architecture/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>p5.js MicroSim Architecture Diagram</summary>
+Type: diagram
+
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+
+Learning Objective: Students will explain the p5.js execution model by tracing the flow from initialization through the animation loop.
+
+Layout: Flowchart showing p5.js program execution
+
+Visual elements:
+- Start node: "Page Loads"
+- Process: "setup() runs once"
+  - Sub-steps: createCanvas, initialize variables, set initial state
+- Loop indicator: "Animation Loop (60fps)"
+- Process: "draw() runs each frame"
+  - Sub-steps: clear background, calculate positions, draw shapes, display values
+- Event handlers branching:
+  - "mousePressed()"
+  - "keyPressed()"
+  - "windowResized()"
+- All handlers return to draw loop
+- Annotations explaining each phase
+
+Flow:
+1. Page loads → p5.js library initializes
+2. setup() executes once
+3. draw() begins continuous loop
+4. User events trigger handlers
+5. Handlers can modify state
+6. draw() reflects changes
+
+Interactive elements:
+- Click any node to see code example
+- Toggle: "Show execution timeline"
+- Highlight: Current execution point animation
+
+Color scheme:
+- Initialization: Blue
+- Animation loop: Green (cycling)
+- Event handlers: Orange
+- Flow arrows: Gray
+
+Implementation: p5.js with animated flowchart
+</details>
+
+<hr />
+<h2 id="mermaidjs-diagrams-from-text">Mermaid.js: Diagrams from Text</h2>
+<p><strong>Mermaid.js</strong> generates diagrams and flowcharts from text descriptions. It's perfect for explanatory diagrams that don't need animation.</p>
+<h3 id="mermaid-diagram-types">Mermaid Diagram Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Use Case</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flowchart</strong></td>
+<td>Process flows, decisions</td>
+<td><code>graph TD</code></td>
+</tr>
+<tr>
+<td><strong>Sequence</strong></td>
+<td>Interactions over time</td>
+<td><code>sequenceDiagram</code></td>
+</tr>
+<tr>
+<td><strong>Class</strong></td>
+<td>Object relationships</td>
+<td><code>classDiagram</code></td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>State machines</td>
+<td><code>stateDiagram-v2</code></td>
+</tr>
+<tr>
+<td><strong>Entity-Relationship</strong></td>
+<td>Database schemas</td>
+<td><code>erDiagram</code></td>
+</tr>
+<tr>
+<td><strong>Gantt</strong></td>
+<td>Project timelines</td>
+<td><code>gantt</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mermaid-example">Mermaid Example</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>graph TD
+    A[Start] --&gt; B{Is it working?}
+    B --&gt;|Yes| C[Great!]
+    B --&gt;|No| D[Debug]
+    D --&gt; B
+</code></pre></div></td></tr></table></div>
+<p>This text automatically renders as a flowchart.</p>
+<h3 id="when-to-use-mermaid">When to Use Mermaid</h3>
+<p><strong>Use Mermaid when:</strong></p>
+<ul>
+<li>Diagram is static (no animation needed)</li>
+<li>Content is process/relationship focused</li>
+<li>Easy editing is priority</li>
+<li>Integration with Markdown documentation</li>
+</ul>
+<p><strong>Use p5.js instead when:</strong></p>
+<ul>
+<li>Animation is needed</li>
+<li>User interaction is required</li>
+<li>Custom visual style is important</li>
+<li>Dynamic data visualization</li>
+</ul>
+<hr />
+<h2 id="vis-networkjs-network-graphs">vis-network.js: Network Graphs</h2>
+<p><strong>vis-network.js</strong> specializes in interactive network/graph visualizations—nodes connected by edges.</p>
+<h3 id="vis-network-features">vis-network Features</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Force-directed layout</strong></td>
+<td>Nodes auto-arrange based on connections</td>
+</tr>
+<tr>
+<td><strong>Interactive</strong></td>
+<td>Drag nodes, zoom, pan</td>
+</tr>
+<tr>
+<td><strong>Customizable</strong></td>
+<td>Node shapes, edge styles, colors</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>Click, hover, select callbacks</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Handles hundreds of nodes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basic-vis-network-example">Basic vis-network Example</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Create nodes</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">vis</span><span class="p">.</span><span class="nx">DataSet</span><span class="p">([</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Node 1&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Node 2&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Node 3&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]);</span>
+
+<span class="c1">// Create edges</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">vis</span><span class="p">.</span><span class="nx">DataSet</span><span class="p">([</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="kr">from</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="kr">from</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]);</span>
+
+<span class="c1">// Create network</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;network&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nodes</span><span class="o">:</span><span class="w"> </span><span class="nx">nodes</span><span class="p">,</span><span class="w"> </span><span class="nx">edges</span><span class="o">:</span><span class="w"> </span><span class="nx">edges</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">vis</span><span class="p">.</span><span class="nx">Network</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="vis-network-use-cases">vis-network Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Concept maps</strong></td>
+<td>Learning topic relationships</td>
+</tr>
+<tr>
+<td><strong>Dependency graphs</strong></td>
+<td>Course prerequisites</td>
+</tr>
+<tr>
+<td><strong>Social networks</strong></td>
+<td>Connection patterns</td>
+</tr>
+<tr>
+<td><strong>Organizational charts</strong></td>
+<td>Reporting structure</td>
+</tr>
+<tr>
+<td><strong>Knowledge graphs</strong></td>
+<td>Semantic relationships</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="chartjs-data-visualization">Chart.js: Data Visualization</h2>
+<p><strong>Chart.js</strong> creates beautiful, responsive charts with minimal code. It's the go-to library for quantitative data display.</p>
+<h3 id="chart-types">Chart Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bar</strong></td>
+<td>Comparing categories</td>
+</tr>
+<tr>
+<td><strong>Line</strong></td>
+<td>Trends over time</td>
+</tr>
+<tr>
+<td><strong>Pie/Doughnut</strong></td>
+<td>Part-to-whole</td>
+</tr>
+<tr>
+<td><strong>Radar</strong></td>
+<td>Multi-dimensional comparison</td>
+</tr>
+<tr>
+<td><strong>Scatter</strong></td>
+<td>Correlation</td>
+</tr>
+<tr>
+<td><strong>Bubble</strong></td>
+<td>Three-variable relationships</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chartjs-features">Chart.js Features</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Responsive</strong></td>
+<td>Auto-resizes with container</td>
+</tr>
+<tr>
+<td><strong>Animated</strong></td>
+<td>Smooth transitions</td>
+</tr>
+<tr>
+<td><strong>Interactive</strong></td>
+<td>Tooltips, click events</td>
+</tr>
+<tr>
+<td><strong>Customizable</strong></td>
+<td>Colors, fonts, legends</td>
+</tr>
+<tr>
+<td><strong>Accessible</strong></td>
+<td>Screen reader support</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basic-chartjs-example">Basic Chart.js Example</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myChart&#39;</span><span class="p">);</span>
+<span class="ow">new</span><span class="w"> </span><span class="nx">Chart</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">labels</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mar&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">datasets</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">19</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">],</span>
+<span class="w">      </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;rgba(54, 162, 235, 0.5)&#39;</span>
+<span class="w">    </span><span class="p">}]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="vis-timelinejs-temporal-data">vis-timeline.js: Temporal Data</h2>
+<p><strong>vis-timeline.js</strong> creates interactive timelines for displaying events over time.</p>
+<h3 id="timeline-features">Timeline Features</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zoom and pan</strong></td>
+<td>Navigate time ranges</td>
+</tr>
+<tr>
+<td><strong>Groups</strong></td>
+<td>Parallel event tracks</td>
+</tr>
+<tr>
+<td><strong>Editing</strong></td>
+<td>Drag to move/resize events</td>
+</tr>
+<tr>
+<td><strong>Customization</strong></td>
+<td>Colors, templates, styles</td>
+</tr>
+<tr>
+<td><strong>Range selection</strong></td>
+<td>Select time periods</td>
+</tr>
+</tbody>
+</table>
+<h3 id="timeline-use-cases">Timeline Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>History</strong></td>
+<td>Historical event sequences</td>
+</tr>
+<tr>
+<td><strong>Project planning</strong></td>
+<td>Gantt-style schedules</td>
+</tr>
+<tr>
+<td><strong>Biography</strong></td>
+<td>Life events</td>
+</tr>
+<tr>
+<td><strong>Evolution</strong></td>
+<td>Species development</td>
+</tr>
+<tr>
+<td><strong>Experiments</strong></td>
+<td>Lab data over time</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="plotlyjs-scientific-visualization">Plotly.js: Scientific Visualization</h2>
+<p><strong>Plotly.js</strong> creates publication-quality scientific plots and interactive data visualizations.</p>
+<h3 id="plotly-advantages-over-chartjs">Plotly Advantages Over Chart.js</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Plotly</th>
+<th>Chart.js</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3D plots</strong></td>
+<td>Full support</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td><strong>Scientific formats</strong></td>
+<td>Contour, heatmap, surface</td>
+<td>Basic</td>
+</tr>
+<tr>
+<td><strong>Interactivity</strong></td>
+<td>Extensive (zoom, hover, selection)</td>
+<td>Good</td>
+</tr>
+<tr>
+<td><strong>Export</strong></td>
+<td>PNG, SVG, PDF</td>
+<td>PNG</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>Larger (~3MB)</td>
+<td>Smaller (~200KB)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="when-to-use-plotly">When to Use Plotly</h3>
+<p><strong>Choose Plotly for:</strong></p>
+<ul>
+<li>Scientific/research visualizations</li>
+<li>3D data display</li>
+<li>Publication-quality export needed</li>
+<li>Advanced statistical plots</li>
+<li>Large datasets with interaction</li>
+</ul>
+<p><strong>Choose Chart.js for:</strong></p>
+<ul>
+<li>Simple charts (bar, line, pie)</li>
+<li>Lightweight loading required</li>
+<li>Basic interactivity sufficient</li>
+<li>Dashboard components</li>
+</ul>
+<hr />
+<h2 id="leafletjs-map-visualizations">Leaflet.js: Map Visualizations</h2>
+<p><strong>Leaflet.js</strong> creates interactive maps with markers, layers, and geographic data.</p>
+<h3 id="leaflet-features">Leaflet Features</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tile layers</strong></td>
+<td>OpenStreetMap, satellite, custom</td>
+</tr>
+<tr>
+<td><strong>Markers</strong></td>
+<td>Points with popups</td>
+</tr>
+<tr>
+<td><strong>Polygons</strong></td>
+<td>Regions and boundaries</td>
+</tr>
+<tr>
+<td><strong>GeoJSON</strong></td>
+<td>Standard geographic data format</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>Click, zoom, pan callbacks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="leaflet-use-cases">Leaflet Use Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Geographic distribution</strong></td>
+<td>Species habitats</td>
+</tr>
+<tr>
+<td><strong>Historical maps</strong></td>
+<td>Migration routes</td>
+</tr>
+<tr>
+<td><strong>Data by location</strong></td>
+<td>Election results</td>
+</tr>
+<tr>
+<td><strong>Field work</strong></td>
+<td>Sample locations</td>
+</tr>
+<tr>
+<td><strong>Navigation</strong></td>
+<td>Route planning</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-library-selection-guide">Diagram: Library Selection Guide</h4>
+<iframe src="../../sims/library-selector/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>JavaScript Library Selection Guide</summary>
+Type: workflow
+
+Bloom Level: Apply (L3)
+Bloom Verb: select
+
+Learning Objective: Students will select the appropriate JavaScript library for a given visualization task by following a decision tree based on requirements.
+
+Layout: Decision tree flowchart
+
+Visual elements:
+- Start node: "What do you need to visualize?"
+- Decision diamonds with questions
+- End nodes showing library recommendations
+- Example thumbnails for each library
+
+Decision flow:
+
+1. "What do you need to visualize?"
+   - Animation/simulation → p5.js
+   - Static diagram → Continue
+   - Data/charts → Continue
+   - Maps → Leaflet.js
+   - Networks → vis-network.js
+   - Timeline → vis-timeline.js
+
+2. "Need animation/interactivity?"
+   - No, static → Mermaid.js
+   - Yes → Continue
+
+3. "Scientific/3D data?"
+   - Yes → Plotly.js
+   - No → Chart.js
+
+4. "Custom drawing needed?"
+   - Yes → p5.js
+   - No → Check other options
+
+End nodes with library logos and brief description
+
+Interactive elements:
+- Click decision to highlight that path
+- Hover nodes for examples
+- "Start over" button
+- Quiz mode: Given scenario, trace correct path
+
+Color scheme:
+- p5.js: Pink/magenta (official brand)
+- Chart.js: Blue
+- Plotly.js: Purple
+- Mermaid: Green
+- vis-network: Orange
+- Leaflet: Green (maps)
+- vis-timeline: Blue
+
+Implementation: p5.js with interactive decision tree
+</details>
+
+<hr />
+<h2 id="responsive-design-fitting-every-screen">Responsive Design: Fitting Every Screen</h2>
+<p><strong>Responsive design</strong> ensures MicroSims work across all device sizes—from 4K monitors to phone screens.</p>
+<h3 id="width-responsive-strategy">Width-Responsive Strategy</h3>
+<p>The standard MicroSim approach: <strong>fixed height, responsive width</strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// In setup()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">containerWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">;</span>
+<span class="nx">createCanvas</span><span class="p">(</span><span class="nx">containerWidth</span><span class="p">,</span><span class="w"> </span><span class="mf">450</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fixed height</span>
+
+<span class="c1">// In windowResized()</span>
+<span class="nx">resizeCanvas</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">,</span><span class="w"> </span><span class="mf">450</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="why-fixed-height">Why Fixed Height?</h3>
+<table>
+<thead>
+<tr>
+<th>Fixed Height Benefits</th>
+<th>Problems It Avoids</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predictable layout</td>
+<td>Content jumping around</td>
+</tr>
+<tr>
+<td>Consistent iframe embed</td>
+<td>Scrollbar issues</td>
+</tr>
+<tr>
+<td>Reliable control placement</td>
+<td>Touch target problems</td>
+</tr>
+<tr>
+<td>Design simplicity</td>
+<td>Complex aspect ratio math</td>
+</tr>
+</tbody>
+</table>
+<h3 id="canvas-regions">Canvas Regions</h3>
+<p>Divide your canvas into functional regions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>┌──────────────────────────────────────────┐
+│            DRAWING REGION                │
+│         (visualizations here)            │
+│                                          │
+├────────────────────────┬─────────────────┤
+│     CONTROL REGION     │  INFO REGION    │
+│  (sliders, buttons)    │  (values, text) │
+└────────────────────────┴─────────────────┘
+</code></pre></div></td></tr></table></div>
+<p><strong>Drawing region</strong>: Where simulation happens. Should get most space.</p>
+<p><strong>Control region</strong>: User input controls. Keep accessible.</p>
+<p><strong>Info region</strong>: Output values, status. Update dynamically.</p>
+<h3 id="calculating-responsive-dimensions">Calculating Responsive Dimensions</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">350</span><span class="p">;</span><span class="w">  </span><span class="c1">// Fixed</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">controlHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w">  </span><span class="c1">// Fixed</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">controlHeight</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">updateCanvasSize</span><span class="p">();</span><span class="w">  </span><span class="c1">// Always first in setup!</span>
+<span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">updateCanvasSize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">windowResized</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">updateCanvasSize</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">resizeCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="fixed-height-iframes">Fixed Height Iframes</h3>
+<p>MicroSims are often embedded as iframes in course pages:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;sims/pendulum/main.html&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span>
+  <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>The <code>height="500px"</code> is fixed. The <code>width="100%"</code> is responsive. The MicroSim adapts internally.</p>
+<hr />
+<h2 id="browser-compatibility">Browser Compatibility</h2>
+<p><strong>Browser compatibility</strong> ensures MicroSims work across all major browsers.</p>
+<h3 id="target-browsers">Target Browsers</h3>
+<table>
+<thead>
+<tr>
+<th>Browser</th>
+<th>Minimum Version</th>
+<th>Market Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chrome</strong></td>
+<td>80+</td>
+<td>~65%</td>
+</tr>
+<tr>
+<td><strong>Safari</strong></td>
+<td>13+</td>
+<td>~18%</td>
+</tr>
+<tr>
+<td><strong>Firefox</strong></td>
+<td>75+</td>
+<td>~8%</td>
+</tr>
+<tr>
+<td><strong>Edge</strong></td>
+<td>80+</td>
+<td>~5%</td>
+</tr>
+<tr>
+<td><strong>Others</strong></td>
+<td>Varies</td>
+<td>~4%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compatibility-strategies">Compatibility Strategies</h3>
+<p><strong>Use established libraries</strong>: p5.js, Chart.js, etc. handle cross-browser issues.</p>
+<p><strong>Avoid cutting-edge features</strong>: Unless essential, skip features that need polyfills.</p>
+<p><strong>Test on multiple browsers</strong>: Especially Safari (often has unique quirks).</p>
+<p><strong>Progressive enhancement</strong>: Core functionality works everywhere; enhancements for modern browsers.</p>
+<h3 id="common-compatibility-issues">Common Compatibility Issues</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ES6 not supported</strong></td>
+<td>Use Babel or avoid ES6 features</td>
+</tr>
+<tr>
+<td><strong>CSS Grid gaps</strong></td>
+<td>Add fallback margins</td>
+</tr>
+<tr>
+<td><strong>Touch events</strong></td>
+<td>Use pointer events for cross-platform</td>
+</tr>
+<tr>
+<td><strong>Canvas performance</strong></td>
+<td>Test on mobile Safari</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="performance-metrics">Performance Metrics</h2>
+<p><strong>Performance</strong> determines whether MicroSims feel responsive or sluggish.</p>
+<h3 id="key-performance-metrics">Key Performance Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frame rate</strong></td>
+<td>60 FPS</td>
+<td>Smooth animation</td>
+</tr>
+<tr>
+<td><strong>Load time</strong></td>
+<td>&lt;3 seconds</td>
+<td>User patience</td>
+</tr>
+<tr>
+<td><strong>Memory usage</strong></td>
+<td>&lt;100 MB</td>
+<td>Mobile devices</td>
+</tr>
+<tr>
+<td><strong>CPU usage</strong></td>
+<td>&lt;30%</td>
+<td>Battery life, heat</td>
+</tr>
+<tr>
+<td><strong>First paint</strong></td>
+<td>&lt;1 second</td>
+<td>Perceived speed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance-optimization-techniques">Performance Optimization Techniques</h3>
+<p><strong>Reduce draw calls:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Bad: Redrawing static elements every frame</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">240</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">drawGrid</span><span class="p">();</span><span class="w">       </span><span class="c1">// Redraws same grid 60x/second</span>
+<span class="w">  </span><span class="nx">drawPendulum</span><span class="p">();</span><span class="w">   </span><span class="c1">// Only this needs to move</span>
+<span class="p">}</span>
+
+<span class="c1">// Good: Draw static elements once</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">staticLayer</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">staticLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createGraphics</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">drawGridOnce</span><span class="p">(</span><span class="nx">staticLayer</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">image</span><span class="p">(</span><span class="nx">staticLayer</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fast: just copy pixels</span>
+<span class="w">  </span><span class="nx">drawPendulum</span><span class="p">();</span><span class="w">            </span><span class="c1">// Only dynamic content</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Throttle expensive calculations:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">lastCalc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">CALC_INTERVAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w">  </span><span class="c1">// Recalculate every 100ms</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">lastCalc</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">CALC_INTERVAL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">expensiveCalculation</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">lastCalc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">millis</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// Drawing happens every frame</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Optimize images:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Use For</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SVG</strong></td>
+<td>Icons, diagrams</td>
+<td>Scalable, small</td>
+</tr>
+<tr>
+<td><strong>WebP</strong></td>
+<td>Photos</td>
+<td>25-35% smaller than JPEG</td>
+</tr>
+<tr>
+<td><strong>PNG</strong></td>
+<td>Transparency needed</td>
+<td>Lossless</td>
+</tr>
+<tr>
+<td><strong>JPEG</strong></td>
+<td>Photos (no transparency)</td>
+<td>Lossy, small</td>
+</tr>
+</tbody>
+</table>
+<h3 id="device-requirements">Device Requirements</h3>
+<p>Test on representative devices:</p>
+<table>
+<thead>
+<tr>
+<th>Device Type</th>
+<th>Test Priority</th>
+<th>Challenges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desktop Chrome</strong></td>
+<td>High</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td><strong>Mobile Safari</strong></td>
+<td>High</td>
+<td>Performance, touch</td>
+</tr>
+<tr>
+<td><strong>Tablet</strong></td>
+<td>Medium</td>
+<td>Touch, orientation</td>
+</tr>
+<tr>
+<td><strong>Low-end phones</strong></td>
+<td>Medium</td>
+<td>Memory, CPU</td>
+</tr>
+<tr>
+<td><strong>Chromebooks</strong></td>
+<td>Medium</td>
+<td>School deployments</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="state-management">State Management</h2>
+<p><strong>State management</strong> keeps track of simulation values and ensures consistent behavior.</p>
+<h3 id="what-is-state">What Is State?</h3>
+<p>State includes all values that can change:</p>
+<ul>
+<li>Parameter values (pendulum length, mass)</li>
+<li>Simulation state (running/paused, current time)</li>
+<li>UI state (which tab is active, dropdown selection)</li>
+<li>Computed values (period, energy)</li>
+</ul>
+<h3 id="state-management-patterns">State Management Patterns</h3>
+<p><strong>Simple approach: Global variables</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">isRunning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PI</span><span class="o">/</span><span class="mf">4</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>Works for simple MicroSims but gets messy with many variables.</p>
+<p><strong>Better: State object</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nx">mass</span><span class="o">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">running</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">simulation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">angle</span><span class="o">:</span><span class="w"> </span><span class="nx">PI</span><span class="o">/</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">velocity</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">display</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">showVectors</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<p>Organized, easier to reset, easier to save/load.</p>
+<h3 id="reset-functionality">Reset Functionality</h3>
+<p>Every MicroSim needs a reset button. Store initial values:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">INITIAL_STATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nx">mass</span><span class="o">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">running</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">simulation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">angle</span><span class="o">:</span><span class="w"> </span><span class="nx">PI</span><span class="o">/</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">velocity</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">resetSimulation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">INITIAL_STATE</span><span class="p">));</span>
+<span class="w">  </span><span class="c1">// Deep copy to avoid reference issues</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="data-flow">Data Flow</h3>
+<p>Data should flow predictably:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>User Input → Update State → Recalculate → Redraw
+</code></pre></div></td></tr></table></div>
+<p><strong>Avoid:</strong></p>
+<ul>
+<li>State changes from multiple places</li>
+<li>UI reading from multiple sources</li>
+<li>Circular updates</li>
+</ul>
+<hr />
+<h2 id="accessibility-including-everyone">Accessibility: Including Everyone</h2>
+<p><strong>Accessibility</strong> ensures MicroSims work for users with disabilities—visual, motor, cognitive, and auditory.</p>
+<h3 id="why-accessibility-matters">Why Accessibility Matters</h3>
+<table>
+<thead>
+<tr>
+<th>Reason</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Legal requirements</strong></td>
+<td>Many institutions require WCAG compliance</td>
+</tr>
+<tr>
+<td><strong>Ethical obligation</strong></td>
+<td>Education should be for everyone</td>
+</tr>
+<tr>
+<td><strong>Better design</strong></td>
+<td>Accessibility improves usability for all</td>
+</tr>
+<tr>
+<td><strong>Larger audience</strong></td>
+<td>15-20% of people have some disability</td>
+</tr>
+</tbody>
+</table>
+<h3 id="screen-reader-support">Screen Reader Support</h3>
+<p>Screen readers announce content to visually impaired users. MicroSims are challenging because they're visual, but we can help.</p>
+<p><strong>p5.js describe() function:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Drawing code...</span>
+
+<span class="w">  </span><span class="c1">// Describe for screen readers</span>
+<span class="w">  </span><span class="nx">describe</span><span class="p">(</span><span class="sb">`Pendulum simulation.</span>
+<span class="sb">    Length: </span><span class="si">${</span><span class="nx">length</span><span class="si">}</span><span class="sb"> meters.</span>
+<span class="sb">    Current angle: </span><span class="si">${</span><span class="nx">degrees</span><span class="p">(</span><span class="nx">angle</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="si">}</span><span class="sb"> degrees.</span>
+<span class="sb">    </span><span class="si">${</span><span class="nx">isRunning</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;Running&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Paused&#39;</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The <code>describe()</code> function updates a hidden element that screen readers announce.</p>
+<h3 id="keyboard-navigation">Keyboard Navigation</h3>
+<p>Users who can't use mice need keyboard alternatives:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Keyboard Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Click button</td>
+<td>Enter or Space</td>
+</tr>
+<tr>
+<td>Adjust slider</td>
+<td>Arrow keys</td>
+</tr>
+<tr>
+<td>Navigate controls</td>
+<td>Tab</td>
+</tr>
+<tr>
+<td>Activate dropdown</td>
+<td>Enter, then arrows</td>
+</tr>
+<tr>
+<td>Close modal</td>
+<td>Escape</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Implementing keyboard support:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Space toggles play/pause</span>
+<span class="w">    </span><span class="nx">isRunning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">isRunning</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;R&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// R resets</span>
+<span class="w">    </span><span class="nx">resetSimulation</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">keyCode</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">LEFT_ARROW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">keyCode</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">RIGHT_ARROW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">min</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="color-and-contrast">Color and Contrast</h3>
+<table>
+<thead>
+<tr>
+<th>Guideline</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text contrast</strong></td>
+<td>4.5:1 minimum (WCAG AA)</td>
+</tr>
+<tr>
+<td><strong>Large text</strong></td>
+<td>3:1 minimum</td>
+</tr>
+<tr>
+<td><strong>Non-text elements</strong></td>
+<td>3:1 minimum</td>
+</tr>
+<tr>
+<td><strong>Don't rely on color alone</strong></td>
+<td>Add patterns, labels, icons</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accessibility-checklist">Accessibility Checklist</h3>
+<p>Before publishing, verify:</p>
+<ul>
+<li>[ ] Keyboard navigation works for all controls</li>
+<li>[ ] Screen reader describes simulation state</li>
+<li>[ ] Color contrast meets WCAG AA</li>
+<li>[ ] Focus indicators visible</li>
+<li>[ ] No content relies solely on color</li>
+<li>[ ] Text alternatives for visual elements</li>
+<li>[ ] Controls have visible labels</li>
+</ul>
+<hr />
+<h2 id="analytics-measuring-learning">Analytics: Measuring Learning</h2>
+<p><strong>Analytics</strong> track how students interact with MicroSims, providing insights for improvement and learning assessment.</p>
+<h3 id="what-to-track">What to Track</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What It Reveals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time on task</strong></td>
+<td>Engagement duration</td>
+</tr>
+<tr>
+<td><strong>Parameter changes</strong></td>
+<td>Exploration breadth</td>
+</tr>
+<tr>
+<td><strong>Reset frequency</strong></td>
+<td>Experimentation or confusion?</td>
+</tr>
+<tr>
+<td><strong>Completion rate</strong></td>
+<td>For guided activities</td>
+</tr>
+<tr>
+<td><strong>Error patterns</strong></td>
+<td>Common misconceptions</td>
+</tr>
+<tr>
+<td><strong>Help usage</strong></td>
+<td>Where students struggle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="learning-indicators">Learning Indicators</h3>
+<p><strong>Engagement metrics</strong> show <em>that</em> students used the MicroSim:</p>
+<ul>
+<li>Session duration</li>
+<li>Return visits</li>
+<li>Features used</li>
+</ul>
+<p><strong>Learning indicators</strong> suggest <em>whether</em> learning occurred:</p>
+<ul>
+<li>Improved prediction accuracy</li>
+<li>Faster problem-solving over time</li>
+<li>Transfer to new scenarios</li>
+<li>Correct answers on embedded questions</li>
+</ul>
+<h3 id="implementing-analytics">Implementing Analytics</h3>
+<p><strong>Basic event tracking:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">trackEvent</span><span class="p">(</span><span class="nx">eventName</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Send to analytics service</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Event: </span><span class="si">${</span><span class="nx">eventName</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Example: Send to server</span>
+<span class="w">  </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/analytics&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="nx">eventName</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+<span class="w">      </span><span class="nx">sessionId</span><span class="o">:</span><span class="w"> </span><span class="nx">sessionId</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="nx">trackEvent</span><span class="p">(</span><span class="s1">&#39;parameter_change&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">param</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;length&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1.5</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">trackEvent</span><span class="p">(</span><span class="s1">&#39;play_pressed&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<span class="nx">trackEvent</span><span class="p">(</span><span class="s1">&#39;reset_pressed&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="privacy-considerations">Privacy Considerations</h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Consent</strong></td>
+<td>Inform users of tracking</td>
+</tr>
+<tr>
+<td><strong>Anonymization</strong></td>
+<td>Don't collect identifying information</td>
+</tr>
+<tr>
+<td><strong>Data minimization</strong></td>
+<td>Only collect what's needed</td>
+</tr>
+<tr>
+<td><strong>Secure storage</strong></td>
+<td>Protect collected data</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Follow FERPA, GDPR, local regulations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>Let's see a complete MicroSim implementation incorporating all principles:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// State management</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">INITIAL_STATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">running</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">angle</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mf">4</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">velocity</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="p">};</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">INITIAL_STATE</span><span class="p">};</span>
+
+<span class="c1">// Responsive canvas</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">container</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">CANVAS_HEIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">450</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">DRAW_HEIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">350</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">updateCanvasSize</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">CANVAS_HEIGHT</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Create accessible controls</span>
+<span class="w">  </span><span class="nx">createControls</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">updateCanvasSize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">windowResized</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">updateCanvasSize</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">resizeCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">CANVAS_HEIGHT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">245</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Physics (if running)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">running</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">updatePhysics</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Drawing</span>
+<span class="w">  </span><span class="nx">drawPendulum</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">drawControls</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Accessibility</span>
+<span class="w">  </span><span class="nx">describe</span><span class="p">(</span><span class="sb">`Pendulum simulation.</span>
+<span class="sb">    Length: </span><span class="si">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">length</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="si">}</span><span class="sb"> meters.</span>
+<span class="sb">    </span><span class="si">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">running</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;Running&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Paused&#39;</span><span class="si">}</span><span class="sb">.`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">state</span><span class="p">.</span><span class="nx">running</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">running</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">trackEvent</span><span class="p">(</span><span class="s1">&#39;toggle_play&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">running</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">running</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">resetSimulation</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">resetSimulation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">INITIAL_STATE</span><span class="p">};</span>
+<span class="w">  </span><span class="nx">trackEvent</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This structure:</p>
+<ul>
+<li>✅ Manages state cleanly</li>
+<li>✅ Responds to window resize</li>
+<li>✅ Updates accessibility description</li>
+<li>✅ Supports keyboard navigation</li>
+<li>✅ Tracks user interactions</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>JavaScript libraries</strong> accelerate development—choose based on visualization needs (p5.js for animation, Chart.js for data, vis-network for graphs)</p>
+</li>
+<li>
+<p><strong>p5.js</strong> is the MicroSim workhorse with its simple setup()/draw() pattern and excellent educational resources</p>
+</li>
+<li>
+<p><strong>Match the library to the task</strong>: Mermaid for static diagrams, Plotly for scientific plots, Leaflet for maps</p>
+</li>
+<li>
+<p><strong>Responsive design</strong> uses fixed height with responsive width—always call <code>updateCanvasSize()</code> first in setup()</p>
+</li>
+<li>
+<p><strong>Divide canvas into regions</strong>: drawing area, control area, and info area for organized layouts</p>
+</li>
+<li>
+<p><strong>Browser compatibility</strong> comes free with established libraries—test especially on Safari and mobile</p>
+</li>
+<li>
+<p><strong>Performance optimization</strong> includes reducing draw calls, throttling expensive calculations, and optimizing images</p>
+</li>
+<li>
+<p><strong>State management</strong> using a state object keeps simulation values organized and enables easy reset</p>
+</li>
+<li>
+<p><strong>Accessibility is essential</strong>: use p5.js <code>describe()</code> for screen readers, implement keyboard navigation, ensure color contrast</p>
+</li>
+<li>
+<p><strong>Analytics</strong> help measure learning—track engagement metrics and learning indicators while respecting privacy</p>
+</li>
+<li>
+<p><strong>Test on representative devices</strong> including mobile Safari, tablets, and Chromebooks</p>
+</li>
+<li>
+<p><strong>The complete MicroSim</strong> combines responsive canvas, clean state management, accessibility features, and performance optimization</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>Congratulations! You've completed the MicroSim Search textbook. You now understand:</p>
+<ul>
+<li>How to structure and organize MicroSims</li>
+<li>Metadata standards that make content searchable</li>
+<li>Search technologies from faceted search to semantic embeddings</li>
+<li>Data pipelines that keep collections current</li>
+<li>Educational frameworks that make simulations pedagogically sound</li>
+<li>Visualization types and interface patterns</li>
+<li>Technical implementation for production-ready MicroSims</li>
+</ul>
+<p>You have the knowledge to create, classify, discover, and implement educational simulations that work everywhere and include everyone.</p>
+<p><strong>Your mission now</strong>: Build MicroSims that transform education. Create simulations that make concepts click. Design interfaces that feel invisible. Write metadata that helps teachers find exactly what they need.</p>
+<p>The tools are in your hands. The frameworks are understood. The techniques are learned.</p>
+<p>Go make something amazing!</p>
+<hr />
+<p><em>Thank you for learning with us. Now go build the future of education!</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../13-user-interface-controls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13. User Interface and Controls">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                13. User Interface and Controls
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../reports/microsim-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: MicroSim Metrics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MicroSim Metrics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

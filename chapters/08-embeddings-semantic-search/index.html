@@ -1,0 +1,3863 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Master vector embeddings and semantic search techniques to find similar MicroSims based on meaning, not just keywords, using cosine similarity and dimensionality reduction">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/08-embeddings-semantic-search/">
+      
+      
+        <link rel="prev" href="../07-faceted-search-client-side/">
+      
+      
+        <link rel="next" href="../09-data-pipelines-aggregation/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Embeddings and Semantic Search - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#embeddings-and-semantic-search" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Embeddings and Semantic Search
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-magic-of-understanding-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic of Understanding Meaning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Embeddings?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Embeddings?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-words-to-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Words to Numbers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-embeddings-are-high-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real Embeddings Are High-Dimensional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-representations-the-language-of-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Representations: The Language of Similarity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Representations: The Language of Similarity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vectors-as-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectors as Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-space-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vector Space Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-embeddings-are-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Embeddings Are Created
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Embeddings Are Created">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#embedding-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedding Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-training-process-simplified" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Training Process (Simplified)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-microsim-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating MicroSim Embeddings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosine-similarity-measuring-relatedness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cosine Similarity: Measuring Relatedness
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cosine Similarity: Measuring Relatedness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-similarity-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting Similarity Scores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpreting Similarity Scores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cosine-similarity-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cosine Similarity Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-similar-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Similar MicroSims
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding Similar MicroSims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-it-solves" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Problem It Solves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-similar-microsims-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Similar MicroSims Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-finding-similar-physics-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Finding Similar Physics Simulations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity-scores-in-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similarity Scores in the Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Similarity Scores in the Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#score-display-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score Display Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-experience-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Experience Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Experience Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-similarity-score-interface-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Similarity Score Interface Demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nearest-neighbors-finding-the-closest-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nearest Neighbors: Finding the Closest Items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nearest Neighbors: Finding the Closest Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Nearest Neighbors (KNN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-naive-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Naive Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-computing-nearest-neighbors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Computing Nearest Neighbors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-k10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why K=10?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why K=10?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-knn-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: KNN Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensionality-reduction-making-embeddings-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensionality Reduction: Making Embeddings Visible
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimensionality Reduction: Making Embeddings Visible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-reduce-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Reduce Dimensions?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Challenge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca-principal-component-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA: Principal Component Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCA: Principal Component Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA in Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variance Explained
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-sne-preserving-local-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      t-SNE: Preserving Local Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="t-SNE: Preserving Local Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t-sne-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      t-SNE in Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-perplexity-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Perplexity Parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t-sne-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      t-SNE Characteristics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="t-SNE Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pca-vs-t-sne-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: PCA vs t-SNE Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-maps-exploring-the-microsim-universe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Maps: Exploring the MicroSim Universe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization Maps: Exploring the MicroSim Universe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-embedding-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes a Good Embedding Map?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases-for-visualization-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases for Visualization Maps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-an-interactive-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building an Interactive Map
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building an Interactive Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-embedding-map-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Embedding Map Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-search-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Search in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Search in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-find-me-something-like-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 1: "Find me something like this"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-semantic-query-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 2: Semantic Query Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-collection-diversity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 3: Collection Diversity Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-together-the-complete-semantic-search-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It Together: The Complete Semantic Search Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-magic-of-understanding-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic of Understanding Meaning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Embeddings?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Embeddings?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-words-to-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Words to Numbers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-embeddings-are-high-dimensional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real Embeddings Are High-Dimensional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-representations-the-language-of-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Representations: The Language of Similarity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Representations: The Language of Similarity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vectors-as-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectors as Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-space-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vector Space Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-embeddings-are-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Embeddings Are Created
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Embeddings Are Created">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#embedding-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedding Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-training-process-simplified" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Training Process (Simplified)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-microsim-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating MicroSim Embeddings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosine-similarity-measuring-relatedness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cosine Similarity: Measuring Relatedness
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cosine Similarity: Measuring Relatedness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-similarity-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting Similarity Scores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpreting Similarity Scores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cosine-similarity-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cosine Similarity Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-similar-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Similar MicroSims
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding Similar MicroSims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-it-solves" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Problem It Solves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-similar-microsims-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Similar MicroSims Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-finding-similar-physics-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Finding Similar Physics Simulations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity-scores-in-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similarity Scores in the Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Similarity Scores in the Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#score-display-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score Display Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-experience-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Experience Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Experience Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-similarity-score-interface-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Similarity Score Interface Demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nearest-neighbors-finding-the-closest-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nearest Neighbors: Finding the Closest Items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nearest Neighbors: Finding the Closest Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-nearest-neighbors-knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Nearest Neighbors (KNN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-naive-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Naive Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-computing-nearest-neighbors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Computing Nearest Neighbors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-k10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why K=10?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why K=10?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-knn-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: KNN Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensionality-reduction-making-embeddings-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimensionality Reduction: Making Embeddings Visible
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimensionality Reduction: Making Embeddings Visible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-reduce-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Reduce Dimensions?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Challenge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca-principal-component-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA: Principal Component Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCA: Principal Component Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA in Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCA Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variance Explained
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-sne-preserving-local-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      t-SNE: Preserving Local Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="t-SNE: Preserving Local Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t-sne-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      t-SNE in Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-perplexity-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Perplexity Parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t-sne-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      t-SNE Characteristics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="t-SNE Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pca-vs-t-sne-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: PCA vs t-SNE Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-maps-exploring-the-microsim-universe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Maps: Exploring the MicroSim Universe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization Maps: Exploring the MicroSim Universe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-embedding-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes a Good Embedding Map?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases-for-visualization-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases for Visualization Maps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-an-interactive-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building an Interactive Map
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building an Interactive Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-embedding-map-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Embedding Map Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-search-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Search in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Search in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-find-me-something-like-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 1: "Find me something like this"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-semantic-query-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 2: Semantic Query Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-collection-diversity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 3: Collection Diversity Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-together-the-complete-semantic-search-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It Together: The Complete Semantic Search Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/08-embeddings-semantic-search/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="embeddings-and-semantic-search">Embeddings and Semantic Search</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces vector embeddings and semantic search techniques for finding related MicroSims based on meaning rather than keywords. You'll learn how embeddings represent text as high-dimensional vectors, how cosine similarity measures semantic relatedness, and how to find similar MicroSims using nearest neighbor algorithms. The chapter also covers dimensionality reduction techniques including PCA and t-SNE for visualizing embedding spaces. After completing this chapter, students will understand how semantic search enhances MicroSim discovery.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<ol>
+<li>Embeddings</li>
+<li>Vector Representations</li>
+<li>Cosine Similarity</li>
+<li>Similar MicroSims</li>
+<li>Similarity Score</li>
+<li>Nearest Neighbors</li>
+<li>Dimensionality Reduction</li>
+<li>PCA</li>
+<li>t-SNE</li>
+<li>Visualization Maps</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../06-search-fundamentals/">Chapter 6: Search Fundamentals</a></li>
+<li><a href="../07-faceted-search-client-side/">Chapter 7: Faceted Search and Client-Side Search</a></li>
+</ul>
+<hr />
+<h2 id="the-magic-of-understanding-meaning">The Magic of Understanding Meaning</h2>
+<p>Here's a scenario that might sound familiar: You've found a fantastic MicroSim about pendulum motion for your physics class. Now you want more simulations <em>like</em> that one—not necessarily about pendulums specifically, but about similar physics concepts. You try searching for "pendulum" but get the same results. You try "oscillation" and find some new ones. But what about "simple harmonic motion," "periodic behavior," or "conservation of energy"? How do you find simulations that are <em>conceptually related</em> without knowing all the right keywords?</p>
+<p>This is where semantic search becomes your superpower. Instead of matching keywords, semantic search understands <em>meaning</em>. It can recognize that a pendulum simulation and a spring-mass simulation are conceptually similar, even if they never share a single word in their descriptions. It's the difference between finding what you <em>typed</em> and finding what you <em>meant</em>.</p>
+<p>The technology that makes this possible is called <strong>embeddings</strong>—a way of converting text into numbers that capture meaning. This chapter will take you from "what is an embedding?" to "I can find any similar MicroSim instantly!" By the end, you'll understand one of the most transformative technologies in modern AI, and you'll see it applied directly to making education better.</p>
+<p>Let's dive in—this is going to be fun!</p>
+<hr />
+<h2 id="what-are-embeddings">What Are Embeddings?</h2>
+<p>An <strong>embedding</strong> is a numerical representation of data (text, images, audio, or anything else) as a list of numbers—a vector—where similar items end up with similar numbers. It's like giving every MicroSim a GPS coordinate in a "meaning space" where similar simulations are located near each other.</p>
+<h3 id="from-words-to-numbers">From Words to Numbers</h3>
+<p>Computers don't naturally understand the meaning of words. To a computer, "pendulum" and "oscillation" are just different strings of characters with no inherent connection. But humans know these concepts are related. Embeddings bridge this gap by converting text into numerical vectors where related concepts have similar vectors.</p>
+<p>Here's a simplified example:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Vector (3 dimensions, simplified)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pendulum</td>
+<td>[0.82, 0.45, 0.21]</td>
+</tr>
+<tr>
+<td>Spring Mass</td>
+<td>[0.79, 0.48, 0.19]</td>
+</tr>
+<tr>
+<td>Wave</td>
+<td>[0.71, 0.52, 0.35]</td>
+</tr>
+<tr>
+<td>Chemical Reaction</td>
+<td>[0.15, 0.23, 0.88]</td>
+</tr>
+<tr>
+<td>Cell Division</td>
+<td>[0.11, 0.19, 0.91]</td>
+</tr>
+</tbody>
+</table>
+<p>Notice how "Pendulum" and "Spring Mass" have similar numbers? That's because they're conceptually similar—both involve oscillatory motion. "Chemical Reaction" and "Cell Division" are similar to each other but different from the physics concepts.</p>
+<h3 id="real-embeddings-are-high-dimensional">Real Embeddings Are High-Dimensional</h3>
+<p>Real embedding systems use many more dimensions—typically 384, 768, or even 1536 numbers per item. Each dimension captures some aspect of meaning, though the dimensions don't correspond to human-interpretable concepts (it's not like dimension 47 means "relates to physics").</p>
+<p>For our MicroSim search system, we use 384-dimensional embeddings. Every MicroSim's metadata gets converted into a list of 384 numbers that capture its semantic meaning. With 400+ MicroSims, that's 400+ points floating in a 384-dimensional space, clustered by conceptual similarity.</p>
+<div class="admonition tip">
+<p class="admonition-title">Why So Many Dimensions?</p>
+<p>More dimensions allow the embedding to capture more nuance. A 3-dimensional embedding might put all physics simulations together, but a 384-dimensional embedding can distinguish kinematics from thermodynamics from electromagnetism—and even subtler distinctions within those areas.</p>
+</div>
+<hr />
+<h2 id="vector-representations-the-language-of-similarity">Vector Representations: The Language of Similarity</h2>
+<p>A <strong>vector</strong> is simply an ordered list of numbers. In the context of embeddings, vectors represent items in a multi-dimensional space where position encodes meaning.</p>
+<h3 id="vectors-as-coordinates">Vectors as Coordinates</h3>
+<p>Think of a 2D coordinate system (like a map). Every location has an (x, y) coordinate:</p>
+<ul>
+<li>Paris might be at (2.35, 48.86) in longitude/latitude</li>
+<li>London at (-0.12, 51.51)</li>
+<li>Tokyo at (139.69, 35.68)</li>
+</ul>
+<p>Cities that are close on the map have similar coordinates. The numbers encode location.</p>
+<p>Embeddings work the same way, but instead of geographic location, they encode <em>meaning</em>. And instead of 2 dimensions, they use hundreds.</p>
+<h3 id="vector-properties">Vector Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dimension</strong></td>
+<td>Number of values in the vector</td>
+<td>384-dimensional embedding</td>
+</tr>
+<tr>
+<td><strong>Magnitude</strong></td>
+<td>"Length" of the vector (distance from origin)</td>
+<td>Computed using Pythagorean theorem</td>
+</tr>
+<tr>
+<td><strong>Direction</strong></td>
+<td>Where the vector "points" in the space</td>
+<td>Captures semantic meaning</td>
+</tr>
+</tbody>
+</table>
+<p>For comparing meaning, we care most about <em>direction</em>, not magnitude. Two vectors pointing the same direction represent similar concepts, regardless of their length.</p>
+<h3 id="vector-operations">Vector Operations</h3>
+<p>Embeddings unlock powerful mathematical operations:</p>
+<p><strong>Addition</strong>: Combining concepts
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>king - man + woman ≈ queen
+</code></pre></div></td></tr></table></div>
+The famous example! Embedding arithmetic can capture analogies.</p>
+<p><strong>Subtraction</strong>: Finding differences
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>embedding(&quot;wave simulation&quot;) - embedding(&quot;animation&quot;)
+≈ &quot;what makes it about waves specifically&quot;
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Averaging</strong>: Finding the center of a concept cluster
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>average(embedding(&quot;pendulum&quot;), embedding(&quot;spring&quot;), embedding(&quot;oscillator&quot;))
+≈ &quot;general oscillation concept&quot;
+</code></pre></div></td></tr></table></div></p>
+<p>These operations work because embeddings encode semantic relationships geometrically.</p>
+<h4 id="diagram-vector-space-visualization">Diagram: Vector Space Visualization</h4>
+<iframe src="../../sims/vector-space-viz/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Vector Space Visualization for Embeddings</summary>
+Type: microsim
+
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+
+Learning Objective: Students will explain how embeddings position similar items near each other in vector space by manipulating a 2D projection and observing clustering patterns.
+
+Canvas layout:
+- Main panel (75%): Interactive 2D scatter plot
+- Side panel (25%): Controls and information display
+
+Visual elements:
+- Scatter plot with:
+  - Points representing MicroSims (colored by subject area)
+  - Point labels on hover
+  - Cluster regions shown with light background shading
+  - Distance lines when comparing two points
+- Legend showing color coding by subject
+- Information panel showing:
+  - Selected point details
+  - Distance to other points
+  - Nearest neighbors list
+
+Sample data (15 points representing MicroSims):
+- Physics cluster: Pendulum, Wave, Projectile, Circuit, Magnet
+- Chemistry cluster: Molecule, Reaction, pH Scale, Gas Laws
+- Math cluster: Graphing, Geometry, Statistics, Algebra
+- Biology: Ecosystem, Cell
+
+Interactive controls:
+- Click point to select and see neighbors
+- Drag to pan the view
+- Scroll to zoom
+- Toggle: "Show cluster boundaries"
+- Toggle: "Show distance lines"
+- Slider: "Number of neighbors to highlight" (1-5)
+- Dropdown: "Color by" (Subject, Grade Level, Framework)
+
+Behavior:
+- Selecting a point highlights its K nearest neighbors
+- Distance lines drawn from selected point to neighbors
+- Information panel updates with similarity scores
+- Hovering shows point labels and metadata
+
+Animation:
+- Points gently float/breathe to feel alive
+- Smooth transitions when selecting points
+- Lines draw in with animation
+
+Color scheme:
+- Physics: Blue shades
+- Chemistry: Green shades
+- Math: Purple shades
+- Biology: Orange shades
+- Selection highlight: Gold
+
+Implementation: p5.js with 2D scatter plot and interactive selection
+</details>
+
+<hr />
+<h2 id="how-embeddings-are-created">How Embeddings Are Created</h2>
+<p>You don't create embeddings by hand—AI models do it. But understanding the process helps you appreciate what they capture.</p>
+<h3 id="embedding-models">Embedding Models</h3>
+<p>Embedding models are trained on massive amounts of text to learn patterns of language use. Popular models include:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Dimensions</th>
+<th>Strengths</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>all-MiniLM-L6-v2</strong></td>
+<td>384</td>
+<td>Fast, great for semantic search</td>
+</tr>
+<tr>
+<td><strong>all-mpnet-base-v2</strong></td>
+<td>768</td>
+<td>Higher quality, still fast</td>
+</tr>
+<tr>
+<td><strong>text-embedding-ada-002</strong></td>
+<td>1536</td>
+<td>OpenAI's model, very high quality</td>
+</tr>
+<tr>
+<td><strong>BGE-large</strong></td>
+<td>1024</td>
+<td>Strong multilingual support</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSim search, we use <strong>all-MiniLM-L6-v2</strong> because it balances quality with speed and runs locally without API calls.</p>
+<h3 id="the-training-process-simplified">The Training Process (Simplified)</h3>
+<p>Embedding models learn by predicting context. Given a sentence with a word missing, the model learns to predict what word fits. Through billions of such examples, the model develops an internal representation where:</p>
+<ul>
+<li>Words that appear in similar contexts get similar representations</li>
+<li>Sentences about similar topics get similar representations</li>
+<li>Documents with related content get similar representations</li>
+</ul>
+<p>This "distributional semantics" means the model learns meaning from usage patterns, not from explicit definitions.</p>
+<h3 id="creating-microsim-embeddings">Creating MicroSim Embeddings</h3>
+<p>For each MicroSim, we create an embedding from its metadata:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Combine relevant text fields</span>
+<span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">. Subject: </span><span class="si">{</span><span class="n">subject_area</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">learning_objectives</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Generate embedding using sentence-transformers library</span>
+<span class="kn">from</span> <span class="nn">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SentenceTransformer</span><span class="p">(</span><span class="s1">&#39;all-MiniLM-L6-v2&#39;</span><span class="p">)</span>
+<span class="n">embedding</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Returns 384-dimensional vector</span>
+</code></pre></div></td></tr></table></div>
+<p>The embedding captures the semantic content of the entire MicroSim description in 384 numbers.</p>
+<div class="admonition note">
+<p class="admonition-title">What Gets Embedded?</p>
+<p>For our MicroSim embeddings, we combine: title, description, subject area, keywords, and learning objectives. This gives the embedding rich context about what the simulation teaches and how it's used.</p>
+</div>
+<hr />
+<h2 id="cosine-similarity-measuring-relatedness">Cosine Similarity: Measuring Relatedness</h2>
+<p>Once we have embeddings, we need a way to measure how similar two items are. The standard approach is <strong>cosine similarity</strong>—a mathematical measure of how similar two vectors are in direction.</p>
+<h3 id="the-intuition">The Intuition</h3>
+<p>Imagine two arrows (vectors) starting from the same point:
+- If they point the same direction: identical meaning, cosine similarity = 1
+- If they point perpendicular: unrelated meaning, cosine similarity = 0
+- If they point opposite directions: opposite meaning, cosine similarity = -1</p>
+<p>Cosine similarity measures the <em>angle</em> between vectors, ignoring their length.</p>
+<h3 id="the-math">The Math</h3>
+<p>For two vectors A and B, cosine similarity is:</p>
+<p>$$\text{cosine similarity}(A, B) = \frac{A \cdot B}{|A| \times |B|}$$</p>
+<p>Where:
+- $A \cdot B$ is the dot product (multiply corresponding elements and sum)
+- $|A|$ and $|B|$ are the magnitudes (lengths) of the vectors</p>
+<h3 id="worked-example">Worked Example</h3>
+<p>Let's compute cosine similarity for two simplified 3D vectors:</p>
+<p><strong>Pendulum</strong>: A = [0.82, 0.45, 0.21]
+<strong>Spring Mass</strong>: B = [0.79, 0.48, 0.19]</p>
+<p><strong>Step 1</strong>: Dot product
+$$A \cdot B = (0.82 \times 0.79) + (0.45 \times 0.48) + (0.21 \times 0.19)$$
+$$= 0.6478 + 0.216 + 0.0399 = 0.9037$$</p>
+<p><strong>Step 2</strong>: Magnitudes
+$$|A| = \sqrt{0.82^2 + 0.45^2 + 0.21^2} = \sqrt{0.8770} = 0.9365$$
+$$|B| = \sqrt{0.79^2 + 0.48^2 + 0.19^2} = \sqrt{0.8906} = 0.9437$$</p>
+<p><strong>Step 3</strong>: Cosine similarity
+$$\frac{0.9037}{0.9365 \times 0.9437} = \frac{0.9037}{0.8839} = 0.9997$$</p>
+<p>Result: <strong>0.9997</strong> — These vectors are nearly identical in direction, meaning "Pendulum" and "Spring Mass" are highly semantically similar!</p>
+<h3 id="interpreting-similarity-scores">Interpreting Similarity Scores</h3>
+<table>
+<thead>
+<tr>
+<th>Score Range</th>
+<th>Interpretation</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.95 - 1.00</td>
+<td>Nearly identical</td>
+<td>Same topic, slightly different wording</td>
+</tr>
+<tr>
+<td>0.85 - 0.95</td>
+<td>Highly similar</td>
+<td>Same concept, different approach</td>
+</tr>
+<tr>
+<td>0.70 - 0.85</td>
+<td>Related</td>
+<td>Same subject area, different topic</td>
+</tr>
+<tr>
+<td>0.50 - 0.70</td>
+<td>Somewhat related</td>
+<td>Same broad field</td>
+</tr>
+<tr>
+<td>0.00 - 0.50</td>
+<td>Unrelated</td>
+<td>Different domains</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSim recommendations, we typically show items with similarity scores above 0.70.</p>
+<h4 id="diagram-cosine-similarity-calculator">Diagram: Cosine Similarity Calculator</h4>
+<iframe src="../../sims/cosine-similarity-calc/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Interactive Cosine Similarity Calculator</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: calculate
+
+Learning Objective: Students will calculate cosine similarity between vector pairs by manipulating vector components and observing how the angle between vectors changes.
+
+Canvas layout:
+- Left panel (50%): Vector visualization
+- Right panel (50%): Calculation steps and controls
+
+Visual elements:
+- 2D coordinate plane with:
+  - Two vectors drawn as arrows from origin
+  - Angle arc between vectors with degree label
+  - Grid lines for reference
+  - Vector endpoint coordinates displayed
+- Calculation panel showing:
+  - Step-by-step formula breakdown
+  - Dot product calculation
+  - Magnitude calculations
+  - Final cosine similarity result
+- Similarity meter (color-coded bar from red to green)
+
+Interactive controls:
+- Vector A:
+  - Slider for x component (-1 to 1)
+  - Slider for y component (-1 to 1)
+  - Or drag endpoint directly on visualization
+- Vector B:
+  - Slider for x component (-1 to 1)
+  - Slider for y component (-1 to 1)
+  - Or drag endpoint directly on visualization
+- Toggle: "Show calculation steps"
+- Preset buttons:
+  - "Identical vectors" (similarity = 1)
+  - "Perpendicular" (similarity = 0)
+  - "Opposite" (similarity = -1)
+  - "Similar but different"
+
+Default parameters:
+- Vector A: [0.8, 0.6]
+- Vector B: [0.7, 0.7]
+- Show calculation steps: On
+
+Behavior:
+- Moving any slider updates visualization immediately
+- Angle arc animates smoothly
+- Calculation steps update in real-time
+- Similarity meter changes color:
+  - Green: > 0.7
+  - Yellow: 0.3 - 0.7
+  - Red: < 0.3
+
+Animation:
+- Smooth vector transitions when sliders moved
+- Angle arc sweeps to new position
+- Numbers roll to new values
+
+Implementation: p5.js with vector math and interactive controls
+</details>
+
+<hr />
+<h2 id="finding-similar-microsims">Finding Similar MicroSims</h2>
+<p>With embeddings and cosine similarity, we can now build a "Similar MicroSims" feature—one of the most useful tools for educators browsing our collection.</p>
+<h3 id="the-problem-it-solves">The Problem It Solves</h3>
+<p>You've found a great simulation. Now you want:
+- "More like this" for the same lesson
+- Related simulations for deeper exploration
+- Alternatives if this one doesn't quite fit</p>
+<p>Without semantic search, you'd have to guess keywords. With embeddings, the system finds conceptually related simulations automatically.</p>
+<h3 id="how-it-works">How It Works</h3>
+<ol>
+<li><strong>Pre-compute embeddings</strong>: Generate embedding vectors for all MicroSims (done once, stored in a file)</li>
+<li><strong>Calculate all pairwise similarities</strong>: For each MicroSim, compute cosine similarity to every other MicroSim</li>
+<li><strong>Store top-N similar</strong>: Save the 10 most similar MicroSims for each item</li>
+<li><strong>Look up on demand</strong>: When user views a MicroSim, instantly retrieve its similar items</li>
+</ol>
+<p>This pre-computation approach means similar MicroSim lookup is instant—no real-time computation needed.</p>
+<h3 id="the-similar-microsims-data-structure">The Similar MicroSims Data Structure</h3>
+<p>Our similar-microsims.json file looks like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;https://dmccreary.github.io/geometry-course/sims/angle-bisector/&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://dmccreary.github.io/geometry-course/sims/triangle-centers/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.89</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://dmccreary.github.io/geometry-course/sims/circumscribed-circle/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.86</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://dmccreary.github.io/geometry-course/sims/inscribed-angle/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.84</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Each MicroSim URL maps to its top 10 most similar items with similarity scores.</p>
+<h3 id="example-finding-similar-physics-simulations">Example: Finding Similar Physics Simulations</h3>
+<p>Starting MicroSim: <strong>Pendulum Period Calculator</strong></p>
+<table>
+<thead>
+<tr>
+<th>Similar MicroSim</th>
+<th>Similarity</th>
+<th>Why Related</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple Harmonic Motion</td>
+<td>0.92</td>
+<td>Same physics principles</td>
+</tr>
+<tr>
+<td>Spring-Mass System</td>
+<td>0.89</td>
+<td>Oscillatory motion</td>
+</tr>
+<tr>
+<td>Wave Propagation</td>
+<td>0.81</td>
+<td>Periodic behavior</td>
+</tr>
+<tr>
+<td>Circular Motion</td>
+<td>0.78</td>
+<td>Related kinematics</td>
+</tr>
+<tr>
+<td>Energy Conservation</td>
+<td>0.74</td>
+<td>Common physics context</td>
+</tr>
+</tbody>
+</table>
+<p>The system found these connections automatically—no one had to manually tag "pendulum" as related to "spring-mass."</p>
+<div class="admonition success">
+<p class="admonition-title">The Power of Embeddings</p>
+<p>A physics teacher searching for "pendulum" now discovers not just pendulum simulations, but the entire constellation of related physics concepts. Embeddings expand discovery beyond the limits of keyword matching.</p>
+</div>
+<hr />
+<h2 id="similarity-scores-in-the-interface">Similarity Scores in the Interface</h2>
+<p>When displaying similar MicroSims, the similarity score helps users understand <em>how</em> related items are.</p>
+<h3 id="score-display-strategies">Score Display Strategies</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Percentage</strong> (89%)</td>
+<td>Intuitive for users</td>
+<td>May imply false precision</td>
+</tr>
+<tr>
+<td><strong>Categories</strong> (Very Similar, Related)</td>
+<td>Easy to understand</td>
+<td>Loses nuance</td>
+</tr>
+<tr>
+<td><strong>Color coding</strong> (green → yellow → orange)</td>
+<td>Visual, quick scanning</td>
+<td>Needs legend</td>
+</tr>
+<tr>
+<td><strong>Ranking only</strong> (#1, #2, #3)</td>
+<td>Simple, relative</td>
+<td>Hides absolute similarity</td>
+</tr>
+</tbody>
+</table>
+<p>Our interface uses color-coded badges with percentages:</p>
+<ul>
+<li>🟢 <strong>Green</strong> (≥85%): Highly similar, same concept</li>
+<li>🟡 <strong>Yellow</strong> (70-84%): Related, same subject area</li>
+<li>🟠 <strong>Orange</strong> (55-69%): Somewhat related</li>
+<li>⚪ <strong>Gray</strong> (&lt;55%): Weakly related (usually not shown)</li>
+</ul>
+<h3 id="user-experience-considerations">User Experience Considerations</h3>
+<p>Good similarity interfaces:</p>
+<ul>
+<li><strong>Show the source</strong>: "Similar to: Pendulum Period Calculator"</li>
+<li><strong>Explain the connection</strong>: Shared subjects, concepts, or learning objectives</li>
+<li><strong>Allow exploration</strong>: Click any similar item to see <em>its</em> similar items</li>
+<li><strong>Set expectations</strong>: Scores are approximate, not absolute truth</li>
+</ul>
+<p>The goal is discovery, not definitive ranking. A 0.82 and 0.80 similarity are essentially equivalent—both are worth exploring.</p>
+<h4 id="diagram-similarity-score-interface-demo">Diagram: Similarity Score Interface Demo</h4>
+<iframe src="../../sims/similarity-score-demo/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Similarity Score Interface Demonstration</summary>
+Type: microsim
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: judge
+
+Learning Objective: Students will judge the usefulness of different similarity score displays by comparing presentation formats and identifying which provides the best user experience.
+
+Canvas layout:
+- Top panel (20%): Source MicroSim card
+- Middle panel (60%): Multiple display format comparisons
+- Bottom panel (20%): User preference selection
+
+Visual elements:
+- Source card showing:
+  - MicroSim title, subject, brief description
+  - "Find Similar" button
+- Four parallel columns showing same similar items with different displays:
+  - Column 1: Percentages only (92%, 87%, 81%)
+  - Column 2: Categories (Very Similar, Related, Somewhat Related)
+  - Column 3: Color bars (colored progress bars)
+  - Column 4: Combined (color badge + percentage + category)
+- Comparison table highlighting pros/cons
+
+Similar items (same in all columns):
+1. "Wave Interference" - 0.92 similarity
+2. "Oscillation Explorer" - 0.87 similarity
+3. "Sound Propagation" - 0.81 similarity
+4. "Frequency Analyzer" - 0.76 similarity
+5. "Resonance Demo" - 0.71 similarity
+
+Interactive controls:
+- Radio buttons: "Which display do you prefer?"
+- Toggle: "Show explanation" (why each format works)
+- Button: "Try different source MicroSim" (cycles through examples)
+- Slider: "Threshold cutoff" (shows/hides items below threshold)
+
+Behavior:
+- Clicking any similar item would show its details (simulated)
+- Preference selection highlights that column
+- Threshold slider animates items in/out
+
+Visual styling:
+- Clean, modern card-based layout
+- Consistent spacing across columns
+- Clear labels for each display type
+
+Implementation: p5.js with multi-column comparison layout
+</details>
+
+<hr />
+<h2 id="nearest-neighbors-finding-the-closest-items">Nearest Neighbors: Finding the Closest Items</h2>
+<p>The <strong>nearest neighbors</strong> algorithm is how we find similar MicroSims efficiently. Given one item's embedding, find the K items whose embeddings are closest.</p>
+<h3 id="k-nearest-neighbors-knn">K-Nearest Neighbors (KNN)</h3>
+<p>The "K" in KNN is how many neighbors to find:
+- K=1: Find the single most similar item
+- K=5: Find the 5 most similar items
+- K=10: Find the 10 most similar items (what we use)</p>
+<h3 id="the-naive-approach">The Naive Approach</h3>
+<p>The simplest approach: compare the query item to every other item, keep the top K.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">find_similar</span><span class="p">(</span><span class="n">query_embedding</span><span class="p">,</span> <span class="n">all_embeddings</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">similarities</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item_id</span><span class="p">,</span> <span class="n">embedding</span> <span class="ow">in</span> <span class="n">all_embeddings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">query_embedding</span><span class="p">,</span> <span class="n">embedding</span><span class="p">)</span>
+        <span class="n">similarities</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item_id</span><span class="p">,</span> <span class="n">score</span><span class="p">))</span>
+
+    <span class="c1"># Sort by similarity, descending</span>
+    <span class="n">similarities</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Return top K (excluding self)</span>
+    <span class="k">return</span> <span class="n">similarities</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>For 400 MicroSims with 384-dimensional embeddings, this runs in milliseconds. For millions of items, we'd need approximate nearest neighbor algorithms (FAISS, Annoy, HNSW), but our collection size doesn't require that complexity.</p>
+<h3 id="pre-computing-nearest-neighbors">Pre-Computing Nearest Neighbors</h3>
+<p>For instant lookups, we pre-compute all nearest neighbors:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">similar_microsims</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">item_id</span><span class="p">,</span> <span class="n">embedding</span> <span class="ow">in</span> <span class="n">all_embeddings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="n">find_similar</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">all_embeddings</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">similar_microsims</span><span class="p">[</span><span class="n">item_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">neighbors</span>
+
+<span class="c1"># Save to JSON for client-side use</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;similar-microsims.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">similar_microsims</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Now finding similar MicroSims is just a dictionary lookup—O(1) time!</p>
+<h3 id="why-k10">Why K=10?</h3>
+<p>We chose K=10 for similar MicroSims because:</p>
+<ul>
+<li><strong>Enough variety</strong>: 10 options lets users explore different directions</li>
+<li><strong>Quality threshold</strong>: Below top 10, similarity often drops significantly</li>
+<li><strong>UI friendly</strong>: Fits nicely on screen without overwhelming</li>
+<li><strong>File size</strong>: 10 neighbors per item keeps the JSON manageable (~870KB)</li>
+</ul>
+<p>Different applications might choose different K values—recommendations often use K=3-5, while research exploration might use K=20+.</p>
+<h4 id="diagram-knn-visualization">Diagram: KNN Visualization</h4>
+<iframe src="../../sims/knn-visualizer/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>K-Nearest Neighbors Visualization</summary>
+Type: microsim
+
+Bloom Level: Analyze (L4)
+Bloom Verb: differentiate
+
+Learning Objective: Students will differentiate between query results with different K values by selecting items in a 2D embedding space and observing how the number of returned neighbors affects results.
+
+Canvas layout:
+- Main panel (70%): 2D scatter plot with MicroSim points
+- Side panel (30%): Controls and results list
+
+Visual elements:
+- Scatter plot with:
+  - 25-30 points representing MicroSims
+  - Color-coded by subject area
+  - Selected query point highlighted
+  - K nearest neighbors connected by lines
+  - Concentric distance circles from query point
+- Results panel showing:
+  - Ordered list of K neighbors
+  - Similarity scores
+  - Distance indicators
+- Statistics display:
+  - Average similarity of top K
+  - Similarity range (highest to lowest)
+
+Interactive controls:
+- Click any point to select as query
+- Slider: K value (1-15)
+- Toggle: "Show distance circles"
+- Toggle: "Show connection lines"
+- Dropdown: "Sort neighbors by" (Similarity, Subject, Title)
+- Button: "Random query" (selects random point)
+- Button: "Reset view"
+
+Behavior:
+- Clicking point selects it as query, highlights neighbors
+- Changing K slider immediately updates visualization
+- Distance circles help visualize the "neighborhood" boundary
+- Connection lines drawn from query to each neighbor
+- Lines colored by similarity (darker = more similar)
+
+Animation:
+- Smooth transitions when K changes
+- Lines draw in sequentially from most to least similar
+- Points pulse when selected
+
+Sample data:
+- Physics: Pendulum, Wave, Projectile, Circuit, Optics (blue)
+- Chemistry: Molecule, Reaction, Gas Laws, Equilibrium (green)
+- Math: Graphing, Geometry, Probability, Calculus (purple)
+- Biology: Cell, Ecosystem, Genetics, Evolution (orange)
+- Multiple items per subject to show intra-cluster neighbors
+
+Default state: K=5, one physics point selected
+
+Implementation: p5.js with interactive scatter plot and KNN algorithm
+</details>
+
+<hr />
+<h2 id="dimensionality-reduction-making-embeddings-visible">Dimensionality Reduction: Making Embeddings Visible</h2>
+<p>Here's a problem: embeddings live in 384 dimensions, but humans can only visualize 2 or 3. <strong>Dimensionality reduction</strong> compresses high-dimensional data into something we can see while preserving important relationships.</p>
+<h3 id="why-reduce-dimensions">Why Reduce Dimensions?</h3>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Visualization</strong></td>
+<td>See clusters and relationships in 2D plots</td>
+</tr>
+<tr>
+<td><strong>Exploration</strong></td>
+<td>Discover structure in your data</td>
+</tr>
+<tr>
+<td><strong>Debugging</strong></td>
+<td>Verify embeddings make sense</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Show others how semantic space is organized</td>
+</tr>
+</tbody>
+</table>
+<p>Dimensionality reduction is lossy—we lose information. But for visualization, the trade-off is worth it.</p>
+<h3 id="the-challenge">The Challenge</h3>
+<p>Going from 384 dimensions to 2 means throwing away most of the information. The art is keeping the <em>important</em> information: which items are similar and which are different.</p>
+<p>Imagine having 384 different attributes for every MicroSim (physics-ness, difficulty, interactivity, color-related, etc.). Dimensionality reduction asks: "If I could only use 2 attributes to describe similarities, which combination captures the most?"</p>
+<hr />
+<h2 id="pca-principal-component-analysis">PCA: Principal Component Analysis</h2>
+<p><strong>PCA (Principal Component Analysis)</strong> is the classic dimensionality reduction technique. It finds the directions of maximum variance in the data and projects onto those directions.</p>
+<h3 id="the-intuition_1">The Intuition</h3>
+<p>Imagine a cloud of points in 3D space. PCA finds:
+1. <strong>First principal component</strong>: The direction with the most spread (variance)
+2. <strong>Second principal component</strong>: The direction perpendicular to the first with the most remaining spread
+3. And so on...</p>
+<p>By projecting onto just the first two principal components, we get a 2D view that captures the most "interesting" variation.</p>
+<h3 id="pca-in-action">PCA in Action</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># embeddings: array of shape (n_microsims, 384)</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+<span class="c1"># reduced: array of shape (n_microsims, 2)</span>
+<span class="c1"># Each MicroSim now has (x, y) coordinates</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="pca-characteristics">PCA Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Strength</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Fast and deterministic</td>
+<td>❌ Only captures linear relationships</td>
+</tr>
+<tr>
+<td>✅ Results are reproducible</td>
+<td>❌ May not preserve local structure well</td>
+</tr>
+<tr>
+<td>✅ Interpretable (variance explained)</td>
+<td>❌ Distant points may appear close</td>
+</tr>
+<tr>
+<td>✅ Good for overview visualization</td>
+<td>❌ Clusters may overlap</td>
+</tr>
+</tbody>
+</table>
+<p>PCA is great for a quick overview but might squash clusters together.</p>
+<h3 id="variance-explained">Variance Explained</h3>
+<p>PCA tells you how much information is retained:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span>
+<span class="c1"># [0.12, 0.08]  # First two components explain 20% of variance</span>
+</code></pre></div></td></tr></table></div>
+<p>With 384-dimensional embeddings, 2 dimensions typically capture only 10-20% of the variance. That's why PCA visualizations are approximate—they're useful for patterns but don't show everything.</p>
+<hr />
+<h2 id="t-sne-preserving-local-structure">t-SNE: Preserving Local Structure</h2>
+<p><strong>t-SNE (t-Distributed Stochastic Neighbor Embedding)</strong> is specifically designed for visualization. Unlike PCA, it prioritizes keeping similar items close together, even at the cost of global structure.</p>
+<h3 id="the-intuition_2">The Intuition</h3>
+<p>t-SNE asks: "In the original high-dimensional space, which items are neighbors? Let me create a 2D layout where those same items remain neighbors."</p>
+<p>It's like arranging seats at a dinner party—people who are friends should sit near each other, even if the overall table arrangement doesn't match some abstract "ideal."</p>
+<h3 id="t-sne-in-action">t-SNE in Action</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># embeddings: array of shape (n_microsims, 384)</span>
+<span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+<span class="c1"># reduced: array of shape (n_microsims, 2)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="the-perplexity-parameter">The Perplexity Parameter</h3>
+<p>Perplexity controls how t-SNE balances local vs. global structure:</p>
+<table>
+<thead>
+<tr>
+<th>Perplexity</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low (5-10)</strong></td>
+<td>Tight, small clusters; may fragment natural groups</td>
+</tr>
+<tr>
+<td><strong>Medium (30-50)</strong></td>
+<td>Balanced; good default choice</td>
+</tr>
+<tr>
+<td><strong>High (100+)</strong></td>
+<td>Larger groups; may merge distinct clusters</td>
+</tr>
+</tbody>
+</table>
+<p>For MicroSim visualization, perplexity around 30 works well.</p>
+<h3 id="t-sne-characteristics">t-SNE Characteristics</h3>
+<table>
+<thead>
+<tr>
+<th>Strength</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Excellent cluster separation</td>
+<td>❌ Non-deterministic (different runs = different layouts)</td>
+</tr>
+<tr>
+<td>✅ Preserves local neighborhoods</td>
+<td>❌ Distances between clusters are meaningless</td>
+</tr>
+<tr>
+<td>✅ Creates visually pleasing plots</td>
+<td>❌ Slow for large datasets</td>
+</tr>
+<tr>
+<td>✅ Reveals natural groupings</td>
+<td>❌ Can create artificial clusters</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">t-SNE Distance Caution</p>
+<p>In t-SNE plots, distance <em>within</em> clusters is meaningful, but distance <em>between</em> clusters is not. Two clusters far apart might actually be quite similar—t-SNE just needed to put them somewhere.</p>
+</div>
+<h4 id="diagram-pca-vs-t-sne-comparison">Diagram: PCA vs t-SNE Comparison</h4>
+<iframe src="../../sims/pca-tsne-compare/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>PCA vs t-SNE Comparison Visualizer</summary>
+Type: microsim
+
+Bloom Level: Analyze (L4)
+Bloom Verb: compare
+
+Learning Objective: Students will compare PCA and t-SNE dimensionality reduction techniques by viewing the same MicroSim embeddings reduced with both methods and identifying differences in cluster separation and structure.
+
+Canvas layout:
+- Left panel (48%): PCA visualization
+- Right panel (48%): t-SNE visualization
+- Bottom panel (4%): Shared controls
+
+Visual elements:
+- Two parallel scatter plots:
+  - Same points (MicroSims) in both
+  - Same color coding (by subject)
+  - Same point selection synced
+- Each plot labeled clearly:
+  - Left: "PCA (Linear Projection)"
+  - Right: "t-SNE (Neighbor Preservation)"
+- Legend showing subject color coding
+- Comparison metrics:
+  - Cluster separation score for each
+  - Neighbor preservation score
+- Selected point highlighted in both views
+
+Sample data:
+- 30-40 MicroSims across 5 subject areas
+- Clear subject-based clustering expected
+- Some cross-subject similarities
+
+Interactive controls:
+- Click any point to select (highlights in both views)
+- Slider: t-SNE perplexity (10-100)
+- Button: "Re-run t-SNE" (generates new random layout)
+- Toggle: "Show cluster boundaries"
+- Toggle: "Link hover" (hover one, highlight same point in other)
+- Dropdown: "Color by" (Subject, Framework, Grade Level)
+
+Behavior:
+- Selecting point in either plot highlights same point in both
+- Changing perplexity re-computes t-SNE (with loading indicator)
+- Same points appear in different positions between plots
+- Clusters more separated in t-SNE view
+- Points more spread in PCA view
+
+Comparison callouts:
+- Annotation on PCA: "Global structure preserved"
+- Annotation on t-SNE: "Local clusters clearer"
+- When clusters overlap in PCA but separate in t-SNE, highlight this
+
+Animation:
+- Smooth transition when parameters change
+- Points animate to new positions
+- Cluster boundaries fade in/out
+
+Implementation: p5.js with pre-computed PCA and t-SNE projections
+</details>
+
+<hr />
+<h2 id="visualization-maps-exploring-the-microsim-universe">Visualization Maps: Exploring the MicroSim Universe</h2>
+<p>Dimensionality reduction enables <strong>visualization maps</strong>—interactive explorations of your entire collection organized by semantic similarity.</p>
+<h3 id="what-makes-a-good-embedding-map">What Makes a Good Embedding Map?</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clear clusters</strong></td>
+<td>Show natural groupings by subject/concept</td>
+</tr>
+<tr>
+<td><strong>Hover details</strong></td>
+<td>Display MicroSim information on hover</td>
+</tr>
+<tr>
+<td><strong>Click navigation</strong></td>
+<td>Click to view full MicroSim details</td>
+</tr>
+<tr>
+<td><strong>Color coding</strong></td>
+<td>Distinguish categories (subject, level, etc.)</td>
+</tr>
+<tr>
+<td><strong>Search integration</strong></td>
+<td>Highlight search results on map</td>
+</tr>
+<tr>
+<td><strong>Zoom and pan</strong></td>
+<td>Explore dense regions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-cases-for-visualization-maps">Use Cases for Visualization Maps</h3>
+<p><strong>Curriculum Planning</strong>: See all your physics simulations clustered together, identify gaps ("no thermodynamics MicroSims!"), find unexpected connections.</p>
+<p><strong>Student Exploration</strong>: Students browse visually, discovering topics organically rather than through hierarchical menus.</p>
+<p><strong>Collection Analysis</strong>: Administrators see collection balance, over-represented areas, and where new content is needed.</p>
+<p><strong>Finding Outliers</strong>: Items far from any cluster might be unique gems or miscategorized.</p>
+<h3 id="building-an-interactive-map">Building an Interactive Map</h3>
+<p>A good visualization map includes:</p>
+<ol>
+<li><strong>2D projection</strong>: t-SNE or PCA reduction to x,y coordinates</li>
+<li><strong>Point rendering</strong>: Each MicroSim as an interactive point</li>
+<li><strong>Tooltips</strong>: Information on hover</li>
+<li><strong>Filtering</strong>: Show/hide by facets (subject, level)</li>
+<li><strong>Search highlight</strong>: Mark search results</li>
+<li><strong>Navigation</strong>: Zoom, pan, click-to-detail</li>
+</ol>
+<h4 id="diagram-microsim-embedding-map-explorer">Diagram: MicroSim Embedding Map Explorer</h4>
+<iframe src="../../sims/embedding-map-explorer/main.html" width="100%" height="600px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Embedding Space Explorer</summary>
+Type: microsim
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: assess
+
+Learning Objective: Students will assess the organization of MicroSim collections by exploring an embedding visualization map, identifying clusters, outliers, and semantic relationships between simulations.
+
+Canvas layout:
+- Main panel (80%): Zoomable, pannable 2D map
+- Side panel (20%): Filters and information display
+
+Visual elements:
+- 2D scatter plot map with:
+  - 50+ points representing MicroSims
+  - Color coded by subject area
+  - Size coded by quality score or popularity
+  - Cluster labels for major groupings
+  - Grid/axis for orientation
+- Hover card showing:
+  - Title
+  - Subject
+  - Brief description
+  - Thumbnail preview (placeholder)
+- Minimap for navigation (small overview)
+- Filter panel with checkboxes for subjects
+- Search box for finding specific items
+
+Sample data:
+- Physics cluster (blue): Mechanics, Waves, E&M subclusters
+- Chemistry cluster (green): Molecular, Reactions subclusters
+- Math cluster (purple): Algebra, Geometry, Statistics subclusters
+- Biology cluster (orange): Cells, Ecosystems subclusters
+- CS cluster (teal): Algorithms, Data Structures subclusters
+- Some cross-disciplinary items between clusters
+
+Interactive controls:
+- Scroll: Zoom in/out
+- Click and drag: Pan the view
+- Click point: Show detail panel
+- Search box: Highlight matching points
+- Subject checkboxes: Show/hide categories
+- Slider: "Point size" (for dense areas)
+- Button: "Reset view"
+- Toggle: "Show labels" (point labels on/off)
+- Dropdown: "Layout" (t-SNE / PCA / UMAP)
+
+Behavior:
+- Hover shows tooltip with MicroSim info
+- Click opens detail panel with full information
+- Search highlights matching points with glow
+- Unchecking subject fades those points
+- Zoom enables examining dense cluster regions
+- Minimap shows viewport position
+
+Special features:
+- "Find similar" from detail panel draws lines to neighbors
+- Double-click zooms to cluster
+- Keyboard navigation (arrow keys to move selection)
+
+Animation:
+- Smooth zoom and pan
+- Points fade in/out when filtered
+- Connections draw in for "find similar"
+- Gentle floating animation for ambient feel
+
+Color scheme:
+- Physics: Blues (#3498db, #2980b9)
+- Chemistry: Greens (#27ae60, #229954)
+- Math: Purples (#9b59b6, #8e44ad)
+- Biology: Oranges (#e67e22, #d35400)
+- CS: Teals (#1abc9c, #16a085)
+- Selected: Gold (#f1c40f)
+
+Implementation: p5.js with zoom/pan and rich interactivity
+</details>
+
+<hr />
+<h2 id="semantic-search-in-practice">Semantic Search in Practice</h2>
+<p>Let's see how embeddings power semantic search in real MicroSim discovery scenarios.</p>
+<h3 id="scenario-1-find-me-something-like-this">Scenario 1: "Find me something like this"</h3>
+<p><strong>User action</strong>: Viewing "Pendulum Period Calculator", clicks "Find Similar"</p>
+<p><strong>System process</strong>:
+1. Look up pre-computed similar MicroSims for this URL
+2. Return top 10 with similarity scores
+3. Display ranked list with score badges</p>
+<p><strong>Results</strong>:
+- Simple Harmonic Motion (0.92) 🟢
+- Spring-Mass Oscillation (0.89) 🟢
+- Wave Equation Visualizer (0.81) 🟡
+- Energy Conservation Demo (0.78) 🟡
+- Circular Motion Explorer (0.74) 🟡</p>
+<p><strong>User benefit</strong>: Discovers related simulations without knowing the right keywords.</p>
+<h3 id="scenario-2-semantic-query-search">Scenario 2: Semantic Query Search</h3>
+<p><strong>User query</strong>: "How do things bounce back and forth?"</p>
+<p><strong>Traditional keyword search</strong>: Zero results (no MicroSim has this exact phrasing)</p>
+<p><strong>Semantic search process</strong>:
+1. Generate embedding for the query text
+2. Compare to all MicroSim embeddings
+3. Return highest similarity matches</p>
+<p><strong>Semantic results</strong>:
+- Oscillation Patterns (0.76)
+- Pendulum Motion (0.74)
+- Spring Dynamics (0.73)
+- Harmonic Motion (0.71)</p>
+<p><strong>User benefit</strong>: Natural language works—no need to know technical terms!</p>
+<h3 id="scenario-3-collection-diversity-analysis">Scenario 3: Collection Diversity Analysis</h3>
+<p><strong>Question</strong>: "Do we have good coverage of biology topics?"</p>
+<p><strong>Using embedding map</strong>:
+1. Filter to show only Biology points
+2. Examine cluster distribution
+3. Identify sparse areas</p>
+<p><strong>Discovery</strong>:
+- Strong coverage: Cell biology, Ecosystems
+- Weak coverage: Genetics, Anatomy, Plant biology
+- Gap identified: No simulations about photosynthesis</p>
+<p><strong>Action</strong>: Prioritize creating photosynthesis MicroSim</p>
+<div class="admonition tip">
+<p class="admonition-title">Embeddings as Analysis Tool</p>
+<p>Beyond search, embeddings reveal collection structure. Sparse regions in the embedding map show content gaps. Dense regions might indicate redundancy. Outliers might be unique or miscategorized.</p>
+</div>
+<hr />
+<h2 id="putting-it-together-the-complete-semantic-search-flow">Putting It Together: The Complete Semantic Search Flow</h2>
+<p>Here's how all the concepts connect in a working semantic search system:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                   OFFLINE PROCESSING                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  1. Collect MicroSim metadata                               │
+│     ┌─────────────┐                                         │
+│     │ metadata.   │ ──→ title, description, subject, etc.  │
+│     │ json files  │                                         │
+│     └─────────────┘                                         │
+│                                                              │
+│  2. Generate embeddings                                     │
+│     ┌─────────────┐     ┌────────────────────┐             │
+│     │ Embedding   │ ──→ │ 384-dim vector for │             │
+│     │ Model       │     │ each MicroSim      │             │
+│     └─────────────┘     └────────────────────┘             │
+│                                                              │
+│  3. Compute similarities                                    │
+│     ┌─────────────────────────────────────────┐            │
+│     │ For each MicroSim, find top 10 similar  │            │
+│     │ using cosine similarity                  │            │
+│     └─────────────────────────────────────────┘            │
+│                                                              │
+│  4. Store results                                           │
+│     ┌────────────────────┐                                 │
+│     │ similar-microsims. │  ~870KB JSON file              │
+│     │ json               │                                 │
+│     └────────────────────┘                                 │
+│                                                              │
+├─────────────────────────────────────────────────────────────┤
+│                    ONLINE SEARCH                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  User clicks &quot;Find Similar&quot; on Pendulum simulation         │
+│                    │                                        │
+│                    ▼                                        │
+│  Look up pre-computed neighbors (instant!)                 │
+│                    │                                        │
+│                    ▼                                        │
+│  Display results with similarity scores                    │
+│  ┌──────────────────────────────────────────┐             │
+│  │ 🟢 Simple Harmonic Motion     0.92       │             │
+│  │ 🟢 Spring-Mass System         0.89       │             │
+│  │ 🟡 Wave Propagation           0.81       │             │
+│  └──────────────────────────────────────────┘             │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+</code></pre></div></td></tr></table></div>
+<p>The heavy computation (embeddings, similarities) happens once, offline. User-facing search is just a lookup—instant and scalable.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Embeddings</strong> convert text into numerical vectors where similar meaning = similar numbers</p>
+</li>
+<li>
+<p><strong>Vector representations</strong> position items in a high-dimensional space organized by semantic relationships</p>
+</li>
+<li>
+<p><strong>Cosine similarity</strong> measures how aligned two vectors are, ignoring their length—perfect for comparing meaning</p>
+</li>
+<li>
+<p><strong>Similar MicroSims</strong> uses pre-computed nearest neighbors for instant "more like this" functionality</p>
+</li>
+<li>
+<p><strong>Similarity scores</strong> range from 0 to 1, with scores above 0.70 indicating meaningfully related content</p>
+</li>
+<li>
+<p><strong>K-Nearest Neighbors</strong> efficiently finds the K most similar items by comparing embeddings</p>
+</li>
+<li>
+<p><strong>Dimensionality reduction</strong> compresses 384 dimensions into 2 for visualization while preserving relationships</p>
+</li>
+<li>
+<p><strong>PCA</strong> captures global variance structure—good for overviews but may lose local detail</p>
+</li>
+<li>
+<p><strong>t-SNE</strong> preserves local neighborhoods—excellent cluster separation but distances between clusters are meaningless</p>
+</li>
+<li>
+<p><strong>Visualization maps</strong> enable exploration of entire collections organized by semantic similarity</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>You've now mastered the fundamentals of semantic search—one of the most powerful technologies in modern information retrieval. You understand how embeddings capture meaning, how similarity is measured, and how visualization makes high-dimensional data explorable.</p>
+<p>In the next chapter, we'll shift gears to <strong>Data Pipelines and Aggregation</strong>:</p>
+<ul>
+<li>How to crawl MicroSim repositories automatically</li>
+<li>Aggregating metadata from multiple sources</li>
+<li>Quality scoring and validation</li>
+<li>Building the data infrastructure that powers search</li>
+</ul>
+<p>The semantic search technology you've learned here is only as good as the data it searches. Let's learn how to build robust data pipelines!</p>
+<hr />
+<p><em>Ready to build the data infrastructure? Continue to <a href="../09-data-pipelines-aggregation/">Chapter 9: Data Pipelines and Aggregation</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../07-faceted-search-client-side/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Faceted Search">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7. Faceted Search
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-data-pipelines-aggregation/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Data Pipelines">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9. Data Pipelines
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

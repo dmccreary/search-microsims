@@ -1,0 +1,3557 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Master the educational frameworks that power MicroSim classification including grade levels, learning objectives, Bloom's Taxonomy cognitive levels, and curriculum standards alignment">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/10-educational-foundations/">
+      
+      
+        <link rel="prev" href="../09-data-pipelines-aggregation/">
+      
+      
+        <link rel="next" href="../11-learning-theory-pedagogy/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Educational Foundations - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#educational-foundations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Educational Foundations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-microsim-file-organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-educational-foundations-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Educational Foundations Matter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-grade-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Grade Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Grade Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-grade-levels-matter-for-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Grade Levels Matter for Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-grade-level-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Grade Level Spectrum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-12-education-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-12 Education System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undergraduate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undergraduate Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graduate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graduate Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adult-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adult Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adult Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-grade-level-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Grade Level Progression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives-the-heart-of-education" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives: The Heart of Education
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives: The Heart of Education">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-learning-objectives-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Learning Objectives Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-good-learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Good Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observable-vs-non-observable-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observable vs. Non-Observable Verbs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives-in-microsim-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives in MicroSim Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blooms-taxonomy-a-framework-for-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy: A Framework for Thinking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloom's Taxonomy: A Framework for Thinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-2001-revised-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 2001 Revised Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cognitive-levels-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Cognitive Levels Pyramid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cognitive Levels Pyramid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-blooms-taxonomy-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bloom's Taxonomy Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-six-cognitive-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Six Cognitive Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Dive: The Six Cognitive Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remember-l1-recalling-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remember (L1): Recalling Facts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-l2-making-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand (L2): Making Meaning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-l3-using-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply (L3): Using Knowledge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apply (L3): Using Knowledge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-apply-level-microsim-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Apply-Level MicroSim Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze-l4-breaking-down-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyze (L4): Breaking Down Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-l5-making-judgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate (L5): Making Judgments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-l6-producing-original-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create (L6): Producing Original Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create (L6): Producing Original Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bloom-level-microsim-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bloom Level MicroSim Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curriculum-standards-speaking-the-official-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curriculum Standards: Speaking the Official Language
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curriculum Standards: Speaking the Official Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-standards-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Standards Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-us-standards-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major US Standards Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccss-common-core-state-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCSS: Common Core State Standards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ngss-next-generation-science-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      NGSS: Next Generation Science Standards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iste-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISTE Standards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standards-in-microsim-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standards in MicroSim Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standards in MicroSim Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-standards-framework-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Standards Framework Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment-rubrics-measuring-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment Rubrics: Measuring Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessment Rubrics: Measuring Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-rubrics-matter-for-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Rubrics Matter for MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Rubric
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-microsim-performance-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: MicroSim Performance Rubric
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubrics-in-microsim-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrics in MicroSim Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rubrics in MicroSim Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-rubric-scorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Rubric Scorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-educational-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: Educational Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: Educational Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-educational-metadata-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Educational Metadata Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-power-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search Power Enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-educational-foundations-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Educational Foundations Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-educational-foundations-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Educational Foundations Matter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-grade-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Grade Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Grade Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-grade-levels-matter-for-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Grade Levels Matter for Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-grade-level-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Grade Level Spectrum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-12-education-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-12 Education System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undergraduate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undergraduate Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graduate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graduate Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adult-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adult Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adult Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-grade-level-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Grade Level Progression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives-the-heart-of-education" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives: The Heart of Education
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives: The Heart of Education">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-learning-objectives-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Learning Objectives Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-good-learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Good Learning Objective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observable-vs-non-observable-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observable vs. Non-Observable Verbs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives-in-microsim-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives in MicroSim Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blooms-taxonomy-a-framework-for-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy: A Framework for Thinking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloom's Taxonomy: A Framework for Thinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-2001-revised-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 2001 Revised Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cognitive-levels-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Cognitive Levels Pyramid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cognitive Levels Pyramid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-blooms-taxonomy-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bloom's Taxonomy Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-six-cognitive-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Six Cognitive Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Dive: The Six Cognitive Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remember-l1-recalling-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remember (L1): Recalling Facts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-l2-making-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand (L2): Making Meaning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-l3-using-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply (L3): Using Knowledge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apply (L3): Using Knowledge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-apply-level-microsim-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Apply-Level MicroSim Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze-l4-breaking-down-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyze (L4): Breaking Down Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-l5-making-judgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate (L5): Making Judgments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-l6-producing-original-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create (L6): Producing Original Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create (L6): Producing Original Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bloom-level-microsim-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bloom Level MicroSim Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curriculum-standards-speaking-the-official-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curriculum Standards: Speaking the Official Language
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curriculum Standards: Speaking the Official Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-standards-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Standards Matter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-us-standards-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major US Standards Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccss-common-core-state-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      CCSS: Common Core State Standards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ngss-next-generation-science-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      NGSS: Next Generation Science Standards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iste-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISTE Standards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standards-in-microsim-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standards in MicroSim Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standards in MicroSim Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-standards-framework-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Standards Framework Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment-rubrics-measuring-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment Rubrics: Measuring Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessment Rubrics: Measuring Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-rubrics-matter-for-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Rubrics Matter for MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Rubric
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-microsim-performance-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: MicroSim Performance Rubric
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubrics-in-microsim-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrics in MicroSim Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rubrics in MicroSim Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-rubric-scorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Rubric Scorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-educational-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: Educational Metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together: Educational Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-educational-metadata-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Educational Metadata Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-power-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search Power Enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-educational-foundations-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Educational Foundations Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/10-educational-foundations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="educational-foundations">Educational Foundations</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers the educational framework concepts that inform MicroSim design and classification. You'll learn about grade level classifications from K-12 through graduate and adult learning, learning objectives and their role in educational design, and Bloom's Taxonomy with its six cognitive levels (Remember, Understand, Apply, Analyze, Evaluate, Create). The chapter also covers curriculum standards including CCSS, NGSS, and ISTE, as well as assessment rubrics. After completing this chapter, students will be able to align MicroSims with educational standards and learning objectives.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 20 concepts from the learning graph:</p>
+<ol>
+<li>Grade Levels</li>
+<li>K-12 Education</li>
+<li>Undergraduate Level</li>
+<li>Graduate Level</li>
+<li>Adult Learning</li>
+<li>Learning Objectives</li>
+<li>Bloom Taxonomy</li>
+<li>Remember Level</li>
+<li>Understand Level</li>
+<li>Apply Level</li>
+<li>Analyze Level</li>
+<li>Evaluate Level</li>
+<li>Create Level</li>
+<li>Cognitive Levels</li>
+<li>Curriculum Standards</li>
+<li>CCSS Standards</li>
+<li>NGSS Standards</li>
+<li>ISTE Standards</li>
+<li>Assessment Rubric</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-microsims/">Chapter 1: Introduction to MicroSims</a></li>
+<li><a href="../03-metadata-fundamentals/">Chapter 3: Metadata Fundamentals</a></li>
+</ul>
+<hr />
+<h2 id="why-educational-foundations-matter">Why Educational Foundations Matter</h2>
+<p>Here's a scenario: You've just created an amazing pendulum simulation with beautiful graphics and smooth animations. You share it with the world, and... crickets. A middle school teacher passes because "it's too advanced." A college professor skips it because "it's too basic." A curriculum coordinator can't use it because "it doesn't align with our standards."</p>
+<p>What went wrong? The simulation itself might be perfect, but without proper educational grounding, nobody knows <em>who</em> it's for or <em>what</em> it teaches.</p>
+<p>This is where educational foundations become your secret superpower. Understanding grade levels, learning objectives, Bloom's Taxonomy, and curriculum standards transforms your MicroSims from "cool demos" into "essential teaching tools." When you can confidently say "This simulation targets Apply-level learning of Newton's Second Law for 9th-grade NGSS PS2.A," suddenly curriculum coordinators are taking notes and teachers are bookmarking your work.</p>
+<p>The educational metadata isn't just bureaucratic overhead—it's the bridge that connects your creative work to classrooms around the world. Let's build that bridge!</p>
+<hr />
+<h2 id="understanding-grade-levels">Understanding Grade Levels</h2>
+<p><strong>Grade levels</strong> classify educational content by the age and developmental stage of the intended audience. For MicroSim search, grade level metadata helps educators quickly filter to content appropriate for their students.</p>
+<h3 id="why-grade-levels-matter-for-search">Why Grade Levels Matter for Search</h3>
+<p>When a 7th-grade science teacher searches for simulations, they need results that:</p>
+<ul>
+<li>Use vocabulary their students understand</li>
+<li>Present concepts at an appropriate complexity</li>
+<li>Align with their curriculum sequence</li>
+<li>Don't assume prerequisite knowledge students lack</li>
+</ul>
+<p>Grade level metadata makes this filtering possible. Without it, teachers waste time evaluating simulations that are obviously too advanced or too basic.</p>
+<h3 id="the-grade-level-spectrum">The Grade Level Spectrum</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Grade Range</th>
+<th>Ages</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Early Elementary</strong></td>
+<td>K-2</td>
+<td>5-8</td>
+<td>Concrete, visual, playful</td>
+</tr>
+<tr>
+<td><strong>Upper Elementary</strong></td>
+<td>3-5</td>
+<td>8-11</td>
+<td>Beginning abstraction, guided discovery</td>
+</tr>
+<tr>
+<td><strong>Middle School</strong></td>
+<td>6-8</td>
+<td>11-14</td>
+<td>Emerging formal reasoning, peer learning</td>
+</tr>
+<tr>
+<td><strong>High School</strong></td>
+<td>9-12</td>
+<td>14-18</td>
+<td>Abstract thinking, career awareness</td>
+</tr>
+<tr>
+<td><strong>Undergraduate</strong></td>
+<td>College 1-4</td>
+<td>18-22</td>
+<td>Theoretical depth, research context</td>
+</tr>
+<tr>
+<td><strong>Graduate</strong></td>
+<td>Master's/PhD</td>
+<td>22+</td>
+<td>Specialized, research-oriented</td>
+</tr>
+<tr>
+<td><strong>Adult Learning</strong></td>
+<td>Professional</td>
+<td>25+</td>
+<td>Self-directed, application-focused</td>
+</tr>
+</tbody>
+</table>
+<h3 id="k-12-education-system">K-12 Education System</h3>
+<p><strong>K-12</strong> spans kindergarten through 12th grade—the entire primary and secondary education system. In the US, this typically covers ages 5-18.</p>
+<p>Key characteristics of K-12 content:</p>
+<ul>
+<li>Follows state and national curriculum standards</li>
+<li>Progresses from concrete to abstract thinking</li>
+<li>Builds foundational skills for college or careers</li>
+<li>Must accommodate diverse learning needs</li>
+<li>Often tied to standardized testing</li>
+</ul>
+<h3 id="undergraduate-level">Undergraduate Level</h3>
+<p><strong>Undergraduate</strong> education assumes students have completed high school and are pursuing a bachelor's degree. Content at this level:</p>
+<ul>
+<li>Introduces discipline-specific terminology</li>
+<li>Connects theory to professional practice</li>
+<li>Requires independent reading and research</li>
+<li>Builds toward specialized expertise</li>
+<li>Often integrates multiple subject areas</li>
+</ul>
+<h3 id="graduate-level">Graduate Level</h3>
+<p><strong>Graduate</strong> level content serves students pursuing master's or doctoral degrees. Expectations include:</p>
+<ul>
+<li>Deep domain expertise</li>
+<li>Critical evaluation of research</li>
+<li>Original contribution to knowledge</li>
+<li>Professional-level technical skill</li>
+<li>Integration across disciplines</li>
+</ul>
+<h3 id="adult-learning">Adult Learning</h3>
+<p><strong>Adult learning</strong> (andragogy) differs fundamentally from pedagogy for children. Adults:</p>
+<ul>
+<li>Are self-directed learners</li>
+<li>Bring extensive life experience</li>
+<li>Need to understand "why" before "what"</li>
+<li>Prefer problem-centered over content-centered learning</li>
+<li>Expect immediate applicability</li>
+<li>Learn best when respected as capable</li>
+</ul>
+<p>MicroSims for adults should get to practical applications quickly, respect their time, and connect to real-world problems they recognize.</p>
+<div class="admonition tip">
+<p class="admonition-title">Multi-Grade Tagging</p>
+<p>Many MicroSims work across multiple grade levels! A pendulum simulation might work for 6th graders (qualitative observation), 9th graders (period equations), and undergraduates (differential equations). Use arrays in metadata: <code>"gradeLevel": ["6-8", "9-12", "Undergraduate"]</code></p>
+</div>
+<h4 id="diagram-grade-level-progression">Diagram: Grade Level Progression</h4>
+<iframe src="../../sims/grade-level-progression/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Grade Level Progression Visualization</summary>
+Type: infographic
+
+Bloom Level: Understand (L2)
+Bloom Verb: classify
+
+Learning Objective: Students will classify educational content by appropriate grade level by examining characteristics of each level and matching content to audience.
+
+Layout: Horizontal progression showing grade levels from left to right
+
+Visual elements:
+- Connected nodes for each grade level category
+- Each node shows:
+  - Grade range label
+  - Age range
+  - 2-3 characteristic keywords
+  - Representative icon (child → teen → adult → professional)
+- Connecting lines show progression
+- Color gradient from warm (K-2) to cool (Graduate)
+
+Interactive elements:
+- Hover over each node to see detailed characteristics
+- Click to see example MicroSim topics appropriate for that level
+- Toggle: "Show overlapping content" (highlights where simulations span levels)
+
+Nodes:
+1. K-2: "Concrete, Visual, Playful" (icon: young child)
+2. 3-5: "Guided Discovery, Beginning Abstraction" (icon: student with book)
+3. 6-8: "Emerging Reasoning, Peer Learning" (icon: group of teens)
+4. 9-12: "Abstract Thinking, Career Focus" (icon: high schooler)
+5. Undergraduate: "Theoretical Depth, Research" (icon: college student)
+6. Graduate: "Specialized, Research-Oriented" (icon: academic)
+7. Adult: "Self-Directed, Application-Focused" (icon: professional)
+
+Color scheme:
+- K-2: Warm orange
+- 3-5: Yellow-orange
+- 6-8: Yellow
+- 9-12: Light green
+- Undergraduate: Green
+- Graduate: Teal
+- Adult: Blue
+
+Implementation: p5.js with interactive hover states and click details
+</details>
+
+<hr />
+<h2 id="learning-objectives-the-heart-of-education">Learning Objectives: The Heart of Education</h2>
+<p>A <strong>learning objective</strong> is a clear statement of what students should be able to do after instruction. It's the compass that guides everything—what content to include, how to present it, and how to assess understanding.</p>
+<h3 id="why-learning-objectives-matter">Why Learning Objectives Matter</h3>
+<p>Without clear learning objectives:</p>
+<ul>
+<li>Teachers don't know what to emphasize</li>
+<li>Students don't know what to focus on</li>
+<li>Assessment becomes arbitrary</li>
+<li>MicroSims become "cool but pointless"</li>
+</ul>
+<p>With clear learning objectives:</p>
+<ul>
+<li>Content aligns with outcomes</li>
+<li>Assessment measures what matters</li>
+<li>Students can self-monitor progress</li>
+<li>MicroSims become precision teaching tools</li>
+</ul>
+<h3 id="anatomy-of-a-good-learning-objective">Anatomy of a Good Learning Objective</h3>
+<p>Effective learning objectives follow the <strong>A-B-C-D</strong> format:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Question</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong>udience</td>
+<td>Who is learning?</td>
+<td>"7th grade students..."</td>
+</tr>
+<tr>
+<td><strong>B</strong>ehavior</td>
+<td>What will they do?</td>
+<td>"...will calculate..."</td>
+</tr>
+<tr>
+<td><strong>C</strong>ondition</td>
+<td>Under what circumstances?</td>
+<td>"...given mass and acceleration..."</td>
+</tr>
+<tr>
+<td><strong>D</strong>egree</td>
+<td>How well?</td>
+<td>"...with 80% accuracy."</td>
+</tr>
+</tbody>
+</table>
+<h3 id="observable-vs-non-observable-verbs">Observable vs. Non-Observable Verbs</h3>
+<p>Learning objectives must be <strong>measurable</strong>. This means using verbs that describe observable behaviors.</p>
+<p><strong>Avoid these (unmeasurable):</strong></p>
+<ul>
+<li>Understand (how do you measure "understanding"?)</li>
+<li>Know (what does "knowing" look like?)</li>
+<li>Appreciate (is appreciation testable?)</li>
+<li>Learn about (vague, not actionable)</li>
+</ul>
+<p><strong>Use these (measurable):</strong></p>
+<ul>
+<li>Calculate (you can see the calculation)</li>
+<li>Identify (you can check their identification)</li>
+<li>Compare (you can evaluate their comparison)</li>
+<li>Design (you can assess their design)</li>
+</ul>
+<h3 id="learning-objectives-in-microsim-metadata">Learning Objectives in MicroSim Metadata</h3>
+<p>The <code>learningObjectives</code> field in metadata.json should contain specific, measurable statements:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;learningObjectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Calculate the period of a simple pendulum given length and gravitational acceleration&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Predict how changing pendulum length affects period&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Identify the relationship between amplitude and period (independence)&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>These objectives tell educators exactly what the simulation teaches—and what it <em>doesn't</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">One Simulation, Multiple Objectives</p>
+<p>A single MicroSim can address multiple learning objectives. List them all! This helps educators find simulations that efficiently cover multiple standards.</p>
+</div>
+<hr />
+<h2 id="blooms-taxonomy-a-framework-for-thinking">Bloom's Taxonomy: A Framework for Thinking</h2>
+<p><strong>Bloom's Taxonomy</strong> is a hierarchical classification of cognitive skills, from simple recall to complex creation. It's the standard framework for describing what kind of thinking a learning activity requires.</p>
+<h3 id="the-2001-revised-taxonomy">The 2001 Revised Taxonomy</h3>
+<p>The original 1956 taxonomy was revised in 2001 to use verbs instead of nouns and to swap the top two levels. The modern version includes six levels:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Description</th>
+<th>Key Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1</strong></td>
+<td>Remember</td>
+<td>Recall facts and basic concepts</td>
+<td>list, define, identify, name, recall</td>
+</tr>
+<tr>
+<td><strong>L2</strong></td>
+<td>Understand</td>
+<td>Explain ideas and concepts</td>
+<td>explain, summarize, classify, compare</td>
+</tr>
+<tr>
+<td><strong>L3</strong></td>
+<td>Apply</td>
+<td>Use information in new situations</td>
+<td>solve, demonstrate, implement, use</td>
+</tr>
+<tr>
+<td><strong>L4</strong></td>
+<td>Analyze</td>
+<td>Draw connections among ideas</td>
+<td>differentiate, organize, compare, examine</td>
+</tr>
+<tr>
+<td><strong>L5</strong></td>
+<td>Evaluate</td>
+<td>Justify decisions or positions</td>
+<td>judge, critique, assess, recommend</td>
+</tr>
+<tr>
+<td><strong>L6</strong></td>
+<td>Create</td>
+<td>Produce new or original work</td>
+<td>design, construct, develop, formulate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-cognitive-levels-pyramid">The Cognitive Levels Pyramid</h3>
+<p>Bloom's Taxonomy is often visualized as a pyramid, with Remember at the base and Create at the apex. This reflects two things:</p>
+<ol>
+<li><strong>Foundation</strong>: Lower levels support higher levels (you can't analyze what you don't remember)</li>
+<li><strong>Complexity</strong>: Higher levels require more sophisticated cognitive processing</li>
+</ol>
+<p>However, the pyramid doesn't mean lower levels are less important—they're <em>foundational</em>.</p>
+<h4 id="diagram-blooms-taxonomy-pyramid">Diagram: Bloom's Taxonomy Pyramid</h4>
+<iframe src="../../sims/blooms-taxonomy-pyramid/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Interactive Bloom's Taxonomy Pyramid</summary>
+Type: infographic
+
+Bloom Level: Remember (L1)
+Bloom Verb: identify
+
+Learning Objective: Students will identify the six levels of Bloom's Taxonomy and their associated verbs by interacting with a visual pyramid representation.
+
+Layout: Pyramid structure with six horizontal layers, widest at bottom
+
+Visual elements:
+- Six colored layers stacked as pyramid:
+  - L1 Remember (base, largest): Red-orange
+  - L2 Understand: Orange
+  - L3 Apply: Yellow
+  - L4 Analyze: Light green
+  - L5 Evaluate: Green
+  - L6 Create (apex, smallest): Blue
+- Each layer shows:
+  - Level name prominently
+  - Brief description
+  - 4-5 key verbs
+- Arrows on right side showing "Lower-Order" to "Higher-Order" progression
+- Labels: "LOTS" (Lower-Order Thinking Skills) and "HOTS" (Higher-Order Thinking Skills)
+
+Interactive elements:
+- Hover over each level to see:
+  - Full list of verbs
+  - Example learning objectives
+  - Example MicroSim activities for that level
+- Click level to expand detailed description panel
+- Toggle: "Show MicroSim examples" (shows simulation type for each level)
+
+Sample hover content for Apply (L3):
+- Verbs: use, execute, implement, solve, demonstrate, calculate, apply, practice
+- Example objective: "Calculate the period of a pendulum given length"
+- MicroSim type: Parameter Explorer, Interactive Calculator
+
+Color scheme: Rainbow gradient from warm (bottom) to cool (top)
+
+Implementation: p5.js with layered interactive pyramid and expandable panels
+</details>
+
+<hr />
+<h2 id="deep-dive-the-six-cognitive-levels">Deep Dive: The Six Cognitive Levels</h2>
+<p>Let's explore each level of Bloom's Taxonomy in detail, with examples of MicroSims that target each level.</p>
+<h3 id="remember-l1-recalling-facts">Remember (L1): Recalling Facts</h3>
+<p><strong>Remember</strong> is the foundation—retrieving relevant knowledge from long-term memory. It's not about understanding <em>why</em>, just <em>what</em>.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Recalling previously learned information</li>
+<li>Recognizing terms, facts, concepts</li>
+<li>No transformation of information required</li>
+<li>Essential foundation for higher levels</li>
+</ul>
+<p><strong>Verbs:</strong> list, define, recall, identify, name, recognize, locate, describe, match, label</p>
+<p><strong>MicroSim Examples for Remember:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Activity</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flash Cards</strong></td>
+<td>Flip to reveal definitions</td>
+<td>Term recall</td>
+</tr>
+<tr>
+<td><strong>Matching Pairs</strong></td>
+<td>Connect terms to definitions</td>
+<td>Recognition</td>
+</tr>
+<tr>
+<td><strong>Label Diagram</strong></td>
+<td>Place labels on parts</td>
+<td>Component identification</td>
+</tr>
+<tr>
+<td><strong>Sequence Sorter</strong></td>
+<td>Order steps correctly</td>
+<td>Sequential recall</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Learning Objective (Remember):</strong></p>
+<blockquote>
+<p>"Identify the six levels of Bloom's Taxonomy in order from lowest to highest cognitive complexity."</p>
+</blockquote>
+<h3 id="understand-l2-making-meaning">Understand (L2): Making Meaning</h3>
+<p><strong>Understand</strong> goes beyond recall to constructing meaning. Students demonstrate comprehension by explaining, summarizing, or comparing.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Interpreting information in own words</li>
+<li>Explaining concepts to others</li>
+<li>Comparing and contrasting ideas</li>
+<li>Inferring patterns or trends</li>
+</ul>
+<p><strong>Verbs:</strong> explain, summarize, interpret, classify, compare, contrast, exemplify, infer, paraphrase</p>
+<p><strong>MicroSim Examples for Understand:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Activity</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Concept Matcher</strong></td>
+<td>Match concepts to examples</td>
+<td>Classification</td>
+</tr>
+<tr>
+<td><strong>Paraphrase Checker</strong></td>
+<td>Select best restatement</td>
+<td>Interpretation</td>
+</tr>
+<tr>
+<td><strong>Predict Output</strong></td>
+<td>Guess system behavior</td>
+<td>Inference</td>
+</tr>
+<tr>
+<td><strong>Analogy Builder</strong></td>
+<td>Complete "A is to B as..."</td>
+<td>Relationship understanding</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Learning Objective (Understand):</strong></p>
+<blockquote>
+<p>"Explain how changing pendulum length affects its period, describing the relationship in your own words."</p>
+</blockquote>
+<h3 id="apply-l3-using-knowledge">Apply (L3): Using Knowledge</h3>
+<p><strong>Apply</strong> requires students to use learned information in new situations. This is where knowledge becomes practical skill.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Executing procedures in new contexts</li>
+<li>Solving problems using learned methods</li>
+<li>Implementing knowledge practically</li>
+<li>Transferring skills to novel situations</li>
+</ul>
+<p><strong>Verbs:</strong> use, execute, implement, solve, demonstrate, calculate, apply, practice, construct</p>
+<p><strong>MicroSim Examples for Apply:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Activity</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interactive Calculator</strong></td>
+<td>Adjust parameters, solve equations</td>
+<td>Procedural application</td>
+</tr>
+<tr>
+<td><strong>Parameter Explorer</strong></td>
+<td>Modify variables, observe changes</td>
+<td>Experimentation</td>
+</tr>
+<tr>
+<td><strong>Step-by-Step Solver</strong></td>
+<td>Work through problems with scaffolding</td>
+<td>Procedure execution</td>
+</tr>
+<tr>
+<td><strong>Scenario Simulator</strong></td>
+<td>Apply rules to new situations</td>
+<td>Transfer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Learning Objective (Apply):</strong></p>
+<blockquote>
+<p>"Calculate the period of a simple pendulum given its length and the local gravitational acceleration."</p>
+</blockquote>
+<h4 id="diagram-apply-level-microsim-example">Diagram: Apply-Level MicroSim Example</h4>
+<iframe src="../../sims/apply-level-pendulum/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Apply-Level Pendulum Period Calculator</summary>
+Type: microsim
+
+Bloom Level: Apply (L3)
+Bloom Verb: calculate
+
+Learning Objective: Students will calculate the period of a simple pendulum by entering length values and verifying their calculations against the simulation.
+
+Canvas layout:
+- Left panel (60%): Animated pendulum visualization
+- Right panel (40%): Calculator interface and feedback
+
+Visual elements:
+- Animated pendulum with:
+  - Bob (circle) on string
+  - Pivot point at top
+  - Angle arc showing amplitude
+  - Length dimension line with label
+- Period display showing current swing time
+- Formula display: $T = 2\pi\sqrt{L/g}$
+- Student calculation input area
+
+Interactive controls:
+- Slider: Pendulum length L (0.1 to 2.0 meters)
+- Slider: Gravitational acceleration g (1.6 to 25 m/s²)
+- Input field: "Your calculated period"
+- Button: "Check My Answer"
+- Display: Feedback (correct/incorrect with explanation)
+
+Default parameters:
+- L = 1.0 m
+- g = 9.8 m/s²
+- Calculated period: 2.01 s
+
+Behavior:
+- Pendulum animates at correct period for current L and g
+- Student enters their calculated period
+- "Check My Answer" compares to actual
+- Green feedback if within 5%, red with hints if not
+- Shows step-by-step solution on incorrect answer
+
+Educational scaffolding:
+- Hints available: "T = 2π√(L/g)", unit conversion reminders
+- Progressive difficulty: Start with g=10 for easy math
+
+Animation:
+- Smooth pendulum swing
+- Period timer ticks
+- Celebratory animation on correct answer
+
+Color scheme:
+- Pendulum: Dark blue bob, gray string
+- Correct: Green highlight
+- Incorrect: Red highlight with helpful hints
+
+Implementation: p5.js with physics simulation and input validation
+</details>
+
+<h3 id="analyze-l4-breaking-down-complexity">Analyze (L4): Breaking Down Complexity</h3>
+<p><strong>Analyze</strong> involves breaking information into components and understanding how they relate. Students examine structure, identify patterns, and draw connections.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Deconstructing into constituent parts</li>
+<li>Identifying relationships between components</li>
+<li>Distinguishing relevant from irrelevant</li>
+<li>Recognizing organizational patterns</li>
+</ul>
+<p><strong>Verbs:</strong> differentiate, organize, attribute, compare, contrast, examine, deconstruct, distinguish</p>
+<p><strong>MicroSim Examples for Analyze:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Activity</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Network Explorer</strong></td>
+<td>Identify connections between nodes</td>
+<td>Relationship analysis</td>
+</tr>
+<tr>
+<td><strong>Data Pattern Finder</strong></td>
+<td>Spot trends and outliers</td>
+<td>Pattern recognition</td>
+</tr>
+<tr>
+<td><strong>Cause-Effect Mapper</strong></td>
+<td>Draw arrows between causes and effects</td>
+<td>Causal reasoning</td>
+</tr>
+<tr>
+<td><strong>Compare-Contrast Matrix</strong></td>
+<td>Fill in similarities/differences</td>
+<td>Comparative analysis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Learning Objective (Analyze):</strong></p>
+<blockquote>
+<p>"Compare the periods of pendulums with different lengths, identifying the mathematical relationship between length and period."</p>
+</blockquote>
+<h3 id="evaluate-l5-making-judgments">Evaluate (L5): Making Judgments</h3>
+<p><strong>Evaluate</strong> requires making judgments based on criteria and standards. Students must justify their assessments and defend positions.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Making judgments based on criteria</li>
+<li>Critiquing work against standards</li>
+<li>Justifying decisions with evidence</li>
+<li>Prioritizing among alternatives</li>
+</ul>
+<p><strong>Verbs:</strong> judge, critique, assess, justify, prioritize, recommend, validate, defend, evaluate</p>
+<p><strong>MicroSim Examples for Evaluate:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Activity</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Error Detector</strong></td>
+<td>Find and flag mistakes</td>
+<td>Critical assessment</td>
+</tr>
+<tr>
+<td><strong>Ranking Ladder</strong></td>
+<td>Order items by quality/effectiveness</td>
+<td>Prioritization</td>
+</tr>
+<tr>
+<td><strong>Rubric Rater</strong></td>
+<td>Score examples against criteria</td>
+<td>Standards application</td>
+</tr>
+<tr>
+<td><strong>Decision Tree Navigator</strong></td>
+<td>Evaluate criteria to reach conclusions</td>
+<td>Judgment process</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Learning Objective (Evaluate):</strong></p>
+<blockquote>
+<p>"Assess whether a given simulation accurately models pendulum physics, identifying any simplifications or inaccuracies."</p>
+</blockquote>
+<h3 id="create-l6-producing-original-work">Create (L6): Producing Original Work</h3>
+<p><strong>Create</strong> is the highest cognitive level—combining elements to form novel, coherent wholes. Students design, construct, and produce original work.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Generating new ideas or products</li>
+<li>Designing solutions to problems</li>
+<li>Combining elements in original ways</li>
+<li>Planning and producing coherent work</li>
+</ul>
+<p><strong>Verbs:</strong> design, construct, develop, formulate, compose, produce, invent, generate</p>
+<p><strong>MicroSim Examples for Create:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Activity</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Builder</strong></td>
+<td>Construct custom models with components</td>
+<td>Design skill</td>
+</tr>
+<tr>
+<td><strong>Diagram Builder</strong></td>
+<td>Create flowcharts, concept maps</td>
+<td>Synthesis</td>
+</tr>
+<tr>
+<td><strong>Algorithm Designer</strong></td>
+<td>Arrange code blocks into programs</td>
+<td>Problem solving</td>
+</tr>
+<tr>
+<td><strong>Synthesis Canvas</strong></td>
+<td>Combine elements into novel solutions</td>
+<td>Creative integration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Learning Objective (Create):</strong></p>
+<blockquote>
+<p>"Design a pendulum system that achieves a specific target period, selecting appropriate length and testing your design."</p>
+</blockquote>
+<h4 id="diagram-bloom-level-microsim-matcher">Diagram: Bloom Level MicroSim Matcher</h4>
+<iframe src="../../sims/bloom-microsim-matcher/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Bloom Level to MicroSim Type Matcher</summary>
+Type: microsim
+
+Bloom Level: Analyze (L4)
+Bloom Verb: classify
+
+Learning Objective: Students will classify MicroSim activity types by their appropriate Bloom's Taxonomy level by dragging examples to the correct category.
+
+Canvas layout:
+- Left panel (35%): Pool of unclassified MicroSim activity cards
+- Right panel (65%): Six drop zones for Bloom levels
+
+Visual elements:
+- Draggable cards showing MicroSim activity types:
+  - "Flash Card Quiz" (Remember)
+  - "Concept Explanation" (Understand)
+  - "Parameter Calculator" (Apply)
+  - "Network Analyzer" (Analyze)
+  - "Error Detector" (Evaluate)
+  - "Model Builder" (Create)
+  - Plus 6-8 more examples
+- Six labeled drop zones arranged vertically:
+  - Remember (red-orange)
+  - Understand (orange)
+  - Apply (yellow)
+  - Analyze (light green)
+  - Evaluate (green)
+  - Create (blue)
+- Score display
+- Feedback panel
+
+Interactive controls:
+- Drag cards from pool to drop zones
+- Button: "Check Answers"
+- Button: "Hint" (shows one correct placement)
+- Button: "Reset"
+- Toggle: "Show explanations" (why each belongs where)
+
+Sample cards (15 total):
+1. "Match terms to definitions" → Remember
+2. "Summarize concept in own words" → Understand
+3. "Solve equations with slider inputs" → Apply
+4. "Compare two algorithms' efficiency" → Analyze
+5. "Rate simulation accuracy on rubric" → Evaluate
+6. "Design custom visualization" → Create
+7. "Identify parts of a diagram" → Remember
+8. "Predict simulation output" → Understand
+9. "Calculate using formula" → Apply
+10. "Find patterns in data" → Analyze
+11. "Critique a solution approach" → Evaluate
+12. "Build a concept map" → Create
+13. "Recall sequence of steps" → Remember
+14. "Explain why something happens" → Understand
+15. "Apply rules to new scenario" → Apply
+
+Behavior:
+- Cards snap to drop zones
+- "Check Answers" shows correct/incorrect
+- Incorrect cards bounce back with explanation
+- Score updates in real-time
+- Completion celebration at 100%
+
+Animation:
+- Smooth drag animations
+- Cards glow when hovering over valid zone
+- Celebratory confetti on completion
+
+Color scheme:
+- Cards: White with colored border matching target level
+- Drop zones: Bloom level colors (gradient)
+- Correct: Green check mark
+- Incorrect: Red X with hint
+
+Implementation: p5.js with drag-and-drop interaction
+</details>
+
+<hr />
+<h2 id="curriculum-standards-speaking-the-official-language">Curriculum Standards: Speaking the Official Language</h2>
+<p><strong>Curriculum standards</strong> are official statements of what students should know and be able to do at each grade level. Aligning MicroSims with standards makes them immediately usable by teachers who must document standards coverage.</p>
+<h3 id="why-standards-matter">Why Standards Matter</h3>
+<p>Teachers don't just teach whatever seems interesting—they follow mandated curricula with specific standards they must cover and assess. When your MicroSim metadata includes standards alignment:</p>
+<ul>
+<li>Teachers can quickly verify it fits their curriculum</li>
+<li>Curriculum coordinators can approve purchase/adoption</li>
+<li>Grant applications can demonstrate educational value</li>
+<li>Search becomes dramatically more useful</li>
+</ul>
+<h3 id="major-us-standards-frameworks">Major US Standards Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Full Name</th>
+<th>Subjects</th>
+<th>Grades</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CCSS</strong></td>
+<td>Common Core State Standards</td>
+<td>Math, ELA</td>
+<td>K-12</td>
+</tr>
+<tr>
+<td><strong>NGSS</strong></td>
+<td>Next Generation Science Standards</td>
+<td>Science</td>
+<td>K-12</td>
+</tr>
+<tr>
+<td><strong>ISTE</strong></td>
+<td>International Society for Technology in Education</td>
+<td>Technology</td>
+<td>K-12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ccss-common-core-state-standards">CCSS: Common Core State Standards</h3>
+<p><strong>CCSS</strong> defines what K-12 students should know in mathematics and English language arts. Adopted by most US states, it provides consistent expectations across state lines.</p>
+<p><strong>Math Example Standards:</strong></p>
+<ul>
+<li><strong>CCSS.MATH.CONTENT.HSF.TF.A.3</strong>: Use special triangles to determine geometrically the values of sine, cosine, tangent</li>
+<li><strong>CCSS.MATH.CONTENT.8.F.A.1</strong>: Understand that a function is a rule that assigns exactly one output to each input</li>
+</ul>
+<p><strong>CCSS Standard Format:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>CCSS.MATH.CONTENT.[Grade].[Domain].[Cluster].[Standard]
+</code></pre></div></td></tr></table></div></p>
+<h3 id="ngss-next-generation-science-standards">NGSS: Next Generation Science Standards</h3>
+<p><strong>NGSS</strong> defines science education standards with three dimensions:</p>
+<ol>
+<li><strong>Science and Engineering Practices</strong> (what scientists do)</li>
+<li><strong>Crosscutting Concepts</strong> (themes across disciplines)</li>
+<li><strong>Disciplinary Core Ideas</strong> (content knowledge)</li>
+</ol>
+<p><strong>Example Standards:</strong></p>
+<ul>
+<li><strong>HS-PS2-1</strong>: Analyze data to support the claim that Newton's second law describes the mathematical relationship among net force, mass, and acceleration</li>
+<li><strong>MS-PS3-2</strong>: Develop a model to describe unobservable mechanisms of energy transfer</li>
+</ul>
+<p><strong>NGSS Standard Format:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[Grade Band]-[Discipline Core Idea]-[Standard Number]
+</code></pre></div></td></tr></table></div></p>
+<p>Where discipline codes include:
+- <strong>PS</strong> = Physical Science
+- <strong>LS</strong> = Life Science
+- <strong>ESS</strong> = Earth and Space Science
+- <strong>ETS</strong> = Engineering, Technology, and Applications of Science</p>
+<h3 id="iste-standards">ISTE Standards</h3>
+<p><strong>ISTE Standards</strong> define technology literacy across K-12. They focus on skills like:</p>
+<ul>
+<li><strong>Empowered Learner</strong>: Students use technology to set goals and choose tools</li>
+<li><strong>Digital Citizen</strong>: Students recognize digital rights and responsibilities</li>
+<li><strong>Computational Thinker</strong>: Students develop and employ algorithmic strategies</li>
+</ul>
+<p><strong>Example Standard:</strong></p>
+<ul>
+<li><strong>ISTE 5.c</strong>: Students break problems into component parts, extract key information, and develop descriptive models to understand complex systems</li>
+</ul>
+<h3 id="standards-in-microsim-metadata">Standards in MicroSim Metadata</h3>
+<p>Include standards alignment in your metadata.json:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;standards&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;NGSS&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;HS-PS2-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HS-PS2-4&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;CCSS-Math&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;HSF.TF.A.3&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;ISTE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;5.c&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This enables powerful search: "Show me all simulations aligned with NGSS PS2" instantly returns every relevant MicroSim.</p>
+<div class="admonition tip">
+<p class="admonition-title">Don't Guess—Verify</p>
+<p>Standards alignment requires careful analysis. Don't guess at which standards apply—review the actual standard text to ensure genuine alignment. Inaccurate standards tagging erodes trust.</p>
+</div>
+<h4 id="diagram-standards-framework-comparison">Diagram: Standards Framework Comparison</h4>
+<iframe src="../../sims/standards-comparison/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Curriculum Standards Framework Comparison</summary>
+Type: infographic
+
+Bloom Level: Understand (L2)
+Bloom Verb: compare
+
+Learning Objective: Students will compare the three major curriculum standards frameworks (CCSS, NGSS, ISTE) by examining their scope, structure, and application areas.
+
+Layout: Three-column comparison with shared header
+
+Visual elements:
+- Three vertical panels for CCSS, NGSS, ISTE
+- Each panel shows:
+  - Full name and logo/icon
+  - Subjects covered
+  - Grade range
+  - Structure/format
+  - Example standard
+  - Example MicroSim application
+- Connecting lines showing overlap areas
+- Color coding by framework
+
+Panel content:
+
+**CCSS Panel (Blue):**
+- Icon: Common Core logo
+- Subjects: Mathematics, English Language Arts
+- Grades: K-12
+- Structure: Grade.Domain.Cluster.Standard
+- Example: "CCSS.MATH.CONTENT.8.F.A.1 - Understand that a function assigns one output per input"
+- MicroSim: Function graphing explorer
+
+**NGSS Panel (Green):**
+- Icon: NGSS logo
+- Subjects: Physical Science, Life Science, Earth Science, Engineering
+- Grades: K-12
+- Structure: GradeBand-DisciplineCoreIdea-Number
+- Example: "HS-PS2-1 - Analyze data supporting Newton's second law"
+- MicroSim: Force and acceleration simulator
+
+**ISTE Panel (Purple):**
+- Icon: ISTE logo
+- Subjects: Technology, Digital Literacy, Computational Thinking
+- Grades: K-12
+- Structure: Standard.Indicator
+- Example: "5.c - Break problems into components and develop models"
+- MicroSim: Algorithm visualization tool
+
+Interactive elements:
+- Hover over any panel to highlight its coverage area
+- Click "Example Standard" to see full text
+- Toggle: "Show overlap" (highlights where standards complement each other)
+
+Color scheme:
+- CCSS: Blue family
+- NGSS: Green family
+- ISTE: Purple family
+- Overlap areas: Blended colors
+
+Implementation: p5.js with interactive comparison panels
+</details>
+
+<hr />
+<h2 id="assessment-rubrics-measuring-learning">Assessment Rubrics: Measuring Learning</h2>
+<p>An <strong>assessment rubric</strong> is a scoring guide that defines criteria and performance levels for evaluating student work. Rubrics make assessment transparent, consistent, and actionable.</p>
+<h3 id="why-rubrics-matter-for-microsims">Why Rubrics Matter for MicroSims</h3>
+<p>MicroSims can incorporate rubric-based assessment in several ways:</p>
+<ul>
+<li><strong>Self-assessment</strong>: Students rate their own understanding</li>
+<li><strong>Automated scoring</strong>: MicroSim tracks performance against criteria</li>
+<li><strong>Teacher dashboards</strong>: Aggregate performance data</li>
+<li><strong>Feedback generation</strong>: Specific guidance based on rubric scores</li>
+</ul>
+<h3 id="anatomy-of-a-rubric">Anatomy of a Rubric</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Criteria</strong></td>
+<td>What is being assessed</td>
+<td>"Accuracy of calculations"</td>
+</tr>
+<tr>
+<td><strong>Levels</strong></td>
+<td>Quality categories</td>
+<td>Exemplary, Proficient, Developing, Beginning</td>
+</tr>
+<tr>
+<td><strong>Descriptors</strong></td>
+<td>Specific expectations per level</td>
+<td>"All calculations correct with proper units"</td>
+</tr>
+<tr>
+<td><strong>Points</strong></td>
+<td>Numerical values (optional)</td>
+<td>4, 3, 2, 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-microsim-performance-rubric">Example: MicroSim Performance Rubric</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Exemplary (4)</th>
+<th>Proficient (3)</th>
+<th>Developing (2)</th>
+<th>Beginning (1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>All predictions match simulation</td>
+<td>Minor errors (&lt;10%)</td>
+<td>Significant errors (10-30%)</td>
+<td>Predictions rarely match</td>
+</tr>
+<tr>
+<td><strong>Explanation</strong></td>
+<td>Clear reasoning using correct terminology</td>
+<td>Reasonable explanation with minor gaps</td>
+<td>Partial explanation, some misconceptions</td>
+<td>Unable to explain reasoning</td>
+</tr>
+<tr>
+<td><strong>Exploration</strong></td>
+<td>Tests multiple scenarios systematically</td>
+<td>Tests several scenarios</td>
+<td>Tests few scenarios</td>
+<td>Makes single attempt</td>
+</tr>
+<tr>
+<td><strong>Transfer</strong></td>
+<td>Applies learning to novel problems</td>
+<td>Applies with prompting</td>
+<td>Limited transfer</td>
+<td>No transfer evident</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rubrics-in-microsim-design">Rubrics in MicroSim Design</h3>
+<p>Effective educational MicroSims can integrate rubric elements:</p>
+<ol>
+<li><strong>Track attempts</strong>: How many tries before correct answer?</li>
+<li><strong>Measure accuracy</strong>: How close to correct values?</li>
+<li><strong>Log exploration</strong>: Did student try multiple parameters?</li>
+<li><strong>Assess explanation</strong>: Can student explain their reasoning?</li>
+</ol>
+<p>This data can generate automated feedback:</p>
+<blockquote>
+<p>"Your calculation accuracy is Proficient (3/4). You correctly applied the formula but made a unit conversion error. Try converting cm to m before calculating."</p>
+</blockquote>
+<h4 id="diagram-interactive-rubric-scorer">Diagram: Interactive Rubric Scorer</h4>
+<iframe src="../../sims/rubric-scorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Interactive Assessment Rubric Scorer</summary>
+Type: microsim
+
+Bloom Level: Evaluate (L5)
+Bloom Verb: assess
+
+Learning Objective: Students will assess sample student work using a rubric by selecting performance levels and generating feedback based on criteria.
+
+Canvas layout:
+- Left panel (40%): Sample student work display
+- Right panel (60%): Rubric grid with selectable levels
+
+Visual elements:
+- Student work sample showing:
+  - Problem attempted
+  - Student's solution/explanation
+  - Calculation work (with intentional errors)
+- Rubric grid with:
+  - 4 criteria rows (Accuracy, Explanation, Exploration, Transfer)
+  - 4 level columns (Exemplary, Proficient, Developing, Beginning)
+  - Clickable cells
+  - Descriptors visible on hover
+- Total score display
+- Generated feedback text area
+
+Sample student work scenarios (3 selectable):
+1. "Strong" work: Mostly correct, clear explanation
+2. "Developing" work: Correct answer, weak explanation
+3. "Struggling" work: Errors, confused explanation
+
+Rubric criteria:
+1. Accuracy: Calculation correctness
+2. Explanation: Quality of reasoning
+3. Exploration: Number of scenarios tested
+4. Transfer: Application to new problems
+
+Interactive controls:
+- Dropdown: Select student work sample
+- Click rubric cells to rate each criterion
+- Button: "Generate Feedback"
+- Button: "Compare to Expert Rating"
+- Button: "Reset"
+
+Behavior:
+- Clicking cell highlights it as selected
+- Only one cell per row can be selected
+- Total score updates automatically
+- "Generate Feedback" creates personalized narrative
+- "Compare to Expert" shows model rating with explanation
+
+Generated feedback example:
+"Accuracy: Developing (2/4) - Your calculation has the right approach but includes a unit error. Remember to convert all measurements to the same unit before applying the formula. Explanation: Proficient (3/4) - Good reasoning, but consider including the formula reference."
+
+Animation:
+- Cells highlight on hover
+- Selection animates
+- Feedback types in progressively
+
+Color scheme:
+- Exemplary: Green
+- Proficient: Light green
+- Developing: Yellow
+- Beginning: Orange
+- Selected: Darker shade with border
+
+Implementation: p5.js with grid selection and text generation
+</details>
+
+<hr />
+<h2 id="putting-it-all-together-educational-metadata">Putting It All Together: Educational Metadata</h2>
+<p>When you combine grade levels, learning objectives, Bloom's levels, and curriculum standards, you create powerful educational metadata that makes MicroSims truly searchable and useful.</p>
+<h3 id="complete-educational-metadata-example">Complete Educational Metadata Example</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;9-12&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Undergraduate&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Simple Harmonic Motion&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;learningObjectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Calculate the period of a simple pendulum using T = 2π√(L/g)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Predict how changing pendulum length affects period&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Identify that amplitude does not affect period (for small angles)&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Intermediate&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;prerequisites&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Basic algebra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Unit conversion&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Definition of period&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;standards&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;NGSS&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;HS-PS2-1&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;CCSS-Math&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;HSF.LE.A.1&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="search-power-enabled">Search Power Enabled</h3>
+<p>With this metadata, educators can search:</p>
+<ul>
+<li>"Show Apply-level physics simulations for high school"</li>
+<li>"Find NGSS HS-PS2-1 aligned MicroSims"</li>
+<li>"Intermediate difficulty simulations with no calculus prerequisite"</li>
+<li>"Create-level activities for undergraduate physics"</li>
+</ul>
+<p>Each query returns precisely matched results, saving educators hours of evaluation time.</p>
+<h3 id="the-educational-foundations-checklist">The Educational Foundations Checklist</h3>
+<p>Before publishing a MicroSim, verify:</p>
+<ul>
+<li>[ ] <strong>Grade level(s)</strong> specified (can be multiple)</li>
+<li>[ ] <strong>Subject area</strong> categorized</li>
+<li>[ ] <strong>Learning objectives</strong> written with measurable verbs</li>
+<li>[ ] <strong>Bloom's level</strong> identified</li>
+<li>[ ] <strong>Difficulty</strong> rated (Beginner/Intermediate/Advanced)</li>
+<li>[ ] <strong>Prerequisites</strong> listed</li>
+<li>[ ] <strong>Standards</strong> aligned (where applicable)</li>
+<li>[ ] <strong>Rubric elements</strong> considered for assessment</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">The Superpower Unlocked</p>
+<p>When your MicroSim has complete educational metadata, it becomes discoverable by the educators who need it most. A simulation that perfectly fits someone's curriculum but can't be found might as well not exist. Educational foundations make your work visible—and impactful.</p>
+</div>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>
+<p><strong>Grade levels</strong> classify content by developmental appropriateness, from K-2 through graduate and adult learning</p>
+</li>
+<li>
+<p><strong>K-12 education</strong> follows state/national standards and progresses from concrete to abstract thinking across 13 years</p>
+</li>
+<li>
+<p><strong>Undergraduate and graduate levels</strong> require increasing theoretical depth, domain expertise, and independent research</p>
+</li>
+<li>
+<p><strong>Adult learning</strong> is self-directed, experience-based, and application-focused</p>
+</li>
+<li>
+<p><strong>Learning objectives</strong> state what students will <em>do</em> after instruction, using measurable verbs</p>
+</li>
+<li>
+<p><strong>Bloom's Taxonomy</strong> provides six cognitive levels: Remember, Understand, Apply, Analyze, Evaluate, Create</p>
+</li>
+<li>
+<p><strong>Lower Bloom levels</strong> (Remember, Understand) are foundational; <strong>higher levels</strong> (Evaluate, Create) require more sophisticated thinking</p>
+</li>
+<li>
+<p><strong>Curriculum standards</strong> (CCSS, NGSS, ISTE) are official requirements that teachers must cover—alignment makes MicroSims adoptable</p>
+</li>
+<li>
+<p><strong>Assessment rubrics</strong> define criteria and performance levels, enabling consistent evaluation and automated feedback</p>
+</li>
+<li>
+<p><strong>Complete educational metadata</strong> unlocks powerful search and makes MicroSims discoverable by the educators who need them</p>
+</li>
+</ol>
+<hr />
+<h2 id="whats-next">What's Next?</h2>
+<p>You now understand the educational frameworks that make MicroSims useful in real classrooms. Grade levels tell educators <em>who</em> can use it. Learning objectives tell them <em>what</em> it teaches. Bloom's Taxonomy tells them <em>how</em> students will think. Standards tell them <em>where</em> it fits in the curriculum.</p>
+<p>In the next chapter, we'll explore <strong>Technical Metadata</strong>:</p>
+<ul>
+<li>JavaScript framework specifications</li>
+<li>Responsive design requirements</li>
+<li>Accessibility considerations</li>
+<li>Performance optimization</li>
+</ul>
+<p>The educational foundations you've learned here will be enriched with technical specifications that make MicroSims work seamlessly across devices and contexts.</p>
+<hr />
+<p><em>Ready to add technical depth? Continue to <a href="../11-technical-metadata/index.md">Chapter 11: Technical Metadata</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-data-pipelines-aggregation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Data Pipelines">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Data Pipelines
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-learning-theory-pedagogy/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. Learning Theory">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. Learning Theory
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>

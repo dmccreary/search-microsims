@@ -1,0 +1,2283 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Understanding the directory structure and essential files that comprise a MicroSim package including index.md, main.html, style.css, and JSON configuration files">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/chapters/02-microsim-file-organization/">
+      
+      
+        <link rel="prev" href="../01-intro-to-microsims/">
+      
+      
+        <link rel="next" href="../03-metadata-fundamentals/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>MicroSim File Organization - MicroSim Search and Embeddings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microsim-file-organization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Embeddings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MicroSim File Organization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Embeddings
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-to-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to MicroSims
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. MicroSim File Organization
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-secret-to-supercharged-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Secret to Supercharged MicroSims
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-microsim-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding MicroSim Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-art-of-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Art of File Organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Art of File Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Directory Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-indexmd-file-your-microsims-welcome-mat" class="md-nav__link">
+    <span class="md-ellipsis">
+      The index.md File: Your MicroSim's Welcome Mat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mainhtml-file-where-the-magic-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      The main.html File: Where the Magic Happens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The main.html File: Where the Magic Happens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-html-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim HTML Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-stylecss-file-making-it-beautiful" class="md-nav__link">
+    <span class="md-ellipsis">
+      The style.css File: Making It Beautiful
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-datajson-file-separating-content-from-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      The data.json File: Separating Content from Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-metadatajson-file-your-microsims-digital-dna" class="md-nav__link">
+    <span class="md-ellipsis">
+      The metadata.json File: Your MicroSim's Digital DNA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The metadata.json File: Your MicroSim's Digital DNA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-metadata-schema-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Metadata Schema Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-structure-is-your-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Structure is Your Superpower
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-metadata-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Metadata Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-dublin-core-elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Dublin Core Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-json-and-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. JSON and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-search-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Search Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-faceted-search-client-side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Faceted Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-embeddings-semantic-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Embeddings and Semantic Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-data-pipelines-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Data Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-educational-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Educational Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-learning-theory-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Learning Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-visualization-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Visualization Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-user-interface-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. User Interface and Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-technical-implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Technical Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-secret-to-supercharged-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Secret to Supercharged MicroSims
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-microsim-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding MicroSim Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-art-of-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Art of File Organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Art of File Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim Directory Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-indexmd-file-your-microsims-welcome-mat" class="md-nav__link">
+    <span class="md-ellipsis">
+      The index.md File: Your MicroSim's Welcome Mat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mainhtml-file-where-the-magic-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      The main.html File: Where the Magic Happens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The main.html File: Where the Magic Happens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-microsim-html-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MicroSim HTML Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-stylecss-file-making-it-beautiful" class="md-nav__link">
+    <span class="md-ellipsis">
+      The style.css File: Making It Beautiful
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-datajson-file-separating-content-from-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      The data.json File: Separating Content from Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-metadatajson-file-your-microsims-digital-dna" class="md-nav__link">
+    <span class="md-ellipsis">
+      The metadata.json File: Your MicroSim's Digital DNA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The metadata.json File: Your MicroSim's Digital DNA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-metadata-schema-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Metadata Schema Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-structure-is-your-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Structure is Your Superpower
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/chapters/02-microsim-file-organization/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="microsim-file-organization">MicroSim File Organization</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers the directory structure and essential files that comprise a MicroSim package. You'll learn about the standard file organization pattern including the index.md documentation file, main.html visualization file, style.css for styling, and JSON files for data and metadata. Understanding this structure is essential for creating MicroSims that can be easily discovered, indexed, and reused. After completing this chapter, students will be able to create properly organized MicroSim directories.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 7 concepts from the learning graph:</p>
+<ol>
+<li>MicroSim Structure</li>
+<li>File Organization</li>
+<li>index.md File</li>
+<li>main.html File</li>
+<li>style.css File</li>
+<li>data.json File</li>
+<li>metadata.json File</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-to-microsims/">Chapter 1: Introduction to MicroSims</a></li>
+</ul>
+<hr />
+<h2 id="the-secret-to-supercharged-microsims">The Secret to Supercharged MicroSims</h2>
+<p>Here's a truth that separates amateur MicroSim creators from the pros: <em>organization matters</em>. You can write the most brilliant simulation code in the world, but if it's scattered across random files with mysterious names, you've essentially buried treasure without leaving a map.</p>
+<p>Think of MicroSim file organization like the layout of a well-designed coffee shop. Every barista knows exactly where the espresso beans are, where the milk is stored, and where to find the specialty syrups. New employees can get up to speed quickly because everything follows a logical pattern. That's what we're building here—a consistent structure that makes MicroSims instantly understandable, discoverable, and reusable.</p>
+<p>When thousands of teachers can find, understand, and deploy your MicroSim in minutes rather than hours, that's when the real magic happens. Your single afternoon of work transforms into educational impact across countless classrooms. Now <em>that's</em> leverage!</p>
+<h2 id="understanding-microsim-structure">Understanding MicroSim Structure</h2>
+<p>The <strong>MicroSim structure</strong> refers to the standardized way we organize files within a MicroSim package. Just like how every house has a foundation, walls, and roof in predictable places, every MicroSim follows a consistent organizational pattern.</p>
+<p>A properly structured MicroSim lives in its own directory with a descriptive, URL-friendly name. Inside that directory, you'll find a specific set of files, each with a distinct purpose:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.md</code></td>
+<td>Human-readable documentation</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>main.html</code></td>
+<td>The actual simulation</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>style.css</code></td>
+<td>Custom styling</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>data.json</code></td>
+<td>Simulation data</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>metadata.json</code></td>
+<td>Machine-readable metadata</td>
+<td>Recommended</td>
+</tr>
+</tbody>
+</table>
+<p>This isn't arbitrary bureaucracy—it's a superpower for findability. When every MicroSim follows the same structure, search systems can automatically crawl and index them. Teachers can instantly navigate any MicroSim they encounter. AI systems can learn from and generate new MicroSims that follow established patterns.</p>
+<div class="admonition tip">
+<p class="admonition-title">The Naming Convention</p>
+<p>MicroSim directories use <strong>kebab-case</strong>: all lowercase letters with hyphens separating words. For example: <code>pendulum-simulator</code>, <code>quadratic-equation-explorer</code>, or <code>water-cycle-animation</code>. No spaces, no capital letters, no underscores.</p>
+</div>
+<h2 id="the-art-of-file-organization">The Art of File Organization</h2>
+<p><strong>File organization</strong> is about creating a predictable, navigable structure for your MicroSim files. When done right, anyone—human or machine—can find exactly what they need in seconds.</p>
+<p>Here's what a typical MicroSim directory looks like in practice:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>docs/sims/pendulum-physics/
+├── index.md          # Documentation for humans
+├── main.html         # The simulation itself
+├── style.css         # Custom styles (optional)
+├── data.json         # Data for the simulation (optional)
+└── metadata.json     # Metadata for search systems
+</code></pre></div></td></tr></table></div>
+<p>Why does this specific organization matter? Let's break it down:</p>
+<ol>
+<li><strong>Isolation</strong>: Each MicroSim lives in its own directory, preventing file conflicts</li>
+<li><strong>Portability</strong>: You can zip up the entire folder and share it</li>
+<li><strong>Discoverability</strong>: Search crawlers know exactly where to look</li>
+<li><strong>Consistency</strong>: Users develop muscle memory for finding things</li>
+<li><strong>Version control</strong>: Easy to track changes in Git repositories</li>
+</ol>
+<p>The directory name serves as the MicroSim's unique identifier. When you see a URL like <code>example.com/sims/pendulum-physics/main.html</code>, you immediately know you're looking at a MicroSim about pendulum physics. No detective work required!</p>
+<h4 id="diagram-microsim-directory-structure">Diagram: MicroSim Directory Structure</h4>
+<iframe src="../../sims/microsim-directory-structure/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim Directory Structure Diagram</summary>
+Type: diagram
+
+Bloom Level: Understand (L2)
+Bloom Verb: describe
+
+Learning Objective: Students will describe the standard MicroSim directory structure and explain the purpose of each file type within the package.
+
+Purpose: Visualize the hierarchical relationship between MicroSim files in a directory structure
+
+Components to show:
+- Root sims directory (folder icon)
+- Individual MicroSim directory (highlighted folder)
+- Five file types with distinct icons:
+  - index.md (document icon with "md")
+  - main.html (code icon with angle brackets)
+  - style.css (paint palette icon)
+  - data.json (curly braces icon)
+  - metadata.json (tag icon)
+
+Layout:
+- Tree structure with the sims folder at top
+- MicroSim folder as child
+- Five files as children of MicroSim folder
+- Each file has an icon, filename, and brief purpose label
+
+Interactive elements:
+- Hover over each file to see detailed description
+- Tooltips explain file purpose and contents
+- Required files highlighted vs optional files
+
+Visual style: Clean tree diagram with folder/file icons
+Color scheme: Folders in gold, required files in blue, optional files in green
+Animation: Gentle fade-in as user scrolls, hover highlights
+
+Implementation: HTML/CSS/JavaScript with SVG icons
+</details>
+
+<h2 id="the-indexmd-file-your-microsims-welcome-mat">The index.md File: Your MicroSim's Welcome Mat</h2>
+<p>The <strong>index.md file</strong> is the front door to your MicroSim—the first thing humans read when they want to understand what your simulation does and how to use it.</p>
+<p>Written in Markdown (that's what the <code>.md</code> extension means), this file contains:</p>
+<ul>
+<li><strong>Title</strong>: What is this MicroSim called?</li>
+<li><strong>Description</strong>: What does it do and teach?</li>
+<li><strong>Learning objectives</strong>: What will students understand after using it?</li>
+<li><strong>Usage instructions</strong>: How do the controls work?</li>
+<li><strong>Pedagogical notes</strong>: Suggestions for teachers on how to incorporate it</li>
+</ul>
+<p>Here's a sample index.md structure:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gh"># Pendulum Physics Simulator</span>
+
+<span class="gu">## Description</span>
+
+An interactive simulation demonstrating the relationship between
+pendulum length, gravity, and oscillation period.
+
+<span class="gu">## Learning Objectives</span>
+
+<span class="k">-</span><span class="w"> </span>Explain how pendulum length affects period
+<span class="k">-</span><span class="w"> </span>Predict the effect of changing gravity on swing speed
+<span class="k">-</span><span class="w"> </span>Apply the pendulum formula: T = 2π√(L/g)
+
+<span class="gu">## Controls</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Length Slider**</span>: Adjust pendulum length from 0.5m to 3.0m
+<span class="k">-</span><span class="w"> </span><span class="gs">**Gravity Slider**</span>: Change gravity from 1 to 20 m/s²
+<span class="k">-</span><span class="w"> </span><span class="gs">**Start/Pause**</span>: Control animation
+<span class="k">-</span><span class="w"> </span><span class="gs">**Reset**</span>: Return to default values
+
+<span class="gu">## For Teachers</span>
+
+Great for introducing periodic motion in physics classes.
+Pair with the mass-spring simulator for comparison.
+</code></pre></div></td></tr></table></div>
+<p>Notice how the index.md speaks to humans? It uses natural language, explains <em>why</em> things work the way they do, and provides context that machines can't easily infer. This is deliberate—we have a separate file (metadata.json) for machine-readable information.</p>
+<div class="admonition note">
+<p class="admonition-title">MkDocs Integration</p>
+<p>In MkDocs-based textbooks, the index.md file automatically becomes the directory's landing page. When someone navigates to <code>/sims/pendulum-physics/</code>, MkDocs serves the index.md as the default page.</p>
+</div>
+<h2 id="the-mainhtml-file-where-the-magic-happens">The main.html File: Where the Magic Happens</h2>
+<p>The <strong>main.html file</strong> is the star of the show—it contains (or links to) the actual simulation code. When you embed a MicroSim in an iframe, this is the file you're pointing to.</p>
+<p>A typical main.html includes:</p>
+<ul>
+<li>HTML structure for the page</li>
+<li>References to JavaScript libraries (like p5.js)</li>
+<li>The simulation code itself</li>
+<li>Control elements (sliders, buttons, dropdowns)</li>
+<li>Canvas or SVG elements for visualization</li>
+</ul>
+<p>Here's a simplified example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pendulum Simulator<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas-container&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;controls&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Length: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;range&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;length&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;300&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Gravity: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;range&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;gravity&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;20&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;sketch.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>The key principles for main.html:</p>
+<ul>
+<li><strong>Self-contained</strong>: Should work when opened directly in a browser</li>
+<li><strong>Responsive</strong>: Adapts to different container widths</li>
+<li><strong>Accessible</strong>: Includes proper labels and ARIA attributes</li>
+<li><strong>Performant</strong>: Loads quickly and runs smoothly</li>
+</ul>
+<p>Some MicroSim creators put their JavaScript code directly in main.html, while others separate it into a sketch.js file. Both approaches work—what matters is consistency and clarity.</p>
+<h4 id="diagram-microsim-html-architecture">Diagram: MicroSim HTML Architecture</h4>
+<iframe src="../../sims/html-architecture/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>MicroSim HTML Architecture Diagram</summary>
+Type: diagram
+
+Bloom Level: Analyze (L4)
+Bloom Verb: examine
+
+Learning Objective: Students will examine the structure of a main.html file and identify how different components (head, body, scripts) work together to create an interactive simulation.
+
+Purpose: Show the anatomy of a MicroSim's main.html file with labeled sections
+
+Components to show:
+- DOCTYPE declaration (top banner)
+- HTML element (outer container)
+- Head section containing:
+  - Meta tags for charset and viewport
+  - Title element
+  - Link to style.css
+  - Script tag for p5.js CDN
+- Body section containing:
+  - Canvas container div
+  - Controls div with sliders/buttons
+  - Script tag linking to sketch.js
+
+Layout: Nested box diagram showing HTML document structure
+- Clear visual hierarchy with head and body as siblings
+- Expandable sections for detailed view
+
+Interactive elements:
+- Click on any section to see code example
+- Hover for brief description of purpose
+- Toggle between "structure view" and "code view"
+
+Visual style: Nested rectangles with rounded corners
+Color scheme:
+- Head elements in blue tones
+- Body structure in green tones
+- Script references in orange
+- External resources with dotted borders
+
+Animation: Sections expand smoothly when clicked
+
+Implementation: HTML/CSS/JavaScript with interactive panels
+</details>
+
+<h2 id="the-stylecss-file-making-it-beautiful">The style.css File: Making It Beautiful</h2>
+<p>The <strong>style.css file</strong> handles the visual presentation of your MicroSim. While many simulations work fine without custom CSS (relying on default browser styles), a well-crafted stylesheet makes the difference between "functional" and "polished."</p>
+<p>Common styling needs for MicroSims include:</p>
+<ul>
+<li><strong>Canvas sizing</strong>: Making the drawing area responsive</li>
+<li><strong>Control layout</strong>: Arranging sliders and buttons attractively</li>
+<li><strong>Typography</strong>: Readable labels and values</li>
+<li><strong>Color themes</strong>: Consistent visual identity</li>
+<li><strong>Responsive breakpoints</strong>: Adapting to mobile screens</li>
+</ul>
+<p>Here's a practical style.css example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">/* Container fills available width */</span>
+<span class="p">#</span><span class="nn">canvas-container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Control panel styling */</span>
+<span class="p">#</span><span class="nn">controls</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="w">    </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span>
+<span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#f5f5f5</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Slider styling */</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;range&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Responsive adjustments */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">#</span><span class="nn">controls</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The style.css file is optional because:</p>
+<ul>
+<li>Some MicroSims use inline styles in the HTML</li>
+<li>p5.js can handle styling programmatically</li>
+<li>Default browser styles may be sufficient</li>
+</ul>
+<p>However, separating CSS into its own file follows web development best practices and makes maintenance easier.</p>
+<div class="admonition tip">
+<p class="admonition-title">Consistency Across MicroSims</p>
+<p>Consider creating a base stylesheet that you reuse across all your MicroSims. This gives your collection a cohesive visual identity and reduces the work for each new simulation.</p>
+</div>
+<h2 id="the-datajson-file-separating-content-from-code">The data.json File: Separating Content from Code</h2>
+<p>The <strong>data.json file</strong> stores structured data that the simulation uses. Instead of hardcoding values into your JavaScript, you load them from this external file. This separation makes MicroSims more flexible and maintainable.</p>
+<p>Why use a separate data file?</p>
+<ul>
+<li><strong>Easier updates</strong>: Change data without touching code</li>
+<li><strong>Non-programmer friendly</strong>: Teachers can modify content without JavaScript knowledge</li>
+<li><strong>Multiple datasets</strong>: Swap data files for different scenarios</li>
+<li><strong>Cleaner code</strong>: Simulation logic isn't cluttered with data definitions</li>
+</ul>
+<p>Here's an example data.json for a solar system simulation:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;planets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mercury&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;distanceFromSun&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.39</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orbitalPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#A0522D&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Venus&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;distanceFromSun&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.72</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orbitalPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">225</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#DEB887&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;distanceFromSun&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orbitalPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">365</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#4169E1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;animationSpeed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;showOrbits&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;showLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Loading this data in JavaScript is straightforward:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">planetData</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">planetData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadJSON</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Now planetData.planets contains the array</span>
+<span class="w">    </span><span class="c1">// and planetData.settings contains configuration</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The data.json file is particularly valuable for:</p>
+<ul>
+<li>Quiz questions and answers</li>
+<li>Geographic coordinates for maps</li>
+<li>Historical timelines</li>
+<li>Mathematical datasets</li>
+<li>Configuration options</li>
+</ul>
+<h2 id="the-metadatajson-file-your-microsims-digital-dna">The metadata.json File: Your MicroSim's Digital DNA</h2>
+<p>Here's where the superpower truly kicks in. The <strong>metadata.json file</strong> contains structured information <em>about</em> your MicroSim—data that enables search engines, AI systems, and educational platforms to understand, categorize, and recommend your simulation.</p>
+<p>Think of metadata.json as a comprehensive profile that answers every question a search system might ask:</p>
+<ul>
+<li>What subject does this teach?</li>
+<li>What grade levels is it appropriate for?</li>
+<li>What learning objectives does it address?</li>
+<li>What technology does it use?</li>
+<li>Who created it and when?</li>
+<li>How can it be used and shared?</li>
+</ul>
+<p>Here's a complete metadata.json example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;microsim&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dublinCore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pendulum Physics Simulator&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive simulation demonstrating the relationship between pendulum length, gravity, and oscillation period&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;creator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dr. Jane Smith&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-15&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive Simulation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rights&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CC BY-NC-SA 4.0&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;educational&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;subjectArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mathematics&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;gradeLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;High School&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Undergraduate&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;bloomsTaxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Understand&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Analyze&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Intermediate&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Periodic Motion&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;learningObjectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Explain how pendulum length affects oscillation period&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Predict the effect of gravity on pendulum motion&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Apply the pendulum equation T = 2π√(L/g)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;prerequisites&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Basic algebra&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Understanding of time and motion&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;technical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p5.js&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;libraryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.9.0&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fileSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;45KB&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;browserSupport&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Chrome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Firefox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Safari&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Edge&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;visualizationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;animation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;simulation&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;interactionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;pendulum&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;oscillation&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;period&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;gravity&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;physics simulation&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;harmonic motion&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>This metadata enables powerful capabilities:</p>
+<ul>
+<li><strong>Faceted search</strong>: Find all Physics simulations for High School with Intermediate difficulty</li>
+<li><strong>Semantic matching</strong>: AI understands that "periodic motion" relates to "oscillation"</li>
+<li><strong>Quality scoring</strong>: Systems can assess completeness and recommend improvements</li>
+<li><strong>Similar recommendations</strong>: "Students who used this also liked..."</li>
+</ul>
+<h4 id="diagram-metadata-schema-structure">Diagram: Metadata Schema Structure</h4>
+<iframe src="../../sims/metadata-schema/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details markdown="1">
+<summary>Metadata Schema Structure Interactive Diagram</summary>
+Type: infographic
+
+Bloom Level: Analyze (L4)
+Bloom Verb: organize
+
+Learning Objective: Students will organize their understanding of the metadata.json schema by exploring the hierarchical structure of Dublin Core, educational, technical, and search sections.
+
+Purpose: Visualize the complete metadata.json schema with expandable sections
+
+Layout: Radial or hierarchical tree starting from "microsim" root
+
+Main sections (level 1):
+1. dublinCore (8 fields)
+   - title, description, creator, date, type, format, language, rights
+2. educational (7 fields)
+   - subjectArea, gradeLevel, bloomsTaxonomy, difficulty, topic, learningObjectives, prerequisites
+3. technical (4 fields)
+   - framework, libraryVersion, fileSize, browserSupport
+4. search (3 fields)
+   - visualizationType, interactionLevel, keywords
+
+Interactive elements:
+- Click section to expand and see all fields
+- Hover over field for description and example values
+- Color coding indicates required vs optional fields
+- Search box to find specific fields
+
+Visual style: Clean hierarchical diagram with card-based field display
+Color scheme:
+- dublinCore in blue (standard metadata)
+- educational in green (learning focus)
+- technical in orange (implementation)
+- search in purple (discoverability)
+
+Animation: Smooth expand/collapse transitions
+
+Implementation: HTML/CSS/JavaScript with collapsible tree structure
+</details>
+
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>Let's walk through creating a properly organized MicroSim from scratch. Imagine you're building a simulation that demonstrates how area and perimeter change as you resize a rectangle.</p>
+<p><strong>Step 1: Create the directory</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>docs/sims/rectangle-area-perimeter
+</code></pre></div></td></tr></table></div>
+<p><strong>Step 2: Create index.md</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gh"># Rectangle Area and Perimeter Explorer</span>
+
+<span class="gu">## Description</span>
+
+An interactive visualization showing how a rectangle&#39;s area and
+perimeter change as width and height are adjusted.
+
+<span class="gu">## Learning Objectives</span>
+
+<span class="k">-</span><span class="w"> </span>Understand the formulas for rectangle area (A = w × h) and
+  perimeter (P = 2w + 2h)
+<span class="k">-</span><span class="w"> </span>Observe how doubling dimensions affects area vs perimeter
+<span class="k">-</span><span class="w"> </span>Compare the rate of change between area and perimeter
+</code></pre></div></td></tr></table></div>
+<p><strong>Step 3: Create main.html with the simulation</strong></p>
+<p>Build your p5.js simulation with sliders for width and height, displaying both the rectangle visualization and the calculated values.</p>
+<p><strong>Step 4: Add style.css for polish</strong></p>
+<p>Style the control panel, ensure responsive behavior, and add visual refinements.</p>
+<p><strong>Step 5: Create metadata.json</strong></p>
+<p>Fill in all the structured information about subject area, grade level, learning objectives, and technical details.</p>
+<p><strong>Step 6: Test everything</strong></p>
+<ul>
+<li>Open main.html directly in a browser</li>
+<li>Verify all controls work</li>
+<li>Check responsive behavior</li>
+<li>Validate JSON syntax</li>
+<li>Test embedding in an iframe</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Congratulations!</p>
+<p>You've created a fully-documented, discoverable, reusable MicroSim! When this gets indexed by search systems, teachers worldwide will be able to find it, understand it, and use it in their classrooms.</p>
+</div>
+<h2 id="why-this-structure-is-your-superpower">Why This Structure is Your Superpower</h2>
+<p>This consistent file organization isn't just bureaucratic tidiness—it's the foundation for transformative educational technology. When every MicroSim follows the same pattern:</p>
+<ul>
+<li><strong>Search works</strong>: Crawlers know where to find metadata.json</li>
+<li><strong>AI learns</strong>: Training data is consistent and predictable</li>
+<li><strong>Teachers win</strong>: Less time figuring out, more time teaching</li>
+<li><strong>Students benefit</strong>: Familiar interface patterns across all MicroSims</li>
+<li><strong>Communities grow</strong>: Easy to share, fork, and improve</li>
+</ul>
+<p>The MicroSim search system we're building in this course relies on this structure. Each metadata.json feeds into a master index. Faceted search filters become possible because subject areas and grade levels are in predictable fields. Semantic similarity works because descriptions and learning objectives follow consistent patterns.</p>
+<p>One teacher creating one well-organized MicroSim might impact thousands of students. That's the multiplier effect in action. That's why file organization isn't boring—it's empowering.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li><strong>MicroSim structure</strong> follows a consistent pattern with predictable file names and locations</li>
+<li><strong>File organization</strong> uses kebab-case directory names and standard file types</li>
+<li>The <strong>index.md file</strong> provides human-readable documentation and usage instructions</li>
+<li>The <strong>main.html file</strong> contains the actual simulation code and is the iframe target</li>
+<li>The <strong>style.css file</strong> handles visual presentation and responsive design</li>
+<li>The <strong>data.json file</strong> separates content from code for easier maintenance</li>
+<li>The <strong>metadata.json file</strong> enables search, discovery, and AI integration</li>
+<li>Consistent organization transforms individual MicroSims into a searchable, reusable ecosystem</li>
+</ol>
+<hr />
+<p><em>Ready to dive into metadata standards? Continue to <a href="../03-dublin-core/index.md">Chapter 3: Dublin Core Metadata</a>.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-intro-to-microsims/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Introduction to MicroSims">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Introduction to MicroSims
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-metadata-fundamentals/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Metadata Fundamentals">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Metadata Fundamentals
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+  </body>
+</html>
