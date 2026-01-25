@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/prompts/generate-microsim-using-similar-templates/">
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/sims/cc-license-chooser/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Generate MicroSim Using Similar Templates - MicroSim Search and Embeddings</title>
+        <title>Creative Commons License Chooser - MicroSim Search and Embeddings</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#generate-microsim-using-similar-templates" class="md-skip">
+        <a href="#creative-commons-license-chooser" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generate MicroSim Using Similar Templates
+              Creative Commons License Chooser
             
           </span>
         </div>
@@ -528,7 +528,7 @@
         
   
   
-    <a href="../../sims/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -644,7 +644,7 @@
         
   
   
-    <a href="../add-missing-metadata/" class="md-nav__link">
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -790,19 +790,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#microsim-generator-skill-with-similar-templates" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSim Generator Skill with Similar Templates
+      How to Use
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="MicroSim Generator Skill with Similar Templates">
+    <nav class="md-nav" aria-label="How to Use">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dublin-core-elements" class="md-nav__link">
+  <a href="#quick-option" class="md-nav__link">
     <span class="md-ellipsis">
-      Dublin Core Elements
+      Quick Option
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-on-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note on Attribution
     </span>
   </a>
   
@@ -814,36 +823,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keywords-to-search-results" class="md-nav__link">
+  <a href="#license-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Keywords to Search Results
+      License Types
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#world-map-coverage" class="md-nav__link">
+  <a href="#about-this-microsim" class="md-nav__link">
     <span class="md-ellipsis">
-      World Map Coverage
+      About This MicroSim
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#subject-hierarchy-taxonomy" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Subject hierarchy-taxonomy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creative-commons-license-chooser" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creative Commons License Chooser
+      References
     </span>
   </a>
   
@@ -864,7 +864,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/prompts/generate-microsim-using-similar-templates.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/sims/cc-license-chooser/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -872,63 +872,102 @@
   
 
 
-<h1 id="generate-microsim-using-similar-templates">Generate MicroSim Using Similar Templates</h1>
-<h2 id="microsim-generator-skill-with-similar-templates">MicroSim Generator Skill with Similar Templates</h2>
-<div class="admonition prompt">
-<p class="admonition-title">Prompt</p>
-<p>Run the microsim-generator skill using as input the input from @docs/chapters/02-microsim-file-organization/index.md      <br />
-and look for the #### Diagram: MicroSim Directory Structure.  You will find a <details> block following that Diagram      <br />
-level 4 markdown header.  Use the program @src/find-similar-templates/find-similar-templates.py to find similar           <br />
-MicroSim templates you can begin with.  Keep a detailed log of your decision of what parts of what templates to use to    <br />
-generate the new MicroSim and put your design decisions in @logs/generate-microsim-directory-structure-microsim.md</p>
-</div>
-<p>Result:</p>
-<p><a href="../../sims/microsim-directory-structure/">MicroSim</a>
-<a href="https://github.com/dmccreary/search-microsims/blob/main/logs/generate-microsim-directory-structure-microsim.md">Log File</a></p>
-<h3 id="dublin-core-elements">Dublin Core Elements</h3>
-<p>Focus on the diagram here:
-@docs/chapters/03-metadata-fundamentals/#diagram-dublin-core-element-relationships</p>
-<p>Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.</p>
-<p>Run the Python program @src/find-similar-templates/find-similar-templates.py to 
-find similar MicroSim templates you can use as an initial template.</p>
-<p>If it is a p5.js MicroSim, add the following to the index.md
-<a href="https://editor.p5js.org/dmccreary/sketches/">Edit the {NAME} }MicroSim Using the p5.js Editor</a></p>
-<p>Keep a detailed log of your decision of what parts of what templates you use to    <br />
-generate the new MicroSim and put your design decisions in @logs/dublin-core-element-relationships-microsim.md</p>
-<h2 id="keywords-to-search-results">Keywords to Search Results</h2>
-<p>Focus on the diagram here:
-@docs/chapters/03-metadata-fundamentals/#diagram-keywords-to-search-results-flow</p>
-<p>Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.</p>
-<p>Run the Python program @src/find-similar-templates/find-similar-templates.py to 
-find similar MicroSim templates you can use as an initial template.</p>
-<p>If it is a p5.js MicroSim, add the following to the index.md
-<a href="https://editor.p5js.org/dmccreary/sketches/">Edit the {NAME} }MicroSim Using the p5.js Editor</a></p>
-<p>Keep a detailed log of your decision of what parts of what templates you use to    <br />
-generate the new MicroSim and put your design decisions in @logs/keywords-to-search-results-flow</p>
-<h2 id="world-map-coverage">World Map Coverage</h2>
-<p>Focus on the diagram here:
-@docs/chapters/04-dublin-core-elements/#diagram-coverage-applications-map</p>
-<p>Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.</p>
-<p>Run the Python program @src/find-similar-templates/find-similar-templates.py to 
-find similar MicroSim templates you can use as an initial template.</p>
-<p>Keep a detailed log of your decision of what parts of what templates you use to    <br />
-generate the new MicroSim and put your design decisions in @logs/coverage-applications-map</p>
-<h2 id="subject-hierarchy-taxonomy">Subject hierarchy-taxonomy</h2>
-<p>Focus on the diagram here:
-chapters/04-dublin-core-elements/#diagram-subject-hierarchy-taxonomy</p>
-<p>Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.</p>
-<p>Run the Python program @src/find-similar-templates/find-similar-templates.py to 
-find similar MicroSim templates you can use as an initial template.</p>
-<p>Keep a detailed log of your decision of what parts of what templates you use to    <br />
-generate the new MicroSim and put your design decisions in @logs/subject-hierarchy-taxonomy.md</p>
-<h2 id="creative-commons-license-chooser">Creative Commons License Chooser</h2>
-<p>Focus on the diagram here:
-@docs/chapters/04-dublin-core-elements/#diagram-creative-commons-license-chooser</p>
-<p>Run the microsim-generator skill using as your specification the input the text inside the <details> block following that level 4 #### Diagram header.</p>
-<p>Run the Python program @src/find-similar-templates/find-similar-templates.py to 
-find similar MicroSim templates you can use as an initial template.</p>
-<p>Keep a detailed log of your decision of what parts of what templates you use to    <br />
-generate the new MicroSim and put your design decisions in @logs/creative-commons-license-chooser</p>
+<h1 id="creative-commons-license-chooser">Creative Commons License Chooser</h1>
+<p>An interactive tool to help you select the appropriate Creative Commons license for your MicroSims by answering simple questions about commercial use and modifications.</p>
+<iframe src="main.html" width="100%" height="610px" scrolling="no" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
+
+<p><a class="md-button md-button--primary" href="main.html" target="_blank">Open in Full Screen</a></p>
+<h2 id="how-to-use">How to Use</h2>
+<ol>
+<li><strong>Answer the questions</strong> in the left panel:</li>
+<li><strong>Allow commercial use?</strong> - Can others profit from work based on yours?</li>
+<li>
+<p><strong>Allow modifications?</strong> - Can others adapt or remix your work?</p>
+</li>
+<li>
+<p><strong>Watch the decision path</strong> highlight in the center flowchart</p>
+</li>
+<li>
+<p><strong>View your recommendation</strong> in the right panel with:</p>
+</li>
+<li>License badge with icons</li>
+<li>Plain English explanation</li>
+<li>Ready-to-copy JSON for your metadata</li>
+</ol>
+<h3 id="quick-option">Quick Option</h3>
+<p>Click <strong>"Maximum Freedom (CC0)"</strong> to waive all rights and dedicate your work to the public domain.</p>
+<h3 id="note-on-attribution">Note on Attribution</h3>
+<p>Attribution (BY) is actually a third dimension of Creative Commons licensing. All CC licenses except CC0 require attribution—meaning others must credit you when using your work. In this tool:</p>
+<ul>
+<li><strong>CC0</strong> = No attribution required (public domain)</li>
+<li><strong>All other licenses</strong> = Attribution required (BY is implicit)</li>
+</ul>
+<p>To keep the interface simple, we assume most creators want attribution. The "Maximum Freedom (CC0)" button is provided for those who want to waive all rights, including attribution.</p>
+<h2 id="license-types">License Types</h2>
+<table>
+<thead>
+<tr>
+<th>License</th>
+<th>Commercial Use</th>
+<th>Modifications</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CC0</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Public domain - no restrictions</td>
+</tr>
+<tr>
+<td>CC BY</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Requires attribution</td>
+</tr>
+<tr>
+<td>CC BY-SA</td>
+<td>Yes</td>
+<td>Yes (ShareAlike)</td>
+<td>Derivatives must use same license</td>
+</tr>
+<tr>
+<td>CC BY-ND</td>
+<td>Yes</td>
+<td>No</td>
+<td>Commercial OK, but no modifications</td>
+</tr>
+<tr>
+<td>CC BY-NC</td>
+<td>No</td>
+<td>Yes</td>
+<td>Non-commercial only</td>
+</tr>
+<tr>
+<td>CC BY-NC-SA</td>
+<td>No</td>
+<td>Yes (ShareAlike)</td>
+<td>Non-commercial + same license</td>
+</tr>
+<tr>
+<td>CC BY-NC-ND</td>
+<td>No</td>
+<td>No</td>
+<td>Most restrictive - sharing only</td>
+</tr>
+</tbody>
+</table>
+<h2 id="about-this-microsim">About This MicroSim</h2>
+<p>This tool was created to help MicroSim authors understand and apply Creative Commons licenses to their work. It implements the decision logic used by Creative Commons to guide license selection.</p>
+<p><strong>Learning Objective:</strong> Students will recommend appropriate Creative Commons licenses for different MicroSim sharing scenarios by analyzing use case requirements against license permissions.</p>
+<p><strong>Bloom Level:</strong> Evaluate (L5) - Recommend</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://creativecommons.org/choose/">Creative Commons License Chooser</a></li>
+<li><a href="https://creativecommons.org/share-your-work/cclicenses/">Creative Commons License Types</a></li>
+<li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/rights">Dublin Core Rights Element</a></li>
+</ul>
 
 
 

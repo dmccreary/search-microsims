@@ -1,0 +1,55 @@
+{
+  "dublinCore": {
+    "title": "Creative Commons License Chooser",
+    "creator": "Dan McCreary",
+    "subject": [
+      "Open Educational Resources",
+      "Creative Commons",
+      "Licensing",
+      "Dublin Core",
+      "Metadata",
+      "Intellectual Property"
+    ],
+    "description": "An interactive tool to help MicroSim authors select the appropriate Creative Commons license by answering questions about commercial use and modifications. Features a three-panel layout with questions, decision flowchart, and license recommendation with ready-to-copy JSON metadata.",
+    "publisher": "MicroSim Search",
+    "date": "2026-01-25",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "https://dmccreary.github.io/microsim-search/sims/cc-license-chooser/",
+    "language": "en-US",
+    "rights": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+  },
+  "educational": {
+    "subjectArea": "Information Science",
+    "gradeLevel": "Undergraduate",
+    "difficulty": "Beginner",
+    "learningObjective": "Students will recommend appropriate Creative Commons licenses for different MicroSim sharing scenarios by analyzing use case requirements against license permissions."
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerbs": ["recommend", "evaluate", "assess", "justify"],
+    "pattern": "assessment",
+    "pacing": "self-paced",
+    "bloomAlignment": ["evaluate", "analyze"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "fileSize": "15KB",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+  },
+  "search": {
+    "visualizationType": ["interactive-demo", "flowchart", "form"],
+    "keywords": [
+      "creative commons",
+      "CC license",
+      "open source",
+      "licensing",
+      "OER",
+      "metadata",
+      "rights",
+      "attribution",
+      "share alike",
+      "non-commercial"
+    ]
+  }
+}
