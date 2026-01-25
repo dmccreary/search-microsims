@@ -540,7 +540,7 @@ For open educational resources, Creative Commons licenses are standard:
 
 #### Diagram: Creative Commons License Chooser
 
-<iframe src="../../sims/cc-license-chooser/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/cc-license-chooser/main.html" width="100%" height="600px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Creative Commons License Chooser Interactive</summary>
@@ -801,7 +801,7 @@ Here's a complete example showing all 15 Dublin Core elements for a MicroSim:
 
 #### Diagram: Dublin Core Element Completeness Checker
 
-<iframe src="../../sims/dublin-core-checker/main.html" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/dublin-core-checker/main.html" width="100%" height="685px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Dublin Core Element Completeness Checker</summary>
@@ -813,10 +813,12 @@ Bloom Verb: implement
 Learning Objective: Students will implement complete Dublin Core metadata by filling in all 15 elements and receiving feedback on completeness and quality.
 
 Canvas layout:
+
 - Left panel (350px): Input form with 15 fields
 - Right panel (300px): Completeness gauge and quality feedback
 
 Visual elements:
+
 - Form with labeled input fields for each DC element
 - Color-coded field borders (red=missing required, yellow=missing optional, green=complete)
 - Circular completeness gauge (0-100%)
@@ -824,6 +826,7 @@ Visual elements:
 - Checklist of elements with status icons
 
 Interactive controls:
+
 - Text inputs for each Dublin Core element
 - "Check Completeness" button
 - "Load Example" button (pre-fills with good example)
@@ -831,11 +834,13 @@ Interactive controls:
 - "Export JSON" button
 
 Field configuration:
+
 - Required (red if empty): title, creator, subject, description, date, format, rights
 - Recommended (yellow if empty): publisher, type, identifier, language
 - Optional (gray if empty): contributor, source, relation, coverage
 
 Scoring logic:
+
 - Required fields: 10 points each (70 max)
 - Recommended fields: 5 points each (20 max)
 - Optional fields: 2.5 points each (10 max)
@@ -844,6 +849,7 @@ Scoring logic:
 Default state: Empty form, 0% completeness
 
 Behavior:
+
 - Real-time validation as user types
 - Completeness gauge animates as fields are filled
 - Quality tips appear based on content

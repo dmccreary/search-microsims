@@ -10,7 +10,7 @@ This is a MicroSim faceted search system that crawls GitHub repositories (dmccre
 
 ### Local Development
 ```bash
-mkdocs serve                    # Start dev server at http://127.0.0.1:8000/microsim-search/
+mkdocs serve  # Start dev server at http://127.0.0.1:8000/search-microsims/
 ```
 
 ### Crawling MicroSims
@@ -118,9 +118,11 @@ See `src/find-similar-templates/README.md` for detailed documentation.
 ## Architecture
 
 ### Data Pipeline
-1. **Crawler** (`src/crawl-microsims.py`) - Fetches metadata.json from `dmccreary/*/docs/sims/*/metadata.json` via GitHub API
+1. **Crawler for Local Checked Out Repos (FAST)** (`src/update-local-microsims.py`) - Fetches metadata.json from `dmccreary/*/docs/sims/*/metadata.json` via GitHub API
 2. **Output** (`docs/search/microsims-data.json`) - Combined JSON of all MicroSim metadata
 3. **Log** (`logs/microsim-crawl-YYYY-MM-DD.jsonl`) - JSONL log including missing metadata entries
+
+The Crawler has been depreciated `src/deprecated/crawl-microsims.py`
 
 ### Search Interface
 - `docs/search/demo.html` - Standalone ItemsJS faceted search (no backend required)

@@ -894,6 +894,7 @@ Weighted formula:
 $$\text{Weighted Completeness} = \frac{\sum (\text{weight} \times \text{filled})}{\sum (\text{weight} \times \text{total})} \times 100$$
 
 Example:
+
 - 7 required fields (weight 3), 5 filled: 5 × 3 = 15 / 21 possible = 71%
 - 8 recommended fields (weight 2), 6 filled: 6 × 2 = 12 / 16 possible = 75%
 - 25 optional fields (weight 1), 10 filled: 10 × 1 = 10 / 25 possible = 40%
