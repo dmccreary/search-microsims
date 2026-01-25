@@ -8,9 +8,27 @@ edit_uri: 'blob/master/docs'
 
 nav:
   - Home: index.md
+  - Course Description: course-description.md
   - Search Demo: search/index.md
-  - MicroSim Schema: microsim-schema.md
-  - MicroSim Embeddings: microsim-embeddings.md
+
+  - Chapters:
+      - Table of Contents: chapters/index.md
+      - 1. Introduction to MicroSims: chapters/01-intro-to-microsims/index.md
+      - 2. MicroSim File Organization: chapters/02-microsim-file-organization/index.md
+      - 3. Metadata Fundamentals: chapters/03-metadata-fundamentals/index.md
+      - 4. Dublin Core Elements: chapters/04-dublin-core-elements/index.md
+      - 5. JSON and Data Structures: chapters/05-json-and-data-structures/index.md
+      - 6. Search Fundamentals: chapters/06-search-fundamentals/index.md
+      - 7. Faceted Search: chapters/07-faceted-search-client-side/index.md
+      - 8. Embeddings and Semantic Search: chapters/08-embeddings-semantic-search/index.md
+      - 9. Data Pipelines: chapters/09-data-pipelines-aggregation/index.md
+      - 10. Educational Foundations: chapters/10-educational-foundations/index.md
+      - 11. Learning Theory: chapters/11-learning-theory-pedagogy/index.md
+      - 12. Visualization Types: chapters/12-visualization-types/index.md
+      - 13. User Interface and Controls: chapters/13-user-interface-controls/index.md
+      - 14. Technical Implementation: chapters/14-technical-implementation/index.md
+  
+
   - Reports:
       - MicroSim Metrics: reports/microsim-metrics.md
       - Local Metadata Update: reports/local-metadata-update.md
@@ -21,11 +39,14 @@ nav:
     - Search Workflow: sims/search-workflow/index.md
     - Similar MicroSims: sims/list-similar-microsim/index.md
     - PCA Map: sims/pca-map/index.md
-    - Learing Graph Viewer: sims/graph-viewer/index.md
-  
-  - Prompts:
-      - Add Missing Metadata: prompts/add-missing-metadata.md
-      - Create Embeddings Report: prompts/create-embeddings-report.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Interaction Feedback Loop: sims/interaction-feedback-loop/index.md
+    - MicroSim Web Architecture: sims/microsim-web-architecture/index.md
+    - MicroSim Search Workflow: sims/microsim-search-workflow/index.md
+    - Difficulty Progression: sims/difficulty-progression/index.md
+    - MicroSim Schema: microsim-schema.md
+    - MicroSim Embeddings: microsim-embeddings.md
+
   - Learning Graph:
       - Introduction: learning-graph/index.md
       - Graph Viewer: sims/graph-viewer/index.md
@@ -36,22 +57,14 @@ nav:
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Diagram Table: learning-graph/diagram-table.md
       - Diagram Details: learning-graph/diagram-details.md
-  - Chapters:
-      - Overview: chapters/index.md
-      - Introduction to MicroSims: chapters/01-intro-to-microsims/index.md
-      - MicroSim File Organization: chapters/02-microsim-file-organization/index.md
-      - Metadata Fundamentals: chapters/03-metadata-fundamentals/index.md
-      - Dublin Core Elements: chapters/04-dublin-core-elements/index.md
-      - JSON and Data Structures: chapters/05-json-and-data-structures/index.md
-      - Search Fundamentals: chapters/06-search-fundamentals/index.md
-      - Faceted Search: chapters/07-faceted-search-client-side/index.md
-      - Embeddings and Semantic Search: chapters/08-embeddings-semantic-search/index.md
-      - Data Pipelines: chapters/09-data-pipelines-aggregation/index.md
-      - Educational Foundations: chapters/10-educational-foundations/index.md
-      - Learning Theory: chapters/11-learning-theory-pedagogy/index.md
-      - Visualization Types: chapters/12-visualization-types/index.md
-      - User Interface and Controls: chapters/13-user-interface-controls/index.md
-      - Technical Implementation: chapters/14-technical-implementation/index.md
+
+  - Prompts:
+      - Add Missing Metadata: prompts/add-missing-metadata.md
+      - Create Embeddings Report: prompts/create-embeddings-report.md
+      - Chapter Content Generation: prompts/chapter-content-generation.md
+      - Generate MicroSims for Each Chapter: prompts/generate-microsims-for-each-chapter.md
+      - List Similar MicroSims: prompts/list-similar-microsims.md
+ 
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
@@ -91,6 +104,9 @@ markdown_extensions:
       linenums: true
 extra_css:
    - css/extra.css
+extra_javascript:
+   - js/extra.js
+# Google Analytics configuration
 #extra:
 #  analytics:
 #    provider: google

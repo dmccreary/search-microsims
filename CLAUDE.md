@@ -145,3 +145,16 @@ The search normalizes both flat legacy format and nested schema format:
 | `docs/microsim-schema.md` | Schema documentation |
 | `docs/reports/microsim-metrics.md` | Metadata quality report (generated) |
 | `logs/*.jsonl` | Crawl logs with missing metadata entries |
+
+## p5.js Gotchas
+
+- **stroke() does not return color values**: In p5.js, `stroke()` only sets the stroke color - it does not return the current stroke color. You cannot use `red(stroke())` or `fill(stroke())` to retrieve color components. Instead, store the color in a variable and pass it to functions that need it:
+  ```javascript
+  // WRONG - will error
+  fill(red(stroke()), green(stroke()), blue(stroke()));
+
+  // CORRECT - pass color as parameter
+  let arrowColor = color(70, 130, 180);
+  stroke(arrowColor);
+  drawArrowHead(x, y, angle, arrowColor);
+  ```

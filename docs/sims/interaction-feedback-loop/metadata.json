@@ -1,0 +1,39 @@
+{
+  "title": "Interaction Feedback Loop",
+  "description": "Animated diagram showing the cognitive feedback cycle in interactive learning. Visualizes how students interact with MicroSims, observe changes, form hypotheses, and test new ideas in a continuous learning loop.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-24",
+  "subject": [
+    "Education",
+    "Learning Theory",
+    "Cognitive Science",
+    "Instructional Design"
+  ],
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/search-microsims/sims/interaction-feedback-loop/",
+  "publisher": "MicroSims Educational Platform",
+  "educationalLevel": "High School, Undergraduate, Graduate",
+  "learningResourceType": "diagram",
+  "audience": "Educators, Instructional Designers, Students",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand"
+  ],
+  "concepts": [
+    "Feedback Loop",
+    "Interactive Learning",
+    "Cognitive Processing",
+    "User Engagement",
+    "Experiential Learning"
+  ],
+  "prerequisites": [
+    "Basic understanding of learning concepts"
+  ],
+  "library": "p5.js"
+}
