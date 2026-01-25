@@ -27,6 +27,7 @@ nav:
       - 12. Visualization Types: chapters/12-visualization-types/index.md
       - 13. User Interface and Controls: chapters/13-user-interface-controls/index.md
       - 14. Technical Implementation: chapters/14-technical-implementation/index.md
+      - 15. Pedagogical Pattern Alignment: chapters/15-pedagogical-pattern-alignment/index.md
   
   - Reports:
       - MicroSim Metrics: reports/microsim-metrics.md

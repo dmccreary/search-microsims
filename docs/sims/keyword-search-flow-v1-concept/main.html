@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keywords to Search Flow - V1 Animation Concept</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <main></main>
+    <script>
+// V1 Concept Diagram - Shows what the animation approach looked like
+// This is a STATIC representation showing the problems with the approach
+
+let canvasWidth = 400;
+let drawHeight = 350;
+let controlHeight = 50;
+
+const stages = [
+  { name: 'User Query', color: [66, 133, 244] },
+  { name: 'Processing', color: [52, 168, 83] },
+  { name: 'Matching', color: [52, 168, 83] },
+  { name: 'Ranking', color: [251, 188, 4] },
+  { name: 'Results', color: [234, 67, 53] }
+];
+
+// Static particle positions to represent animation
+const particles = [
+  { x: 0.15, stage: 0 },
+  { x: 0.28, stage: 1 },
+  { x: 0.42, stage: 1 },
+  { x: 0.55, stage: 2 },
+  { x: 0.68, stage: 2 },
+  { x: 0.82, stage: 3 },
+  { x: 0.95, stage: 4 }
+];
+
+function setup() {
+  updateCanvasSize();
+  const canvas = createCanvas(canvasWidth, drawHeight + controlHeight);
+  canvas.parent(document.querySelector('main'));
+}
+
+function draw() {
+  updateCanvasSize();
+
+  // Background
+  fill(245, 248, 250);
+  stroke(200);
+  strokeWeight(1);
+  rect(0, 0, canvasWidth, drawHeight);
+
+  // Control area
+  fill(255);
+  rect(0, drawHeight, canvasWidth, controlHeight);
+
+  // Title
+  fill(50);
+  noStroke();
+  textAlign(CENTER, TOP);
+  textSize(16);
+  textStyle(BOLD);
+  text('V1: Animation Approach (Problematic)', canvasWidth/2, 10);
+  textStyle(NORMAL);
+
+  // Subtitle showing the issue
+  textSize(11);
+  fill(180, 60, 60);
+  text('❌ Shows particles flowing, but NOT the actual data transformations', canvasWidth/2, 32);
+
+  // Draw stages
+  const stageWidth = 65;
+  const stageHeight = 50;
+  const totalWidth = stages.length * stageWidth + (stages.length - 1) * 25;
+  const startX = (canvasWidth - totalWidth) / 2;
+  const stageY = 80;
+
+  for (let i = 0; i < stages.length; i++) {
+    const x = startX + i * (stageWidth + 25);
+    const stage = stages[i];
+    const c = stage.color;
+
+    // Arrow
+    if (i > 0) {
+      stroke(150);
+      strokeWeight(2);
+      line(x - 20, stageY + stageHeight/2, x - 5, stageY + stageHeight/2);
+      fill(150);
+      noStroke();
+      triangle(x - 2, stageY + stageHeight/2, x - 10, stageY + stageHeight/2 - 5, x - 10, stageY + stageHeight/2 + 5);
+    }
+
+    // Stage box
+    fill(c[0], c[1], c[2], 200);
+    stroke(c[0] * 0.7, c[1] * 0.7, c[2] * 0.7);
+    strokeWeight(2);
+    rect(x, stageY, stageWidth, stageHeight, 8);
+
+    // Label
+    fill(255);
+    noStroke();
+    textAlign(CENTER, CENTER);
+    textSize(10);
+    text(stage.name, x + stageWidth/2, stageY + stageHeight/2);
+  }
+
+  // Draw static particles to represent animation
+  const particleY = stageY + stageHeight/2;
+  for (const p of particles) {
+    const px = startX + p.x * totalWidth;
+    const c = stages[Math.min(p.stage, 4)].color;
+
+    // Glow
+    fill(c[0], c[1], c[2], 50);
+    noStroke();
+    ellipse(px, particleY, 20, 20);
+
+    // Particle
+    fill(c[0], c[1], c[2], 220);
+    ellipse(px, particleY, 10, 10);
+  }
+
+  // Problem callouts
+  const problemY = 180;
+  fill(255, 245, 245);
+  stroke(200);
+  strokeWeight(1);
+  rect(20, problemY, canvasWidth - 40, 150, 8);
+
+  fill(180, 60, 60);
+  noStroke();
+  textAlign(LEFT, TOP);
+  textSize(12);
+  textStyle(BOLD);
+  text('Problems with this approach:', 30, problemY + 10);
+  textStyle(NORMAL);
+
+  textSize(11);
+  fill(80);
+  const problems = [
+    '• Particles show THAT data flows, not WHAT the data looks like',
+    '• Learner cannot see: ["physics", "ball", "throwing"]',
+    '• Learner cannot see: throwing → [throw, projectile, launch]',
+    '• Learner cannot see: Score = 3×10 + 5 = 35 points',
+    '• Continuous animation prevents prediction',
+    '• Hover tooltips compete with moving particles for attention'
+  ];
+
+  for (let i = 0; i < problems.length; i++) {
+    text(problems[i], 30, problemY + 30 + i * 18);
+  }
+
+  // Control area message
+  fill(100);
+  textAlign(CENTER, CENTER);
+  textSize(12);
+  text('This static diagram represents the V1 animation concept', canvasWidth/2, drawHeight + 25);
+}
+
+function windowResized() {
+  updateCanvasSize();
+  resizeCanvas(canvasWidth, drawHeight + controlHeight);
+}
+
+function updateCanvasSize() {
+  const container = document.querySelector('main');
+  if (container) {
+    canvasWidth = container.offsetWidth;
+  }
+}
+    </script>
+</body>
+</html>
