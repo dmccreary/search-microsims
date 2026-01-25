@@ -164,14 +164,6 @@
               "items": {"type": "string"},
               "description": "Specific learning objectives or outcomes"
             },
-            "bloomsTaxonomy": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]
-              },
-              "description": "Bloom's taxonomy levels addressed"
-            },
             "prerequisites": {
               "type": "array",
               "items": {"type": "string"},
@@ -817,12 +809,20 @@
         },
         "pedagogical": {
           "type": "object",
-          "description": "Pedagogical pattern metadata for template matching and instructional alignment",
+          "description": "Pedagogical pattern metadata for template matching and instructional alignment. Contains Bloom's taxonomy data for both content scope and pattern effectiveness.",
           "properties": {
             "pattern": {
               "type": "string",
               "enum": ["worked-example", "exploration", "practice", "assessment", "reference", "demonstration", "guided-discovery"],
               "description": "Primary pedagogical pattern the MicroSim follows"
+            },
+            "bloomsTaxonomy": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]
+              },
+              "description": "All Bloom's taxonomy levels the CONTENT can address (content scope). This is typically broader than bloomAlignment. Example: A pendulum sim content touches Remember, Understand, Apply, Analyze, Create."
             },
             "bloomAlignment": {
               "type": "array",
@@ -830,7 +830,7 @@
                 "type": "string",
                 "enum": ["remember", "understand", "apply", "analyze", "evaluate", "create"]
               },
-              "description": "Bloom's taxonomy levels this interaction pattern best supports (lowercase for matching)"
+              "description": "Bloom's taxonomy levels the INTERACTION PATTERN effectively supports (pattern effectiveness). This is typically narrower than bloomsTaxonomy. Example: A worked-example pattern best supports Understand and Apply, even if content touches more levels."
             },
             "bloomVerbs": {
               "type": "array",

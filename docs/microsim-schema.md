@@ -12,13 +12,13 @@ The MicroSim metadata schema is a comprehensive JSON Schema (Draft 07) that orga
 |---------|---------|
 | `dublinCore` | Resource identification (title, creator, rights) |
 | `search` | Findability (tags, visualization type, complexity) |
-| `educational` | Learning attributes (grade level, subject, Bloom's taxonomy) |
+| `educational` | Learning attributes (grade level, subject, difficulty) |
 | `technical` | Framework, dimensions, dependencies |
 | `userInterface` | Layout, controls, accessibility |
 | `simulation` | Physics/math model, variables, equations |
 | `analytics` | Event tracking, learning indicators |
 | `usage` | Pedagogical guidance, assessment questions |
-| `pedagogical` | Instructional patterns for template matching |
+| `pedagogical` | Bloom's taxonomy, instructional patterns, template matching |
 
 ## Dublin Core Metadata
 
@@ -109,12 +109,6 @@ Psychology | Social Studies | Language Arts | Art | Music
 Health | Physical Education | Other
 ```
 
-### Bloom's Taxonomy
-
-```
-Remember | Understand | Apply | Analyze | Evaluate | Create
-```
-
 ### Difficulty
 
 ```
@@ -175,6 +169,8 @@ p5.js | vanilla-js | d3.js | three.js | other
 
 Metadata for template matching and instructional alignment. This section enables the `find-similar-templates` service to recommend MicroSims based on pedagogical appropriateness, not just visual similarity.
 
+**Note:** Bloom's taxonomy fields have been moved to the pedagogical section (from educational) because they directly impact template matching scores.
+
 ### Pattern (Required)
 
 The primary pedagogical pattern the MicroSim follows:
@@ -189,9 +185,43 @@ demonstration     - Instructor-led showing of concepts
 guided-discovery  - Scaffolded exploration with hints
 ```
 
+### Bloom's Taxonomy vs Bloom Alignment
+
+The pedagogical section contains **two** Bloom-related fields that serve different purposes:
+
+| Field | Case | Purpose | Scope |
+|-------|------|---------|-------|
+| `bloomsTaxonomy` | Title Case | Content scope - all levels the content CAN address | Broader |
+| `bloomAlignment` | lowercase | Pattern effectiveness - levels the interaction SUPPORTS | Narrower |
+
+**Why Two Fields?**
+
+A MicroSim's *content* may touch multiple cognitive levels, but its *interaction pattern* may only effectively support a subset. For example:
+
+- A **pendulum simulation** content touches Remember (definitions), Understand (concepts), Apply (calculations), Analyze (relationships), and Create (design experiments)
+- But its **exploration pattern** most effectively supports Understand, Apply, and Analyze
+- The worked-example videos within it support Remember and Understand
+
+**Typical Relationship:**
+
+| Relationship | Occurrence | Example |
+|--------------|------------|---------|
+| bloomAlignment ⊂ bloomsTaxonomy | ~53% | Content: [Remember, Understand, Apply, Create] → Pattern: [Understand, Apply] |
+| Exact match | ~7% | Both fields identical |
+| Partial overlap | ~27% | Some levels shared |
+| bloomAlignment ⊃ bloomsTaxonomy | ~14% | Pattern supports more levels than content explicitly addresses |
+
+### Bloom's Taxonomy (Required)
+
+All cognitive levels the **content** can address (Title Case):
+
+```
+Remember | Understand | Apply | Analyze | Evaluate | Create
+```
+
 ### Bloom Alignment (Required)
 
-Which Bloom's taxonomy levels this interaction pattern best supports (lowercase):
+Cognitive levels the **interaction pattern** effectively supports (lowercase for matching):
 
 ```
 remember | understand | apply | analyze | evaluate | create
@@ -294,7 +324,6 @@ explore     - Free-form investigation
         "Understand the relationship between pendulum length and period",
         "Observe how gravity affects oscillation"
       ],
-      "bloomsTaxonomy": ["Understand", "Apply", "Analyze"],
       "difficulty": "Intermediate"
     },
     "technical": {
@@ -308,6 +337,7 @@ explore     - Free-form investigation
     },
     "pedagogical": {
       "pattern": "exploration",
+      "bloomsTaxonomy": ["Remember", "Understand", "Apply", "Analyze", "Create"],
       "bloomAlignment": ["understand", "apply", "analyze"],
       "bloomVerbs": ["experiment", "analyze", "predict"],
       "pacing": "self-paced",
@@ -328,11 +358,12 @@ The following fields are used for faceted filtering in the search interface:
 |-------|-------------|--------|
 | Subject Area | `educational.subjectArea` | 18 standard subjects |
 | Grade Level | `educational.gradeLevel` | K-12, Undergraduate, Graduate, Adult |
-| Bloom's Taxonomy | `educational.bloomsTaxonomy` | 6 cognitive levels |
 | Difficulty | `educational.difficulty` | Beginner, Intermediate, Advanced |
 | Framework | `technical.framework` | p5.js, d3.js, three.js, etc. |
 | Visualization Type | `search.visualizationType` | 13 visualization types |
 | Interaction Level | `search.interactionLevel` | 5 levels |
+| Bloom's Taxonomy | `pedagogical.bloomsTaxonomy` | 6 cognitive levels (content scope) |
+| Bloom Alignment | `pedagogical.bloomAlignment` | 6 cognitive levels (pattern effectiveness) |
 | Pedagogical Pattern | `pedagogical.pattern` | 7 instructional patterns |
 | Pacing | `pedagogical.pacing` | 4 pacing modes |
 
@@ -354,6 +385,7 @@ Older metadata files may use different field names. The search normalizes these:
 |--------------|--------------|
 | `subject` (string) | `dublinCore.subject` (array) |
 | `educationalLevel` | `educational.gradeLevel` |
-| `bloomLevel` | `educational.bloomsTaxonomy` |
+| `bloomLevel` | `pedagogical.bloomsTaxonomy` |
+| `educational.bloomsTaxonomy` | `pedagogical.bloomsTaxonomy` (moved Jan 2025) |
 | `library` | `technical.framework` |
 | `author` | `dublinCore.creator` |

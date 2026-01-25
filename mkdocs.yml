@@ -33,6 +33,7 @@ nav:
       - MicroSim Metrics: reports/microsim-metrics.md
       - Local Metadata Update: reports/local-metadata-update.md
       - MicroSim PCA Map: sims/pca-map/index.md
+      - Pedagogical Distribution: reports/pedagogical-distribution.md
   
   - MicroSims:
     - List of MicroSims: sims/index.md

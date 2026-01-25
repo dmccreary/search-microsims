@@ -66,9 +66,9 @@ const fieldInfo = {
     },
     'bloomsTaxonomy': {
         name: 'bloomsTaxonomy',
-        section: 'education',
-        description: 'Cognitive levels addressed: Remember, Understand, Apply, Analyze, Evaluate, Create.',
-        example: '"bloomsTaxonomy": ["Understand", "Apply"]'
+        section: 'pedagogical',
+        description: 'All Bloom levels the CONTENT can address (content scope). Typically broader than bloomAlignment.',
+        example: '"bloomsTaxonomy": ["Remember", "Understand", "Apply", "Create"]'
     },
     'difficulty': {
         name: 'difficulty',
@@ -131,6 +131,55 @@ const fieldInfo = {
         section: 'search',
         description: 'How interactive is the MicroSim: low, medium, or high.',
         example: '"interactionLevel": "high"'
+    },
+    // Pedagogical section
+    'pedagogical': {
+        name: 'pedagogical',
+        section: 'pedagogical',
+        description: 'Fields describing how the MicroSim supports learning, enabling matching of interaction patterns to learning objectives.',
+        example: '"pedagogical": { "pattern": "exploration", "pacing": "self-paced" }'
+    },
+    'pattern': {
+        name: 'pattern',
+        section: 'pedagogical',
+        description: 'Interaction pattern type: worked-example, exploration, practice, assessment, reference, demonstration, guided-discovery.',
+        example: '"pattern": "exploration"'
+    },
+    'bloomAlignment': {
+        name: 'bloomAlignment',
+        section: 'pedagogical',
+        description: 'Bloom levels the INTERACTION PATTERN effectively supports (pattern effectiveness). Typically narrower than bloomsTaxonomy.',
+        example: '"bloomAlignment": ["understand", "apply"]'
+    },
+    'bloomVerbs': {
+        name: 'bloomVerbs',
+        section: 'pedagogical',
+        description: 'Specific Bloom action verbs supported: explain, experiment, calculate, predict, etc. (36 verbs total).',
+        example: '"bloomVerbs": ["explain", "predict", "experiment"]'
+    },
+    'pacing': {
+        name: 'pacing',
+        section: 'pedagogical',
+        description: 'How the MicroSim controls time: self-paced, continuous, step-through, or timed.',
+        example: '"pacing": "self-paced"'
+    },
+    'supportsPrediction': {
+        name: 'supportsPrediction',
+        section: 'pedagogical',
+        description: 'Whether learners can predict outcomes before observing. Critical for Understand objectives.',
+        example: '"supportsPrediction": true'
+    },
+    'dataVisibility': {
+        name: 'dataVisibility',
+        section: 'pedagogical',
+        description: 'How much data is shown to learners: high, medium, or low.',
+        example: '"dataVisibility": "high"'
+    },
+    'interactionStyle': {
+        name: 'interactionStyle',
+        section: 'pedagogical',
+        description: 'How learners interact: observe, manipulate, construct, respond, or explore.',
+        example: '"interactionStyle": "manipulate"'
     }
 };
 
@@ -164,49 +213,66 @@ const colors = {
         border: '#6a1b9a',
         font: '#ffffff',
         highlight: { background: '#ba68c8', border: '#7b1fa2' }
+    },
+    pedagogical: {
+        background: '#e91e63',
+        border: '#ad1457',
+        font: '#ffffff',
+        highlight: { background: '#f06292', border: '#c2185b' }
     }
 };
 
-// Node layout - radial from center
+// Node layout - radial from center with 5 sections
 const nodeData = [
     // Root
-    { id: 'microsim', label: 'microsim', x: 0, y: -180, section: 'root' },
+    { id: 'microsim', label: 'microsim', x: 0, y: -220, section: 'root' },
 
-    // Main sections
-    { id: 'dublinCore', label: 'dublinCore', x: -200, y: -80, section: 'dublin' },
-    { id: 'educational', label: 'educational', x: -70, y: -80, section: 'education' },
-    { id: 'technical', label: 'technical', x: 70, y: -80, section: 'technical' },
-    { id: 'search', label: 'search', x: 200, y: -80, section: 'search' },
+    // Main sections (5 columns)
+    { id: 'dublinCore', label: 'dublinCore', x: -300, y: -120, section: 'dublin' },
+    { id: 'educational', label: 'educational', x: -150, y: -120, section: 'education' },
+    { id: 'pedagogical', label: 'pedagogical', x: 0, y: -120, section: 'pedagogical' },
+    { id: 'technical', label: 'technical', x: 150, y: -120, section: 'technical' },
+    { id: 'search', label: 'search', x: 300, y: -120, section: 'search' },
 
     // Dublin Core fields
-    { id: 'title', label: 'title', x: -320, y: 10, section: 'dublin' },
-    { id: 'description', label: 'description', x: -250, y: 10, section: 'dublin' },
-    { id: 'creator', label: 'creator', x: -180, y: 10, section: 'dublin' },
-    { id: 'date', label: 'date', x: -280, y: 80, section: 'dublin' },
-    { id: 'rights', label: 'rights', x: -200, y: 80, section: 'dublin' },
+    { id: 'title', label: 'title', x: -360, y: -30, section: 'dublin' },
+    { id: 'description', label: 'description', x: -280, y: -30, section: 'dublin' },
+    { id: 'creator', label: 'creator', x: -320, y: 50, section: 'dublin' },
+    { id: 'date', label: 'date', x: -360, y: 130, section: 'dublin' },
+    { id: 'rights', label: 'rights', x: -280, y: 130, section: 'dublin' },
 
     // Educational fields
-    { id: 'subjectArea', label: 'subjectArea', x: -120, y: 10, section: 'education' },
-    { id: 'gradeLevel', label: 'gradeLevel', x: -50, y: 10, section: 'education' },
-    { id: 'bloomsTaxonomy', label: 'bloomsTaxonomy', x: -100, y: 80, section: 'education' },
-    { id: 'difficulty', label: 'difficulty', x: -20, y: 80, section: 'education' },
-    { id: 'learningObjectives', label: 'learningObjectives', x: -60, y: 150, section: 'education' },
+    { id: 'subjectArea', label: 'subjectArea', x: -200, y: -30, section: 'education' },
+    { id: 'gradeLevel', label: 'gradeLevel', x: -120, y: -30, section: 'education' },
+    { id: 'difficulty', label: 'difficulty', x: -200, y: 50, section: 'education' },
+    { id: 'learningObjectives', label: 'learningObjectives', x: -120, y: 50, section: 'education' },
+
+    // Pedagogical fields
+    { id: 'pattern', label: 'pattern', x: -60, y: -30, section: 'pedagogical' },
+    { id: 'pacing', label: 'pacing', x: 60, y: -30, section: 'pedagogical' },
+    { id: 'bloomsTaxonomy', label: 'bloomsTaxonomy', x: -60, y: 50, section: 'pedagogical' },
+    { id: 'bloomAlignment', label: 'bloomAlignment', x: 60, y: 50, section: 'pedagogical' },
+    { id: 'bloomVerbs', label: 'bloomVerbs', x: 0, y: 130, section: 'pedagogical' },
+    { id: 'supportsPrediction', label: 'supportsPrediction', x: -70, y: 200, section: 'pedagogical' },
+    { id: 'dataVisibility', label: 'dataVisibility', x: 70, y: 200, section: 'pedagogical' },
+    { id: 'interactionStyle', label: 'interactionStyle', x: 0, y: 270, section: 'pedagogical' },
 
     // Technical fields
-    { id: 'framework', label: 'framework', x: 40, y: 10, section: 'technical' },
-    { id: 'libraryVersion', label: 'libraryVersion', x: 110, y: 10, section: 'technical' },
-    { id: 'browserSupport', label: 'browserSupport', x: 75, y: 80, section: 'technical' },
+    { id: 'framework', label: 'framework', x: 120, y: -30, section: 'technical' },
+    { id: 'libraryVersion', label: 'libraryVersion', x: 200, y: -30, section: 'technical' },
+    { id: 'browserSupport', label: 'browserSupport', x: 160, y: 50, section: 'technical' },
 
     // Search fields
-    { id: 'keywords', label: 'keywords', x: 170, y: 10, section: 'search' },
-    { id: 'visualizationType', label: 'visualizationType', x: 260, y: 10, section: 'search' },
-    { id: 'interactionLevel', label: 'interactionLevel', x: 215, y: 80, section: 'search' }
+    { id: 'keywords', label: 'keywords', x: 260, y: -30, section: 'search' },
+    { id: 'visualizationType', label: 'visualizationType', x: 360, y: -30, section: 'search' },
+    { id: 'interactionLevel', label: 'interactionLevel', x: 310, y: 50, section: 'search' }
 ];
 
 const edgeData = [
     // Root to sections
     { from: 'microsim', to: 'dublinCore' },
     { from: 'microsim', to: 'educational' },
+    { from: 'microsim', to: 'pedagogical' },
     { from: 'microsim', to: 'technical' },
     { from: 'microsim', to: 'search' },
 
@@ -220,9 +286,18 @@ const edgeData = [
     // Educational fields
     { from: 'educational', to: 'subjectArea' },
     { from: 'educational', to: 'gradeLevel' },
-    { from: 'educational', to: 'bloomsTaxonomy' },
     { from: 'educational', to: 'difficulty' },
     { from: 'educational', to: 'learningObjectives' },
+
+    // Pedagogical fields
+    { from: 'pedagogical', to: 'pattern' },
+    { from: 'pedagogical', to: 'pacing' },
+    { from: 'pedagogical', to: 'bloomsTaxonomy' },
+    { from: 'pedagogical', to: 'bloomAlignment' },
+    { from: 'pedagogical', to: 'bloomVerbs' },
+    { from: 'pedagogical', to: 'supportsPrediction' },
+    { from: 'pedagogical', to: 'dataVisibility' },
+    { from: 'pedagogical', to: 'interactionStyle' },
 
     // Technical fields
     { from: 'technical', to: 'framework' },
@@ -264,7 +339,7 @@ function initializeNetwork() {
                 size: 11,
                 face: 'Arial'
             },
-            margin: { top: 5, bottom: 5, left: 8, right: 8 },
+            margin: { top: 5, bottom: 5, left: 6, right: 6 },
             borderWidth: 2,
             shadow: {
                 enabled: true,
@@ -355,6 +430,7 @@ function showFieldInfo(fieldId) {
         'root': '#37474f',
         'dublin': '#1565c0',
         'education': '#2e7d32',
+        'pedagogical': '#ad1457',
         'technical': '#e65100',
         'search': '#6a1b9a'
     };
@@ -363,6 +439,7 @@ function showFieldInfo(fieldId) {
         'root': 'Root Object',
         'dublin': 'Dublin Core',
         'education': 'Educational',
+        'pedagogical': 'Pedagogical',
         'technical': 'Technical',
         'search': 'Search'
     };

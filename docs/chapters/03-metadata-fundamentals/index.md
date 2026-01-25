@@ -2,8 +2,8 @@
 title: Metadata Fundamentals
 description: Understanding metadata concepts, standards, taxonomies, and classification systems that enable MicroSim discoverability and search
 generated_by: claude skill chapter-content-generator
-date: 2026-01-24 11:15:00
-version: 0.03
+date: 2025-01-25 18:45:00
+version: 0.04
 reading_level: college
 ---
 
@@ -15,24 +15,27 @@ This chapter introduces metadata concepts and standards that provide the foundat
 
 ## Concepts Covered
 
-This chapter covers the following 16 concepts from the learning graph:
+This chapter covers the following 19 concepts from the learning graph:
 
 1. Metadata
 2. Metadata Standards
-3. Metadata Standards
-4. Dublin Core
-5. Dublin Core Elements
-6. Taxonomies
-7. Classification Systems
-8. Subject Normalization
-9. MicroSim Standards
-10. Schema Compliance
-11. Tags
-12. Folksonomies
-13. User-Generated Tags
-14. Keywords
-15. Controlled Vocabulary
-16. Technical Metadata
+3. Dublin Core
+4. Dublin Core Elements
+5. Taxonomies
+6. Classification Systems
+7. Subject Normalization
+8. MicroSim Standards
+9. Pedagogical Metadata
+10. Pedagogical Patterns
+11. Bloom Verb Alignment
+12. Schema Compliance
+13. Tags
+14. Folksonomies
+15. User-Generated Tags
+16. Keywords
+17. Controlled Vocabulary
+18. Technical Metadata
+19. Template Matching
 
 ## Prerequisites
 
@@ -349,6 +352,106 @@ MicroSim-specific metadata includes:
 
 This extended schema transforms a simple "description of a web page" into a rich educational profile that search systems can leverage for sophisticated matching.
 
+## Pedagogical Metadata: Matching Patterns to Learning
+
+One of the most important—and most often overlooked—categories of MicroSim metadata is **pedagogical metadata**. This describes not just *what* a MicroSim teaches, but *how* it teaches, enabling systems to match interaction patterns to learning objectives.
+
+Why does this matter? Consider this scenario: a chapter specification requests a workflow diagram with Bloom Level "Understand" and verb "explain." A template-matching system finds a visually similar animated flow diagram and recommends it. The result looks impressive—smooth particle animations, beautiful colors, engaging motion.
+
+But it fails instructionally.
+
+The animation obscures the actual data transformations students need to see. Continuous motion prevents the predict-before-observing that builds understanding. Students say "wow" but can't explain the process afterward.
+
+**Pedagogical metadata prevents this mismatch** by describing how a MicroSim supports learning:
+
+```json
+{
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomsTaxonomy": ["Remember", "Understand", "Apply"],
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["explain", "demonstrate", "illustrate"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "manipulate"
+  }
+}
+```
+
+### Bloom's Taxonomy vs Bloom Alignment
+
+The pedagogical section contains two related but distinct Bloom fields:
+
+| Field | Purpose | Scope |
+|-------|---------|-------|
+| `bloomsTaxonomy` | All cognitive levels the **content** can address | Broader (content scope) |
+| `bloomAlignment` | Levels the **interaction pattern** effectively supports | Narrower (pattern effectiveness) |
+
+For example, a pendulum simulation's *content* might touch Remember, Understand, Apply, Analyze, and Create. But its *exploration pattern* most effectively supports Understand, Apply, and Analyze. The `bloomsTaxonomy` captures the full content scope, while `bloomAlignment` captures what the pattern actually enables.
+
+### Pedagogical Pattern Types
+
+The `pattern` field classifies how the MicroSim structures the learning experience:
+
+| Pattern | Best For | Characteristics |
+|---------|----------|-----------------|
+| **worked-example** | Understand objectives | Step-through with concrete data at each stage |
+| **exploration** | Analyze, Create objectives | Open-ended parameter manipulation |
+| **practice** | Apply objectives | Repeated skill application with feedback |
+| **demonstration** | Understand objectives | Showing a process with explanations |
+| **guided-discovery** | Apply, Analyze objectives | Scaffolded exploration with hints |
+| **assessment** | Evaluate objectives | Testing with feedback |
+| **reference** | Remember objectives | Static information display |
+
+### Bloom Verb Alignment
+
+The `bloomVerbs` field captures the specific action verbs from Bloom's Taxonomy that the MicroSim supports. This enables precise matching—a specification with verb "experiment" should match templates tagged with "experiment," "investigate," and "test," not templates tagged with "explain" or "define."
+
+The system includes 36 Bloom verbs mapped to their cognitive levels:
+
+| Level | Verbs |
+|-------|-------|
+| Remember | define, identify, list, recall, recognize, state |
+| Understand | classify, compare, describe, explain, interpret, summarize |
+| Apply | apply, calculate, demonstrate, illustrate, implement, solve, use |
+| Analyze | analyze, differentiate, examine, experiment, investigate, test |
+| Evaluate | assess, critique, evaluate, judge, justify, predict |
+| Create | construct, create, design, develop, formulate, generate |
+
+### Pacing and Prediction
+
+Two fields capture timing characteristics:
+
+- **pacing**: How the MicroSim controls time flow
+  - `self-paced`: Learner controls progression (Next/Previous buttons)
+  - `continuous`: Automatic animation loop
+  - `step-through`: Discrete steps with explicit advancement
+  - `timed`: Time-limited activities
+
+- **supportsPrediction**: Whether learners can predict outcomes before observing them
+
+For "Understand" level objectives, `self-paced` or `step-through` pacing with `supportsPrediction: true` is almost always more effective than `continuous` animation. The ability to pause, think, and predict before seeing the next step is pedagogically powerful.
+
+### Impact on Template Matching
+
+With pedagogical metadata, template-finding systems can score matches on both **semantic similarity** (similar content/topic) and **pedagogical alignment** (appropriate interaction pattern):
+
+```
+Final Score = (60% × Semantic Score) + (40% × Pedagogical Score)
+```
+
+This prevents the common failure of recommending visually impressive but instructionally inappropriate templates. An animated data flow might be 85% semantically similar to a workflow specification, but if the specification has Bloom verb "explain" and the template has `pacing: continuous`, the pedagogical score drops, and a step-through worked example rises in the rankings.
+
+!!! tip "The Pedagogical Alignment Question"
+    Before accepting a template recommendation, ask: "Does this interaction pattern support what learners need to DO with the content?"
+
+    For "explain" → they need to trace steps with concrete data (worked-example)
+    For "experiment" → they need to manipulate parameters freely (exploration)
+    For "calculate" → they need practice with feedback (practice)
+
+For a detailed case study of how pedagogical misalignment led to a failed MicroSim and how it was fixed, see [Chapter 15: Pedagogical Pattern Alignment](../15-pedagogical-pattern-alignment/index.md).
+
 ## Schema Compliance: Playing by the Rules
 
 A **schema** defines the structure and rules for valid metadata. **Schema compliance** means your metadata follows those rules—using the right field names, correct data types, and valid values.
@@ -636,7 +739,6 @@ Let's see how all these concepts combine in a real MicroSim metadata profile:
     "educational": {
       "subjectArea": ["Physics"],
       "gradeLevel": ["High School", "Undergraduate"],
-      "bloomsTaxonomy": ["Understand", "Apply", "Analyze"],
       "difficulty": "Intermediate",
       "topic": "Wave Physics",
       "learningObjectives": [
@@ -652,6 +754,16 @@ Let's see how all these concepts combine in a real MicroSim metadata profile:
       "fileSize": "52KB",
       "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"],
       "mobileSupport": true
+    },
+    "pedagogical": {
+      "pattern": "exploration",
+      "bloomsTaxonomy": ["Remember", "Understand", "Apply", "Analyze", "Create"],
+      "bloomAlignment": ["understand", "apply", "analyze"],
+      "bloomVerbs": ["explain", "predict", "analyze", "experiment"],
+      "pacing": "self-paced",
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "interactionStyle": "manipulate"
     },
     "search": {
       "visualizationType": ["simulation", "animation"],
@@ -683,6 +795,7 @@ This metadata enables:
 - **Dublin Core**: Basic discoverability in any system
 - **Educational fields**: Precise curriculum matching
 - **Technical fields**: Compatibility verification
+- **Pedagogical fields**: Appropriate template matching based on learning objectives
 - **Keywords**: Natural language search
 - **Tags**: Community categorization
 
@@ -698,12 +811,13 @@ This metadata enables:
 5. **Classification systems** enable multi-dimensional categorization and faceted search
 6. **Subject normalization** maps variant terms to standard forms
 7. **MicroSim standards** extend generic metadata with educational and technical fields
-8. **Schema compliance** ensures data quality and interoperability
-9. **Tags** provide flexible, informal categorization
-10. **Folksonomies** emerge from user-generated tags, capturing real-world language
-11. **Keywords** optimize content for search query matching
-12. **Controlled vocabularies** enforce consistency in critical fields
-13. **Technical metadata** describes compatibility and performance characteristics
+8. **Pedagogical metadata** matches interaction patterns to learning objectives, preventing visually impressive but instructionally ineffective designs
+9. **Schema compliance** ensures data quality and interoperability
+10. **Tags** provide flexible, informal categorization
+11. **Folksonomies** emerge from user-generated tags, capturing real-world language
+12. **Keywords** optimize content for search query matching
+13. **Controlled vocabularies** enforce consistency in critical fields
+14. **Technical metadata** describes compatibility and performance characteristics
 
 ---
 

@@ -2,8 +2,8 @@
 title: Pedagogical Pattern Alignment
 description: Learn how to match MicroSim interaction patterns to learning objectives, avoiding the common trap of prioritizing visual appeal over instructional effectiveness
 generated_by: claude skill chapter-content-generator
-date: 2025-01-25 14:00:00
-version: 0.03
+date: 2025-01-25 18:30:00
+version: 0.04
 reading_level: college_freshman
 ---
 
@@ -300,41 +300,125 @@ Instructional Design Check:
 
 ---
 
-## Template Matching Limitations
+## Template Matching: The Implemented Solution
 
-The case study also revealed limitations in how similar templates are found.
+The case study revealed limitations in how similar templates were found, which led to implementing a comprehensive pedagogical alignment system.
 
-### The Problem
+### The Original Problem
 
-The template-finding system matched on:
+The original template-finding system matched only on:
+
 - Visual similarity (flow diagram, stages)
 - Framework (p5.js)
 - Keywords (workflow, animation)
 
 It did NOT match on:
+
 - Bloom level alignment
 - Pedagogical pattern appropriateness
 - Whether the template supports the learning objective type
 
 A visually similar template (xAPI Data Flow with animation) was recommended despite being pedagogically inappropriate for an "explain" objective.
 
-### The Needed Enhancement
+### The Implemented Solution
 
-Template matching should include pedagogical metadata:
+To address this, we implemented a multi-part solution:
+
+#### 1. Extended Metadata Schema
+
+Every MicroSim's `metadata.json` now includes a `pedagogical` section:
 
 ```json
 {
   "pedagogical": {
     "pattern": "worked-example",
-    "bloom_alignment": ["understand", "apply"],
-    "supports_prediction": true,
-    "data_visibility": "high",
-    "pacing": "self-paced"
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["explain", "demonstrate", "illustrate"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "manipulate"
   }
 }
 ```
 
-With this metadata, templates could be filtered or boosted based on pedagogical fit, not just visual similarity.
+**Pattern Options:**
+
+- `worked-example` - Step-through with concrete data
+- `exploration` - Open-ended parameter manipulation
+- `practice` - Repeated skill application
+- `assessment` - Testing and feedback
+- `reference` - Static information display
+- `demonstration` - Showing a process
+- `guided-discovery` - Scaffolded exploration
+
+**Pacing Options:**
+
+- `self-paced` - Learner controls progression
+- `continuous` - Automatic animation
+- `timed` - Time-limited activities
+- `step-through` - Discrete steps with controls
+
+#### 2. Bloom Verbs for Precise Matching
+
+We added 36 Bloom's Taxonomy action verbs mapped to their cognitive levels:
+
+| Level | Verbs |
+|-------|-------|
+| **Remember** | define, identify, list, recall, recognize, state |
+| **Understand** | classify, compare, describe, explain, interpret, summarize |
+| **Apply** | apply, calculate, demonstrate, illustrate, implement, solve, use |
+| **Analyze** | analyze, differentiate, examine, experiment, investigate, test |
+| **Evaluate** | assess, critique, evaluate, judge, justify, predict |
+| **Create** | construct, create, design, develop, formulate, generate |
+
+#### 3. Automatic Classification
+
+A classification script (`enrich-pedagogical.py`) analyzes existing MicroSims to detect:
+
+- **Pattern** - Based on UI elements (sliders → exploration, step buttons → worked-example)
+- **Bloom Alignment** - From learning objectives and detected verbs
+- **Bloom Verbs** - Extracted from descriptions using word boundary matching
+- **Pacing** - Based on animation loops, step controls, timers
+
+This enriched 874 MicroSims across 40 repositories with pedagogical metadata.
+
+#### 4. Weighted Scoring Algorithm
+
+The template finder now uses a combined score:
+
+```
+Final Score = (60% × Semantic Score) + (40% × Pedagogical Score)
+```
+
+The **Pedagogical Score** considers:
+
+- **Verb-Pattern Alignment** - Does the template's pattern match the specification's Bloom verb?
+- **Level-Pattern Alignment** - Is the pattern appropriate for the Bloom level?
+- **Pattern Penalties** - Specific mismatches are penalized (e.g., continuous animation for "explain")
+
+#### 5. Verb-to-Pattern Alignment Matrix
+
+The system uses explicit mappings between Bloom verbs and appropriate patterns:
+
+| Bloom Verb | Best Patterns | Penalized Patterns |
+|------------|---------------|-------------------|
+| explain | worked-example, demonstration | continuous animation |
+| demonstrate | worked-example, demonstration | reference |
+| experiment | exploration, guided-discovery | reference, worked-example |
+| predict | guided-discovery, exploration | reference |
+| calculate | practice, worked-example | — |
+| create | exploration, guided-discovery | reference, demonstration |
+
+### Results
+
+With pedagogical alignment scoring, the same "explain" specification that originally matched an animated template now correctly prioritizes:
+
+1. **Step-through worked examples** (Score: 0.85+)
+2. **Demonstration with self-pacing** (Score: 0.75-0.85)
+3. **Guided discovery** (Score: 0.65-0.75)
+
+Continuous animation templates are now penalized and ranked lower despite visual similarity.
 
 ---
 
@@ -351,12 +435,39 @@ Specifications should require:
 
 ### For MicroSim Generators
 
-Generators should:
+The `microsim-generator` skill now integrates with the template finder to:
 
-1. **Flag specifications** that request animation for Understand objectives
-2. **Ask clarifying questions** before proceeding with inappropriate patterns
-3. **Document design decisions** in the output
-4. **Recommend alternatives** when specifications conflict with learning objectives
+1. **Automatically find pedagogically-aligned templates** based on Bloom verb and level
+2. **Flag specifications** that request animation for Understand objectives
+3. **Ask clarifying questions** before proceeding with inappropriate patterns
+4. **Document design decisions** in the output
+5. **Recommend alternatives** when specifications conflict with learning objectives
+
+### Using the Template Finder
+
+When creating a new MicroSim, the generator can query for appropriate templates:
+
+```bash
+# Find templates for an "explain" objective
+python src/find-similar-templates/find-similar-templates.py --spec "
+Type: microsim
+Bloom Level: Understand (L2)
+Bloom Verb: explain
+Learning Objective: Students will explain how queries are processed...
+" --json --quiet
+```
+
+The output includes both semantic and pedagogical scores:
+
+```
+1. Query Processing Step-Through
+   Combined Score: 0.8523 (Excellent Match)
+   ├─ Semantic: 0.7845  Pedagogical: 0.9540
+   Pattern: worked-example  Pacing: self-paced
+   Bloom Verbs: explain, describe, summarize
+```
+
+Templates with high pedagogical scores but lower semantic scores may still be better choices than visually similar templates with poor pedagogical alignment.
 
 ---
 
@@ -418,6 +529,14 @@ The Keywords to Search Results Flow case study demonstrated that:
 - A step-through approach with concrete data visibility succeeded
 - The fix required changes to both specifications and generators
 
+**What we implemented to prevent future failures:**
+
+- Extended metadata schema with pedagogical fields (pattern, bloomVerbs, pacing)
+- Automatic classification of 874 existing MicroSims
+- Weighted scoring: 60% semantic similarity + 40% pedagogical alignment
+- Verb-to-pattern alignment matrix for all 36 Bloom verbs
+- Integration with the microsim-generator skill
+
 The key question to always ask:
 
 > **"What does this interaction teach that a simpler approach wouldn't?"**
@@ -434,3 +553,5 @@ If you can't answer that clearly, simplify.
 - [Multimedia Learning Principles](https://www.cambridge.org/core/books/cambridge-handbook-of-multimedia-learning/)
 - [Keywords to Search Results Flow MicroSim](../../sims/keyword-search-flow/index.md) - The redesigned version
 - [Design Decisions Log](https://github.com/dmccreary/search-microsims/blob/main/logs/keywords-to-search-results-flow.md) - Full documentation of the redesign process
+- [MicroSim Metadata Schema](../../microsim-schema.md) - Full schema documentation including pedagogical section
+- [Find Similar Templates README](https://github.com/dmccreary/search-microsims/blob/main/src/find-similar-templates/README.md) - Template finder with pedagogical scoring

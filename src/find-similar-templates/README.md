@@ -15,8 +15,25 @@ When the microsim-generator skill receives a specification for a new MicroSim, i
 
 1. **Parse Specification**: Extracts structured fields from the SPECIFICATION block format
 2. **Create Query Embedding**: Converts the specification into a semantic embedding using the same model as the main embeddings (`all-MiniLM-L6-v2`)
-3. **Compute Similarity**: Compares against the precomputed embeddings of all existing MicroSims using cosine similarity
-4. **Return Results**: Returns the top N most similar MicroSims with their GitHub URLs for use as templates
+3. **Compute Semantic Similarity**: Compares against the precomputed embeddings of all existing MicroSims using cosine similarity
+4. **Compute Pedagogical Alignment**: Scores how well each template's pedagogical pattern matches the specification's Bloom level and verb
+5. **Combine Scores**: Final score = 60% semantic + 40% pedagogical
+6. **Return Results**: Returns the top N most similar MicroSims with their GitHub URLs for use as templates
+
+### Pedagogical Alignment Scoring
+
+The service now considers pedagogical appropriateness, not just visual/structural similarity:
+
+| Bloom Verb | Best Patterns | Penalized Patterns |
+|------------|---------------|-------------------|
+| explain | worked-example, demonstration | continuous animation |
+| demonstrate | worked-example, demonstration | reference |
+| experiment | exploration, guided-discovery | reference, worked-example |
+| predict | guided-discovery, exploration | reference |
+| calculate | practice, worked-example | - |
+| create | exploration, guided-discovery | reference, demonstration |
+
+This prevents mismatches like recommending a continuous animation template for an "explain" objective, which would be pedagogically inappropriate.
 
 ## Usage
 
@@ -125,7 +142,7 @@ Implementation notes:
 
 ### Key Fields for Matching
 
-The following fields have the highest impact on similarity matching:
+**Semantic Matching** (60% of score):
 
 | Field | Weight | Description |
 |-------|--------|-------------|
@@ -134,9 +151,15 @@ The following fields have the highest impact on similarity matching:
 | `Interactive controls` | High | User interaction capabilities |
 | `Type` | Medium | Type of visualization (microsim, diagram, etc.) |
 | `Implementation` | Medium | Framework hints (p5.js, d3.js, etc.) |
-| `Bloom Level` | Medium | Cognitive complexity |
 | `Canvas layout` | Medium | Structure and layout |
 | `Behavior` | Medium | Interaction patterns |
+
+**Pedagogical Matching** (40% of score):
+
+| Field | Weight | Description |
+|-------|--------|-------------|
+| `Bloom Verb` | High | Action verb determines appropriate patterns |
+| `Bloom Level` | Medium | Cognitive level affects pacing preferences |
 
 ## Output Format
 
@@ -148,15 +171,17 @@ Similar MicroSim Templates
 ======================================================================
 
 1. Pendulum Motion Explorer
-   Score: 0.8723 (Highly Similar)
-   Framework: p5.js
-   Subject: Physics
+   Combined Score: 0.8123 (Excellent Match)
+   ├─ Semantic: 0.7205  Pedagogical: 0.9500
+   Pattern: exploration  Pacing: self-paced
+   Bloom Verbs: experiment, analyze, predict
+   Framework: p5.js  Subject: Physics
    Visualization: animation, simulation
    GitHub: https://github.com/dmccreary/physics-sims/tree/main/docs/sims/pendulum
    Live: https://dmccreary.github.io/physics-sims/sims/pendulum/
 
 2. Simple Harmonic Motion
-   Score: 0.7856 (Similar)
+   Combined Score: 0.7456 (Good Match)
    ...
 ```
 
@@ -168,10 +193,15 @@ Similar MicroSim Templates
     "github_url": "https://github.com/dmccreary/physics-sims/tree/main/docs/sims/pendulum",
     "live_url": "https://dmccreary.github.io/physics-sims/sims/pendulum/",
     "title": "Pendulum Motion Explorer",
-    "score": 0.8723,
+    "score": 0.8123,
+    "semantic_score": 0.7205,
+    "pedagogical_score": 0.9500,
     "framework": "p5.js",
     "subject": "Physics",
     "visualization_type": ["animation", "simulation"],
+    "pattern": "exploration",
+    "pacing": "self-paced",
+    "bloom_verbs": ["experiment", "analyze", "predict"],
     "description": "An interactive simulation..."
   }
 ]
@@ -179,12 +209,19 @@ Similar MicroSim Templates
 
 ## Score Interpretation
 
+The combined score reflects both semantic similarity and pedagogical alignment:
+
 | Score Range | Category | Meaning |
 |-------------|----------|---------|
-| 0.85 - 1.00 | Highly Similar | Nearly identical concept or approach |
-| 0.70 - 0.85 | Similar | Same topic or visualization type |
-| 0.50 - 0.70 | Related | Same subject area or interaction pattern |
-| 0.00 - 0.50 | Somewhat Related | Loosely connected |
+| 0.85 - 1.00 | Excellent Match | High semantic + pedagogical alignment |
+| 0.70 - 0.85 | Good Match | Strong match on content and/or pedagogy |
+| 0.55 - 0.70 | Moderate Match | Related content, may need adaptation |
+| 0.00 - 0.55 | Weak Match | Loosely connected, significant adaptation needed |
+
+**Interpreting the component scores:**
+- **Semantic score > 0.7**: Very similar content/topic
+- **Pedagogical score > 0.8**: Excellent pattern match for the Bloom verb
+- **Pedagogical score < 0.5**: Pattern mismatch (e.g., continuous animation for "explain")
 
 ## Requirements
 
