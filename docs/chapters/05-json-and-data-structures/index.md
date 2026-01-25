@@ -1138,7 +1138,7 @@ Prioritize the seven required Dublin Core fields. Get these right before moving 
 Focus on fields that most impact searchability:
 
 - educational.gradeLevel
-- educational.bloomsTaxonomy
+- pedagogical.bloomsTaxonomy
 - educational.subjectArea
 - technical.framework
 - search.visualizationType

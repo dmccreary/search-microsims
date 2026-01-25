@@ -116,7 +116,7 @@ search-microsims/
 |-------|-------------|----------------|
 | Subject Area | `educational.subjectArea` | Mathematics, Physics, Computer Science |
 | Grade Level | `educational.gradeLevel` | K-12, Undergraduate, Graduate |
-| Bloom's Taxonomy | `educational.bloomsTaxonomy` | Remember, Understand, Apply, Analyze |
+| Bloom's Taxonomy | `pedagogical.bloomsTaxonomy` | Remember, Understand, Apply, Analyze |
 | Difficulty | `educational.difficulty` | Beginner, Intermediate, Advanced |
 | Framework | `technical.framework` | p5.js, d3.js, three.js |
 | Visualization | `search.visualizationType` | animation, chart, simulation |

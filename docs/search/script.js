@@ -211,6 +211,8 @@ function normalizeData(items) {
 
         // Normalize Bloom's taxonomy
         let bloomsTaxonomy = toArray(get([
+            'microsim.pedagogical.bloomsTaxonomy',
+            'pedagogical.bloomsTaxonomy',
             'microsim.educational.bloomsTaxonomy',
             'educational.bloomsTaxonomy',
             'bloomsTaxonomy',

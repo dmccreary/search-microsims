@@ -31,7 +31,8 @@ REPORT_FILE = PROJECT_ROOT / "docs" / "reports" / "microsim-metrics.md"
 # These are the most important fields for search and educational value
 KEY_FIELDS = {
     "core": ["title", "description", "url"],
-    "educational": ["subject", "gradeLevel", "bloomsTaxonomy", "learningObjectives"],
+    "educational": ["subject", "gradeLevel", "learningObjectives"],
+    "pedagogical": ["bloomsTaxonomy"],
     "technical": ["framework", "version"],
     "search": ["visualizationType", "tags"],
     "metadata": ["author", "dateCreated", "license"],
@@ -85,7 +86,7 @@ def get_field_value(item, field):
     nested_paths = {
         "subject": ["educational.subjectArea", "dublinCore.subject"],
         "gradeLevel": ["educational.gradeLevel"],
-        "bloomsTaxonomy": ["educational.bloomsTaxonomy"],
+        "bloomsTaxonomy": ["pedagogical.bloomsTaxonomy"],
         "framework": ["technical.framework"],
         "visualizationType": ["search.visualizationType"],
         "tags": ["search.tags"],

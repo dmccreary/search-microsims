@@ -142,7 +142,7 @@ The schema has 8 sections: `dublinCore`, `search`, `educational`, `technical`, `
 Key faceted fields:
 - `educational.subjectArea` - Mathematics, Physics, Computer Science, etc.
 - `educational.gradeLevel` - K-12, Undergraduate, Graduate, Adult
-- `educational.bloomsTaxonomy` - Remember, Understand, Apply, Analyze, Evaluate, Create
+- `pedagogical.bloomsTaxonomy` - Remember, Understand, Apply, Analyze, Evaluate, Create
 - `educational.difficulty` - Beginner, Intermediate, Advanced
 - `technical.framework` - p5.js, d3.js, three.js, vanilla-js
 - `search.visualizationType` - animation, chart, simulation, diagram, etc.
@@ -151,7 +151,7 @@ Key faceted fields:
 The search normalizes both flat legacy format and nested schema format:
 - `subject` or `educational.subjectArea` → subjectArea
 - `gradeLevel` or `educational.gradeLevel` → gradeLevel
-- `bloomLevel` or `educational.bloomsTaxonomy` → bloomsTaxonomy
+- `bloomLevel` or `pedagogical.bloomsTaxonomy` → bloomsTaxonomy
 - `library` or `technical.framework` → framework
 - `creator` or `dublinCore.creator` → creator
 
