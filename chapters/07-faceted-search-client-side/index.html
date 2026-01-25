@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1292,6 +1296,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1356,6 +1381,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2479,20 +2516,16 @@
 <h4 id="diagram-faceted-search-interface-simulator">Diagram: Faceted Search Interface Simulator</h4>
 <iframe src="../../sims/faceted-search-simulator/main.html" width="100%" height="600px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Faceted Search Interface Simulator</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: use
-
-Learning Objective: Students will use faceted search to filter a MicroSim collection by applying multiple facet selections and observing how results and counts update dynamically.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: use</p>
+<p>Learning Objective: Students will use faceted search to filter a MicroSim collection by applying multiple facet selections and observing how results and counts update dynamically.</p>
+<p>Canvas layout:
 - Left panel (30%): Facet filters
-- Right panel (70%): Search results grid
-
-Visual elements:
+- Right panel (70%): Search results grid</p>
+<p>Visual elements:
 - Search box at top with magnifying glass icon
 - Four facet groups in left panel:
   - Subject Area (checkboxes with counts)
@@ -2506,39 +2539,32 @@ Visual elements:
   - Framework badge
   - Brief description
 - Active filters displayed as removable chips above results
-- Result count and pagination at bottom
-
-Sample data (20 MicroSims):
+- Result count and pagination at bottom</p>
+<p>Sample data (20 MicroSims):
 - Physics simulations (8): wave, pendulum, projectile, circuits, etc.
 - Chemistry simulations (5): molecular, reactions, periodic table
 - Math simulations (4): graphing, geometry, statistics
-- Biology simulations (3): ecosystem, cells, genetics
-
-Interactive controls:
+- Biology simulations (3): ecosystem, cells, genetics</p>
+<p>Interactive controls:
 - Checkbox for each facet value
 - Search input with real-time filtering
 - "Clear All Filters" button
 - Click "X" on active filter chips to remove
-- Click result card to show detail modal
-
-Behavior:
+- Click result card to show detail modal</p>
+<p>Behavior:
 - Selecting any facet immediately filters results
 - Counts update dynamically for all facets
 - Multiple selections within same facet = OR logic
 - Selections across different facets = AND logic
 - Search box filters by title and description text
-- Zero-count options shown grayed out but still visible
-
-Animation:
+- Zero-count options shown grayed out but still visible</p>
+<p>Animation:
 - Smooth fade transition when results update
 - Counts animate when changing
-- Filter chips slide in/out
-
-Default state: All filters cleared, all 20 MicroSims showing
-
-Implementation: p5.js with simulated faceted search logic
+- Filter chips slide in/out</p>
+<p>Default state: All filters cleared, all 20 MicroSims showing</p>
+<p>Implementation: p5.js with simulated faceted search logic</p>
 </details>
-
 <hr />
 <h2 id="filter-controls-the-user-interface-of-facets">Filter Controls: The User Interface of Facets</h2>
 <p><strong>Filter controls</strong> are the UI components that allow users to interact with facets. The design of these controls significantly impacts usability. Different control types suit different facet characteristics.</p>
@@ -2862,53 +2888,50 @@ Implementation: p5.js with simulated faceted search logic
 <h4 id="diagram-client-side-search-architecture">Diagram: Client-Side Search Architecture</h4>
 <iframe src="../../sims/client-side-architecture/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Client-Side Search Architecture Diagram</summary>
-Type: diagram
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain the data flow in client-side search by tracing how data moves from static files through the browser to search results.
-
-Components to show:
+<p>Type: diagram</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain the data flow in client-side search by tracing how data moves from static files through the browser to search results.</p>
+<p>Components to show:
 1. Static File Server (cloud icon)
    - HTML/CSS/JS files
    - microsims-data.json
-   - Labels: "GitHub Pages, Netlify, or any web host"
-
-2. User's Browser (large rectangle)
-   - Sub-components:
-     - Data Layer: JSON data in memory
-     - Search Engine: ItemsJS instance
-     - UI Components: Search box, facets, results
-   - Arrows showing internal data flow
-
-3. User (stick figure)
-   - Inputs: Search queries, facet selections
-   - Outputs: Views search results
-
-Connections:
+   - Labels: "GitHub Pages, Netlify, or any web host"</p>
+<ol>
+<li>User's Browser (large rectangle)</li>
+<li>Sub-components:<ul>
+<li>Data Layer: JSON data in memory</li>
+<li>Search Engine: ItemsJS instance</li>
+<li>UI Components: Search box, facets, results</li>
+</ul>
+</li>
+<li>
+<p>Arrows showing internal data flow</p>
+</li>
+<li>
+<p>User (stick figure)</p>
+</li>
+<li>Inputs: Search queries, facet selections</li>
+<li>Outputs: Views search results</li>
+</ol>
+<p>Connections:
 - Dashed arrow from Server to Browser: "One-time data load (page load)"
 - Solid arrows within Browser: "All search operations"
-- Double arrow between User and Browser: "Instant interaction"
-
-Key annotations:
+- Double arrow between User and Browser: "Instant interaction"</p>
+<p>Key annotations:
 - "No server round-trips for search!" with emphasis
 - "~500KB of JSON = instant search for 400+ MicroSims"
-- "Works offline after initial load"
-
-Color scheme:
+- "Works offline after initial load"</p>
+<p>Color scheme:
 - Server: Gray (passive)
 - Browser: Blue (active)
 - Data flow: Green arrows
-- User interaction: Orange arrows
-
-Style: Clean block diagram with rounded rectangles
-
-Implementation: p5.js with animated data flow on hover
+- User interaction: Orange arrows</p>
+<p>Style: Clean block diagram with rounded rectangles</p>
+<p>Implementation: p5.js with animated data flow on hover</p>
 </details>
-
 <hr />
 <h2 id="the-inverted-index-how-search-gets-fast">The Inverted Index: How Search Gets Fast</h2>
 <p>In Chapter 6, we introduced inverted indexes for search. Now let's see how they apply specifically to client-side faceted search. Understanding this structure helps you design efficient search systems.</p>
@@ -3003,21 +3026,17 @@ Difficulty facet counts (for remaining filters):
 <h4 id="diagram-facet-index-visualizer">Diagram: Facet Index Visualizer</h4>
 <iframe src="../../sims/facet-index-visualizer/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Facet Index Structure Visualizer</summary>
-Type: microsim
-
-Bloom Level: Analyze (L4)
-Bloom Verb: examine
-
-Learning Objective: Students will examine how facet indexes enable fast filtering by visualizing set intersections as facet values are selected.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine</p>
+<p>Learning Objective: Students will examine how facet indexes enable fast filtering by visualizing set intersections as facet values are selected.</p>
+<p>Canvas layout:
 - Top panel (30%): Facet selection controls
 - Middle panel (40%): Set visualization (Venn-style or bar representation)
-- Bottom panel (30%): Results list and counts
-
-Visual elements:
+- Bottom panel (30%): Results list and counts</p>
+<p>Visual elements:
 - Three facet groups with checkboxes:
   - Subject Area: Physics, Chemistry, Math
   - Grade Level: K-12, Undergraduate, Graduate
@@ -3027,41 +3046,34 @@ Visual elements:
   - Highlighting for selected facet values
   - Intersection region emphasized
 - Results count display
-- Step-by-step calculation panel
-
-Sample data:
+- Step-by-step calculation panel</p>
+<p>Sample data:
 - 15 documents with varied facet values
-- At least 3 documents matching any triple-facet combination
-
-Interactive controls:
+- At least 3 documents matching any triple-facet combination</p>
+<p>Interactive controls:
 - Checkboxes for each facet value
 - "Show Calculation Steps" toggle
 - "Animate Intersection" button
 - "Reset All" button
-- Speed slider for animation
-
-Behavior:
+- Speed slider for animation</p>
+<p>Behavior:
 - Selecting facet value highlights matching documents
 - Multiple selections show intersection
 - Calculation steps panel shows set notation
-- Animation option shows documents "filtering" into intersection
-
-Animation sequence (when activated):
+- Animation option shows documents "filtering" into intersection</p>
+<p>Animation sequence (when activated):
 1. Show all documents
 2. Highlight first facet selection
 3. Fade non-matching documents
 4. Repeat for additional selections
-5. Final intersection highlighted
-
-Color scheme:
+5. Final intersection highlighted</p>
+<p>Color scheme:
 - Subject facets: Blues
 - Grade facets: Greens
 - Framework facets: Oranges
-- Intersection: Gold/Yellow highlight
-
-Implementation: p5.js with set visualization
+- Intersection: Gold/Yellow highlight</p>
+<p>Implementation: p5.js with set visualization</p>
 </details>
-
 <hr />
 <h2 id="itemsjs-library-faceted-search-made-easy">ItemsJS Library: Faceted Search Made Easy</h2>
 <p><strong>ItemsJS</strong> is a JavaScript library specifically designed for faceted search and filtering. It's the engine that powers our MicroSim search interface, and understanding its API will help you build your own search applications.</p>
@@ -3409,20 +3421,16 @@ Implementation: p5.js with set visualization
 <h4 id="diagram-itemsjs-api-explorer">Diagram: ItemsJS API Explorer</h4>
 <iframe src="../../sims/itemsjs-explorer/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>ItemsJS API Interactive Explorer</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: implement
-
-Learning Objective: Students will implement search queries using the ItemsJS API by constructing search parameters and observing the resulting data structure.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: implement</p>
+<p>Learning Objective: Students will implement search queries using the ItemsJS API by constructing search parameters and observing the resulting data structure.</p>
+<p>Canvas layout:
 - Left panel (40%): Query builder interface
-- Right panel (60%): Results and response viewer
-
-Visual elements:
+- Right panel (60%): Results and response viewer</p>
+<p>Visual elements:
 - Query builder with:
   - Text input for search query
   - Facet selection dropdowns/checkboxes
@@ -3434,21 +3442,18 @@ Visual elements:
   - Aggregations tab: Facet counts visualization
   - Raw JSON tab: Formatted JSON response
 - "Execute Search" button
-- Code preview showing generated search() call
-
-Sample data:
+- Code preview showing generated search() call</p>
+<p>Sample data:
 - 15 MicroSims with varied metadata
 - Searchable by title and description
-- Facets: Subject, Grade, Framework
-
-Interactive controls:
+- Facets: Subject, Grade, Framework</p>
+<p>Interactive controls:
 - Query text input
 - Multi-select for each facet
 - Sorting dropdown (title A-Z, date newest, relevance)
 - Items per page selector
-- "Copy Code" button to copy the search() call
-
-Code preview (updates live):
+- "Copy Code" button to copy the search() call</p>
+<p>Code preview (updates live):
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3466,19 +3471,15 @@ Code preview (updates live):
 <span class="w">  </span><span class="nx">sort</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;title_asc&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">per_page</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span>
 <span class="p">});</span>
-</code></pre></div></td></tr></table></div>
-
-Behavior:
+</code></pre></div></td></tr></table></div></p>
+<p>Behavior:
 - All inputs update code preview in real-time
 - "Execute Search" runs the query and shows results
 - Response tabs show different views of same data
-- Aggregation counts shown as horizontal bars
-
-Default state: Empty query, no filters, showing all items
-
-Implementation: p5.js with embedded ItemsJS
+- Aggregation counts shown as horizontal bars</p>
+<p>Default state: Empty query, no filters, showing all items</p>
+<p>Implementation: p5.js with embedded ItemsJS</p>
 </details>
-
 <hr />
 <h2 id="semantic-search-a-preview">Semantic Search: A Preview</h2>
 <p>While this chapter focuses on faceted search, it's worth briefly introducing <strong>semantic search</strong>—a more advanced approach that we'll explore fully in the next chapter.</p>

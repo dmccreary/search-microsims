@@ -18,7 +18,7 @@
         <link rel="prev" href="../13-user-interface-controls/">
       
       
-        <link rel="next" href="../../reports/microsim-metrics/">
+        <link rel="next" href="../15-pedagogical-pattern-alignment/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -302,6 +302,10 @@
   
     
     
+      
+        
+          
+        
       
         
           
@@ -1436,6 +1440,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1500,6 +1525,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2788,18 +2825,14 @@
 <h4 id="diagram-p5js-architecture">Diagram: p5.js Architecture</h4>
 <iframe src="../../sims/p5-architecture/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>p5.js MicroSim Architecture Diagram</summary>
-Type: diagram
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain the p5.js execution model by tracing the flow from initialization through the animation loop.
-
-Layout: Flowchart showing p5.js program execution
-
-Visual elements:
+<p>Type: diagram</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain the p5.js execution model by tracing the flow from initialization through the animation loop.</p>
+<p>Layout: Flowchart showing p5.js program execution</p>
+<p>Visual elements:
 - Start node: "Page Loads"
 - Process: "setup() runs once"
   - Sub-steps: createCanvas, initialize variables, set initial state
@@ -2811,30 +2844,25 @@ Visual elements:
   - "keyPressed()"
   - "windowResized()"
 - All handlers return to draw loop
-- Annotations explaining each phase
-
-Flow:
+- Annotations explaining each phase</p>
+<p>Flow:
 1. Page loads → p5.js library initializes
 2. setup() executes once
 3. draw() begins continuous loop
 4. User events trigger handlers
 5. Handlers can modify state
-6. draw() reflects changes
-
-Interactive elements:
+6. draw() reflects changes</p>
+<p>Interactive elements:
 - Click any node to see code example
 - Toggle: "Show execution timeline"
-- Highlight: Current execution point animation
-
-Color scheme:
+- Highlight: Current execution point animation</p>
+<p>Color scheme:
 - Initialization: Blue
 - Animation loop: Green (cycling)
 - Event handlers: Orange
-- Flow arrows: Gray
-
-Implementation: p5.js with animated flowchart
+- Flow arrows: Gray</p>
+<p>Implementation: p5.js with animated flowchart</p>
 </details>
-
 <hr />
 <h2 id="mermaidjs-diagrams-from-text">Mermaid.js: Diagrams from Text</h2>
 <p><strong>Mermaid.js</strong> generates diagrams and flowcharts from text descriptions. It's perfect for explanatory diagrams that don't need animation.</p>
@@ -3290,65 +3318,65 @@ Implementation: p5.js with animated flowchart
 <h4 id="diagram-library-selection-guide">Diagram: Library Selection Guide</h4>
 <iframe src="../../sims/library-selector/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>JavaScript Library Selection Guide</summary>
-Type: workflow
-
-Bloom Level: Apply (L3)
-Bloom Verb: select
-
-Learning Objective: Students will select the appropriate JavaScript library for a given visualization task by following a decision tree based on requirements.
-
-Layout: Decision tree flowchart
-
-Visual elements:
+<p>Type: workflow</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: select</p>
+<p>Learning Objective: Students will select the appropriate JavaScript library for a given visualization task by following a decision tree based on requirements.</p>
+<p>Layout: Decision tree flowchart</p>
+<p>Visual elements:
 - Start node: "What do you need to visualize?"
 - Decision diamonds with questions
 - End nodes showing library recommendations
-- Example thumbnails for each library
-
-Decision flow:
-
-1. "What do you need to visualize?"
-   - Animation/simulation → p5.js
-   - Static diagram → Continue
-   - Data/charts → Continue
-   - Maps → Leaflet.js
-   - Networks → vis-network.js
-   - Timeline → vis-timeline.js
-
-2. "Need animation/interactivity?"
-   - No, static → Mermaid.js
-   - Yes → Continue
-
-3. "Scientific/3D data?"
-   - Yes → Plotly.js
-   - No → Chart.js
-
-4. "Custom drawing needed?"
-   - Yes → p5.js
-   - No → Check other options
-
-End nodes with library logos and brief description
-
-Interactive elements:
+- Example thumbnails for each library</p>
+<p>Decision flow:</p>
+<ol>
+<li>"What do you need to visualize?"</li>
+<li>Animation/simulation → p5.js</li>
+<li>Static diagram → Continue</li>
+<li>Data/charts → Continue</li>
+<li>Maps → Leaflet.js</li>
+<li>Networks → vis-network.js</li>
+<li>
+<p>Timeline → vis-timeline.js</p>
+</li>
+<li>
+<p>"Need animation/interactivity?"</p>
+</li>
+<li>No, static → Mermaid.js</li>
+<li>
+<p>Yes → Continue</p>
+</li>
+<li>
+<p>"Scientific/3D data?"</p>
+</li>
+<li>Yes → Plotly.js</li>
+<li>
+<p>No → Chart.js</p>
+</li>
+<li>
+<p>"Custom drawing needed?"</p>
+</li>
+<li>Yes → p5.js</li>
+<li>No → Check other options</li>
+</ol>
+<p>End nodes with library logos and brief description</p>
+<p>Interactive elements:
 - Click decision to highlight that path
 - Hover nodes for examples
 - "Start over" button
-- Quiz mode: Given scenario, trace correct path
-
-Color scheme:
+- Quiz mode: Given scenario, trace correct path</p>
+<p>Color scheme:
 - p5.js: Pink/magenta (official brand)
 - Chart.js: Blue
 - Plotly.js: Purple
 - Mermaid: Green
 - vis-network: Orange
 - Leaflet: Green (maps)
-- vis-timeline: Blue
-
-Implementation: p5.js with interactive decision tree
+- vis-timeline: Blue</p>
+<p>Implementation: p5.js with interactive decision tree</p>
 </details>
-
 <hr />
 <h2 id="responsive-design-fitting-every-screen">Responsive Design: Fitting Every Screen</h2>
 <p><strong>Responsive design</strong> ensures MicroSims work across all device sizes—from 4K monitors to phone screens.</p>
@@ -4305,13 +4333,13 @@ Implementation: p5.js with interactive decision tree
         
         
           
-          <a href="../../reports/microsim-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: MicroSim Metrics">
+          <a href="../15-pedagogical-pattern-alignment/" class="md-footer__link md-footer__link--next" aria-label="Next: 15. Pedagogical Pattern Alignment">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                MicroSim Metrics
+                15. Pedagogical Pattern Alignment
               </div>
             </div>
             <div class="md-footer__button md-icon">

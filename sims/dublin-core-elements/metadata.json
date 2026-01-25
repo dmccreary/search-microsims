@@ -1,0 +1,49 @@
+{
+  "title": "Dublin Core Elements",
+  "description": "Interactive infographic visualizing the 15 Dublin Core metadata elements organized into three categories: Content (Title, Subject, Description, Type, Source, Relation, Coverage), Intellectual Property (Creator, Publisher, Contributor, Rights), and Instantiation (Date, Format, Identifier, Language). Features hover tooltips with definitions and examples, click-to-expand descriptions, and color-coded usage frequency.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-25",
+  "subject": [
+    "Metadata",
+    "Dublin Core",
+    "Information Science",
+    "Library Science",
+    "Data Standards",
+    "Educational Resources"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/microsim-search/sims/dublin-core-elements/",
+  "publisher": "MicroSims Educational Platform",
+  "educationalLevel": "High School, Undergraduate, Graduate",
+  "learningResourceType": "infographic",
+  "audience": "Students, Educators, Librarians, Instructional Designers",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Analyze"
+  ],
+  "concepts": [
+    "Dublin Core",
+    "Metadata Standards",
+    "Content Description",
+    "Intellectual Property",
+    "Resource Instantiation",
+    "Classification Systems"
+  ],
+  "prerequisites": [
+    "Basic understanding of metadata",
+    "Familiarity with web resources"
+  ],
+  "library": "p5.js",
+  "visualizationType": [
+    "infographic",
+    "interactive-demo",
+    "diagram"
+  ]
+}

@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -944,6 +948,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1008,6 +1033,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1752,42 +1789,33 @@
 <h4 id="diagram-dublin-core-element-relationships">Diagram: Dublin Core Element Relationships</h4>
 <iframe src="../../sims/dublin-core-elements/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Dublin Core Element Relationships Diagram</summary>
-Type: infographic
-
-Bloom Level: Understand (L2)
-Bloom Verb: classify
-
-Learning Objective: Students will classify Dublin Core elements into categories (content description, intellectual property, instantiation) and explain how they relate to MicroSim metadata.
-
-Purpose: Visualize the 15 Dublin Core elements organized by category with examples
-
-Layout: Three-column layout representing Dublin Core's three categories
-
-Categories (columns):
+<p>Type: infographic</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: classify</p>
+<p>Learning Objective: Students will classify Dublin Core elements into categories (content description, intellectual property, instantiation) and explain how they relate to MicroSim metadata.</p>
+<p>Purpose: Visualize the 15 Dublin Core elements organized by category with examples</p>
+<p>Layout: Three-column layout representing Dublin Core's three categories</p>
+<p>Categories (columns):
 1. Content (left column - blue)
    - Title, Subject, Description, Type, Source, Relation, Coverage
 2. Intellectual Property (center column - green)
    - Creator, Publisher, Contributor, Rights
 3. Instantiation (right column - orange)
-   - Date, Format, Identifier, Language
-
-Interactive elements:
+   - Date, Format, Identifier, Language</p>
+<p>Interactive elements:
 - Hover over any element to see:
   - Definition
   - Example value for a MicroSim
   - Whether required or optional
 - Click to see extended description
-- Color intensity indicates how commonly used in MicroSims
-
-Visual style: Card-based layout with clear category headers
+- Color intensity indicates how commonly used in MicroSims</p>
+<p>Visual style: Card-based layout with clear category headers
 Color scheme: Blue for content, green for IP, orange for instantiation
-Animation: Cards lift slightly on hover with shadow effect
-
-Implementation: HTML/CSS/JavaScript with card components
+Animation: Cards lift slightly on hover with shadow effect</p>
+<p>Implementation: HTML/CSS/JavaScript with card components</p>
 </details>
-
 <h2 id="taxonomies-organizing-knowledge-hierarchically">Taxonomies: Organizing Knowledge Hierarchically</h2>
 <p>A <strong>taxonomy</strong> is a hierarchical classification system—a tree structure that organizes concepts from broad to specific. You use taxonomies constantly without thinking about it: the biological taxonomy (Kingdom → Phylum → Class → Order → Family → Genus → Species) is perhaps the most famous example.</p>
 <p>For educational resources, taxonomies help answer questions like:</p>
@@ -1869,50 +1897,41 @@ Implementation: HTML/CSS/JavaScript with card components
 <h4 id="diagram-multi-dimensional-classification">Diagram: Multi-Dimensional Classification</h4>
 <iframe src="../../sims/faceted-classification/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Multi-Dimensional Classification Interactive</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: demonstrate
-
-Learning Objective: Students will demonstrate how multi-dimensional classification enables faceted search by exploring different filter combinations and observing how result sets change.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: demonstrate</p>
+<p>Learning Objective: Students will demonstrate how multi-dimensional classification enables faceted search by exploring different filter combinations and observing how result sets change.</p>
+<p>Canvas layout:
 - Left panel (200px): Filter controls for 4 dimensions
 - Center panel (400px): Visualization showing MicroSim cards
-- Right panel (150px): Results count and active filters display
-
-Visual elements:
+- Right panel (150px): Results count and active filters display</p>
+<p>Visual elements:
 - Grid of MicroSim cards (20 sample items)
 - Each card shows title and icons for its classifications
 - Cards fade out when filtered, remain bright when matching
-- Venn-diagram-style overlay showing intersection
-
-Interactive controls:
+- Venn-diagram-style overlay showing intersection</p>
+<p>Interactive controls:
 - Subject dropdown: All, Physics, Math, Chemistry, Biology
 - Grade Level checkboxes: Elementary, Middle, High, College
 - Difficulty radio buttons: All, Beginner, Intermediate, Advanced
-- Type checkboxes: Animation, Simulation, Chart, Quiz
-
-Default parameters:
+- Type checkboxes: Animation, Simulation, Chart, Quiz</p>
+<p>Default parameters:
 - All filters set to "All" (showing all 20 items)
-- Pre-populated sample data with varied classifications
-
-Behavior:
+- Pre-populated sample data with varied classifications</p>
+<p>Behavior:
 - Changing any filter immediately updates visible cards
 - Count display shows "X of 20 MicroSims match"
 - Active filter badges appear in right panel
 - Clear All button resets filters
-- Smooth fade animations on filter changes
-
-Implementation notes:
+- Smooth fade animations on filter changes</p>
+<p>Implementation notes:
 - p5.js for card rendering
 - JSON data array with sample MicroSims
 - Real-time filter function combining all dimensions
-- Responsive layout adapts to container width
+- Responsive layout adapts to container width</p>
 </details>
-
 <h2 id="subject-normalization-speaking-the-same-language">Subject Normalization: Speaking the Same Language</h2>
 <p>Here's a real problem: one creator tags their MicroSim as "Math," another uses "Mathematics," a third uses "Maths," and a fourth uses "mathematical sciences." All mean the same thing, but a search for "Mathematics" only finds one of them.</p>
 <p><strong>Subject normalization</strong> is the process of mapping variant terms to standard forms. It's like having a universal translator that knows "Math" = "Mathematics" = "Maths" and routes all searches to the same canonical term.</p>
@@ -2148,56 +2167,58 @@ Implementation notes:
 </code></pre></div></td></tr></table></div>
 <p>Notice how this includes both technical terms ("kinematics," "ballistics") and everyday language ("throwing," "gravity effect"). The goal is to catch searches from physics professors AND from students googling "how far does a ball go when you throw it."</p>
 <h4 id="diagram-keywords-to-search-results-flow">Diagram: Keywords to Search Results Flow</h4>
-<iframe src="../../sims/keyword-search-flow/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/keyword-search-flow/main.html" width="100%" height="552px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Keywords to Search Results Flow Diagram</summary>
-Type: workflow
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain how keywords in metadata connect user search queries to relevant MicroSim results through matching and ranking processes.
-
-Purpose: Visualize the journey from user query through keyword matching to ranked results
-
-Steps (left to right flow):
+<p>Type: workflow</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain how keywords in metadata connect user search queries to relevant MicroSim results through matching and ranking processes.</p>
+<p>Purpose: Visualize the journey from user query through keyword matching to ranked results</p>
+<p>Steps (left to right flow):
 1. User Query (person icon with search box)
    - Example: "physics ball throwing simulation"
-   - Shows query being tokenized into words
-
-2. Query Processing (gear icon)
-   - Tokenization: ["physics", "ball", "throwing", "simulation"]
-   - Normalization: lowercase, stemming
-   - Synonym expansion: "throwing" → ["throwing", "projectile", "launch"]
-
-3. Keyword Matching (database icon with arrows)
-   - Compare query terms against MicroSim keywords
-   - Calculate match scores
-   - Show multiple MicroSims being evaluated
-
-4. Ranking (sorting icon)
-   - Score: keyword matches + metadata quality
-   - Factors: exact match > partial match > synonym match
-   - Freshness, popularity bonuses
-
-5. Results (list with thumbnails)
-   - Ordered list of matching MicroSims
-   - Match score badges
-   - Highlighted matching keywords
-
-Interactive elements:
+   - Shows query being tokenized into words</p>
+<ol>
+<li>Query Processing (gear icon)</li>
+<li>Tokenization: ["physics", "ball", "throwing", "simulation"]</li>
+<li>Normalization: lowercase, stemming</li>
+<li>
+<p>Synonym expansion: "throwing" → ["throwing", "projectile", "launch"]</p>
+</li>
+<li>
+<p>Keyword Matching (database icon with arrows)</p>
+</li>
+<li>Compare query terms against MicroSim keywords</li>
+<li>Calculate match scores</li>
+<li>
+<p>Show multiple MicroSims being evaluated</p>
+</li>
+<li>
+<p>Ranking (sorting icon)</p>
+</li>
+<li>Score: keyword matches + metadata quality</li>
+<li>Factors: exact match &gt; partial match &gt; synonym match</li>
+<li>
+<p>Freshness, popularity bonuses</p>
+</li>
+<li>
+<p>Results (list with thumbnails)</p>
+</li>
+<li>Ordered list of matching MicroSims</li>
+<li>Match score badges</li>
+<li>Highlighted matching keywords</li>
+</ol>
+<p>Interactive elements:
 - Enter custom search query and see matching process
 - Hover over each stage for detailed explanation
-- Click to see sample data at each stage
-
-Visual style: Horizontal flow diagram with stages as rounded rectangles
+- Click to see sample data at each stage</p>
+<p>Visual style: Horizontal flow diagram with stages as rounded rectangles
 Color scheme: Blue for user side, green for processing, orange for results
-Animation: Data flows between stages with subtle particle effects
-
-Implementation: HTML/CSS/JavaScript with animated flow visualization
+Animation: Data flows between stages with subtle particle effects</p>
+<p>Implementation: HTML/CSS/JavaScript with animated flow visualization</p>
 </details>
-
 <h2 id="controlled-vocabulary-curated-consistency">Controlled Vocabulary: Curated Consistency</h2>
 <p>A <strong>controlled vocabulary</strong> is a predefined list of terms that must be used for a particular metadata field. Unlike free-form tags where anything goes, controlled vocabularies enforce consistency by limiting choices to approved options.</p>
 <p>Examples of controlled vocabularies in MicroSim metadata:</p>

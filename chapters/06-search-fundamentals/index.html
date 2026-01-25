@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1376,6 +1380,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1440,6 +1465,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2513,72 +2550,74 @@
 <h4 id="diagram-information-retrieval-pipeline">Diagram: Information Retrieval Pipeline</h4>
 <iframe src="../../sims/ir-pipeline/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Information Retrieval Pipeline Workflow</summary>
-Type: workflow
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain the five stages of information retrieval by tracing a search query through the complete pipeline from user input to displayed results.
-
-Purpose: Visualize the complete search pipeline showing how a query moves through each stage
-
-Visual style: Horizontal flowchart with process rectangles and data flow arrows
-
-Steps:
+<p>Type: workflow</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain the five stages of information retrieval by tracing a search query through the complete pipeline from user input to displayed results.</p>
+<p>Purpose: Visualize the complete search pipeline showing how a query moves through each stage</p>
+<p>Visual style: Horizontal flowchart with process rectangles and data flow arrows</p>
+<p>Steps:
 1. Start: "User Query"
    - Shape: Rounded rectangle (input)
    - Hover text: "User enters search terms: 'physics pendulum simulation'"
-   - Color: Light blue
-
-2. Process: "Query Processing"
-   - Shape: Rectangle
-   - Hover text: "Tokenize, normalize, remove stopwords, identify key terms"
-   - Color: Blue
-   - Sub-elements shown on click: tokenize → lowercase → remove 'simulation' (too common)
-
-3. Process: "Index Lookup"
-   - Shape: Cylinder (database symbol)
-   - Hover text: "Search the pre-built index for matching documents"
-   - Color: Orange
-   - Shows: Query terms mapped to document IDs
-
-4. Process: "Matching"
-   - Shape: Rectangle
-   - Hover text: "Identify all documents containing query terms"
-   - Color: Yellow
-   - Shows: "Found 47 potential matches"
-
-5. Process: "Ranking"
-   - Shape: Rectangle with star icon
-   - Hover text: "Score and sort by relevance using TF-IDF, BM25, or other algorithms"
-   - Color: Green
-   - Shows: Documents reordered by score
-
-6. End: "Search Results"
-   - Shape: Rounded rectangle (output)
-   - Hover text: "Top 10 results displayed to user with titles and descriptions"
-   - Color: Light green
-   - Shows: Ordered list preview
-
-Data flow arrows:
+   - Color: Light blue</p>
+<ol>
+<li>Process: "Query Processing"</li>
+<li>Shape: Rectangle</li>
+<li>Hover text: "Tokenize, normalize, remove stopwords, identify key terms"</li>
+<li>Color: Blue</li>
+<li>
+<p>Sub-elements shown on click: tokenize → lowercase → remove 'simulation' (too common)</p>
+</li>
+<li>
+<p>Process: "Index Lookup"</p>
+</li>
+<li>Shape: Cylinder (database symbol)</li>
+<li>Hover text: "Search the pre-built index for matching documents"</li>
+<li>Color: Orange</li>
+<li>
+<p>Shows: Query terms mapped to document IDs</p>
+</li>
+<li>
+<p>Process: "Matching"</p>
+</li>
+<li>Shape: Rectangle</li>
+<li>Hover text: "Identify all documents containing query terms"</li>
+<li>Color: Yellow</li>
+<li>
+<p>Shows: "Found 47 potential matches"</p>
+</li>
+<li>
+<p>Process: "Ranking"</p>
+</li>
+<li>Shape: Rectangle with star icon</li>
+<li>Hover text: "Score and sort by relevance using TF-IDF, BM25, or other algorithms"</li>
+<li>Color: Green</li>
+<li>
+<p>Shows: Documents reordered by score</p>
+</li>
+<li>
+<p>End: "Search Results"</p>
+</li>
+<li>Shape: Rounded rectangle (output)</li>
+<li>Hover text: "Top 10 results displayed to user with titles and descriptions"</li>
+<li>Color: Light green</li>
+<li>Shows: Ordered list preview</li>
+</ol>
+<p>Data flow arrows:
 - Solid arrows between sequential steps
-- Dashed arrow from "Index Lookup" back to stored index (showing pre-computation)
-
-Interactive features:
+- Dashed arrow from "Index Lookup" back to stored index (showing pre-computation)</p>
+<p>Interactive features:
 - Click any step to see detailed sub-process
 - Hover shows description text
 - "Trace Query" button animates a sample query through pipeline
-- Reset button returns to overview
-
-Animation: When "Trace Query" clicked, highlight moves through stages with sample data
-
-Color scheme: Blue gradient (input) → Orange (storage) → Green gradient (output)
-
-Implementation: p5.js with interactive flowchart components
+- Reset button returns to overview</p>
+<p>Animation: When "Trace Query" clicked, highlight moves through stages with sample data</p>
+<p>Color scheme: Blue gradient (input) → Orange (storage) → Green gradient (output)</p>
+<p>Implementation: p5.js with interactive flowchart components</p>
 </details>
-
 <hr />
 <h2 id="precision-and-recall-the-two-pillars-of-search-quality">Precision and Recall: The Two Pillars of Search Quality</h2>
 <p>How do we measure whether a search system is any good? Two metrics dominate the field: <strong>precision</strong> and <strong>recall</strong>. Understanding these helps you evaluate search results and design better metadata.</p>
@@ -2631,20 +2670,16 @@ Implementation: p5.js with interactive flowchart components
 <h4 id="diagram-precision-recall-trade-off-explorer">Diagram: Precision-Recall Trade-off Explorer</h4>
 <iframe src="../../sims/precision-recall-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Precision-Recall Trade-off Interactive Explorer</summary>
-Type: microsim
-
-Bloom Level: Analyze (L4)
-Bloom Verb: examine
-
-Learning Objective: Students will examine the trade-off between precision and recall by adjusting search parameters and observing how changes affect both metrics simultaneously.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine</p>
+<p>Learning Objective: Students will examine the trade-off between precision and recall by adjusting search parameters and observing how changes affect both metrics simultaneously.</p>
+<p>Canvas layout:
 - Left panel (55%): Venn diagram visualization
-- Right panel (45%): Controls and metrics display
-
-Visual elements:
+- Right panel (45%): Controls and metrics display</p>
+<p>Visual elements:
 - Large Venn diagram with two overlapping circles:
   - Circle A (blue): "All Results Retrieved"
   - Circle B (green): "All Relevant Documents in Collection"
@@ -2655,41 +2690,34 @@ Visual elements:
   - Precision percentage with formula
   - Recall percentage with formula
   - F1 Score (harmonic mean)
-- Small icons representing documents in each region
-
-Interactive controls:
+- Small icons representing documents in each region</p>
+<p>Interactive controls:
 - Slider: "Search Specificity" (1-10 scale)
   - Moving right: Increases precision, decreases recall
   - Moving left: Increases recall, decreases precision
 - Slider: "Collection Coverage" (adjust how many relevant docs exist)
 - Buttons: "High Precision Scenario" / "High Recall Scenario" / "Balanced"
 - Toggle: "Show formulas" / "Hide formulas"
-- Toggle: "Animate documents"
-
-Default parameters:
+- Toggle: "Animate documents"</p>
+<p>Default parameters:
 - Search Specificity: 5 (balanced)
 - Collection size: 100 documents
 - Relevant documents: 25
 - Retrieved documents: 20
-- Overlap: 15
-
-Behavior:
+- Overlap: 15</p>
+<p>Behavior:
 - Moving specificity slider smoothly adjusts circle overlap
 - Documents (small icons) move between regions
 - Metrics update in real-time
 - Formulas highlight the changing numerators/denominators
-- Color coding shows true positives (good) vs false positives/negatives (problems)
-
-Scenarios (preset buttons):
+- Color coding shows true positives (good) vs false positives/negatives (problems)</p>
+<p>Scenarios (preset buttons):
 1. "High Precision": Precision=95%, Recall=40%
 2. "High Recall": Precision=50%, Recall=90%
-3. "Balanced": Precision=75%, Recall=75%
-
-Animation option: Documents float around within their regions
-
-Implementation: p5.js with smooth transitions and real-time calculation
+3. "Balanced": Precision=75%, Recall=75%</p>
+<p>Animation option: Documents float around within their regions</p>
+<p>Implementation: p5.js with smooth transitions and real-time calculation</p>
 </details>
-
 <hr />
 <h2 id="relevance-what-makes-a-result-good">Relevance: What Makes a Result "Good"?</h2>
 <p><strong>Relevance</strong> is the degree to which a search result satisfies the user's information need. It sounds simple, but relevance is surprisingly subjective and multidimensional.</p>
@@ -2863,28 +2891,23 @@ Implementation: p5.js with smooth transitions and real-time calculation
 <h4 id="diagram-ranking-score-visualizer">Diagram: Ranking Score Visualizer</h4>
 <iframe src="../../sims/ranking-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Search Result Ranking Score Visualizer</summary>
-Type: microsim
-
-Bloom Level: Understand (L2)
-Bloom Verb: interpret
-
-Learning Objective: Students will interpret how different ranking signals combine to determine search result order by experimenting with signal weights and observing rank changes.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: interpret</p>
+<p>Learning Objective: Students will interpret how different ranking signals combine to determine search result order by experimenting with signal weights and observing rank changes.</p>
+<p>Canvas layout:
 - Left panel (60%): Results list with score bars
-- Right panel (40%): Ranking signal controls
-
-Visual elements:
+- Right panel (40%): Ranking signal controls</p>
+<p>Visual elements:
 - List of 8 sample MicroSim results with:
   - Title and brief description
   - Horizontal bar showing total relevance score (0-100)
   - Stacked bar segments showing contribution of each signal
   - Rank number (updates as scores change)
-- Legend showing signal colors
-
-Sample results:
+- Legend showing signal colors</p>
+<p>Sample results:
 1. "Pendulum Period Calculator" - Physics, 2026
 2. "Simple Harmonic Motion Explorer" - Physics, 2025
 3. "Wave Pendulum Visualizer" - Physics, 2024
@@ -2892,9 +2915,8 @@ Sample results:
 5. "Pendulum Art Generator" - Art, 2026
 6. "Clock Mechanism Simulator" - Engineering, 2025
 7. "Gravity and Mass Demo" - Physics, 2024
-8. "Physics 101 Video Lecture" - Physics, 2022
-
-Interactive controls:
+8. "Physics 101 Video Lecture" - Physics, 2022</p>
+<p>Interactive controls:
 - Query input: "pendulum physics" (editable)
 - Sliders for signal weights (0-100%):
   - Term Frequency weight (default: 40%)
@@ -2903,26 +2925,20 @@ Interactive controls:
   - Freshness weight (default: 10%)
   - Popularity weight (default: 5%)
 - Button: "Reset to Defaults"
-- Toggle: "Show score breakdown"
-
-Behavior:
+- Toggle: "Show score breakdown"</p>
+<p>Behavior:
 - Adjusting any slider recalculates all scores
 - Results smoothly animate to new positions
 - Score bars update with smooth transitions
 - Rank numbers update accordingly
-- Hovering over result shows detailed score breakdown
-
-Score calculation (visible when toggle on):
+- Hovering over result shows detailed score breakdown</p>
+<p>Score calculation (visible when toggle on):
 - Each signal contributes: (signal_score × weight) / sum(weights)
-- Total score normalized to 0-100
-
-Default state: Balanced weights showing "Pendulum Period Calculator" ranked #1
-
-Animation: Results slide up/down when ranks change
-
-Implementation: p5.js with animated list component
+- Total score normalized to 0-100</p>
+<p>Default state: Balanced weights showing "Pendulum Period Calculator" ranked #1</p>
+<p>Animation: Results slide up/down when ranks change</p>
+<p>Implementation: p5.js with animated list component</p>
 </details>
-
 <hr />
 <h2 id="keyword-search-the-foundation">Keyword Search: The Foundation</h2>
 <p><strong>Keyword search</strong> is the most common search approach—you type words, the system finds documents containing those words. Simple, intuitive, and powerful. When you search Google, library catalogs, or most websites, you're using keyword search.</p>
@@ -3207,21 +3223,17 @@ Evaluates as: <code>A OR (B AND C)</code> — not <code>(A OR B) AND C</code></p
 <h4 id="diagram-boolean-query-builder">Diagram: Boolean Query Builder</h4>
 <iframe src="../../sims/boolean-query-builder/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Interactive Boolean Query Builder</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: construct
-
-Learning Objective: Students will construct boolean search queries by visually combining terms with AND, OR, and NOT operators while observing the resulting query string and Venn diagram representation.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: construct</p>
+<p>Learning Objective: Students will construct boolean search queries by visually combining terms with AND, OR, and NOT operators while observing the resulting query string and Venn diagram representation.</p>
+<p>Canvas layout:
 - Top panel (25%): Query construction area
 - Middle panel (50%): Venn diagram visualization
-- Bottom panel (25%): Results preview
-
-Visual elements:
+- Bottom panel (25%): Results preview</p>
+<p>Visual elements:
 - Query builder with:
   - Text inputs for search terms (up to 4)
   - Dropdown selectors for operators between terms (AND/OR)
@@ -3233,43 +3245,35 @@ Visual elements:
   - Labels on each region
 - Final query string display (formatted)
 - Results count estimate
-- Sample matching documents preview
-
-Interactive controls:
+- Sample matching documents preview</p>
+<p>Interactive controls:
 - Term inputs: Type any search term
 - Operator dropdowns: Select AND or OR between terms
 - NOT toggles: Checkbox to negate any term
 - Grouping buttons: Add/remove parentheses
 - "Build Query" button: Generates final query string
 - "Reset" button: Clear all terms
-- Dropdown: "Load Example Query" with presets
-
-Example presets:
+- Dropdown: "Load Example Query" with presets</p>
+<p>Example presets:
 1. "Basic AND": physics AND simulation
 2. "Synonym OR": (velocity OR speed) AND physics
 3. "Exclusion": wave AND physics NOT ocean
-4. "Complex": (projectile OR pendulum) AND undergraduate NOT video
-
-Venn diagram behavior:
+4. "Complex": (projectile OR pendulum) AND undergraduate NOT video</p>
+<p>Venn diagram behavior:
 - Circle A (blue): First term results
 - Circle B (green): Second term results
 - Circle C (orange): Third term results
 - Shaded region changes based on operators:
   - AND: Only overlapping region shaded
   - OR: All circles shaded
-  - NOT: Excluded region crossed out
-
-Results preview:
+  - NOT: Excluded region crossed out</p>
+<p>Results preview:
 - Shows 5 sample document titles that would match
-- Indicates "~X results" estimate
-
-Default state: Empty query builder ready for input
-
-Animation: Venn diagram regions fade in/out as query changes
-
-Implementation: p5.js with query parser and visualization
+- Indicates "~X results" estimate</p>
+<p>Default state: Empty query builder ready for input</p>
+<p>Animation: Venn diagram regions fade in/out as query changes</p>
+<p>Implementation: p5.js with query parser and visualization</p>
 </details>
-
 <hr />
 <h2 id="search-engines-putting-it-all-together">Search Engines: Putting It All Together</h2>
 <p>A <strong>search engine</strong> is a complete system that indexes documents, processes queries, and returns ranked results. Google is the famous example, but search engines power everything from e-commerce sites to MicroSim repositories.</p>
@@ -3493,20 +3497,16 @@ interference → [Doc3]
 <h4 id="diagram-inverted-index-visualizer">Diagram: Inverted Index Visualizer</h4>
 <iframe src="../../sims/inverted-index-viz/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Inverted Index Construction Visualizer</summary>
-Type: microsim
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain how inverted indexes enable fast search by watching the index construction process and tracing query lookups through the resulting data structure.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain how inverted indexes enable fast search by watching the index construction process and tracing query lookups through the resulting data structure.</p>
+<p>Canvas layout:
 - Left panel (45%): Document collection
-- Right panel (55%): Inverted index visualization
-
-Visual elements:
+- Right panel (55%): Inverted index visualization</p>
+<p>Visual elements:
 - Document cards showing:
   - Document ID (Doc1, Doc2, etc.)
   - Title text
@@ -3516,50 +3516,41 @@ Visual elements:
   - Each term shows posting list (document IDs)
   - Lines connecting terms to their documents
 - Query input and trace visualization
-- Statistics: total terms, total postings, average postings per term
-
-Interactive controls:
+- Statistics: total terms, total postings, average postings per term</p>
+<p>Interactive controls:
 - Button: "Add Sample Document" (adds pre-defined MicroSim metadata)
 - Text input: "Add Custom Document" with title field
 - Button: "Build Index" (animates index construction)
 - Query input: Search the index
 - Button: "Trace Query" (shows lookup animation)
-- Button: "Reset All"
-
-Sample documents (pre-loaded):
+- Button: "Reset All"</p>
+<p>Sample documents (pre-loaded):
 1. "Pendulum Period Physics Simulation"
 2. "Wave Interference Visualization"
 3. "Simple Harmonic Motion Explorer"
 4. "Physics Wave Propagation Demo"
-5. "Pendulum Wave Art Generator"
-
-Index construction animation:
+5. "Pendulum Wave Art Generator"</p>
+<p>Index construction animation:
 1. Highlight first document
 2. Extract terms, show tokenization
 3. For each term, add to index (or update posting list)
 4. Draw connection line from term to document
-5. Repeat for all documents
-
-Query trace animation:
+5. Repeat for all documents</p>
+<p>Query trace animation:
 1. User enters: "pendulum wave"
 2. Highlight "pendulum" in index → show posting list [Doc1, Doc5]
 3. Highlight "wave" in index → show posting list [Doc2, Doc3, Doc4, Doc5]
 4. Show intersection (AND) or union (OR)
-5. Highlight matching documents
-
-Default state: 3 documents pre-loaded, index built
-
-Color scheme:
+5. Highlight matching documents</p>
+<p>Default state: 3 documents pre-loaded, index built</p>
+<p>Color scheme:
 - Documents: Light blue cards
 - Index terms: White boxes with gray border
 - Posting lists: Green highlights
-- Query matches: Yellow/gold highlights
-
-Animation: Smooth transitions, connection lines draw in, highlights pulse
-
-Implementation: p5.js with animated graph rendering
+- Query matches: Yellow/gold highlights</p>
+<p>Animation: Smooth transitions, connection lines draw in, highlights pulse</p>
+<p>Implementation: p5.js with animated graph rendering</p>
 </details>
-
 <hr />
 <h2 id="search-quality-in-practice">Search Quality in Practice</h2>
 <p>Now that you understand the fundamentals, let's see how they apply to real MicroSim search scenarios.</p>

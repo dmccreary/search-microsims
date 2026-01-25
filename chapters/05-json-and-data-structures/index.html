@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1361,6 +1365,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1425,6 +1450,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2550,58 +2587,47 @@
 <h4 id="diagram-json-syntax-validator">Diagram: JSON Syntax Validator</h4>
 <iframe src="../../sims/json-syntax-validator/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>JSON Syntax Validator Interactive Tool</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: use
-
-Learning Objective: Students will use JSON syntax rules to identify and fix common syntax errors in real-time, building muscle memory for correct JSON formatting.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: use</p>
+<p>Learning Objective: Students will use JSON syntax rules to identify and fix common syntax errors in real-time, building muscle memory for correct JSON formatting.</p>
+<p>Canvas layout:
 - Left panel (55%): JSON text editor with syntax highlighting
-- Right panel (45%): Validation results and error explanations
-
-Visual elements:
+- Right panel (45%): Validation results and error explanations</p>
+<p>Visual elements:
 - Code editor with line numbers
 - Syntax highlighting: strings (green), numbers (blue), booleans (orange), null (gray), keys (purple)
 - Red underlines for syntax errors
 - Green checkmark or red X status indicator
-- Error message panel with line numbers and fix suggestions
-
-Interactive controls:
+- Error message panel with line numbers and fix suggestions</p>
+<p>Interactive controls:
 - Text area for entering/editing JSON
 - "Validate" button
 - "Format/Prettify" button
 - "Load Example" dropdown (valid example, missing quote, trailing comma, single quotes, invalid number)
 - "Clear" button
-- Toggle: "Live validation" (validates as you type)
-
-Example errors to demonstrate:
+- Toggle: "Live validation" (validates as you type)</p>
+<p>Example errors to demonstrate:
 - Missing closing brace
 - Trailing comma
 - Single quotes instead of double
 - Unquoted keys
 - Leading zeros on numbers
-- Missing comma between elements
-
-Validation feedback:
+- Missing comma between elements</p>
+<p>Validation feedback:
 - Success: "✅ Valid JSON! Your document contains X objects and Y arrays"
 - Error: "❌ Line 5, Column 12: Expected double quote, found single quote"
-- Suggestion: "Fix: Replace ' with \" around string values"
-
-Default state: Empty editor with placeholder text showing basic JSON structure
-
-Behavior:
+- Suggestion: "Fix: Replace ' with \" around string values"</p>
+<p>Default state: Empty editor with placeholder text showing basic JSON structure</p>
+<p>Behavior:
 - Live validation mode highlights errors as user types
 - Click on error message to jump to that line
 - Format button properly indents the JSON
-- Successful validation shows celebratory animation
-
-Implementation: p5.js with custom text editor component
+- Successful validation shows celebratory animation</p>
+<p>Implementation: p5.js with custom text editor component</p>
 </details>
-
 <hr />
 <h2 id="json-objects-the-heart-of-metadata">JSON Objects: The Heart of Metadata</h2>
 <p>A <strong>JSON object</strong> is an unordered collection of key-value pairs, wrapped in curly braces <code>{}</code>. Objects are the workhorses of JSON—they represent entities with properties. In metadata terms, a JSON object represents your MicroSim with all its attributes.</p>
@@ -2705,61 +2731,58 @@ Implementation: p5.js with custom text editor component
 <h4 id="diagram-json-object-structure-visualizer">Diagram: JSON Object Structure Visualizer</h4>
 <iframe src="../../sims/json-object-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>JSON Object Structure Visualizer</summary>
-Type: graph-model
-
-Bloom Level: Understand (L2)
-Bloom Verb: interpret
-
-Learning Objective: Students will interpret the hierarchical structure of JSON objects by visualizing nested key-value relationships as an interactive tree.
-
-Purpose: Transform abstract JSON text into a visual tree structure showing parent-child relationships
-
-Node types:
+<p>Type: graph-model</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: interpret</p>
+<p>Learning Objective: Students will interpret the hierarchical structure of JSON objects by visualizing nested key-value relationships as an interactive tree.</p>
+<p>Purpose: Transform abstract JSON text into a visual tree structure showing parent-child relationships</p>
+<p>Node types:
 1. Root node (large blue circle)
    - Represents the top-level object
-   - Label: "root" or object name if provided
-
-2. Object nodes (medium green rectangles)
-   - Represent nested objects
-   - Label: key name
-   - Show number of children
-
-3. Array nodes (medium orange rectangles with rounded corners)
-   - Represent arrays
-   - Label: key name + [length]
-   - Show element count
-
-4. Primitive nodes (small circles)
-   - String: green
-   - Number: blue
-   - Boolean: orange
-   - Null: gray
-   - Label: key name, hover shows value
-
-Edge types:
+   - Label: "root" or object name if provided</p>
+<ol>
+<li>Object nodes (medium green rectangles)</li>
+<li>Represent nested objects</li>
+<li>Label: key name</li>
+<li>
+<p>Show number of children</p>
+</li>
+<li>
+<p>Array nodes (medium orange rectangles with rounded corners)</p>
+</li>
+<li>Represent arrays</li>
+<li>Label: key name + [length]</li>
+<li>
+<p>Show element count</p>
+</li>
+<li>
+<p>Primitive nodes (small circles)</p>
+</li>
+<li>String: green</li>
+<li>Number: blue</li>
+<li>Boolean: orange</li>
+<li>Null: gray</li>
+<li>Label: key name, hover shows value</li>
+</ol>
+<p>Edge types:
 - Solid lines from parent to children
-- Labeled with key names where helpful
-
-Interactive features:
+- Labeled with key names where helpful</p>
+<p>Interactive features:
 - Paste JSON in text area to visualize
 - Click nodes to expand/collapse
 - Hover to see full values (especially long strings)
 - Drag nodes to rearrange layout
 - Zoom with mouse wheel
 - "Show Values" toggle displays values inline
-- "Collapse All" / "Expand All" buttons
-
-Sample data: Pre-loaded with MicroSim metadata example
-
-Layout: Hierarchical tree, left-to-right
+- "Collapse All" / "Expand All" buttons</p>
+<p>Sample data: Pre-loaded with MicroSim metadata example</p>
+<p>Layout: Hierarchical tree, left-to-right
 Color scheme: Consistent with JSON data types
-Animation: Smooth expand/collapse transitions
-
-Implementation: vis-network with custom node rendering
+Animation: Smooth expand/collapse transitions</p>
+<p>Implementation: vis-network with custom node rendering</p>
 </details>
-
 <hr />
 <h2 id="json-arrays-ordered-collections">JSON Arrays: Ordered Collections</h2>
 <p>A <strong>JSON array</strong> is an ordered list of values, wrapped in square brackets <code>[]</code>. Arrays are perfect for representing multiple items of the same type: subjects, keywords, contributors, or learning objectives.</p>
@@ -2890,61 +2913,49 @@ Implementation: vis-network with custom node rendering
 <h4 id="diagram-array-operations-playground">Diagram: Array Operations Playground</h4>
 <iframe src="../../sims/json-array-playground/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Array Operations Playground</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: demonstrate
-
-Learning Objective: Students will demonstrate understanding of JSON array operations by adding, removing, and reordering elements while observing the resulting JSON structure.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: demonstrate</p>
+<p>Learning Objective: Students will demonstrate understanding of JSON array operations by adding, removing, and reordering elements while observing the resulting JSON structure.</p>
+<p>Canvas layout:
 - Left panel (40%): Visual array representation
 - Center panel (30%): Operation controls
-- Right panel (30%): Live JSON output
-
-Visual elements:
+- Right panel (30%): Live JSON output</p>
+<p>Visual elements:
 - Array displayed as connected boxes (like train cars)
 - Each element shows type icon and value
 - Index numbers displayed below each element
 - Bracket indicators at array start/end
-- Highlight animation when elements added/removed
-
-Interactive controls:
+- Highlight animation when elements added/removed</p>
+<p>Interactive controls:
 - "Add Element" button with type selector (string/number/boolean)
 - Text input for new element value
 - "Add at Position" dropdown (beginning, end, or specific index)
 - Click element to select, "Remove Selected" button
 - Drag and drop to reorder elements
 - "Add Nested Array" button
-- "Clear Array" button
-
-Array visualization:
+- "Clear Array" button</p>
+<p>Array visualization:
 - Strings: green boxes
 - Numbers: blue boxes
 - Booleans: orange boxes (shows true/false icon)
-- Nested arrays: boxes containing smaller boxes
-
-Live JSON output:
+- Nested arrays: boxes containing smaller boxes</p>
+<p>Live JSON output:
 - Shows current array as formatted JSON
 - Syntax highlighted
 - Updates in real-time
-- "Copy JSON" button
-
-Sample scenarios:
+- "Copy JSON" button</p>
+<p>Sample scenarios:
 - Build a subject array: ["Physics", "Mechanics", "Forces"]
 - Build a mixed array (demonstrate why it's not ideal)
 - Reorder learning objectives by dragging
-- Nest arrays to show 2D data
-
-Default state: Empty array `[]` ready for elements
-
-Animation: Elements smoothly slide into position, removed elements fade out
-
-Implementation: p5.js with drag-and-drop support
+- Nest arrays to show 2D data</p>
+<p>Default state: Empty array <code>[]</code> ready for elements</p>
+<p>Animation: Elements smoothly slide into position, removed elements fade out</p>
+<p>Implementation: p5.js with drag-and-drop support</p>
 </details>
-
 <hr />
 <h2 id="json-schema-defining-structure-requirements">JSON Schema: Defining Structure Requirements</h2>
 <p>So far, we've written JSON freely—any valid syntax works. But for MicroSim metadata, we need consistency. If one person uses <code>"subject"</code> and another uses <code>"topics"</code>, search breaks. This is where <strong>JSON Schema</strong> becomes essential.</p>
@@ -3149,64 +3160,58 @@ Implementation: p5.js with drag-and-drop support
 <h4 id="diagram-schema-structure-map">Diagram: Schema Structure Map</h4>
 <iframe src="../../sims/microsim-schema-map/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>MicroSim Schema Structure Map</summary>
-Type: graph-model
-
-Bloom Level: Analyze (L4)
-Bloom Verb: examine
-
-Learning Objective: Students will examine the relationships between schema sections by exploring an interactive visualization of the complete MicroSim metadata schema structure.
-
-Purpose: Visualize the full MicroSim schema showing all eight sections and their key fields
-
-Node types:
+<p>Type: graph-model</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine</p>
+<p>Learning Objective: Students will examine the relationships between schema sections by exploring an interactive visualization of the complete MicroSim metadata schema structure.</p>
+<p>Purpose: Visualize the full MicroSim schema showing all eight sections and their key fields</p>
+<p>Node types:
 1. Root node (large gold circle)
    - Label: "MicroSim Metadata"
-   - Central position
-
-2. Section nodes (large colored rectangles)
-   - dublinCore: blue
-   - search: green
-   - educational: orange
-   - technical: purple
-   - userInterface: teal
-   - simulation: pink
-   - analytics: brown
-   - usage: gray
-   - Shows required badge if section is required
-
-3. Field nodes (small circles)
-   - Required fields: solid fill
-   - Optional fields: outline only
-   - Color matches parent section
-   - Label: field name
-
-Edge types:
+   - Central position</p>
+<ol>
+<li>Section nodes (large colored rectangles)</li>
+<li>dublinCore: blue</li>
+<li>search: green</li>
+<li>educational: orange</li>
+<li>technical: purple</li>
+<li>userInterface: teal</li>
+<li>simulation: pink</li>
+<li>analytics: brown</li>
+<li>usage: gray</li>
+<li>
+<p>Shows required badge if section is required</p>
+</li>
+<li>
+<p>Field nodes (small circles)</p>
+</li>
+<li>Required fields: solid fill</li>
+<li>Optional fields: outline only</li>
+<li>Color matches parent section</li>
+<li>Label: field name</li>
+</ol>
+<p>Edge types:
 - Section to root: thick lines
 - Field to section: thin lines
-- Field dependencies: dashed lines (e.g., subject references subjectArea)
-
-Interactive features:
+- Field dependencies: dashed lines (e.g., subject references subjectArea)</p>
+<p>Interactive features:
 - Click section to expand/collapse fields
 - Hover field to see type, description, constraints
 - Filter: "Show required only" checkbox
 - Filter: "Show section" dropdown
 - Search box to find specific fields
 - "Expand All" / "Collapse All" buttons
-- Legend showing color coding and symbols
-
-Sample field details on hover:
+- Legend showing color coding and symbols</p>
+<p>Sample field details on hover:
 - "title" → Type: string, Required: yes, Min length: 3, Max length: 100
 - "gradeLevel" → Type: string, Enum: ["K-12", "Undergraduate", "Graduate", "Adult"]
-- "subject" → Type: array of strings, Min items: 1
-
-Layout: Radial with root in center, sections around it
-Animation: Smooth expand/collapse, fields radiate outward
-
-Implementation: vis-network with custom layout
+- "subject" → Type: array of strings, Min items: 1</p>
+<p>Layout: Radial with root in center, sections around it
+Animation: Smooth expand/collapse, fields radiate outward</p>
+<p>Implementation: vis-network with custom layout</p>
 </details>
-
 <hr />
 <h2 id="schema-validation-checking-your-work">Schema Validation: Checking Your Work</h2>
 <p><strong>Schema validation</strong> is the process of checking whether a JSON document conforms to a schema. Valid documents match all schema requirements; invalid documents have errors that must be fixed.</p>
@@ -3309,66 +3314,54 @@ python3<span class="w"> </span>src/microsim-schema/validate-metadata.py<span cla
 <h4 id="diagram-validation-feedback-simulator">Diagram: Validation Feedback Simulator</h4>
 <iframe src="../../sims/validation-simulator/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Schema Validation Feedback Simulator</summary>
-Type: microsim
-
-Bloom Level: Analyze (L4)
-Bloom Verb: distinguish
-
-Learning Objective: Students will distinguish between valid and invalid JSON metadata by analyzing validation feedback and correcting errors to produce schema-compliant documents.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: distinguish</p>
+<p>Learning Objective: Students will distinguish between valid and invalid JSON metadata by analyzing validation feedback and correcting errors to produce schema-compliant documents.</p>
+<p>Canvas layout:
 - Left panel (50%): JSON editor with line numbers
-- Right panel (50%): Validation results panel
-
-Visual elements:
+- Right panel (50%): Validation results panel</p>
+<p>Visual elements:
 - Code editor with syntax highlighting
 - Error markers in line gutter (red circles with X)
 - Warning markers (yellow triangles)
 - Valid indicator (green checkmark)
 - Error list with clickable entries
-- Progress bar showing "X of Y issues fixed"
-
-Interactive controls:
+- Progress bar showing "X of Y issues fixed"</p>
+<p>Interactive controls:
 - Dropdown: "Load Example" (valid, missing required, wrong type, invalid enum, array error)
 - Button: "Validate"
 - Button: "Auto-fix" (fixes simple errors like wrong quotes)
 - Checkbox: "Show hints" (displays fix suggestions)
-- Button: "Reset to Original"
-
-Validation feedback display:
+- Button: "Reset to Original"</p>
+<p>Validation feedback display:
 - List of errors with:
   - Severity icon (error/warning)
   - Error message
   - Location (path like /dublinCore/title)
   - Current value (if applicable)
   - Expected value/type
-  - "Show Fix" button that highlights correction
-
-Example scenarios:
+  - "Show Fix" button that highlights correction</p>
+<p>Example scenarios:
 1. Missing required "description" field
 2. "gradeLevel" is number instead of string
 3. "difficulty" is "Easy" instead of "Beginner"
 4. Empty subject array
-5. Misspelled key "tittle" instead of "title"
-
-Success state:
+5. Misspelled key "tittle" instead of "title"</p>
+<p>Success state:
 - All green checkmarks
 - Confetti animation
-- Message: "🎉 Valid metadata! Ready for submission"
-
-Default state: Loaded with example containing 3 errors
-
-Behavior:
+- Message: "🎉 Valid metadata! Ready for submission"</p>
+<p>Default state: Loaded with example containing 3 errors</p>
+<p>Behavior:
 - Click error to jump to line in editor
 - Live re-validation as user edits
 - Errors disappear as fixed
-- Progress bar updates
-
-Implementation: p5.js with validation logic matching MicroSim schema
+- Progress bar updates</p>
+<p>Implementation: p5.js with validation logic matching MicroSim schema</p>
 </details>
-
 <hr />
 <h2 id="required-vs-optional-fields">Required vs. Optional Fields</h2>
 <p>Not all metadata fields carry equal weight. <strong>Required fields</strong> must be present for a document to be valid; <strong>optional fields</strong> enhance quality but aren't mandatory. Understanding this distinction helps you prioritize effort and enables flexible schema design.</p>
@@ -3610,56 +3603,45 @@ Implementation: p5.js with validation logic matching MicroSim schema
 <h4 id="diagram-completeness-score-calculator">Diagram: Completeness Score Calculator</h4>
 <iframe src="../../sims/completeness-calculator/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Metadata Completeness Score Calculator</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: calculate
-
-Learning Objective: Students will calculate completeness scores for MicroSim metadata by filling in fields and observing how the score changes based on field weights and population.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: calculate</p>
+<p>Learning Objective: Students will calculate completeness scores for MicroSim metadata by filling in fields and observing how the score changes based on field weights and population.</p>
+<p>Canvas layout:
 - Left panel (45%): Field checklist grouped by section
 - Center panel (25%): Score gauges and breakdown
-- Right panel (30%): Recommendations and tips
-
-Visual elements:
+- Right panel (30%): Recommendations and tips</p>
+<p>Visual elements:
 - Checklist with sections (dublinCore, educational, technical, etc.)
 - Checkbox for each field, color-coded by weight (red=required, yellow=recommended, gray=optional)
 - Circular gauge showing overall score (0-100%)
 - Bar chart showing score by section
-- Star rating (1-5) based on score thresholds
-
-Interactive controls:
+- Star rating (1-5) based on score thresholds</p>
+<p>Interactive controls:
 - Click checkboxes to mark fields as filled
 - "Load Sample" buttons: "Minimal", "Good", "Excellent"
 - Toggle: "Show weighted" vs "Show unweighted" score
 - "Calculate" button (for dramatic reveal)
-- "Reset All" button
-
-Score display:
+- "Reset All" button</p>
+<p>Score display:
 - Large percentage in center gauge
-- Color coding: red (<50%), yellow (50-69%), green (70-89%), gold (90%+)
+- Color coding: red (&lt;50%), yellow (50-69%), green (70-89%), gold (90%+)
 - Breakdown panel showing required/recommended/optional percentages
-- Formula display showing calculation
-
-Recommendations panel:
+- Formula display showing calculation</p>
+<p>Recommendations panel:
 - "Add these fields to reach 70%:" with list
 - "High-impact fields you're missing:" prioritized list
-- Tips for improving score efficiently
-
-Default state: Minimal fields checked (required only)
-
-Behavior:
+- Tips for improving score efficiently</p>
+<p>Default state: Minimal fields checked (required only)</p>
+<p>Behavior:
 - Score updates in real-time as checkboxes change
 - Gauge animates smoothly
 - Recommendations update dynamically
-- Celebration animation at 90%+
-
-Implementation: p5.js with gauge rendering
+- Celebration animation at 90%+</p>
+<p>Implementation: p5.js with gauge rendering</p>
 </details>
-
 <hr />
 <h2 id="quality-score">Quality Score</h2>
 <p>While completeness measures quantity, the <strong>quality score</strong> measures usefulness—how well the metadata serves its purpose. Quality considers not just presence but value.</p>
@@ -3815,65 +3797,53 @@ Total possible: 100 points
 <h4 id="diagram-quality-score-dashboard">Diagram: Quality Score Dashboard</h4>
 <iframe src="../../sims/quality-dashboard/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Metadata Quality Score Dashboard</summary>
-Type: microsim
-
-Bloom Level: Evaluate (L5)
-Bloom Verb: assess
-
-Learning Objective: Students will assess metadata quality by analyzing multiple quality factors and identifying specific improvements to increase the overall quality score.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: assess</p>
+<p>Learning Objective: Students will assess metadata quality by analyzing multiple quality factors and identifying specific improvements to increase the overall quality score.</p>
+<p>Canvas layout:
 - Top panel (25%): Overall score and rating
 - Middle panel (50%): Factor breakdown with sliders
-- Bottom panel (25%): Improvement suggestions
-
-Visual elements:
+- Bottom panel (25%): Improvement suggestions</p>
+<p>Visual elements:
 - Large circular gauge for overall quality score
 - Five smaller gauges for each factor (title, description, subjects, freshness, rights)
 - Color-coded bars showing contribution of each factor
 - Star rating (1-5 stars) with label
-- Quality vs Completeness quadrant chart showing current position
-
-Interactive controls:
+- Quality vs Completeness quadrant chart showing current position</p>
+<p>Interactive controls:
 - Paste JSON textarea to analyze existing metadata
 - "Load Example" dropdown (exemplary, good, poor)
 - Individual factor sliders to simulate improvements
 - "What if I improve...?" mode to test changes
 - "Generate Report" button for detailed analysis
-- "Show Details" toggles for each factor
-
-Factor analysis display:
+- "Show Details" toggles for each factor</p>
+<p>Factor analysis display:
 For each factor show:
 - Current score / max possible
 - Specific feedback (e.g., "Title is only 2 words—aim for 4-7")
 - Improvement action (e.g., "Add 'Interactive' and topic keywords")
-- Potential points gained
-
-Quadrant chart:
+- Potential points gained</p>
+<p>Quadrant chart:
 - X-axis: Completeness (0-100%)
 - Y-axis: Quality (0-100%)
 - Current position marked with dot
-- Quadrant labels: "Needs Work", "Quantity>Quality", "Hidden Gem", "Excellent"
-- Trail showing improvement path
-
-Recommendations panel:
+- Quadrant labels: "Needs Work", "Quantity&gt;Quality", "Hidden Gem", "Excellent"
+- Trail showing improvement path</p>
+<p>Recommendations panel:
 - Ordered list of highest-impact improvements
 - Estimated new score if implemented
-- Quick-fix buttons for common issues
-
-Default state: Example with score ~65 (Good rating)
-
-Behavior:
+- Quick-fix buttons for common issues</p>
+<p>Default state: Example with score ~65 (Good rating)</p>
+<p>Behavior:
 - Live analysis as user edits JSON
 - Gauges animate when scores change
 - Recommendations update dynamically
-- Celebratory animation when reaching 80+
-
-Implementation: p5.js with chart components
+- Celebratory animation when reaching 80+</p>
+<p>Implementation: p5.js with chart components</p>
 </details>
-
 <hr />
 <h2 id="putting-it-all-together-the-quality-metadata-workflow">Putting It All Together: The Quality Metadata Workflow</h2>
 <p>Now you understand JSON syntax, objects, arrays, schemas, validation, and quality metrics. Here's the workflow for creating high-quality MicroSim metadata:</p>

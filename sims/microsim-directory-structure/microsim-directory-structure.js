@@ -21,7 +21,12 @@ const fileInfo = {
     'main-html': {
         name: 'main.html',
         type: 'required',
-        description: 'The actual simulation file. Contains HTML structure, JavaScript code, and links to CSS/libraries. This is the file embedded in iframes.'
+        description: 'The simulation entry point. Contains HTML structure, canvas container, control elements, and links to CSS/libraries. Loads p5.js or other frameworks from CDN. JavaScript can be inline or in a separate script.js file. This is the file embedded in iframes.'
+    },
+    'script-js': {
+        name: 'script.js',
+        type: 'optional',
+        description: 'Optional separate JavaScript file for simulation logic. Keeps code organized when simulations grow complex. Referenced from main.html via <script src="script.js">. Can also be named sketch.js for p5.js projects.'
     },
     'style-css': {
         name: 'style.css',
@@ -67,49 +72,56 @@ const nodeData = [
     {
         id: 'sims',
         label: '\uD83D\uDCC1 sims/',
-        x: -200,
+        x: 0,
         y: -150,
         ...colors.folder
     },
     {
         id: 'microsim-folder',
         label: '\uD83D\uDCC2 pendulum-physics/',
-        x: -200,
+        x: 0,
         y: -50,
         ...colors.folder
     },
     {
         id: 'index-md',
         label: '\uD83D\uDCC4 index.md',
-        x: -350,
+        x: -210,
         y: 50,
         ...colors.required
     },
     {
         id: 'main-html',
         label: '\u2329/\u232A main.html',
-        x: -200,
+        x: -70,
         y: 50,
         ...colors.required
     },
     {
         id: 'style-css',
         label: '\uD83C\uDFA8 style.css',
-        x: -50,
+        x: 70,
+        y: 50,
+        ...colors.optional
+    },
+    {
+        id: 'script-js',
+        label: '\uD83D\uDCDC script.js',
+        x: 210,
         y: 50,
         ...colors.optional
     },
     {
         id: 'data-json',
         label: '{ } data.json',
-        x: -280,
+        x: -70,
         y: 140,
         ...colors.optional
     },
     {
         id: 'metadata-json',
         label: '\uD83C\uDFF7\uFE0F metadata.json',
-        x: -120,
+        x: 100,
         y: 140,
         ...colors.optional
     }
@@ -121,6 +133,7 @@ const edgeData = [
     { from: 'microsim-folder', to: 'index-md' },
     { from: 'microsim-folder', to: 'main-html' },
     { from: 'microsim-folder', to: 'style-css' },
+    { from: 'microsim-folder', to: 'script-js' },
     { from: 'microsim-folder', to: 'data-json' },
     { from: 'microsim-folder', to: 'metadata-json' }
 ];
@@ -210,14 +223,16 @@ function initializeNetwork() {
         hideNodeInfo();
     });
 
-    // Position the view
-    setTimeout(() => {
+    // Wait for network to render, then pan to make room for info panel on right
+    network.once('afterDrawing', function() {
+        // Get current view position
+        const currentPosition = network.getViewPosition();
+        // Move camera right so diagram appears on left side
         network.moveTo({
-            position: { x: -180, y: 0 },
-            scale: 1.1,
+            position: { x: currentPosition.x + 80, y: currentPosition.y + 20 },
             animation: false
         });
-    }, 100);
+    });
 }
 
 function showNodeInfo(nodeId) {

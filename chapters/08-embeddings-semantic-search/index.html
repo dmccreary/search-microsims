@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1412,6 +1416,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1476,6 +1501,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2632,20 +2669,16 @@ The famous example! Embedding arithmetic can capture analogies.</p>
 <h4 id="diagram-vector-space-visualization">Diagram: Vector Space Visualization</h4>
 <iframe src="../../sims/vector-space-viz/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Vector Space Visualization for Embeddings</summary>
-Type: microsim
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain how embeddings position similar items near each other in vector space by manipulating a 2D projection and observing clustering patterns.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain how embeddings position similar items near each other in vector space by manipulating a 2D projection and observing clustering patterns.</p>
+<p>Canvas layout:
 - Main panel (75%): Interactive 2D scatter plot
-- Side panel (25%): Controls and information display
-
-Visual elements:
+- Side panel (25%): Controls and information display</p>
+<p>Visual elements:
 - Scatter plot with:
   - Points representing MicroSims (colored by subject area)
   - Point labels on hover
@@ -2655,44 +2688,37 @@ Visual elements:
 - Information panel showing:
   - Selected point details
   - Distance to other points
-  - Nearest neighbors list
-
-Sample data (15 points representing MicroSims):
+  - Nearest neighbors list</p>
+<p>Sample data (15 points representing MicroSims):
 - Physics cluster: Pendulum, Wave, Projectile, Circuit, Magnet
 - Chemistry cluster: Molecule, Reaction, pH Scale, Gas Laws
 - Math cluster: Graphing, Geometry, Statistics, Algebra
-- Biology: Ecosystem, Cell
-
-Interactive controls:
+- Biology: Ecosystem, Cell</p>
+<p>Interactive controls:
 - Click point to select and see neighbors
 - Drag to pan the view
 - Scroll to zoom
 - Toggle: "Show cluster boundaries"
 - Toggle: "Show distance lines"
 - Slider: "Number of neighbors to highlight" (1-5)
-- Dropdown: "Color by" (Subject, Grade Level, Framework)
-
-Behavior:
+- Dropdown: "Color by" (Subject, Grade Level, Framework)</p>
+<p>Behavior:
 - Selecting a point highlights its K nearest neighbors
 - Distance lines drawn from selected point to neighbors
 - Information panel updates with similarity scores
-- Hovering shows point labels and metadata
-
-Animation:
+- Hovering shows point labels and metadata</p>
+<p>Animation:
 - Points gently float/breathe to feel alive
 - Smooth transitions when selecting points
-- Lines draw in with animation
-
-Color scheme:
+- Lines draw in with animation</p>
+<p>Color scheme:
 - Physics: Blue shades
 - Chemistry: Green shades
 - Math: Purple shades
 - Biology: Orange shades
-- Selection highlight: Gold
-
-Implementation: p5.js with 2D scatter plot and interactive selection
+- Selection highlight: Gold</p>
+<p>Implementation: p5.js with 2D scatter plot and interactive selection</p>
 </details>
-
 <hr />
 <h2 id="how-embeddings-are-created">How Embeddings Are Created</h2>
 <p>You don't create embeddings by hand—AI models do it. But understanding the process helps you appreciate what they capture.</p>
@@ -2828,20 +2854,16 @@ $$\frac{0.9037}{0.9365 \times 0.9437} = \frac{0.9037}{0.8839} = 0.9997$$</p>
 <h4 id="diagram-cosine-similarity-calculator">Diagram: Cosine Similarity Calculator</h4>
 <iframe src="../../sims/cosine-similarity-calc/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Interactive Cosine Similarity Calculator</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: calculate
-
-Learning Objective: Students will calculate cosine similarity between vector pairs by manipulating vector components and observing how the angle between vectors changes.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: calculate</p>
+<p>Learning Objective: Students will calculate cosine similarity between vector pairs by manipulating vector components and observing how the angle between vectors changes.</p>
+<p>Canvas layout:
 - Left panel (50%): Vector visualization
-- Right panel (50%): Calculation steps and controls
-
-Visual elements:
+- Right panel (50%): Calculation steps and controls</p>
+<p>Visual elements:
 - 2D coordinate plane with:
   - Two vectors drawn as arrows from origin
   - Angle arc between vectors with degree label
@@ -2852,9 +2874,8 @@ Visual elements:
   - Dot product calculation
   - Magnitude calculations
   - Final cosine similarity result
-- Similarity meter (color-coded bar from red to green)
-
-Interactive controls:
+- Similarity meter (color-coded bar from red to green)</p>
+<p>Interactive controls:
 - Vector A:
   - Slider for x component (-1 to 1)
   - Slider for y component (-1 to 1)
@@ -2868,30 +2889,25 @@ Interactive controls:
   - "Identical vectors" (similarity = 1)
   - "Perpendicular" (similarity = 0)
   - "Opposite" (similarity = -1)
-  - "Similar but different"
-
-Default parameters:
+  - "Similar but different"</p>
+<p>Default parameters:
 - Vector A: [0.8, 0.6]
 - Vector B: [0.7, 0.7]
-- Show calculation steps: On
-
-Behavior:
+- Show calculation steps: On</p>
+<p>Behavior:
 - Moving any slider updates visualization immediately
 - Angle arc animates smoothly
 - Calculation steps update in real-time
 - Similarity meter changes color:
-  - Green: > 0.7
+  - Green: &gt; 0.7
   - Yellow: 0.3 - 0.7
-  - Red: < 0.3
-
-Animation:
+  - Red: &lt; 0.3</p>
+<p>Animation:
 - Smooth vector transitions when sliders moved
 - Angle arc sweeps to new position
-- Numbers roll to new values
-
-Implementation: p5.js with vector math and interactive controls
+- Numbers roll to new values</p>
+<p>Implementation: p5.js with vector math and interactive controls</p>
 </details>
-
 <hr />
 <h2 id="finding-similar-microsims">Finding Similar MicroSims</h2>
 <p>With embeddings and cosine similarity, we can now build a "Similar MicroSims" feature—one of the most useful tools for educators browsing our collection.</p>
@@ -3041,21 +3057,17 @@ Implementation: p5.js with vector math and interactive controls
 <h4 id="diagram-similarity-score-interface-demo">Diagram: Similarity Score Interface Demo</h4>
 <iframe src="../../sims/similarity-score-demo/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Similarity Score Interface Demonstration</summary>
-Type: microsim
-
-Bloom Level: Evaluate (L5)
-Bloom Verb: judge
-
-Learning Objective: Students will judge the usefulness of different similarity score displays by comparing presentation formats and identifying which provides the best user experience.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: judge</p>
+<p>Learning Objective: Students will judge the usefulness of different similarity score displays by comparing presentation formats and identifying which provides the best user experience.</p>
+<p>Canvas layout:
 - Top panel (20%): Source MicroSim card
 - Middle panel (60%): Multiple display format comparisons
-- Bottom panel (20%): User preference selection
-
-Visual elements:
+- Bottom panel (20%): User preference selection</p>
+<p>Visual elements:
 - Source card showing:
   - MicroSim title, subject, brief description
   - "Find Similar" button
@@ -3064,34 +3076,28 @@ Visual elements:
   - Column 2: Categories (Very Similar, Related, Somewhat Related)
   - Column 3: Color bars (colored progress bars)
   - Column 4: Combined (color badge + percentage + category)
-- Comparison table highlighting pros/cons
-
-Similar items (same in all columns):
+- Comparison table highlighting pros/cons</p>
+<p>Similar items (same in all columns):
 1. "Wave Interference" - 0.92 similarity
 2. "Oscillation Explorer" - 0.87 similarity
 3. "Sound Propagation" - 0.81 similarity
 4. "Frequency Analyzer" - 0.76 similarity
-5. "Resonance Demo" - 0.71 similarity
-
-Interactive controls:
+5. "Resonance Demo" - 0.71 similarity</p>
+<p>Interactive controls:
 - Radio buttons: "Which display do you prefer?"
 - Toggle: "Show explanation" (why each format works)
 - Button: "Try different source MicroSim" (cycles through examples)
-- Slider: "Threshold cutoff" (shows/hides items below threshold)
-
-Behavior:
+- Slider: "Threshold cutoff" (shows/hides items below threshold)</p>
+<p>Behavior:
 - Clicking any similar item would show its details (simulated)
 - Preference selection highlights that column
-- Threshold slider animates items in/out
-
-Visual styling:
+- Threshold slider animates items in/out</p>
+<p>Visual styling:
 - Clean, modern card-based layout
 - Consistent spacing across columns
-- Clear labels for each display type
-
-Implementation: p5.js with multi-column comparison layout
+- Clear labels for each display type</p>
+<p>Implementation: p5.js with multi-column comparison layout</p>
 </details>
-
 <hr />
 <h2 id="nearest-neighbors-finding-the-closest-items">Nearest Neighbors: Finding the Closest Items</h2>
 <p>The <strong>nearest neighbors</strong> algorithm is how we find similar MicroSims efficiently. Given one item's embedding, find the K items whose embeddings are closest.</p>
@@ -3156,20 +3162,16 @@ Implementation: p5.js with multi-column comparison layout
 <h4 id="diagram-knn-visualization">Diagram: KNN Visualization</h4>
 <iframe src="../../sims/knn-visualizer/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>K-Nearest Neighbors Visualization</summary>
-Type: microsim
-
-Bloom Level: Analyze (L4)
-Bloom Verb: differentiate
-
-Learning Objective: Students will differentiate between query results with different K values by selecting items in a 2D embedding space and observing how the number of returned neighbors affects results.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: differentiate</p>
+<p>Learning Objective: Students will differentiate between query results with different K values by selecting items in a 2D embedding space and observing how the number of returned neighbors affects results.</p>
+<p>Canvas layout:
 - Main panel (70%): 2D scatter plot with MicroSim points
-- Side panel (30%): Controls and results list
-
-Visual elements:
+- Side panel (30%): Controls and results list</p>
+<p>Visual elements:
 - Scatter plot with:
   - 25-30 points representing MicroSims
   - Color-coded by subject area
@@ -3182,41 +3184,34 @@ Visual elements:
   - Distance indicators
 - Statistics display:
   - Average similarity of top K
-  - Similarity range (highest to lowest)
-
-Interactive controls:
+  - Similarity range (highest to lowest)</p>
+<p>Interactive controls:
 - Click any point to select as query
 - Slider: K value (1-15)
 - Toggle: "Show distance circles"
 - Toggle: "Show connection lines"
 - Dropdown: "Sort neighbors by" (Similarity, Subject, Title)
 - Button: "Random query" (selects random point)
-- Button: "Reset view"
-
-Behavior:
+- Button: "Reset view"</p>
+<p>Behavior:
 - Clicking point selects it as query, highlights neighbors
 - Changing K slider immediately updates visualization
 - Distance circles help visualize the "neighborhood" boundary
 - Connection lines drawn from query to each neighbor
-- Lines colored by similarity (darker = more similar)
-
-Animation:
+- Lines colored by similarity (darker = more similar)</p>
+<p>Animation:
 - Smooth transitions when K changes
 - Lines draw in sequentially from most to least similar
-- Points pulse when selected
-
-Sample data:
+- Points pulse when selected</p>
+<p>Sample data:
 - Physics: Pendulum, Wave, Projectile, Circuit, Optics (blue)
 - Chemistry: Molecule, Reaction, Gas Laws, Equilibrium (green)
 - Math: Graphing, Geometry, Probability, Calculus (purple)
 - Biology: Cell, Ecosystem, Genetics, Evolution (orange)
-- Multiple items per subject to show intra-cluster neighbors
-
-Default state: K=5, one physics point selected
-
-Implementation: p5.js with interactive scatter plot and KNN algorithm
+- Multiple items per subject to show intra-cluster neighbors</p>
+<p>Default state: K=5, one physics point selected</p>
+<p>Implementation: p5.js with interactive scatter plot and KNN algorithm</p>
 </details>
-
 <hr />
 <h2 id="dimensionality-reduction-making-embeddings-visible">Dimensionality Reduction: Making Embeddings Visible</h2>
 <p>Here's a problem: embeddings live in 384 dimensions, but humans can only visualize 2 or 3. <strong>Dimensionality reduction</strong> compresses high-dimensional data into something we can see while preserving important relationships.</p>
@@ -3396,21 +3391,17 @@ Implementation: p5.js with interactive scatter plot and KNN algorithm
 <h4 id="diagram-pca-vs-t-sne-comparison">Diagram: PCA vs t-SNE Comparison</h4>
 <iframe src="../../sims/pca-tsne-compare/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>PCA vs t-SNE Comparison Visualizer</summary>
-Type: microsim
-
-Bloom Level: Analyze (L4)
-Bloom Verb: compare
-
-Learning Objective: Students will compare PCA and t-SNE dimensionality reduction techniques by viewing the same MicroSim embeddings reduced with both methods and identifying differences in cluster separation and structure.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: compare</p>
+<p>Learning Objective: Students will compare PCA and t-SNE dimensionality reduction techniques by viewing the same MicroSim embeddings reduced with both methods and identifying differences in cluster separation and structure.</p>
+<p>Canvas layout:
 - Left panel (48%): PCA visualization
 - Right panel (48%): t-SNE visualization
-- Bottom panel (4%): Shared controls
-
-Visual elements:
+- Bottom panel (4%): Shared controls</p>
+<p>Visual elements:
 - Two parallel scatter plots:
   - Same points (MicroSims) in both
   - Same color coding (by subject)
@@ -3422,41 +3413,34 @@ Visual elements:
 - Comparison metrics:
   - Cluster separation score for each
   - Neighbor preservation score
-- Selected point highlighted in both views
-
-Sample data:
+- Selected point highlighted in both views</p>
+<p>Sample data:
 - 30-40 MicroSims across 5 subject areas
 - Clear subject-based clustering expected
-- Some cross-subject similarities
-
-Interactive controls:
+- Some cross-subject similarities</p>
+<p>Interactive controls:
 - Click any point to select (highlights in both views)
 - Slider: t-SNE perplexity (10-100)
 - Button: "Re-run t-SNE" (generates new random layout)
 - Toggle: "Show cluster boundaries"
 - Toggle: "Link hover" (hover one, highlight same point in other)
-- Dropdown: "Color by" (Subject, Framework, Grade Level)
-
-Behavior:
+- Dropdown: "Color by" (Subject, Framework, Grade Level)</p>
+<p>Behavior:
 - Selecting point in either plot highlights same point in both
 - Changing perplexity re-computes t-SNE (with loading indicator)
 - Same points appear in different positions between plots
 - Clusters more separated in t-SNE view
-- Points more spread in PCA view
-
-Comparison callouts:
+- Points more spread in PCA view</p>
+<p>Comparison callouts:
 - Annotation on PCA: "Global structure preserved"
 - Annotation on t-SNE: "Local clusters clearer"
-- When clusters overlap in PCA but separate in t-SNE, highlight this
-
-Animation:
+- When clusters overlap in PCA but separate in t-SNE, highlight this</p>
+<p>Animation:
 - Smooth transition when parameters change
 - Points animate to new positions
-- Cluster boundaries fade in/out
-
-Implementation: p5.js with pre-computed PCA and t-SNE projections
+- Cluster boundaries fade in/out</p>
+<p>Implementation: p5.js with pre-computed PCA and t-SNE projections</p>
 </details>
-
 <hr />
 <h2 id="visualization-maps-exploring-the-microsim-universe">Visualization Maps: Exploring the MicroSim Universe</h2>
 <p>Dimensionality reduction enables <strong>visualization maps</strong>—interactive explorations of your entire collection organized by semantic similarity.</p>
@@ -3513,20 +3497,16 @@ Implementation: p5.js with pre-computed PCA and t-SNE projections
 <h4 id="diagram-microsim-embedding-map-explorer">Diagram: MicroSim Embedding Map Explorer</h4>
 <iframe src="../../sims/embedding-map-explorer/main.html" width="100%" height="600px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>MicroSim Embedding Space Explorer</summary>
-Type: microsim
-
-Bloom Level: Evaluate (L5)
-Bloom Verb: assess
-
-Learning Objective: Students will assess the organization of MicroSim collections by exploring an embedding visualization map, identifying clusters, outliers, and semantic relationships between simulations.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: assess</p>
+<p>Learning Objective: Students will assess the organization of MicroSim collections by exploring an embedding visualization map, identifying clusters, outliers, and semantic relationships between simulations.</p>
+<p>Canvas layout:
 - Main panel (80%): Zoomable, pannable 2D map
-- Side panel (20%): Filters and information display
-
-Visual elements:
+- Side panel (20%): Filters and information display</p>
+<p>Visual elements:
 - 2D scatter plot map with:
   - 50+ points representing MicroSims
   - Color coded by subject area
@@ -3540,17 +3520,15 @@ Visual elements:
   - Thumbnail preview (placeholder)
 - Minimap for navigation (small overview)
 - Filter panel with checkboxes for subjects
-- Search box for finding specific items
-
-Sample data:
-- Physics cluster (blue): Mechanics, Waves, E&M subclusters
+- Search box for finding specific items</p>
+<p>Sample data:
+- Physics cluster (blue): Mechanics, Waves, E&amp;M subclusters
 - Chemistry cluster (green): Molecular, Reactions subclusters
 - Math cluster (purple): Algebra, Geometry, Statistics subclusters
 - Biology cluster (orange): Cells, Ecosystems subclusters
 - CS cluster (teal): Algorithms, Data Structures subclusters
-- Some cross-disciplinary items between clusters
-
-Interactive controls:
+- Some cross-disciplinary items between clusters</p>
+<p>Interactive controls:
 - Scroll: Zoom in/out
 - Click and drag: Pan the view
 - Click point: Show detail panel
@@ -3559,38 +3537,32 @@ Interactive controls:
 - Slider: "Point size" (for dense areas)
 - Button: "Reset view"
 - Toggle: "Show labels" (point labels on/off)
-- Dropdown: "Layout" (t-SNE / PCA / UMAP)
-
-Behavior:
+- Dropdown: "Layout" (t-SNE / PCA / UMAP)</p>
+<p>Behavior:
 - Hover shows tooltip with MicroSim info
 - Click opens detail panel with full information
 - Search highlights matching points with glow
 - Unchecking subject fades those points
 - Zoom enables examining dense cluster regions
-- Minimap shows viewport position
-
-Special features:
+- Minimap shows viewport position</p>
+<p>Special features:
 - "Find similar" from detail panel draws lines to neighbors
 - Double-click zooms to cluster
-- Keyboard navigation (arrow keys to move selection)
-
-Animation:
+- Keyboard navigation (arrow keys to move selection)</p>
+<p>Animation:
 - Smooth zoom and pan
 - Points fade in/out when filtered
 - Connections draw in for "find similar"
-- Gentle floating animation for ambient feel
-
-Color scheme:
+- Gentle floating animation for ambient feel</p>
+<p>Color scheme:
 - Physics: Blues (#3498db, #2980b9)
 - Chemistry: Greens (#27ae60, #229954)
 - Math: Purples (#9b59b6, #8e44ad)
 - Biology: Oranges (#e67e22, #d35400)
 - CS: Teals (#1abc9c, #16a085)
-- Selected: Gold (#f1c40f)
-
-Implementation: p5.js with zoom/pan and rich interactivity
+- Selected: Gold (#f1c40f)</p>
+<p>Implementation: p5.js with zoom/pan and rich interactivity</p>
 </details>
-
 <hr />
 <h2 id="semantic-search-in-practice">Semantic Search in Practice</h2>
 <p>Let's see how embeddings power semantic search in real MicroSim discovery scenarios.</p>

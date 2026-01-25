@@ -1,0 +1,52 @@
+{
+  "title": "Keywords to Search Results Flow",
+  "description": "Interactive visualization showing how user search queries flow through keyword matching, scoring, and ranking to produce ordered MicroSim results.",
+  "subject": [
+    "Information Retrieval",
+    "Search Systems",
+    "Metadata",
+    "Educational Technology"
+  ],
+  "creator": "Dan McCreary",
+  "date": "2025-01-25",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "educational": {
+    "subjectArea": ["Computer Science", "Information Science"],
+    "gradeLevel": ["High School", "Undergraduate"],
+    "bloomsTaxonomy": ["Understand"],
+    "difficulty": "Intermediate",
+    "topic": "Search and Information Retrieval",
+    "learningObjectives": [
+      "Explain how keywords in metadata connect user search queries to relevant results",
+      "Describe the role of tokenization, normalization, and synonym expansion in search",
+      "Understand how match scoring factors into result ranking"
+    ],
+    "prerequisites": ["Basic understanding of databases", "Familiarity with web search"],
+    "estimatedTime": "10-15 minutes"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "libraryVersion": "1.11.10",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"],
+    "mobileSupport": true,
+    "responsive": true
+  },
+  "search": {
+    "visualizationType": ["diagram", "workflow", "interactive-demo", "worked-example"],
+    "keywords": [
+      "search",
+      "keywords",
+      "metadata",
+      "ranking",
+      "information retrieval",
+      "tokenization",
+      "query processing",
+      "search results",
+      "match scoring",
+      "synonym expansion"
+    ]
+  }
+}

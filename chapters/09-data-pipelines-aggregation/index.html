@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1400,6 +1404,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1464,6 +1489,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2805,72 +2842,74 @@ curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Aut
 <h4 id="diagram-github-api-workflow">Diagram: GitHub API Workflow</h4>
 <iframe src="../../sims/github-api-workflow/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>GitHub API Workflow Visualization</summary>
-Type: workflow
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain the sequence of GitHub API calls needed to discover MicroSims by tracing the workflow from user repositories through directory contents to metadata extraction.
-
-Visual style: Flowchart with numbered steps and API call boxes
-
-Steps:
+<p>Type: workflow</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain the sequence of GitHub API calls needed to discover MicroSims by tracing the workflow from user repositories through directory contents to metadata extraction.</p>
+<p>Visual style: Flowchart with numbered steps and API call boxes</p>
+<p>Steps:
 1. Start: "Discover MicroSims"
-   Hover text: "Begin the data gathering process"
-
-2. Process: "List User Repositories"
+   Hover text: "Begin the data gathering process"</p>
+<ol>
+<li>
+<p>Process: "List User Repositories"
    API call: GET /users/{username}/repos
-   Hover text: "Find all repositories owned by the target user"
-
-3. Process: "Filter Course Repositories"
-   Hover text: "Select repos likely to contain MicroSims (name contains 'course', 'microsim', etc.)"
-
-4. Loop: "For Each Repository"
-   Hover text: "Process each discovered repository"
-
-5. Process: "Check for /docs/sims Directory"
+   Hover text: "Find all repositories owned by the target user"</p>
+</li>
+<li>
+<p>Process: "Filter Course Repositories"
+   Hover text: "Select repos likely to contain MicroSims (name contains 'course', 'microsim', etc.)"</p>
+</li>
+<li>
+<p>Loop: "For Each Repository"
+   Hover text: "Process each discovered repository"</p>
+</li>
+<li>
+<p>Process: "Check for /docs/sims Directory"
    API call: GET /repos/{owner}/{repo}/contents/docs/sims
-   Hover text: "Verify the standard MicroSim location exists"
-
-6. Decision: "Directory Exists?"
-   Hover text: "Handle repos with and without MicroSims"
-
-7a. Process: "List MicroSim Directories"
-   Hover text: "Enumerate all simulation folders"
-
-7b. Process: "Skip Repository"
-   Hover text: "No MicroSims here, continue to next repo"
-
-8. Loop: "For Each MicroSim Directory"
-   Hover text: "Process each discovered simulation"
-
-9. Process: "Fetch metadata.json"
+   Hover text: "Verify the standard MicroSim location exists"</p>
+</li>
+<li>
+<p>Decision: "Directory Exists?"
+   Hover text: "Handle repos with and without MicroSims"</p>
+</li>
+</ol>
+<p>7a. Process: "List MicroSim Directories"
+   Hover text: "Enumerate all simulation folders"</p>
+<p>7b. Process: "Skip Repository"
+   Hover text: "No MicroSims here, continue to next repo"</p>
+<ol>
+<li>
+<p>Loop: "For Each MicroSim Directory"
+   Hover text: "Process each discovered simulation"</p>
+</li>
+<li>
+<p>Process: "Fetch metadata.json"
    API call: GET /repos/{owner}/{repo}/contents/docs/sims/{sim}/metadata.json
-   Hover text: "Retrieve the simulation's metadata file"
-
-10. Decision: "Metadata Valid?"
-    Hover text: "Validate against schema, check required fields"
-
-11a. Process: "Store Metadata"
-    Hover text: "Add to aggregated collection"
-
-11b. Process: "Log Warning"
-    Hover text: "Record missing or invalid metadata for review"
-
-12. End: "Aggregated Collection Complete"
-    Hover text: "All discovered metadata ready for search indexing"
-
-Color coding:
+   Hover text: "Retrieve the simulation's metadata file"</p>
+</li>
+<li>
+<p>Decision: "Metadata Valid?"
+    Hover text: "Validate against schema, check required fields"</p>
+</li>
+</ol>
+<p>11a. Process: "Store Metadata"
+    Hover text: "Add to aggregated collection"</p>
+<p>11b. Process: "Log Warning"
+    Hover text: "Record missing or invalid metadata for review"</p>
+<ol>
+<li>End: "Aggregated Collection Complete"
+    Hover text: "All discovered metadata ready for search indexing"</li>
+</ol>
+<p>Color coding:
 - Blue: API call steps
 - Yellow: Decision points
 - Green: Success outcomes
-- Orange: Warning/alternative paths
-
-Implementation: p5.js with interactive hover explanations for each step
+- Orange: Warning/alternative paths</p>
+<p>Implementation: p5.js with interactive hover explanations for each step</p>
 </details>
-
 <hr />
 <h2 id="repository-mining-techniques">Repository Mining Techniques</h2>
 <p><strong>Repository mining</strong> is the process of extracting structured information from code repositories. For MicroSims, this means finding metadata.json files and parsing their contents.</p>
@@ -3151,64 +3190,65 @@ Implementation: p5.js with interactive hover explanations for each step
 <h4 id="diagram-repository-discovery-flow">Diagram: Repository Discovery Flow</h4>
 <iframe src="../../sims/repo-discovery-flow/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Repository Discovery Flow Visualization</summary>
-Type: diagram
-
-Bloom Level: Analyze (L4)
-Bloom Verb: examine
-
-Learning Objective: Students will examine the repository discovery process by tracing how candidate repositories are filtered and validated to identify MicroSim collections.
-
-Visual layout: Funnel diagram showing filtering stages
-
-Stages (top to bottom):
+<p>Type: diagram</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine</p>
+<p>Learning Objective: Students will examine the repository discovery process by tracing how candidate repositories are filtered and validated to identify MicroSim collections.</p>
+<p>Visual layout: Funnel diagram showing filtering stages</p>
+<p>Stages (top to bottom):
 1. "All User Repositories" (100 repos)
    - Wide funnel entrance
    - Gray color
-   - Tooltip: "Starting point: all public repositories for known creators"
-
-2. "Name/Description Filter" (40 repos)
-   - Narrower section
-   - Light blue
-   - Tooltip: "Filter by keywords: course, tutorial, microsim, simulation"
-
-3. "Structure Check" (25 repos)
-   - Narrower
-   - Medium blue
-   - Tooltip: "Verify docs/sims/ directory exists"
-
-4. "Metadata Presence" (18 repos)
-   - Narrower
-   - Dark blue
-   - Tooltip: "At least one valid metadata.json found"
-
-5. "Active Repositories" (15 repos)
-   - Narrow
-   - Green
-   - Tooltip: "Updated within the last year, not archived"
-
-Visual elements:
+   - Tooltip: "Starting point: all public repositories for known creators"</p>
+<ol>
+<li>"Name/Description Filter" (40 repos)</li>
+<li>Narrower section</li>
+<li>Light blue</li>
+<li>
+<p>Tooltip: "Filter by keywords: course, tutorial, microsim, simulation"</p>
+</li>
+<li>
+<p>"Structure Check" (25 repos)</p>
+</li>
+<li>Narrower</li>
+<li>Medium blue</li>
+<li>
+<p>Tooltip: "Verify docs/sims/ directory exists"</p>
+</li>
+<li>
+<p>"Metadata Presence" (18 repos)</p>
+</li>
+<li>Narrower</li>
+<li>Dark blue</li>
+<li>
+<p>Tooltip: "At least one valid metadata.json found"</p>
+</li>
+<li>
+<p>"Active Repositories" (15 repos)</p>
+</li>
+<li>Narrow</li>
+<li>Green</li>
+<li>Tooltip: "Updated within the last year, not archived"</li>
+</ol>
+<p>Visual elements:
 - Repository icons flowing through funnel
 - Count labels at each stage
 - Arrows showing flow direction
 - Side annotations explaining each filter
-- Rejected repos shown fading off to sides
-
-Interactive controls:
+- Rejected repos shown fading off to sides</p>
+<p>Interactive controls:
 - Hover over each stage for detailed explanation
 - Click stage to see example repositories at that level
 - Toggle: "Show rejected repos" (displays what was filtered out)
-- Slider: "Animate flow" (shows repos moving through funnel)
-
-Color scheme:
+- Slider: "Animate flow" (shows repos moving through funnel)</p>
+<p>Color scheme:
 - Funnel gradient from gray to green
 - Rejected items: red/orange
-- Selected/active: gold highlight
-
-Implementation: p5.js with animated funnel visualization
+- Selected/active: gold highlight</p>
+<p>Implementation: p5.js with animated funnel visualization</p>
 </details>
-
 <hr />
 <h2 id="data-aggregation-building-the-collection">Data Aggregation: Building the Collection</h2>
 <p><strong>Data aggregation</strong> combines data from multiple sources into a unified collection. For MicroSim search, this means merging metadata from dozens of repositories into a single searchable JSON file.</p>
@@ -3512,21 +3552,17 @@ Implementation: p5.js with animated funnel visualization
 <h4 id="diagram-aggregation-pipeline-simulator">Diagram: Aggregation Pipeline Simulator</h4>
 <iframe src="../../sims/aggregation-pipeline-sim/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Data Aggregation Pipeline Simulator</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: execute
-
-Learning Objective: Students will execute a simulated data aggregation pipeline by processing sample MicroSim records through normalization, deduplication, and validation stages, observing how each stage transforms the data.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: execute</p>
+<p>Learning Objective: Students will execute a simulated data aggregation pipeline by processing sample MicroSim records through normalization, deduplication, and validation stages, observing how each stage transforms the data.</p>
+<p>Canvas layout:
 - Left panel (30%): Input queue with sample records
 - Center panel (50%): Pipeline visualization with stages
-- Right panel (20%): Output and statistics
-
-Visual elements:
+- Right panel (20%): Output and statistics</p>
+<p>Visual elements:
 - Input queue showing 8-10 sample metadata records as cards:
   - Some with missing fields (red highlight)
   - Some duplicates (yellow highlight)
@@ -3542,9 +3578,8 @@ Visual elements:
   - Records processed
   - Duplicates removed
   - Validation failures
-  - Quality score distribution
-
-Sample input records:
+  - Quality score distribution</p>
+<p>Sample input records:
 1. Complete geometry MicroSim (valid)
 2. Physics sim with "name" instead of "title" (needs normalization)
 3. Duplicate of #1 from forked repo (will be deduplicated)
@@ -3552,39 +3587,33 @@ Sample input records:
 5. Math sim with nested dublinCore fields (needs normalization)
 6. Complete biology MicroSim (valid)
 7. Empty metadata object (validation failure)
-8. CS sim with legacy field names (needs normalization)
-
-Interactive controls:
+8. CS sim with legacy field names (needs normalization)</p>
+<p>Interactive controls:
 - Button: "Process Next Record" (step through one at a time)
 - Button: "Process All" (run entire pipeline)
 - Button: "Reset"
 - Toggle: "Show detailed logs"
-- Speed slider: Animation speed
-
-Behavior:
+- Speed slider: Animation speed</p>
+<p>Behavior:
 - Record cards animate through pipeline stages
 - Each stage shows transformation applied
 - Failed records divert to "rejected" bin with explanation
 - Duplicates merge into single record
 - Statistics update in real-time
-- Detailed logs show exact transformations
-
-Animation:
+- Detailed logs show exact transformations</p>
+<p>Animation:
 - Cards slide through pipeline
 - Stage boxes pulse when active
 - Transformation details appear as overlay
-- Rejected records fade out or move to error bin
-
-Color scheme:
+- Rejected records fade out or move to error bin</p>
+<p>Color scheme:
 - Valid records: Green
 - Needs normalization: Blue
 - Duplicates: Yellow
 - Validation failures: Red
-- Pipeline stages: Gradient from blue to green
-
-Implementation: p5.js with animated card flow and real-time statistics
+- Pipeline stages: Gradient from blue to green</p>
+<p>Implementation: p5.js with animated card flow and real-time statistics</p>
 </details>
-
 <hr />
 <h2 id="building-the-crawler-a-practical-example">Building the Crawler: A Practical Example</h2>
 <p>Let's walk through building a complete MicroSim crawler. This is the actual approach used for our search system.</p>
@@ -4007,74 +4036,80 @@ python3<span class="w"> </span>src/data-profiler/profile-microsims.py
 <h4 id="diagram-collection-quality-dashboard">Diagram: Collection Quality Dashboard</h4>
 <iframe src="../../sims/quality-dashboard/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>MicroSim Collection Quality Dashboard</summary>
-Type: infographic
-
-Bloom Level: Evaluate (L5)
-Bloom Verb: assess
-
-Learning Objective: Students will assess MicroSim collection quality by interpreting dashboard metrics and identifying areas needing improvement.
-
-Canvas layout: Dashboard with multiple visualization panels
-
-Panels:
-
-1. "Collection Overview" (top-left, 25%):
-   - Big number: Total MicroSims count
-   - Trend indicator (up/down from last crawl)
-   - Subtitle: "From X repositories"
-
-2. "Subject Distribution" (top-right, 25%):
-   - Horizontal bar chart showing count per subject
-   - Subjects: Math, Physics, Chemistry, Biology, CS, Other
-   - Color coded by subject
-   - Tooltip on hover: exact count and percentage
-
-3. "Quality Score Distribution" (middle-left, 25%):
-   - Pie or donut chart
-   - Segments: High (80+), Medium (50-79), Low (<50)
-   - Colors: Green, Yellow, Red
-   - Center text: Average score
-
-4. "Grade Level Coverage" (middle-right, 25%):
-   - Stacked bar or area chart
-   - Levels: K-5, 6-8, 9-12, Undergraduate, Graduate
-   - Shows balance across educational levels
-
-5. "Field Completeness" (bottom-left, 25%):
-   - Grid of field names with completion percentage
-   - Color intensity indicates completeness
-   - Required fields marked with asterisk
-   - Fields: title*, description*, subject, gradeLevel, framework, learningObjectives, etc.
-
-6. "Repository Contributions" (bottom-right, 25%):
-   - Treemap showing MicroSims per repository
-   - Size = count, color = average quality
-   - Click to see repository details
-
-Interactive controls:
+<p>Type: infographic</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: assess</p>
+<p>Learning Objective: Students will assess MicroSim collection quality by interpreting dashboard metrics and identifying areas needing improvement.</p>
+<p>Canvas layout: Dashboard with multiple visualization panels</p>
+<p>Panels:</p>
+<ol>
+<li>"Collection Overview" (top-left, 25%):</li>
+<li>Big number: Total MicroSims count</li>
+<li>Trend indicator (up/down from last crawl)</li>
+<li>
+<p>Subtitle: "From X repositories"</p>
+</li>
+<li>
+<p>"Subject Distribution" (top-right, 25%):</p>
+</li>
+<li>Horizontal bar chart showing count per subject</li>
+<li>Subjects: Math, Physics, Chemistry, Biology, CS, Other</li>
+<li>Color coded by subject</li>
+<li>
+<p>Tooltip on hover: exact count and percentage</p>
+</li>
+<li>
+<p>"Quality Score Distribution" (middle-left, 25%):</p>
+</li>
+<li>Pie or donut chart</li>
+<li>Segments: High (80+), Medium (50-79), Low (&lt;50)</li>
+<li>Colors: Green, Yellow, Red</li>
+<li>
+<p>Center text: Average score</p>
+</li>
+<li>
+<p>"Grade Level Coverage" (middle-right, 25%):</p>
+</li>
+<li>Stacked bar or area chart</li>
+<li>Levels: K-5, 6-8, 9-12, Undergraduate, Graduate</li>
+<li>
+<p>Shows balance across educational levels</p>
+</li>
+<li>
+<p>"Field Completeness" (bottom-left, 25%):</p>
+</li>
+<li>Grid of field names with completion percentage</li>
+<li>Color intensity indicates completeness</li>
+<li>Required fields marked with asterisk</li>
+<li>
+<p>Fields: title<em>, description</em>, subject, gradeLevel, framework, learningObjectives, etc.</p>
+</li>
+<li>
+<p>"Repository Contributions" (bottom-right, 25%):</p>
+</li>
+<li>Treemap showing MicroSims per repository</li>
+<li>Size = count, color = average quality</li>
+<li>Click to see repository details</li>
+</ol>
+<p>Interactive controls:
 - Dropdown: "Time period" (current, last week, last month)
 - Filter by subject (checkboxes)
 - Toggle: "Show only issues" (highlight problem areas)
-- Button: "Export report"
-
-Hover behavior:
+- Button: "Export report"</p>
+<p>Hover behavior:
 - All charts show detailed tooltips
-- Clicking drills down to details
-
-Color scheme:
+- Clicking drills down to details</p>
+<p>Color scheme:
 - Quality: Red (low) → Yellow (medium) → Green (high)
 - Subjects: Consistent with other visualizations
-- Trend indicators: Red (down), Green (up), Gray (unchanged)
-
-Data updates:
+- Trend indicators: Red (down), Green (up), Gray (unchanged)</p>
+<p>Data updates:
 - Dashboard reflects current collection state
-- Compare to previous crawl to show trends
-
-Implementation: p5.js or Chart.js with multiple coordinated charts
+- Compare to previous crawl to show trends</p>
+<p>Implementation: p5.js or Chart.js with multiple coordinated charts</p>
 </details>
-
 <hr />
 <h2 id="scheduling-and-automation">Scheduling and Automation</h2>
 <p>Manual crawling doesn't scale. Automation keeps your collection fresh without constant attention.</p>

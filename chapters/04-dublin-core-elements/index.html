@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1049,6 +1053,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1113,6 +1138,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1940,36 +1977,34 @@
 <h4 id="diagram-subject-hierarchy-taxonomy">Diagram: Subject Hierarchy Taxonomy</h4>
 <iframe src="../../sims/subject-taxonomy-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Subject Hierarchy Taxonomy Explorer</summary>
-Type: graph-model
-
-Bloom Level: Understand (L2)
-Bloom Verb: classify
-
-Learning Objective: Students will classify subject terms at appropriate levels of specificity by exploring hierarchical relationships between broad disciplines and specific topics.
-
-Purpose: Visualize how subject terms relate hierarchically, helping users choose appropriate specificity levels
-
-Node types:
+<p>Type: graph-model</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: classify</p>
+<p>Learning Objective: Students will classify subject terms at appropriate levels of specificity by exploring hierarchical relationships between broad disciplines and specific topics.</p>
+<p>Purpose: Visualize how subject terms relate hierarchically, helping users choose appropriate specificity levels</p>
+<p>Node types:
 1. Discipline (large blue circles)
    - Properties: name, color
-   - Examples: "Physics", "Mathematics", "Biology"
-
-2. Domain (medium green circles)
-   - Properties: name, parent
-   - Examples: "Mechanics", "Algebra", "Ecology"
-
-3. Topic (small orange circles)
-   - Properties: name, parent, searchVolume
-   - Examples: "Projectile Motion", "Quadratic Equations", "Food Webs"
-
-Edge types:
+   - Examples: "Physics", "Mathematics", "Biology"</p>
+<ol>
+<li>Domain (medium green circles)</li>
+<li>Properties: name, parent</li>
+<li>
+<p>Examples: "Mechanics", "Algebra", "Ecology"</p>
+</li>
+<li>
+<p>Topic (small orange circles)</p>
+</li>
+<li>Properties: name, parent, searchVolume</li>
+<li>Examples: "Projectile Motion", "Quadratic Equations", "Food Webs"</li>
+</ol>
+<p>Edge types:
 1. CONTAINS (solid gray arrows)
    - Shows hierarchy from discipline to domain to topic
-   - Direction: parent to child
-
-Sample data tree:
+   - Direction: parent to child</p>
+<p>Sample data tree:
 - Physics (discipline)
   - Mechanics (domain)
     - Projectile Motion (topic)
@@ -1981,22 +2016,18 @@ Sample data tree:
     - Interference (topic)
   - Electricity (domain)
     - Circuits (topic)
-    - Ohm's Law (topic)
-
-Interactive features:
+    - Ohm's Law (topic)</p>
+<p>Interactive features:
 - Click node to expand/collapse children
 - Hover to see definition and example usage
 - Search box to find specific terms
 - Highlight path shows breadcrumb trail
-- Toggle between tree and radial layout
-
-Layout: Hierarchical tree (default) with option for radial view
+- Toggle between tree and radial layout</p>
+<p>Layout: Hierarchical tree (default) with option for radial view
 Color scheme: Blue for disciplines, green for domains, orange for topics
-Animation: Smooth expansion/collapse with spring physics
-
-Implementation: vis-network with hierarchical layout
+Animation: Smooth expansion/collapse with spring physics</p>
+<p>Implementation: vis-network with hierarchical layout</p>
 </details>
-
 <h3 id="3-description-element">3. Description Element</h3>
 <p>The <strong>Description Element</strong> is your elevator pitch—a summary that explains what your MicroSim does and why someone would want to use it. This is your chance to sell the educational value.</p>
 <p><strong>Definition:</strong> An account of the resource, typically a free-text summary.</p>
@@ -2229,45 +2260,35 @@ Implementation: vis-network with hierarchical layout
 <h4 id="diagram-coverage-applications-map">Diagram: Coverage Applications Map</h4>
 <iframe src="../../sims/coverage-world-map/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Coverage Applications World Map</summary>
-Type: map
-
-Bloom Level: Analyze (L4)
-Bloom Verb: differentiate
-
-Learning Objective: Students will differentiate between global versus regional coverage needs by exploring how educational content may have geographic or jurisdictional constraints.
-
-Purpose: Illustrate how the Coverage element applies to region-specific educational content
-
-Geographic scope: World map with major regions
-
-Regions marked:
+<p>Type: map</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: differentiate</p>
+<p>Learning Objective: Students will differentiate between global versus regional coverage needs by exploring how educational content may have geographic or jurisdictional constraints.</p>
+<p>Purpose: Illustrate how the Coverage element applies to region-specific educational content</p>
+<p>Geographic scope: World map with major regions</p>
+<p>Regions marked:
 - United States (blue) - "Common Core, NGSS"
 - European Union (green) - "Bologna Process standards"
 - United Kingdom (purple) - "GCSE, A-Level curricula"
 - Asia-Pacific (orange) - "Various national curricula"
-- Latin America (teal) - "Regional educational standards"
-
-Interactive elements:
+- Latin America (teal) - "Regional educational standards"</p>
+<p>Interactive elements:
 - Click region to see example Coverage values
 - Toggle between "Geographic" and "Temporal" views
 - Search for curriculum standards by region
-- Examples panel shows MicroSims relevant to selected region
-
-Coverage examples by click:
+- Examples panel shows MicroSims relevant to selected region</p>
+<p>Coverage examples by click:
 - US: "Common Core Math, NGSS Science, US History to 1877"
 - UK: "Key Stage 3-4, GCSE Physics specification"
 - EU: "European scientific notation conventions"
-- Global: "Universal physics principles, math concepts"
-
-Visual style: Clean world map with regional highlighting
+- Global: "Universal physics principles, math concepts"</p>
+<p>Visual style: Clean world map with regional highlighting
 Color scheme: Distinct colors per region, gray for unselected
-Animation: Smooth region highlighting and panel transitions
-
-Implementation: Leaflet.js with GeoJSON regions
+Animation: Smooth region highlighting and panel transitions</p>
+<p>Implementation: Leaflet.js with GeoJSON regions</p>
 </details>
-
 <hr />
 <h2 id="intellectual-property-elements-attribution-and-rights">Intellectual Property Elements: Attribution and Rights</h2>
 <h3 id="8-creator-element">8. Creator Element</h3>
@@ -2448,57 +2469,46 @@ Implementation: Leaflet.js with GeoJSON regions
 <h4 id="diagram-creative-commons-license-chooser">Diagram: Creative Commons License Chooser</h4>
 <iframe src="../../sims/cc-license-chooser/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Creative Commons License Chooser Interactive</summary>
-Type: microsim
-
-Bloom Level: Evaluate (L5)
-Bloom Verb: recommend
-
-Learning Objective: Students will recommend appropriate Creative Commons licenses for different MicroSim sharing scenarios by analyzing use case requirements against license permissions.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: recommend</p>
+<p>Learning Objective: Students will recommend appropriate Creative Commons licenses for different MicroSim sharing scenarios by analyzing use case requirements against license permissions.</p>
+<p>Canvas layout:
 - Left panel (300px): Decision questions
 - Center panel (250px): License visualization
-- Right panel (200px): Result and explanation
-
-Visual elements:
+- Right panel (200px): Result and explanation</p>
+<p>Visual elements:
 - Flowchart decision tree showing license paths
 - License icons (CC, BY, NC, SA, ND) with visual representations
-- Result card showing recommended license with summary
-
-Interactive controls:
+- Result card showing recommended license with summary</p>
+<p>Interactive controls:
 - Radio buttons: "Allow commercial use?" (Yes/No)
 - Radio buttons: "Allow modifications?" (Yes/ShareAlike/No)
 - Checkbox: "Require attribution?" (locked to Yes except CC0)
 - Button: "I want maximum freedom for users" (presets CC0)
-- Button: "Reset"
-
-Decision logic:
+- Button: "Reset"</p>
+<p>Decision logic:
 - Commercial: Yes + Modifications: Yes → CC BY
 - Commercial: Yes + Modifications: ShareAlike → CC BY-SA
 - Commercial: No + Modifications: Yes → CC BY-NC
 - Commercial: No + Modifications: ShareAlike → CC BY-NC-SA
 - Commercial: No + Modifications: No → CC BY-NC-ND
-- Maximum freedom → CC0
-
-Result display:
+- Maximum freedom → CC0</p>
+<p>Result display:
 - Large license badge
 - Plain English summary: "Others can..."
 - Link to full license text
-- Copy-paste JSON snippet for metadata
-
-Default state: All questions unanswered, no recommendation shown
-
-Behavior:
+- Copy-paste JSON snippet for metadata</p>
+<p>Default state: All questions unanswered, no recommendation shown</p>
+<p>Behavior:
 - As user answers questions, flowchart path highlights
 - Recommendation updates immediately
 - Incompatible combinations show warning
-- Hover over license badges for quick explanations
-
-Implementation: p5.js with interactive form elements
+- Hover over license badges for quick explanations</p>
+<p>Implementation: p5.js with interactive form elements</p>
 </details>
-
 <hr />
 <h2 id="instantiation-elements-how-your-microsim-exists">Instantiation Elements: How Your MicroSim Exists</h2>
 <h3 id="12-date-element">12. Date Element</h3>
@@ -2830,56 +2840,45 @@ Implementation: p5.js with interactive form elements
 <h4 id="diagram-dublin-core-element-completeness-checker">Diagram: Dublin Core Element Completeness Checker</h4>
 <iframe src="../../sims/dublin-core-checker/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Dublin Core Element Completeness Checker</summary>
-Type: microsim
-
-Bloom Level: Apply (L3)
-Bloom Verb: implement
-
-Learning Objective: Students will implement complete Dublin Core metadata by filling in all 15 elements and receiving feedback on completeness and quality.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: implement</p>
+<p>Learning Objective: Students will implement complete Dublin Core metadata by filling in all 15 elements and receiving feedback on completeness and quality.</p>
+<p>Canvas layout:
 - Left panel (350px): Input form with 15 fields
-- Right panel (300px): Completeness gauge and quality feedback
-
-Visual elements:
+- Right panel (300px): Completeness gauge and quality feedback</p>
+<p>Visual elements:
 - Form with labeled input fields for each DC element
 - Color-coded field borders (red=missing required, yellow=missing optional, green=complete)
 - Circular completeness gauge (0-100%)
 - Quality score with explanation
-- Checklist of elements with status icons
-
-Interactive controls:
+- Checklist of elements with status icons</p>
+<p>Interactive controls:
 - Text inputs for each Dublin Core element
 - "Check Completeness" button
 - "Load Example" button (pre-fills with good example)
 - "Clear All" button
-- "Export JSON" button
-
-Field configuration:
+- "Export JSON" button</p>
+<p>Field configuration:
 - Required (red if empty): title, creator, subject, description, date, format, rights
 - Recommended (yellow if empty): publisher, type, identifier, language
-- Optional (gray if empty): contributor, source, relation, coverage
-
-Scoring logic:
+- Optional (gray if empty): contributor, source, relation, coverage</p>
+<p>Scoring logic:
 - Required fields: 10 points each (70 max)
 - Recommended fields: 5 points each (20 max)
 - Optional fields: 2.5 points each (10 max)
-- Quality bonuses: description length, subject count, valid date format
-
-Default state: Empty form, 0% completeness
-
-Behavior:
+- Quality bonuses: description length, subject count, valid date format</p>
+<p>Default state: Empty form, 0% completeness</p>
+<p>Behavior:
 - Real-time validation as user types
 - Completeness gauge animates as fields are filled
 - Quality tips appear based on content
 - JSON preview updates live
-- Export creates downloadable metadata.json
-
-Implementation: p5.js with form handling and validation logic
+- Export creates downloadable metadata.json</p>
+<p>Implementation: p5.js with form handling and validation logic</p>
 </details>
-
 <hr />
 <h2 id="quick-reference-card">Quick Reference Card</h2>
 <p>Here's a summary table for quick reference when creating MicroSim metadata:</p>

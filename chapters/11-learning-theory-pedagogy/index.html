@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1322,6 +1326,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1386,6 +1411,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2443,20 +2480,16 @@
 <h4 id="diagram-cognitive-load-visualizer">Diagram: Cognitive Load Visualizer</h4>
 <iframe src="../../sims/cognitive-load-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Cognitive Load Balance Visualizer</summary>
-Type: microsim
-
-Bloom Level: Understand (L2)
-Bloom Verb: explain
-
-Learning Objective: Students will explain how the three types of cognitive load compete for limited working memory capacity by manipulating load levels and observing when overload occurs.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain</p>
+<p>Learning Objective: Students will explain how the three types of cognitive load compete for limited working memory capacity by manipulating load levels and observing when overload occurs.</p>
+<p>Canvas layout:
 - Left panel (60%): Visualization of cognitive capacity
-- Right panel (40%): Controls and explanation
-
-Visual elements:
+- Right panel (40%): Controls and explanation</p>
+<p>Visual elements:
 - Container representing working memory capacity (like a beaker)
 - Three colored "liquids" representing load types:
   - Intrinsic load: Blue (pours in from concept complexity)
@@ -2464,9 +2497,8 @@ Visual elements:
   - Germane load: Green (actual learning)
 - Fill level shows total capacity usage
 - Overflow animation when capacity exceeded
-- Learning indicator (lightbulb) that dims as germane load decreases
-
-Interactive controls:
+- Learning indicator (lightbulb) that dims as germane load decreases</p>
+<p>Interactive controls:
 - Slider: "Concept Complexity" (intrinsic load, 1-10)
 - Slider: "Interface Confusion" (extraneous load, 0-10)
 - Display: Remaining capacity for learning (germane)
@@ -2475,35 +2507,29 @@ Interactive controls:
   - "Well-designed simple concept"
   - "Well-designed complex concept"
   - "Poorly-designed simple concept"
-  - "Overload scenario"
-
-Behavior:
+  - "Overload scenario"</p>
+<p>Behavior:
 - Intrinsic + extraneous = total load
-- If total < capacity, germane fills remaining space
-- If total >= capacity, overflow animation, learning = 0
+- If total &lt; capacity, germane fills remaining space
+- If total &gt;= capacity, overflow animation, learning = 0
 - Learning effectiveness = germane / (germane + extraneous) × 100
-- Lightbulb brightness proportional to learning effectiveness
-
-Visual feedback:
+- Lightbulb brightness proportional to learning effectiveness</p>
+<p>Visual feedback:
 - Green glow when learning is effective
 - Yellow warning when approaching capacity
 - Red overflow when exceeded
-- Lightbulb animation (bright to dim)
-
-Animation:
+- Lightbulb animation (bright to dim)</p>
+<p>Animation:
 - Liquids pour/drain smoothly when sliders move
 - Overflow spills over edges
-- Lightbulb flickers when learning compromised
-
-Color scheme:
+- Lightbulb flickers when learning compromised</p>
+<p>Color scheme:
 - Intrinsic: Blue (#3498db)
 - Extraneous: Red (#e74c3c)
 - Germane: Green (#27ae60)
-- Container: Gray glass effect
-
-Implementation: p5.js with animated fluid simulation
+- Container: Gray glass effect</p>
+<p>Implementation: p5.js with animated fluid simulation</p>
 </details>
-
 <hr />
 <h2 id="scaffolding-building-bridges-to-understanding">Scaffolding: Building Bridges to Understanding</h2>
 <p><strong>Scaffolding</strong> is temporary support that helps learners accomplish tasks they couldn't complete independently. Like construction scaffolding, it's removed once the structure can stand alone.</p>
@@ -2635,69 +2661,83 @@ Implementation: p5.js with animated fluid simulation
 <h4 id="diagram-guided-discovery-path">Diagram: Guided Discovery Path</h4>
 <iframe src="../../sims/guided-discovery-path/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Guided Discovery Learning Path</summary>
-Type: workflow
-
-Bloom Level: Apply (L3)
-Bloom Verb: implement
-
-Learning Objective: Students will implement a guided discovery sequence by stepping through a structured exploration that leads to concept understanding.
-
-Visual style: Path diagram showing journey from question to understanding
-
-Steps along path:
+<p>Type: workflow</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: implement</p>
+<p>Learning Objective: Students will implement a guided discovery sequence by stepping through a structured exploration that leads to concept understanding.</p>
+<p>Visual style: Path diagram showing journey from question to understanding</p>
+<p>Steps along path:
 1. "Pose Question" (start node)
    - Icon: Question mark
-   - Hover: "What affects how fast a pendulum swings?"
-
-2. "Constrain Variables"
-   - Icon: Filter
-   - Hover: "Focus on length only - mass and amplitude are locked"
-
-3. "Explore Freely"
-   - Icon: Play/explore
-   - Hover: "Change the length slider and watch what happens"
-
-4. "Prompt Observation"
-   - Icon: Eye
-   - Hover: "What pattern do you notice? Longer means..."
-
-5. "Form Hypothesis"
-   - Icon: Lightbulb
-   - Hover: "Complete: I think longer pendulums swing [slower/faster]"
-
-6. "Test Prediction"
-   - Icon: Experiment flask
-   - Hover: "Try extreme values - very short and very long"
-
-7. "Confirm Discovery"
-   - Icon: Checkmark
-   - Hover: "You discovered it! Longer = slower period"
-
-8. "Connect to Theory"
-   - Icon: Book/formula
-   - Hover: "This relationship follows T = 2π√(L/g)"
-
-9. "Transfer"
-   - Icon: Arrow pointing outward
-   - Hover: "Apply this to predict: a 4m pendulum vs 1m..."
-
-Interactive elements:
+   - Hover: "What affects how fast a pendulum swings?"</p>
+<ol>
+<li>"Constrain Variables"</li>
+<li>Icon: Filter</li>
+<li>
+<p>Hover: "Focus on length only - mass and amplitude are locked"</p>
+</li>
+<li>
+<p>"Explore Freely"</p>
+</li>
+<li>Icon: Play/explore</li>
+<li>
+<p>Hover: "Change the length slider and watch what happens"</p>
+</li>
+<li>
+<p>"Prompt Observation"</p>
+</li>
+<li>Icon: Eye</li>
+<li>
+<p>Hover: "What pattern do you notice? Longer means..."</p>
+</li>
+<li>
+<p>"Form Hypothesis"</p>
+</li>
+<li>Icon: Lightbulb</li>
+<li>
+<p>Hover: "Complete: I think longer pendulums swing [slower/faster]"</p>
+</li>
+<li>
+<p>"Test Prediction"</p>
+</li>
+<li>Icon: Experiment flask</li>
+<li>
+<p>Hover: "Try extreme values - very short and very long"</p>
+</li>
+<li>
+<p>"Confirm Discovery"</p>
+</li>
+<li>Icon: Checkmark</li>
+<li>
+<p>Hover: "You discovered it! Longer = slower period"</p>
+</li>
+<li>
+<p>"Connect to Theory"</p>
+</li>
+<li>Icon: Book/formula</li>
+<li>
+<p>Hover: "This relationship follows T = 2π√(L/g)"</p>
+</li>
+<li>
+<p>"Transfer"</p>
+</li>
+<li>Icon: Arrow pointing outward</li>
+<li>Hover: "Apply this to predict: a 4m pendulum vs 1m..."</li>
+</ol>
+<p>Interactive elements:
 - Click each node to see detailed guidance examples
 - Animated path showing progression
 - Side panel shows current step's MicroSim interface state
-- Toggle: "Show pure discovery comparison" (why each step helps)
-
-Color scheme:
+- Toggle: "Show pure discovery comparison" (why each step helps)</p>
+<p>Color scheme:
 - Path: Gradient from blue (question) to green (understanding)
 - Current step: Gold highlight
 - Completed steps: Filled circles
-- Future steps: Empty circles
-
-Implementation: p5.js with interactive path visualization
+- Future steps: Empty circles</p>
+<p>Implementation: p5.js with interactive path visualization</p>
 </details>
-
 <hr />
 <h2 id="worked-examples-learning-from-demonstrations">Worked Examples: Learning from Demonstrations</h2>
 <p><strong>Worked examples</strong> are step-by-step demonstrations of how to solve a problem or complete a procedure. They reduce cognitive load by showing the process explicitly before asking students to perform it.</p>
@@ -2911,21 +2951,17 @@ Implementation: p5.js with interactive path visualization
 <h4 id="diagram-feedback-loop-simulator">Diagram: Feedback Loop Simulator</h4>
 <iframe src="../../sims/feedback-loop-sim/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Feedback Quality Comparison Simulator</summary>
-Type: microsim
-
-Bloom Level: Evaluate (L5)
-Bloom Verb: critique
-
-Learning Objective: Students will critique different feedback approaches by comparing their effectiveness in a simulated learning scenario.
-
-Canvas layout:
+<p>Type: microsim</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: critique</p>
+<p>Learning Objective: Students will critique different feedback approaches by comparing their effectiveness in a simulated learning scenario.</p>
+<p>Canvas layout:
 - Top panel (30%): Problem and student answer display
 - Middle panel (50%): Three feedback panels side by side
-- Bottom panel (20%): Effectiveness ratings and analysis
-
-Visual elements:
+- Bottom panel (20%): Effectiveness ratings and analysis</p>
+<p>Visual elements:
 - Problem statement: "Calculate the period of a 1.5m pendulum (g=9.8)"
 - Student answer input: Editable value
 - Three feedback panels showing:
@@ -2933,47 +2969,39 @@ Visual elements:
   2. "Directive" feedback: What to fix
   3. "Elaborated" feedback: Why and how
 - Effectiveness meter for each approach
-- Learner emotion indicators (confused/neutral/confident)
-
-Sample scenarios (selectable):
+- Learner emotion indicators (confused/neutral/confident)</p>
+<p>Sample scenarios (selectable):
 1. Correct answer: How each feedback type responds
 2. Minor error (unit conversion): Different guidance levels
 3. Conceptual error (wrong formula): Different support
-4. Random guess: Different responses
-
-Interactive controls:
+4. Random guess: Different responses</p>
+<p>Interactive controls:
 - Dropdown: Select student error scenario
 - Input: Enter custom student answer
 - Button: "Show Feedback Comparison"
 - Toggle: "Show research findings" (why elaborated works better)
-- Rating sliders: "Rate each feedback's helpfulness"
-
-Behavior:
+- Rating sliders: "Rate each feedback's helpfulness"</p>
+<p>Behavior:
 - All three feedbacks appear simultaneously for comparison
 - Error type determines feedback content
 - Effectiveness meters show research-based ratings
-- Student can rate and compare to research findings
-
-Feedback examples for "minor calculation error":
+- Student can rate and compare to research findings</p>
+<p>Feedback examples for "minor calculation error":
 1. Minimal: "Incorrect. Try again."
 2. Directive: "Recheck your square root calculation."
-3. Elaborated: "Your formula is correct but the calculation has a small error. You wrote √(0.153) = 0.45, but √(0.153) = 0.391. Try again with this corrected value."
-
-Animation:
+3. Elaborated: "Your formula is correct but the calculation has a small error. You wrote √(0.153) = 0.45, but √(0.153) = 0.391. Try again with this corrected value."</p>
+<p>Animation:
 - Feedback panels reveal sequentially
 - Effectiveness bars fill based on quality
-- Learner expression changes with feedback quality
-
-Color scheme:
+- Learner expression changes with feedback quality</p>
+<p>Color scheme:
 - Minimal: Gray (neutral)
 - Directive: Yellow (partial)
 - Elaborated: Green (effective)
 - Error highlighting: Red
-- Success: Green
-
-Implementation: p5.js with comparative panel layout
+- Success: Green</p>
+<p>Implementation: p5.js with comparative panel layout</p>
 </details>
-
 <hr />
 <h2 id="progressive-disclosure-revealing-complexity-gradually">Progressive Disclosure: Revealing Complexity Gradually</h2>
 <p><strong>Progressive disclosure</strong> is an interface design pattern that hides complexity until it's needed. Advanced features are available but not overwhelming beginners.</p>
@@ -3170,18 +3198,14 @@ Implementation: p5.js with comparative panel layout
 <h4 id="diagram-learning-theories-comparison">Diagram: Learning Theories Comparison</h4>
 <iframe src="../../sims/learning-theories-compare/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Learning Theories Interactive Comparison</summary>
-Type: infographic
-
-Bloom Level: Analyze (L4)
-Bloom Verb: compare
-
-Learning Objective: Students will compare the four major learning theories by examining how each would approach the same MicroSim design challenge.
-
-Layout: Four quadrant display with central challenge
-
-Visual elements:
+<p>Type: infographic</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: compare</p>
+<p>Learning Objective: Students will compare the four major learning theories by examining how each would approach the same MicroSim design challenge.</p>
+<p>Layout: Four quadrant display with central challenge</p>
+<p>Visual elements:
 - Central circle: "Design Challenge: Teach pendulum period"
 - Four quadrants around center:
   - Top-left: Constructivism (blue)
@@ -3192,54 +3216,44 @@ Visual elements:
   - Theory name and icon
   - Key principle (1 sentence)
   - MicroSim design approach
-  - Screenshot/mockup of resulting design
-
-Quadrant content:
-
-**Constructivism (Blue):**
+  - Screenshot/mockup of resulting design</p>
+<p>Quadrant content:</p>
+<p><strong>Constructivism (Blue):</strong>
 - Icon: Building blocks
 - Principle: "Learners construct knowledge through exploration"
 - Approach: "Open-ended simulation, discover period-length relationship"
-- Features: Free exploration, minimal instructions, "What did you notice?" prompts
-
-**Behaviorism (Green):**
+- Features: Free exploration, minimal instructions, "What did you notice?" prompts</p>
+<p><strong>Behaviorism (Green):</strong>
 - Icon: Star/reward
 - Principle: "Behavior is shaped through reinforcement"
 - Approach: "Drill with immediate feedback and rewards"
-- Features: Points for correct answers, achievement badges, streak counters
-
-**Cognitivism (Purple):**
+- Features: Points for correct answers, achievement badges, streak counters</p>
+<p><strong>Cognitivism (Purple):</strong>
 - Icon: Brain/gears
 - Principle: "Learning is information processing"
 - Approach: "Structured presentation managing cognitive load"
-- Features: Worked examples, organized interface, step-by-step progression
-
-**Experiential (Orange):**
+- Features: Worked examples, organized interface, step-by-step progression</p>
+<p><strong>Experiential (Orange):</strong>
 - Icon: Hands/cycle
 - Principle: "Experience and reflection create knowledge"
 - Approach: "Hands-on experimentation with reflection"
-- Features: Experiment mode, reflection questions, predict-then-test cycle
-
-Interactive elements:
+- Features: Experiment mode, reflection questions, predict-then-test cycle</p>
+<p>Interactive elements:
 - Click each quadrant to expand detailed view
 - Toggle: "Show same MicroSim in each style" (visual mockups)
 - Compare button: Select two theories to see side-by-side
-- Quiz: "Match the design feature to the theory"
-
-Animation:
+- Quiz: "Match the design feature to the theory"</p>
+<p>Animation:
 - Quadrants highlight on hover
 - Central challenge pulses
-- Expanded views slide out smoothly
-
-Color scheme:
+- Expanded views slide out smoothly</p>
+<p>Color scheme:
 - Constructivism: Blue family
 - Behaviorism: Green family
 - Cognitivism: Purple family
-- Experiential: Orange family
-
-Implementation: p5.js with quadrant layout and interactive expansion
+- Experiential: Orange family</p>
+<p>Implementation: p5.js with quadrant layout and interactive expansion</p>
 </details>
-
 <hr />
 <h2 id="addressing-misconceptions">Addressing Misconceptions</h2>
 <p><strong>Misconceptions</strong> are incorrect beliefs that students bring to learning or develop during instruction. They're stubborn because they often "work" in limited contexts, making them resistant to correction.</p>

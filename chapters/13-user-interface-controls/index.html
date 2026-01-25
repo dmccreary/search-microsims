@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1424,6 +1428,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1488,6 +1513,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2689,18 +2726,14 @@
 <h4 id="diagram-interaction-level-spectrum">Diagram: Interaction Level Spectrum</h4>
 <iframe src="../../sims/interaction-spectrum/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Interaction Level Spectrum Visualization</summary>
-Type: infographic
-
-Bloom Level: Understand (L2)
-Bloom Verb: classify
-
-Learning Objective: Students will classify MicroSims by interaction level by examining examples along a spectrum from passive to highly interactive.
-
-Layout: Horizontal spectrum with example MicroSims positioned
-
-Visual elements:
+<p>Type: infographic</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: classify</p>
+<p>Learning Objective: Students will classify MicroSims by interaction level by examining examples along a spectrum from passive to highly interactive.</p>
+<p>Layout: Horizontal spectrum with example MicroSims positioned</p>
+<p>Visual elements:
 - Horizontal gradient bar from blue (passive) to green (high interaction)
 - Spectrum labels: Passive → Low → Medium → High
 - Example MicroSim thumbnails positioned on spectrum:
@@ -2709,50 +2742,41 @@ Visual elements:
   - Medium: Pendulum with length slider
   - High: Full physics simulator with many parameters
 - Callout boxes describing characteristics of each level
-- Control icons showing what controls each level includes
-
-Interactive elements:
+- Control icons showing what controls each level includes</p>
+<p>Interactive elements:
 - Click any example to see detailed description
 - Drag examples to test your classification
 - Toggle: "Show control panels" (reveals interface for each)
-- Quiz mode: Position new examples on spectrum
-
-Spectrum detail:
-
-**Passive (Left):**
+- Quiz mode: Position new examples on spectrum</p>
+<p>Spectrum detail:</p>
+<p><strong>Passive (Left):</strong>
 - Icon: Play button only
 - Controls: None or auto-play
 - User role: Observer
-- Example: "Watch cell division"
-
-**Low (Left-center):**
+- Example: "Watch cell division"</p>
+<p><strong>Low (Left-center):</strong>
 - Icon: Play + Restart
 - Controls: Play/pause, reset, hover
 - User role: Controller
-- Example: "Play/pause the pendulum"
-
-**Medium (Center-right):**
+- Example: "Play/pause the pendulum"</p>
+<p><strong>Medium (Center-right):</strong>
 - Icon: Play + 2-3 sliders
 - Controls: Few parameters, presets
 - User role: Explorer
-- Example: "Adjust pendulum length"
-
-**High (Right):**
+- Example: "Adjust pendulum length"</p>
+<p><strong>High (Right):</strong>
 - Icon: Many controls
 - Controls: Many parameters, modes
 - User role: Experimenter
-- Example: "Full pendulum lab"
-
-Color scheme:
+- Example: "Full pendulum lab"</p>
+<p>Color scheme:
 - Passive: Blue
 - Low: Light blue
 - Medium: Green
 - High: Dark green
-- Examples: White cards with colored borders
-
-Implementation: p5.js with draggable classification
+- Examples: White cards with colored borders</p>
+<p>Implementation: p5.js with draggable classification</p>
 </details>
-
 <hr />
 <h2 id="user-controls-the-interface-toolkit">User Controls: The Interface Toolkit</h2>
 <p><strong>User controls</strong> are the interactive elements that let users adjust parameters and trigger actions. Each control type has strengths and appropriate use cases.</p>
@@ -2970,66 +2994,53 @@ Implementation: p5.js with draggable classification
 <h4 id="diagram-button-state-design">Diagram: Button State Design</h4>
 <iframe src="../../sims/button-states/main.html" width="100%" height="400px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Button State Design Patterns</summary>
-Type: diagram
-
-Bloom Level: Remember (L1)
-Bloom Verb: identify
-
-Learning Objective: Students will identify the different states of interactive buttons by examining visual changes across normal, hover, active, and disabled states.
-
-Layout: Grid showing button types and their states
-
-Visual elements:
+<p>Type: diagram</p>
+<p>Bloom Level: Remember (L1)
+Bloom Verb: identify</p>
+<p>Learning Objective: Students will identify the different states of interactive buttons by examining visual changes across normal, hover, active, and disabled states.</p>
+<p>Layout: Grid showing button types and their states</p>
+<p>Visual elements:
 - 4 rows (button types): Primary, Secondary, Toggle, Destructive
 - 4 columns (states): Normal, Hover, Active/Pressed, Disabled
 - Each cell shows button appearance in that state
-- Annotations explaining visual changes
-
-Button type rows:
-
-**Primary Button (Blue):**
+- Annotations explaining visual changes</p>
+<p>Button type rows:</p>
+<p><strong>Primary Button (Blue):</strong>
 - Normal: Blue background, white text
 - Hover: Darker blue, slight lift shadow
 - Active: Even darker, pressed appearance
-- Disabled: Gray background, low opacity
-
-**Secondary Button (Outlined):**
+- Disabled: Gray background, low opacity</p>
+<p><strong>Secondary Button (Outlined):</strong>
 - Normal: White background, blue border
 - Hover: Light blue fill
 - Active: Darker blue fill
-- Disabled: Gray border, faded
-
-**Toggle Button (Play/Pause):**
+- Disabled: Gray border, faded</p>
+<p><strong>Toggle Button (Play/Pause):</strong>
 - Normal (paused): Play icon, blue
 - Normal (playing): Pause icon, blue
 - Hover: Darker shade
-- Disabled: Gray
-
-**Destructive Button (Red):**
+- Disabled: Gray</p>
+<p><strong>Destructive Button (Red):</strong>
 - Normal: Red background
 - Hover: Darker red
 - Active: Very dark red
-- Disabled: Gray
-
-Interactive elements:
+- Disabled: Gray</p>
+<p>Interactive elements:
 - Hover over cells to see state change
 - Click to see active state
 - Toggle: "Show focus states" (accessibility)
-- Annotations appear on hover
-
-Color scheme:
+- Annotations appear on hover</p>
+<p>Color scheme:
 - Primary: Blue (#3498db)
 - Secondary: White with blue border
 - Destructive: Red (#e74c3c)
 - Disabled: Gray (#95a5a6)
 - Hover states: 15% darker
-- Active states: 25% darker
-
-Implementation: p5.js with interactive state demonstration
+- Active states: 25% darker</p>
+<p>Implementation: p5.js with interactive state demonstration</p>
 </details>
-
 <hr />
 <h2 id="dropdown-select-choosing-from-options">Dropdown Select: Choosing from Options</h2>
 <p><strong>Dropdowns</strong> (select menus) let users choose one option from a list. They're space-efficient for many options.</p>
@@ -3413,73 +3424,60 @@ Implementation: p5.js with interactive state demonstration
 <h4 id="diagram-layout-pattern-gallery">Diagram: Layout Pattern Gallery</h4>
 <iframe src="../../sims/layout-patterns/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>MicroSim Layout Pattern Gallery</summary>
-Type: infographic
-
-Bloom Level: Apply (L3)
-Bloom Verb: select
-
-Learning Objective: Students will select appropriate layout patterns for different MicroSim scenarios by examining layout options and matching them to requirements.
-
-Layout: Three-column gallery with interactive examples
-
-Visual elements:
+<p>Type: infographic</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: select</p>
+<p>Learning Objective: Students will select appropriate layout patterns for different MicroSim scenarios by examining layout options and matching them to requirements.</p>
+<p>Layout: Three-column gallery with interactive examples</p>
+<p>Visual elements:
 - Three columns for Fixed, Two-Panel, Three-Panel
 - Each column shows:
   - Layout diagram (schematic)
   - Live mini-example (functional)
   - Pros and cons list
   - "Best for" summary
-- Comparison table below
-
-Column content:
-
-**Fixed Layout:**
+- Comparison table below</p>
+<p>Column content:</p>
+<p><strong>Fixed Layout:</strong>
 - Diagram: Single rectangle
 - Mini-example: Simple pendulum animation with overlay controls
 - Pros: Maximum viz space, simple, mobile-friendly
 - Cons: Limited controls, overlay can obscure
-- Best for: Animations, demos, passive viewing
-
-**Two-Panel Layout:**
+- Best for: Animations, demos, passive viewing</p>
+<p><strong>Two-Panel Layout:</strong>
 - Diagram: Large left rectangle + narrow right rectangle
 - Mini-example: Pendulum with control sidebar
 - Pros: Clear separation, scalable controls, always visible
 - Cons: Uses horizontal space, less viz area
-- Best for: Most simulations, exploration, medium interaction
-
-**Three-Panel Layout:**
+- Best for: Most simulations, exploration, medium interaction</p>
+<p><strong>Three-Panel Layout:</strong>
 - Diagram: Large left + narrow right (split top/bottom)
 - Mini-example: Full pendulum lab with data output
 - Pros: Dedicated info area, rich feedback, comprehensive
 - Cons: Complex, crowded on small screens
-- Best for: Complex labs, high interaction, data-rich
-
-Interactive elements:
+- Best for: Complex labs, high interaction, data-rich</p>
+<p>Interactive elements:
 - Click any layout to see full-size example
 - Toggle: "Show on mobile" (responsive behavior)
 - Match quiz: Given scenario, pick best layout
-- Resize demo: See how layouts adapt
-
-Comparison table:
+- Resize demo: See how layouts adapt</p>
+<p>Comparison table:
 | Aspect | Fixed | Two-Panel | Three-Panel |
 |--------|-------|-----------|-------------|
 | Viz space | Maximum | Good | Less |
 | Control capacity | Minimal | Medium | High |
 | Info display | Overlay | Limited | Dedicated |
 | Mobile-friendly | Best | Good | Challenging |
-| Complexity | Low | Medium | High |
-
-Color scheme:
+| Complexity | Low | Medium | High |</p>
+<p>Color scheme:
 - Visualization area: Blue
 - Control area: Green
 - Info area: Orange
-- Inactive: Gray
-
-Implementation: p5.js with switchable layouts and mini-examples
+- Inactive: Gray</p>
+<p>Implementation: p5.js with switchable layouts and mini-examples</p>
 </details>
-
 <hr />
 <h2 id="color-scheme-visual-harmony">Color Scheme: Visual Harmony</h2>
 <p><strong>Color scheme</strong> affects usability, aesthetics, and accessibility. Thoughtful color choices enhance learning; poor choices distract or exclude.</p>

@@ -363,6 +363,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -1436,6 +1440,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-pedagogical-pattern-alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Pedagogical Pattern Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1500,6 +1525,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -2776,52 +2813,43 @@
 <h4 id="diagram-animation-control-panel">Diagram: Animation Control Panel</h4>
 <iframe src="../../sims/animation-control-panel/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Animation Control Interface Design</summary>
-Type: diagram
-
-Bloom Level: Remember (L1)
-Bloom Verb: identify
-
-Learning Objective: Students will identify the essential controls of an educational animation interface by examining a well-designed control panel.
-
-Layout: Single-panel diagram showing animation controls
-
-Visual elements:
+<p>Type: diagram</p>
+<p>Bloom Level: Remember (L1)
+Bloom Verb: identify</p>
+<p>Learning Objective: Students will identify the essential controls of an educational animation interface by examining a well-designed control panel.</p>
+<p>Layout: Single-panel diagram showing animation controls</p>
+<p>Visual elements:
 - Sample animation area (wave or pendulum)
 - Transport controls bar below animation:
   - Play/Pause toggle button (triangle/two bars)
   - Restart button (circular arrow)
-  - Step backward button (|<)
-  - Step forward button (>|)
+  - Step backward button (|&lt;)
+  - Step forward button (&gt;|)
 - Progress/scrubber bar with draggable position indicator
 - Speed control slider (0.25x to 2x)
 - Current time display
 - Total duration display
-- Loop toggle checkbox
-
-Labeled callouts for each element:
+- Loop toggle checkbox</p>
+<p>Labeled callouts for each element:
 - "Play/Pause: Control animation state"
 - "Restart: Return to beginning"
 - "Step: Advance frame-by-frame"
 - "Scrubber: Jump to any point"
 - "Speed: Slow for detail, fast for overview"
-- "Loop: Repeat continuously or play once"
-
-Interactive elements:
+- "Loop: Repeat continuously or play once"</p>
+<p>Interactive elements:
 - Hover over any control to see its purpose
 - Click controls to see them in action
-- Try different combinations
-
-Color scheme:
+- Try different combinations</p>
+<p>Color scheme:
 - Controls: Dark gray with light icons
 - Active state: Blue highlight
 - Scrubber played portion: Blue
-- Scrubber remaining: Gray
-
-Implementation: p5.js with functional animation controls
+- Scrubber remaining: Gray</p>
+<p>Implementation: p5.js with functional animation controls</p>
 </details>
-
 <hr />
 <h2 id="chart-quantifying-concepts">Chart: Quantifying Concepts</h2>
 <p><strong>Charts</strong> encode quantitative data visually, making numbers comprehensible at a glance. They're essential for any content involving comparison, distribution, or trends.</p>
@@ -3034,73 +3062,76 @@ Implementation: p5.js with functional animation controls
 <h4 id="diagram-graph-visualization-gallery">Diagram: Graph Visualization Gallery</h4>
 <iframe src="../../sims/graph-viz-gallery/main.html" width="100%" height="520px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Graph Visualization Layout Gallery</summary>
-Type: infographic
-
-Bloom Level: Understand (L2)
-Bloom Verb: classify
-
-Learning Objective: Students will classify graph layout algorithms by examining examples and identifying when each is most appropriate.
-
-Layout: Gallery grid showing 5 layout types
-
-Visual elements:
+<p>Type: infographic</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: classify</p>
+<p>Learning Objective: Students will classify graph layout algorithms by examining examples and identifying when each is most appropriate.</p>
+<p>Layout: Gallery grid showing 5 layout types</p>
+<p>Visual elements:
 - 5 panels arranged in grid (2×3, last row centered)
 - Each panel shows:
   - Layout name as header
   - Small sample graph (10-15 nodes) in that layout
   - Brief description
   - "Best for" tag
-- Same node/edge data rendered differently in each
-
-Panel content:
-
-1. **Force-Directed**
-   - Nodes pushed apart, edges pull together
-   - Organic, clustered appearance
-   - Best for: General exploration
-
-2. **Hierarchical**
-   - Top-to-bottom tree structure
-   - Clear levels visible
-   - Best for: Organizational charts, taxonomies
-
-3. **Circular**
-   - Nodes evenly spaced on circle edge
-   - All connections visible
-   - Best for: Comparing connection density
-
-4. **Radial**
-   - Central node with rings outward
-   - Shows distance from center
-   - Best for: Ego networks, influence spread
-
-5. **Grid**
-   - Regular rows and columns
-   - Predictable positioning
-   - Best for: Game boards, matrices
-
-Interactive elements:
+- Same node/edge data rendered differently in each</p>
+<p>Panel content:</p>
+<ol>
+<li><strong>Force-Directed</strong></li>
+<li>Nodes pushed apart, edges pull together</li>
+<li>Organic, clustered appearance</li>
+<li>
+<p>Best for: General exploration</p>
+</li>
+<li>
+<p><strong>Hierarchical</strong></p>
+</li>
+<li>Top-to-bottom tree structure</li>
+<li>Clear levels visible</li>
+<li>
+<p>Best for: Organizational charts, taxonomies</p>
+</li>
+<li>
+<p><strong>Circular</strong></p>
+</li>
+<li>Nodes evenly spaced on circle edge</li>
+<li>All connections visible</li>
+<li>
+<p>Best for: Comparing connection density</p>
+</li>
+<li>
+<p><strong>Radial</strong></p>
+</li>
+<li>Central node with rings outward</li>
+<li>Shows distance from center</li>
+<li>
+<p>Best for: Ego networks, influence spread</p>
+</li>
+<li>
+<p><strong>Grid</strong></p>
+</li>
+<li>Regular rows and columns</li>
+<li>Predictable positioning</li>
+<li>Best for: Game boards, matrices</li>
+</ol>
+<p>Interactive elements:
 - Click any layout to see it animated
 - Toggle: "Same data, different layouts" (morphs between)
 - Select different sample datasets
-- Hover for detailed explanation
-
-Animation:
+- Hover for detailed explanation</p>
+<p>Animation:
 - Smooth morphing between layouts when toggling
 - Nodes animate to new positions
-- Edges curve and reconnect
-
-Color scheme:
+- Edges curve and reconnect</p>
+<p>Color scheme:
 - Nodes: Blue with white labels
 - Edges: Gray, thickness by weight
 - Selected: Gold highlight
-- Panel backgrounds: Light gray
-
-Implementation: vis-network.js with layout switching
+- Panel backgrounds: Light gray</p>
+<p>Implementation: vis-network.js with layout switching</p>
 </details>
-
 <hr />
 <h2 id="diagram-showing-structure">Diagram: Showing Structure</h2>
 <p><strong>Diagrams</strong> are schematic representations showing how components relate. They simplify reality to highlight essential structure.</p>
@@ -3267,18 +3298,14 @@ Implementation: vis-network.js with layout switching
 <h4 id="diagram-simulation-anatomy">Diagram: Simulation Anatomy</h4>
 <iframe src="../../sims/simulation-anatomy/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Anatomy of a Well-Designed Simulation</summary>
-Type: diagram
-
-Bloom Level: Analyze (L4)
-Bloom Verb: examine
-
-Learning Objective: Students will examine the essential components of an educational simulation by identifying and describing each region's purpose.
-
-Layout: Annotated simulation interface with callout labels
-
-Visual elements:
+<p>Type: diagram</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine</p>
+<p>Learning Objective: Students will examine the essential components of an educational simulation by identifying and describing each region's purpose.</p>
+<p>Layout: Annotated simulation interface with callout labels</p>
+<p>Visual elements:
 - Mock simulation interface showing:
   - Title bar with simulation name
   - Main visualization area (central, largest)
@@ -3286,48 +3313,56 @@ Visual elements:
   - Information panel (bottom or left)
   - Status indicators
 - Numbered callouts pointing to each region
-- Callout explanations in a legend
-
-Regions to annotate:
-
-1. **Visualization Area** (60-70% of space)
-   - Where the action happens
-   - Shows system state visually
-   - Updates in real-time
-
-2. **Control Panel** (15-20%)
-   - Parameter sliders
-   - Mode toggles
-   - Action buttons (Start, Reset)
-
-3. **Information Display** (10-15%)
-   - Current values
-   - Calculated outputs
-   - Status messages
-
-4. **Title/Context** (5%)
-   - What this simulation models
-   - Learning objectives
-
-5. **Help/Instructions** (accessible)
-   - How to use controls
-   - What to observe
-   - Guiding questions
-
-Interactive elements:
+- Callout explanations in a legend</p>
+<p>Regions to annotate:</p>
+<ol>
+<li><strong>Visualization Area</strong> (60-70% of space)</li>
+<li>Where the action happens</li>
+<li>Shows system state visually</li>
+<li>
+<p>Updates in real-time</p>
+</li>
+<li>
+<p><strong>Control Panel</strong> (15-20%)</p>
+</li>
+<li>Parameter sliders</li>
+<li>Mode toggles</li>
+<li>
+<p>Action buttons (Start, Reset)</p>
+</li>
+<li>
+<p><strong>Information Display</strong> (10-15%)</p>
+</li>
+<li>Current values</li>
+<li>Calculated outputs</li>
+<li>
+<p>Status messages</p>
+</li>
+<li>
+<p><strong>Title/Context</strong> (5%)</p>
+</li>
+<li>What this simulation models</li>
+<li>
+<p>Learning objectives</p>
+</li>
+<li>
+<p><strong>Help/Instructions</strong> (accessible)</p>
+</li>
+<li>How to use controls</li>
+<li>What to observe</li>
+<li>Guiding questions</li>
+</ol>
+<p>Interactive elements:
 - Click any region to highlight and see detailed description
 - Toggle: "Show good vs. bad design" (comparison)
-- Hover regions for purpose explanation
-
-Color scheme:
+- Hover regions for purpose explanation</p>
+<p>Color scheme:
 - Visualization: Blue border
 - Controls: Green border
 - Information: Orange border
-- Annotations: Dark gray
-
-Implementation: p5.js with clickable regions and annotations
+- Annotations: Dark gray</p>
+<p>Implementation: p5.js with clickable regions and annotations</p>
 </details>
-
 <hr />
 <h2 id="interactive-demo-guided-exploration">Interactive Demo: Guided Exploration</h2>
 <p><strong>Interactive demos</strong> are structured walkthroughs with user participation. Unlike free-form simulations, demos guide users through specific features or concepts.</p>
@@ -3687,70 +3722,70 @@ Implementation: p5.js with clickable regions and annotations
 <h4 id="diagram-timeline-styles-gallery">Diagram: Timeline Styles Gallery</h4>
 <iframe src="../../sims/timeline-styles/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Timeline Layout Styles Comparison</summary>
-Type: infographic
-
-Bloom Level: Understand (L2)
-Bloom Verb: compare
-
-Learning Objective: Students will compare timeline layout styles by examining examples and selecting appropriate styles for different content types.
-
-Layout: Four-panel gallery showing timeline styles
-
-Visual elements:
+<p>Type: infographic</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: compare</p>
+<p>Learning Objective: Students will compare timeline layout styles by examining examples and selecting appropriate styles for different content types.</p>
+<p>Layout: Four-panel gallery showing timeline styles</p>
+<p>Visual elements:
 - 4 panels (2×2 grid)
 - Each shows same historical data in different style
-- Brief description below each
-
-Sample data (same for all):
+- Brief description below each</p>
+<p>Sample data (same for all):
 - 1990: Event A
 - 1995: Event B
 - 2000: Event C
 - 2005: Event D
-- 2010: Event E
-
-Panel content:
-
-1. **Horizontal Linear**
-   - Events flow left to right
-   - Single line with markers
-   - Labels above/below line
-   - Best for: Simple sequences, limited events
-
-2. **Vertical Scroll**
-   - Events flow top to bottom
-   - Full-width event cards
-   - Detailed descriptions visible
-   - Best for: Rich content, long timelines
-
-3. **Centered Alternating**
-   - Central spine
-   - Events alternate left/right
-   - Visual balance
-   - Best for: Dense timelines, presentations
-
-4. **Parallel Tracks**
-   - Multiple horizontal lanes
-   - Related events aligned vertically
-   - Shows simultaneity
-   - Best for: Comparing multiple sequences
-
-Interactive elements:
+- 2010: Event E</p>
+<p>Panel content:</p>
+<ol>
+<li><strong>Horizontal Linear</strong></li>
+<li>Events flow left to right</li>
+<li>Single line with markers</li>
+<li>Labels above/below line</li>
+<li>
+<p>Best for: Simple sequences, limited events</p>
+</li>
+<li>
+<p><strong>Vertical Scroll</strong></p>
+</li>
+<li>Events flow top to bottom</li>
+<li>Full-width event cards</li>
+<li>Detailed descriptions visible</li>
+<li>
+<p>Best for: Rich content, long timelines</p>
+</li>
+<li>
+<p><strong>Centered Alternating</strong></p>
+</li>
+<li>Central spine</li>
+<li>Events alternate left/right</li>
+<li>Visual balance</li>
+<li>
+<p>Best for: Dense timelines, presentations</p>
+</li>
+<li>
+<p><strong>Parallel Tracks</strong></p>
+</li>
+<li>Multiple horizontal lanes</li>
+<li>Related events aligned vertically</li>
+<li>Shows simultaneity</li>
+<li>Best for: Comparing multiple sequences</li>
+</ol>
+<p>Interactive elements:
 - Click to see larger example
 - Toggle: "Same data, different styles"
 - Select different datasets
-- Hover for style recommendations
-
-Color scheme:
+- Hover for style recommendations</p>
+<p>Color scheme:
 - Timeline spine: Dark gray
 - Event markers: Blue
 - Highlighted: Gold
-- Panel backgrounds: Light gray
-
-Implementation: vis-timeline.js with style switching
+- Panel backgrounds: Light gray</p>
+<p>Implementation: vis-timeline.js with style switching</p>
 </details>
-
 <hr />
 <h2 id="network-diagram-interconnections">Network Diagram: Interconnections</h2>
 <p><strong>Network diagrams</strong> visualize systems of interconnected elements—how components relate, communicate, or depend on each other.</p>
@@ -4057,18 +4092,14 @@ Implementation: vis-timeline.js with style switching
 <h4 id="diagram-dashboard-layout-patterns">Diagram: Dashboard Layout Patterns</h4>
 <iframe src="../../sims/dashboard-patterns/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<details markdown="1">
+<details>
 <summary>Educational Dashboard Layout Patterns</summary>
-Type: diagram
-
-Bloom Level: Apply (L3)
-Bloom Verb: construct
-
-Learning Objective: Students will construct effective dashboard layouts by selecting and arranging appropriate components for different monitoring needs.
-
-Layout: Interactive dashboard builder with component library
-
-Visual elements:
+<p>Type: diagram</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: construct</p>
+<p>Learning Objective: Students will construct effective dashboard layouts by selecting and arranging appropriate components for different monitoring needs.</p>
+<p>Layout: Interactive dashboard builder with component library</p>
+<p>Visual elements:
 - Left sidebar: Component library
   - KPI card
   - Line chart
@@ -4079,47 +4110,39 @@ Visual elements:
   - Filter dropdown
   - Status indicator
 - Main area: Dashboard canvas with grid
-- Right sidebar: Layout templates
-
-Component library items:
+- Right sidebar: Layout templates</p>
+<p>Component library items:
 - Drag-and-drop components
 - Each with preview and description
-- Resize handles when placed
-
-Template options:
+- Resize handles when placed</p>
+<p>Template options:
 - "Student Progress" (KPIs top, timeline middle, details bottom)
 - "Class Overview" (comparison charts, ranking table)
 - "Real-time Lab" (live charts, status indicators)
-- "Custom" (blank canvas)
-
-Interactive controls:
+- "Custom" (blank canvas)</p>
+<p>Interactive controls:
 - Drag components from library to canvas
 - Resize components on canvas
 - Remove with X button
 - Save layout button
 - Load template button
-- Preview mode toggle
-
-Behavior:
+- Preview mode toggle</p>
+<p>Behavior:
 - Components snap to grid
 - Validation: "Dashboard needs at least 3 components"
 - Preview shows with sample data
-- Templates auto-populate canvas
-
-Grid system:
+- Templates auto-populate canvas</p>
+<p>Grid system:
 - 12-column responsive grid
 - Components span 3, 4, 6, or 12 columns
-- Auto-arrange on resize
-
-Color scheme:
+- Auto-arrange on resize</p>
+<p>Color scheme:
 - Component cards: White with shadow
 - Canvas: Light gray grid
 - Library: White sidebar
-- Templates: Blue highlight on selection
-
-Implementation: p5.js with drag-and-drop and grid snapping
+- Templates: Blue highlight on selection</p>
+<p>Implementation: p5.js with drag-and-drop and grid snapping</p>
 </details>
-
 <hr />
 <h2 id="choosing-the-right-visualization-type">Choosing the Right Visualization Type</h2>
 <p>With 13 types to choose from, how do you pick the right one? Match visualization to learning objective:</p>
