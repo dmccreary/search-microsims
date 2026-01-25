@@ -308,4 +308,63 @@ Centered all nodes around x=0 for balanced layout:
 
 ---
 
+### Documentation Updates
+
+#### index.md Enhancements
+
+**Detailed Description Added:**
+- Tree structure explanation (sims/ → microsim-name/ → 6 files)
+- Benefits of standard organization (discovery, UX, sharing, AI integration)
+- File Types table with all 6 files and their status
+
+**Comprehensive Lesson Plan (30-45 minutes):**
+- Grade level: High School / Undergraduate
+- Prerequisites listed
+- Timed lesson outline:
+  - Introduction (5 min) - Discussion prompt
+  - Guided Exploration (10 min) - Interactive walkthrough
+  - Discussion Questions (10 min) - 4 questions with suggested answers
+  - Hands-On Activity (10 min) - Two options (explore real MicroSim or plan your own)
+  - Wrap-Up (5 min) - Review and preview
+
+**6-Question Quiz Added:**
+- Formatted using mkdocs-material question admonition format
+- `<div class="upper-alpha" markdown>` wrapper for A, B, C, D styling
+- Numbered list (1, 2, 3, 4) for options
+- `??? question "Show Answer"` collapsible admonitions
+- Each answer includes:
+  - "The correct answer is **[LETTER]**."
+  - Explanation of why correct/incorrect
+  - **Concept Tested:** label
+
+**Quiz Topics Covered:**
+1. Required vs optional files
+2. Directory naming conventions (kebab-case)
+3. Purpose of metadata.json
+4. Code organization (script.js)
+5. File audiences (teacher → index.md)
+6. Styling files (style.css)
+
+---
+
+### metadata.json Updates
+
+**Comprehensive metadata overhaul:**
+
+| Section | Changes |
+|---------|---------|
+| **dublinCore** | Updated description with script.js, added publisher, identifier URL, updated license to CC BY-NC-SA 4.0 |
+| **educational** | Added Educational Technology subject, 3 Bloom levels (Remember, Understand, Apply), 5 learning objectives, PT30M duration, assessmentIncluded: true, quizQuestionCount: 6 |
+| **technical** | Added dependencies array, responsive: true, accessibility info |
+| **userInterface** | New section: controls (hover, navigation), layout description, color coding legend |
+| **search** | 14 keywords including script.js, kebab-case, Dublin Core; added tree/interactive-demo visualization types |
+| **content** | New section: all 8 files documented with type, status, descriptions |
+| **relatedContent** | Links to Chapter 2 and related MicroSims |
+
+**License Update:**
+- Changed from "MIT License" to "CC BY-NC-SA 4.0"
+- Added license URL: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+
+---
+
 *Log generated: 2026-01-25 by find-similar-templates service and microsim-generator*
