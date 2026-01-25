@@ -1,0 +1,40 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "MicroSim Directory Structure",
+      "description": "Interactive diagram showing the standard file organization for MicroSim packages including index.md, main.html, style.css, data.json, and metadata.json files",
+      "date": "2026-01-24",
+      "creator": "Dan McCreary",
+      "contributor": "Claude AI",
+      "type": "InteractiveResource",
+      "format": "text/html",
+      "language": "en-US",
+      "rights": "MIT License"
+    },
+    "educational": {
+      "topic": "File Organization",
+      "subjectArea": ["Computer Science", "Web Development"],
+      "gradeLevel": ["High School", "Undergraduate"],
+      "bloomsTaxonomy": ["Understand"],
+      "difficulty": "Beginner",
+      "learningObjectives": [
+        "Describe the standard MicroSim directory structure",
+        "Explain the purpose of each file type within the package",
+        "Distinguish between required and optional files"
+      ],
+      "prerequisites": ["Basic file system concepts", "HTML basics"],
+      "timeRequired": "PT5M"
+    },
+    "technical": {
+      "framework": "vis-network",
+      "libraryVersion": "9.1.2",
+      "fileSize": "8KB",
+      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+    },
+    "search": {
+      "keywords": ["directory structure", "file organization", "MicroSim", "metadata", "index.md", "main.html"],
+      "visualizationType": ["diagram", "network"],
+      "interactionLevel": "low"
+    }
+  }
+}

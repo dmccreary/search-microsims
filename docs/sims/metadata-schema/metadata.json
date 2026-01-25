@@ -1,0 +1,40 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "Metadata Schema Structure",
+      "description": "Interactive diagram showing the hierarchical structure of metadata.json with Dublin Core, educational, technical, and search sections",
+      "date": "2026-01-24",
+      "creator": "Dan McCreary",
+      "contributor": "Claude AI",
+      "type": "InteractiveResource",
+      "format": "text/html",
+      "language": "en-US",
+      "rights": "MIT License"
+    },
+    "educational": {
+      "topic": "Metadata Standards",
+      "subjectArea": ["Computer Science", "Information Science"],
+      "gradeLevel": ["High School", "Undergraduate"],
+      "bloomsTaxonomy": ["Analyze"],
+      "difficulty": "Intermediate",
+      "learningObjectives": [
+        "Organize understanding of the metadata.json schema",
+        "Identify the four main sections of the schema",
+        "Explain the purpose of each field"
+      ],
+      "prerequisites": ["JSON basics", "Understanding of metadata concepts"],
+      "timeRequired": "PT10M"
+    },
+    "technical": {
+      "framework": "vis-network",
+      "libraryVersion": "9.1.2",
+      "fileSize": "12KB",
+      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+    },
+    "search": {
+      "keywords": ["metadata", "JSON schema", "Dublin Core", "educational metadata", "search indexing"],
+      "visualizationType": ["diagram", "network", "infographic"],
+      "interactionLevel": "medium"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata Schema Structure</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="network"></div>
+
+        <div class="title">Metadata Schema Structure</div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color color-root"></div>
+                <span>Root</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-dublin"></div>
+                <span>Dublin Core</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-education"></div>
+                <span>Educational</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-technical"></div>
+                <span>Technical</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-search"></div>
+                <span>Search</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="info-panel" id="info-panel">
+                <div class="info-title" id="info-title">Field Details</div>
+                <div class="info-content" id="info-content">
+                    <p class="info-placeholder">Click a field to see details and examples</p>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <div class="status-title">Metadata Sections:</div>
+                <div class="status-text">
+                    <ul>
+                        <li><strong>dublinCore</strong> - Standard metadata</li>
+                        <li><strong>educational</strong> - Learning info</li>
+                        <li><strong>technical</strong> - Implementation</li>
+                        <li><strong>search</strong> - Discoverability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="metadata-schema.js"></script>
+</body>
+</html>

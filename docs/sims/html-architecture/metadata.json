@@ -1,0 +1,40 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "MicroSim HTML Architecture",
+      "description": "Interactive diagram showing the structure of a MicroSim's main.html file including head, body, scripts, and how components work together",
+      "date": "2026-01-24",
+      "creator": "Dan McCreary",
+      "contributor": "Claude AI",
+      "type": "InteractiveResource",
+      "format": "text/html",
+      "language": "en-US",
+      "rights": "MIT License"
+    },
+    "educational": {
+      "topic": "HTML Structure",
+      "subjectArea": ["Computer Science", "Web Development"],
+      "gradeLevel": ["High School", "Undergraduate"],
+      "bloomsTaxonomy": ["Analyze"],
+      "difficulty": "Intermediate",
+      "learningObjectives": [
+        "Examine the structure of a main.html file",
+        "Identify how different components work together",
+        "Understand the role of meta tags, stylesheets, and scripts"
+      ],
+      "prerequisites": ["Basic HTML knowledge", "Understanding of web pages"],
+      "timeRequired": "PT10M"
+    },
+    "technical": {
+      "framework": "vis-network",
+      "libraryVersion": "9.1.2",
+      "fileSize": "10KB",
+      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+    },
+    "search": {
+      "keywords": ["HTML", "document structure", "head", "body", "script", "stylesheet", "main.html"],
+      "visualizationType": ["diagram", "network"],
+      "interactionLevel": "medium"
+    }
+  }
+}

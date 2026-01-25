@@ -44,6 +44,9 @@ nav:
     - MicroSim Web Architecture: sims/microsim-web-architecture/index.md
     - MicroSim Search Workflow: sims/microsim-search-workflow/index.md
     - Difficulty Progression: sims/difficulty-progression/index.md
+    - MicroSim Directory Structure: sims/microsim-directory-structure/index.md
+    - HTML Architecture: sims/html-architecture/index.md
+    - Metadata Schema: sims/metadata-schema/index.md
     - MicroSim Schema: microsim-schema.md
 
   - Learning Graph:
@@ -106,8 +109,7 @@ extra_css:
 extra_javascript:
    - js/extra.js
 # Google Analytics configuration
-#extra:
-#  analytics:
-#    provider: google
-    # https://analytics.google.com/analytics/web/#/a1420179p349994530/admin/streams/table/4433129821
-#    property: G-XXXX
+extra:
+  analytics:
+    provider: google
+    property: GG-52EQFDFN5Y
