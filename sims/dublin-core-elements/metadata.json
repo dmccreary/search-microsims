@@ -45,5 +45,29 @@
     "infographic",
     "interactive-demo",
     "diagram"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "remember",
+      "understand",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "define",
+      "identify",
+      "list",
+      "state",
+      "classify"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
+  }
 }

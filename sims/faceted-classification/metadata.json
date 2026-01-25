@@ -44,5 +44,29 @@
     "simulation",
     "interactive-demo",
     "diagram"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "assessment",
+    "bloomAlignment": [
+      "understand",
+      "analyze",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "describe",
+      "explain",
+      "interpret"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
+  }
 }

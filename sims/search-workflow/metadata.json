@@ -11,9 +11,19 @@
       "rights": "CC BY-NC-SA 4.0"
     },
     "educational": {
-      "subjectArea": ["Computer Science", "Data Engineering", "Information Retrieval"],
-      "gradeLevel": ["Undergraduate", "Graduate"],
-      "bloomsTaxonomy": ["Understand", "Analyze"],
+      "subjectArea": [
+        "Computer Science",
+        "Data Engineering",
+        "Information Retrieval"
+      ],
+      "gradeLevel": [
+        "Undergraduate",
+        "Graduate"
+      ],
+      "bloomsTaxonomy": [
+        "Understand",
+        "Analyze"
+      ],
       "difficulty": "Intermediate",
       "topic": "Data Pipeline Architecture",
       "learningObjectives": [
@@ -32,10 +42,19 @@
       "framework": "mermaid",
       "libraryVersion": "11.x",
       "fileSize": "12KB",
-      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+      "browserSupport": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ]
     },
     "search": {
-      "visualizationType": ["flowchart", "workflow", "diagram"],
+      "visualizationType": [
+        "flowchart",
+        "workflow",
+        "diagram"
+      ],
       "interactionLevel": "hover",
       "keywords": [
         "data pipeline",
@@ -55,5 +74,29 @@
     "nodeCount": 12,
     "edgeCount": 13,
     "subgraphs": 6
+  },
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "understand",
+      "analyze",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "summarize",
+      "analyze"
+    ],
+    "pacing": "step-through",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "observe"
   }
 }

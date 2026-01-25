@@ -13,28 +13,79 @@
     },
     "educational": {
       "topic": "HTML Structure",
-      "subjectArea": ["Computer Science", "Web Development"],
-      "gradeLevel": ["High School", "Undergraduate"],
-      "bloomsTaxonomy": ["Analyze"],
+      "subjectArea": [
+        "Computer Science",
+        "Web Development"
+      ],
+      "gradeLevel": [
+        "High School",
+        "Undergraduate"
+      ],
+      "bloomsTaxonomy": [
+        "Analyze"
+      ],
       "difficulty": "Intermediate",
       "learningObjectives": [
         "Examine the structure of a main.html file",
         "Identify how different components work together",
         "Understand the role of meta tags, stylesheets, and scripts"
       ],
-      "prerequisites": ["Basic HTML knowledge", "Understanding of web pages"],
+      "prerequisites": [
+        "Basic HTML knowledge",
+        "Understanding of web pages"
+      ],
       "timeRequired": "PT10M"
     },
     "technical": {
       "framework": "vis-network",
       "libraryVersion": "9.1.2",
       "fileSize": "10KB",
-      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+      "browserSupport": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ]
     },
     "search": {
-      "keywords": ["HTML", "document structure", "head", "body", "script", "stylesheet", "main.html"],
-      "visualizationType": ["diagram", "network"],
+      "keywords": [
+        "HTML",
+        "document structure",
+        "head",
+        "body",
+        "script",
+        "stylesheet",
+        "main.html"
+      ],
+      "visualizationType": [
+        "diagram",
+        "network"
+      ],
       "interactionLevel": "medium"
     }
+  },
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "explain",
+      "illustrate",
+      "implement",
+      "use"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
   }
 }

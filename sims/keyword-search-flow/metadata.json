@@ -14,9 +14,17 @@
   "language": "en",
   "rights": "CC BY 4.0",
   "educational": {
-    "subjectArea": ["Computer Science", "Information Science"],
-    "gradeLevel": ["High School", "Undergraduate"],
-    "bloomsTaxonomy": ["Understand"],
+    "subjectArea": [
+      "Computer Science",
+      "Information Science"
+    ],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
+    "bloomsTaxonomy": [
+      "Understand"
+    ],
     "difficulty": "Intermediate",
     "topic": "Search and Information Retrieval",
     "learningObjectives": [
@@ -24,18 +32,31 @@
       "Describe the role of tokenization, normalization, and synonym expansion in search",
       "Understand how match scoring factors into result ranking"
     ],
-    "prerequisites": ["Basic understanding of databases", "Familiarity with web search"],
+    "prerequisites": [
+      "Basic understanding of databases",
+      "Familiarity with web search"
+    ],
     "estimatedTime": "10-15 minutes"
   },
   "technical": {
     "framework": "p5.js",
     "libraryVersion": "1.11.10",
-    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"],
+    "browserSupport": [
+      "Chrome",
+      "Firefox",
+      "Safari",
+      "Edge"
+    ],
     "mobileSupport": true,
     "responsive": true
   },
   "search": {
-    "visualizationType": ["diagram", "workflow", "interactive-demo", "worked-example"],
+    "visualizationType": [
+      "diagram",
+      "workflow",
+      "interactive-demo",
+      "worked-example"
+    ],
     "keywords": [
       "search",
       "keywords",
@@ -48,5 +69,30 @@
       "match scoring",
       "synonym expansion"
     ]
+  },
+  "pedagogical": {
+    "pattern": "assessment",
+    "bloomAlignment": [
+      "understand",
+      "analyze",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "examine",
+      "investigate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "delayed",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "construct"
   }
 }

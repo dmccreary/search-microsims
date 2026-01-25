@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive diagram showing the hierarchical structure of metadata.json with Dublin Core, educational, technical, and search sections">
+        <meta name="description" content="Interactive diagram showing the hierarchical structure of metadata.json with Dublin Core, educational, pedagogical, technical, and search sections">
       
       
         <meta name="author" content="Dan McCreary">
@@ -412,6 +412,8 @@
       
         
           
+        
+      
         
       
     
@@ -871,6 +873,15 @@
   <a href="#educational-green" class="md-nav__link">
     <span class="md-ellipsis">
       Educational (Green)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pedagogical-pink" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pedagogical (Pink)
     </span>
   </a>
   
@@ -1357,6 +1368,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pedagogical-pink" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pedagogical (Pink)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#technical-orange" class="md-nav__link">
     <span class="md-ellipsis">
       Technical (Orange)
@@ -1463,17 +1483,18 @@
 
 
 <h1 id="metadata-schema-structure">Metadata Schema Structure</h1>
-<iframe src="./main.html" width="100%" height="550px" scrolling="no" style="overflow: hidden;"></iframe>
+<iframe src="./main.html" width="100%" height="650px" scrolling="no" style="overflow: hidden;"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html" target="_blank">View Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>This interactive diagram visualizes the complete metadata.json schema used for MicroSim packages. Click on any field to see its description and example values. The schema is organized into four main sections that enable search, discovery, and AI integration.</p>
+<p>This interactive diagram visualizes the complete metadata.json schema used for MicroSim packages. Click on any field to see its description and example values. The schema is organized into five main sections that enable search, discovery, pedagogical matching, and AI integration.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>After using this MicroSim, students will be able to:</p>
 <ol>
 <li>Organize their understanding of the metadata.json schema</li>
-<li>Identify the four main sections: dublinCore, educational, technical, and search</li>
+<li>Identify the five main sections: dublinCore, educational, pedagogical, technical, and search</li>
 <li>Explain the purpose of each field within the schema</li>
+<li>Understand how pedagogical metadata enables matching interaction patterns to learning objectives</li>
 <li>Create properly structured metadata files for their own MicroSims</li>
 </ol>
 <h2 id="how-to-use">How to Use</h2>
@@ -1482,6 +1503,7 @@
 <li><strong>Gray node</strong> is the root object</li>
 <li><strong>Blue nodes</strong> represent Dublin Core standard metadata</li>
 <li><strong>Green nodes</strong> represent educational context fields</li>
+<li><strong>Pink nodes</strong> represent pedagogical pattern fields</li>
 <li><strong>Orange nodes</strong> represent technical implementation details</li>
 <li><strong>Purple nodes</strong> represent search and discoverability fields</li>
 </ol>
@@ -1490,6 +1512,8 @@
 <p>Standard metadata based on the Dublin Core Metadata Initiative. Includes title, description, creator, date, and rights.</p>
 <h3 id="educational-green">Educational (Green)</h3>
 <p>Learning-focused metadata including subject area, grade level, Bloom's Taxonomy levels, difficulty, and learning objectives.</p>
+<h3 id="pedagogical-pink">Pedagogical (Pink)</h3>
+<p>Interaction pattern metadata that enables matching MicroSims to learning objectives. Includes pattern type (worked-example, exploration, practice), Bloom alignment, Bloom verbs, pacing (self-paced, continuous), prediction support, data visibility, and interaction style. This section prevents mismatches like recommending continuous animations for "explain" objectives.</p>
 <h3 id="technical-orange">Technical (Orange)</h3>
 <p>Implementation details such as the JavaScript framework used, library version, and browser support.</p>
 <h3 id="search-purple">Search (Purple)</h3>
@@ -1500,17 +1524,20 @@
 <li>Understand the hierarchical structure of metadata.json</li>
 <li>Identify which fields belong to which section</li>
 <li>Recognize required vs optional fields</li>
+<li>Explain how pedagogical metadata prevents interaction pattern mismatches</li>
 </ul>
 <h3 id="activities">Activities</h3>
 <ol>
-<li>Have students click through all four sections to understand their purpose</li>
+<li>Have students click through all five sections to understand their purpose</li>
 <li>Ask students to create a metadata.json file for a hypothetical MicroSim</li>
 <li>Discuss how metadata enables search and AI discovery</li>
+<li>Explore how pedagogical fields (pattern, pacing, bloomVerbs) help match MicroSims to learning objectives</li>
 </ol>
 <h3 id="assessment">Assessment</h3>
 <ul>
-<li>Can students name the four main sections?</li>
-<li>Can students explain the difference between educational and search fields?</li>
+<li>Can students name the five main sections?</li>
+<li>Can students explain the difference between educational and pedagogical fields?</li>
+<li>Can students explain why continuous animation is inappropriate for "explain" objectives?</li>
 <li>Can students create valid metadata for a new MicroSim?</li>
 </ul>
 <h2 id="iframe-embed-code">Iframe Embed Code</h2>
@@ -1520,7 +1547,7 @@
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../sims/metadata-schema/main.html&quot;</span>
         <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
-        <span class="na">height</span><span class="o">=</span><span class="s">&quot;550px&quot;</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">&quot;650px&quot;</span>
         <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
@@ -1529,6 +1556,7 @@
 <li><a href="https://www.dublincore.org/">Dublin Core Metadata Initiative</a></li>
 <li><a href="https://dmccreary.github.io/microsim-search/microsim-schema/">MicroSim Schema Documentation</a></li>
 <li><a href="https://www.bloomstaxonomy.net/">Bloom's Taxonomy</a></li>
+<li><a href="../../chapters/15-pedagogical-pattern-alignment/">Pedagogical Pattern Alignment</a></li>
 </ul>
 
 

@@ -16,9 +16,20 @@
     },
     "educational": {
       "topic": "MicroSim File Organization",
-      "subjectArea": ["Computer Science", "Web Development", "Educational Technology"],
-      "gradeLevel": ["High School", "Undergraduate"],
-      "bloomsTaxonomy": ["Remember", "Understand", "Apply"],
+      "subjectArea": [
+        "Computer Science",
+        "Web Development",
+        "Educational Technology"
+      ],
+      "gradeLevel": [
+        "High School",
+        "Undergraduate"
+      ],
+      "bloomsTaxonomy": [
+        "Remember",
+        "Understand",
+        "Apply"
+      ],
       "difficulty": "Beginner",
       "learningObjectives": [
         "Describe the standard MicroSim directory structure and naming conventions",
@@ -44,7 +55,12 @@
         "vis-network (CDN)"
       ],
       "fileSize": "12KB",
-      "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"],
+      "browserSupport": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
       "responsive": true,
       "accessibility": {
         "keyboardNavigable": true,
@@ -86,7 +102,12 @@
         "tree diagram",
         "file hierarchy"
       ],
-      "visualizationType": ["diagram", "network", "tree", "interactive-demo"],
+      "visualizationType": [
+        "diagram",
+        "network",
+        "tree",
+        "interactive-demo"
+      ],
       "interactionLevel": "medium"
     },
     "content": {
@@ -149,5 +170,29 @@
         "metadata-schema"
       ]
     }
+  },
+  "pedagogical": {
+    "pattern": "assessment",
+    "bloomAlignment": [
+      "remember",
+      "understand",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "define",
+      "identify",
+      "list",
+      "recognize",
+      "classify"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
   }
 }
