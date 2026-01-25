@@ -1,0 +1,182 @@
+/* HTML Architecture Diagram Stylesheet
+ * =====================================
+ * Shows nested structure of main.html file
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#network {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: aliceblue;
+    padding: 4px 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.legend {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    font-size: 11px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 6px;
+    border: 2px solid #333;
+}
+
+.color-document { background-color: #9c27b0; }
+.color-head { background-color: #2196f3; }
+.color-body { background-color: #4caf50; }
+.color-script { background-color: #ff9800; }
+
+.right-panel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+.info-panel {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid #2196f3;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #1976d2;
+}
+
+.info-content {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.info-placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.code-panel {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.code-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #9cdcfe;
+}
+
+.code-content {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.status-panel {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.status-text {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.status-text ul {
+    margin-left: 16px;
+    margin-top: 4px;
+}
+
+.status-text li {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+    .title {
+        font-size: 14px;
+    }
+
+    .legend {
+        padding: 6px 8px;
+    }
+
+    .legend-item {
+        font-size: 10px;
+    }
+
+    .right-panel {
+        width: 220px;
+    }
+
+    .code-content {
+        font-size: 9px;
+    }
+}

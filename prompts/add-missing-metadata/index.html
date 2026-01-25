@@ -57,6 +57,16 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","GG-52EQFDFN5Y"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","GG-52EQFDFN5Y",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=GG-52EQFDFN5Y",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -477,6 +487,16 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
         
@@ -968,24 +988,26 @@
 <h2 id="find-missing-metadata-python-program">Find Missing Metadata Python Program</h2>
 <div class="admonition prompt">
 <p class="admonition-title">Prompt</p>
-<p>create a new python program that scans all of the           <br />
-directories in @/Users/dan/Documents/ws/*/docs/sims and     <br />
-if there is no metadata.json file, it will use the          <br />
-micorsim-util standardization skill to add a new            <br />
-metadata.json file to that sim directory.  Use the source   <br />
-code at @src/update-local-microsims.py for tips on how      <br />
-to scan the local file system to find the MicroSim          <br />
-directories.  If you don't see enough information in the    <br />
-MicroSim directory add a file called TODO.md that has a     <br />
+<p>Create a new python program that scans all of the
+directories in @/Users/dan/Documents/ws/*/docs/sims and
+if there is no metadata.json file, it will use the
+micorsim-util standardization skill to add a new
+metadata.json file to that sim directory.  Use the source
+code at @src/update-local-microsims.py for tips on how
+to scan the local file system to find the MicroSim
+directories.  If you don't see enough information in the
+MicroSim directory add a file called TODO.md that has a
 list of tasks to do to fix the MicroSim metadata later.</p>
 </div>
 <h2 id="run-the-microsim-standardization-skill">Run the MicroSim Standardization Skill</h2>
-<p>!!! prompt
-    For the MicroSims that had enough information, run the      <br />
-    microsim-standardization skill and create the new           <br />
-    metadata.json file.  Do a git pull before you add the       <br />
-    metadata and checking with git add, git commit and git      <br />
-    push after you create each file      </p>
+<div class="admonition prompt">
+<p class="admonition-title">Prompt</p>
+<p>For the MicroSims that had enough information, run the
+microsim-standardization skill and create the new
+metadata.json file.  Do a git pull before you add the
+metadata and checking with git add, git commit and git
+push after you create each file</p>
+</div>
 
 
 
@@ -994,6 +1016,8 @@ list of tasks to do to fix the MicroSim metadata later.</p>
 
 
 
+
+  
 
 
 

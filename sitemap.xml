@@ -29,10 +29,6 @@
          <lastmod>2026-01-25</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/search-microsims/microsim-embeddings/</loc>
-         <lastmod>2026-01-25</lastmod>
-    </url>
-    <url>
          <loc>https://dmccreary.github.io/search-microsims/microsim-schema/</loc>
          <lastmod>2026-01-25</lastmod>
     </url>
@@ -181,11 +177,23 @@
          <lastmod>2026-01-25</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/html-architecture/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/interaction-feedback-loop/</loc>
          <lastmod>2026-01-25</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/list-similar-microsim/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/metadata-schema/</loc>
+         <lastmod>2026-01-25</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/microsim-directory-structure/</loc>
          <lastmod>2026-01-25</lastmod>
     </url>
     <url>

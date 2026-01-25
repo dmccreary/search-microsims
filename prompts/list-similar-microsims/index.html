@@ -57,6 +57,16 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","GG-52EQFDFN5Y"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","GG-52EQFDFN5Y",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=GG-52EQFDFN5Y",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -478,6 +488,16 @@
         
       
         
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
       
@@ -895,18 +915,18 @@
 <p class="admonition-title">Prompt</p>
 <p>First of all, never read the @data/microsim-embeddings.json file directly.  It is 7MB and
 reading it directly will crash Claude Code.</p>
-<p>I would like to have the items of the search results have a new feature.  The main search page   <br />
-is here: @docs/search-microsims/search/demo.html  The new feature I want a new button that       <br />
-has a "Similar MicroSims" button for each search result item.  My hope is that you can use the   <br />
-embeddings @data/microsims-embeddings.json to find the most similar sims for a given             <br />
-MicroSim.  How about we create a new MicroSim to test this out.  Put list similar MicroSim app   <br />
-in @docs/sims/list-similar-microsim/main.html.  This would take the URL ID of each MicroSim      <br />
-as a URL parameter and then list the most similar MicroSims and provide a title and short        <br />
+<p>I would like to have the items of the search results have a new feature.  The main search page
+is here: @docs/search-microsims/search/demo.html  The new feature I want a new button that
+has a "Similar MicroSims" button for each search result item.  My hope is that you can use the
+embeddings @data/microsims-embeddings.json to find the most similar sims for a given
+MicroSim.  How about we create a new MicroSim to test this out.  Put list similar MicroSim app
+in @docs/sims/list-similar-microsim/main.html.  This would take the URL ID of each MicroSim
+as a URL parameter and then list the most similar MicroSims and provide a title and short
 description and similar information to the existing search results page.</p>
-<p>❯ I am concerned about loading a large 7MB file into the docs area.  Will this work?                 </p>
+<p>❯ I am concerned about loading a large 7MB file into the docs area.  Will this work?</p>
 </div>
-<p>Is there a way we can create a batch python program that will just add the IDs of the 10 most    <br />
-  similar MicroSims to a file that is read by the application? </p>
+<p>Is there a way we can create a batch python program that will just add the IDs of the 10 most
+similar MicroSims to a file that is read by the application?</p>
 
 
 
@@ -915,6 +935,8 @@ description and similar information to the existing search results page.</p>
 
 
 
+
+  
 
 
 

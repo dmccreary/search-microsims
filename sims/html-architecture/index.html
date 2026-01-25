@@ -6,34 +6,34 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="MicroSim Faceted Search CC ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive diagram showing the structure of a MicroSim's main.html file including head, body, scripts, and how components work together">
       
       
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/microsim-embeddings/">
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/sims/html-architecture/">
       
       
-        <link rel="prev" href="../microsim-schema/">
+        <link rel="prev" href="../microsim-directory-structure/">
       
       
-        <link rel="next" href="../learning-graph/">
+        <link rel="next" href="../metadata-schema/">
       
       
-      <link rel="icon" href="../img/favicon.ico">
+      <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
-        <title>MicroSim Embeddings - MicroSim Search and Embeddings</title>
+        <title>MicroSim HTML Architecture - MicroSim Search and Embeddings</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,11 +52,21 @@
       
     
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","GG-52EQFDFN5Y"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","GG-52EQFDFN5Y",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=GG-52EQFDFN5Y",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -77,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#microsim-html-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -89,9 +104,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-header__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
       
-  <img src="../img/logo.png" alt="logo">
+  <img src="../../img/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MicroSim Embeddings
+              MicroSim HTML Architecture
             
           </span>
         </div>
@@ -195,9 +210,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
+    <a href="../.." title="MicroSim Search and Embeddings" class="md-nav__button md-logo" aria-label="MicroSim Search and Embeddings" data-md-component="logo">
       
-  <img src="../img/logo.png" alt="logo">
+  <img src="../../img/logo.png" alt="logo">
 
     </a>
     MicroSim Search and Embeddings
@@ -224,7 +239,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -244,7 +259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../course-description/" class="md-nav__link">
+      <a href="../../course-description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -264,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../search/" class="md-nav__link">
+      <a href="../../search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -359,7 +374,7 @@
         
   
   
-    <a href="../chapters/" class="md-nav__link">
+    <a href="../../chapters/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -408,7 +423,7 @@
         
   
   
-    <a href="../reports/microsim-metrics/" class="md-nav__link">
+    <a href="../../reports/microsim-metrics/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -475,6 +490,16 @@
         
       
         
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
       
@@ -492,7 +517,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../sims/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -525,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/search-workflow/" class="md-nav__link">
+      <a href="../search-workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/list-similar-microsim/" class="md-nav__link">
+      <a href="../list-similar-microsim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/pca-map/" class="md-nav__link">
+      <a href="../pca-map/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -588,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/graph-viewer/" class="md-nav__link">
+      <a href="../graph-viewer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/interaction-feedback-loop/" class="md-nav__link">
+      <a href="../interaction-feedback-loop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/microsim-web-architecture/" class="md-nav__link">
+      <a href="../microsim-web-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -651,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/microsim-search-workflow/" class="md-nav__link">
+      <a href="../microsim-search-workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sims/difficulty-progression/" class="md-nav__link">
+      <a href="../difficulty-progression/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -693,11 +718,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../microsim-schema/" class="md-nav__link">
+      <a href="../microsim-directory-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    MicroSim Schema
+    MicroSim Directory Structure
   </span>
   
 
@@ -720,17 +745,178 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HTML Architecture
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    MicroSim Embeddings
+    HTML Architecture
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata-schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microsim-schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim Schema
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -787,7 +973,7 @@
         
   
   
-    <a href="../learning-graph/" class="md-nav__link">
+    <a href="../../learning-graph/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -838,7 +1024,7 @@
         
   
   
-    <a href="../prompts/add-missing-metadata/" class="md-nav__link">
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -864,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../glossary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-we-built-this-site/" class="md-nav__link">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -904,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../references/" class="md-nav__link">
+      <a href="../../references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -924,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -944,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -974,6 +1160,103 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -988,7 +1271,7 @@
                   
 
   
-    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/microsim-embeddings.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/sims/html-architecture/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -996,7 +1279,63 @@
   
 
 
-  <h1>MicroSim Embeddings</h1>
+<h1 id="microsim-html-architecture">MicroSim HTML Architecture</h1>
+<iframe src="./main.html" width="100%" height="500px" scrolling="no" style="overflow: hidden;"></iframe>
+
+<p><a class="md-button md-button--primary" href="main.html" target="_blank">View Fullscreen</a></p>
+<h2 id="about-this-microsim">About This MicroSim</h2>
+<p>This interactive diagram shows the anatomy of a MicroSim's main.html file. Click on any element to see its code example and understand how different components work together to create an interactive simulation.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After using this MicroSim, students will be able to:</p>
+<ol>
+<li>Examine the structure of a main.html file</li>
+<li>Identify how different components (head, body, scripts) work together</li>
+<li>Understand the role of meta tags, stylesheets, and scripts</li>
+<li>Recognize the separation between structure (HTML) and behavior (JavaScript)</li>
+</ol>
+<h2 id="how-to-use">How to Use</h2>
+<ol>
+<li><strong>Click on nodes</strong> to see code examples for each element</li>
+<li><strong>Purple nodes</strong> represent document-level elements</li>
+<li><strong>Blue nodes</strong> are head section elements (metadata)</li>
+<li><strong>Green nodes</strong> are body section elements (visible content)</li>
+<li><strong>Orange nodes</strong> represent external resources (CSS, JavaScript)</li>
+</ol>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives_1">Learning Objectives</h3>
+<ul>
+<li>Understand HTML document structure</li>
+<li>Identify the purpose of head vs body sections</li>
+<li>Recognize how external resources are loaded</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li>Have students click through each node to see the code examples</li>
+<li>Ask students to trace how a script file gets loaded (head vs body placement)</li>
+<li>Discuss why meta viewport is important for MicroSims embedded in iframes</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>Can students explain the difference between head and body sections?</li>
+<li>Can students identify where to add a new JavaScript library?</li>
+<li>Can students explain why the canvas container is in the body?</li>
+</ul>
+<h2 id="iframe-embed-code">Iframe Embed Code</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../sims/html-architecture/main.html&quot;</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span>
+        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">MDN HTML Basics</a></li>
+<li><a href="https://p5js.org/get-started/">p5.js Getting Started</a></li>
+</ul>
 
 
 
@@ -1004,9 +1343,12 @@
 
 
 
+  
+  
 
 
 
+  
 
 
 
@@ -1034,7 +1376,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../microsim-schema/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MicroSim Schema">
+          <a href="../microsim-directory-structure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MicroSim Directory Structure">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1044,20 +1386,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MicroSim Schema
+                MicroSim Directory Structure
               </div>
             </div>
           </a>
         
         
           
-          <a href="../learning-graph/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="../metadata-schema/" class="md-footer__link md-footer__link--next" aria-label="Next: Metadata Schema">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Metadata Schema
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1091,12 +1433,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../js/extra.js"></script>
+        <script src="../../js/extra.js"></script>
       
     
   </body>

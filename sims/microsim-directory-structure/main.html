@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSim Directory Structure</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="network"></div>
+
+        <div class="title">MicroSim Directory Structure</div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color color-folder"></div>
+                <span>Folder</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-required"></div>
+                <span>Required File</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color color-optional"></div>
+                <span>Optional File</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="info-panel" id="info-panel">
+                <div class="info-title" id="info-title">File Details</div>
+                <div class="info-content" id="info-content">
+                    <p class="info-placeholder">Hover over a node to see details</p>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <div class="status-title">About This Diagram:</div>
+                <div class="status-text">
+                    <ul>
+                        <li>Shows standard MicroSim file organization</li>
+                        <li>Hover over files to see their purpose</li>
+                        <li>Blue = required, Green = optional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="microsim-directory-structure.js"></script>
+</body>
+</html>
