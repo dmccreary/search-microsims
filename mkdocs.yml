@@ -64,6 +64,8 @@ nav:
       - Chapter Design: learning-graph/chapter-design.md
       - Diagram Table: learning-graph/diagram-table.md
       - Diagram Details: learning-graph/diagram-details.md
+      - Glossary Quality Report: learning-graph/glossary-quality-report.md
+      - FAQ Quality Report: learning-graph/faq-quality-report.md
 
   - Prompts:
       - Add Missing Metadata: prompts/add-missing-metadata.md
@@ -72,6 +74,7 @@ nav:
       - Generate MicroSims for Each Chapter: prompts/generate-microsims-for-each-chapter.md
       - List Similar MicroSims: prompts/list-similar-microsims.md
  
+  - FAQ: faq.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
