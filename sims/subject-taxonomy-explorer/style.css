@@ -1,0 +1,363 @@
+/* Subject Hierarchy Taxonomy Explorer
+ * ====================================
+ * vis-network hierarchical layout with expand/collapse functionality
+ */
+
+/* ===========================================
+   RESET & BASE STYLES
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: aliceblue;
+}
+
+/* ===========================================
+   MAIN CONTAINER & NETWORK CANVAS
+   =========================================== */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#network {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+/* ===========================================
+   TITLE (Top Center)
+   =========================================== */
+.title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    background-color: aliceblue;
+    padding: 4px 12px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* ===========================================
+   LEGEND (Upper Left)
+   =========================================== */
+.legend {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    font-size: 12px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 2px solid #333;
+}
+
+.color-discipline {
+    background-color: lightblue;
+    width: 24px;
+    height: 24px;
+}
+
+.color-domain {
+    background-color: #4CAF50;
+    width: 20px;
+    height: 20px;
+}
+
+.color-topic {
+    background-color: #FF9800;
+    width: 16px;
+    height: 16px;
+}
+
+/* ===========================================
+   RIGHT PANEL
+   =========================================== */
+.right-panel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+/* ===========================================
+   SEARCH CONTAINER
+   =========================================== */
+.search-container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#search-input:focus {
+    border-color: #2196F3;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-result-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-item .type-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 8px;
+    color: white;
+}
+
+.type-badge.discipline { background-color: #2196F3; }
+.type-badge.domain { background-color: #4CAF50; }
+.type-badge.topic { background-color: #FF9800; }
+
+/* ===========================================
+   CONTROL BUTTONS
+   =========================================== */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #2196f3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1976d2;
+}
+
+.btn-primary.active {
+    background-color: #1565c0;
+}
+
+.btn-secondary {
+    background-color: #757575;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #616161;
+}
+
+/* ===========================================
+   BREADCRUMB
+   =========================================== */
+.breadcrumb {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.breadcrumb-title {
+    font-weight: bold;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.breadcrumb-path {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.breadcrumb-path span {
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+
+.breadcrumb-path span.discipline { background-color: #BBDEFB; }
+.breadcrumb-path span.domain { background-color: #C8E6C9; }
+.breadcrumb-path span.topic { background-color: #FFE0B2; }
+
+.breadcrumb-path .separator {
+    color: #999;
+    margin: 0 2px;
+}
+
+/* ===========================================
+   NODE INFO PANEL
+   =========================================== */
+.node-info {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.node-info-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.node-info-type {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.node-info-type.discipline { background-color: #2196F3; }
+.node-info-type.domain { background-color: #4CAF50; }
+.node-info-type.topic { background-color: #FF9800; }
+
+.node-info-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.node-info-example {
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+}
+
+/* ===========================================
+   STATUS INFO PANEL
+   =========================================== */
+.status-info {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #333;
+}
+
+.status-text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* ===========================================
+   RESPONSIVE STYLES
+   =========================================== */
+@media (max-width: 600px) {
+    .title {
+        font-size: 16px;
+    }
+
+    .legend {
+        padding: 6px 8px;
+    }
+
+    .legend-item {
+        font-size: 10px;
+    }
+
+    .right-panel {
+        width: 100px;
+    }
+
+    .controls {
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}

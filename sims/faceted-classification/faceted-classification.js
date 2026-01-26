@@ -6,13 +6,13 @@
 // Canvas dimensions - responsive width
 let containerWidth;
 let canvasWidth = 800;
-let drawHeight = 500;
+let drawHeight = 785;
 let controlHeight = 0; // Controls are in left panel, not bottom
 let canvasHeight = drawHeight + controlHeight;
 let containerHeight = canvasHeight;
 
 // Layout constants
-let leftPanelWidth = 200;
+let leftPanelWidth = 120;
 let rightPanelWidth = 180;
 let margin = 10;
 let cardWidth = 130;
@@ -97,7 +97,7 @@ function setup() {
 }
 
 function createFilterControls() {
-  let controlX = 15;
+  let controlX = 10;
   let controlY = 70;
   let labelHeight = 22;
 
@@ -112,7 +112,7 @@ function createFilterControls() {
   subjectSelect.changed(() => {
     subjectFilter = subjectSelect.value();
   });
-  subjectSelect.style('width', '170px');
+  subjectSelect.style('width', '100px');
   subjectSelect.style('padding', '4px');
   controlY += 35;
 
@@ -157,7 +157,7 @@ function createFilterControls() {
   clearButton = createButton('Clear All Filters');
   clearButton.position(controlX, controlY);
   clearButton.mousePressed(clearAllFilters);
-  clearButton.style('padding', '6px 12px');
+  clearButton.style('padding', '2px 4px');
   clearButton.style('cursor', 'pointer');
 }
 
@@ -341,8 +341,7 @@ function drawCard(item, x, y, opacity) {
   fill(100, 100, 100, opacity);
 
   // Grade badge
-  let gradeText = item.gradeLevel.substring(0, 4);
-  text(gradeText, x + 6, y + cardHeight - 18);
+  text(item.gradeLevel, x + 6, y + cardHeight - 18);
 
   // Difficulty badge
   let diffColors = {
@@ -353,7 +352,7 @@ function drawCard(item, x, y, opacity) {
   let diffColor = diffColors[item.difficulty] || [100, 100, 100];
   fill(diffColor[0], diffColor[1], diffColor[2], opacity);
   textAlign(RIGHT, TOP);
-  text(item.difficulty.substring(0, 3), x + cardWidth - 6, y + cardHeight - 18);
+  text(item.difficulty, x + cardWidth - 6, y + cardHeight - 18);
 }
 
 function drawRightPanel() {

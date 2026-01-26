@@ -315,6 +315,22 @@ function normalizeData(items) {
 }
 
 // ============================================================================
+// Utility Functions
+// ============================================================================
+
+/**
+ * Strip HTML tags from a string to prevent rendering issues
+ * Some metadata descriptions contain raw HTML (iframes, etc.) that should not be rendered
+ */
+function stripHtml(str) {
+    if (!str) return '';
+    // Create a temporary element to parse HTML and extract text
+    const tmp = document.createElement('div');
+    tmp.innerHTML = str;
+    return tmp.textContent || tmp.innerText || '';
+}
+
+// ============================================================================
 // Rendering Functions
 // ============================================================================
 
@@ -388,7 +404,7 @@ function renderResults(items) {
     resultsContainer.innerHTML = items.map(item => `
         <div class="result-card">
             <h3><a href="${item.url || '#'}" target="_blank">${item.title || 'Untitled'}</a></h3>
-            <p class="description">${item.description || ''}</p>
+            <p class="description">${stripHtml(item.description) || ''}</p>
             <div class="tags">
                 ${(item.subjectArea || []).slice(0, 3).map(s => `<span class="tag">${s}</span>`).join('')}
                 ${(item.gradeLevel || []).slice(0, 2).map(g => `<span class="tag level">${g}</span>`).join('')}

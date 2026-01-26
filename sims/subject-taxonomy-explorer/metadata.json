@@ -1,0 +1,52 @@
+{
+  "dublinCore": {
+    "title": "Subject Hierarchy Taxonomy Explorer",
+    "creator": "Claude AI Assistant",
+    "subject": [
+      "Metadata",
+      "Dublin Core",
+      "Subject Classification",
+      "Taxonomy",
+      "Information Organization",
+      "Educational Technology"
+    ],
+    "description": "Interactive vis-network visualization showing hierarchical relationships between subject disciplines, domains, and specific topics. Helps users understand how to select appropriate subject terms at different specificity levels when creating Dublin Core metadata for educational resources.",
+    "publisher": "MicroSim Search Project",
+    "date": "2026-01-25",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "subject-taxonomy-explorer",
+    "language": "en-US",
+    "rights": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)"
+  },
+  "educational": {
+    "subjectArea": "Information Science",
+    "gradeLevel": "Undergraduate",
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Understand",
+    "bloomVerbs": ["classify", "describe", "explain", "interpret"],
+    "pattern": "exploration",
+    "pacing": "self-paced",
+    "bloomAlignment": ["remember", "understand", "apply"]
+  },
+  "technical": {
+    "framework": "vis-network",
+    "fileSize": "15KB",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+  },
+  "search": {
+    "visualizationType": ["network", "graph", "interactive-demo", "hierarchy"],
+    "keywords": [
+      "subject hierarchy",
+      "taxonomy",
+      "classification",
+      "Dublin Core",
+      "metadata",
+      "disciplines",
+      "domains",
+      "topics"
+    ]
+  }
+}

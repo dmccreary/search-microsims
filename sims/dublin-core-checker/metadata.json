@@ -1,0 +1,47 @@
+{
+  "dublinCore": {
+    "title": "Dublin Core Element Completeness Checker",
+    "creator": "Dan McCreary",
+    "subject": [
+      "Dublin Core",
+      "Metadata",
+      "Information Science",
+      "Library Science",
+      "Data Standards",
+      "Educational Resources",
+      "Form Validation"
+    ],
+    "description": "Interactive MicroSim for implementing and validating Dublin Core metadata. Students fill in all 15 Dublin Core elements organized by priority (Required, Recommended, Optional) and receive real-time feedback on completeness and quality through a circular gauge. Features include color-coded field validation, quality scoring with bonuses, example loading, and JSON export.",
+    "date": "2026-01-25",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "https://dmccreary.github.io/microsim-search/sims/dublin-core-checker/",
+    "language": "en-US",
+    "rights": "CC BY-SA 4.0"
+  },
+  "educational": {
+    "learningObjective": "Students will implement complete Dublin Core metadata by filling in all 15 elements and receiving feedback on completeness and quality.",
+    "bloomLevel": "Apply",
+    "bloomVerb": "implement",
+    "gradeLevel": "Undergraduate",
+    "difficulty": "Intermediate",
+    "subjectArea": "Information Science"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "fileSize": "12KB"
+  },
+  "search": {
+    "visualizationType": [
+      "form",
+      "gauge",
+      "interactive-demo"
+    ]
+  },
+  "pedagogical": {
+    "pattern": "practice",
+    "pacing": "self-paced",
+    "bloomAlignment": ["apply", "understand"],
+    "bloomVerbs": ["implement", "apply", "use", "demonstrate"]
+  }
+}
