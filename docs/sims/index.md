@@ -124,4 +124,94 @@ This section contains interactive MicroSims covering topics in metadata, search 
 
     Interactive visualization showing hierarchical relationships between subject disciplines, domains, and topics for Dublin Core metadata classification.
 
+- **[Animation Control Panel](./animation-control-panel/index.md)**
+
+    ![Animation Control Panel](./animation-control-panel/animation-control-panel.png)
+
+    Interactive demonstration of essential animation controls including play, pause, restart, step-through, speed adjustment, and loop toggle with a sample pendulum animation.
+
+- **[Apply-Level Pendulum Calculator](./apply-level-pendulum/index.md)**
+
+    ![Apply-Level Pendulum Calculator](./apply-level-pendulum/apply-level-pendulum.png)
+
+    Students calculate pendulum period using T = 2π√(L/g), then verify their answer against the simulation. Demonstrates Apply-level (L3) learning with hands-on calculation practice.
+
+- **[Bloom's Taxonomy Pyramid](./blooms-taxonomy-pyramid/index.md)**
+
+    ![Bloom's Taxonomy Pyramid](./blooms-taxonomy-pyramid/blooms-taxonomy-pyramid.png)
+
+    Interactive pyramid visualization of Bloom's Taxonomy cognitive levels with example verbs, MicroSim types, and detailed descriptions for each level.
+
+- **[Bloom-MicroSim Matcher](./bloom-microsim-matcher/index.md)**
+
+    ![Bloom-MicroSim Matcher](./bloom-microsim-matcher/bloom-microsim-matcher.png)
+
+    Drag-and-drop matching activity where students connect MicroSim types to their appropriate Bloom's Taxonomy levels with immediate feedback.
+
+- **[Cognitive Load Visualizer](./cognitive-load-visualizer/index.md)**
+
+    ![Cognitive Load Visualizer](./cognitive-load-visualizer/cognitive-load-visualizer.png)
+
+    Beaker visualization demonstrating cognitive load theory with three liquid types representing intrinsic, extraneous, and germane load affecting learning capacity.
+
+- **[Dashboard Layout Builder](./dashboard-patterns/index.md)**
+
+    ![Dashboard Layout Builder](./dashboard-patterns/dashboard-patterns.png)
+
+    Drag-and-drop tool for constructing effective dashboard layouts by selecting and arranging components on a grid canvas with preset templates.
+
+- **[Feedback Loop Comparison](./feedback-loop-sim/index.md)**
+
+    ![Feedback Loop Comparison](./feedback-loop-sim/feedback-loop-sim.png)
+
+    Three-panel comparison of feedback styles (minimal, directive, elaborated) across different error scenarios showing effectiveness percentages and research findings.
+
+- **[Grade Level Progression](./grade-level-progression/index.md)**
+
+    ![Grade Level Progression](./grade-level-progression/grade-level-progression.png)
+
+    Visual timeline showing characteristics of educational content across grade levels from elementary through graduate, with reading level and complexity indicators.
+
+- **[Graph Layout Gallery](./graph-viz-gallery/index.md)**
+
+    ![Graph Layout Gallery](./graph-viz-gallery/graph-viz-gallery.png)
+
+    Gallery of five graph layout algorithms (Force-Directed, Hierarchical, Circular, Radial, Grid) showing the same data rendered in each style with descriptions.
+
+- **[Guided Discovery Path](./guided-discovery-path/index.md)**
+
+    ![Guided Discovery Path](./guided-discovery-path/guided-discovery-path.png)
+
+    Nine-step interactive workflow showing the guided discovery learning process from initial question through scaffolded exploration to knowledge transfer.
+
+- **[Learning Theories Comparison](./learning-theories-compare/index.md)**
+
+    ![Learning Theories Comparison](./learning-theories-compare/learning-theories-compare.png)
+
+    Four-quadrant comparison of major learning theories (Constructivism, Behaviorism, Cognitivism, Experiential) with central design challenge integration.
+
+- **[Rubric Scorer](./rubric-scorer/index.md)**
+
+    ![Rubric Scorer](./rubric-scorer/rubric-scorer.png)
+
+    Interactive rubric assessment tool where students evaluate work samples using criteria and compare their scores against expert assessment.
+
+- **[Simulation Anatomy](./simulation-anatomy/index.md)**
+
+    ![Simulation Anatomy](./simulation-anatomy/simulation-anatomy.png)
+
+    Annotated diagram showing the five essential regions of an educational simulation interface: Visualization, Control Panel, Information, Title, and Help.
+
+- **[Standards Comparison](./standards-comparison/index.md)**
+
+    ![Standards Comparison](./standards-comparison/standards-comparison.png)
+
+    Side-by-side comparison of educational standards frameworks (Common Core, NGSS, ISTE, state standards) with feature analysis and recommendations.
+
+- **[Timeline Layout Styles](./timeline-styles/index.md)**
+
+    ![Timeline Layout Styles](./timeline-styles/timeline-styles.png)
+
+    Comparison of four timeline visualization styles (Horizontal Linear, Vertical Scroll, Centered Alternating, Parallel Tracks) with the same event data.
+
 </div>

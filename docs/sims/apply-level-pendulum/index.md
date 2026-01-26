@@ -10,6 +10,7 @@ quality_score: 87
 
 [View Full Screen](main.html){ .md-button .md-button--primary }
 
+[Edit in the P5.js Editor](https://editor.p5js.org/dmccreary/sketches/T_cP0cGwr)
 ## About This MicroSim
 
 This Apply-level (L3) MicroSim requires students to calculate the period of a simple pendulum, then verify their answer against the simulation.

@@ -67,6 +67,7 @@ function draw() {
   textStyle(NORMAL);
 
   // Draw drop zones
+  rectMode(CORNER);  // Reset from drawControls' CENTER mode
   let zoneX = canvasWidth - 200;
   let zoneW = 180;
   let zoneH = 70;
@@ -82,14 +83,18 @@ function draw() {
     noStroke();
     textSize(12);
     textStyle(BOLD);
-    text('L' + (i + 1) + ': ' + bloomLevels[i].name, zoneX + zoneW / 2, y + 15);
-    textStyle(NORMAL);
 
     // Show placed cards count
     let placedCount = cardStates.filter(c => c.placed === i).length;
+
+    // Center text vertically, adjust if showing card count
+    let labelY = placedCount > 0 ? y + zoneH / 2 - 8 : y + zoneH / 2;
+    text('L' + (i + 1) + ': ' + bloomLevels[i].name, zoneX + zoneW / 2, labelY);
+    textStyle(NORMAL);
+
     if (placedCount > 0) {
       textSize(10);
-      text(placedCount + ' card(s)', zoneX + zoneW / 2, y + zoneH - 15);
+      text(placedCount + ' card(s)', zoneX + zoneW / 2, y + zoneH / 2 + 12);
     }
   }
 

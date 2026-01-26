@@ -21,7 +21,10 @@ function updateCanvasSize() {
 function setup() {
   updateCanvasSize();
   let canvas = createCanvas(canvasWidth, drawHeight + controlHeight);
-  canvas.parent('canvas-container');
+  let container = document.getElementById('canvas-container');
+  if (container) {
+    canvas.parent(container);
+  }
   textAlign(CENTER, CENTER);
 }
 
