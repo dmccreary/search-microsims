@@ -1,5 +1,5 @@
-site_name: MicroSim Search and Embeddings
-site_description: 'MicroSim Faceted Search CC ShareAlike Attribution Noncommercial'
+site_name: 'MicroSim Search and Similarity'
+site_description: 'An interactive intelligent textbook for MicroSim Faceted Search and Similarity'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/search-microsims/'
@@ -9,6 +9,7 @@ edit_uri: 'blob/master/docs'
 nav:
   - Home: index.md
   - Course Description: course-description.md
+  - About This Book: about.md
   - Search Demo: search/index.md
 
   - Chapters:
@@ -92,6 +93,7 @@ nav:
       - Quality Metrics: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Chapter Design: learning-graph/chapter-design.md
+      - Book Metrics: learning-graph/book-metrics.md
       - Diagram Table: learning-graph/diagram-table.md
       - Diagram Details: learning-graph/diagram-details.md
       - Glossary Quality Report: learning-graph/glossary-quality-report.md
