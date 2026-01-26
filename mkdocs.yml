@@ -13,21 +13,51 @@ nav:
 
   - Chapters:
       - Table of Contents: chapters/index.md
-      - 1. Introduction to MicroSims: chapters/01-intro-to-microsims/index.md
-      - 2. MicroSim File Organization: chapters/02-microsim-file-organization/index.md
-      - 3. Metadata Fundamentals: chapters/03-metadata-fundamentals/index.md
-      - 4. Dublin Core Elements: chapters/04-dublin-core-elements/index.md
-      - 5. JSON and Data Structures: chapters/05-json-and-data-structures/index.md
-      - 6. Search Fundamentals: chapters/06-search-fundamentals/index.md
-      - 7. Faceted Search: chapters/07-faceted-search-client-side/index.md
-      - 8. Embeddings and Semantic Search: chapters/08-embeddings-semantic-search/index.md
-      - 9. Data Pipelines: chapters/09-data-pipelines-aggregation/index.md
-      - 10. Educational Foundations: chapters/10-educational-foundations/index.md
-      - 11. Learning Theory: chapters/11-learning-theory-pedagogy/index.md
-      - 12. Visualization Types: chapters/12-visualization-types/index.md
-      - 13. User Interface and Controls: chapters/13-user-interface-controls/index.md
-      - 14. Technical Implementation: chapters/14-technical-implementation/index.md
-      - 15. Pedagogical Pattern Alignment: chapters/15-pedagogical-pattern-alignment/index.md
+      - 1. Introduction to MicroSims:
+        - Content: chapters/01-intro-to-microsims/index.md
+        - Quiz: chapters/01-intro-to-microsims/quiz.md
+      - 2. MicroSim File Organization:
+        - Content: chapters/02-microsim-file-organization/index.md
+        - Quiz: chapters/02-microsim-file-organization/quiz.md
+      - 3. Metadata Fundamentals:
+        - Content: chapters/03-metadata-fundamentals/index.md
+        - Quiz: chapters/03-metadata-fundamentals/quiz.md
+      - 4. Dublin Core Elements:
+        - Content: chapters/04-dublin-core-elements/index.md
+        - Quiz: chapters/04-dublin-core-elements/quiz.md
+      - 5. JSON and Data Structures:
+        - Content: chapters/05-json-and-data-structures/index.md
+        - Quiz: chapters/05-json-and-data-structures/quiz.md
+      - 6. Search Fundamentals:
+        - Content: chapters/06-search-fundamentals/index.md
+        - Quiz: chapters/06-search-fundamentals/quiz.md
+      - 7. Faceted Search:
+        - Content: chapters/07-faceted-search-client-side/index.md
+        - Quiz: chapters/07-faceted-search-client-side/quiz.md
+      - 8. Embeddings and Semantic Search:
+        - Content: chapters/08-embeddings-semantic-search/index.md
+        - Quiz: chapters/08-embeddings-semantic-search/quiz.md
+      - 9. Data Pipelines:
+        - Content: chapters/09-data-pipelines-aggregation/index.md
+        - Quiz: chapters/09-data-pipelines-aggregation/quiz.md
+      - 10. Educational Foundations:
+        - Content: chapters/10-educational-foundations/index.md
+        - Quiz: chapters/10-educational-foundations/quiz.md
+      - 11. Learning Theory:
+        - Content: chapters/11-learning-theory-pedagogy/index.md
+        - Quiz: chapters/11-learning-theory-pedagogy/quiz.md
+      - 12. Visualization Types:
+        - Content: chapters/12-visualization-types/index.md
+        - Quiz: chapters/12-visualization-types/quiz.md
+      - 13. User Interface and Controls:
+        - Content: chapters/13-user-interface-controls/index.md
+        - Quiz: chapters/13-user-interface-controls/quiz.md
+      - 14. Technical Implementation:
+        - Content: chapters/14-technical-implementation/index.md
+        - Quiz: chapters/14-technical-implementation/quiz.md
+      - 15. Pedagogical Pattern Alignment:
+        - Content: chapters/15-pedagogical-pattern-alignment/index.md
+        - Quiz: chapters/15-pedagogical-pattern-alignment/quiz.md
   
   - Reports:
       - MicroSim Metrics: reports/microsim-metrics.md
@@ -66,6 +96,7 @@ nav:
       - Diagram Details: learning-graph/diagram-details.md
       - Glossary Quality Report: learning-graph/glossary-quality-report.md
       - FAQ Quality Report: learning-graph/faq-quality-report.md
+      - Quiz Generation Report: learning-graph/quiz-generation-report.md
 
   - Prompts:
       - Add Missing Metadata: prompts/add-missing-metadata.md
