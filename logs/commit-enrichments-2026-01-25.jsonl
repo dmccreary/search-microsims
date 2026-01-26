@@ -39,3 +39,39 @@
 {"timestamp": "2026-01-25T16:54:22.239416Z", "event": "push_error", "repo": "tour-maps", "error": "To https://github.com/dmccreary/tour-maps.git\n ! [rejected]        main -> main (non-fast-forward)\nerror: failed to push some refs to 'https://github.com/dmccreary/tour-maps.git'\nhint: Updates were rejected because the tip of your current branch is behind\nhint: its remote counterpart. If you want to integrate the remote changes,\nhint: use 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n"}
 {"timestamp": "2026-01-25T16:54:24.014172Z", "event": "repo_pushed", "repo": "tracking-ai-course", "files": ["docs/sims/ai-causes/metadata.json", "docs/sims/ai-cmm/metadata.json", "docs/sims/ai-doubling-rate/metadata.json", "docs/sims/ai-flywheel/metadata.json", "docs/sims/ai-pace-accelerating/metadata.json", "docs/sims/ai-task-horizons/metadata.json", "docs/sims/autoregressive/metadata.json", "docs/sims/blooms-taxonomy/metadata.json", "docs/sims/book-gen-workflow/metadata.json", "docs/sims/book-levels/metadata.json", "docs/sims/four-futures/metadata.json", "docs/sims/hype-cycle/metadata.json", "docs/sims/idea-funnel/metadata.json", "docs/sims/learning-graph/metadata.json", "docs/sims/lm-arena-timeline/metadata.json", "docs/sims/mmlu-timeline/metadata.json", "docs/sims/moores-law/metadata.json", "docs/sims/porters-five-forces/metadata.json", "docs/sims/power-wall/metadata.json", "docs/sims/projecting-ai/metadata.json", "docs/sims/swot/metadata.json", "docs/sims/technology-adoption/metadata.json", "docs/sims/timeline/metadata.json", "docs/sims/tokenizer/metadata.json"]}
 {"timestamp": "2026-01-25T16:54:24.014347Z", "event": "run_completed", "repos_scanned": 47, "repos_with_changes": 38, "files_committed": 853, "repos_pushed": 35, "errors": 3}
+{"timestamp": "2026-01-25T23:49:52.091766Z", "event": "run_started", "workspace": "/Users/dan/Documents/ws", "dry_run": true}
+{"timestamp": "2026-01-25T23:49:54.371049Z", "event": "run_completed", "repos_scanned": 47, "repos_with_changes": 0, "files_committed": 0, "repos_pushed": 0, "errors": 0}
+{"timestamp": "2026-01-25T23:51:15.268997Z", "event": "run_started", "workspace": "/Users/dan/Documents/ws", "dry_run": true}
+{"timestamp": "2026-01-25T23:51:16.637643Z", "event": "run_completed", "repos_scanned": 47, "repos_with_changes": 0, "files_committed": 0, "repos_pushed": 0, "errors": 0}
+{"timestamp": "2026-01-25T23:53:29.667283Z", "event": "run_started", "workspace": "/Users/dan/Documents/ws", "dry_run": true}
+{"timestamp": "2026-01-25T23:53:30.915910Z", "event": "run_completed", "repos_scanned": 47, "repos_with_changes": 26, "files_committed": 0, "repos_pushed": 0, "errors": 0}
+{"timestamp": "2026-01-25T23:53:35.424325Z", "event": "run_started", "workspace": "/Users/dan/Documents/ws", "dry_run": false}
+{"timestamp": "2026-01-25T23:53:36.414516Z", "event": "repo_pushed", "repo": "algebra-1", "files": ["docs/sims/coordinate-plane-explorer/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:37.289037Z", "event": "repo_pushed", "repo": "asl-book", "files": ["docs/sims/graph-viewer/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:39.961862Z", "event": "repo_pushed", "repo": "automating-instructional-design", "files": ["docs/sims/accessibility-audit-mermaid/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:40.863896Z", "event": "repo_pushed", "repo": "beginning-electronics", "files": ["docs/sims/rcl-draw-test/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:41.736410Z", "event": "repo_pushed", "repo": "circuits", "files": ["docs/sims/animated-switches/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:42.799366Z", "event": "repo_pushed", "repo": "clocks-and-watches", "files": ["docs/sims/4-digits/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:43.653861Z", "event": "repo_pushed", "repo": "conversational-ai", "files": ["docs/sims/ai-performance-chart/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:44.629944Z", "event": "repo_pushed", "repo": "ethics-course", "files": ["docs/sims/bias-classifier-quiz/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:45.571014Z", "event": "repo_pushed", "repo": "geometry-course", "files": ["docs/sims/adjacent-angles-comparison/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:46.488948Z", "event": "repo_pushed", "repo": "graph-algorithms", "files": ["docs/sims/bfs-vs-dfs/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:47.379238Z", "event": "repo_pushed", "repo": "graph-data-modeling-course", "files": ["docs/sims/customer-models/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:48.402428Z", "event": "repo_pushed", "repo": "intelligent-book-template", "files": ["docs/sims/template/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:49.373114Z", "event": "repo_pushed", "repo": "intro-to-graph", "files": ["docs/sims/graph-viewer/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:50.389320Z", "event": "repo_pushed", "repo": "intro-to-physics-course", "files": ["docs/sims/2d-collision-vectors/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:51.288518Z", "event": "repo_pushed", "repo": "lambda-graph-visualization", "files": ["docs/sims/lambda-graph-2-p5/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:52.238684Z", "event": "repo_pushed", "repo": "learning-graphs", "files": ["docs/sims/blooms-taxonomy/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:53.263989Z", "event": "repo_pushed", "repo": "learning-linux", "files": ["docs/sims/bash-vs-zsh/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:54.288620Z", "event": "repo_pushed", "repo": "linear-algebra", "files": ["docs/sims/2d-rotation/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:55.208975Z", "event": "repo_pushed", "repo": "mccreary-heritage", "files": ["docs/sims/ancestor-locations/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:56.334938Z", "event": "repo_pushed", "repo": "microsims", "files": ["docs/sims/555-timer/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:57.256856Z", "event": "repo_pushed", "repo": "modeling-healthcare-data", "files": ["docs/sims/ai-ml-taxonomy/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:58.279713Z", "event": "repo_pushed", "repo": "personal-finance", "files": ["docs/sims/account-reconciliation/metadata.json"]}
+{"timestamp": "2026-01-25T23:53:59.202637Z", "event": "repo_pushed", "repo": "reading-for-kindergarten", "files": ["docs/sims/animation-lib-tester/metadata.json"]}
+{"timestamp": "2026-01-25T23:54:00.329064Z", "event": "repo_pushed", "repo": "signal-processing", "files": ["docs/sims/ai-pace-accelerating/metadata.json"]}
+{"timestamp": "2026-01-25T23:54:01.250883Z", "event": "repo_pushed", "repo": "spectrum-analyzer", "files": ["docs/sims/base-and-treble/metadata.json"]}
+{"timestamp": "2026-01-25T23:54:02.322513Z", "event": "repo_pushed", "repo": "tracking-ai-course", "files": ["docs/sims/ai-benchmarks-timeline/metadata.json"]}
+{"timestamp": "2026-01-25T23:54:02.322643Z", "event": "run_completed", "repos_scanned": 47, "repos_with_changes": 26, "files_committed": 26, "repos_pushed": 26, "errors": 0}
+{"timestamp": "2026-01-25T23:54:07.568958Z", "event": "run_started", "workspace": "/Users/dan/Documents/ws", "dry_run": true}
+{"timestamp": "2026-01-25T23:54:08.839429Z", "event": "run_completed", "repos_scanned": 47, "repos_with_changes": 0, "files_committed": 0, "repos_pushed": 0, "errors": 0}

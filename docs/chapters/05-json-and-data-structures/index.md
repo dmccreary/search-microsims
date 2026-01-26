@@ -871,7 +871,9 @@ The **completeness score** measures what percentage of metadata fields are popul
 
 Basic formula:
 
-$$\text{Completeness Score} = \frac{\text{Fields Populated}}{\text{Total Possible Fields}} \times 100$$
+$$
+\text{Completeness Score} = \frac{\text{Fields Populated}}{\text{Total Possible Fields}} \times 100
+$$
 
 For MicroSim metadata with 40 possible fields:
 

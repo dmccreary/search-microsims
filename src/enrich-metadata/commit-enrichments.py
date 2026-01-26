@@ -94,10 +94,11 @@ class MetadataCommitter:
             return []
 
         changed_files = []
-        for line in stdout.strip().split('\n'):
-            if not line:
+        for line in stdout.split('\n'):
+            if not line.strip():
                 continue
             # Status is first two chars, then space, then filename
+            # Note: Don't strip the full output first - leading spaces are part of the status
             status = line[:2]
             filename = line[3:]
 
