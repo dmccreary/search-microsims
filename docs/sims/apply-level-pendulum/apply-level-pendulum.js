@@ -7,7 +7,7 @@ const controlHeight = 60;
 
 let pendulumLength = 1.0;
 let gravity = 9.8;
-let angle = PI / 6;
+let angle = Math.PI / 6;
 let angularVelocity = 0;
 let studentAnswer = '';
 let feedback = '';
