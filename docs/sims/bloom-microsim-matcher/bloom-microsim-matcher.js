@@ -126,8 +126,6 @@ function startCelebration() {
   }
 }
 
-
-
 function setup() {
   updateCanvasSize();
   const canvas = createCanvas(canvasWidth, canvasHeight);
