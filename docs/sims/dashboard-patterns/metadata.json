@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Dashboard Layout Builder",
+    "description": "Construct effective dashboard layouts by selecting and arranging components",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["dashboard", "layout", "components", "KPI", "charts", "design"],
+    "visualizationType": "interactive"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Apply",
+    "pattern": "Builder Tool"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "dublinCore": {
+    "title": "Client-Side Search Architecture",
+    "creator": "Claude AI",
+    "subject": "Web Development",
+    "description": "Interactive diagram showing data flow from static server through browser components to user in client-side search systems",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "client-side-architecture",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Explain the data flow in client-side search",
+      "Identify the browser components involved in search",
+      "Compare client-side vs server-side search architectures"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "reference",
+    "bloomAlignment": ["understand"],
+    "bloomVerbs": ["explain", "identify", "compare"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "interactionStyle": "hover-explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 450",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Animate Data Flow",
+        "description": "Show particles moving through the architecture"
+      }
+    ],
+    "interactionType": "hover-explore"
+  },
+  "search": {
+    "keywords": ["architecture", "client-side", "browser", "static hosting", "ItemsJS", "data flow"],
+    "visualizationType": "diagram"
+  }
+}

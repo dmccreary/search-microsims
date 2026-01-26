@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Cognitive Load Visualizer",
+    "description": "Visualize how intrinsic, extraneous, and germane cognitive load compete for limited working memory capacity",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["cognitive load", "working memory", "intrinsic", "extraneous", "germane", "learning theory"],
+    "visualizationType": "simulation"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Understand",
+    "pattern": "Interactive Model"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

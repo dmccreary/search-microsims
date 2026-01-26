@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Animation Control Interface",
+    "description": "Learn the essential controls for educational animation interfaces",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["animation", "controls", "interface", "playback", "scrubber"],
+    "visualizationType": "diagram"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Remember",
+    "pattern": "Interactive Diagram"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

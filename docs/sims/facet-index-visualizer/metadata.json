@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "Facet Index Visualizer",
+    "creator": "Claude AI",
+    "subject": "Information Retrieval",
+    "description": "Interactive visualization showing how facet selections create set intersections for fast filtering",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "facet-index-visualizer",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Examine how facet indexes create document sets",
+      "Trace the intersection operation across multiple facets",
+      "Predict which documents match given facet selections"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["analyze", "apply"],
+    "bloomVerbs": ["examine", "trace", "predict"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-select"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 520",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "radio",
+        "label": "Facet values",
+        "description": "Select values for each facet"
+      },
+      {
+        "type": "button",
+        "label": "Reset All",
+        "description": "Clear all selections"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Steps",
+        "description": "Toggle calculation panel"
+      }
+    ],
+    "interactionType": "click-select"
+  },
+  "search": {
+    "keywords": ["facet index", "set intersection", "filtering", "documents", "visualization"],
+    "visualizationType": "diagram"
+  }
+}

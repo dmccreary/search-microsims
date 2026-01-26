@@ -1,0 +1,73 @@
+{
+  "dublinCore": {
+    "title": "Inverted Index Visualizer",
+    "creator": "Claude AI",
+    "subject": "Information Retrieval",
+    "description": "Interactive visualization showing how inverted indexes enable fast search by mapping terms to document IDs",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "inverted-index-viz",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Explain how inverted indexes map terms to documents",
+      "Trace query lookups through the inverted index",
+      "Compare index-based search vs linear scan"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["explain", "trace", "compare"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 520",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "text-input",
+        "label": "Query",
+        "description": "Enter search query"
+      },
+      {
+        "type": "button",
+        "label": "Build Index",
+        "description": "Build inverted index from documents"
+      },
+      {
+        "type": "button",
+        "label": "Trace Query",
+        "description": "Show query lookup process"
+      },
+      {
+        "type": "button",
+        "label": "Add Document",
+        "description": "Add sample document to collection"
+      },
+      {
+        "type": "button",
+        "label": "Reset",
+        "description": "Reset to initial state"
+      }
+    ],
+    "interactionType": "click-explore"
+  },
+  "search": {
+    "keywords": ["inverted index", "indexing", "search", "posting list", "tokenization", "documents"],
+    "visualizationType": "diagram"
+  }
+}

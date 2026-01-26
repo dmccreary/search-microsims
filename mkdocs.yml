@@ -88,6 +88,45 @@ nav:
     - Search Workflow: sims/search-workflow/index.md
     - Similar MicroSims: sims/list-similar-microsim/index.md
     - Subject Taxonomy Explorer: sims/subject-taxonomy-explorer/index.md
+    - Button States: sims/button-states/index.md
+    - Interaction Spectrum: sims/interaction-spectrum/index.md
+    - Layout Patterns: sims/layout-patterns/index.md
+    - Library Selector: sims/library-selector/index.md
+    - p5.js Architecture: sims/p5-architecture/index.md
+    - Boolean Query Builder: sims/boolean-query-builder/index.md
+    - IR Pipeline: sims/ir-pipeline/index.md
+    - ItemsJS Explorer: sims/itemsjs-explorer/index.md
+    - Inverted Index Visualizer: sims/inverted-index-viz/index.md
+    - Precision-Recall Explorer: sims/precision-recall-explorer/index.md
+    - Ranking Visualizer: sims/ranking-visualizer/index.md
+    - Client-Side Architecture: sims/client-side-architecture/index.md
+    - Facet Index Visualizer: sims/facet-index-visualizer/index.md
+    - Faceted Search Simulator: sims/faceted-search-simulator/index.md
+    - Cosine Similarity Calculator: sims/cosine-similarity-calc/index.md
+    - Embedding Map Explorer: sims/embedding-map-explorer/index.md
+    - KNN Visualizer: sims/knn-visualizer/index.md
+    - PCA vs t-SNE Comparison: sims/pca-tsne-compare/index.md
+    - Similarity Score Demo: sims/similarity-score-demo/index.md
+    - Vector Space Visualization: sims/vector-space-viz/index.md
+    - Aggregation Pipeline Simulator: sims/aggregation-pipeline-sim/index.md
+    - GitHub API Workflow: sims/github-api-workflow/index.md
+    - Quality Dashboard: sims/quality-dashboard/index.md
+    - Repository Discovery Flow: sims/repo-discovery-flow/index.md
+    - Apply-Level Pendulum: sims/apply-level-pendulum/index.md
+    - Bloom's Taxonomy Pyramid: sims/blooms-taxonomy-pyramid/index.md
+    - Bloom MicroSim Matcher: sims/bloom-microsim-matcher/index.md
+    - Grade Level Progression: sims/grade-level-progression/index.md
+    - Rubric Scorer: sims/rubric-scorer/index.md
+    - Standards Framework Comparison: sims/standards-comparison/index.md
+    - Cognitive Load Visualizer: sims/cognitive-load-visualizer/index.md
+    - Feedback Quality Comparison: sims/feedback-loop-sim/index.md
+    - Guided Discovery Path: sims/guided-discovery-path/index.md
+    - Learning Theories Comparison: sims/learning-theories-compare/index.md
+    - Animation Control Panel: sims/animation-control-panel/index.md
+    - Dashboard Layout Builder: sims/dashboard-patterns/index.md
+    - Graph Layout Gallery: sims/graph-viz-gallery/index.md
+    - Simulation Anatomy: sims/simulation-anatomy/index.md
+    - Timeline Layout Styles: sims/timeline-styles/index.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md

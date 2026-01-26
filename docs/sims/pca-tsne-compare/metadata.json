@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "PCA vs t-SNE Comparison",
+    "creator": "Claude AI",
+    "subject": "Dimensionality Reduction",
+    "description": "Side-by-side comparison of PCA and t-SNE dimensionality reduction techniques",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "pca-tsne-compare",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["Undergraduate", "Graduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Compare PCA and t-SNE dimensionality reduction techniques",
+      "Identify differences in cluster separation",
+      "Explain when to use each technique"
+    ],
+    "difficulty": "Advanced"
+  },
+  "pedagogical": {
+    "pattern": "comparison",
+    "bloomAlignment": ["analyze", "evaluate"],
+    "bloomVerbs": ["compare", "identify", "explain"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-select"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 550",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "click",
+        "label": "Point Selection",
+        "description": "Click to select point (synced between plots)"
+      },
+      {
+        "type": "toggle",
+        "label": "Cluster Boundaries",
+        "description": "Show/hide cluster background shading"
+      },
+      {
+        "type": "toggle",
+        "label": "Link Hover",
+        "description": "Sync hover highlight between plots"
+      }
+    ],
+    "interactionType": "click-select"
+  },
+  "search": {
+    "keywords": ["PCA", "t-SNE", "dimensionality reduction", "visualization", "clustering"],
+    "visualizationType": "comparison"
+  }
+}

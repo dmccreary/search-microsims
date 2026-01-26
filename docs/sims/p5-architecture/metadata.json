@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "p5.js Execution Model",
+    "creator": "Claude AI",
+    "subject": "Programming",
+    "description": "Step-through flowchart showing p5.js program execution: page loads, setup() runs once, then draw() loops continuously at 60fps. Event handlers can trigger anytime.",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "p5-architecture",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Explain the p5.js execution model and the role of setup() vs draw()",
+      "Trace the flow from page load through continuous animation",
+      "Identify when event handlers execute relative to the draw loop"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": ["understand"],
+    "bloomVerbs": ["explain", "trace", "identify"],
+    "pacing": "step-through",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "step-through"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 470",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Next Step",
+        "description": "Advance to the next execution phase"
+      },
+      {
+        "type": "button",
+        "label": "Reset",
+        "description": "Return to beginning"
+      },
+      {
+        "type": "button",
+        "label": "Auto Play",
+        "description": "Automatically cycle through steps"
+      }
+    ],
+    "interactionType": "step-through"
+  },
+  "search": {
+    "keywords": ["p5.js", "architecture", "execution", "setup", "draw", "loop", "event", "flowchart"],
+    "visualizationType": "diagram"
+  }
+}

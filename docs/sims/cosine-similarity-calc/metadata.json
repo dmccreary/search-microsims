@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "Cosine Similarity Calculator",
+    "creator": "Claude AI",
+    "subject": "Vector Mathematics",
+    "description": "Interactive calculator showing how cosine similarity measures the angle between vectors",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "cosine-similarity-calc",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Mathematics",
+    "learningObjectives": [
+      "Calculate cosine similarity between two vectors",
+      "Explain how angle relates to similarity",
+      "Predict similarity values based on vector positions"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": ["apply", "understand"],
+    "bloomVerbs": ["calculate", "explain", "predict"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "drag-and-drop"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "drag",
+        "label": "Vector Endpoints",
+        "description": "Drag to adjust vector components"
+      },
+      {
+        "type": "button",
+        "label": "Presets",
+        "description": "Jump to special cases (identical, perpendicular, opposite)"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Steps",
+        "description": "Toggle calculation step visibility"
+      }
+    ],
+    "interactionType": "drag-and-drop"
+  },
+  "search": {
+    "keywords": ["cosine similarity", "vectors", "dot product", "angle", "calculation"],
+    "visualizationType": "calculator"
+  }
+}

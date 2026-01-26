@@ -1,0 +1,73 @@
+{
+  "dublinCore": {
+    "title": "KNN Visualizer",
+    "creator": "Claude AI",
+    "subject": "Machine Learning",
+    "description": "Interactive visualization of K-nearest neighbors algorithm in 2D embedding space",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "knn-visualizer",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Differentiate between query results with different K values",
+      "Analyze how K affects the composition of neighbors",
+      "Explain the trade-off between precision and coverage"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["analyze", "understand"],
+    "bloomVerbs": ["differentiate", "analyze", "explain"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-select"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 550",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "click",
+        "label": "Point Selection",
+        "description": "Click to select query point"
+      },
+      {
+        "type": "slider",
+        "label": "K Value",
+        "description": "Adjust number of neighbors (1-15)"
+      },
+      {
+        "type": "toggle",
+        "label": "Distance Circles",
+        "description": "Show/hide distance circles"
+      },
+      {
+        "type": "toggle",
+        "label": "Connection Lines",
+        "description": "Show/hide neighbor connections"
+      },
+      {
+        "type": "button",
+        "label": "Random",
+        "description": "Select random query point"
+      }
+    ],
+    "interactionType": "click-select"
+  },
+  "search": {
+    "keywords": ["KNN", "nearest neighbors", "similarity search", "embedding", "algorithm"],
+    "visualizationType": "diagram"
+  }
+}

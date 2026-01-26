@@ -1,0 +1,53 @@
+{
+  "dublinCore": {
+    "title": "JavaScript Library Selector",
+    "creator": "Claude AI",
+    "subject": "Web Development",
+    "description": "Interactive decision tree to select the right JavaScript visualization library for different needs including p5.js, Chart.js, Plotly.js, vis-network, vis-timeline, Leaflet.js, and Mermaid.js",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "library-selector",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Select the appropriate JavaScript library for a given visualization task",
+      "Compare library features, sizes, and learning curves",
+      "Apply decision criteria when starting new projects"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "guided-discovery",
+    "bloomAlignment": ["apply", "analyze"],
+    "bloomVerbs": ["select", "compare", "apply"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Start Over",
+        "description": "Reset the decision tree to the beginning"
+      }
+    ],
+    "interactionType": "click-navigate"
+  },
+  "search": {
+    "keywords": ["library", "selector", "p5.js", "chart.js", "plotly", "vis-network", "leaflet", "mermaid", "decision tree"],
+    "visualizationType": "workflow"
+  }
+}

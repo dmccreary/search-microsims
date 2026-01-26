@@ -1,0 +1,55 @@
+{
+  "dublinCore": {
+    "title": "Collection Quality Dashboard",
+    "description": "Multi-panel dashboard for assessing MicroSim collection quality with metrics on subject distribution, quality scores, grade coverage, and field completeness",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26",
+    "format": "text/html",
+    "language": "en",
+    "type": "InteractiveResource",
+    "subject": ["Data Quality", "Dashboard", "Analytics"]
+  },
+  "search": {
+    "keywords": ["dashboard", "quality metrics", "data profiling", "analytics", "collection management", "completeness"],
+    "visualizationType": "dashboard"
+  },
+  "educational": {
+    "subjectArea": "Computer Science",
+    "gradeLevel": ["Undergraduate", "Graduate"],
+    "difficulty": "Intermediate",
+    "learningObjectives": [
+      "Assess overall collection quality from multiple metrics",
+      "Identify areas needing improvement based on completeness scores",
+      "Evaluate balance across subjects and grade levels"
+    ],
+    "prerequisites": ["Understanding of data quality concepts", "Basic statistics"]
+  },
+  "pedagogical": {
+    "pattern": "Dashboard with Multiple Views",
+    "bloomsTaxonomy": "Evaluate",
+    "pacing": "Self-paced",
+    "scaffolding": "Low",
+    "interactivityLevel": "Medium"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true,
+    "aspectRatio": "16:9",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "toggle",
+        "label": "Show Only Issues",
+        "purpose": "Highlight problem areas"
+      },
+      {
+        "type": "button",
+        "label": "Export Report",
+        "purpose": "Generate quality summary"
+      }
+    ],
+    "interactiveElements": ["coordinated-panels", "color-coding", "trend-indicators"]
+  }
+}

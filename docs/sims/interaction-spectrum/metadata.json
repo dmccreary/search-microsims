@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "Interaction Spectrum",
+    "creator": "Claude AI",
+    "subject": "Educational Technology",
+    "description": "Interactive visualization showing MicroSim interaction levels from Passive to High, helping students classify and understand appropriate interaction patterns for different learning objectives.",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "interaction-spectrum",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Educational Technology",
+    "learningObjectives": [
+      "Classify MicroSims by interaction level",
+      "Identify characteristics of passive, low, medium, and high interaction",
+      "Select appropriate interaction levels for different learning goals"
+    ],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "pattern": "worked-example",
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["classify", "identify", "select"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "manipulate"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 450",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Quiz Mode",
+        "description": "Toggle quiz mode for classification practice"
+      },
+      {
+        "type": "button",
+        "label": "Show Details",
+        "description": "Toggle detail panels showing level characteristics"
+      },
+      {
+        "type": "button",
+        "label": "Reset",
+        "description": "Reset card positions"
+      }
+    ],
+    "interactionType": "drag-and-drop"
+  },
+  "search": {
+    "keywords": ["interaction", "spectrum", "classification", "passive", "active", "controls", "UI design"],
+    "visualizationType": "infographic"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "dublinCore": {
+    "title": "MicroSim Layout Pattern Gallery",
+    "creator": "Claude AI",
+    "subject": "User Interface Design",
+    "description": "Interactive gallery showing Fixed, Two-Panel, and Three-Panel MicroSim layout patterns with live mini-examples and comparison table for choosing appropriate layouts.",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "layout-patterns",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "User Interface Design",
+    "learningObjectives": [
+      "Select appropriate layout patterns for different MicroSim scenarios",
+      "Compare trade-offs between visualization space and control capacity",
+      "Apply layout patterns to MicroSim designs"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["select", "compare", "apply"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "checkbox",
+        "label": "Show Mobile View",
+        "description": "Toggle between desktop and mobile layout representations"
+      }
+    ],
+    "interactionType": "click-select"
+  },
+  "search": {
+    "keywords": ["layout", "panel", "fixed", "two-panel", "three-panel", "responsive", "mobile", "design"],
+    "visualizationType": "infographic"
+  }
+}

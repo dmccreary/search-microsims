@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean Query Builder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        #canvas-container {
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+        canvas {
+            display: block;
+        }
+        input[type="text"], select {
+            position: absolute;
+            font-size: 12px;
+            padding: 4px;
+        }
+        input[type="checkbox"] {
+            position: absolute;
+        }
+        label {
+            position: absolute;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <script src="boolean-query-builder.js"></script>
+</body>
+</html>

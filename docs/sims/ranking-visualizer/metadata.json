@@ -1,0 +1,83 @@
+{
+  "dublinCore": {
+    "title": "Ranking Score Visualizer",
+    "creator": "Claude AI",
+    "subject": "Information Retrieval",
+    "description": "Interactive visualization showing how different ranking signals combine to determine search result order with adjustable weights",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "ranking-visualizer",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Interpret how different ranking signals contribute to final scores",
+      "Experiment with signal weights to understand ranking behavior",
+      "Predict how changing priorities affects result ordering"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["understand", "analyze"],
+    "bloomVerbs": ["interpret", "experiment", "predict"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "slider-explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "slider",
+        "label": "Term Frequency",
+        "description": "Weight for term frequency signal"
+      },
+      {
+        "type": "slider",
+        "label": "Title Match",
+        "description": "Weight for title match signal"
+      },
+      {
+        "type": "slider",
+        "label": "Subject Match",
+        "description": "Weight for subject alignment signal"
+      },
+      {
+        "type": "slider",
+        "label": "Freshness",
+        "description": "Weight for recency signal"
+      },
+      {
+        "type": "slider",
+        "label": "Popularity",
+        "description": "Weight for popularity signal"
+      },
+      {
+        "type": "button",
+        "label": "Reset Defaults",
+        "description": "Reset to default weights"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Breakdown",
+        "description": "Toggle stacked score visualization"
+      }
+    ],
+    "interactionType": "slider-explore"
+  },
+  "search": {
+    "keywords": ["ranking", "search results", "relevance", "TF-IDF", "BM25", "signals", "weights"],
+    "visualizationType": "chart"
+  }
+}

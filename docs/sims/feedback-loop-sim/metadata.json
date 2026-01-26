@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Feedback Quality Comparison",
+    "description": "Compare the effectiveness of minimal, directive, and elaborated feedback approaches",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["feedback", "assessment", "learning", "formative feedback", "elaborated feedback"],
+    "visualizationType": "comparison"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Evaluate",
+    "pattern": "Comparison Chart"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

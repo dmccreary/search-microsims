@@ -1,0 +1,68 @@
+{
+  "dublinCore": {
+    "title": "Similarity Score Interface Demo",
+    "creator": "Claude AI",
+    "subject": "User Interface Design",
+    "description": "Compare different ways to display similarity scores in user interfaces",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "similarity-score-demo",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Judge the usefulness of different similarity score displays",
+      "Compare presentation formats for user experience",
+      "Recommend appropriate display formats for different contexts"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "comparison",
+    "bloomAlignment": ["evaluate", "analyze"],
+    "bloomVerbs": ["judge", "compare", "recommend"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "interactionStyle": "click-select"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 480",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "click",
+        "label": "Column Selection",
+        "description": "Click columns to mark preference"
+      },
+      {
+        "type": "slider",
+        "label": "Threshold",
+        "description": "Adjust minimum similarity to display"
+      },
+      {
+        "type": "button",
+        "label": "Change Source",
+        "description": "Cycle through different source MicroSims"
+      },
+      {
+        "type": "radio",
+        "label": "Preferred Display",
+        "description": "Select preferred display format"
+      }
+    ],
+    "interactionType": "click-select"
+  },
+  "search": {
+    "keywords": ["similarity score", "user interface", "display formats", "recommendations"],
+    "visualizationType": "comparison"
+  }
+}
