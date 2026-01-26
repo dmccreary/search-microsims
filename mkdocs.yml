@@ -68,21 +68,26 @@ nav:
   
   - MicroSims:
     - List of MicroSims: sims/index.md
+    - Difficulty Progression: sims/difficulty-progression/index.md
+    - Dublin Core Checker: sims/dublin-core-checker/index.md
+    - Dublin Core Elements: sims/dublin-core-elements/index.md
+    - Educational Standards Map: sims/coverage-world-map/index.md
+    - Faceted Classification: sims/faceted-classification/index.md
+    - HTML Architecture: sims/html-architecture/index.md
+    - Interaction Feedback Loop: sims/interaction-feedback-loop/index.md
+    - Keyword Search Data Flow: sims/keyword-search-flow-v1-concept/index.md
+    - Keyword Search Flow: sims/keyword-search-flow/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - License Chooser: sims/cc-license-chooser/index.md
+    - Metadata Schema: sims/metadata-schema/index.md
+    - MicroSim Directory Structure: sims/microsim-directory-structure/index.md
+    - MicroSim Schema: microsim-schema.md
+    - MicroSim Search Workflow: sims/microsim-search-workflow/index.md
+    - MicroSim Web Architecture: sims/microsim-web-architecture/index.md
+    - PCA Map: sims/pca-map/index.md
     - Search Workflow: sims/search-workflow/index.md
     - Similar MicroSims: sims/list-similar-microsim/index.md
-    - PCA Map: sims/pca-map/index.md
-    - Learning Graph Viewer: sims/graph-viewer/index.md
-    - Interaction Feedback Loop: sims/interaction-feedback-loop/index.md
-    - MicroSim Web Architecture: sims/microsim-web-architecture/index.md
-    - MicroSim Search Workflow: sims/microsim-search-workflow/index.md
-    - Difficulty Progression: sims/difficulty-progression/index.md
-    - MicroSim Directory Structure: sims/microsim-directory-structure/index.md
-    - HTML Architecture: sims/html-architecture/index.md
-    - Metadata Schema: sims/metadata-schema/index.md
-    - Dublin Core Elements: sims/dublin-core-elements/index.md
-    - Faceted Classification: sims/faceted-classification/index.md
-    - Keyword Search Flow: sims/keyword-search-flow/index.md
-    - MicroSim Schema: microsim-schema.md
+    - Subject Taxonomy Explorer: sims/subject-taxonomy-explorer/index.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
