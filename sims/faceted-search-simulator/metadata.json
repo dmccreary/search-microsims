@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "Faceted Search Simulator",
+    "creator": "Claude AI",
+    "subject": "Information Retrieval",
+    "description": "Interactive demonstration of faceted filtering for MicroSim discovery with multiple filter dimensions and real-time result updates",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "faceted-search-simulator",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Use faceted search to filter a MicroSim collection",
+      "Explain the difference between OR and AND logic in facets",
+      "Observe how filter counts update dynamically"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["apply", "analyze"],
+    "bloomVerbs": ["use", "explain", "observe"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-filter"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 600",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "checkbox",
+        "label": "Facet filters",
+        "description": "Select values to filter results"
+      },
+      {
+        "type": "text-input",
+        "label": "Search",
+        "description": "Filter by title text"
+      },
+      {
+        "type": "button",
+        "label": "Clear All Filters",
+        "description": "Reset all filters"
+      }
+    ],
+    "interactionType": "click-filter"
+  },
+  "search": {
+    "keywords": ["faceted search", "filtering", "navigation", "facets", "categories", "metadata"],
+    "visualizationType": "interface"
+  }
+}

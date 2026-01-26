@@ -1,0 +1,73 @@
+{
+  "dublinCore": {
+    "title": "ItemsJS API Explorer",
+    "creator": "Claude AI",
+    "subject": "Client-Side Search",
+    "description": "Interactive explorer showing how to construct and execute ItemsJS search queries",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "itemsjs-explorer",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Implement search queries using the ItemsJS API",
+      "Construct search parameters with filters and sorting",
+      "Interpret the data structure returned by ItemsJS"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["apply", "analyze"],
+    "bloomVerbs": ["implement", "construct", "interpret"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "build-and-test"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 550",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1", "ItemsJS 2.1.24"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "text-input",
+        "label": "Search Query",
+        "description": "Enter text to search"
+      },
+      {
+        "type": "checkbox",
+        "label": "Facet Filters",
+        "description": "Select values to filter by"
+      },
+      {
+        "type": "tabs",
+        "label": "Result Views",
+        "description": "Switch between Items, Aggregations, Raw JSON"
+      },
+      {
+        "type": "button",
+        "label": "Execute Search",
+        "description": "Run the search query"
+      },
+      {
+        "type": "button",
+        "label": "Copy Code",
+        "description": "Copy generated code to clipboard"
+      }
+    ],
+    "interactionType": "build-and-test"
+  },
+  "search": {
+    "keywords": ["ItemsJS", "faceted search", "API", "client-side search", "query builder"],
+    "visualizationType": "tool"
+  }
+}

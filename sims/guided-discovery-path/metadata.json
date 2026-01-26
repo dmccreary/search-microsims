@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Guided Discovery Learning Path",
+    "description": "Step through a structured exploration sequence that leads to concept understanding",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["guided discovery", "scaffolding", "learning path", "exploration", "pedagogy"],
+    "visualizationType": "workflow"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Apply",
+    "pattern": "Guided Discovery"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

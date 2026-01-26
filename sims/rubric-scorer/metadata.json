@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Interactive Rubric Scorer",
+    "description": "Evaluate student work using a rubric and compare scores to expert assessment",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["rubric", "assessment", "evaluation", "scoring", "feedback"],
+    "visualizationType": "interactive"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Evaluate",
+    "pattern": "Assessment Tool"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

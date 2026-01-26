@@ -1,0 +1,73 @@
+{
+  "dublinCore": {
+    "title": "Embedding Map Explorer",
+    "creator": "Claude AI",
+    "subject": "Data Visualization",
+    "description": "Interactive exploration of MicroSim collection organized by semantic similarity",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "embedding-map-explorer",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Assess the organization of MicroSim collections in embedding space",
+      "Identify clusters, outliers, and semantic relationships",
+      "Navigate embedding visualizations for content discovery"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["evaluate", "analyze"],
+    "bloomVerbs": ["assess", "identify", "navigate"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "interactionStyle": "click-and-filter"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 600",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "click",
+        "label": "Point Selection",
+        "description": "Click points to see details and similar items"
+      },
+      {
+        "type": "text-input",
+        "label": "Search",
+        "description": "Search MicroSims by title"
+      },
+      {
+        "type": "checkbox",
+        "label": "Subject Filters",
+        "description": "Show/hide by subject"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Labels",
+        "description": "Toggle point labels"
+      },
+      {
+        "type": "slider",
+        "label": "Point Size",
+        "description": "Adjust point size scaling"
+      }
+    ],
+    "interactionType": "click-and-filter"
+  },
+  "search": {
+    "keywords": ["embedding map", "visualization", "exploration", "semantic search", "discovery"],
+    "visualizationType": "map"
+  }
+}

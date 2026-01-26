@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Graph Layout Algorithm Gallery",
+    "description": "Compare five common graph layout algorithms and learn when to use each",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["graph", "network", "layout", "force-directed", "hierarchical", "visualization"],
+    "visualizationType": "infographic"
+  },
+  "educational": {
+    "subjectArea": "Computer Science",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Understand",
+    "pattern": "Gallery"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dublinCore": {
+    "title": "GitHub API Workflow",
+    "description": "Interactive flowchart showing the sequence of GitHub API calls needed to discover and extract MicroSim metadata from repositories",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26",
+    "format": "text/html",
+    "language": "en",
+    "type": "InteractiveResource",
+    "subject": ["APIs", "Data Engineering", "GitHub", "Web Crawling"]
+  },
+  "search": {
+    "keywords": ["GitHub API", "REST API", "workflow", "flowchart", "data pipeline", "repository mining", "metadata extraction"],
+    "visualizationType": "workflow"
+  },
+  "educational": {
+    "subjectArea": "Computer Science",
+    "gradeLevel": ["Undergraduate", "Graduate"],
+    "difficulty": "Intermediate",
+    "learningObjectives": [
+      "Explain the sequence of API calls required for MicroSim discovery",
+      "Identify decision points in data collection workflows",
+      "Trace data flow from distributed sources to aggregated collection"
+    ],
+    "prerequisites": ["Basic understanding of REST APIs", "Familiarity with JSON data format"]
+  },
+  "pedagogical": {
+    "pattern": "Workflow Diagram",
+    "bloomsTaxonomy": "Understand",
+    "pacing": "Self-paced",
+    "scaffolding": "Medium",
+    "interactivityLevel": "Medium"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true,
+    "aspectRatio": "16:9",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Animate Flow",
+        "purpose": "Trace data flow through workflow"
+      }
+    ],
+    "interactiveElements": ["hover-tooltips", "animation"]
+  }
+}

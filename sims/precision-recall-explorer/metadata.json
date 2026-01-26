@@ -1,0 +1,73 @@
+{
+  "dublinCore": {
+    "title": "Precision-Recall Trade-off Explorer",
+    "creator": "Claude AI",
+    "subject": "Information Retrieval",
+    "description": "Interactive Venn diagram visualization demonstrating how search specificity affects precision and recall metrics with real-time calculation",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "precision-recall-explorer",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Examine the trade-off between precision and recall",
+      "Calculate precision, recall, and F1 score from search results",
+      "Predict how changing search specificity affects metrics"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["analyze", "apply"],
+    "bloomVerbs": ["examine", "calculate", "predict"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "slider-explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 520",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "slider",
+        "label": "Search Specificity",
+        "description": "Adjust search precision vs recall balance"
+      },
+      {
+        "type": "button",
+        "label": "High Precision",
+        "description": "Set to high precision scenario"
+      },
+      {
+        "type": "button",
+        "label": "Balanced",
+        "description": "Set to balanced scenario"
+      },
+      {
+        "type": "button",
+        "label": "High Recall",
+        "description": "Set to high recall scenario"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Formulas",
+        "description": "Toggle formula display"
+      }
+    ],
+    "interactionType": "slider-explore"
+  },
+  "search": {
+    "keywords": ["precision", "recall", "F1 score", "information retrieval", "search quality", "Venn diagram", "trade-off"],
+    "visualizationType": "diagram"
+  }
+}

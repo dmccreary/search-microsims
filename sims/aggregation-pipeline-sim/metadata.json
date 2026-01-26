@@ -1,0 +1,70 @@
+{
+  "dublinCore": {
+    "title": "Aggregation Pipeline Simulator",
+    "description": "Interactive simulation of a data aggregation pipeline processing MicroSim metadata through normalization, deduplication, validation, and enrichment stages",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26",
+    "format": "text/html",
+    "language": "en",
+    "type": "InteractiveResource",
+    "subject": ["Data Engineering", "ETL Pipelines", "Data Processing"]
+  },
+  "search": {
+    "keywords": ["aggregation", "pipeline", "ETL", "normalization", "validation", "data processing", "metadata"],
+    "visualizationType": "simulation"
+  },
+  "educational": {
+    "subjectArea": "Computer Science",
+    "gradeLevel": ["Undergraduate", "Graduate"],
+    "difficulty": "Intermediate",
+    "learningObjectives": [
+      "Execute a data aggregation pipeline step-by-step",
+      "Observe how each processing stage transforms data",
+      "Identify which records pass or fail validation criteria"
+    ],
+    "prerequisites": ["Understanding of JSON data format", "Basic data processing concepts"]
+  },
+  "pedagogical": {
+    "pattern": "Simulation with Step-through",
+    "bloomsTaxonomy": "Apply",
+    "pacing": "Self-paced",
+    "scaffolding": "High",
+    "interactivityLevel": "High"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true,
+    "aspectRatio": "16:9",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Process Next",
+        "purpose": "Process single record step-by-step"
+      },
+      {
+        "type": "button",
+        "label": "Process All",
+        "purpose": "Run full pipeline automatically"
+      },
+      {
+        "type": "button",
+        "label": "Reset",
+        "purpose": "Reset simulation to initial state"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Logs",
+        "purpose": "Display processing log details"
+      },
+      {
+        "type": "slider",
+        "label": "Speed",
+        "purpose": "Control animation speed"
+      }
+    ],
+    "interactiveElements": ["step-controls", "animation", "statistics-panel", "log-viewer"]
+  }
+}

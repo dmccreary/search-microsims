@@ -269,11 +269,55 @@
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/aggregation-pipeline-sim/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/animation-control-panel/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/apply-level-pendulum/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/bloom-microsim-matcher/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/blooms-taxonomy-pyramid/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/boolean-query-builder/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/button-states/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/cc-license-chooser/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/client-side-architecture/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/cognitive-load-visualizer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/cosine-similarity-calc/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/coverage-world-map/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/dashboard-patterns/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
@@ -289,11 +333,43 @@
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/embedding-map-explorer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/facet-index-visualizer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/faceted-classification/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/faceted-search-simulator/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/feedback-loop-sim/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/github-api-workflow/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/grade-level-progression/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/graph-viewer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/graph-viz-gallery/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/guided-discovery-path/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
@@ -305,11 +381,43 @@
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/interaction-spectrum/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/inverted-index-viz/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/ir-pipeline/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/itemsjs-explorer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/keyword-search-flow/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/keyword-search-flow-v1-concept/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/knn-visualizer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/layout-patterns/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/learning-theories-compare/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/library-selector/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
@@ -333,7 +441,35 @@
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/p5-architecture/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/pca-map/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/pca-tsne-compare/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/precision-recall-explorer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/quality-dashboard/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/ranking-visualizer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/repo-discovery-flow/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/rubric-scorer/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
@@ -341,7 +477,27 @@
          <lastmod>2026-01-26</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/similarity-score-demo/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/simulation-anatomy/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/standards-comparison/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/search-microsims/sims/subject-taxonomy-explorer/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/timeline-styles/</loc>
+         <lastmod>2026-01-26</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/search-microsims/sims/vector-space-viz/</loc>
          <lastmod>2026-01-26</lastmod>
     </url>
 </urlset>

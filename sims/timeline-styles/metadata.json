@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Timeline Layout Styles",
+    "description": "Compare four timeline layout styles and learn when to use each",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["timeline", "chronology", "layout", "visualization", "history"],
+    "visualizationType": "infographic"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Understand",
+    "pattern": "Comparison Chart"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

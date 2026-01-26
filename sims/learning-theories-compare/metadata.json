@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Learning Theories Comparison",
+    "description": "Compare how four major learning theories approach MicroSim design",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["learning theory", "constructivism", "behaviorism", "cognitivism", "experiential learning"],
+    "visualizationType": "infographic"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Analyze",
+    "pattern": "Comparison Chart"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}

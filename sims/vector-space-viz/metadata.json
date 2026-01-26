@@ -1,0 +1,68 @@
+{
+  "dublinCore": {
+    "title": "Vector Space Visualization",
+    "creator": "Claude AI",
+    "subject": "Embeddings",
+    "description": "Interactive 2D scatter plot showing how embeddings position similar items near each other",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "vector-space-viz",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Explain how embeddings position similar items near each other",
+      "Identify clusters of related content in vector space",
+      "Interpret the meaning of distance in semantic similarity"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": ["understand", "analyze"],
+    "bloomVerbs": ["explain", "identify", "interpret"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-select"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 520",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "click",
+        "label": "Point Selection",
+        "description": "Click points to select and see neighbors"
+      },
+      {
+        "type": "button",
+        "label": "Neighbor Count",
+        "description": "Adjust number of neighbors shown"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Clusters",
+        "description": "Toggle cluster background shading"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Lines",
+        "description": "Toggle distance lines to neighbors"
+      }
+    ],
+    "interactionType": "click-select"
+  },
+  "search": {
+    "keywords": ["vector space", "embeddings", "clustering", "semantic similarity", "scatter plot"],
+    "visualizationType": "diagram"
+  }
+}

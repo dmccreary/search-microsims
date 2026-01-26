@@ -1,0 +1,55 @@
+{
+  "dublinCore": {
+    "title": "Repository Discovery Flow",
+    "description": "Interactive funnel diagram showing how repositories are filtered through multiple stages to identify MicroSim collections",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26",
+    "format": "text/html",
+    "language": "en",
+    "type": "InteractiveResource",
+    "subject": ["Data Filtering", "Repository Mining", "Data Pipeline"]
+  },
+  "search": {
+    "keywords": ["funnel diagram", "filtering", "repository discovery", "data pipeline", "conversion funnel"],
+    "visualizationType": "diagram"
+  },
+  "educational": {
+    "subjectArea": "Computer Science",
+    "gradeLevel": ["Undergraduate", "Graduate"],
+    "difficulty": "Intermediate",
+    "learningObjectives": [
+      "Examine multi-stage data filtering processes",
+      "Analyze conversion rates at each filtering stage",
+      "Identify criteria causing highest rejection rates"
+    ],
+    "prerequisites": ["Basic understanding of data pipelines", "Familiarity with GitHub repositories"]
+  },
+  "pedagogical": {
+    "pattern": "Funnel Diagram",
+    "bloomsTaxonomy": "Analyze",
+    "pacing": "Self-paced",
+    "scaffolding": "Medium",
+    "interactivityLevel": "Medium"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true,
+    "aspectRatio": "16:9",
+    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Animate Flow",
+        "purpose": "Visualize repositories flowing through funnel"
+      },
+      {
+        "type": "toggle",
+        "label": "Show Rejected",
+        "purpose": "Display filtered-out repositories"
+      }
+    ],
+    "interactiveElements": ["hover-tooltips", "animation", "toggle"]
+  }
+}

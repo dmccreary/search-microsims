@@ -1,0 +1,63 @@
+{
+  "dublinCore": {
+    "title": "Information Retrieval Pipeline",
+    "creator": "Claude AI",
+    "subject": "Information Science",
+    "description": "Interactive visualization showing the five stages of search - from user query through processing, index lookup, matching, ranking, to results display",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "ir-pipeline",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Explain the five stages of information retrieval",
+      "Trace how a search query moves through the pipeline",
+      "Identify the purpose of each stage in the search process"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "step-through",
+    "bloomAlignment": ["understand", "apply"],
+    "bloomVerbs": ["explain", "trace"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "click-navigate"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 450",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Trace Query",
+        "description": "Animate query through all pipeline stages"
+      },
+      {
+        "type": "button",
+        "label": "Step",
+        "description": "Advance one stage at a time"
+      },
+      {
+        "type": "button",
+        "label": "Reset",
+        "description": "Reset pipeline to initial state"
+      }
+    ],
+    "interactionType": "click-navigate"
+  },
+  "search": {
+    "keywords": ["information retrieval", "search", "pipeline", "query processing", "indexing", "ranking", "matching"],
+    "visualizationType": "workflow"
+  }
+}

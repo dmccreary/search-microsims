@@ -1,0 +1,53 @@
+{
+  "dublinCore": {
+    "title": "Button State Design Patterns",
+    "creator": "Claude AI",
+    "subject": "User Interface Design",
+    "description": "Interactive grid showing button types (Primary, Secondary, Toggle, Destructive) and their visual states (Normal, Hover, Active, Disabled) for MicroSim design.",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "button-states",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "User Interface Design",
+    "learningObjectives": [
+      "Identify the four common button states in user interfaces",
+      "Recognize visual cues that indicate button interactivity",
+      "Apply appropriate button styling in MicroSim designs"
+    ],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "pattern": "reference",
+    "bloomAlignment": ["remember", "understand"],
+    "bloomVerbs": ["identify", "recognize"],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "interactionStyle": "explore"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 400",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "checkbox",
+        "label": "Show Focus States",
+        "description": "Toggle visibility of accessibility focus rings"
+      }
+    ],
+    "interactionType": "hover-explore"
+  },
+  "search": {
+    "keywords": ["button", "states", "hover", "active", "disabled", "UI", "design", "primary", "secondary"],
+    "visualizationType": "diagram"
+  }
+}

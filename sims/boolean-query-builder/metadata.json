@@ -1,0 +1,73 @@
+{
+  "dublinCore": {
+    "title": "Boolean Query Builder",
+    "creator": "Claude AI",
+    "subject": "Information Retrieval",
+    "description": "Interactive tool for constructing boolean search queries with AND, OR, NOT operators and Venn diagram visualization",
+    "date": "2026-01-26",
+    "type": "InteractiveResource",
+    "format": "text/html",
+    "identifier": "boolean-query-builder",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0"
+  },
+  "educational": {
+    "gradeLevel": ["High School", "Undergraduate"],
+    "subjectArea": "Computer Science",
+    "learningObjectives": [
+      "Construct boolean search queries using AND, OR, and NOT",
+      "Visualize query logic using Venn diagrams",
+      "Predict which documents match complex queries"
+    ],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "pattern": "guided-discovery",
+    "bloomAlignment": ["apply", "analyze"],
+    "bloomVerbs": ["construct", "visualize", "predict"],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "high",
+    "interactionStyle": "input-build"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 550",
+    "responsive": true,
+    "dependencies": ["p5.js 1.11.1"]
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "text-input",
+        "label": "Term 1-3",
+        "description": "Enter search terms"
+      },
+      {
+        "type": "select",
+        "label": "Operator",
+        "description": "Select AND or OR between terms"
+      },
+      {
+        "type": "checkbox",
+        "label": "NOT",
+        "description": "Negate term"
+      },
+      {
+        "type": "button",
+        "label": "Presets",
+        "description": "Load example queries"
+      },
+      {
+        "type": "button",
+        "label": "Clear All",
+        "description": "Reset all fields"
+      }
+    ],
+    "interactionType": "input-build"
+  },
+  "search": {
+    "keywords": ["boolean", "AND", "OR", "NOT", "query", "search", "Venn diagram", "operators"],
+    "visualizationType": "diagram"
+  }
+}

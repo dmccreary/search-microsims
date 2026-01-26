@@ -1,0 +1,25 @@
+{
+  "dublinCore": {
+    "title": "Simulation Anatomy",
+    "description": "Examine the essential components of an educational simulation interface",
+    "creator": "MicroSim Team",
+    "date": "2026-01-26"
+  },
+  "search": {
+    "keywords": ["simulation", "interface", "layout", "design", "components"],
+    "visualizationType": "diagram"
+  },
+  "educational": {
+    "subjectArea": "Education",
+    "gradeLevel": ["Undergraduate"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "bloomsTaxonomy": "Analyze",
+    "pattern": "Annotated Diagram"
+  },
+  "technical": {
+    "framework": "p5.js",
+    "responsive": true
+  }
+}
