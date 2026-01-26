@@ -10,7 +10,7 @@ social:
 ---
 # Faceted Classification
 
-<iframe src="main.html" height="502px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="795px" width="100%" scrolling="no"></iframe>
 
 [Run the Faceted Classification MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 [Edit the Faceted Classification MicroSim Using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/gZr9kiQ-P)
