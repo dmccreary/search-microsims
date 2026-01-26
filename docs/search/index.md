@@ -1,5 +1,7 @@
 # MicroSim Faceted Search Demo
 
+[Run the MicroSim Faceted Search Demo](search/demo.html){ .md-button .md-button--primary }
+
 This page demonstrates faceted search for MicroSims using [ItemsJS](https://github.com/itemsapi/itemsjs).
 
 ## Features
