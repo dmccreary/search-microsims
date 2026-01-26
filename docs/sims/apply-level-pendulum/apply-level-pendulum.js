@@ -29,9 +29,11 @@ function setup() {
 }
 
 function draw() {
-  background(248, 249, 250);
-  fill(240);
-  noStroke();
+  fill('aliceblue');
+  // draw a thin light gray line around both the drawing and control areas
+  stroke('sliver');
+  rect(0, 0, canvasWidth, drawHeight + controlHeight);
+  fill('white');
   rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title

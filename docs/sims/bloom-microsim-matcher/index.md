@@ -6,7 +6,7 @@ quality_score: 86
 
 # Bloom Level MicroSim Matcher
 
-<iframe src="main.html" width="100%" height="580px" scrolling="no" style="border:none;"></iframe>
+<iframe src="main.html" width="100%" height="500px" scrolling="no"></iframe>
 
 [View Full Screen](main.html){ .md-button .md-button--primary }
 
