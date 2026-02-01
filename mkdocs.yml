@@ -200,6 +200,9 @@ extra_javascript:
    - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 # Google Analytics configuration
 extra:
+  schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
+  textbook_name: MicroSim Search and Similarity
+  textbook_version: "1.0"
   analytics:
     provider: google
     property: G-52EQFDFN5Y
