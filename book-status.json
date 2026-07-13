@@ -1,0 +1,527 @@
+{
+  "project": {
+    "title": "MicroSim Search and Similarity",
+    "subtitle": "Auto-scanned intelligent textbook",
+    "author": "Dan McCreary",
+    "costPerMTokens": 15,
+    "sessionBudget": {
+      "pro": 900000,
+      "max": 3500000
+    }
+  },
+  "sections": {
+    "scaffold": {
+      "status": "published",
+      "tokensTarget": 2000,
+      "tokensDone": 2000
+    },
+    "course-description": {
+      "status": "published",
+      "tokensTarget": 4000,
+      "tokensDone": 1408
+    },
+    "learning-graph": {
+      "status": "published",
+      "tokensTarget": 20000,
+      "tokensDone": 20000
+    },
+    "chapter-structure": {
+      "status": "published",
+      "tokensTarget": 15000,
+      "tokensDone": 15000
+    },
+    "chapter-content": {
+      "countLabel": "15 chapters",
+      "children": [
+        {
+          "n": 1,
+          "title": "Introduction to MicroSims",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 2,
+          "title": "MicroSim File Organization",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 3,
+          "title": "Metadata Fundamentals",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 4,
+          "title": "Dublin Core Elements",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 5,
+          "title": "JSON and Data Structures",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 6,
+          "title": "Search Fundamentals",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 7,
+          "title": "Faceted Search and Client-Side Search",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 8,
+          "title": "Embeddings and Semantic Search",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 9,
+          "title": "Data Pipelines and Aggregation",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 10,
+          "title": "Educational Foundations",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 11,
+          "title": "Learning Theory and Pedagogy",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 12,
+          "title": "Visualization Types",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 13,
+          "title": "User Interface and Controls",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 14,
+          "title": "Technical Implementation",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 15,
+          "title": "Pedagogical Pattern Alignment",
+          "status": "reviewed",
+          "tokens": 10000
+        }
+      ]
+    },
+    "chapter-images": {
+      "status": "not-started",
+      "tokensTarget": 8000,
+      "tokensDone": 0
+    },
+    "microsims": {
+      "countLabel": "58 simulations",
+      "children": [
+        {
+          "n": 1,
+          "title": "Aggregation Pipeline Sim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 2,
+          "title": "Animation Control Panel",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 3,
+          "title": "Apply Level Pendulum",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 4,
+          "title": "Bloom Microsim Matcher",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 5,
+          "title": "Blooms Taxonomy Pyramid",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 6,
+          "title": "Boolean Query Builder",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 7,
+          "title": "Button States",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 8,
+          "title": "Cc License Chooser",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 9,
+          "title": "Client Side Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 10,
+          "title": "Cognitive Load Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 11,
+          "title": "Cosine Similarity Calc",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 12,
+          "title": "Coverage World Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 13,
+          "title": "Dashboard Patterns",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 14,
+          "title": "Difficulty Level Progression",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 15,
+          "title": "Dublin Core Checker",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 16,
+          "title": "Dublin Core Elements",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 17,
+          "title": "Embedding Map Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 18,
+          "title": "Facet Index Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 19,
+          "title": "Faceted Classification",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 20,
+          "title": "Faceted Search Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 21,
+          "title": "Feedback Loop Sim",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 22,
+          "title": "Github Api Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 23,
+          "title": "Grade Level Progression",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 24,
+          "title": "Graph Viewer",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 25,
+          "title": "Graph Viz Gallery",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 26,
+          "title": "Guided Discovery Path",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 27,
+          "title": "Html Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 28,
+          "title": "Interaction Feedback Loop",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 29,
+          "title": "Interaction Spectrum",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 30,
+          "title": "Inverted Index Viz",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 31,
+          "title": "Ir Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 32,
+          "title": "Itemsjs Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 33,
+          "title": "Keywords to Search Results Flow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 34,
+          "title": "Keyword Search Flow V1 Concept",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 35,
+          "title": "Knn Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 36,
+          "title": "Layout Patterns",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 37,
+          "title": "Learning Theories Compare",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 38,
+          "title": "Library Selector",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 39,
+          "title": "List Similar Microsim",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 40,
+          "title": "Metadata Schema",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 41,
+          "title": "Microsim Directory Structure",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 42,
+          "title": "MicroSim Search Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 43,
+          "title": "MicroSim Web Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 44,
+          "title": "P5 Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 45,
+          "title": "MicroSim PCA Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 46,
+          "title": "Pca Tsne Compare",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 47,
+          "title": "Precision Recall Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 48,
+          "title": "Quality Dashboard",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 49,
+          "title": "Ranking Visualizer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 50,
+          "title": "Repo Discovery Flow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 51,
+          "title": "Rubric Scorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 52,
+          "title": "Search Workflow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 53,
+          "title": "Similarity Score Demo",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 54,
+          "title": "Simulation Anatomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 55,
+          "title": "Standards Comparison",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 56,
+          "title": "Subject Taxonomy Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 57,
+          "title": "Timeline Styles",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 58,
+          "title": "Vector Space Viz",
+          "status": "published",
+          "tokens": 5000
+        }
+      ]
+    },
+    "glossary": {
+      "status": "published",
+      "tokensTarget": 15000,
+      "tokensDone": 7002
+    },
+    "faq": {
+      "status": "published",
+      "tokensTarget": 12000,
+      "tokensDone": 3990
+    },
+    "quiz": {
+      "status": "published",
+      "tokensTarget": 30000,
+      "tokensDone": 19705
+    },
+    "reference": {
+      "status": "not-started",
+      "tokensTarget": 20000,
+      "tokensDone": 0
+    },
+    "teachers-guide": {
+      "status": "not-started",
+      "tokensTarget": 15000,
+      "tokensDone": 0
+    },
+    "book-metrics": {
+      "status": "published",
+      "tokensTarget": 2000,
+      "tokensDone": 2000
+    },
+    "publish": {
+      "status": "published",
+      "tokensTarget": 10000,
+      "tokensDone": 10000
+    },
+    "stories": {
+      "status": "not-started",
+      "tokensTarget": 30000,
+      "tokensDone": 0
+    }
+  }
+}
