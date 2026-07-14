@@ -1,6 +1,9 @@
-# Find Similar MicroSim Templates
+# Find Similar MicroSim Templates / Reusable MicroSims
 
-A service that takes a MicroSim specification (SPECIFICATION block format) and returns the most relevant existing MicroSims to use as templates. Designed to be used by the `microsim-generator` skill when creating new MicroSims.
+A service with two modes:
+
+- **Template mode** (default): takes a MicroSim specification (SPECIFICATION block format) and returns the most relevant existing MicroSims to use as templates. Used by the `microsim-generator` skill when creating new MicroSims.
+- **Reuse mode** (`--mode reuse`): takes a plain WHAT query (or a specification) and returns existing MicroSims that already teach the same concept, so the `chapter-content-generator` skill can embed them via iframe instead of regenerating them from scratch.
 
 ## Purpose
 
@@ -11,14 +14,34 @@ When the microsim-generator skill receives a specification for a new MicroSim, i
 3. Implement similar interactive controls
 4. Match the expected quality and structure
 
+When the chapter-content-generator skill is about to write a new MicroSim specification, reuse mode tells it whether an existing hosted MicroSim already teaches the concept — avoiding a duplicate that would need to be generated and debugged all over again.
+
 ## How It Works
 
+The catalog embeddings are **dual** (schema `dual-v1`): each MicroSim has a WHAT vector (what it teaches) and a HOW vector (how it's implemented). See `src/embeddings/README.md`.
+
+**Template mode:**
+
 1. **Parse Specification**: Extracts structured fields from the SPECIFICATION block format
-2. **Create Query Embedding**: Converts the specification into a semantic embedding using the same model as the main embeddings (`all-MiniLM-L6-v2`)
-3. **Compute Semantic Similarity**: Compares against the precomputed embeddings of all existing MicroSims using cosine similarity
+2. **Create Query Embeddings**: Builds a WHAT query (learning objective, topic, subject, Bloom level) and a HOW query (visual elements, layout, controls, framework) using the same model (`all-MiniLM-L6-v2`)
+3. **Compute Similarities**: Cosine similarity of the WHAT query against WHAT vectors and the HOW query against HOW vectors
 4. **Compute Pedagogical Alignment**: Scores how well each template's pedagogical pattern matches the specification's Bloom level and verb
-5. **Combine Scores**: Final score = 60% semantic + 40% pedagogical
+5. **Combine Scores**: Final score = 35% WHAT + 35% HOW + 30% pedagogical (when the spec has no HOW content: 70% WHAT + 30% pedagogical)
 6. **Return Results**: Returns the top N most similar MicroSims with their GitHub URLs for use as templates
+
+**Reuse mode:**
+
+1. Takes a plain WHAT query via `--query` (format: `Title: ... | Topic: ... | Subjects: ... | Grade Level: ... | Learning Objectives: ...`) or a specification
+2. Ranks on **pure WHAT cosine similarity** — a perfect concept match in a different library is still reusable via iframe
+3. Each result includes a `recommendation` band and an `iframe_snippet`:
+
+| Band | WHAT score | Meaning |
+|------|-----------|---------|
+| `reuse` | ≥ 0.75 | Embed an iframe to the existing sim instead of writing a spec |
+| `template` | 0.60 – 0.75 | Write a new spec, cite the match as a template |
+| `generate` | < 0.60 | Write a new spec from scratch |
+
+Thresholds calibrated 2026-07-14: same-concept matches score 0.75–0.80 (boilerplate catalog learning objectives depress scores), related-but-different concepts 0.60–0.67, absent concepts < 0.40.
 
 ### Pedagogical Alignment Scoring
 
@@ -61,6 +84,30 @@ python src/find-similar-templates/find-similar-templates.py --file spec.txt --js
 
 # Quiet mode (suppress loading messages)
 python src/find-similar-templates/find-similar-templates.py --file spec.txt --quiet --json
+
+# REUSE MODE: find existing MicroSims to embed instead of regenerating
+# (used by the chapter-content-generator skill; works from any directory
+# with absolute paths and the venv's python directly)
+/Users/dan/Documents/ws/search-microsims/.venv-embeddings/bin/python \
+  /Users/dan/Documents/ws/search-microsims/src/find-similar-templates/find-similar-templates.py \
+  --mode reuse \
+  --query "Title: Scientific Method Workflow | Topic: scientific method | Subjects: Physics | Grade Level: high school | Learning Objectives: Students will sequence the steps of the scientific method" \
+  --top 3 --json --quiet
+
+# Optional: filter out weak results
+python src/find-similar-templates/find-similar-templates.py --mode reuse --query "..." --min-score 0.6 --json
+```
+
+Reuse-mode JSON results add these fields:
+
+```json
+{
+  "what_score": 0.7935,
+  "how_score": null,
+  "recommendation": "reuse",
+  "fullscreen_url": "https://dmccreary.github.io/intro-to-physics-course/sims/scientific-method/main.html",
+  "iframe_snippet": "<iframe src=\"https://dmccreary.github.io/intro-to-physics-course/sims/scientific-method/main.html\" width=\"100%\" height=\"500px\" scrolling=\"no\"></iframe>"
+}
 ```
 
 ### Python API

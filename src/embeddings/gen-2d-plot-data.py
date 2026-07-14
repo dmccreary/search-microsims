@@ -52,13 +52,26 @@ def load_microsims(path: Path) -> dict:
     return by_url
 
 
+def get_what_vector(entry):
+    """
+    Extract the WHAT vector from an embeddings entry.
+
+    Supports the dual-v1 schema ({"what": [...], "how": [...]}) and the
+    legacy flat format (a plain list). The map should cluster by subject
+    matter, so the WHAT vector is used.
+    """
+    if isinstance(entry, dict):
+        return entry["what"]
+    return entry
+
+
 def apply_pca(embeddings_dict: dict) -> tuple:
     """Apply PCA to reduce embeddings to 2D."""
     print("Applying PCA dimensionality reduction (384D → 2D)...")
 
     # Extract URLs and embeddings in consistent order
     urls = list(embeddings_dict.keys())
-    embeddings_matrix = np.array([embeddings_dict[url] for url in urls])
+    embeddings_matrix = np.array([get_what_vector(embeddings_dict[url]) for url in urls])
 
     print(f"  Input shape: {embeddings_matrix.shape}")
 

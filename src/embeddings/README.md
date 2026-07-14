@@ -4,30 +4,40 @@ This module generates semantic embeddings for MicroSims, enabling similarity sea
 
 ## Overview
 
-The embedding generator reads MicroSim metadata from `docs/search/microsims-data.json` and creates 384-dimensional vector embeddings for each MicroSim using the [Sentence Transformers](https://www.sbert.net/) library with the `all-MiniLM-L6-v2` model.
+The embedding generator reads MicroSim metadata from `docs/search/microsims-data.json` and creates TWO 384-dimensional vector embeddings for each MicroSim using the [Sentence Transformers](https://www.sbert.net/) library with the `all-MiniLM-L6-v2` model:
+
+- **WHAT** — what the MicroSim teaches: title, description, topic, subjects, grade level, learning objectives, prerequisites, keywords, Bloom's level, course. Used for reuse detection ("does a sim teaching this concept already exist?"), the Similar MicroSims widget, and the PCA map.
+- **HOW** — how it is implemented: visualization type, framework, pedagogical pattern, interaction style, pacing, feedback type, data visibility, prediction support, Bloom verbs. Used for template selection ("which existing sim is built the way I want to build this one?").
+
+Separating WHAT from HOW matters because a perfect concept match in a different JavaScript library is still reusable via iframe, while a template should match on implementation style.
 
 Each MicroSim is identified by its unique URL (e.g., `https://dmccreary.github.io/algebra-1/sims/graph-viewer/`), which serves as a stable identifier even when the search data is updated.
 
 ## Output
 
-The generator produces `data/microsims-embeddings.json` with the following structure:
+The generator produces `data/microsims-embeddings.json` (schema `dual-v1`, ~14MB) with the following structure:
 
 ```json
 {
   "metadata": {
     "model": "all-MiniLM-L6-v2",
     "dimension": 384,
-    "count": 873,
-    "generated_at": "2026-01-23T19:21:57Z",
+    "schema": "dual-v1",
+    "count": 880,
+    "generated_at": "2026-07-14T18:05:00Z",
     "source_file": "microsims-data.json"
   },
   "embeddings": {
-    "https://dmccreary.github.io/algebra-1/sims/graph-viewer/": [0.012, -0.045, 0.089, ...],
-    "https://dmccreary.github.io/geometry-course/sims/angle-explorer/": [0.034, 0.021, -0.067, ...],
+    "https://dmccreary.github.io/algebra-1/sims/graph-viewer/": {
+      "what": [0.012, -0.045, 0.089, ...],
+      "how": [0.034, 0.021, -0.067, ...]
+    },
     ...
   }
 }
 ```
+
+Consumers (`find-similar-templates.py`, `generate-similar-microsims.py`, the PCA map generators) detect the `dual-v1` schema and also tolerate the legacy flat format (one vector per URL) during transitions.
 
 ### Metadata Fields
 
@@ -35,7 +45,8 @@ The generator produces `data/microsims-embeddings.json` with the following struc
 |-------|-------------|
 | `model` | The Sentence Transformers model used for embedding |
 | `dimension` | Number of dimensions in each embedding vector |
-| `count` | Total number of MicroSims embedded |
+| `schema` | `dual-v1` — two vectors (what, how) per MicroSim |
+| `count` | Total number of unique MicroSim URLs embedded |
 | `generated_at` | ISO 8601 timestamp of when embeddings were generated |
 | `source_file` | The input file used to generate embeddings |
 

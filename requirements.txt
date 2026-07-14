@@ -1,0 +1,12 @@
+# Dependencies for the embedding / similarity pipeline.
+#
+# IMPORTANT: Requires Python 3.12 or earlier (PyTorch constraint).
+# Install into the project virtual environment:
+#   python3.12 -m venv .venv-embeddings
+#   source .venv-embeddings/bin/activate
+#   pip install -r requirements.txt
+
+sentence-transformers>=2.0.0
+numpy<2
+scikit-learn
+plotly

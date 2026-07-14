@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-Generate embeddings for MicroSims using Sentence Transformers.
+Generate dual WHAT/HOW embeddings for MicroSims using Sentence Transformers.
 
-This script reads microsims-data.json and creates embeddings for each MicroSim,
-storing them in data/microsims-embeddings.json with the URL as the unique identifier.
+This script reads microsims-data.json and creates TWO embeddings for each MicroSim:
+  - WHAT: what the MicroSim teaches (title, topic, subjects, learning objectives)
+  - HOW:  how it is implemented (framework, visualization type, pedagogical pattern)
+
+Separating WHAT from HOW lets reuse detection match on learning content regardless
+of implementation, while template selection can match on implementation style.
 
 Usage:
     # From project root with virtual environment activated:
@@ -15,7 +19,8 @@ Requirements:
     (Requires Python 3.12 or earlier - PyTorch doesn't support Python 3.13 yet)
 
 Output:
-    data/microsims-embeddings.json - JSON file containing embeddings keyed by URL
+    data/microsims-embeddings.json - schema "dual-v1", keyed by URL:
+    {"embeddings": {"<url>": {"what": [...384 floats], "how": [...384 floats]}}}
 """
 
 import json
@@ -60,12 +65,12 @@ def flatten_to_strings(items) -> list:
     return result
 
 
-def create_embedding_text(microsim: dict) -> str:
+def create_what_text(microsim: dict) -> str:
     """
-    Create a text representation of a MicroSim for embedding.
+    Create the WHAT text: what the MicroSim teaches.
 
-    Combines relevant fields to create a rich text that captures
-    the semantic meaning of the MicroSim.
+    Covers the learning content — concept, subject, grade level, and
+    learning objectives — independent of how the sim is implemented.
     """
     parts = []
 
@@ -116,6 +121,36 @@ def create_embedding_text(microsim: dict) -> str:
     if keywords:
         parts.append(f"Keywords: {', '.join(keywords)}")
 
+    # Bloom's taxonomy level
+    blooms = microsim.get("bloomsTaxonomy", [])
+    if blooms:
+        if isinstance(blooms, list):
+            blooms = flatten_to_strings(blooms)
+            parts.append(f"Cognitive Level: {', '.join(blooms)}")
+        else:
+            parts.append(f"Cognitive Level: {blooms}")
+
+    # Source repo (helps with context)
+    source = microsim.get("_source", {})
+    if source:
+        repo = source.get("repo", "")
+        if repo:
+            # Convert repo name to readable form (e.g., "algebra-1" -> "Algebra 1")
+            readable_repo = repo.replace("-", " ").title()
+            parts.append(f"Course: {readable_repo}")
+
+    return " | ".join(parts)
+
+
+def create_how_text(microsim: dict) -> str:
+    """
+    Create the HOW text: how the MicroSim is implemented.
+
+    Covers the implementation and instructional-design choices — framework,
+    visualization type, and pedagogical pattern — independent of subject matter.
+    """
+    parts = []
+
     # Visualization type
     viz_types = microsim.get("visualizationType", [])
     if viz_types:
@@ -130,42 +165,35 @@ def create_embedding_text(microsim: dict) -> str:
     if framework:
         parts.append(f"Framework: {framework}")
 
-    # Bloom's taxonomy level
-    blooms = microsim.get("bloomsTaxonomy", [])
-    if blooms:
-        if isinstance(blooms, list):
-            blooms = flatten_to_strings(blooms)
-            parts.append(f"Cognitive Level: {', '.join(blooms)}")
-        else:
-            parts.append(f"Cognitive Level: {blooms}")
-
-    # Pedagogical metadata (for template matching)
+    # Pedagogical metadata (instructional-design implementation choices)
     pedagogical = microsim.get("pedagogical", {})
     if pedagogical:
         pattern = pedagogical.get("pattern", "")
         if pattern:
             parts.append(f"Pedagogical Pattern: {pattern}")
 
-        bloom_verbs = pedagogical.get("bloomVerbs", [])
-        if bloom_verbs:
-            parts.append(f"Bloom Verbs: {', '.join(bloom_verbs[:5])}")
+        interaction_style = pedagogical.get("interactionStyle", "")
+        if interaction_style:
+            parts.append(f"Interaction Style: {interaction_style}")
 
         pacing = pedagogical.get("pacing", "")
         if pacing:
             parts.append(f"Pacing: {pacing}")
 
-        interaction_style = pedagogical.get("interactionStyle", "")
-        if interaction_style:
-            parts.append(f"Interaction Style: {interaction_style}")
+        feedback_type = pedagogical.get("feedbackType", "")
+        if feedback_type:
+            parts.append(f"Feedback Type: {feedback_type}")
 
-    # Source repo (helps with context)
-    source = microsim.get("_source", {})
-    if source:
-        repo = source.get("repo", "")
-        if repo:
-            # Convert repo name to readable form (e.g., "algebra-1" -> "Algebra 1")
-            readable_repo = repo.replace("-", " ").title()
-            parts.append(f"Course: {readable_repo}")
+        data_visibility = pedagogical.get("dataVisibility", "")
+        if data_visibility:
+            parts.append(f"Data Visibility: {data_visibility}")
+
+        if pedagogical.get("supportsPrediction"):
+            parts.append("Supports Prediction: yes")
+
+        bloom_verbs = pedagogical.get("bloomVerbs", [])
+        if bloom_verbs:
+            parts.append(f"Bloom Verbs: {', '.join(flatten_to_strings(bloom_verbs)[:5])}")
 
     return " | ".join(parts)
 
@@ -214,37 +242,56 @@ def main():
     print(f"Model loaded. Embedding dimension: {embedding_dimension}")
 
     # Prepare texts for embedding
-    print("\nPreparing texts for embedding...")
-    texts = []
+    print("\nPreparing WHAT and HOW texts for embedding...")
+    what_texts = []
+    how_texts = []
     urls = []
     skipped = 0
+    empty_how = 0
 
     for microsim in microsims:
         url = get_microsim_url(microsim)
-        text = create_embedding_text(microsim)
+        what_text = create_what_text(microsim)
+        how_text = create_how_text(microsim)
 
-        if not text.strip():
+        if not what_text.strip():
             skipped += 1
             continue
 
-        urls.append(url)
-        texts.append(text)
+        if not how_text.strip():
+            # Never skip a sim with WHAT text; give sparse-metadata sims a
+            # neutral HOW text so they cluster together rather than randomly.
+            how_text = "Framework: unknown"
+            empty_how += 1
 
-    print(f"Prepared {len(texts)} MicroSims for embedding")
+        urls.append(url)
+        what_texts.append(what_text)
+        how_texts.append(how_text)
+
+    print(f"Prepared {len(urls)} MicroSims for embedding")
     if skipped > 0:
-        print(f"Skipped {skipped} MicroSims with insufficient text")
+        print(f"Skipped {skipped} MicroSims with insufficient WHAT text")
+    if empty_how > 0:
+        print(f"{empty_how} MicroSims had no HOW metadata (neutral HOW text used)")
 
     # Generate embeddings in batches
-    print("\nGenerating embeddings...")
     batch_size = 32
-    embeddings = model.encode(
-        texts,
+    print("\nGenerating WHAT embeddings...")
+    what_embeddings = model.encode(
+        what_texts,
+        batch_size=batch_size,
+        show_progress_bar=True,
+        convert_to_numpy=True
+    )
+    print("\nGenerating HOW embeddings...")
+    how_embeddings = model.encode(
+        how_texts,
         batch_size=batch_size,
         show_progress_bar=True,
         convert_to_numpy=True
     )
 
-    print(f"Generated {len(embeddings)} embeddings")
+    print(f"Generated {len(what_embeddings)} WHAT + {len(how_embeddings)} HOW embeddings")
 
     # Build output structure
     print("\nBuilding output structure...")
@@ -252,15 +299,23 @@ def main():
         "metadata": {
             "model": MODEL_NAME,
             "dimension": embedding_dimension,
-            "count": len(embeddings),
+            "schema": "dual-v1",
             "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
             "source_file": str(INPUT_FILE.name)
         },
         "embeddings": {}
     }
 
-    for url, embedding in zip(urls, embeddings):
-        output["embeddings"][url] = embedding.tolist()
+    for url, what_emb, how_emb in zip(urls, what_embeddings, how_embeddings):
+        output["embeddings"][url] = {
+            "what": what_emb.tolist(),
+            "how": how_emb.tolist()
+        }
+
+    # Count unique URLs (catalog duplicates collapse in the URL-keyed dict)
+    output["metadata"]["count"] = len(output["embeddings"])
+    if len(output["embeddings"]) < len(urls):
+        print(f"Note: {len(urls) - len(output['embeddings'])} duplicate URLs collapsed")
 
     # Ensure output directory exists
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -277,7 +332,8 @@ def main():
     # Summary
     print("\n" + "=" * 50)
     print("Summary:")
-    print(f"  - Total MicroSims processed: {len(embeddings)}")
+    print(f"  - Total MicroSims processed: {len(urls)}")
+    print(f"  - Vectors per MicroSim: 2 (what, how)")
     print(f"  - Embedding dimension: {embedding_dimension}")
     print(f"  - Output file: {OUTPUT_FILE}")
     print(f"  - File size: {file_size_mb:.2f} MB")

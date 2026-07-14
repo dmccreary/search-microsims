@@ -1,21 +1,34 @@
 #!/usr/bin/env python3
 """
-Find Similar MicroSim Templates
+Find Similar MicroSim Templates / Reusable MicroSims
 
-A service that takes a MicroSim specification (SPECIFICATION block format) and returns
-the most relevant existing MicroSims to use as templates. Designed to be used by the
-microsim-generator skill when creating new MicroSims.
+A service with two modes:
+
+  --mode template (default)
+    Takes a MicroSim specification (SPECIFICATION block format) and returns the
+    most relevant existing MicroSims to use as templates when generating a new
+    MicroSim. Scores on WHAT similarity + HOW similarity + pedagogical alignment.
+    Used by the microsim-generator skill.
+
+  --mode reuse
+    Takes a plain WHAT query (or a specification) and returns existing MicroSims
+    that already teach the same concept, ranked purely on WHAT similarity — a
+    perfect concept match in a different library is still reusable via iframe.
+    Each result carries a "recommendation" band (reuse / template / generate)
+    and an iframe-ready embed snippet. Used by the chapter-content-generator
+    skill to avoid regenerating MicroSims that already exist.
 
 Usage:
-    # From specification file
+    # Template mode from specification file
     python src/find-similar-templates/find-similar-templates.py --file spec.txt
 
-    # From stdin
+    # Template mode from stdin
     echo "Type: microsim\nBloom Level: Apply (L3)..." | python src/find-similar-templates/find-similar-templates.py
 
-    # Direct specification text
-    python src/find-similar-templates/find-similar-templates.py --spec "Type: microsim
-    Learning Objective: Students will understand pendulum motion..."
+    # Reuse mode with a plain WHAT query (chapter-content-generator integration)
+    python src/find-similar-templates/find-similar-templates.py --mode reuse \
+        --query "Title: Scientific Method Workflow | Topic: scientific method | Subjects: Physics | Grade Level: high school | Learning Objectives: Students will sequence the steps of the scientific method" \
+        --top 3 --json --quiet
 
     # Return more results (default is 5)
     python src/find-similar-templates/find-similar-templates.py --file spec.txt --top 10
@@ -28,8 +41,9 @@ Requirements:
     (Requires Python 3.12 or earlier - PyTorch doesn't support Python 3.13 yet)
 
 Output:
-    Returns GitHub repository URLs for the most similar MicroSims, which can be used
-    as templates for creating new MicroSims.
+    Returns GitHub repository URLs and live URLs for the most similar MicroSims,
+    with per-result scores; in reuse mode also a recommendation band and an
+    iframe snippet ready to paste into a chapter markdown file.
 """
 
 import argparse
@@ -57,9 +71,21 @@ MICROSIMS_DATA_PATH = PROJECT_ROOT / "docs" / "search" / "microsims-data.json"
 # Model configuration - must match the embeddings generator
 MODEL_NAME = "all-MiniLM-L6-v2"
 
-# Pedagogical alignment scoring weights
-SEMANTIC_WEIGHT = 0.6
-PEDAGOGICAL_WEIGHT = 0.4
+# Template-mode scoring weights: WHAT (concept) + HOW (implementation style)
+# + pedagogical alignment. When a spec has no HOW content, the HOW weight is
+# folded into WHAT (0.70 what + 0.30 pedagogical).
+WHAT_WEIGHT = 0.35
+HOW_WEIGHT = 0.35
+PEDAGOGICAL_WEIGHT = 0.30
+
+# Reuse-mode recommendation bands, applied to the pure WHAT cosine score.
+# Calibrated 2026-07-14 against the 885-sim catalog: same-concept matches
+# score 0.75-0.80 (boilerplate catalog learningObjectives depress scores),
+# related-but-different concepts 0.60-0.67, absent concepts < 0.40. Keep
+# REUSE_THRESHOLD conservative: a false-positive reuse (the wrong sim
+# embedded in a published book) costs more than regenerating.
+REUSE_THRESHOLD = 0.75      # >= this: embed an iframe to the existing sim
+TEMPLATE_THRESHOLD = 0.60   # >= this: generate new, but use the match as a template
 
 # Bloom verb to appropriate pedagogical patterns mapping
 # Higher scores indicate better alignment
@@ -149,7 +175,8 @@ _cache = {
     'embeddings': None,
     'microsims_data': None,
     'urls': None,
-    'embedding_matrix': None
+    'what_matrix': None,
+    'how_matrix': None
 }
 
 
@@ -196,28 +223,59 @@ def parse_specification(spec_text: str) -> dict:
     return fields
 
 
-def create_query_text(spec: dict) -> str:
+def create_what_query_text(spec: dict) -> str:
     """
-    Create a text representation of a specification for embedding.
-
-    Mirrors the format used in generate-embeddings.py to ensure
-    semantic alignment with the existing embeddings.
+    Create the WHAT query text from a parsed specification: what the
+    MicroSim should teach. Mirrors the WHAT embedding text format in
+    generate-embeddings.py to ensure semantic alignment.
     """
     parts = []
 
-    # Type of visualization
-    if 'type' in spec:
-        parts.append(f"Type: {spec['type']}")
+    if 'title' in spec:
+        parts.append(f"Title: {spec['title']}")
+
+    if 'topic' in spec:
+        parts.append(f"Topic: {spec['topic']}")
+
+    if 'subject' in spec:
+        parts.append(f"Subjects: {spec['subject']}")
+    if 'subjects' in spec:
+        parts.append(f"Subjects: {spec['subjects']}")
+
+    if 'grade_level' in spec:
+        parts.append(f"Grade Level: {spec['grade_level']}")
 
     # Learning objective is most important for semantic matching
     if 'learning_objective' in spec:
-        parts.append(f"Learning Objective: {spec['learning_objective']}")
+        parts.append(f"Learning Objectives: {spec['learning_objective']}")
+    if 'learning_objectives' in spec:
+        parts.append(f"Learning Objectives: {spec['learning_objectives']}")
 
     # Bloom's taxonomy
     if 'bloom_level' in spec:
         parts.append(f"Cognitive Level: {spec['bloom_level']}")
     if 'bloom_verb' in spec:
         parts.append(f"Action: {spec['bloom_verb']}")
+
+    return " | ".join(parts)
+
+
+def create_how_query_text(spec: dict) -> str:
+    """
+    Create the HOW query text from a parsed specification: how the
+    MicroSim should be implemented. Mirrors the HOW embedding text
+    format in generate-embeddings.py where labels overlap.
+    """
+    parts = []
+
+    # Type of visualization
+    if 'type' in spec:
+        parts.append(f"Visualization: {spec['type']}")
+
+    # Implementation hints
+    if 'implementation' in spec or 'implementation_notes' in spec:
+        impl = spec.get('implementation') or spec.get('implementation_notes')
+        parts.append(f"Framework: {impl}")
 
     # Visual elements describe what the MicroSim shows
     if 'visual_elements' in spec:
@@ -231,11 +289,6 @@ def create_query_text(spec: dict) -> str:
     if 'interactive_controls' in spec:
         parts.append(f"Controls: {spec['interactive_controls']}")
 
-    # Implementation hints
-    if 'implementation' in spec or 'implementation_notes' in spec:
-        impl = spec.get('implementation') or spec.get('implementation_notes')
-        parts.append(f"Framework: {impl}")
-
     # Behavior describes interactions
     if 'behavior' in spec:
         parts.append(f"Behavior: {spec['behavior']}")
@@ -243,12 +296,6 @@ def create_query_text(spec: dict) -> str:
     # Animation effects
     if 'animation' in spec:
         parts.append(f"Animation: {spec['animation']}")
-
-    # Any topic or subject hints
-    if 'topic' in spec:
-        parts.append(f"Topic: {spec['topic']}")
-    if 'subject' in spec:
-        parts.append(f"Subject: {spec['subject']}")
 
     return " | ".join(parts)
 
@@ -260,8 +307,21 @@ def load_model():
     return _cache['model']
 
 
+def _normalize_rows(matrix: np.ndarray) -> np.ndarray:
+    """L2-normalize matrix rows for cosine similarity via dot product."""
+    norms = np.linalg.norm(matrix, axis=1, keepdims=True)
+    norms[norms == 0] = 1.0
+    return matrix / norms
+
+
 def load_embeddings():
-    """Load precomputed embeddings (cached)."""
+    """
+    Load precomputed embeddings (cached).
+
+    Supports the dual-v1 schema ({"what": [...], "how": [...]} per URL) and
+    the legacy flat format (a plain vector per URL), where the single legacy
+    vector is used as both the WHAT and HOW matrix.
+    """
     if _cache['embeddings'] is None:
         if not EMBEDDINGS_PATH.exists():
             raise FileNotFoundError(
@@ -274,15 +334,28 @@ def load_embeddings():
 
         _cache['embeddings'] = data
         _cache['urls'] = list(data['embeddings'].keys())
-        _cache['embedding_matrix'] = np.array([
-            data['embeddings'][url] for url in _cache['urls']
-        ])
 
-        # Normalize for cosine similarity
-        norms = np.linalg.norm(_cache['embedding_matrix'], axis=1, keepdims=True)
-        _cache['embedding_matrix'] = _cache['embedding_matrix'] / norms
+        if data.get('metadata', {}).get('schema') == 'dual-v1':
+            what_matrix = np.array([
+                data['embeddings'][url]['what'] for url in _cache['urls']
+            ])
+            how_matrix = np.array([
+                data['embeddings'][url]['how'] for url in _cache['urls']
+            ])
+        else:
+            # Legacy single-vector format: use it for both roles
+            what_matrix = np.array([
+                data['embeddings'][url] for url in _cache['urls']
+            ])
+            how_matrix = what_matrix
 
-    return _cache['embeddings'], _cache['urls'], _cache['embedding_matrix']
+        _cache['what_matrix'] = _normalize_rows(what_matrix)
+        _cache['how_matrix'] = (
+            _cache['what_matrix'] if how_matrix is what_matrix
+            else _normalize_rows(how_matrix)
+        )
+
+    return _cache['embeddings'], _cache['urls'], _cache['what_matrix'], _cache['how_matrix']
 
 
 def load_microsims_data():
@@ -427,66 +500,114 @@ def compute_pedagogical_score(spec: dict, template_data: dict) -> float:
     return total_score / total_weight if total_weight > 0 else 0.5
 
 
-def find_similar_templates(spec_text: str, top_n: int = 5) -> list:
+def fullscreen_url_for(live_url: str) -> str:
+    """Build the directly-embeddable main.html URL from a catalog live URL."""
+    if live_url.endswith('main.html'):
+        return live_url
+    if not live_url.endswith('/'):
+        live_url += '/'
+    return live_url + 'main.html'
+
+
+def iframe_snippet_for(live_url: str) -> str:
+    """Build an iframe embed snippet for a reused MicroSim."""
+    return (f'<iframe src="{fullscreen_url_for(live_url)}" '
+            f'width="100%" height="500px" scrolling="no"></iframe>')
+
+
+def recommendation_for(what_score: float) -> str:
+    """Map a WHAT similarity score to a reuse recommendation band."""
+    if what_score >= REUSE_THRESHOLD:
+        return 'reuse'
+    if what_score >= TEMPLATE_THRESHOLD:
+        return 'template'
+    return 'generate'
+
+
+def find_similar_templates(spec_text: str = None, top_n: int = 5,
+                           mode: str = 'template', query_text: str = None,
+                           min_score: float = None) -> list:
     """
-    Find the most similar MicroSim templates for a given specification.
+    Find the most similar MicroSims for a specification or a plain WHAT query.
 
     Args:
-        spec_text: The SPECIFICATION block text
-        top_n: Number of similar templates to return
+        spec_text: The SPECIFICATION block text (template mode, or reuse
+                   mode when no query_text is given)
+        top_n: Number of results to return
+        mode: 'template' ranks on WHAT + HOW + pedagogical alignment;
+              'reuse' ranks on pure WHAT similarity
+        query_text: Plain WHAT query text (bypasses spec parsing)
+        min_score: Optional minimum score filter on the ranking score
 
     Returns:
-        List of dicts with keys: github_url, live_url, title, score, framework, subject
+        List of result dicts. Reuse mode adds recommendation,
+        iframe_snippet and fullscreen_url per result.
     """
-    # Parse the specification
-    spec = parse_specification(spec_text)
-
-    # Create query text
-    query_text = create_query_text(spec)
-
-    if not query_text.strip():
-        # If parsing failed, use the raw text
-        query_text = spec_text
+    if query_text and query_text.strip():
+        spec = parse_specification(query_text)
+        what_query = query_text
+        how_query = ""
+    else:
+        spec = parse_specification(spec_text)
+        what_query = create_what_query_text(spec)
+        how_query = create_how_query_text(spec)
+        if not what_query.strip() and not how_query.strip():
+            # If parsing failed, use the raw text as the WHAT query
+            what_query = spec_text
 
     # Load model and embeddings
     model = load_model()
-    _, urls, embedding_matrix = load_embeddings()
+    _, urls, what_matrix, how_matrix = load_embeddings()
     microsims_data = load_microsims_data()
 
-    # Generate embedding for query
-    query_embedding = model.encode([query_text], convert_to_numpy=True)[0]
+    def encode_normalized(text: str) -> np.ndarray:
+        embedding = model.encode([text], convert_to_numpy=True)[0]
+        norm = np.linalg.norm(embedding)
+        return embedding / norm if norm > 0 else embedding
 
-    # Normalize query embedding
-    query_norm = np.linalg.norm(query_embedding)
-    query_normalized = query_embedding / query_norm
+    # WHAT similarity: what the sim teaches vs what the query asks for
+    what_similarities = np.dot(what_matrix, encode_normalized(what_query))
 
-    # Compute cosine similarity (semantic score)
-    semantic_similarities = np.dot(embedding_matrix, query_normalized)
+    # HOW similarity: implementation style (only when the query describes one)
+    how_similarities = None
+    if how_query.strip():
+        how_similarities = np.dot(how_matrix, encode_normalized(how_query))
 
-    # Compute combined scores with pedagogical alignment
-    combined_scores = []
+    # Score all catalog entries
+    scored = []
     for idx, url in enumerate(urls):
-        semantic_score = float(semantic_similarities[idx])
+        what_score = float(what_similarities[idx])
+        how_score = float(how_similarities[idx]) if how_similarities is not None else None
         sim_data = microsims_data.get(url, {})
-
-        # Compute pedagogical alignment score
         pedagogical_score = compute_pedagogical_score(spec, sim_data)
 
-        # Combine scores
-        combined_score = (SEMANTIC_WEIGHT * semantic_score +
-                          PEDAGOGICAL_WEIGHT * pedagogical_score)
+        if mode == 'reuse':
+            # Pure WHAT ranking: a perfect concept match in a different
+            # library is still reusable via iframe.
+            ranking_score = what_score
+        else:
+            if how_score is not None:
+                ranking_score = (WHAT_WEIGHT * what_score +
+                                 HOW_WEIGHT * how_score +
+                                 PEDAGOGICAL_WEIGHT * pedagogical_score)
+            else:
+                # No HOW content in the query: fold HOW weight into WHAT
+                ranking_score = ((WHAT_WEIGHT + HOW_WEIGHT) * what_score +
+                                 PEDAGOGICAL_WEIGHT * pedagogical_score)
 
-        combined_scores.append((idx, combined_score, semantic_score, pedagogical_score))
+        scored.append((idx, ranking_score, what_score, how_score, pedagogical_score))
 
-    # Sort by combined score
-    combined_scores.sort(key=lambda x: x[1], reverse=True)
+    # Sort by ranking score
+    scored.sort(key=lambda x: x[1], reverse=True)
 
-    # Get top N
-    top_results = combined_scores[:top_n]
+    if min_score is not None:
+        scored = [s for s in scored if s[1] >= min_score]
+
+    top_results = scored[:top_n]
 
     # Build results
     results = []
-    for idx, combined_score, semantic_score, pedagogical_score in top_results:
+    for idx, ranking_score, what_score, how_score, pedagogical_score in top_results:
         url = urls[idx]
 
         # Get metadata for this MicroSim
@@ -507,39 +628,52 @@ def find_similar_templates(spec_text: str, top_n: int = 5) -> list:
         # Get pedagogical metadata for display
         pedagogical = sim_data.get('pedagogical', {})
 
-        results.append({
+        result = {
             'github_url': github_url,
             'live_url': url,
             'title': sim_data.get('title', 'Unknown'),
-            'score': round(combined_score, 4),
-            'semantic_score': round(semantic_score, 4),
+            'score': round(ranking_score, 4),
+            'what_score': round(what_score, 4),
+            'how_score': round(how_score, 4) if how_score is not None else None,
             'pedagogical_score': round(pedagogical_score, 4),
             'framework': sim_data.get('framework', 'unknown'),
             'subject': sim_data.get('subject', 'unknown'),
+            'grade_level': sim_data.get('gradeLevel', 'unknown'),
             'visualization_type': sim_data.get('visualizationType', []),
             'pattern': pedagogical.get('pattern', 'unknown'),
             'pacing': pedagogical.get('pacing', 'unknown'),
             'bloom_verbs': pedagogical.get('bloomVerbs', []),
             'description': sim_data.get('description', '')[:200] if sim_data.get('description') else ''
-        })
+        }
+
+        if mode == 'reuse':
+            result['recommendation'] = recommendation_for(what_score)
+            result['fullscreen_url'] = fullscreen_url_for(url)
+            result['iframe_snippet'] = iframe_snippet_for(url)
+
+        results.append(result)
 
     return results
 
 
-def format_results(results: list, as_json: bool = False) -> str:
+def format_results(results: list, as_json: bool = False, mode: str = 'template') -> str:
     """Format results for output."""
     if as_json:
         return json.dumps(results, indent=2)
 
     output = []
     output.append("=" * 70)
-    output.append("Similar MicroSim Templates")
+    if mode == 'reuse':
+        output.append("Reusable Existing MicroSims")
+    else:
+        output.append("Similar MicroSim Templates")
     output.append("=" * 70)
     output.append("")
 
     for i, result in enumerate(results, 1):
         score = result['score']
-        semantic = result.get('semantic_score', score)
+        what = result.get('what_score', score)
+        how = result.get('how_score')
         pedagogical = result.get('pedagogical_score', 0.5)
 
         # Color-code score description
@@ -553,8 +687,12 @@ def format_results(results: list, as_json: bool = False) -> str:
             score_desc = "Weak Match"
 
         output.append(f"{i}. {result['title']}")
-        output.append(f"   Combined Score: {score:.4f} ({score_desc})")
-        output.append(f"   ├─ Semantic: {semantic:.4f}  Pedagogical: {pedagogical:.4f}")
+        if mode == 'reuse':
+            output.append(f"   WHAT Score: {what:.4f}  Recommendation: {result.get('recommendation', 'unknown')}")
+        else:
+            output.append(f"   Combined Score: {score:.4f} ({score_desc})")
+            how_str = f"{how:.4f}" if how is not None else "n/a"
+            output.append(f"   ├─ WHAT: {what:.4f}  HOW: {how_str}  Pedagogical: {pedagogical:.4f}")
         output.append(f"   Pattern: {result.get('pattern', 'unknown')}  Pacing: {result.get('pacing', 'unknown')}")
         if result.get('bloom_verbs'):
             verbs = result['bloom_verbs'][:4]  # Show first 4 verbs
@@ -567,6 +705,8 @@ def format_results(results: list, as_json: bool = False) -> str:
             output.append(f"   Visualization: {viz}")
         output.append(f"   GitHub: {result['github_url']}")
         output.append(f"   Live: {result['live_url']}")
+        if mode == 'reuse':
+            output.append(f"   Embed: {result.get('iframe_snippet', '')}")
         output.append("")
 
     return '\n'.join(output)
@@ -602,6 +742,24 @@ Examples:
         help='Direct specification text'
     )
     parser.add_argument(
+        '--mode', '-m',
+        choices=['template', 'reuse'],
+        default='template',
+        help='template: rank on WHAT + HOW + pedagogical alignment (default); '
+             'reuse: rank on pure WHAT similarity to find existing MicroSims '
+             'to embed via iframe instead of generating new ones'
+    )
+    parser.add_argument(
+        '--query',
+        help='Plain WHAT query text (e.g. "Title: ... | Topic: ... | '
+             'Learning Objectives: ..."), alternative to --spec/--file'
+    )
+    parser.add_argument(
+        '--min-score',
+        type=float,
+        help='Only return results with a ranking score at or above this value'
+    )
+    parser.add_argument(
         '--top', '-n',
         type=int,
         default=5,
@@ -631,12 +789,12 @@ Examples:
         spec_text = spec_path.read_text()
     elif args.spec:
         spec_text = args.spec
-    elif not sys.stdin.isatty():
+    elif not args.query and not sys.stdin.isatty():
         spec_text = sys.stdin.read()
 
-    if not spec_text or not spec_text.strip():
-        print("Error: No specification provided", file=sys.stderr)
-        print("Use --file, --spec, or pipe to stdin", file=sys.stderr)
+    if (not spec_text or not spec_text.strip()) and not (args.query and args.query.strip()):
+        print("Error: No specification or query provided", file=sys.stderr)
+        print("Use --file, --spec, --query, or pipe to stdin", file=sys.stderr)
         sys.exit(1)
 
     # Redirect loading messages if quiet
@@ -650,10 +808,16 @@ Examples:
         if not args.quiet and not args.json:
             print("Loading model and embeddings...", file=sys.stderr)
 
-        results = find_similar_templates(spec_text, args.top)
+        results = find_similar_templates(
+            spec_text,
+            args.top,
+            mode=args.mode,
+            query_text=args.query,
+            min_score=args.min_score
+        )
 
         # Format and output results
-        output = format_results(results, as_json=args.json)
+        output = format_results(results, as_json=args.json, mode=args.mode)
         print(output)
 
     except FileNotFoundError as e:

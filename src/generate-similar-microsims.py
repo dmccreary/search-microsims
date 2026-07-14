@@ -23,6 +23,19 @@ EMBEDDINGS_PATH = Path("data/microsims-embeddings.json")
 OUTPUT_PATH = Path("docs/search/similar-microsims.json")
 
 
+def get_what_vector(entry):
+    """
+    Extract the WHAT vector from an embeddings entry.
+
+    Supports the dual-v1 schema ({"what": [...], "how": [...]}) and the
+    legacy flat format (a plain list). "Similar MicroSims" on the website
+    means "teaches a related concept", so the WHAT vector is the right one.
+    """
+    if isinstance(entry, dict):
+        return entry["what"]
+    return entry
+
+
 def cosine_similarity_matrix(embeddings: np.ndarray) -> np.ndarray:
     """
     Compute cosine similarity matrix for all embeddings.
@@ -68,7 +81,7 @@ def main():
     # Convert to numpy arrays
     print("Building similarity matrix...")
     urls = list(embeddings_dict.keys())
-    embeddings = np.array([embeddings_dict[url] for url in urls])
+    embeddings = np.array([get_what_vector(embeddings_dict[url]) for url in urls])
 
     print(f"  Embeddings shape: {embeddings.shape}")
 

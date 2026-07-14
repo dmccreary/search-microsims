@@ -67,15 +67,16 @@ python3 src/microsim-schema/validate-metadata.py --all
 # Activate the embeddings virtual environment (requires Python 3.12)
 source .venv-embeddings/bin/activate
 
-# Generate embeddings for all MicroSims
+# Generate dual WHAT/HOW embeddings for all MicroSims
 python src/embeddings/generate-embeddings.py
 
-# Output: data/microsims-embeddings.json (7MB, 384-dim vectors)
+# Output: data/microsims-embeddings.json (~14MB, schema "dual-v1",
+# two 384-dim vectors per MicroSim: "what" it teaches, "how" it's implemented)
 ```
 
 See `src/embeddings/README.md` for detailed documentation on the embedding system.
 
-**WARNING:** The embeddings file `data/microsims-embeddings.json` is 7MB and should NEVER be read directly by Claude Code as it will crash the context. Use the precomputed similar MicroSims file instead.
+**WARNING:** The embeddings file `data/microsims-embeddings.json` is 14MB and should NEVER be read directly by Claude Code as it will crash the context. Use the precomputed similar MicroSims file instead.
 
 ### Generating Similar MicroSims Lookup
 ```bash
@@ -85,7 +86,7 @@ python3 src/generate-similar-microsims.py
 # Output: docs/search/similar-microsims.json (~870KB)
 ```
 
-This script reads the 7MB embeddings file and precomputes the top 10 most similar MicroSims for each item using cosine similarity. The output file is much smaller (~870KB) and is used by the Similar MicroSims web interface at `docs/sims/list-similar-microsim/main.html`.
+This script reads the 14MB embeddings file and precomputes the top 10 most similar MicroSims for each item using cosine similarity on the WHAT vector (related concept, not related implementation). The output file is much smaller (~870KB) and is used by the Similar MicroSims web interface at `docs/sims/list-similar-microsim/main.html`.
 
 Run this script after regenerating embeddings.
 
@@ -109,9 +110,17 @@ python src/find-similar-templates/find-similar-templates.py --file spec.txt --js
 
 # Return more results (default is 5)
 python src/find-similar-templates/find-similar-templates.py --file spec.txt --top 10
+
+# REUSE MODE: find existing MicroSims to embed via iframe instead of
+# generating new ones (used by the chapter-content-generator skill).
+# Ranks on pure WHAT similarity; each result includes a "recommendation"
+# band (reuse >= 0.75 / template >= 0.60 / generate) plus an iframe_snippet.
+python src/find-similar-templates/find-similar-templates.py --mode reuse \
+  --query "Title: Scientific Method Workflow | Topic: scientific method | Subjects: Physics | Grade Level: high school | Learning Objectives: Students will sequence the steps of the scientific method" \
+  --top 3 --json --quiet
 ```
 
-This service takes SPECIFICATION blocks (from chapter `index.md` files) and returns the most similar existing MicroSims as templates. It uses the same embedding model to create a query embedding, then computes cosine similarity against all existing MicroSim embeddings. Returns GitHub repository URLs for viewing the source code.
+This service takes SPECIFICATION blocks (from chapter `index.md` files) or plain WHAT queries and returns the most similar existing MicroSims. Template mode scores 0.35×WHAT + 0.35×HOW + 0.30×pedagogical alignment; reuse mode ranks on pure WHAT similarity. Returns GitHub repository URLs for viewing the source code and live URLs for iframe embedding.
 
 See `src/find-similar-templates/README.md` for detailed documentation.
 
