@@ -24,6 +24,9 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from normalize_metadata import normalize_metadata
+
 
 def atomic_write_json(path: Path, obj, **dump_kwargs):
     """Write JSON atomically (temp file in same dir + os.replace) so a
@@ -125,7 +128,7 @@ class LocalRepoUpdater:
 
         try:
             with open(metadata_path) as f:
-                return json.load(f)
+                return normalize_metadata(json.load(f))
         except json.JSONDecodeError as e:
             self.log("error", {
                 "repo": repo_path.name,
