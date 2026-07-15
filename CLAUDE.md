@@ -90,6 +90,22 @@ This script reads the 14MB embeddings file and precomputes the top 10 most simil
 
 Run this script after regenerating embeddings.
 
+### Finding Duplicate MicroSims
+```bash
+source .venv-embeddings/bin/activate
+
+# Cluster MicroSims by WHAT similarity and recommend merges
+python src/find-duplicate-microsims.py                  # default threshold 0.90
+python src/find-duplicate-microsims.py --threshold 0.92 # tighter (fewer, surer clusters)
+python src/find-duplicate-microsims.py --cross-repo-only # only cross-book duplication
+python src/find-duplicate-microsims.py --include-templates # keep scaffold/template sims
+
+# Output: docs/reports/duplicate-microsims.md   (merge report)
+#         docs/reports/duplicate-microsims.json (full cluster data)
+```
+
+Clusters MicroSims that teach the same thing (WHAT vector) regardless of library, picks the highest-quality member as the "keeper", and recommends retiring/iframe-redirecting the rest. Untitled records and scaffold/template sims are excluded by default — they carry no learning content and would form spurious clusters.
+
 ### Finding Similar Templates (for microsim-generator)
 ```bash
 # Activate the embeddings virtual environment (requires Python 3.12)
@@ -184,6 +200,7 @@ The search normalizes both flat legacy format and nested schema format:
 | `src/embeddings/generate-embeddings.py` | Generate semantic embeddings for MicroSims |
 | `src/embeddings/README.md` | Embeddings documentation |
 | `src/generate-similar-microsims.py` | Precompute similar MicroSims from embeddings |
+| `src/find-duplicate-microsims.py` | Cluster duplicate MicroSims by WHAT similarity, recommend merges |
 | `src/find-similar-templates/find-similar-templates.py` | Find template MicroSims from specifications |
 | `src/find-similar-templates/README.md` | Template finder documentation |
 | `docs/search/demo.html` | ItemsJS faceted search UI |
@@ -193,6 +210,7 @@ The search normalizes both flat legacy format and nested schema format:
 | `data/microsims-embeddings.json` | Semantic embeddings (7MB, generated) - DO NOT READ DIRECTLY |
 | `docs/microsim-schema.md` | Schema documentation |
 | `docs/reports/microsim-metrics.md` | Metadata quality report (generated) |
+| `docs/reports/duplicate-microsims.md` | Duplicate MicroSim merge recommendations (generated) |
 | `logs/*.jsonl` | Crawl logs with missing metadata entries |
 
 ## p5.js Gotchas

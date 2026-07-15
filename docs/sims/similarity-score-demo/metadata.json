@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "similarity-score-demo",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/similarity-score-demo/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Judge the usefulness of different similarity score displays",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "comparison",
-    "bloomAlignment": ["evaluate", "analyze"],
-    "bloomVerbs": ["judge", "compare", "recommend"],
+    "bloomAlignment": [
+      "evaluate",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "judge",
+      "compare",
+      "recommend"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": false,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 480",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -62,7 +74,12 @@
     "interactionType": "click-select"
   },
   "search": {
-    "keywords": ["similarity score", "user interface", "display formats", "recommendations"],
+    "keywords": [
+      "similarity score",
+      "user interface",
+      "display formats",
+      "recommendations"
+    ],
     "visualizationType": "comparison"
   }
 }

@@ -13,9 +13,24 @@ Output:
 """
 
 import json
+import os
+import tempfile
 import numpy as np
 from pathlib import Path
 from datetime import datetime, timezone
+
+
+def atomic_write_json(path: Path, obj, **dump_kwargs):
+    """Write JSON atomically (temp file in same dir + os.replace)."""
+    path = Path(path)
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(obj, f, **dump_kwargs)
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
 
 # Configuration
 NUM_SIMILAR = 10  # Number of similar MicroSims to store per item
@@ -143,8 +158,7 @@ def main():
     print(f"Saving to {OUTPUT_PATH}...")
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(OUTPUT_PATH, 'w') as f:
-        json.dump(output, f, separators=(',', ':'))  # Compact JSON
+    atomic_write_json(OUTPUT_PATH, output, separators=(',', ':'))  # Compact JSON
 
     # Calculate file size
     file_size = OUTPUT_PATH.stat().st_size

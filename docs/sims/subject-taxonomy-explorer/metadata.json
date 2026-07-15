@@ -15,7 +15,7 @@
     "date": "2026-01-25",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "subject-taxonomy-explorer",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/subject-taxonomy-explorer/",
     "language": "en-US",
     "rights": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)"
   },
@@ -26,18 +26,37 @@
   },
   "pedagogical": {
     "bloomsTaxonomy": "Understand",
-    "bloomVerbs": ["classify", "describe", "explain", "interpret"],
+    "bloomVerbs": [
+      "classify",
+      "describe",
+      "explain",
+      "interpret"
+    ],
     "pattern": "exploration",
     "pacing": "self-paced",
-    "bloomAlignment": ["remember", "understand", "apply"]
+    "bloomAlignment": [
+      "remember",
+      "understand",
+      "apply"
+    ]
   },
   "technical": {
     "framework": "vis-network",
     "fileSize": "15KB",
-    "browserSupport": ["Chrome", "Firefox", "Safari", "Edge"]
+    "browserSupport": [
+      "Chrome",
+      "Firefox",
+      "Safari",
+      "Edge"
+    ]
   },
   "search": {
-    "visualizationType": ["network", "graph", "interactive-demo", "hierarchy"],
+    "visualizationType": [
+      "network",
+      "graph",
+      "interactive-demo",
+      "hierarchy"
+    ],
     "keywords": [
       "subject hierarchy",
       "taxonomy",

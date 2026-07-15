@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "interaction-spectrum",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/interaction-spectrum/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Educational Technology",
     "learningObjectives": [
       "Classify MicroSims by interaction level",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "worked-example",
-    "bloomAlignment": ["understand", "apply"],
-    "bloomVerbs": ["classify", "identify", "select"],
+    "bloomAlignment": [
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "identify",
+      "select"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 450",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -57,7 +69,15 @@
     "interactionType": "drag-and-drop"
   },
   "search": {
-    "keywords": ["interaction", "spectrum", "classification", "passive", "active", "controls", "UI design"],
+    "keywords": [
+      "interaction",
+      "spectrum",
+      "classification",
+      "passive",
+      "active",
+      "controls",
+      "UI design"
+    ],
     "visualizationType": "infographic"
   }
 }

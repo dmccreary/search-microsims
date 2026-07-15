@@ -24,9 +24,28 @@ Output:
 """
 
 import json
+import os
 import sys
+import tempfile
 from pathlib import Path
 from datetime import datetime, timezone
+
+
+def atomic_write_json(path: Path, obj, **dump_kwargs):
+    """Write JSON to *path* atomically (temp file in same dir + os.replace).
+
+    Prevents a concurrent reader/writer (e.g. another session regenerating
+    embeddings) from ever seeing a half-written file.
+    """
+    path = Path(path)
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(obj, f, **dump_kwargs)
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
 
 try:
     from sentence_transformers import SentenceTransformer
@@ -320,10 +339,9 @@ def main():
     # Ensure output directory exists
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    # Save embeddings
+    # Save embeddings (atomic — safe against concurrent regeneration)
     print(f"\nSaving embeddings to {OUTPUT_FILE}...")
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(output, f)
+    atomic_write_json(OUTPUT_FILE, output)
 
     # Report file size
     file_size_mb = OUTPUT_FILE.stat().st_size / (1024 * 1024)

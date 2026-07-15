@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "p5-architecture",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/p5-architecture/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Explain the p5.js execution model and the role of setup() vs draw()",
@@ -23,8 +26,14 @@
   },
   "pedagogical": {
     "pattern": "worked-example",
-    "bloomAlignment": ["understand"],
-    "bloomVerbs": ["explain", "trace", "identify"],
+    "bloomAlignment": [
+      "understand"
+    ],
+    "bloomVerbs": [
+      "explain",
+      "trace",
+      "identify"
+    ],
     "pacing": "step-through",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +43,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 470",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -57,7 +68,16 @@
     "interactionType": "step-through"
   },
   "search": {
-    "keywords": ["p5.js", "architecture", "execution", "setup", "draw", "loop", "event", "flowchart"],
+    "keywords": [
+      "p5.js",
+      "architecture",
+      "execution",
+      "setup",
+      "draw",
+      "loop",
+      "event",
+      "flowchart"
+    ],
     "visualizationType": "diagram"
   }
 }

@@ -41,7 +41,7 @@ The catalog embeddings are **dual** (schema `dual-v1`): each MicroSim has a WHAT
 | `template` | 0.60 – 0.75 | Write a new spec, cite the match as a template |
 | `generate` | < 0.60 | Write a new spec from scratch |
 
-Thresholds calibrated 2026-07-14: same-concept matches score 0.75–0.80 (boilerplate catalog learning objectives depress scores), related-but-different concepts 0.60–0.67, absent concepts < 0.40.
+Thresholds recalibrated 2026-07-15 against the 1,411-sim catalog, after rewriting ~628 sims' auto-generated boilerplate `learningObjectives` into concept-specific text: same-concept matches now score 0.73–0.86, related-but-different concepts 0.53–0.69, absent concepts 0.43–0.51. The enrichment tightened the noise floor (related/absent scores dropped) but did not raise the same-concept floor enough to justify moving `REUSE_THRESHOLD` up toward 0.80 — a genuine same-concept probe (Coulomb's law) now scores 0.730, just below the current 0.75 threshold, so raising it would trade missed reuse opportunities for a separation gain that didn't materialize on the same-concept side. `REUSE_THRESHOLD` stays at 0.75.
 
 ### Pedagogical Alignment Scoring
 

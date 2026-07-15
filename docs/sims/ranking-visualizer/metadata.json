@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "ranking-visualizer",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/ranking-visualizer/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Interpret how different ranking signals contribute to final scores",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["understand", "analyze"],
-    "bloomVerbs": ["interpret", "experiment", "predict"],
+    "bloomAlignment": [
+      "understand",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "interpret",
+      "experiment",
+      "predict"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 500",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -77,7 +89,15 @@
     "interactionType": "slider-explore"
   },
   "search": {
-    "keywords": ["ranking", "search results", "relevance", "TF-IDF", "BM25", "signals", "weights"],
+    "keywords": [
+      "ranking",
+      "search results",
+      "relevance",
+      "TF-IDF",
+      "BM25",
+      "signals",
+      "weights"
+    ],
     "visualizationType": "chart"
   }
 }

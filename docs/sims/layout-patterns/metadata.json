@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "layout-patterns",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/layout-patterns/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "User Interface Design",
     "learningObjectives": [
       "Select appropriate layout patterns for different MicroSim scenarios",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["understand", "apply"],
-    "bloomVerbs": ["select", "compare", "apply"],
+    "bloomAlignment": [
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "select",
+      "compare",
+      "apply"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 500",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -47,7 +59,16 @@
     "interactionType": "click-select"
   },
   "search": {
-    "keywords": ["layout", "panel", "fixed", "two-panel", "three-panel", "responsive", "mobile", "design"],
+    "keywords": [
+      "layout",
+      "panel",
+      "fixed",
+      "two-panel",
+      "three-panel",
+      "responsive",
+      "mobile",
+      "design"
+    ],
     "visualizationType": "infographic"
   }
 }

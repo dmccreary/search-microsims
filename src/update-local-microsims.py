@@ -20,8 +20,23 @@ import argparse
 import json
 import os
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+
+
+def atomic_write_json(path: Path, obj, **dump_kwargs):
+    """Write JSON atomically (temp file in same dir + os.replace) so a
+    concurrent reader/writer never sees a half-written catalog file."""
+    path = Path(path)
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(obj, f, **dump_kwargs)
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
 
 # Configuration
 WORKSPACE_DIR = Path(os.environ.get("HOME")) / "Documents" / "ws"
@@ -282,8 +297,7 @@ class LocalRepoUpdater:
             merged_data = self.merge_metadata()
 
             OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-            with open(OUTPUT_JSON, "w") as f:
-                json.dump(merged_data, f, indent=2)
+            atomic_write_json(OUTPUT_JSON, merged_data, indent=2)
 
             self.log("update_completed", self.stats)
 

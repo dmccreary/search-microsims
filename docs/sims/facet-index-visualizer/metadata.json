@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "facet-index-visualizer",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/facet-index-visualizer/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Examine how facet indexes create document sets",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["analyze", "apply"],
-    "bloomVerbs": ["examine", "trace", "predict"],
+    "bloomAlignment": [
+      "analyze",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "examine",
+      "trace",
+      "predict"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 520",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -57,7 +69,13 @@
     "interactionType": "click-select"
   },
   "search": {
-    "keywords": ["facet index", "set intersection", "filtering", "documents", "visualization"],
+    "keywords": [
+      "facet index",
+      "set intersection",
+      "filtering",
+      "documents",
+      "visualization"
+    ],
     "visualizationType": "diagram"
   }
 }

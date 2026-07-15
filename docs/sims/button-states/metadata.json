@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "button-states",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/button-states/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "User Interface Design",
     "learningObjectives": [
       "Identify the four common button states in user interfaces",
@@ -23,8 +26,14 @@
   },
   "pedagogical": {
     "pattern": "reference",
-    "bloomAlignment": ["remember", "understand"],
-    "bloomVerbs": ["identify", "recognize"],
+    "bloomAlignment": [
+      "remember",
+      "understand"
+    ],
+    "bloomVerbs": [
+      "identify",
+      "recognize"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": false,
     "dataVisibility": "high",
@@ -34,7 +43,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 400",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -47,7 +58,17 @@
     "interactionType": "hover-explore"
   },
   "search": {
-    "keywords": ["button", "states", "hover", "active", "disabled", "UI", "design", "primary", "secondary"],
+    "keywords": [
+      "button",
+      "states",
+      "hover",
+      "active",
+      "disabled",
+      "UI",
+      "design",
+      "primary",
+      "secondary"
+    ],
     "visualizationType": "diagram"
   }
 }

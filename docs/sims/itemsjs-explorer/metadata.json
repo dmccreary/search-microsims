@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "itemsjs-explorer",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/itemsjs-explorer/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Implement search queries using the ItemsJS API",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["apply", "analyze"],
-    "bloomVerbs": ["implement", "construct", "interpret"],
+    "bloomAlignment": [
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "implement",
+      "construct",
+      "interpret"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,10 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 550",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1", "ItemsJS 2.1.24"]
+    "dependencies": [
+      "p5.js 1.11.1",
+      "ItemsJS 2.1.24"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -67,7 +80,13 @@
     "interactionType": "build-and-test"
   },
   "search": {
-    "keywords": ["ItemsJS", "faceted search", "API", "client-side search", "query builder"],
+    "keywords": [
+      "ItemsJS",
+      "faceted search",
+      "API",
+      "client-side search",
+      "query builder"
+    ],
     "visualizationType": "tool"
   }
 }

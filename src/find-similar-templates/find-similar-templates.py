@@ -79,11 +79,21 @@ HOW_WEIGHT = 0.35
 PEDAGOGICAL_WEIGHT = 0.30
 
 # Reuse-mode recommendation bands, applied to the pure WHAT cosine score.
-# Calibrated 2026-07-14 against the 885-sim catalog: same-concept matches
-# score 0.75-0.80 (boilerplate catalog learningObjectives depress scores),
-# related-but-different concepts 0.60-0.67, absent concepts < 0.40. Keep
-# REUSE_THRESHOLD conservative: a false-positive reuse (the wrong sim
-# embedded in a published book) costs more than regenerating.
+# Recalibrated 2026-07-15 against the 1,411-sim catalog after rewriting
+# ~628 sims' boilerplate learningObjectives into concept-specific text (see
+# src/enrich-metadata/README.md). Result: enrichment did NOT let us raise
+# REUSE_THRESHOLD toward 0.80 as originally hoped. It tightened the noise
+# floor (related-but-different concepts dropped from 0.60-0.75 to 0.53-0.69;
+# absent concepts from 0.48-0.51 to 0.43-0.51) but same-concept matches also
+# spread wider (0.73-0.86, vs 0.78-0.86 before) because specific technical
+# objectives sit further from generically-phrased queries than generic
+# boilerplate text did. Net gap between the same-concept floor and the
+# related-different ceiling widened only slightly (0.031 -> 0.044), and a
+# genuine same-concept probe (Coulomb's law) now scores 0.730 — below the
+# existing 0.75 threshold. Raising the threshold would have increased
+# false negatives (missed reuse) without clear evidence it reduces false
+# positives. Keep REUSE_THRESHOLD conservative: a false-positive reuse (the
+# wrong sim embedded in a published book) costs more than regenerating.
 REUSE_THRESHOLD = 0.75      # >= this: embed an iframe to the existing sim
 TEMPLATE_THRESHOLD = 0.60   # >= this: generate new, but use the match as a template
 
