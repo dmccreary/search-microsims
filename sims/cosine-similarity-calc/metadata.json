@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "cosine-similarity-calc",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/cosine-similarity-calc/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Mathematics",
     "learningObjectives": [
       "Calculate cosine similarity between two vectors",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "worked-example",
-    "bloomAlignment": ["apply", "understand"],
-    "bloomVerbs": ["calculate", "explain", "predict"],
+    "bloomAlignment": [
+      "apply",
+      "understand"
+    ],
+    "bloomVerbs": [
+      "calculate",
+      "explain",
+      "predict"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 500",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -57,7 +69,13 @@
     "interactionType": "drag-and-drop"
   },
   "search": {
-    "keywords": ["cosine similarity", "vectors", "dot product", "angle", "calculation"],
+    "keywords": [
+      "cosine similarity",
+      "vectors",
+      "dot product",
+      "angle",
+      "calculation"
+    ],
     "visualizationType": "calculator"
   }
 }

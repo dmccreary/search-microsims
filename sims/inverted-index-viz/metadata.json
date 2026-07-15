@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "inverted-index-viz",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/inverted-index-viz/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Explain how inverted indexes map terms to documents",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["understand", "apply"],
-    "bloomVerbs": ["explain", "trace", "compare"],
+    "bloomAlignment": [
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "explain",
+      "trace",
+      "compare"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 520",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -67,7 +79,14 @@
     "interactionType": "click-explore"
   },
   "search": {
-    "keywords": ["inverted index", "indexing", "search", "posting list", "tokenization", "documents"],
+    "keywords": [
+      "inverted index",
+      "indexing",
+      "search",
+      "posting list",
+      "tokenization",
+      "documents"
+    ],
     "visualizationType": "diagram"
   }
 }

@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "boolean-query-builder",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/boolean-query-builder/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Construct boolean search queries using AND, OR, and NOT",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "guided-discovery",
-    "bloomAlignment": ["apply", "analyze"],
-    "bloomVerbs": ["construct", "visualize", "predict"],
+    "bloomAlignment": [
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "construct",
+      "visualize",
+      "predict"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 550",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -67,7 +79,16 @@
     "interactionType": "input-build"
   },
   "search": {
-    "keywords": ["boolean", "AND", "OR", "NOT", "query", "search", "Venn diagram", "operators"],
+    "keywords": [
+      "boolean",
+      "AND",
+      "OR",
+      "NOT",
+      "query",
+      "search",
+      "Venn diagram",
+      "operators"
+    ],
     "visualizationType": "diagram"
   }
 }

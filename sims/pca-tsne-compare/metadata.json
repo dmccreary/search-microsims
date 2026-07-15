@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "pca-tsne-compare",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/pca-tsne-compare/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["Undergraduate", "Graduate"],
+    "gradeLevel": [
+      "Undergraduate",
+      "Graduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Compare PCA and t-SNE dimensionality reduction techniques",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "comparison",
-    "bloomAlignment": ["analyze", "evaluate"],
-    "bloomVerbs": ["compare", "identify", "explain"],
+    "bloomAlignment": [
+      "analyze",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "identify",
+      "explain"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 550",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -57,7 +69,13 @@
     "interactionType": "click-select"
   },
   "search": {
-    "keywords": ["PCA", "t-SNE", "dimensionality reduction", "visualization", "clustering"],
+    "keywords": [
+      "PCA",
+      "t-SNE",
+      "dimensionality reduction",
+      "visualization",
+      "clustering"
+    ],
     "visualizationType": "comparison"
   }
 }

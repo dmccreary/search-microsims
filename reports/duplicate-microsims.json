@@ -1,0 +1,4204 @@
+{
+  "generated_at": "2026-07-15T05:28:10Z",
+  "threshold": 0.92,
+  "cross_repo_only": false,
+  "catalog_size": 3637,
+  "untitled_excluded": 80,
+  "templates_excluded": 29,
+  "cluster_count": 71,
+  "clusters": [
+    {
+      "size": 7,
+      "cross_repo": true,
+      "repos": [
+        "conversational-ai",
+        "graph-data-modeling-course",
+        "it-management-graph",
+        "learning-graphs",
+        "learning-linux",
+        "microsims",
+        "modeling-healthcare-data"
+      ],
+      "min_similarity": 0.9204,
+      "avg_similarity": 0.9314,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/microsims/sims/graph-viewer/",
+        "repo": "microsims",
+        "sim": "graph-viewer",
+        "title": "Learning Graph Viewer",
+        "framework": "vis-network",
+        "quality": 7.76,
+        "num_objectives": 5,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/it-management-graph/sims/graph-viewer/",
+          "repo": "it-management-graph",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.87,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/conversational-ai/sims/graph-viewer/",
+          "repo": "conversational-ai",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/graph-data-modeling-course/sims/graph-viewer/",
+          "repo": "graph-data-modeling-course",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/graph-viewer/",
+          "repo": "modeling-healthcare-data",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-graphs/sims/graph-viewer/",
+          "repo": "learning-graphs",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.26,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-linux/sims/graph-viewer/",
+          "repo": "learning-linux",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.26,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/microsims/sims/graph-viewer/",
+          "repo": "microsims",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 7.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/it-management-graph/sims/graph-viewer/",
+          "repo": "it-management-graph",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.87,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/conversational-ai/sims/graph-viewer/",
+          "repo": "conversational-ai",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/graph-data-modeling-course/sims/graph-viewer/",
+          "repo": "graph-data-modeling-course",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/graph-viewer/",
+          "repo": "modeling-healthcare-data",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.76,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-graphs/sims/graph-viewer/",
+          "repo": "learning-graphs",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.26,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-linux/sims/graph-viewer/",
+          "repo": "learning-linux",
+          "sim": "graph-viewer",
+          "title": "Learning Graph Viewer",
+          "framework": "vis-network",
+          "quality": 5.26,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 4,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "psychology",
+        "statistics-course"
+      ],
+      "min_similarity": 0.9341,
+      "avg_similarity": 0.9605,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/standard-deviation/",
+        "repo": "biology",
+        "sim": "standard-deviation",
+        "title": "Standard Deviation Visualization",
+        "framework": "?",
+        "quality": 1.57,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/standard-deviation/",
+          "repo": "psychology",
+          "sim": "standard-deviation",
+          "title": "Standard Deviation Visualization",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/statistics-course/sims/standard-deviation/",
+          "repo": "statistics-course",
+          "sim": "standard-deviation",
+          "title": "Standard Deviation Visualization",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/biology/sims/chi-square-calculator/",
+          "repo": "biology",
+          "sim": "chi-square-calculator",
+          "title": "Standard Deviation",
+          "framework": "?",
+          "quality": 1.43,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/standard-deviation/",
+          "repo": "biology",
+          "sim": "standard-deviation",
+          "title": "Standard Deviation Visualization",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/standard-deviation/",
+          "repo": "psychology",
+          "sim": "standard-deviation",
+          "title": "Standard Deviation Visualization",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/statistics-course/sims/standard-deviation/",
+          "repo": "statistics-course",
+          "sim": "standard-deviation",
+          "title": "Standard Deviation Visualization",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/biology/sims/chi-square-calculator/",
+          "repo": "biology",
+          "sim": "chi-square-calculator",
+          "title": "Standard Deviation",
+          "framework": "?",
+          "quality": 1.43,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "information-systems",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9932,
+      "avg_similarity": 0.9941,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/porters-five-forces/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "porters-five-forces",
+        "title": "Porter's Five Forces Model",
+        "framework": "?",
+        "quality": 2.91,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/information-systems/sims/porters-five-forces/",
+          "repo": "information-systems",
+          "sim": "porters-five-forces",
+          "title": "Porter's Five Forces Model",
+          "framework": "?",
+          "quality": 2.91,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/porters-five-forces/",
+          "repo": "tracking-ai-course",
+          "sim": "porters-five-forces",
+          "title": "Porter's Five Forces Model",
+          "framework": "?",
+          "quality": 2.91,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/porters-five-forces/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "porters-five-forces",
+          "title": "Porter's Five Forces Model",
+          "framework": "?",
+          "quality": 2.91,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/information-systems/sims/porters-five-forces/",
+          "repo": "information-systems",
+          "sim": "porters-five-forces",
+          "title": "Porter's Five Forces Model",
+          "framework": "?",
+          "quality": 2.91,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/porters-five-forces/",
+          "repo": "tracking-ai-course",
+          "sim": "porters-five-forces",
+          "title": "Porter's Five Forces Model",
+          "framework": "?",
+          "quality": 2.91,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "ecology",
+        "infographics"
+      ],
+      "min_similarity": 0.9881,
+      "avg_similarity": 0.9911,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/biogeochemical-cycles/",
+        "repo": "biology",
+        "sim": "biogeochemical-cycles",
+        "title": "Biogeochemical Cycles Dashboard",
+        "framework": "?",
+        "quality": 3.0,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/ecology/sims/biogeochemical-cycles/",
+          "repo": "ecology",
+          "sim": "biogeochemical-cycles",
+          "title": "Biogeochemical Cycles Dashboard",
+          "framework": "?",
+          "quality": 3.0,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/biogeochemical-cycles/",
+          "repo": "infographics",
+          "sim": "biogeochemical-cycles",
+          "title": "Biogeochemical Cycles Dashboard",
+          "framework": "?",
+          "quality": 3.0,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/biogeochemical-cycles/",
+          "repo": "biology",
+          "sim": "biogeochemical-cycles",
+          "title": "Biogeochemical Cycles Dashboard",
+          "framework": "?",
+          "quality": 3.0,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/ecology/sims/biogeochemical-cycles/",
+          "repo": "ecology",
+          "sim": "biogeochemical-cycles",
+          "title": "Biogeochemical Cycles Dashboard",
+          "framework": "?",
+          "quality": 3.0,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/biogeochemical-cycles/",
+          "repo": "infographics",
+          "sim": "biogeochemical-cycles",
+          "title": "Biogeochemical Cycles Dashboard",
+          "framework": "?",
+          "quality": 3.0,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "infographics",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.97,
+      "avg_similarity": 0.9778,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-flywheel/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-flywheel",
+        "title": "The AI Flywheel",
+        "framework": "?",
+        "quality": 3.5,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/ai-flywheel/",
+          "repo": "infographics",
+          "sim": "ai-flywheel",
+          "title": "The AI Flywheel",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-flywheel/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-flywheel",
+          "title": "The AI Flywheel",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-flywheel/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-flywheel",
+          "title": "The AI Flywheel",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/ai-flywheel/",
+          "repo": "infographics",
+          "sim": "ai-flywheel",
+          "title": "The AI Flywheel",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-flywheel/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-flywheel",
+          "title": "The AI Flywheel",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "chemistry",
+        "psychology"
+      ],
+      "min_similarity": 0.9285,
+      "avg_similarity": 0.9519,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/scientific-method/",
+        "repo": "biology",
+        "sim": "scientific-method",
+        "title": "Scientific Method Workflow",
+        "framework": "?",
+        "quality": 2.92,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/scientific-method/",
+          "repo": "psychology",
+          "sim": "scientific-method",
+          "title": "Scientific Method Workflow",
+          "framework": "?",
+          "quality": 2.92,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/scientific-method/",
+          "repo": "chemistry",
+          "sim": "scientific-method",
+          "title": "Scientific Method Workflow",
+          "framework": "?",
+          "quality": 1.42,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/scientific-method/",
+          "repo": "biology",
+          "sim": "scientific-method",
+          "title": "Scientific Method Workflow",
+          "framework": "?",
+          "quality": 2.92,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/scientific-method/",
+          "repo": "psychology",
+          "sim": "scientific-method",
+          "title": "Scientific Method Workflow",
+          "framework": "?",
+          "quality": 2.92,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/scientific-method/",
+          "repo": "chemistry",
+          "sim": "scientific-method",
+          "title": "Scientific Method Workflow",
+          "framework": "?",
+          "quality": 1.42,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 3,
+      "cross_repo": true,
+      "repos": [
+        "infographics",
+        "intro-to-graph",
+        "organizational-analytics"
+      ],
+      "min_similarity": 0.9237,
+      "avg_similarity": 0.9469,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/intro-to-graph/sims/org-chart/",
+        "repo": "intro-to-graph",
+        "sim": "org-chart",
+        "title": "Organization Chart Visualization",
+        "framework": "?",
+        "quality": 6.68,
+        "num_objectives": 6,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/org-chart/",
+          "repo": "infographics",
+          "sim": "org-chart",
+          "title": "Organization Chart Visualization",
+          "framework": "?",
+          "quality": 4.18,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/organizational-analytics/sims/org-chart/",
+          "repo": "organizational-analytics",
+          "sim": "org-chart",
+          "title": "Organization Chart Visualization",
+          "framework": "?",
+          "quality": 4.18,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/intro-to-graph/sims/org-chart/",
+          "repo": "intro-to-graph",
+          "sim": "org-chart",
+          "title": "Organization Chart Visualization",
+          "framework": "?",
+          "quality": 6.68,
+          "num_objectives": 6,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/org-chart/",
+          "repo": "infographics",
+          "sim": "org-chart",
+          "title": "Organization Chart Visualization",
+          "framework": "?",
+          "quality": 4.18,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/organizational-analytics/sims/org-chart/",
+          "repo": "organizational-analytics",
+          "sim": "org-chart",
+          "title": "Organization Chart Visualization",
+          "framework": "?",
+          "quality": 4.18,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "infographics"
+      ],
+      "min_similarity": 0.9969,
+      "avg_similarity": 0.9969,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/brewing-beer/",
+        "repo": "biology",
+        "sim": "brewing-beer",
+        "title": "Brewing Beer Process Explorer",
+        "framework": "?",
+        "quality": 1.33,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/brewing-beer/",
+          "repo": "infographics",
+          "sim": "brewing-beer",
+          "title": "Brewing Beer Process Explorer",
+          "framework": "?",
+          "quality": 1.33,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/brewing-beer/",
+          "repo": "biology",
+          "sim": "brewing-beer",
+          "title": "Brewing Beer Process Explorer",
+          "framework": "?",
+          "quality": 1.33,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/brewing-beer/",
+          "repo": "infographics",
+          "sim": "brewing-beer",
+          "title": "Brewing Beer Process Explorer",
+          "framework": "?",
+          "quality": 1.33,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "ecology"
+      ],
+      "min_similarity": 0.9948,
+      "avg_similarity": 0.9948,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/ecological-succession/",
+        "repo": "biology",
+        "sim": "ecological-succession",
+        "title": "Ecological Succession Timeline",
+        "framework": "?",
+        "quality": 1.96,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/ecology/sims/ecological-succession/",
+          "repo": "ecology",
+          "sim": "ecological-succession",
+          "title": "Ecological Succession Timeline",
+          "framework": "?",
+          "quality": 1.96,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/ecological-succession/",
+          "repo": "biology",
+          "sim": "ecological-succession",
+          "title": "Ecological Succession Timeline",
+          "framework": "?",
+          "quality": 1.96,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/ecology/sims/ecological-succession/",
+          "repo": "ecology",
+          "sim": "ecological-succession",
+          "title": "Ecological Succession Timeline",
+          "framework": "?",
+          "quality": 1.96,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "infographics"
+      ],
+      "min_similarity": 0.9926,
+      "avg_similarity": 0.9926,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/prokaryote-eukaryote-comparison/",
+        "repo": "biology",
+        "sim": "prokaryote-eukaryote-comparison",
+        "title": "Prokaryote vs. Eukaryote Cell Comparison",
+        "framework": "?",
+        "quality": 1.65,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/prokaryote-eukaryote-comparison/",
+          "repo": "infographics",
+          "sim": "prokaryote-eukaryote-comparison",
+          "title": "Prokaryote vs. Eukaryote Cell Comparison",
+          "framework": "?",
+          "quality": 1.65,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/prokaryote-eukaryote-comparison/",
+          "repo": "biology",
+          "sim": "prokaryote-eukaryote-comparison",
+          "title": "Prokaryote vs. Eukaryote Cell Comparison",
+          "framework": "?",
+          "quality": 1.65,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/prokaryote-eukaryote-comparison/",
+          "repo": "infographics",
+          "sim": "prokaryote-eukaryote-comparison",
+          "title": "Prokaryote vs. Eukaryote Cell Comparison",
+          "framework": "?",
+          "quality": 1.65,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.992,
+      "avg_similarity": 0.992,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-doubling-rate/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-doubling-rate",
+        "title": "AI Doubling Rate",
+        "framework": "?",
+        "quality": 2.93,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-doubling-rate/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-doubling-rate",
+          "title": "AI Doubling Rate",
+          "framework": "?",
+          "quality": 2.93,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-doubling-rate/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-doubling-rate",
+          "title": "AI Doubling Rate",
+          "framework": "?",
+          "quality": 2.93,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-doubling-rate/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-doubling-rate",
+          "title": "AI Doubling Rate",
+          "framework": "?",
+          "quality": 2.93,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9912,
+      "avg_similarity": 0.9912,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/four-futures/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "four-futures",
+        "title": "Four AI Futures MicroSim",
+        "framework": "?",
+        "quality": 3.13,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/four-futures/",
+          "repo": "tracking-ai-course",
+          "sim": "four-futures",
+          "title": "Four AI Futures MicroSim",
+          "framework": "?",
+          "quality": 3.13,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/four-futures/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "four-futures",
+          "title": "Four AI Futures MicroSim",
+          "framework": "?",
+          "quality": 3.13,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/four-futures/",
+          "repo": "tracking-ai-course",
+          "sim": "four-futures",
+          "title": "Four AI Futures MicroSim",
+          "framework": "?",
+          "quality": 3.13,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "psychology"
+      ],
+      "min_similarity": 0.9912,
+      "avg_similarity": 0.9912,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/signal-transduction-pathway/",
+        "repo": "biology",
+        "sim": "signal-transduction-pathway",
+        "title": "Signal Transduction Pathway Overview",
+        "framework": "?",
+        "quality": 2.62,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/signal-transduction-pathway/",
+          "repo": "psychology",
+          "sim": "signal-transduction-pathway",
+          "title": "Signal Transduction Pathway Overview",
+          "framework": "?",
+          "quality": 2.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/signal-transduction-pathway/",
+          "repo": "biology",
+          "sim": "signal-transduction-pathway",
+          "title": "Signal Transduction Pathway Overview",
+          "framework": "?",
+          "quality": 2.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/signal-transduction-pathway/",
+          "repo": "psychology",
+          "sim": "signal-transduction-pathway",
+          "title": "Signal Transduction Pathway Overview",
+          "framework": "?",
+          "quality": 2.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9906,
+      "avg_similarity": 0.9906,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/power-wall/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "power-wall",
+        "title": "Power Wall MicroSim",
+        "framework": "?",
+        "quality": 3.3,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/power-wall/",
+          "repo": "tracking-ai-course",
+          "sim": "power-wall",
+          "title": "Power Wall MicroSim",
+          "framework": "?",
+          "quality": 3.3,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/power-wall/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "power-wall",
+          "title": "Power Wall MicroSim",
+          "framework": "?",
+          "quality": 3.3,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/power-wall/",
+          "repo": "tracking-ai-course",
+          "sim": "power-wall",
+          "title": "Power Wall MicroSim",
+          "framework": "?",
+          "quality": 3.3,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9902,
+      "avg_similarity": 0.9902,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/book-levels/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "book-levels",
+        "title": "Book Levels MicroSim",
+        "framework": "?",
+        "quality": 3.35,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-levels/",
+          "repo": "tracking-ai-course",
+          "sim": "book-levels",
+          "title": "Book Levels MicroSim",
+          "framework": "?",
+          "quality": 3.35,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/book-levels/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "book-levels",
+          "title": "Book Levels MicroSim",
+          "framework": "?",
+          "quality": 3.35,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-levels/",
+          "repo": "tracking-ai-course",
+          "sim": "book-levels",
+          "title": "Book Levels MicroSim",
+          "framework": "?",
+          "quality": 3.35,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.99,
+      "avg_similarity": 0.99,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/mmlu-timeline/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "mmlu-timeline",
+        "title": "MMLU Timeline MicroSim",
+        "framework": "?",
+        "quality": 3.46,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/mmlu-timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "mmlu-timeline",
+          "title": "MMLU Timeline MicroSim",
+          "framework": "?",
+          "quality": 3.46,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/mmlu-timeline/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "mmlu-timeline",
+          "title": "MMLU Timeline MicroSim",
+          "framework": "?",
+          "quality": 3.46,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/mmlu-timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "mmlu-timeline",
+          "title": "MMLU Timeline MicroSim",
+          "framework": "?",
+          "quality": 3.46,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "psychology"
+      ],
+      "min_similarity": 0.99,
+      "avg_similarity": 0.99,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/feedback-loop-simulator/",
+        "repo": "biology",
+        "sim": "feedback-loop-simulator",
+        "title": "Feedback Loop Simulator",
+        "framework": "?",
+        "quality": 2.16,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/feedback-loop-simulator/",
+          "repo": "psychology",
+          "sim": "feedback-loop-simulator",
+          "title": "Feedback Loop Simulator",
+          "framework": "?",
+          "quality": 2.16,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/feedback-loop-simulator/",
+          "repo": "biology",
+          "sim": "feedback-loop-simulator",
+          "title": "Feedback Loop Simulator",
+          "framework": "?",
+          "quality": 2.16,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/psychology/sims/feedback-loop-simulator/",
+          "repo": "psychology",
+          "sim": "feedback-loop-simulator",
+          "title": "Feedback Loop Simulator",
+          "framework": "?",
+          "quality": 2.16,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9867,
+      "avg_similarity": 0.9867,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/timeline/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "timeline",
+        "title": "Deep Learning Timeline MicroSim",
+        "framework": "?",
+        "quality": 3.04,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "timeline",
+          "title": "Deep Learning Timeline MicroSim",
+          "framework": "?",
+          "quality": 3.04,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/timeline/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "timeline",
+          "title": "Deep Learning Timeline MicroSim",
+          "framework": "?",
+          "quality": 3.04,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "timeline",
+          "title": "Deep Learning Timeline MicroSim",
+          "framework": "?",
+          "quality": 3.04,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9864,
+      "avg_similarity": 0.9864,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/blooms-taxonomy/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "blooms-taxonomy",
+        "title": "Bloom's Taxonomy",
+        "framework": "?",
+        "quality": 3.44,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/blooms-taxonomy/",
+          "repo": "tracking-ai-course",
+          "sim": "blooms-taxonomy",
+          "title": "Bloom's Taxonomy",
+          "framework": "?",
+          "quality": 3.44,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/blooms-taxonomy/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "blooms-taxonomy",
+          "title": "Bloom's Taxonomy",
+          "framework": "?",
+          "quality": 3.44,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/blooms-taxonomy/",
+          "repo": "tracking-ai-course",
+          "sim": "blooms-taxonomy",
+          "title": "Bloom's Taxonomy",
+          "framework": "?",
+          "quality": 3.44,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9859,
+      "avg_similarity": 0.9859,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/idea-funnel/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "idea-funnel",
+        "title": "Generative AI Idea Funnel",
+        "framework": "?",
+        "quality": 3.29,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/idea-funnel/",
+          "repo": "tracking-ai-course",
+          "sim": "idea-funnel",
+          "title": "Generative AI Idea Funnel",
+          "framework": "?",
+          "quality": 3.29,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/idea-funnel/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "idea-funnel",
+          "title": "Generative AI Idea Funnel",
+          "framework": "?",
+          "quality": 3.29,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/idea-funnel/",
+          "repo": "tracking-ai-course",
+          "sim": "idea-funnel",
+          "title": "Generative AI Idea Funnel",
+          "framework": "?",
+          "quality": 3.29,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9856,
+      "avg_similarity": 0.9856,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/lm-arena-timeline/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "lm-arena-timeline",
+        "title": "Language Model Arena Timeline",
+        "framework": "?",
+        "quality": 2.78,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/lm-arena-timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "lm-arena-timeline",
+          "title": "Language Model Arena Timeline",
+          "framework": "?",
+          "quality": 2.78,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/lm-arena-timeline/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "lm-arena-timeline",
+          "title": "Language Model Arena Timeline",
+          "framework": "?",
+          "quality": 2.78,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/lm-arena-timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "lm-arena-timeline",
+          "title": "Language Model Arena Timeline",
+          "framework": "?",
+          "quality": 2.78,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9855,
+      "avg_similarity": 0.9855,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/book-gen-workflow/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "book-gen-workflow",
+        "title": "Book Build Workflow",
+        "framework": "?",
+        "quality": 2.51,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-gen-workflow/",
+          "repo": "tracking-ai-course",
+          "sim": "book-gen-workflow",
+          "title": "Book Build Workflow",
+          "framework": "?",
+          "quality": 2.51,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/book-gen-workflow/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "book-gen-workflow",
+          "title": "Book Build Workflow",
+          "framework": "?",
+          "quality": 2.51,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/book-gen-workflow/",
+          "repo": "tracking-ai-course",
+          "sim": "book-gen-workflow",
+          "title": "Book Build Workflow",
+          "framework": "?",
+          "quality": 2.51,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "functions",
+        "pre-calc"
+      ],
+      "min_similarity": 0.9855,
+      "avg_similarity": 0.9855,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/functions/sims/projectile-motion-simulator/",
+        "repo": "functions",
+        "sim": "projectile-motion-simulator",
+        "title": "Projectile Motion Simulator",
+        "framework": "?",
+        "quality": 1.52,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/pre-calc/sims/projectile-motion/",
+          "repo": "pre-calc",
+          "sim": "projectile-motion",
+          "title": "Projectile Motion Simulator",
+          "framework": "?",
+          "quality": 1.52,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/functions/sims/projectile-motion-simulator/",
+          "repo": "functions",
+          "sim": "projectile-motion-simulator",
+          "title": "Projectile Motion Simulator",
+          "framework": "?",
+          "quality": 1.52,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/pre-calc/sims/projectile-motion/",
+          "repo": "pre-calc",
+          "sim": "projectile-motion",
+          "title": "Projectile Motion Simulator",
+          "framework": "?",
+          "quality": 1.52,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9854,
+      "avg_similarity": 0.9854,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/moores-law/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "moores-law",
+        "title": "Moore's Law Timeline",
+        "framework": "?",
+        "quality": 2.98,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/moores-law/",
+          "repo": "tracking-ai-course",
+          "sim": "moores-law",
+          "title": "Moore's Law Timeline",
+          "framework": "?",
+          "quality": 2.98,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/moores-law/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "moores-law",
+          "title": "Moore's Law Timeline",
+          "framework": "?",
+          "quality": 2.98,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/moores-law/",
+          "repo": "tracking-ai-course",
+          "sim": "moores-law",
+          "title": "Moore's Law Timeline",
+          "framework": "?",
+          "quality": 2.98,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "claude-skills",
+        "microsims"
+      ],
+      "min_similarity": 0.9844,
+      "avg_similarity": 0.9844,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/microsims/sims/color-wheel-with-named-colors/",
+        "repo": "microsims",
+        "sim": "color-wheel-with-named-colors",
+        "title": "Color Wheel with Named Colors",
+        "framework": "?",
+        "quality": 6.95,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
+          "repo": "claude-skills",
+          "sim": "color-wheel-with-named-colors",
+          "title": "Color Wheel with Named Colors",
+          "framework": "?",
+          "quality": 4.95,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/microsims/sims/color-wheel-with-named-colors/",
+          "repo": "microsims",
+          "sim": "color-wheel-with-named-colors",
+          "title": "Color Wheel with Named Colors",
+          "framework": "?",
+          "quality": 6.95,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
+          "repo": "claude-skills",
+          "sim": "color-wheel-with-named-colors",
+          "title": "Color Wheel with Named Colors",
+          "framework": "?",
+          "quality": 4.95,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9833,
+      "avg_similarity": 0.9833,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-benchmarks-timeline/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-benchmarks-timeline",
+        "title": "AI Benchmarks Timeline",
+        "framework": "?",
+        "quality": 3.82,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-benchmarks-timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-benchmarks-timeline",
+          "title": "AI Benchmarks Timeline",
+          "framework": "?",
+          "quality": 3.82,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-benchmarks-timeline/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-benchmarks-timeline",
+          "title": "AI Benchmarks Timeline",
+          "framework": "?",
+          "quality": 3.82,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-benchmarks-timeline/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-benchmarks-timeline",
+          "title": "AI Benchmarks Timeline",
+          "framework": "?",
+          "quality": 3.82,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "infographics"
+      ],
+      "min_similarity": 0.9804,
+      "avg_similarity": 0.9804,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/comparative-anatomy/",
+        "repo": "biology",
+        "sim": "comparative-anatomy",
+        "title": "Comparative Anatomy Explorer",
+        "framework": "?",
+        "quality": 1.53,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/comparative-anatomy/",
+          "repo": "infographics",
+          "sim": "comparative-anatomy",
+          "title": "Comparative Anatomy Explorer",
+          "framework": "?",
+          "quality": 1.53,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/comparative-anatomy/",
+          "repo": "biology",
+          "sim": "comparative-anatomy",
+          "title": "Comparative Anatomy Explorer",
+          "framework": "?",
+          "quality": 1.53,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/comparative-anatomy/",
+          "repo": "infographics",
+          "sim": "comparative-anatomy",
+          "title": "Comparative Anatomy Explorer",
+          "framework": "?",
+          "quality": 1.53,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "biology",
+        "chemistry"
+      ],
+      "min_similarity": 0.9793,
+      "avg_similarity": 0.9793,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/biology/sims/ph-scale-explorer/",
+        "repo": "biology",
+        "sim": "ph-scale-explorer",
+        "title": "Interactive pH Scale Explorer",
+        "framework": "?",
+        "quality": 2.22,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/ph-scale-explorer/",
+          "repo": "chemistry",
+          "sim": "ph-scale-explorer",
+          "title": "Interactive pH Scale Explorer",
+          "framework": "?",
+          "quality": 2.22,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/biology/sims/ph-scale-explorer/",
+          "repo": "biology",
+          "sim": "ph-scale-explorer",
+          "title": "Interactive pH Scale Explorer",
+          "framework": "?",
+          "quality": 2.22,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/ph-scale-explorer/",
+          "repo": "chemistry",
+          "sim": "ph-scale-explorer",
+          "title": "Interactive pH Scale Explorer",
+          "framework": "?",
+          "quality": 2.22,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9792,
+      "avg_similarity": 0.9792,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/swot/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "swot",
+        "title": "AI SWOT Analysis",
+        "framework": "?",
+        "quality": 2.95,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/swot/",
+          "repo": "tracking-ai-course",
+          "sim": "swot",
+          "title": "AI SWOT Analysis",
+          "framework": "?",
+          "quality": 2.95,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/swot/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "swot",
+          "title": "AI SWOT Analysis",
+          "framework": "?",
+          "quality": 2.95,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/swot/",
+          "repo": "tracking-ai-course",
+          "sim": "swot",
+          "title": "AI SWOT Analysis",
+          "framework": "?",
+          "quality": 2.95,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9791,
+      "avg_similarity": 0.9791,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-cmm/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-cmm",
+        "title": "AI Capability Maturity Model Infographic",
+        "framework": "?",
+        "quality": 3.5,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-cmm/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-cmm",
+          "title": "AI Capability Maturity Model Infographic",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-cmm/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-cmm",
+          "title": "AI Capability Maturity Model Infographic",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-cmm/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-cmm",
+          "title": "AI Capability Maturity Model Infographic",
+          "framework": "?",
+          "quality": 3.5,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "functions",
+        "pre-calc"
+      ],
+      "min_similarity": 0.9771,
+      "avg_similarity": 0.9771,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/functions/sims/coordinate-plane-explorer/",
+        "repo": "functions",
+        "sim": "coordinate-plane-explorer",
+        "title": "Coordinate Plane Explorer",
+        "framework": "?",
+        "quality": 1.5,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/pre-calc/sims/coordinate-plane-explorer/",
+          "repo": "pre-calc",
+          "sim": "coordinate-plane-explorer",
+          "title": "Coordinate Plane Explorer",
+          "framework": "?",
+          "quality": 1.5,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/functions/sims/coordinate-plane-explorer/",
+          "repo": "functions",
+          "sim": "coordinate-plane-explorer",
+          "title": "Coordinate Plane Explorer",
+          "framework": "?",
+          "quality": 1.5,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/pre-calc/sims/coordinate-plane-explorer/",
+          "repo": "pre-calc",
+          "sim": "coordinate-plane-explorer",
+          "title": "Coordinate Plane Explorer",
+          "framework": "?",
+          "quality": 1.5,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9766,
+      "avg_similarity": 0.9766,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/tokenizer/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "tokenizer",
+        "title": "Tokenizer MicroSim",
+        "framework": "?",
+        "quality": 2.65,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/tokenizer/",
+          "repo": "tracking-ai-course",
+          "sim": "tokenizer",
+          "title": "Tokenizer MicroSim",
+          "framework": "?",
+          "quality": 2.65,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/tokenizer/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "tokenizer",
+          "title": "Tokenizer MicroSim",
+          "framework": "?",
+          "quality": 2.65,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/tokenizer/",
+          "repo": "tracking-ai-course",
+          "sim": "tokenizer",
+          "title": "Tokenizer MicroSim",
+          "framework": "?",
+          "quality": 2.65,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9741,
+      "avg_similarity": 0.9741,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/projecting-ai/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "projecting-ai",
+        "title": "Projecting AI Task Completion to 2030",
+        "framework": "?",
+        "quality": 3.94,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/projecting-ai/",
+          "repo": "tracking-ai-course",
+          "sim": "projecting-ai",
+          "title": "Projecting AI Task Completion to 2030",
+          "framework": "?",
+          "quality": 3.94,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/projecting-ai/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "projecting-ai",
+          "title": "Projecting AI Task Completion to 2030",
+          "framework": "?",
+          "quality": 3.94,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/projecting-ai/",
+          "repo": "tracking-ai-course",
+          "sim": "projecting-ai",
+          "title": "Projecting AI Task Completion to 2030",
+          "framework": "?",
+          "quality": 3.94,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.974,
+      "avg_similarity": 0.974,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-pace-accelerating/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-pace-accelerating",
+        "title": "The Accelerating Pace of AI",
+        "framework": "?",
+        "quality": 3.2,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-pace-accelerating/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-pace-accelerating",
+          "title": "The Accelerating Pace of AI",
+          "framework": "?",
+          "quality": 3.2,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-pace-accelerating/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-pace-accelerating",
+          "title": "The Accelerating Pace of AI",
+          "framework": "?",
+          "quality": 3.2,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-pace-accelerating/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-pace-accelerating",
+          "title": "The Accelerating Pace of AI",
+          "framework": "?",
+          "quality": 3.2,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9713,
+      "avg_similarity": 0.9713,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/hype-cycle/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "hype-cycle",
+        "title": "Technology Hype Cycle Infographic",
+        "framework": "?",
+        "quality": 3.38,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/hype-cycle/",
+          "repo": "tracking-ai-course",
+          "sim": "hype-cycle",
+          "title": "Technology Hype Cycle Infographic",
+          "framework": "?",
+          "quality": 3.38,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/hype-cycle/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "hype-cycle",
+          "title": "Technology Hype Cycle Infographic",
+          "framework": "?",
+          "quality": 3.38,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/hype-cycle/",
+          "repo": "tracking-ai-course",
+          "sim": "hype-cycle",
+          "title": "Technology Hype Cycle Infographic",
+          "framework": "?",
+          "quality": 3.38,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9711,
+      "avg_similarity": 0.9711,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-task-horizons/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-task-horizons",
+        "title": "AI Task Completion Time Horizons",
+        "framework": "?",
+        "quality": 3.69,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-task-horizons/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-task-horizons",
+          "title": "AI Task Completion Time Horizons",
+          "framework": "?",
+          "quality": 3.69,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-task-horizons/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-task-horizons",
+          "title": "AI Task Completion Time Horizons",
+          "framework": "?",
+          "quality": 3.69,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-task-horizons/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-task-horizons",
+          "title": "AI Task Completion Time Horizons",
+          "framework": "?",
+          "quality": 3.69,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9671,
+      "avg_similarity": 0.9671,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-causes/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "ai-causes",
+        "title": "Causes of AI Acceleration",
+        "framework": "?",
+        "quality": 3.4,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-causes/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-causes",
+          "title": "Causes of AI Acceleration",
+          "framework": "?",
+          "quality": 3.4,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-causes/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "ai-causes",
+          "title": "Causes of AI Acceleration",
+          "framework": "?",
+          "quality": 3.4,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/ai-causes/",
+          "repo": "tracking-ai-course",
+          "sim": "ai-causes",
+          "title": "Causes of AI Acceleration",
+          "framework": "?",
+          "quality": 3.4,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.966,
+      "avg_similarity": 0.966,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/technology-adoption/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "technology-adoption",
+        "title": "Technology Adoption Curve Infographic",
+        "framework": "?",
+        "quality": 3.71,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/technology-adoption/",
+          "repo": "tracking-ai-course",
+          "sim": "technology-adoption",
+          "title": "Technology Adoption Curve Infographic",
+          "framework": "?",
+          "quality": 3.71,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/technology-adoption/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "technology-adoption",
+          "title": "Technology Adoption Curve Infographic",
+          "framework": "?",
+          "quality": 3.71,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/technology-adoption/",
+          "repo": "tracking-ai-course",
+          "sim": "technology-adoption",
+          "title": "Technology Adoption Curve Infographic",
+          "framework": "?",
+          "quality": 3.71,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "chemistry",
+        "intro-to-physics-course"
+      ],
+      "min_similarity": 0.9649,
+      "avg_similarity": 0.9649,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/intro-to-physics-course/sims/precision-accuracy/",
+        "repo": "intro-to-physics-course",
+        "sim": "precision-accuracy",
+        "title": "Precision vs Accuracy Target Diagram",
+        "framework": "?",
+        "quality": 5.62,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "precision-accuracy-target-diagram",
+          "repo": "chemistry",
+          "sim": "precision-accuracy",
+          "title": "Precision vs Accuracy Target Diagram",
+          "framework": "?",
+          "quality": 2.12,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/intro-to-physics-course/sims/precision-accuracy/",
+          "repo": "intro-to-physics-course",
+          "sim": "precision-accuracy",
+          "title": "Precision vs Accuracy Target Diagram",
+          "framework": "?",
+          "quality": 5.62,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "precision-accuracy-target-diagram",
+          "repo": "chemistry",
+          "sim": "precision-accuracy",
+          "title": "Precision vs Accuracy Target Diagram",
+          "framework": "?",
+          "quality": 2.12,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "claude-skills",
+        "learning-graphs"
+      ],
+      "min_similarity": 0.9539,
+      "avg_similarity": 0.9539,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
+        "repo": "claude-skills",
+        "sim": "book-build-workflow",
+        "title": "Book Build Workflow",
+        "framework": "?",
+        "quality": 5.46,
+        "num_objectives": 5,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/learning-graphs/sims/book-build-workflow/",
+          "repo": "learning-graphs",
+          "sim": "book-build-workflow",
+          "title": "Book Build Workflow",
+          "framework": "?",
+          "quality": 4.96,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
+          "repo": "claude-skills",
+          "sim": "book-build-workflow",
+          "title": "Book Build Workflow",
+          "framework": "?",
+          "quality": 5.46,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-graphs/sims/book-build-workflow/",
+          "repo": "learning-graphs",
+          "sim": "book-build-workflow",
+          "title": "Book Build Workflow",
+          "framework": "?",
+          "quality": 4.96,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "ethics-course",
+        "systems-thinking"
+      ],
+      "min_similarity": 0.9516,
+      "avg_similarity": 0.9516,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/ethics-course/sims/leverage-iceberg/",
+        "repo": "ethics-course",
+        "sim": "leverage-iceberg",
+        "title": "Leverage Points Iceberg",
+        "framework": "?",
+        "quality": 6.02,
+        "num_objectives": 5,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/systems-thinking/sims/leverage-iceberg/",
+          "repo": "systems-thinking",
+          "sim": "leverage-iceberg",
+          "title": "Leverage Points Iceberg",
+          "framework": "?",
+          "quality": 6.02,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/ethics-course/sims/leverage-iceberg/",
+          "repo": "ethics-course",
+          "sim": "leverage-iceberg",
+          "title": "Leverage Points Iceberg",
+          "framework": "?",
+          "quality": 6.02,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/systems-thinking/sims/leverage-iceberg/",
+          "repo": "systems-thinking",
+          "sim": "leverage-iceberg",
+          "title": "Leverage Points Iceberg",
+          "framework": "?",
+          "quality": 6.02,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "intro-to-graph",
+        "modeling-healthcare-data"
+      ],
+      "min_similarity": 0.9513,
+      "avg_similarity": 0.9513,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/intro-to-graph/sims/multi-hop-comparison/",
+        "repo": "intro-to-graph",
+        "sim": "multi-hop-comparison",
+        "title": "Query Performance Comparison: RDBMS vs Graph Database",
+        "framework": "chart.js",
+        "quality": 7.5,
+        "num_objectives": 5,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/query-performance-comparison/",
+          "repo": "modeling-healthcare-data",
+          "sim": "query-performance-comparison",
+          "title": "Query Performance Comparison: RDBMS vs Graph Database",
+          "framework": "chart.js",
+          "quality": 7.5,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/intro-to-graph/sims/multi-hop-comparison/",
+          "repo": "intro-to-graph",
+          "sim": "multi-hop-comparison",
+          "title": "Query Performance Comparison: RDBMS vs Graph Database",
+          "framework": "chart.js",
+          "quality": 7.5,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/query-performance-comparison/",
+          "repo": "modeling-healthcare-data",
+          "sim": "query-performance-comparison",
+          "title": "Query Performance Comparison: RDBMS vs Graph Database",
+          "framework": "chart.js",
+          "quality": 7.5,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "microsims",
+        "systems-thinking"
+      ],
+      "min_similarity": 0.9513,
+      "avg_similarity": 0.9513,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/microsims/sims/microsim-growth/",
+        "repo": "microsims",
+        "sim": "microsim-growth",
+        "title": "MicroSim Growth Network Effect",
+        "framework": "vis-network",
+        "quality": 7.0,
+        "num_objectives": 5,
+        "has_real_desc": false
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/systems-thinking/sims/microsim-growth/",
+          "repo": "systems-thinking",
+          "sim": "microsim-growth",
+          "title": "MicroSim Growth Network Effect",
+          "framework": "vis-network",
+          "quality": 6.56,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/microsims/sims/microsim-growth/",
+          "repo": "microsims",
+          "sim": "microsim-growth",
+          "title": "MicroSim Growth Network Effect",
+          "framework": "vis-network",
+          "quality": 7.0,
+          "num_objectives": 5,
+          "has_real_desc": false
+        },
+        {
+          "url": "https://dmccreary.github.io/systems-thinking/sims/microsim-growth/",
+          "repo": "systems-thinking",
+          "sim": "microsim-growth",
+          "title": "MicroSim Growth Network Effect",
+          "framework": "vis-network",
+          "quality": 6.56,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "claude-skills",
+        "intelligent-textbooks"
+      ],
+      "min_similarity": 0.9461,
+      "avg_similarity": 0.9461,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/intelligent-textbooks/sims/three-color-dfs/",
+        "repo": "intelligent-textbooks",
+        "sim": "three-color-dfs",
+        "title": "Three-Color DFS Cycle Detection",
+        "framework": "?",
+        "quality": 6.29,
+        "num_objectives": 6,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
+          "repo": "claude-skills",
+          "sim": "three-color-dfs",
+          "title": "Three-Color DFS Cycle Detection",
+          "framework": "?",
+          "quality": 5.29,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/intelligent-textbooks/sims/three-color-dfs/",
+          "repo": "intelligent-textbooks",
+          "sim": "three-color-dfs",
+          "title": "Three-Color DFS Cycle Detection",
+          "framework": "?",
+          "quality": 6.29,
+          "num_objectives": 6,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
+          "repo": "claude-skills",
+          "sim": "three-color-dfs",
+          "title": "Three-Color DFS Cycle Detection",
+          "framework": "?",
+          "quality": 5.29,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "Digital-Transformation-with-AI-Spring-2026",
+        "tracking-ai-course"
+      ],
+      "min_similarity": 0.9394,
+      "avg_similarity": 0.9394,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/autoregressive/",
+        "repo": "Digital-Transformation-with-AI-Spring-2026",
+        "sim": "autoregressive",
+        "title": "Autoregressive MicroSim",
+        "framework": "?",
+        "quality": 3.51,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/autoregressive/",
+          "repo": "tracking-ai-course",
+          "sim": "autoregressive",
+          "title": "Autoregressive MicroSim",
+          "framework": "?",
+          "quality": 3.51,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/autoregressive/",
+          "repo": "Digital-Transformation-with-AI-Spring-2026",
+          "sim": "autoregressive",
+          "title": "Autoregressive MicroSim",
+          "framework": "?",
+          "quality": 3.51,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/tracking-ai-course/sims/autoregressive/",
+          "repo": "tracking-ai-course",
+          "sim": "autoregressive",
+          "title": "Autoregressive MicroSim",
+          "framework": "?",
+          "quality": 3.51,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "data-science-course",
+        "intelligent-textbooks"
+      ],
+      "min_similarity": 0.9388,
+      "avg_similarity": 0.9388,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/intelligent-textbooks/sims/book-gen-workflow/",
+        "repo": "intelligent-textbooks",
+        "sim": "book-gen-workflow",
+        "title": "Workflow for Generating Intelligent Textbooks",
+        "framework": "p5.js",
+        "quality": 5.32,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/data-science-course/sims/book-gen-workflow/",
+          "repo": "data-science-course",
+          "sim": "book-gen-workflow",
+          "title": "Book Generation Workflow",
+          "framework": "?",
+          "quality": 4.83,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/intelligent-textbooks/sims/book-gen-workflow/",
+          "repo": "intelligent-textbooks",
+          "sim": "book-gen-workflow",
+          "title": "Workflow for Generating Intelligent Textbooks",
+          "framework": "p5.js",
+          "quality": 5.32,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/data-science-course/sims/book-gen-workflow/",
+          "repo": "data-science-course",
+          "sim": "book-gen-workflow",
+          "title": "Book Generation Workflow",
+          "framework": "?",
+          "quality": 4.83,
+          "num_objectives": 5,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "functions",
+        "pre-calc"
+      ],
+      "min_similarity": 0.9333,
+      "avg_similarity": 0.9333,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/functions/sims/exponential-growth-decay-explorer/",
+        "repo": "functions",
+        "sim": "exponential-growth-decay-explorer",
+        "title": "Exponential Growth and Decay Explorer",
+        "framework": "?",
+        "quality": 1.62,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/pre-calc/sims/exponential-growth-vs-decay/",
+          "repo": "pre-calc",
+          "sim": "exponential-growth-vs-decay",
+          "title": "Exponential Growth vs Decay Explorer",
+          "framework": "?",
+          "quality": 1.61,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/functions/sims/exponential-growth-decay-explorer/",
+          "repo": "functions",
+          "sim": "exponential-growth-decay-explorer",
+          "title": "Exponential Growth and Decay Explorer",
+          "framework": "?",
+          "quality": 1.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/pre-calc/sims/exponential-growth-vs-decay/",
+          "repo": "pre-calc",
+          "sim": "exponential-growth-vs-decay",
+          "title": "Exponential Growth vs Decay Explorer",
+          "framework": "?",
+          "quality": 1.61,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": true,
+      "repos": [
+        "computer-science",
+        "learning-python"
+      ],
+      "min_similarity": 0.9253,
+      "avg_similarity": 0.9253,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/computer-science/sims/function-call-flow/",
+        "repo": "computer-science",
+        "sim": "function-call-flow",
+        "title": "Function Call Flow",
+        "framework": "?",
+        "quality": 1.43,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/learning-python/sims/function-call-flow/",
+          "repo": "learning-python",
+          "sim": "function-call-flow",
+          "title": "Function Call Flow",
+          "framework": "?",
+          "quality": 1.43,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/computer-science/sims/function-call-flow/",
+          "repo": "computer-science",
+          "sim": "function-call-flow",
+          "title": "Function Call Flow",
+          "framework": "?",
+          "quality": 1.43,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-python/sims/function-call-flow/",
+          "repo": "learning-python",
+          "sim": "function-call-flow",
+          "title": "Function Call Flow",
+          "framework": "?",
+          "quality": 1.43,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "cross_repo": false,
+      "repos": [
+        "modeling-healthcare-data"
+      ],
+      "min_similarity": 0.9229,
+      "avg_similarity": 0.9283,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-data-integration-graph-model/",
+        "repo": "modeling-healthcare-data",
+        "sim": "healthcare-data-integration-graph-model",
+        "title": "Healthcare Data Integration Graph Model",
+        "framework": "?",
+        "quality": 1.64,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-delivery-network-graph-model/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-delivery-network-graph-model",
+          "title": "Healthcare Delivery Network Graph Model",
+          "framework": "?",
+          "quality": 1.64,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-graph-pattern-examples/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-graph-pattern-examples",
+          "title": "Healthcare Graph Pattern Examples",
+          "framework": "?",
+          "quality": 1.58,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-rbac-graph-data-model/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-rbac-graph-data-model",
+          "title": "Healthcare RBAC Graph Data Model",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/basic-healthcare-graph-model-diagram/",
+          "repo": "modeling-healthcare-data",
+          "sim": "basic-healthcare-graph-model-diagram",
+          "title": "Basic Healthcare Graph Model",
+          "framework": "?",
+          "quality": 1.53,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-data-integration-graph-model/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-data-integration-graph-model",
+          "title": "Healthcare Data Integration Graph Model",
+          "framework": "?",
+          "quality": 1.64,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-delivery-network-graph-model/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-delivery-network-graph-model",
+          "title": "Healthcare Delivery Network Graph Model",
+          "framework": "?",
+          "quality": 1.64,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-graph-pattern-examples/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-graph-pattern-examples",
+          "title": "Healthcare Graph Pattern Examples",
+          "framework": "?",
+          "quality": 1.58,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-rbac-graph-data-model/",
+          "repo": "modeling-healthcare-data",
+          "sim": "healthcare-rbac-graph-data-model",
+          "title": "Healthcare RBAC Graph Data Model",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/modeling-healthcare-data/sims/basic-healthcare-graph-model-diagram/",
+          "repo": "modeling-healthcare-data",
+          "sim": "basic-healthcare-graph-model-diagram",
+          "title": "Basic Healthcare Graph Model",
+          "framework": "?",
+          "quality": 1.53,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "bioinformatics"
+      ],
+      "min_similarity": 1.0,
+      "avg_similarity": 1.0,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/bioinformatics/sims/protein-structure-hierarchy/",
+        "repo": "bioinformatics",
+        "sim": "protein-structure-hierarchy",
+        "title": "Protein Structure Hierarchy",
+        "framework": "?",
+        "quality": 1.52,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/protein-structure-levels/",
+          "repo": "bioinformatics",
+          "sim": "protein-structure-levels",
+          "title": "Protein Structure Hierarchy",
+          "framework": "?",
+          "quality": 1.52,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/protein-structure-hierarchy/",
+          "repo": "bioinformatics",
+          "sim": "protein-structure-hierarchy",
+          "title": "Protein Structure Hierarchy",
+          "framework": "?",
+          "quality": 1.52,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/protein-structure-levels/",
+          "repo": "bioinformatics",
+          "sim": "protein-structure-levels",
+          "title": "Protein Structure Hierarchy",
+          "framework": "?",
+          "quality": 1.52,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "claude-skills"
+      ],
+      "min_similarity": 0.989,
+      "avg_similarity": 0.989,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/",
+        "repo": "claude-skills",
+        "sim": "4-hour-token-window-visualization",
+        "title": "4-Hour Token Window Visualization",
+        "framework": "?",
+        "quality": 1.58,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/",
+          "repo": "claude-skills",
+          "sim": "5-hour-token-window-visualization",
+          "title": "5-Hour Token Window Visualization",
+          "framework": "?",
+          "quality": 1.58,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/",
+          "repo": "claude-skills",
+          "sim": "4-hour-token-window-visualization",
+          "title": "4-Hour Token Window Visualization",
+          "framework": "?",
+          "quality": 1.58,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/",
+          "repo": "claude-skills",
+          "sim": "5-hour-token-window-visualization",
+          "title": "5-Hour Token Window Visualization",
+          "framework": "?",
+          "quality": 1.58,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "us-geography"
+      ],
+      "min_similarity": 0.9849,
+      "avg_similarity": 0.9849,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/us-geography/sims/population-by-state/",
+        "repo": "us-geography",
+        "sim": "population-by-state",
+        "title": "US Population Map",
+        "framework": "?",
+        "quality": 0.83,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/us-geography/sims/population-density/",
+          "repo": "us-geography",
+          "sim": "population-density",
+          "title": "US Population Density",
+          "framework": "?",
+          "quality": 0.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/us-geography/sims/population-by-state/",
+          "repo": "us-geography",
+          "sim": "population-by-state",
+          "title": "US Population Map",
+          "framework": "?",
+          "quality": 0.83,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/us-geography/sims/population-density/",
+          "repo": "us-geography",
+          "sim": "population-density",
+          "title": "US Population Density",
+          "framework": "?",
+          "quality": 0.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9714,
+      "avg_similarity": 0.9714,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/postulate-visualization/",
+        "repo": "geometry-course",
+        "sim": "postulate-visualization",
+        "title": "Postulate Visualization Gallery",
+        "framework": "?",
+        "quality": 4.02,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/postulate-gallery/",
+          "repo": "geometry-course",
+          "sim": "postulate-gallery",
+          "title": "Postulate Visualization Gallery",
+          "framework": "?",
+          "quality": 3.94,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/postulate-visualization/",
+          "repo": "geometry-course",
+          "sim": "postulate-visualization",
+          "title": "Postulate Visualization Gallery",
+          "framework": "?",
+          "quality": 4.02,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/postulate-gallery/",
+          "repo": "geometry-course",
+          "sim": "postulate-gallery",
+          "title": "Postulate Visualization Gallery",
+          "framework": "?",
+          "quality": 3.94,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "unicorns"
+      ],
+      "min_similarity": 0.9606,
+      "avg_similarity": 0.9606,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/unicorns/sims/beast-classification-framework/",
+        "repo": "unicorns",
+        "sim": "beast-classification-framework",
+        "title": "Beast Classification Framework",
+        "framework": "?",
+        "quality": 1.55,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/unicorns/sims/beast-classifier/",
+          "repo": "unicorns",
+          "sim": "beast-classifier",
+          "title": "Beast Classification MicroSim",
+          "framework": "?",
+          "quality": 1.54,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/unicorns/sims/beast-classification-framework/",
+          "repo": "unicorns",
+          "sim": "beast-classification-framework",
+          "title": "Beast Classification Framework",
+          "framework": "?",
+          "quality": 1.55,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/unicorns/sims/beast-classifier/",
+          "repo": "unicorns",
+          "sim": "beast-classifier",
+          "title": "Beast Classification MicroSim",
+          "framework": "?",
+          "quality": 1.54,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "claude-skills"
+      ],
+      "min_similarity": 0.9573,
+      "avg_similarity": 0.9573,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/",
+        "repo": "claude-skills",
+        "sim": "topic-to-concept-expansion-example",
+        "title": "Topic-to-Concept Expansion Example",
+        "framework": "?",
+        "quality": 1.59,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/",
+          "repo": "claude-skills",
+          "sim": "topic-to-concept-expansion-process",
+          "title": "Topic-to-Concept Expansion Process",
+          "framework": "?",
+          "quality": 1.59,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/",
+          "repo": "claude-skills",
+          "sim": "topic-to-concept-expansion-example",
+          "title": "Topic-to-Concept Expansion Example",
+          "framework": "?",
+          "quality": 1.59,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/",
+          "repo": "claude-skills",
+          "sim": "topic-to-concept-expansion-process",
+          "title": "Topic-to-Concept Expansion Process",
+          "framework": "?",
+          "quality": 1.59,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9535,
+      "avg_similarity": 0.9535,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/parallel-lines-challenge/",
+        "repo": "geometry-course",
+        "sim": "parallel-lines-challenge",
+        "title": "Parallel Lines Construction Challenge",
+        "framework": "?",
+        "quality": 3.91,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/parallel-lines-construction/",
+          "repo": "geometry-course",
+          "sim": "parallel-lines-construction",
+          "title": "Parallel Lines Construction",
+          "framework": "?",
+          "quality": 3.71,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/parallel-lines-challenge/",
+          "repo": "geometry-course",
+          "sim": "parallel-lines-challenge",
+          "title": "Parallel Lines Construction Challenge",
+          "framework": "?",
+          "quality": 3.91,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/parallel-lines-construction/",
+          "repo": "geometry-course",
+          "sim": "parallel-lines-construction",
+          "title": "Parallel Lines Construction",
+          "framework": "?",
+          "quality": 3.71,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "learning-python"
+      ],
+      "min_similarity": 0.952,
+      "avg_similarity": 0.952,
+      "tier": "near-identical",
+      "keeper": {
+        "url": "https://dmccreary.github.io/learning-python/sims/while-loop-stepper/",
+        "repo": "learning-python",
+        "sim": "while-loop-stepper",
+        "title": "While-Loop Stepper",
+        "framework": "?",
+        "quality": 1.43,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/learning-python/sims/for-loop-stepper/",
+          "repo": "learning-python",
+          "sim": "for-loop-stepper",
+          "title": "For-Loop Stepper",
+          "framework": "?",
+          "quality": 1.41,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/learning-python/sims/while-loop-stepper/",
+          "repo": "learning-python",
+          "sim": "while-loop-stepper",
+          "title": "While-Loop Stepper",
+          "framework": "?",
+          "quality": 1.43,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/learning-python/sims/for-loop-stepper/",
+          "repo": "learning-python",
+          "sim": "for-loop-stepper",
+          "title": "For-Loop Stepper",
+          "framework": "?",
+          "quality": 1.41,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "bioinformatics"
+      ],
+      "min_similarity": 0.9483,
+      "avg_similarity": 0.9483,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/bioinformatics/sims/kg-construction-pipeline/",
+        "repo": "bioinformatics",
+        "sim": "kg-construction-pipeline",
+        "title": "Knowledge Graph Construction Pipeline",
+        "framework": "?",
+        "quality": 1.62,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/kg-integrated-pipeline/",
+          "repo": "bioinformatics",
+          "sim": "kg-integrated-pipeline",
+          "title": "Integrated Knowledge Graph Pipeline",
+          "framework": "?",
+          "quality": 1.6,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/kg-construction-pipeline/",
+          "repo": "bioinformatics",
+          "sim": "kg-construction-pipeline",
+          "title": "Knowledge Graph Construction Pipeline",
+          "framework": "?",
+          "quality": 1.62,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/kg-integrated-pipeline/",
+          "repo": "bioinformatics",
+          "sim": "kg-integrated-pipeline",
+          "title": "Integrated Knowledge Graph Pipeline",
+          "framework": "?",
+          "quality": 1.6,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9483,
+      "avg_similarity": 0.9483,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/circle-circle-intersection/",
+        "repo": "geometry-course",
+        "sim": "circle-circle-intersection",
+        "title": "Circle-Circle Intersection Cases",
+        "framework": "?",
+        "quality": 1.57,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/line-circle-intersection/",
+          "repo": "geometry-course",
+          "sim": "line-circle-intersection",
+          "title": "Line-Circle Intersection Cases",
+          "framework": "?",
+          "quality": 1.55,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/circle-circle-intersection/",
+          "repo": "geometry-course",
+          "sim": "circle-circle-intersection",
+          "title": "Circle-Circle Intersection Cases",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/line-circle-intersection/",
+          "repo": "geometry-course",
+          "sim": "line-circle-intersection",
+          "title": "Line-Circle Intersection Cases",
+          "framework": "?",
+          "quality": 1.55,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.946,
+      "avg_similarity": 0.946,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/ch1-concept-map/",
+        "repo": "geometry-course",
+        "sim": "ch1-concept-map",
+        "title": "Chapter 1 Concept Map",
+        "framework": "?",
+        "quality": 4.88,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/chapter-01-concept-map/",
+          "repo": "geometry-course",
+          "sim": "chapter-01-concept-map",
+          "title": "Chapter 1 Concept Map",
+          "framework": "?",
+          "quality": 4.67,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/ch1-concept-map/",
+          "repo": "geometry-course",
+          "sim": "ch1-concept-map",
+          "title": "Chapter 1 Concept Map",
+          "framework": "?",
+          "quality": 4.88,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/chapter-01-concept-map/",
+          "repo": "geometry-course",
+          "sim": "chapter-01-concept-map",
+          "title": "Chapter 1 Concept Map",
+          "framework": "?",
+          "quality": 4.67,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9458,
+      "avg_similarity": 0.9458,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/anatomy-of-proof/",
+        "repo": "geometry-course",
+        "sim": "anatomy-of-proof",
+        "title": "The Anatomy of a Proof",
+        "framework": "?",
+        "quality": 4.22,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/proof-anatomy/",
+          "repo": "geometry-course",
+          "sim": "proof-anatomy",
+          "title": "The Anatomy of a Proof",
+          "framework": "?",
+          "quality": 4.12,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/anatomy-of-proof/",
+          "repo": "geometry-course",
+          "sim": "anatomy-of-proof",
+          "title": "The Anatomy of a Proof",
+          "framework": "?",
+          "quality": 4.22,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/proof-anatomy/",
+          "repo": "geometry-course",
+          "sim": "proof-anatomy",
+          "title": "The Anatomy of a Proof",
+          "framework": "?",
+          "quality": 4.12,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "bioinformatics"
+      ],
+      "min_similarity": 0.9405,
+      "avg_similarity": 0.9405,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/bioinformatics/sims/bipartite-metabolic/",
+        "repo": "bioinformatics",
+        "sim": "bipartite-metabolic",
+        "title": "Bipartite Graph of a Metabolic Sub-network",
+        "framework": "?",
+        "quality": 1.67,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/bipartite-metabolic-graph/",
+          "repo": "bioinformatics",
+          "sim": "bipartite-metabolic-graph",
+          "title": "Bipartite Metabolic Graph Structure",
+          "framework": "?",
+          "quality": 1.6,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/bipartite-metabolic/",
+          "repo": "bioinformatics",
+          "sim": "bipartite-metabolic",
+          "title": "Bipartite Graph of a Metabolic Sub-network",
+          "framework": "?",
+          "quality": 1.67,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/bioinformatics/sims/bipartite-metabolic-graph/",
+          "repo": "bioinformatics",
+          "sim": "bipartite-metabolic-graph",
+          "title": "Bipartite Metabolic Graph Structure",
+          "framework": "?",
+          "quality": 1.6,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "microsims"
+      ],
+      "min_similarity": 0.9376,
+      "avg_similarity": 0.9376,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/microsims/sims/learning-graph/",
+        "repo": "microsims",
+        "sim": "learning-graph",
+        "title": "Learning Graph",
+        "framework": "?",
+        "quality": 6.41,
+        "num_objectives": 5,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/microsims/sims/learning-graph-v1/",
+          "repo": "microsims",
+          "sim": "learning-graph-v1",
+          "title": "Learning Graph V1",
+          "framework": "?",
+          "quality": 5.94,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/microsims/sims/learning-graph/",
+          "repo": "microsims",
+          "sim": "learning-graph",
+          "title": "Learning Graph",
+          "framework": "?",
+          "quality": 6.41,
+          "num_objectives": 5,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/microsims/sims/learning-graph-v1/",
+          "repo": "microsims",
+          "sim": "learning-graph-v1",
+          "title": "Learning Graph V1",
+          "framework": "?",
+          "quality": 5.94,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9357,
+      "avg_similarity": 0.9357,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/angle-bisector-construction/",
+        "repo": "geometry-course",
+        "sim": "angle-bisector-construction",
+        "title": "Angle Bisector Construction",
+        "framework": "?",
+        "quality": 3.99,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/bisect-angle-steps/",
+          "repo": "geometry-course",
+          "sim": "bisect-angle-steps",
+          "title": "Bisect Angle Steps",
+          "framework": "?",
+          "quality": 3.77,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/angle-bisector-construction/",
+          "repo": "geometry-course",
+          "sim": "angle-bisector-construction",
+          "title": "Angle Bisector Construction",
+          "framework": "?",
+          "quality": 3.99,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/bisect-angle-steps/",
+          "repo": "geometry-course",
+          "sim": "bisect-angle-steps",
+          "title": "Bisect Angle Steps",
+          "framework": "?",
+          "quality": 3.77,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "infographics"
+      ],
+      "min_similarity": 0.9349,
+      "avg_similarity": 0.9349,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/infographics/sims/design-principles-workflow/",
+        "repo": "infographics",
+        "sim": "design-principles-workflow",
+        "title": "Infographic Design Principles Workflow",
+        "framework": "?",
+        "quality": 1.63,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/infographic-dev-workflow/",
+          "repo": "infographics",
+          "sim": "infographic-dev-workflow",
+          "title": "Infographic Development Workflow",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/design-principles-workflow/",
+          "repo": "infographics",
+          "sim": "design-principles-workflow",
+          "title": "Infographic Design Principles Workflow",
+          "framework": "?",
+          "quality": 1.63,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/infographics/sims/infographic-dev-workflow/",
+          "repo": "infographics",
+          "sim": "infographic-dev-workflow",
+          "title": "Infographic Development Workflow",
+          "framework": "?",
+          "quality": 1.57,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "automating-instructional-design"
+      ],
+      "min_similarity": 0.9339,
+      "avg_similarity": 0.9339,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/automating-instructional-design/sims/learning-dependency-network/",
+        "repo": "automating-instructional-design",
+        "sim": "learning-dependency-network",
+        "title": "Learning Dependency Network",
+        "framework": "vis-network",
+        "quality": 6.73,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/automating-instructional-design/sims/concept-dependencies/",
+          "repo": "automating-instructional-design",
+          "sim": "concept-dependencies",
+          "title": "Concept Dependencies Graph",
+          "framework": "vis-network",
+          "quality": 6.6,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/automating-instructional-design/sims/learning-dependency-network/",
+          "repo": "automating-instructional-design",
+          "sim": "learning-dependency-network",
+          "title": "Learning Dependency Network",
+          "framework": "vis-network",
+          "quality": 6.73,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/automating-instructional-design/sims/concept-dependencies/",
+          "repo": "automating-instructional-design",
+          "sim": "concept-dependencies",
+          "title": "Concept Dependencies Graph",
+          "framework": "vis-network",
+          "quality": 6.6,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9314,
+      "avg_similarity": 0.9314,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/congruence-criteria-reference/",
+        "repo": "geometry-course",
+        "sim": "congruence-criteria-reference",
+        "title": "Triangle Congruence Criteria Reference",
+        "framework": "?",
+        "quality": 3.63,
+        "num_objectives": 3,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/triangle-congruence-criteria/",
+          "repo": "geometry-course",
+          "sim": "triangle-congruence-criteria",
+          "title": "Triangle Congruence Criteria",
+          "framework": "?",
+          "quality": 3.47,
+          "num_objectives": 2,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/congruence-criteria-reference/",
+          "repo": "geometry-course",
+          "sim": "congruence-criteria-reference",
+          "title": "Triangle Congruence Criteria Reference",
+          "framework": "?",
+          "quality": 3.63,
+          "num_objectives": 3,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/triangle-congruence-criteria/",
+          "repo": "geometry-course",
+          "sim": "triangle-congruence-criteria",
+          "title": "Triangle Congruence Criteria",
+          "framework": "?",
+          "quality": 3.47,
+          "num_objectives": 2,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "linear-algebra"
+      ],
+      "min_similarity": 0.9284,
+      "avg_similarity": 0.9284,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/linear-algebra/sims/gram-schmidt-ch8/",
+        "repo": "linear-algebra",
+        "sim": "gram-schmidt-ch8",
+        "title": "Gram-Schmidt Step-by-Step Visualizer",
+        "framework": "p5.js",
+        "quality": 5.93,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/linear-algebra/sims/gram-schmidt/",
+          "repo": "linear-algebra",
+          "sim": "gram-schmidt",
+          "title": "Gram-Schmidt Process Visualizer",
+          "framework": "p5.js",
+          "quality": 5.74,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/linear-algebra/sims/gram-schmidt-ch8/",
+          "repo": "linear-algebra",
+          "sim": "gram-schmidt-ch8",
+          "title": "Gram-Schmidt Step-by-Step Visualizer",
+          "framework": "p5.js",
+          "quality": 5.93,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/linear-algebra/sims/gram-schmidt/",
+          "repo": "linear-algebra",
+          "sim": "gram-schmidt",
+          "title": "Gram-Schmidt Process Visualizer",
+          "framework": "p5.js",
+          "quality": 5.74,
+          "num_objectives": 4,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "chemistry"
+      ],
+      "min_similarity": 0.9246,
+      "avg_similarity": 0.9246,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/chemistry/sims/weak-acid-ice-table-solver/",
+        "repo": "chemistry",
+        "sim": "weak-acid-ice-table-solver",
+        "title": "Weak Acid ICE Table Solver",
+        "framework": "?",
+        "quality": 2.16,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/weak-acid-ice-solver/",
+          "repo": "chemistry",
+          "sim": "weak-acid-ice-solver",
+          "title": "Weak Acid ICE Solver",
+          "framework": "?",
+          "quality": 2.07,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/weak-acid-ice-table-solver/",
+          "repo": "chemistry",
+          "sim": "weak-acid-ice-table-solver",
+          "title": "Weak Acid ICE Table Solver",
+          "framework": "?",
+          "quality": 2.16,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/chemistry/sims/weak-acid-ice-solver/",
+          "repo": "chemistry",
+          "sim": "weak-acid-ice-solver",
+          "title": "Weak Acid ICE Solver",
+          "framework": "?",
+          "quality": 2.07,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "geometry-course"
+      ],
+      "min_similarity": 0.9244,
+      "avg_similarity": 0.9244,
+      "tier": "strong",
+      "keeper": {
+        "url": "https://dmccreary.github.io/geometry-course/sims/transversal-angle-explorer/",
+        "repo": "geometry-course",
+        "sim": "transversal-angle-explorer",
+        "title": "Transversal Angle Explorer",
+        "framework": "?",
+        "quality": 6.3,
+        "num_objectives": 4,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/parallel-transversal-explorer/",
+          "repo": "geometry-course",
+          "sim": "parallel-transversal-explorer",
+          "title": "Parallel Lines & Transversal Explorer",
+          "framework": "?",
+          "quality": 3.92,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/transversal-angle-explorer/",
+          "repo": "geometry-course",
+          "sim": "transversal-angle-explorer",
+          "title": "Transversal Angle Explorer",
+          "framework": "?",
+          "quality": 6.3,
+          "num_objectives": 4,
+          "has_real_desc": true
+        },
+        {
+          "url": "https://dmccreary.github.io/geometry-course/sims/parallel-transversal-explorer/",
+          "repo": "geometry-course",
+          "sim": "parallel-transversal-explorer",
+          "title": "Parallel Lines & Transversal Explorer",
+          "framework": "?",
+          "quality": 3.92,
+          "num_objectives": 3,
+          "has_real_desc": true
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "cross_repo": false,
+      "repos": [
+        "health-education"
+      ],
+      "min_similarity": 0.9202,
+      "avg_similarity": 0.9202,
+      "tier": "strong",
+      "keeper": {
+        "url": "sti-prevention-methods-effectiveness-explorer",
+        "repo": "health-education",
+        "sim": "sti-prevention-methods-effectiveness-explorer",
+        "title": "STI Prevention Methods Effectiveness Explorer",
+        "framework": "?",
+        "quality": 1.66,
+        "num_objectives": 0,
+        "has_real_desc": true
+      },
+      "merge": [
+        {
+          "url": "sti-prevention-effectiveness-chart",
+          "repo": "health-education",
+          "sim": "sti-prevention-effectiveness-chart",
+          "title": "STI Prevention Methods Effectiveness Comparison",
+          "framework": "?",
+          "quality": 0.41,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ],
+      "members": [
+        {
+          "url": "sti-prevention-methods-effectiveness-explorer",
+          "repo": "health-education",
+          "sim": "sti-prevention-methods-effectiveness-explorer",
+          "title": "STI Prevention Methods Effectiveness Explorer",
+          "framework": "?",
+          "quality": 1.66,
+          "num_objectives": 0,
+          "has_real_desc": true
+        },
+        {
+          "url": "sti-prevention-effectiveness-chart",
+          "repo": "health-education",
+          "sim": "sti-prevention-effectiveness-chart",
+          "title": "STI Prevention Methods Effectiveness Comparison",
+          "framework": "?",
+          "quality": 0.41,
+          "num_objectives": 0,
+          "has_real_desc": true
+        }
+      ]
+    }
+  ]
+}

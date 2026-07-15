@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "knn-visualizer",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/knn-visualizer/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Differentiate between query results with different K values",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["analyze", "understand"],
-    "bloomVerbs": ["differentiate", "analyze", "explain"],
+    "bloomAlignment": [
+      "analyze",
+      "understand"
+    ],
+    "bloomVerbs": [
+      "differentiate",
+      "analyze",
+      "explain"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 550",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -67,7 +79,13 @@
     "interactionType": "click-select"
   },
   "search": {
-    "keywords": ["KNN", "nearest neighbors", "similarity search", "embedding", "algorithm"],
+    "keywords": [
+      "KNN",
+      "nearest neighbors",
+      "similarity search",
+      "embedding",
+      "algorithm"
+    ],
     "visualizationType": "diagram"
   }
 }

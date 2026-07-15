@@ -1,0 +1,3641 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook for MicroSim Faceted Search and Similarity">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/search-microsims/reports/duplicate-microsims/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Duplicate MicroSims — Merge Recommendations - MicroSim Search and Similarity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-52EQFDFN5Y"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-52EQFDFN5Y",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-52EQFDFN5Y",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#duplicate-microsims-merge-recommendations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MicroSim Search and Similarity" class="md-header__button md-logo" aria-label="MicroSim Search and Similarity" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MicroSim Search and Similarity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Duplicate MicroSims — Merge Recommendations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MicroSim Search and Similarity" class="md-nav__button md-logo" aria-label="MicroSim Search and Similarity" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    MicroSim Search and Similarity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/search-microsims" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About This Book
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search Demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../microsim-metrics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../prompts/add-missing-metadata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-learning-graph-viewer-7-copies-strong-cross-repo-7-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Learning Graph Viewer — 7 copies (strong, cross-repo (7 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-standard-deviation-visualization-4-copies-strong-cross-repo-3-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Standard Deviation Visualization — 4 copies (strong, cross-repo (3 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-porters-five-forces-model-3-copies-near-identical-cross-repo-3-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Porter's Five Forces Model — 3 copies (near-identical, cross-repo (3 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-biogeochemical-cycles-dashboard-3-copies-near-identical-cross-repo-3-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Biogeochemical Cycles Dashboard — 3 copies (near-identical, cross-repo (3 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-ai-flywheel-3-copies-near-identical-cross-repo-3-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. The AI Flywheel — 3 copies (near-identical, cross-repo (3 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-scientific-method-workflow-3-copies-strong-cross-repo-3-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Scientific Method Workflow — 3 copies (strong, cross-repo (3 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-organization-chart-visualization-3-copies-strong-cross-repo-3-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Organization Chart Visualization — 3 copies (strong, cross-repo (3 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-brewing-beer-process-explorer-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Brewing Beer Process Explorer — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ecological-succession-timeline-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Ecological Succession Timeline — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-prokaryote-vs-eukaryote-cell-comparison-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Prokaryote vs. Eukaryote Cell Comparison — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-ai-doubling-rate-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. AI Doubling Rate — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-four-ai-futures-microsim-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Four AI Futures MicroSim — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-signal-transduction-pathway-overview-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Signal Transduction Pathway Overview — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-power-wall-microsim-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Power Wall MicroSim — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-book-levels-microsim-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Book Levels MicroSim — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-mmlu-timeline-microsim-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. MMLU Timeline MicroSim — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-feedback-loop-simulator-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Feedback Loop Simulator — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-deep-learning-timeline-microsim-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Deep Learning Timeline MicroSim — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-blooms-taxonomy-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Bloom's Taxonomy — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-generative-ai-idea-funnel-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Generative AI Idea Funnel — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-language-model-arena-timeline-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Language Model Arena Timeline — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-book-build-workflow-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Book Build Workflow — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-projectile-motion-simulator-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Projectile Motion Simulator — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-moores-law-timeline-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Moore's Law Timeline — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-color-wheel-with-named-colors-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Color Wheel with Named Colors — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-ai-benchmarks-timeline-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. AI Benchmarks Timeline — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-comparative-anatomy-explorer-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. Comparative Anatomy Explorer — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-interactive-ph-scale-explorer-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. Interactive pH Scale Explorer — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-ai-swot-analysis-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. AI SWOT Analysis — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-ai-capability-maturity-model-infographic-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. AI Capability Maturity Model Infographic — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-coordinate-plane-explorer-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. Coordinate Plane Explorer — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-tokenizer-microsim-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. Tokenizer MicroSim — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-projecting-ai-task-completion-to-2030-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. Projecting AI Task Completion to 2030 — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-the-accelerating-pace-of-ai-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. The Accelerating Pace of AI — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-technology-hype-cycle-infographic-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      35. Technology Hype Cycle Infographic — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-ai-task-completion-time-horizons-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      36. AI Task Completion Time Horizons — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-causes-of-ai-acceleration-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      37. Causes of AI Acceleration — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-technology-adoption-curve-infographic-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      38. Technology Adoption Curve Infographic — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-precision-vs-accuracy-target-diagram-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      39. Precision vs Accuracy Target Diagram — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-book-build-workflow-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      40. Book Build Workflow — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-leverage-points-iceberg-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      41. Leverage Points Iceberg — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-query-performance-comparison-rdbms-vs-graph-database-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      42. Query Performance Comparison: RDBMS vs Graph Database — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-microsim-growth-network-effect-2-copies-near-identical-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      43. MicroSim Growth Network Effect — 2 copies (near-identical, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-three-color-dfs-cycle-detection-2-copies-strong-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      44. Three-Color DFS Cycle Detection — 2 copies (strong, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-autoregressive-microsim-2-copies-strong-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      45. Autoregressive MicroSim — 2 copies (strong, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-workflow-for-generating-intelligent-textbooks-2-copies-strong-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      46. Workflow for Generating Intelligent Textbooks — 2 copies (strong, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-exponential-growth-and-decay-explorer-2-copies-strong-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      47. Exponential Growth and Decay Explorer — 2 copies (strong, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-function-call-flow-2-copies-strong-cross-repo-2-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      48. Function Call Flow — 2 copies (strong, cross-repo (2 repos))
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-healthcare-data-integration-graph-model-5-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      49. Healthcare Data Integration Graph Model — 5 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50-protein-structure-hierarchy-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      50. Protein Structure Hierarchy — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-4-hour-token-window-visualization-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      51. 4-Hour Token Window Visualization — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-us-population-map-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      52. US Population Map — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-postulate-visualization-gallery-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      53. Postulate Visualization Gallery — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-beast-classification-framework-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      54. Beast Classification Framework — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-topic-to-concept-expansion-example-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      55. Topic-to-Concept Expansion Example — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-parallel-lines-construction-challenge-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      56. Parallel Lines Construction Challenge — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-while-loop-stepper-2-copies-near-identical-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      57. While-Loop Stepper — 2 copies (near-identical, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-knowledge-graph-construction-pipeline-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      58. Knowledge Graph Construction Pipeline — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-circle-circle-intersection-cases-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      59. Circle-Circle Intersection Cases — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60-chapter-1-concept-map-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      60. Chapter 1 Concept Map — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#61-the-anatomy-of-a-proof-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      61. The Anatomy of a Proof — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-bipartite-graph-of-a-metabolic-sub-network-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      62. Bipartite Graph of a Metabolic Sub-network — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-learning-graph-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      63. Learning Graph — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-angle-bisector-construction-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      64. Angle Bisector Construction — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-infographic-design-principles-workflow-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      65. Infographic Design Principles Workflow — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-learning-dependency-network-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      66. Learning Dependency Network — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-triangle-congruence-criteria-reference-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      67. Triangle Congruence Criteria Reference — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#68-gram-schmidt-step-by-step-visualizer-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      68. Gram-Schmidt Step-by-Step Visualizer — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#69-weak-acid-ice-table-solver-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      69. Weak Acid ICE Table Solver — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70-transversal-angle-explorer-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      70. Transversal Angle Explorer — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-sti-prevention-methods-effectiveness-explorer-2-copies-strong-same-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      71. STI Prevention Methods Effectiveness Explorer — 2 copies (strong, same-repo)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/search-microsims/blob/master/docs/reports/duplicate-microsims.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="duplicate-microsims-merge-recommendations">Duplicate MicroSims — Merge Recommendations</h1>
+<p><strong>Generated:</strong> 2026-07-15 | <strong>WHAT-similarity threshold:</strong> 0.92 | <strong>Catalog size:</strong> 3637 MicroSims analyzed (80 untitled and 29 scaffold/template records excluded — they carry no learning content)</p>
+<p>MicroSims are grouped by <strong>WHAT</strong> (what they teach) — the learning objective and concept — regardless of which JavaScript library they use. Each cluster below is a set of MicroSims that teach essentially the same thing and are candidates to consolidate into one high-quality version.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>71</strong> duplicate clusters covering <strong>157</strong> MicroSims</li>
+<li><strong>86</strong> MicroSims could be retired by merging (keep 1 per cluster)</li>
+<li><strong>48</strong> clusters span <strong>multiple repositories</strong> (the cross-book duplication that inflates maintenance)</li>
+</ul>
+<p>The <strong>Keeper</strong> is the highest-quality member (real description, concrete learning objectives, known framework, pedagogical metadata, canonical <code>microsims</code> repo). Retire or iframe-redirect the rest.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>near-identical</td>
+<td>min WHAT sim ≥ 0.95 — almost certainly the same sim copied</td>
+</tr>
+<tr>
+<td>strong</td>
+<td>≥ 0.90 — same concept, very likely mergeable</td>
+</tr>
+<tr>
+<td>moderate</td>
+<td>≥ threshold — related, review before merging</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-learning-graph-viewer-7-copies-strong-cross-repo-7-repos">1. Learning Graph Viewer — 7 copies (strong, cross-repo (7 repos))</h2>
+<p>WHAT similarity: avg 0.9314, min 0.9204. Repos: conversational-ai, graph-data-modeling-course, it-management-graph, learning-graphs, learning-linux, microsims, modeling-healthcare-data</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/microsims/sims/graph-viewer/">Learning Graph Viewer</a> — <code>microsims/graph-viewer</code> · vis-network · quality 7.76, 5 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/it-management-graph/sims/graph-viewer/">Learning Graph Viewer</a></td>
+<td><code>it-management-graph/graph-viewer</code></td>
+<td>vis-network</td>
+<td>5.87</td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/conversational-ai/sims/graph-viewer/">Learning Graph Viewer</a></td>
+<td><code>conversational-ai/graph-viewer</code></td>
+<td>vis-network</td>
+<td>5.76</td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/graph-data-modeling-course/sims/graph-viewer/">Learning Graph Viewer</a></td>
+<td><code>graph-data-modeling-course/graph-viewer</code></td>
+<td>vis-network</td>
+<td>5.76</td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/modeling-healthcare-data/sims/graph-viewer/">Learning Graph Viewer</a></td>
+<td><code>modeling-healthcare-data/graph-viewer</code></td>
+<td>vis-network</td>
+<td>5.76</td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/learning-graphs/sims/graph-viewer/">Learning Graph Viewer</a></td>
+<td><code>learning-graphs/graph-viewer</code></td>
+<td>vis-network</td>
+<td>5.26</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/learning-linux/sims/graph-viewer/">Learning Graph Viewer</a></td>
+<td><code>learning-linux/graph-viewer</code></td>
+<td>vis-network</td>
+<td>5.26</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-standard-deviation-visualization-4-copies-strong-cross-repo-3-repos">2. Standard Deviation Visualization — 4 copies (strong, cross-repo (3 repos))</h2>
+<p>WHAT similarity: avg 0.9605, min 0.9341. Repos: biology, psychology, statistics-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/standard-deviation/">Standard Deviation Visualization</a> — <code>biology/standard-deviation</code> · ? · quality 1.57, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/psychology/sims/standard-deviation/">Standard Deviation Visualization</a></td>
+<td><code>psychology/standard-deviation</code></td>
+<td>?</td>
+<td>1.57</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/statistics-course/sims/standard-deviation/">Standard Deviation Visualization</a></td>
+<td><code>statistics-course/standard-deviation</code></td>
+<td>?</td>
+<td>1.57</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/biology/sims/chi-square-calculator/">Standard Deviation</a></td>
+<td><code>biology/chi-square-calculator</code></td>
+<td>?</td>
+<td>1.43</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-porters-five-forces-model-3-copies-near-identical-cross-repo-3-repos">3. Porter's Five Forces Model — 3 copies (near-identical, cross-repo (3 repos))</h2>
+<p>WHAT similarity: avg 0.9941, min 0.9932. Repos: Digital-Transformation-with-AI-Spring-2026, information-systems, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/porters-five-forces/">Porter's Five Forces Model</a> — <code>Digital-Transformation-with-AI-Spring-2026/porters-five-forces</code> · ? · quality 2.91, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/information-systems/sims/porters-five-forces/">Porter's Five Forces Model</a></td>
+<td><code>information-systems/porters-five-forces</code></td>
+<td>?</td>
+<td>2.91</td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/porters-five-forces/">Porter's Five Forces Model</a></td>
+<td><code>tracking-ai-course/porters-five-forces</code></td>
+<td>?</td>
+<td>2.91</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-biogeochemical-cycles-dashboard-3-copies-near-identical-cross-repo-3-repos">4. Biogeochemical Cycles Dashboard — 3 copies (near-identical, cross-repo (3 repos))</h2>
+<p>WHAT similarity: avg 0.9911, min 0.9881. Repos: biology, ecology, infographics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/biogeochemical-cycles/">Biogeochemical Cycles Dashboard</a> — <code>biology/biogeochemical-cycles</code> · ? · quality 3.0, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/ecology/sims/biogeochemical-cycles/">Biogeochemical Cycles Dashboard</a></td>
+<td><code>ecology/biogeochemical-cycles</code></td>
+<td>?</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/biogeochemical-cycles/">Biogeochemical Cycles Dashboard</a></td>
+<td><code>infographics/biogeochemical-cycles</code></td>
+<td>?</td>
+<td>3.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-the-ai-flywheel-3-copies-near-identical-cross-repo-3-repos">5. The AI Flywheel — 3 copies (near-identical, cross-repo (3 repos))</h2>
+<p>WHAT similarity: avg 0.9778, min 0.97. Repos: Digital-Transformation-with-AI-Spring-2026, infographics, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-flywheel/">The AI Flywheel</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-flywheel</code> · ? · quality 3.5, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/ai-flywheel/">The AI Flywheel</a></td>
+<td><code>infographics/ai-flywheel</code></td>
+<td>?</td>
+<td>3.5</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-flywheel/">The AI Flywheel</a></td>
+<td><code>tracking-ai-course/ai-flywheel</code></td>
+<td>?</td>
+<td>3.5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-scientific-method-workflow-3-copies-strong-cross-repo-3-repos">6. Scientific Method Workflow — 3 copies (strong, cross-repo (3 repos))</h2>
+<p>WHAT similarity: avg 0.9519, min 0.9285. Repos: biology, chemistry, psychology</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/scientific-method/">Scientific Method Workflow</a> — <code>biology/scientific-method</code> · ? · quality 2.92, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/psychology/sims/scientific-method/">Scientific Method Workflow</a></td>
+<td><code>psychology/scientific-method</code></td>
+<td>?</td>
+<td>2.92</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/chemistry/sims/scientific-method/">Scientific Method Workflow</a></td>
+<td><code>chemistry/scientific-method</code></td>
+<td>?</td>
+<td>1.42</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-organization-chart-visualization-3-copies-strong-cross-repo-3-repos">7. Organization Chart Visualization — 3 copies (strong, cross-repo (3 repos))</h2>
+<p>WHAT similarity: avg 0.9469, min 0.9237. Repos: infographics, intro-to-graph, organizational-analytics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/intro-to-graph/sims/org-chart/">Organization Chart Visualization</a> — <code>intro-to-graph/org-chart</code> · ? · quality 6.68, 6 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/org-chart/">Organization Chart Visualization</a></td>
+<td><code>infographics/org-chart</code></td>
+<td>?</td>
+<td>4.18</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/organizational-analytics/sims/org-chart/">Organization Chart Visualization</a></td>
+<td><code>organizational-analytics/org-chart</code></td>
+<td>?</td>
+<td>4.18</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-brewing-beer-process-explorer-2-copies-near-identical-cross-repo-2-repos">8. Brewing Beer Process Explorer — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9969, min 0.9969. Repos: biology, infographics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/brewing-beer/">Brewing Beer Process Explorer</a> — <code>biology/brewing-beer</code> · ? · quality 1.33, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/brewing-beer/">Brewing Beer Process Explorer</a></td>
+<td><code>infographics/brewing-beer</code></td>
+<td>?</td>
+<td>1.33</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-ecological-succession-timeline-2-copies-near-identical-cross-repo-2-repos">9. Ecological Succession Timeline — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9948, min 0.9948. Repos: biology, ecology</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/ecological-succession/">Ecological Succession Timeline</a> — <code>biology/ecological-succession</code> · ? · quality 1.96, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/ecology/sims/ecological-succession/">Ecological Succession Timeline</a></td>
+<td><code>ecology/ecological-succession</code></td>
+<td>?</td>
+<td>1.96</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-prokaryote-vs-eukaryote-cell-comparison-2-copies-near-identical-cross-repo-2-repos">10. Prokaryote vs. Eukaryote Cell Comparison — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9926, min 0.9926. Repos: biology, infographics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/prokaryote-eukaryote-comparison/">Prokaryote vs. Eukaryote Cell Comparison</a> — <code>biology/prokaryote-eukaryote-comparison</code> · ? · quality 1.65, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/prokaryote-eukaryote-comparison/">Prokaryote vs. Eukaryote Cell Comparison</a></td>
+<td><code>infographics/prokaryote-eukaryote-comparison</code></td>
+<td>?</td>
+<td>1.65</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-ai-doubling-rate-2-copies-near-identical-cross-repo-2-repos">11. AI Doubling Rate — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.992, min 0.992. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-doubling-rate/">AI Doubling Rate</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-doubling-rate</code> · ? · quality 2.93, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-doubling-rate/">AI Doubling Rate</a></td>
+<td><code>tracking-ai-course/ai-doubling-rate</code></td>
+<td>?</td>
+<td>2.93</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12-four-ai-futures-microsim-2-copies-near-identical-cross-repo-2-repos">12. Four AI Futures MicroSim — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9912, min 0.9912. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/four-futures/">Four AI Futures MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/four-futures</code> · ? · quality 3.13, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/four-futures/">Four AI Futures MicroSim</a></td>
+<td><code>tracking-ai-course/four-futures</code></td>
+<td>?</td>
+<td>3.13</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-signal-transduction-pathway-overview-2-copies-near-identical-cross-repo-2-repos">13. Signal Transduction Pathway Overview — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9912, min 0.9912. Repos: biology, psychology</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/signal-transduction-pathway/">Signal Transduction Pathway Overview</a> — <code>biology/signal-transduction-pathway</code> · ? · quality 2.62, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/psychology/sims/signal-transduction-pathway/">Signal Transduction Pathway Overview</a></td>
+<td><code>psychology/signal-transduction-pathway</code></td>
+<td>?</td>
+<td>2.62</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="14-power-wall-microsim-2-copies-near-identical-cross-repo-2-repos">14. Power Wall MicroSim — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9906, min 0.9906. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/power-wall/">Power Wall MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/power-wall</code> · ? · quality 3.3, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/power-wall/">Power Wall MicroSim</a></td>
+<td><code>tracking-ai-course/power-wall</code></td>
+<td>?</td>
+<td>3.3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="15-book-levels-microsim-2-copies-near-identical-cross-repo-2-repos">15. Book Levels MicroSim — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9902, min 0.9902. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/book-levels/">Book Levels MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/book-levels</code> · ? · quality 3.35, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/book-levels/">Book Levels MicroSim</a></td>
+<td><code>tracking-ai-course/book-levels</code></td>
+<td>?</td>
+<td>3.35</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="16-mmlu-timeline-microsim-2-copies-near-identical-cross-repo-2-repos">16. MMLU Timeline MicroSim — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.99, min 0.99. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/mmlu-timeline/">MMLU Timeline MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/mmlu-timeline</code> · ? · quality 3.46, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/mmlu-timeline/">MMLU Timeline MicroSim</a></td>
+<td><code>tracking-ai-course/mmlu-timeline</code></td>
+<td>?</td>
+<td>3.46</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-feedback-loop-simulator-2-copies-near-identical-cross-repo-2-repos">17. Feedback Loop Simulator — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.99, min 0.99. Repos: biology, psychology</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/feedback-loop-simulator/">Feedback Loop Simulator</a> — <code>biology/feedback-loop-simulator</code> · ? · quality 2.16, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/psychology/sims/feedback-loop-simulator/">Feedback Loop Simulator</a></td>
+<td><code>psychology/feedback-loop-simulator</code></td>
+<td>?</td>
+<td>2.16</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="18-deep-learning-timeline-microsim-2-copies-near-identical-cross-repo-2-repos">18. Deep Learning Timeline MicroSim — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9867, min 0.9867. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/timeline/">Deep Learning Timeline MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/timeline</code> · ? · quality 3.04, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/timeline/">Deep Learning Timeline MicroSim</a></td>
+<td><code>tracking-ai-course/timeline</code></td>
+<td>?</td>
+<td>3.04</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="19-blooms-taxonomy-2-copies-near-identical-cross-repo-2-repos">19. Bloom's Taxonomy — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9864, min 0.9864. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/blooms-taxonomy/">Bloom's Taxonomy</a> — <code>Digital-Transformation-with-AI-Spring-2026/blooms-taxonomy</code> · ? · quality 3.44, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/blooms-taxonomy/">Bloom's Taxonomy</a></td>
+<td><code>tracking-ai-course/blooms-taxonomy</code></td>
+<td>?</td>
+<td>3.44</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="20-generative-ai-idea-funnel-2-copies-near-identical-cross-repo-2-repos">20. Generative AI Idea Funnel — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9859, min 0.9859. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/idea-funnel/">Generative AI Idea Funnel</a> — <code>Digital-Transformation-with-AI-Spring-2026/idea-funnel</code> · ? · quality 3.29, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/idea-funnel/">Generative AI Idea Funnel</a></td>
+<td><code>tracking-ai-course/idea-funnel</code></td>
+<td>?</td>
+<td>3.29</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="21-language-model-arena-timeline-2-copies-near-identical-cross-repo-2-repos">21. Language Model Arena Timeline — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9856, min 0.9856. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/lm-arena-timeline/">Language Model Arena Timeline</a> — <code>Digital-Transformation-with-AI-Spring-2026/lm-arena-timeline</code> · ? · quality 2.78, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/lm-arena-timeline/">Language Model Arena Timeline</a></td>
+<td><code>tracking-ai-course/lm-arena-timeline</code></td>
+<td>?</td>
+<td>2.78</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="22-book-build-workflow-2-copies-near-identical-cross-repo-2-repos">22. Book Build Workflow — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9855, min 0.9855. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/book-gen-workflow/">Book Build Workflow</a> — <code>Digital-Transformation-with-AI-Spring-2026/book-gen-workflow</code> · ? · quality 2.51, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/book-gen-workflow/">Book Build Workflow</a></td>
+<td><code>tracking-ai-course/book-gen-workflow</code></td>
+<td>?</td>
+<td>2.51</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="23-projectile-motion-simulator-2-copies-near-identical-cross-repo-2-repos">23. Projectile Motion Simulator — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9855, min 0.9855. Repos: functions, pre-calc</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/functions/sims/projectile-motion-simulator/">Projectile Motion Simulator</a> — <code>functions/projectile-motion-simulator</code> · ? · quality 1.52, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/pre-calc/sims/projectile-motion/">Projectile Motion Simulator</a></td>
+<td><code>pre-calc/projectile-motion</code></td>
+<td>?</td>
+<td>1.52</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="24-moores-law-timeline-2-copies-near-identical-cross-repo-2-repos">24. Moore's Law Timeline — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9854, min 0.9854. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/moores-law/">Moore's Law Timeline</a> — <code>Digital-Transformation-with-AI-Spring-2026/moores-law</code> · ? · quality 2.98, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/moores-law/">Moore's Law Timeline</a></td>
+<td><code>tracking-ai-course/moores-law</code></td>
+<td>?</td>
+<td>2.98</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="25-color-wheel-with-named-colors-2-copies-near-identical-cross-repo-2-repos">25. Color Wheel with Named Colors — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9844, min 0.9844. Repos: claude-skills, microsims</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/microsims/sims/color-wheel-with-named-colors/">Color Wheel with Named Colors</a> — <code>microsims/color-wheel-with-named-colors</code> · ? · quality 6.95, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/">Color Wheel with Named Colors</a></td>
+<td><code>claude-skills/color-wheel-with-named-colors</code></td>
+<td>?</td>
+<td>4.95</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="26-ai-benchmarks-timeline-2-copies-near-identical-cross-repo-2-repos">26. AI Benchmarks Timeline — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9833, min 0.9833. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-benchmarks-timeline/">AI Benchmarks Timeline</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-benchmarks-timeline</code> · ? · quality 3.82, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-benchmarks-timeline/">AI Benchmarks Timeline</a></td>
+<td><code>tracking-ai-course/ai-benchmarks-timeline</code></td>
+<td>?</td>
+<td>3.82</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="27-comparative-anatomy-explorer-2-copies-near-identical-cross-repo-2-repos">27. Comparative Anatomy Explorer — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9804, min 0.9804. Repos: biology, infographics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/comparative-anatomy/">Comparative Anatomy Explorer</a> — <code>biology/comparative-anatomy</code> · ? · quality 1.53, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/comparative-anatomy/">Comparative Anatomy Explorer</a></td>
+<td><code>infographics/comparative-anatomy</code></td>
+<td>?</td>
+<td>1.53</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="28-interactive-ph-scale-explorer-2-copies-near-identical-cross-repo-2-repos">28. Interactive pH Scale Explorer — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9793, min 0.9793. Repos: biology, chemistry</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/biology/sims/ph-scale-explorer/">Interactive pH Scale Explorer</a> — <code>biology/ph-scale-explorer</code> · ? · quality 2.22, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/chemistry/sims/ph-scale-explorer/">Interactive pH Scale Explorer</a></td>
+<td><code>chemistry/ph-scale-explorer</code></td>
+<td>?</td>
+<td>2.22</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="29-ai-swot-analysis-2-copies-near-identical-cross-repo-2-repos">29. AI SWOT Analysis — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9792, min 0.9792. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/swot/">AI SWOT Analysis</a> — <code>Digital-Transformation-with-AI-Spring-2026/swot</code> · ? · quality 2.95, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/swot/">AI SWOT Analysis</a></td>
+<td><code>tracking-ai-course/swot</code></td>
+<td>?</td>
+<td>2.95</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="30-ai-capability-maturity-model-infographic-2-copies-near-identical-cross-repo-2-repos">30. AI Capability Maturity Model Infographic — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9791, min 0.9791. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-cmm/">AI Capability Maturity Model Infographic</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-cmm</code> · ? · quality 3.5, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-cmm/">AI Capability Maturity Model Infographic</a></td>
+<td><code>tracking-ai-course/ai-cmm</code></td>
+<td>?</td>
+<td>3.5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="31-coordinate-plane-explorer-2-copies-near-identical-cross-repo-2-repos">31. Coordinate Plane Explorer — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9771, min 0.9771. Repos: functions, pre-calc</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/functions/sims/coordinate-plane-explorer/">Coordinate Plane Explorer</a> — <code>functions/coordinate-plane-explorer</code> · ? · quality 1.5, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/pre-calc/sims/coordinate-plane-explorer/">Coordinate Plane Explorer</a></td>
+<td><code>pre-calc/coordinate-plane-explorer</code></td>
+<td>?</td>
+<td>1.5</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="32-tokenizer-microsim-2-copies-near-identical-cross-repo-2-repos">32. Tokenizer MicroSim — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9766, min 0.9766. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/tokenizer/">Tokenizer MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/tokenizer</code> · ? · quality 2.65, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/tokenizer/">Tokenizer MicroSim</a></td>
+<td><code>tracking-ai-course/tokenizer</code></td>
+<td>?</td>
+<td>2.65</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="33-projecting-ai-task-completion-to-2030-2-copies-near-identical-cross-repo-2-repos">33. Projecting AI Task Completion to 2030 — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9741, min 0.9741. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/projecting-ai/">Projecting AI Task Completion to 2030</a> — <code>Digital-Transformation-with-AI-Spring-2026/projecting-ai</code> · ? · quality 3.94, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/projecting-ai/">Projecting AI Task Completion to 2030</a></td>
+<td><code>tracking-ai-course/projecting-ai</code></td>
+<td>?</td>
+<td>3.94</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="34-the-accelerating-pace-of-ai-2-copies-near-identical-cross-repo-2-repos">34. The Accelerating Pace of AI — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.974, min 0.974. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-pace-accelerating/">The Accelerating Pace of AI</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-pace-accelerating</code> · ? · quality 3.2, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-pace-accelerating/">The Accelerating Pace of AI</a></td>
+<td><code>tracking-ai-course/ai-pace-accelerating</code></td>
+<td>?</td>
+<td>3.2</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="35-technology-hype-cycle-infographic-2-copies-near-identical-cross-repo-2-repos">35. Technology Hype Cycle Infographic — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9713, min 0.9713. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/hype-cycle/">Technology Hype Cycle Infographic</a> — <code>Digital-Transformation-with-AI-Spring-2026/hype-cycle</code> · ? · quality 3.38, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/hype-cycle/">Technology Hype Cycle Infographic</a></td>
+<td><code>tracking-ai-course/hype-cycle</code></td>
+<td>?</td>
+<td>3.38</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="36-ai-task-completion-time-horizons-2-copies-near-identical-cross-repo-2-repos">36. AI Task Completion Time Horizons — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9711, min 0.9711. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-task-horizons/">AI Task Completion Time Horizons</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-task-horizons</code> · ? · quality 3.69, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-task-horizons/">AI Task Completion Time Horizons</a></td>
+<td><code>tracking-ai-course/ai-task-horizons</code></td>
+<td>?</td>
+<td>3.69</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="37-causes-of-ai-acceleration-2-copies-near-identical-cross-repo-2-repos">37. Causes of AI Acceleration — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9671, min 0.9671. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/ai-causes/">Causes of AI Acceleration</a> — <code>Digital-Transformation-with-AI-Spring-2026/ai-causes</code> · ? · quality 3.4, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/ai-causes/">Causes of AI Acceleration</a></td>
+<td><code>tracking-ai-course/ai-causes</code></td>
+<td>?</td>
+<td>3.4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="38-technology-adoption-curve-infographic-2-copies-near-identical-cross-repo-2-repos">38. Technology Adoption Curve Infographic — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.966, min 0.966. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/technology-adoption/">Technology Adoption Curve Infographic</a> — <code>Digital-Transformation-with-AI-Spring-2026/technology-adoption</code> · ? · quality 3.71, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/technology-adoption/">Technology Adoption Curve Infographic</a></td>
+<td><code>tracking-ai-course/technology-adoption</code></td>
+<td>?</td>
+<td>3.71</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="39-precision-vs-accuracy-target-diagram-2-copies-near-identical-cross-repo-2-repos">39. Precision vs Accuracy Target Diagram — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9649, min 0.9649. Repos: chemistry, intro-to-physics-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/intro-to-physics-course/sims/precision-accuracy/">Precision vs Accuracy Target Diagram</a> — <code>intro-to-physics-course/precision-accuracy</code> · ? · quality 5.62, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="precision-accuracy-target-diagram">Precision vs Accuracy Target Diagram</a></td>
+<td><code>chemistry/precision-accuracy</code></td>
+<td>?</td>
+<td>2.12</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="40-book-build-workflow-2-copies-near-identical-cross-repo-2-repos">40. Book Build Workflow — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9539, min 0.9539. Repos: claude-skills, learning-graphs</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/claude-skills/sims/book-build-workflow/">Book Build Workflow</a> — <code>claude-skills/book-build-workflow</code> · ? · quality 5.46, 5 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/learning-graphs/sims/book-build-workflow/">Book Build Workflow</a></td>
+<td><code>learning-graphs/book-build-workflow</code></td>
+<td>?</td>
+<td>4.96</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="41-leverage-points-iceberg-2-copies-near-identical-cross-repo-2-repos">41. Leverage Points Iceberg — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9516, min 0.9516. Repos: ethics-course, systems-thinking</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/ethics-course/sims/leverage-iceberg/">Leverage Points Iceberg</a> — <code>ethics-course/leverage-iceberg</code> · ? · quality 6.02, 5 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/systems-thinking/sims/leverage-iceberg/">Leverage Points Iceberg</a></td>
+<td><code>systems-thinking/leverage-iceberg</code></td>
+<td>?</td>
+<td>6.02</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="42-query-performance-comparison-rdbms-vs-graph-database-2-copies-near-identical-cross-repo-2-repos">42. Query Performance Comparison: RDBMS vs Graph Database — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9513, min 0.9513. Repos: intro-to-graph, modeling-healthcare-data</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/intro-to-graph/sims/multi-hop-comparison/">Query Performance Comparison: RDBMS vs Graph Database</a> — <code>intro-to-graph/multi-hop-comparison</code> · chart.js · quality 7.5, 5 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/modeling-healthcare-data/sims/query-performance-comparison/">Query Performance Comparison: RDBMS vs Graph Database</a></td>
+<td><code>modeling-healthcare-data/query-performance-comparison</code></td>
+<td>chart.js</td>
+<td>7.5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="43-microsim-growth-network-effect-2-copies-near-identical-cross-repo-2-repos">43. MicroSim Growth Network Effect — 2 copies (near-identical, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9513, min 0.9513. Repos: microsims, systems-thinking</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/microsims/sims/microsim-growth/">MicroSim Growth Network Effect</a> — <code>microsims/microsim-growth</code> · vis-network · quality 7.0, 5 objectives</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/systems-thinking/sims/microsim-growth/">MicroSim Growth Network Effect</a></td>
+<td><code>systems-thinking/microsim-growth</code></td>
+<td>vis-network</td>
+<td>6.56</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="44-three-color-dfs-cycle-detection-2-copies-strong-cross-repo-2-repos">44. Three-Color DFS Cycle Detection — 2 copies (strong, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9461, min 0.9461. Repos: claude-skills, intelligent-textbooks</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/intelligent-textbooks/sims/three-color-dfs/">Three-Color DFS Cycle Detection</a> — <code>intelligent-textbooks/three-color-dfs</code> · ? · quality 6.29, 6 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/claude-skills/sims/three-color-dfs/">Three-Color DFS Cycle Detection</a></td>
+<td><code>claude-skills/three-color-dfs</code></td>
+<td>?</td>
+<td>5.29</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="45-autoregressive-microsim-2-copies-strong-cross-repo-2-repos">45. Autoregressive MicroSim — 2 copies (strong, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9394, min 0.9394. Repos: Digital-Transformation-with-AI-Spring-2026, tracking-ai-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/Digital-Transformation-with-AI-Spring-2026/sims/autoregressive/">Autoregressive MicroSim</a> — <code>Digital-Transformation-with-AI-Spring-2026/autoregressive</code> · ? · quality 3.51, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/tracking-ai-course/sims/autoregressive/">Autoregressive MicroSim</a></td>
+<td><code>tracking-ai-course/autoregressive</code></td>
+<td>?</td>
+<td>3.51</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="46-workflow-for-generating-intelligent-textbooks-2-copies-strong-cross-repo-2-repos">46. Workflow for Generating Intelligent Textbooks — 2 copies (strong, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9388, min 0.9388. Repos: data-science-course, intelligent-textbooks</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/intelligent-textbooks/sims/book-gen-workflow/">Workflow for Generating Intelligent Textbooks</a> — <code>intelligent-textbooks/book-gen-workflow</code> · p5.js · quality 5.32, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/data-science-course/sims/book-gen-workflow/">Book Generation Workflow</a></td>
+<td><code>data-science-course/book-gen-workflow</code></td>
+<td>?</td>
+<td>4.83</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="47-exponential-growth-and-decay-explorer-2-copies-strong-cross-repo-2-repos">47. Exponential Growth and Decay Explorer — 2 copies (strong, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9333, min 0.9333. Repos: functions, pre-calc</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/functions/sims/exponential-growth-decay-explorer/">Exponential Growth and Decay Explorer</a> — <code>functions/exponential-growth-decay-explorer</code> · ? · quality 1.62, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/pre-calc/sims/exponential-growth-vs-decay/">Exponential Growth vs Decay Explorer</a></td>
+<td><code>pre-calc/exponential-growth-vs-decay</code></td>
+<td>?</td>
+<td>1.61</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="48-function-call-flow-2-copies-strong-cross-repo-2-repos">48. Function Call Flow — 2 copies (strong, cross-repo (2 repos))</h2>
+<p>WHAT similarity: avg 0.9253, min 0.9253. Repos: computer-science, learning-python</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/computer-science/sims/function-call-flow/">Function Call Flow</a> — <code>computer-science/function-call-flow</code> · ? · quality 1.43, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/learning-python/sims/function-call-flow/">Function Call Flow</a></td>
+<td><code>learning-python/function-call-flow</code></td>
+<td>?</td>
+<td>1.43</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="49-healthcare-data-integration-graph-model-5-copies-strong-same-repo">49. Healthcare Data Integration Graph Model — 5 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9283, min 0.9229. Repos: modeling-healthcare-data</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-data-integration-graph-model/">Healthcare Data Integration Graph Model</a> — <code>modeling-healthcare-data/healthcare-data-integration-graph-model</code> · ? · quality 1.64, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-delivery-network-graph-model/">Healthcare Delivery Network Graph Model</a></td>
+<td><code>modeling-healthcare-data/healthcare-delivery-network-graph-model</code></td>
+<td>?</td>
+<td>1.64</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-graph-pattern-examples/">Healthcare Graph Pattern Examples</a></td>
+<td><code>modeling-healthcare-data/healthcare-graph-pattern-examples</code></td>
+<td>?</td>
+<td>1.58</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/modeling-healthcare-data/sims/healthcare-rbac-graph-data-model/">Healthcare RBAC Graph Data Model</a></td>
+<td><code>modeling-healthcare-data/healthcare-rbac-graph-data-model</code></td>
+<td>?</td>
+<td>1.57</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="https://dmccreary.github.io/modeling-healthcare-data/sims/basic-healthcare-graph-model-diagram/">Basic Healthcare Graph Model</a></td>
+<td><code>modeling-healthcare-data/basic-healthcare-graph-model-diagram</code></td>
+<td>?</td>
+<td>1.53</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="50-protein-structure-hierarchy-2-copies-near-identical-same-repo">50. Protein Structure Hierarchy — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 1.0, min 1.0. Repos: bioinformatics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/bioinformatics/sims/protein-structure-hierarchy/">Protein Structure Hierarchy</a> — <code>bioinformatics/protein-structure-hierarchy</code> · ? · quality 1.52, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/bioinformatics/sims/protein-structure-levels/">Protein Structure Hierarchy</a></td>
+<td><code>bioinformatics/protein-structure-levels</code></td>
+<td>?</td>
+<td>1.52</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="51-4-hour-token-window-visualization-2-copies-near-identical-same-repo">51. 4-Hour Token Window Visualization — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.989, min 0.989. Repos: claude-skills</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/">4-Hour Token Window Visualization</a> — <code>claude-skills/4-hour-token-window-visualization</code> · ? · quality 1.58, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/">5-Hour Token Window Visualization</a></td>
+<td><code>claude-skills/5-hour-token-window-visualization</code></td>
+<td>?</td>
+<td>1.58</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="52-us-population-map-2-copies-near-identical-same-repo">52. US Population Map — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.9849, min 0.9849. Repos: us-geography</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/us-geography/sims/population-by-state/">US Population Map</a> — <code>us-geography/population-by-state</code> · ? · quality 0.83, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/us-geography/sims/population-density/">US Population Density</a></td>
+<td><code>us-geography/population-density</code></td>
+<td>?</td>
+<td>0.62</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="53-postulate-visualization-gallery-2-copies-near-identical-same-repo">53. Postulate Visualization Gallery — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.9714, min 0.9714. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/postulate-visualization/">Postulate Visualization Gallery</a> — <code>geometry-course/postulate-visualization</code> · ? · quality 4.02, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/postulate-gallery/">Postulate Visualization Gallery</a></td>
+<td><code>geometry-course/postulate-gallery</code></td>
+<td>?</td>
+<td>3.94</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="54-beast-classification-framework-2-copies-near-identical-same-repo">54. Beast Classification Framework — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.9606, min 0.9606. Repos: unicorns</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/unicorns/sims/beast-classification-framework/">Beast Classification Framework</a> — <code>unicorns/beast-classification-framework</code> · ? · quality 1.55, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/unicorns/sims/beast-classifier/">Beast Classification MicroSim</a></td>
+<td><code>unicorns/beast-classifier</code></td>
+<td>?</td>
+<td>1.54</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="55-topic-to-concept-expansion-example-2-copies-near-identical-same-repo">55. Topic-to-Concept Expansion Example — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.9573, min 0.9573. Repos: claude-skills</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/">Topic-to-Concept Expansion Example</a> — <code>claude-skills/topic-to-concept-expansion-example</code> · ? · quality 1.59, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/">Topic-to-Concept Expansion Process</a></td>
+<td><code>claude-skills/topic-to-concept-expansion-process</code></td>
+<td>?</td>
+<td>1.59</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="56-parallel-lines-construction-challenge-2-copies-near-identical-same-repo">56. Parallel Lines Construction Challenge — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.9535, min 0.9535. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/parallel-lines-challenge/">Parallel Lines Construction Challenge</a> — <code>geometry-course/parallel-lines-challenge</code> · ? · quality 3.91, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/parallel-lines-construction/">Parallel Lines Construction</a></td>
+<td><code>geometry-course/parallel-lines-construction</code></td>
+<td>?</td>
+<td>3.71</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="57-while-loop-stepper-2-copies-near-identical-same-repo">57. While-Loop Stepper — 2 copies (near-identical, same-repo)</h2>
+<p>WHAT similarity: avg 0.952, min 0.952. Repos: learning-python</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/learning-python/sims/while-loop-stepper/">While-Loop Stepper</a> — <code>learning-python/while-loop-stepper</code> · ? · quality 1.43, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/learning-python/sims/for-loop-stepper/">For-Loop Stepper</a></td>
+<td><code>learning-python/for-loop-stepper</code></td>
+<td>?</td>
+<td>1.41</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="58-knowledge-graph-construction-pipeline-2-copies-strong-same-repo">58. Knowledge Graph Construction Pipeline — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9483, min 0.9483. Repos: bioinformatics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/bioinformatics/sims/kg-construction-pipeline/">Knowledge Graph Construction Pipeline</a> — <code>bioinformatics/kg-construction-pipeline</code> · ? · quality 1.62, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/bioinformatics/sims/kg-integrated-pipeline/">Integrated Knowledge Graph Pipeline</a></td>
+<td><code>bioinformatics/kg-integrated-pipeline</code></td>
+<td>?</td>
+<td>1.6</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="59-circle-circle-intersection-cases-2-copies-strong-same-repo">59. Circle-Circle Intersection Cases — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9483, min 0.9483. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/circle-circle-intersection/">Circle-Circle Intersection Cases</a> — <code>geometry-course/circle-circle-intersection</code> · ? · quality 1.57, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/line-circle-intersection/">Line-Circle Intersection Cases</a></td>
+<td><code>geometry-course/line-circle-intersection</code></td>
+<td>?</td>
+<td>1.55</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="60-chapter-1-concept-map-2-copies-strong-same-repo">60. Chapter 1 Concept Map — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.946, min 0.946. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/ch1-concept-map/">Chapter 1 Concept Map</a> — <code>geometry-course/ch1-concept-map</code> · ? · quality 4.88, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/chapter-01-concept-map/">Chapter 1 Concept Map</a></td>
+<td><code>geometry-course/chapter-01-concept-map</code></td>
+<td>?</td>
+<td>4.67</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="61-the-anatomy-of-a-proof-2-copies-strong-same-repo">61. The Anatomy of a Proof — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9458, min 0.9458. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/anatomy-of-proof/">The Anatomy of a Proof</a> — <code>geometry-course/anatomy-of-proof</code> · ? · quality 4.22, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/proof-anatomy/">The Anatomy of a Proof</a></td>
+<td><code>geometry-course/proof-anatomy</code></td>
+<td>?</td>
+<td>4.12</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="62-bipartite-graph-of-a-metabolic-sub-network-2-copies-strong-same-repo">62. Bipartite Graph of a Metabolic Sub-network — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9405, min 0.9405. Repos: bioinformatics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/bioinformatics/sims/bipartite-metabolic/">Bipartite Graph of a Metabolic Sub-network</a> — <code>bioinformatics/bipartite-metabolic</code> · ? · quality 1.67, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/bioinformatics/sims/bipartite-metabolic-graph/">Bipartite Metabolic Graph Structure</a></td>
+<td><code>bioinformatics/bipartite-metabolic-graph</code></td>
+<td>?</td>
+<td>1.6</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="63-learning-graph-2-copies-strong-same-repo">63. Learning Graph — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9376, min 0.9376. Repos: microsims</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/microsims/sims/learning-graph/">Learning Graph</a> — <code>microsims/learning-graph</code> · ? · quality 6.41, 5 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/microsims/sims/learning-graph-v1/">Learning Graph V1</a></td>
+<td><code>microsims/learning-graph-v1</code></td>
+<td>?</td>
+<td>5.94</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="64-angle-bisector-construction-2-copies-strong-same-repo">64. Angle Bisector Construction — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9357, min 0.9357. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/angle-bisector-construction/">Angle Bisector Construction</a> — <code>geometry-course/angle-bisector-construction</code> · ? · quality 3.99, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/bisect-angle-steps/">Bisect Angle Steps</a></td>
+<td><code>geometry-course/bisect-angle-steps</code></td>
+<td>?</td>
+<td>3.77</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="65-infographic-design-principles-workflow-2-copies-strong-same-repo">65. Infographic Design Principles Workflow — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9349, min 0.9349. Repos: infographics</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/infographics/sims/design-principles-workflow/">Infographic Design Principles Workflow</a> — <code>infographics/design-principles-workflow</code> · ? · quality 1.63, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/infographics/sims/infographic-dev-workflow/">Infographic Development Workflow</a></td>
+<td><code>infographics/infographic-dev-workflow</code></td>
+<td>?</td>
+<td>1.57</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="66-learning-dependency-network-2-copies-strong-same-repo">66. Learning Dependency Network — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9339, min 0.9339. Repos: automating-instructional-design</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/automating-instructional-design/sims/learning-dependency-network/">Learning Dependency Network</a> — <code>automating-instructional-design/learning-dependency-network</code> · vis-network · quality 6.73, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/automating-instructional-design/sims/concept-dependencies/">Concept Dependencies Graph</a></td>
+<td><code>automating-instructional-design/concept-dependencies</code></td>
+<td>vis-network</td>
+<td>6.6</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="67-triangle-congruence-criteria-reference-2-copies-strong-same-repo">67. Triangle Congruence Criteria Reference — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9314, min 0.9314. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/congruence-criteria-reference/">Triangle Congruence Criteria Reference</a> — <code>geometry-course/congruence-criteria-reference</code> · ? · quality 3.63, 3 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/triangle-congruence-criteria/">Triangle Congruence Criteria</a></td>
+<td><code>geometry-course/triangle-congruence-criteria</code></td>
+<td>?</td>
+<td>3.47</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="68-gram-schmidt-step-by-step-visualizer-2-copies-strong-same-repo">68. Gram-Schmidt Step-by-Step Visualizer — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9284, min 0.9284. Repos: linear-algebra</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/linear-algebra/sims/gram-schmidt-ch8/">Gram-Schmidt Step-by-Step Visualizer</a> — <code>linear-algebra/gram-schmidt-ch8</code> · p5.js · quality 5.93, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/linear-algebra/sims/gram-schmidt/">Gram-Schmidt Process Visualizer</a></td>
+<td><code>linear-algebra/gram-schmidt</code></td>
+<td>p5.js</td>
+<td>5.74</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="69-weak-acid-ice-table-solver-2-copies-strong-same-repo">69. Weak Acid ICE Table Solver — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9246, min 0.9246. Repos: chemistry</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/chemistry/sims/weak-acid-ice-table-solver/">Weak Acid ICE Table Solver</a> — <code>chemistry/weak-acid-ice-table-solver</code> · ? · quality 2.16, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/chemistry/sims/weak-acid-ice-solver/">Weak Acid ICE Solver</a></td>
+<td><code>chemistry/weak-acid-ice-solver</code></td>
+<td>?</td>
+<td>2.07</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="70-transversal-angle-explorer-2-copies-strong-same-repo">70. Transversal Angle Explorer — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9244, min 0.9244. Repos: geometry-course</p>
+<p><strong>✅ Keep:</strong> <a href="https://dmccreary.github.io/geometry-course/sims/transversal-angle-explorer/">Transversal Angle Explorer</a> — <code>geometry-course/transversal-angle-explorer</code> · ? · quality 6.3, 4 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dmccreary.github.io/geometry-course/sims/parallel-transversal-explorer/">Parallel Lines &amp; Transversal Explorer</a></td>
+<td><code>geometry-course/parallel-transversal-explorer</code></td>
+<td>?</td>
+<td>3.92</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="71-sti-prevention-methods-effectiveness-explorer-2-copies-strong-same-repo">71. STI Prevention Methods Effectiveness Explorer — 2 copies (strong, same-repo)</h2>
+<p>WHAT similarity: avg 0.9202, min 0.9202. Repos: health-education</p>
+<p><strong>✅ Keep:</strong> <a href="sti-prevention-methods-effectiveness-explorer">STI Prevention Methods Effectiveness Explorer</a> — <code>health-education/sti-prevention-methods-effectiveness-explorer</code> · ? · quality 1.66, 0 objectives, real description</p>
+<p><strong>Retire / redirect via iframe:</strong></p>
+<table>
+<thead>
+<tr>
+<th>MicroSim</th>
+<th>Repo/Sim</th>
+<th>Framework</th>
+<th>Quality</th>
+<th>Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="sti-prevention-effectiveness-chart">STI Prevention Methods Effectiveness Comparison</a></td>
+<td><code>health-education/sti-prevention-effectiveness-chart</code></td>
+<td>?</td>
+<td>0.41</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="../../js/mathjax-config.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

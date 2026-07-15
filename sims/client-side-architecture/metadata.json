@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "client-side-architecture",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/client-side-architecture/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Explain the data flow in client-side search",
@@ -23,8 +26,14 @@
   },
   "pedagogical": {
     "pattern": "reference",
-    "bloomAlignment": ["understand"],
-    "bloomVerbs": ["explain", "identify", "compare"],
+    "bloomAlignment": [
+      "understand"
+    ],
+    "bloomVerbs": [
+      "explain",
+      "identify",
+      "compare"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": false,
     "dataVisibility": "high",
@@ -34,7 +43,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 450",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -47,7 +58,14 @@
     "interactionType": "hover-explore"
   },
   "search": {
-    "keywords": ["architecture", "client-side", "browser", "static hosting", "ItemsJS", "data flow"],
+    "keywords": [
+      "architecture",
+      "client-side",
+      "browser",
+      "static hosting",
+      "ItemsJS",
+      "data flow"
+    ],
     "visualizationType": "diagram"
   }
 }

@@ -7,12 +7,15 @@
     "date": "2026-01-26",
     "type": "InteractiveResource",
     "format": "text/html",
-    "identifier": "faceted-search-simulator",
+    "identifier": "https://dmccreary.github.io/search-microsims/sims/faceted-search-simulator/",
     "language": "en",
     "rights": "CC BY-NC-SA 4.0"
   },
   "educational": {
-    "gradeLevel": ["High School", "Undergraduate"],
+    "gradeLevel": [
+      "High School",
+      "Undergraduate"
+    ],
     "subjectArea": "Computer Science",
     "learningObjectives": [
       "Use faceted search to filter a MicroSim collection",
@@ -23,8 +26,15 @@
   },
   "pedagogical": {
     "pattern": "exploration",
-    "bloomAlignment": ["apply", "analyze"],
-    "bloomVerbs": ["use", "explain", "observe"],
+    "bloomAlignment": [
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "use",
+      "explain",
+      "observe"
+    ],
     "pacing": "self-paced",
     "supportsPrediction": true,
     "dataVisibility": "high",
@@ -34,7 +44,9 @@
     "framework": "p5.js",
     "canvasDimensions": "responsive x 600",
     "responsive": true,
-    "dependencies": ["p5.js 1.11.1"]
+    "dependencies": [
+      "p5.js 1.11.1"
+    ]
   },
   "userInterface": {
     "controls": [
@@ -57,7 +69,14 @@
     "interactionType": "click-filter"
   },
   "search": {
-    "keywords": ["faceted search", "filtering", "navigation", "facets", "categories", "metadata"],
+    "keywords": [
+      "faceted search",
+      "filtering",
+      "navigation",
+      "facets",
+      "categories",
+      "metadata"
+    ],
     "visualizationType": "interface"
   }
 }
