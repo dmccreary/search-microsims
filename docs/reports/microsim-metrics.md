@@ -169,7 +169,7 @@
 | microsims | 113 | 64.2% | 25% | 100% |
 | intro-to-physics-course | 104 | 64.2% | 25% | 90% |
 | automating-instructional-design | 81 | 77.8% | 45% | 100% |
-| claude-skills | 36 | 72.4% | 65% | 100% |
+| ibook-skills | 36 | 72.4% | 65% | 100% |
 | reading-for-kindergarten | 25 | 85.6% | 85% | 100% |
 | signal-processing | 25 | 72.1% | 70% | 100% |
 | tracking-ai-course | 25 | 70.0% | 70% | 70% |

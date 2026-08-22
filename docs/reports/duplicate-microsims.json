@@ -2078,7 +2078,7 @@
       "size": 2,
       "cross_repo": true,
       "repos": [
-        "claude-skills",
+        "ibook-skills",
         "microsims"
       ],
       "min_similarity": 0.9818,
@@ -2096,8 +2096,8 @@
       },
       "merge": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/color-wheel-with-named-colors/",
+          "repo": "ibook-skills",
           "sim": "color-wheel-with-named-colors",
           "title": "Color Wheel with Named Colors",
           "framework": "p5.js",
@@ -2118,8 +2118,8 @@
           "has_real_desc": true
         },
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/color-wheel-with-named-colors/",
+          "repo": "ibook-skills",
           "sim": "color-wheel-with-named-colors",
           "title": "Color Wheel with Named Colors",
           "framework": "p5.js",
@@ -2738,15 +2738,15 @@
       "size": 2,
       "cross_repo": true,
       "repos": [
-        "claude-skills",
+        "ibook-skills",
         "learning-graphs"
       ],
       "min_similarity": 0.9539,
       "avg_similarity": 0.9539,
       "tier": "near-identical",
       "keeper": {
-        "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
-        "repo": "claude-skills",
+        "url": "https://dmccreary.github.io/ibook-skills/sims/book-build-workflow/",
+        "repo": "ibook-skills",
         "sim": "book-build-workflow",
         "title": "Book Build Workflow",
         "framework": "?",
@@ -2768,8 +2768,8 @@
       ],
       "members": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/book-build-workflow/",
+          "repo": "ibook-skills",
           "sim": "book-build-workflow",
           "title": "Book Build Workflow",
           "framework": "?",
@@ -2958,7 +2958,7 @@
       "size": 2,
       "cross_repo": true,
       "repos": [
-        "claude-skills",
+        "ibook-skills",
         "intelligent-textbooks"
       ],
       "min_similarity": 0.9461,
@@ -2976,8 +2976,8 @@
       },
       "merge": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/three-color-dfs/",
+          "repo": "ibook-skills",
           "sim": "three-color-dfs",
           "title": "Three-Color DFS Cycle Detection",
           "framework": "vis-network.js",
@@ -2998,8 +2998,8 @@
           "has_real_desc": true
         },
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/three-color-dfs/",
+          "repo": "ibook-skills",
           "sim": "three-color-dfs",
           "title": "Three-Color DFS Cycle Detection",
           "framework": "vis-network.js",
@@ -3618,7 +3618,7 @@
       "size": 2,
       "cross_repo": true,
       "repos": [
-        "claude-skills",
+        "ibook-skills",
         "signal-processing"
       ],
       "min_similarity": 0.9081,
@@ -3636,8 +3636,8 @@
       },
       "merge": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/book-levels/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/book-levels/",
+          "repo": "ibook-skills",
           "sim": "book-levels",
           "title": "Book Levels MicroSim",
           "framework": "p5.js",
@@ -3658,8 +3658,8 @@
           "has_real_desc": true
         },
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/book-levels/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/book-levels/",
+          "repo": "ibook-skills",
           "sim": "book-levels",
           "title": "Book Levels MicroSim",
           "framework": "p5.js",
@@ -3728,7 +3728,7 @@
       "size": 2,
       "cross_repo": true,
       "repos": [
-        "claude-skills",
+        "ibook-skills",
         "it-management-graph"
       ],
       "min_similarity": 0.9063,
@@ -3746,8 +3746,8 @@
       },
       "merge": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/skill-impact-chart/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/skill-impact-chart/",
+          "repo": "ibook-skills",
           "sim": "skill-impact-chart",
           "title": "Skill Development Priority Matrix Visualization",
           "framework": "Chart.js",
@@ -3768,8 +3768,8 @@
           "has_real_desc": true
         },
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/skill-impact-chart/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/skill-impact-chart/",
+          "repo": "ibook-skills",
           "sim": "skill-impact-chart",
           "title": "Skill Development Priority Matrix Visualization",
           "framework": "Chart.js",
@@ -4304,14 +4304,14 @@
       "size": 2,
       "cross_repo": false,
       "repos": [
-        "claude-skills"
+        "ibook-skills"
       ],
       "min_similarity": 0.989,
       "avg_similarity": 0.989,
       "tier": "near-identical",
       "keeper": {
-        "url": "https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/",
-        "repo": "claude-skills",
+        "url": "https://dmccreary.github.io/ibook-skills/sims/4-hour-token-window-visualization/",
+        "repo": "ibook-skills",
         "sim": "4-hour-token-window-visualization",
         "title": "4-Hour Token Window Visualization",
         "framework": "vis-timeline",
@@ -4321,8 +4321,8 @@
       },
       "merge": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/5-hour-token-window-visualization/",
+          "repo": "ibook-skills",
           "sim": "5-hour-token-window-visualization",
           "title": "5-Hour Token Window Visualization",
           "framework": "vis-timeline",
@@ -4333,8 +4333,8 @@
       ],
       "members": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/4-hour-token-window-visualization/",
+          "repo": "ibook-skills",
           "sim": "4-hour-token-window-visualization",
           "title": "4-Hour Token Window Visualization",
           "framework": "vis-timeline",
@@ -4343,8 +4343,8 @@
           "has_real_desc": true
         },
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/5-hour-token-window-visualization/",
+          "repo": "ibook-skills",
           "sim": "5-hour-token-window-visualization",
           "title": "5-Hour Token Window Visualization",
           "framework": "vis-timeline",
@@ -4466,14 +4466,14 @@
       "size": 2,
       "cross_repo": false,
       "repos": [
-        "claude-skills"
+        "ibook-skills"
       ],
       "min_similarity": 0.9632,
       "avg_similarity": 0.9632,
       "tier": "near-identical",
       "keeper": {
-        "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/",
-        "repo": "claude-skills",
+        "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-example/",
+        "repo": "ibook-skills",
         "sim": "topic-to-concept-expansion-example",
         "title": "Topic-to-Concept Expansion Example",
         "framework": "vis-network",
@@ -4483,8 +4483,8 @@
       },
       "merge": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-process/",
+          "repo": "ibook-skills",
           "sim": "topic-to-concept-expansion-process",
           "title": "Topic-to-Concept Expansion Process",
           "framework": "Mermaid",
@@ -4495,8 +4495,8 @@
       ],
       "members": [
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-example/",
+          "repo": "ibook-skills",
           "sim": "topic-to-concept-expansion-example",
           "title": "Topic-to-Concept Expansion Example",
           "framework": "vis-network",
@@ -4505,8 +4505,8 @@
           "has_real_desc": true
         },
         {
-          "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/",
-          "repo": "claude-skills",
+          "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-process/",
+          "repo": "ibook-skills",
           "sim": "topic-to-concept-expansion-process",
           "title": "Topic-to-Concept Expansion Process",
           "framework": "Mermaid",

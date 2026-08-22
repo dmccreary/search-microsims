@@ -462,7 +462,7 @@ WHAT similarity: avg 0.9833, min 0.9833. Repos: Digital-Transformation-with-AI-S
 
 ## 31. Color Wheel with Named Colors — 2 copies (near-identical, cross-repo (2 repos))
 
-WHAT similarity: avg 0.9818, min 0.9818. Repos: claude-skills, microsims
+WHAT similarity: avg 0.9818, min 0.9818. Repos: ibook-skills, microsims
 
 **✅ Keep:** [Color Wheel with Named Colors](https://dmccreary.github.io/microsims/sims/color-wheel-with-named-colors/) — `microsims/color-wheel-with-named-colors` · p5.js · quality 7.95, 4 objectives, real description
 
@@ -470,7 +470,7 @@ WHAT similarity: avg 0.9818, min 0.9818. Repos: claude-skills, microsims
 
 | MicroSim | Repo/Sim | Framework | Quality | Objectives |
 |----------|----------|-----------|---------|------------|
-| [Color Wheel with Named Colors](https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/) | `claude-skills/color-wheel-with-named-colors` | p5.js | 5.95 | 4 |
+| [Color Wheel with Named Colors](https://dmccreary.github.io/ibook-skills/sims/color-wheel-with-named-colors/) | `ibook-skills/color-wheel-with-named-colors` | p5.js | 5.95 | 4 |
 
 ---
 
@@ -630,9 +630,9 @@ WHAT similarity: avg 0.9545, min 0.9545. Repos: computer-science, learning-pytho
 
 ## 43. Book Build Workflow — 2 copies (near-identical, cross-repo (2 repos))
 
-WHAT similarity: avg 0.9539, min 0.9539. Repos: claude-skills, learning-graphs
+WHAT similarity: avg 0.9539, min 0.9539. Repos: ibook-skills, learning-graphs
 
-**✅ Keep:** [Book Build Workflow](https://dmccreary.github.io/claude-skills/sims/book-build-workflow/) — `claude-skills/book-build-workflow` · ? · quality 5.46, 5 objectives, real description
+**✅ Keep:** [Book Build Workflow](https://dmccreary.github.io/ibook-skills/sims/book-build-workflow/) — `ibook-skills/book-build-workflow` · ? · quality 5.46, 5 objectives, real description
 
 **Retire / redirect via iframe:**
 
@@ -686,7 +686,7 @@ WHAT similarity: avg 0.9513, min 0.9513. Repos: microsims, systems-thinking
 
 ## 47. Three-Color DFS Cycle Detection — 2 copies (strong, cross-repo (2 repos))
 
-WHAT similarity: avg 0.9461, min 0.9461. Repos: claude-skills, intelligent-textbooks
+WHAT similarity: avg 0.9461, min 0.9461. Repos: ibook-skills, intelligent-textbooks
 
 **✅ Keep:** [Three-Color DFS Cycle Detection](https://dmccreary.github.io/intelligent-textbooks/sims/three-color-dfs/) — `intelligent-textbooks/three-color-dfs` · vis-network.js · quality 7.29, 6 objectives, real description
 
@@ -694,7 +694,7 @@ WHAT similarity: avg 0.9461, min 0.9461. Repos: claude-skills, intelligent-textb
 
 | MicroSim | Repo/Sim | Framework | Quality | Objectives |
 |----------|----------|-----------|---------|------------|
-| [Three-Color DFS Cycle Detection](https://dmccreary.github.io/claude-skills/sims/three-color-dfs/) | `claude-skills/three-color-dfs` | vis-network.js | 6.29 | 4 |
+| [Three-Color DFS Cycle Detection](https://dmccreary.github.io/ibook-skills/sims/three-color-dfs/) | `ibook-skills/three-color-dfs` | vis-network.js | 6.29 | 4 |
 
 ---
 
@@ -854,7 +854,7 @@ WHAT similarity: avg 0.9151, min 0.9151. Repos: computer-science, learning-pytho
 
 ## 59. Book Levels MicroSim — 2 copies (strong, cross-repo (2 repos))
 
-WHAT similarity: avg 0.9081, min 0.9081. Repos: claude-skills, signal-processing
+WHAT similarity: avg 0.9081, min 0.9081. Repos: ibook-skills, signal-processing
 
 **✅ Keep:** [Book Levels MicroSim](https://dmccreary.github.io/signal-processing/sims/book-levels/) — `signal-processing/book-levels` · p5.js · quality 6.15, 5 objectives, real description
 
@@ -862,7 +862,7 @@ WHAT similarity: avg 0.9081, min 0.9081. Repos: claude-skills, signal-processing
 
 | MicroSim | Repo/Sim | Framework | Quality | Objectives |
 |----------|----------|-----------|---------|------------|
-| [Book Levels MicroSim](https://dmccreary.github.io/claude-skills/sims/book-levels/) | `claude-skills/book-levels` | p5.js | 5.06 | 4 |
+| [Book Levels MicroSim](https://dmccreary.github.io/ibook-skills/sims/book-levels/) | `ibook-skills/book-levels` | p5.js | 5.06 | 4 |
 
 ---
 
@@ -882,7 +882,7 @@ WHAT similarity: avg 0.9072, min 0.9072. Repos: automating-instructional-design,
 
 ## 61. Skill Development Priority Matrix Visualization — 2 copies (strong, cross-repo (2 repos))
 
-WHAT similarity: avg 0.9063, min 0.9063. Repos: claude-skills, it-management-graph
+WHAT similarity: avg 0.9063, min 0.9063. Repos: ibook-skills, it-management-graph
 
 **✅ Keep:** [Skill Development Priority Matrix Visualization](https://dmccreary.github.io/it-management-graph/sims/skill-impact-chart/) — `it-management-graph/skill-impact-chart` · chart.js · quality 7.99, 5 objectives, real description
 
@@ -890,7 +890,7 @@ WHAT similarity: avg 0.9063, min 0.9063. Repos: claude-skills, it-management-gra
 
 | MicroSim | Repo/Sim | Framework | Quality | Objectives |
 |----------|----------|-----------|---------|------------|
-| [Skill Development Priority Matrix Visualization](https://dmccreary.github.io/claude-skills/sims/skill-impact-chart/) | `claude-skills/skill-impact-chart` | Chart.js | 5.36 | 4 |
+| [Skill Development Priority Matrix Visualization](https://dmccreary.github.io/ibook-skills/sims/skill-impact-chart/) | `ibook-skills/skill-impact-chart` | Chart.js | 5.36 | 4 |
 
 ---
 
@@ -1001,15 +1001,15 @@ WHAT similarity: avg 0.9163, min 0.9013. Repos: geometry-course
 
 ## 69. 4-Hour Token Window Visualization — 2 copies (near-identical, same-repo)
 
-WHAT similarity: avg 0.989, min 0.989. Repos: claude-skills
+WHAT similarity: avg 0.989, min 0.989. Repos: ibook-skills
 
-**✅ Keep:** [4-Hour Token Window Visualization](https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/) — `claude-skills/4-hour-token-window-visualization` · vis-timeline · quality 3.08, 1 objectives, real description
+**✅ Keep:** [4-Hour Token Window Visualization](https://dmccreary.github.io/ibook-skills/sims/4-hour-token-window-visualization/) — `ibook-skills/4-hour-token-window-visualization` · vis-timeline · quality 3.08, 1 objectives, real description
 
 **Retire / redirect via iframe:**
 
 | MicroSim | Repo/Sim | Framework | Quality | Objectives |
 |----------|----------|-----------|---------|------------|
-| [5-Hour Token Window Visualization](https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/) | `claude-skills/5-hour-token-window-visualization` | vis-timeline | 3.08 | 1 |
+| [5-Hour Token Window Visualization](https://dmccreary.github.io/ibook-skills/sims/5-hour-token-window-visualization/) | `ibook-skills/5-hour-token-window-visualization` | vis-timeline | 3.08 | 1 |
 
 ---
 
@@ -1043,15 +1043,15 @@ WHAT similarity: avg 0.9774, min 0.9774. Repos: geometry-course
 
 ## 72. Topic-to-Concept Expansion Example — 2 copies (near-identical, same-repo)
 
-WHAT similarity: avg 0.9632, min 0.9632. Repos: claude-skills
+WHAT similarity: avg 0.9632, min 0.9632. Repos: ibook-skills
 
-**✅ Keep:** [Topic-to-Concept Expansion Example](https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/) — `claude-skills/topic-to-concept-expansion-example` · vis-network · quality 3.09, 1 objectives, real description
+**✅ Keep:** [Topic-to-Concept Expansion Example](https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-example/) — `ibook-skills/topic-to-concept-expansion-example` · vis-network · quality 3.09, 1 objectives, real description
 
 **Retire / redirect via iframe:**
 
 | MicroSim | Repo/Sim | Framework | Quality | Objectives |
 |----------|----------|-----------|---------|------------|
-| [Topic-to-Concept Expansion Process](https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/) | `claude-skills/topic-to-concept-expansion-process` | Mermaid | 3.09 | 1 |
+| [Topic-to-Concept Expansion Process](https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-process/) | `ibook-skills/topic-to-concept-expansion-process` | Mermaid | 3.09 | 1 |
 
 ---
 

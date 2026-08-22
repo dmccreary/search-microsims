@@ -52870,7 +52870,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "4-Hour Token Window Visualization",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "vis-timeline",
@@ -52884,11 +52884,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "4-hour-token-window-visualization",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/4-hour-token-window-visualization"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/4-hour-token-window-visualization"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/4-hour-token-window-visualization/",
     "id": 686
   },
   {
@@ -52934,7 +52934,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "5-Hour Token Window Visualization",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "vis-timeline",
@@ -52948,11 +52948,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "5-hour-token-window-visualization",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/5-hour-token-window-visualization"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/5-hour-token-window-visualization"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/5-hour-token-window-visualization/",
     "id": 687
   },
   {
@@ -53019,11 +53019,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "adding-taxonomy-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/adding-taxonomy-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/adding-taxonomy-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/adding-taxonomy-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/adding-taxonomy-workflow/",
     "id": 688
   },
   {
@@ -53083,11 +53083,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "admonition-types-interactive-reference",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/admonition-types-interactive-reference"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/admonition-types-interactive-reference"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/admonition-types-interactive-reference/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/admonition-types-interactive-reference/",
     "id": 689
   },
   {
@@ -53147,11 +53147,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "algorithm-visualization-with-step-controls-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/algorithm-visualization-with-step-controls-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/algorithm-visualization-with-step-controls-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/algorithm-visualization-with-step-controls-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/algorithm-visualization-with-step-controls-microsim/",
     "id": 690
   },
   {
@@ -53223,11 +53223,11 @@
       "chart.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "average-dependencies-distribution",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/average-dependencies-distribution"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/average-dependencies-distribution"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/average-dependencies-distribution/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/average-dependencies-distribution/",
     "id": 691
   },
   {
@@ -53287,11 +53287,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "basic-microsim-template-structure",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/basic-microsim-template-structure"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/basic-microsim-template-structure"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/basic-microsim-template-structure/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/basic-microsim-template-structure/",
     "id": 692
   },
   {
@@ -53351,11 +53351,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "bloom-s-taxonomy-1956-vs-2001-comparison",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/bloom-s-taxonomy-1956-vs-2001-comparison"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/bloom-s-taxonomy-1956-vs-2001-comparison"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/bloom-s-taxonomy-1956-vs-2001-comparison/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/bloom-s-taxonomy-1956-vs-2001-comparison/",
     "id": 693
   },
   {
@@ -53415,11 +53415,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "bloom-s-taxonomy-application-distribution-in-quality-courses",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/bloom-s-taxonomy-application-distribution-in-quality-courses"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/bloom-s-taxonomy-application-distribution-in-quality-courses"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/bloom-s-taxonomy-application-distribution-in-quality-courses/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/bloom-s-taxonomy-application-distribution-in-quality-courses/",
     "id": 694
   },
   {
@@ -53479,11 +53479,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "bloom-s-taxonomy-distribution-analyzer-chart",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/bloom-s-taxonomy-distribution-analyzer-chart"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/bloom-s-taxonomy-distribution-analyzer-chart"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/bloom-s-taxonomy-distribution-analyzer-chart/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/bloom-s-taxonomy-distribution-analyzer-chart/",
     "id": 695
   },
   {
@@ -53582,11 +53582,11 @@
       "Educational Technology"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "book-build-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/book-build-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/book-build-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/book-build-workflow/",
     "id": 696
   },
   {
@@ -53657,11 +53657,11 @@
       "p5.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "book-levels",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/book-levels"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/book-levels"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/book-levels/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/book-levels/",
     "id": 697
   },
   {
@@ -53683,12 +53683,12 @@
     "format": "text/html",
     "type": "Interactive Simulation",
     "framework": "vanilla-js",
-    "url": "https://dmccreary.github.io/claude-skills/sims/certificate-generator/",
-    "identifier": "https://dmccreary.github.io/claude-skills/sims/certificate-generator/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/certificate-generator/",
+    "identifier": "https://dmccreary.github.io/ibook-skills/sims/certificate-generator/",
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "certificate-generator",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/certificate-generator"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/certificate-generator"
     },
     "subjects": [
       "Mathematics",
@@ -53797,11 +53797,11 @@
       "html/css/javascript"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "chapter-content-generation-timeline",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/chapter-content-generation-timeline"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/chapter-content-generation-timeline"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/chapter-content-generation-timeline/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/chapter-content-generation-timeline/",
     "id": 699
   },
   {
@@ -53869,11 +53869,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "chapter-index-structure",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/chapter-index-structure"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/chapter-index-structure"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/chapter-index-structure/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/chapter-index-structure/",
     "id": 700
   },
   {
@@ -53944,11 +53944,11 @@
       "evaluate"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "chapter-organization-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/chapter-organization-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/chapter-organization-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/chapter-organization-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/chapter-organization-workflow/",
     "id": 701
   },
   {
@@ -54098,11 +54098,11 @@
       "Familiarity with Claude Code"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "claude-code-memory-layers",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/claude-code-memory-layers"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/claude-code-memory-layers"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-memory-layers/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-memory-layers/",
     "id": 702
   },
   {
@@ -54178,11 +54178,11 @@
       "html/css/javascript"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "claude-code-timeline",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/claude-code-timeline"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/claude-code-timeline"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-timeline/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-timeline/",
     "id": 703
   },
   {
@@ -54267,11 +54267,11 @@
       "AI-Powered Education, Merchandise Design"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "claude-code-tshirt-design",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/claude-code-tshirt-design"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/claude-code-tshirt-design"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-tshirt-design/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-tshirt-design/",
     "id": 704
   },
   {
@@ -54331,11 +54331,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "claude-code-workflow-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/claude-code-workflow-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/claude-code-workflow-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-workflow-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-workflow-diagram/",
     "id": 705
   },
   {
@@ -54395,11 +54395,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "color-accessibility-checker-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/color-accessibility-checker-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/color-accessibility-checker-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/color-accessibility-checker-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/color-accessibility-checker-microsim/",
     "id": 706
   },
   {
@@ -54544,11 +54544,11 @@
       "Familiarity with RGB color model"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "color-wheel-with-named-colors",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/color-wheel-with-named-colors"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/color-wheel-with-named-colors"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/color-wheel-with-named-colors/",
     "id": 707
   },
   {
@@ -54608,11 +54608,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "command-line-interface-basics-interactive-infographic",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/command-line-interface-basics-interactive-infographic"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/command-line-interface-basics-interactive-infographic"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/command-line-interface-basics-interactive-infographic/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/command-line-interface-basics-interactive-infographic/",
     "id": 708
   },
   {
@@ -54672,11 +54672,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "concept-count-by-course-duration",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-count-by-course-duration"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/concept-count-by-course-duration"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/concept-count-by-course-duration/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/concept-count-by-course-duration/",
     "id": 709
   },
   {
@@ -54736,11 +54736,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "concept-depth-distribution-analysis",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-depth-distribution-analysis"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/concept-depth-distribution-analysis"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/concept-depth-distribution-analysis/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/concept-depth-distribution-analysis/",
     "id": 710
   },
   {
@@ -54800,11 +54800,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "concept-granularity-spectrum-visualization",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-granularity-spectrum-visualization"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/concept-granularity-spectrum-visualization"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/concept-granularity-spectrum-visualization/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/concept-granularity-spectrum-visualization/",
     "id": 711
   },
   {
@@ -54864,11 +54864,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "concept-label-length-optimization",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-label-length-optimization"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/concept-label-length-optimization"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/concept-label-length-optimization/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/concept-label-length-optimization/",
     "id": 712
   },
   {
@@ -54928,11 +54928,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "concept-label-quality-checklist",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-label-quality-checklist"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/concept-label-quality-checklist"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/concept-label-quality-checklist/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/concept-label-quality-checklist/",
     "id": 713
   },
   {
@@ -55000,11 +55000,11 @@
       "chart.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "concept-length-histogram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/concept-length-histogram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/concept-length-histogram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/concept-length-histogram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/concept-length-histogram/",
     "id": 714
   },
   {
@@ -55064,11 +55064,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "conceptid-vs-conceptlabel-comparison",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/conceptid-vs-conceptlabel-comparison"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/conceptid-vs-conceptlabel-comparison"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/conceptid-vs-conceptlabel-comparison/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/conceptid-vs-conceptlabel-comparison/",
     "id": 715
   },
   {
@@ -55128,11 +55128,11 @@
       "Evaluate"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "course-description-quality-rubric-visualization",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/course-description-quality-rubric-visualization"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/course-description-quality-rubric-visualization"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/course-description-quality-rubric-visualization/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/course-description-quality-rubric-visualization/",
     "id": 716
   },
   {
@@ -55203,11 +55203,11 @@
       "p5.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "course-description-quality-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/course-description-quality-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/course-description-quality-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/course-description-quality-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/course-description-quality-workflow/",
     "id": 717
   },
   {
@@ -55240,11 +55240,11 @@
       "Software Tools"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "cover-image-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/cover-image-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/cover-image-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/cover-image-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/cover-image-workflow/",
     "id": 718
   },
   {
@@ -55304,11 +55304,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "csv-file-format-example-with-validation",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/csv-file-format-example-with-validation"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/csv-file-format-example-with-validation"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/csv-file-format-example-with-validation/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/csv-file-format-example-with-validation/",
     "id": 719
   },
   {
@@ -55368,11 +55368,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "csv-to-json-conversion-mapping-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/csv-to-json-conversion-mapping-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/csv-to-json-conversion-mapping-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/csv-to-json-conversion-mapping-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/csv-to-json-conversion-mapping-diagram/",
     "id": 720
   },
   {
@@ -55432,11 +55432,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "dag-vs-cyclic-graph-comparison",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/dag-vs-cyclic-graph-comparison"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/dag-vs-cyclic-graph-comparison"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/dag-vs-cyclic-graph-comparison/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/dag-vs-cyclic-graph-comparison/",
     "id": 721
   },
   {
@@ -55496,11 +55496,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "dependency-mapping-decision-tree",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/dependency-mapping-decision-tree"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/dependency-mapping-decision-tree"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/dependency-mapping-decision-tree/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/dependency-mapping-decision-tree/",
     "id": 722
   },
   {
@@ -55560,11 +55560,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "dependency-mapping-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/dependency-mapping-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/dependency-mapping-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/dependency-mapping-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/dependency-mapping-workflow/",
     "id": 723
   },
   {
@@ -55624,11 +55624,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "dependency-pattern-examples",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/dependency-pattern-examples"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/dependency-pattern-examples"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/dependency-pattern-examples/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/dependency-pattern-examples/",
     "id": 724
   },
   {
@@ -55688,11 +55688,11 @@
       "Remember"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "dublin-core-metadata-field-reference-card",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/dublin-core-metadata-field-reference-card"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/dublin-core-metadata-field-reference-card"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/dublin-core-metadata-field-reference-card/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/dublin-core-metadata-field-reference-card/",
     "id": 725
   },
   {
@@ -55752,11 +55752,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "evolution-of-ai-approaches-timeline",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/evolution-of-ai-approaches-timeline"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/evolution-of-ai-approaches-timeline"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/evolution-of-ai-approaches-timeline/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/evolution-of-ai-approaches-timeline/",
     "id": 726
   },
   {
@@ -55825,11 +55825,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "faq-pattern-analysis",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/faq-pattern-analysis"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/faq-pattern-analysis"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/faq-pattern-analysis/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/faq-pattern-analysis/",
     "id": 727
   },
   {
@@ -55889,11 +55889,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "five-levels-of-textbook-intelligence-visual-model",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/five-levels-of-textbook-intelligence-visual-model"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/five-levels-of-textbook-intelligence-visual-model"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/five-levels-of-textbook-intelligence-visual-model/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/five-levels-of-textbook-intelligence-visual-model/",
     "id": 728
   },
   {
@@ -55953,11 +55953,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "git-branching-and-merging-visualization-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/git-branching-and-merging-visualization-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/git-branching-and-merging-visualization-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/git-branching-and-merging-visualization-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/git-branching-and-merging-visualization-microsim/",
     "id": 729
   },
   {
@@ -56025,11 +56025,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "git-workflow-skill-development",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/git-workflow-skill-development"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/git-workflow-skill-development"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/git-workflow-skill-development/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/git-workflow-skill-development/",
     "id": 730
   },
   {
@@ -56051,12 +56051,12 @@
     "format": "text/html",
     "type": "Interactive Simulation",
     "framework": "vis-network",
-    "url": "https://dmccreary.github.io/claude-skills/sims/graph-color-test/",
-    "identifier": "https://dmccreary.github.io/claude-skills/sims/graph-color-test/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/graph-color-test/",
+    "identifier": "https://dmccreary.github.io/ibook-skills/sims/graph-color-test/",
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "graph-color-test",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/graph-color-test"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/graph-color-test"
     },
     "subjects": [
       "Mathematics",
@@ -56173,11 +56173,11 @@
       "vis-network"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "graph-viewer",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/graph-viewer"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/graph-viewer"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/graph-viewer/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/graph-viewer/",
     "id": 732
   },
   {
@@ -56267,11 +56267,11 @@
       "Software Installation, Dependency Management, Development Environment"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "install-book-env",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/install-book-env"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/install-book-env"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/install-book-env/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/install-book-env/",
     "id": 733
   },
   {
@@ -56331,11 +56331,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "interactive-directory-navigation-practice-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/interactive-directory-navigation-practice-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/interactive-directory-navigation-practice-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/interactive-directory-navigation-practice-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-directory-navigation-practice-microsim/",
     "id": 734
   },
   {
@@ -56395,11 +56395,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "interactive-exercise-generator-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/interactive-exercise-generator-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/interactive-exercise-generator-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/interactive-exercise-generator-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-exercise-generator-microsim/",
     "id": 735
   },
   {
@@ -56459,11 +56459,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "interactive-learning-element-types-comparison",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/interactive-learning-element-types-comparison"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/interactive-learning-element-types-comparison"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/interactive-learning-element-types-comparison/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-learning-element-types-comparison/",
     "id": 736
   },
   {
@@ -56523,11 +56523,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "interactive-quiz-question-constructor-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/interactive-quiz-question-constructor-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/interactive-quiz-question-constructor-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/interactive-quiz-question-constructor-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-quiz-question-constructor-microsim/",
     "id": 737
   },
   {
@@ -56587,11 +56587,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "iso-11179-principles-comparison-table-infographic",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/iso-11179-principles-comparison-table-infographic"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/iso-11179-principles-comparison-table-infographic"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/iso-11179-principles-comparison-table-infographic/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/iso-11179-principles-comparison-table-infographic/",
     "id": 738
   },
   {
@@ -56637,7 +56637,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "Iterative Prompt Refinement Metrics",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "Chart.js",
@@ -56651,11 +56651,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "iterative-prompt-refinement-metrics",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/iterative-prompt-refinement-metrics"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/iterative-prompt-refinement-metrics"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/iterative-prompt-refinement-metrics/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/iterative-prompt-refinement-metrics/",
     "id": 739
   },
   {
@@ -56722,11 +56722,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "learning-graph-json-schema",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/learning-graph-json-schema"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/learning-graph-json-schema"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-json-schema/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/learning-graph-json-schema/",
     "id": 740
   },
   {
@@ -56786,11 +56786,11 @@
       "Evaluate"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "learning-graph-quality-score-calculator-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/learning-graph-quality-score-calculator-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/learning-graph-quality-score-calculator-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-quality-score-calculator-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/learning-graph-quality-score-calculator-microsim/",
     "id": 741
   },
   {
@@ -56850,11 +56850,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "learning-graph-structure-visualization",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/learning-graph-structure-visualization"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/learning-graph-structure-visualization"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-structure-visualization/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/learning-graph-structure-visualization/",
     "id": 742
   },
   {
@@ -56924,11 +56924,11 @@
       "vis-network"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "linear-chain-vs-network",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/linear-chain-vs-network"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/linear-chain-vs-network"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/linear-chain-vs-network/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/linear-chain-vs-network/",
     "id": 743
   },
   {
@@ -56988,11 +56988,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "lower-order-vs-higher-order-thinking-skills",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/lower-order-vs-higher-order-thinking-skills"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/lower-order-vs-higher-order-thinking-skills"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/lower-order-vs-higher-order-thinking-skills/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/lower-order-vs-higher-order-thinking-skills/",
     "id": 744
   },
   {
@@ -57052,11 +57052,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "material-theme-features-interactive-comparison",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/material-theme-features-interactive-comparison"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/material-theme-features-interactive-comparison"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/material-theme-features-interactive-comparison/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/material-theme-features-interactive-comparison/",
     "id": 745
   },
   {
@@ -57116,11 +57116,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "microsim-design-quality-checklist",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/microsim-design-quality-checklist"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/microsim-design-quality-checklist"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/microsim-design-quality-checklist/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/microsim-design-quality-checklist/",
     "id": 746
   },
   {
@@ -57250,11 +57250,11 @@
       "Educational Technology"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "microsim-file-relationship-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/microsim-file-relationship-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/microsim-file-relationship-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/microsim-file-relationship-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/microsim-file-relationship-diagram/",
     "id": 747
   },
   {
@@ -57320,11 +57320,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "mkdocs-build-process",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/mkdocs-build-process"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/mkdocs-build-process"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/mkdocs-build-process/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/mkdocs-build-process/",
     "id": 748
   },
   {
@@ -57398,11 +57398,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "mkdocs-github-pages-deployment",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/mkdocs-github-pages-deployment"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/mkdocs-github-pages-deployment"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/mkdocs-github-pages-deployment/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/mkdocs-github-pages-deployment/",
     "id": 749
   },
   {
@@ -57476,11 +57476,11 @@
       "chart.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "orphaned-nodes-identification",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/orphaned-nodes-identification"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/orphaned-nodes-identification"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/orphaned-nodes-identification/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/orphaned-nodes-identification/",
     "id": 750
   },
   {
@@ -57549,11 +57549,11 @@
       "p5.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "p5js-architecture",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/p5js-architecture"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/p5js-architecture"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/p5js-architecture/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/p5js-architecture/",
     "id": 751
   },
   {
@@ -57613,11 +57613,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "permission-bits-visual-infographic",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/permission-bits-visual-infographic"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/permission-bits-visual-infographic"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/permission-bits-visual-infographic/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/permission-bits-visual-infographic/",
     "id": 752
   },
   {
@@ -57677,11 +57677,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "prompt-engineering-iterative-refinement-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/prompt-engineering-iterative-refinement-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/prompt-engineering-iterative-refinement-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/prompt-engineering-iterative-refinement-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/prompt-engineering-iterative-refinement-workflow/",
     "id": 753
   },
   {
@@ -57741,11 +57741,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "python-learning-graph-processing-pipeline",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/python-learning-graph-processing-pipeline"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/python-learning-graph-processing-pipeline"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/python-learning-graph-processing-pipeline/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/python-learning-graph-processing-pipeline/",
     "id": 754
   },
   {
@@ -57805,11 +57805,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "responsive-iframe-embedding-microsim",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/responsive-iframe-embedding-microsim"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/responsive-iframe-embedding-microsim"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/responsive-iframe-embedding-microsim/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/responsive-iframe-embedding-microsim/",
     "id": 755
   },
   {
@@ -57878,11 +57878,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "security-zones-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/security-zones-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/security-zones-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/security-zones-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/security-zones-diagram/",
     "id": 756
   },
   {
@@ -57959,11 +57959,11 @@
       "interactive learning"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "sine-function-plot",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/sine-function-plot"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/sine-function-plot"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/sine-function-plot/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/sine-function-plot/",
     "id": 757
   },
   {
@@ -58087,11 +58087,11 @@
       "prompt engineering"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-context-window",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-context-window"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-context-window"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-context-window/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-context-window/",
     "id": 758
   },
   {
@@ -58158,11 +58158,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-directory-structure",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-directory-structure"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-directory-structure"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-directory-structure/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-directory-structure/",
     "id": 759
   },
   {
@@ -58208,7 +58208,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "Skill File Anatomy Diagram",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "p5.js",
@@ -58222,11 +58222,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-file-anatomy-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-file-anatomy-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-file-anatomy-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-file-anatomy-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-file-anatomy-diagram/",
     "id": 760
   },
   {
@@ -58303,11 +58303,11 @@
       "chart.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-impact-chart",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-impact-chart"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-impact-chart"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-impact-chart/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-impact-chart/",
     "id": 761
   },
   {
@@ -58353,7 +58353,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "Skill Installation Locations and Priority",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "Mermaid",
@@ -58367,11 +58367,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-installation-locations-and-priority",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-installation-locations-and-priority"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-installation-locations-and-priority"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-installation-locations-and-priority/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-installation-locations-and-priority/",
     "id": 762
   },
   {
@@ -58441,11 +58441,11 @@
       "html/css/javascript"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-installation-workflow",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-installation-workflow"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-installation-workflow"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-installation-workflow/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-installation-workflow/",
     "id": 763
   },
   {
@@ -58491,7 +58491,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "Skill Invocation and Execution Lifecycle",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "Mermaid",
@@ -58505,11 +58505,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-invocation-and-execution-lifecycle",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-invocation-and-execution-lifecycle"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-invocation-and-execution-lifecycle"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-invocation-and-execution-lifecycle/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-invocation-and-execution-lifecycle/",
     "id": 764
   },
   {
@@ -58555,7 +58555,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "09-claude-skills-architecture-development",
+    "chapter": "09-ibook-skills-architecture-development",
     "topic": "Skill Package Contents Checklist",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "p5.js",
@@ -58569,11 +58569,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-package-contents-checklist",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-package-contents-checklist"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-package-contents-checklist"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-package-contents-checklist/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-package-contents-checklist/",
     "id": 765
   },
   {
@@ -58619,7 +58619,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "Skill Permission Matrix",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "p5.js",
@@ -58633,11 +58633,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-permission-matrix",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-permission-matrix"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-permission-matrix"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-permission-matrix/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-permission-matrix/",
     "id": 766
   },
   {
@@ -58683,7 +58683,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "09-claude-skills-architecture-development",
+    "chapter": "09-ibook-skills-architecture-development",
     "topic": "Skill Testing Workflow Diagram",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "p5.js",
@@ -58697,11 +58697,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skill-testing-workflow-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skill-testing-workflow-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skill-testing-workflow-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skill-testing-workflow-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skill-testing-workflow-diagram/",
     "id": 767
   },
   {
@@ -58747,7 +58747,7 @@
       "commonMisconceptions": [],
       "assessmentOpportunities": []
     },
-    "chapter": "02-getting-started-claude-skills",
+    "chapter": "02-getting-started-ibook-skills",
     "topic": "Skills vs Commands Decision Tree",
     "gradeLevel": "9, 10, 11, 12",
     "framework": "Mermaid",
@@ -58761,11 +58761,11 @@
       "Apply"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "skills-vs-commands-decision-tree",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/skills-vs-commands-decision-tree"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/skills-vs-commands-decision-tree"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/skills-vs-commands-decision-tree/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/skills-vs-commands-decision-tree/",
     "id": 768
   },
   {
@@ -58836,11 +58836,11 @@
       "chart.js"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "taxonomy-distribution-pie",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/taxonomy-distribution-pie"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/taxonomy-distribution-pie"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/taxonomy-distribution-pie/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/taxonomy-distribution-pie/",
     "id": 769
   },
   {
@@ -58908,11 +58908,11 @@
       "mermaid"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "terminal-workflow-textbook",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/terminal-workflow-textbook"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/terminal-workflow-textbook"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/terminal-workflow-textbook/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/terminal-workflow-textbook/",
     "id": 770
   },
   {
@@ -59010,11 +59010,11 @@
       "Geography, Urban Studies, Global Population"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "test-world-cities",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/test-world-cities"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/test-world-cities"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/test-world-cities/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/test-world-cities/",
     "id": 771
   },
   {
@@ -59099,11 +59099,11 @@
       "DAG validation"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "three-color-dfs",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/three-color-dfs"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/three-color-dfs"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/three-color-dfs/",
     "id": 772
   },
   {
@@ -59163,11 +59163,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "token-consumption-timeline-for-complete-textbook-project",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/token-consumption-timeline-for-complete-textbook-project"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/token-consumption-timeline-for-complete-textbook-project"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/token-consumption-timeline-for-complete-textbook-project/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/token-consumption-timeline-for-complete-textbook-project/",
     "id": 773
   },
   {
@@ -59227,11 +59227,11 @@
       "Analyze"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "topic-to-concept-expansion-example",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/topic-to-concept-expansion-example"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/topic-to-concept-expansion-example"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-example/",
     "id": 774
   },
   {
@@ -59291,11 +59291,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "topic-to-concept-expansion-process",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/topic-to-concept-expansion-process"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/topic-to-concept-expansion-process"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-process/",
     "id": 775
   },
   {
@@ -59355,11 +59355,11 @@
       "Understand"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "transformer-architecture-diagram",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/transformer-architecture-diagram"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/transformer-architecture-diagram"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/transformer-architecture-diagram/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/transformer-architecture-diagram/",
     "id": 776
   },
   {
@@ -59419,11 +59419,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "vs-code-interface-layout-for-textbook-development",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/vs-code-interface-layout-for-textbook-development"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/vs-code-interface-layout-for-textbook-development"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/vs-code-interface-layout-for-textbook-development/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/vs-code-interface-layout-for-textbook-development/",
     "id": 777
   },
   {
@@ -59483,11 +59483,11 @@
       "Create"
     ],
     "_source": {
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "sim": "worked-example-determining-reading-level-from-course-description",
-      "github_url": "https://github.com/dmccreary/claude-skills/tree/main/docs/sims/worked-example-determining-reading-level-from-course-description"
+      "github_url": "https://github.com/dmccreary/ibook-skills/tree/main/docs/sims/worked-example-determining-reading-level-from-course-description"
     },
-    "url": "https://dmccreary.github.io/claude-skills/sims/worked-example-determining-reading-level-from-course-description/",
+    "url": "https://dmccreary.github.io/ibook-skills/sims/worked-example-determining-reading-level-from-course-description/",
     "id": 778
   },
   {
