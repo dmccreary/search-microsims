@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>MicroSim Schema Structure Map using vis-network</title>
+    <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <!-- Title at top center -->
+            <div class="title">MicroSim Schema Structure Map</div>
+
+            <!-- Legend: symbols used in the map -->
+            <div class="legend" aria-label="Legend">
+                <div class="legend-item"><span class="swatch swatch-section"></span>Section</div>
+                <div class="legend-item"><span class="swatch swatch-badge">required</span>Required section</div>
+                <div class="legend-item"><span class="swatch swatch-dot swatch-required"></span>Required field</div>
+                <div class="legend-item"><span class="swatch swatch-dot swatch-optional"></span>Optional field</div>
+                <div class="legend-item"><span class="swatch swatch-dashed"></span>Dependency</div>
+            </div>
+
+            <!-- Map drawing area. Overlays are siblings because vis-network replaces its container's children. -->
+            <div id="network" aria-label="Map of the MicroSim metadata schema"></div>
+
+            <!-- Controls below the drawing area -->
+            <div class="bottom-panel">
+                <div class="filter-col">
+                    <label for="search-input">Find a field:</label>
+                    <input type="text" id="search-input" placeholder="type a name, e.g. subject" autocomplete="off" spellcheck="false">
+                    <label for="section-select">Show section:</label>
+                    <select id="section-select">
+                        <option value="all">All sections</option>
+                    </select>
+                </div>
+
+                <div class="controls-col">
+                    <label class="check"><input type="checkbox" id="required-check"> Show required only</label>
+                    <button class="btn btn-secondary" id="expand-btn">Expand All</button>
+                    <button class="btn btn-secondary" id="collapse-btn">Collapse All</button>
+                    <div class="count" id="count-text"></div>
+                </div>
+
+                <div class="info-col" id="info-panel" aria-live="polite">
+                    <div class="info-title" id="info-title">Schema Summary</div>
+                    <div class="info-content" id="info-content"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+
+    <script src="microsim-schema-map.js"></script>
+</body>
+</html>

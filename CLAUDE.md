@@ -45,6 +45,16 @@ python3 src/enrich-metadata/commit-enrichments.py           # Commit all changed
 python3 src/enrich-metadata/commit-enrichments.py --dry-run # Preview what would be committed
 ```
 
+### Finding Unimplemented MicroSims
+```bash
+# List MicroSims that have a <details> spec in a chapter but no JavaScript in docs/sims
+python3 src/find-unimplemented-microsims.py                 # scan every repo under ~/projects
+python3 src/find-unimplemented-microsims.py --repo calculus # one repo
+python3 src/find-unimplemented-microsims.py --update-todo   # rewrite the tracked section of TODO.md
+```
+
+Inspects each sim directory directly; `completion_status` in metadata.json is not trusted because many built sims still say `scaffold`.
+
 ### Data Profiling
 ```bash
 # Generate quality metrics report

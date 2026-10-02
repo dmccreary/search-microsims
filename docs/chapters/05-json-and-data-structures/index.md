@@ -132,7 +132,7 @@ JSON follows strict syntax rules (which is actually good—it means errors are e
 
 #### Diagram: JSON Syntax Validator
 
-<iframe src="../../sims/json-syntax-validator/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/json-syntax-validator/main.html" width="100%" height="522px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>JSON Syntax Validator Interactive Tool</summary>
@@ -267,7 +267,7 @@ Notice how the object groups related information. A search engine can quickly fi
 
 #### Diagram: JSON Object Structure Visualizer
 
-<iframe src="../../sims/json-object-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/json-object-visualizer/main.html" width="100%" height="602px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>JSON Object Structure Visualizer</summary>
@@ -409,7 +409,7 @@ Each array serves a purpose: subjects enable faceted search, contributors credit
 
 #### Diagram: Array Operations Playground
 
-<iframe src="../../sims/json-array-playground/main.html" width="100%" height="480px" scrolling="no"></iframe>
+<iframe src="../../sims/json-array-playground/main.html" width="100%" height="517px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Array Operations Playground</summary>
@@ -582,7 +582,7 @@ This schema enforces organization: Dublin Core is required, other sections optio
 
 #### Diagram: Schema Structure Map
 
-<iframe src="../../sims/microsim-schema-map/main.html" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/microsim-schema-map/main.html" width="100%" height="622px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>MicroSim Schema Structure Map</summary>
@@ -728,7 +728,7 @@ python3 src/microsim-schema/validate-metadata.py --all
 
 #### Diagram: Validation Feedback Simulator
 
-<iframe src="../../sims/validation-simulator/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/validation-simulator/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Schema Validation Feedback Simulator</summary>
@@ -916,7 +916,7 @@ Example:
 
 #### Diagram: Completeness Score Calculator
 
-<iframe src="../../sims/completeness-calculator/main.html" width="100%" height="480px" scrolling="no"></iframe>
+<iframe src="../../sims/completeness-calculator/main.html" width="100%" height="557px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Metadata Completeness Score Calculator</summary>

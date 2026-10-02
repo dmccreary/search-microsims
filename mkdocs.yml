@@ -128,6 +128,12 @@ nav:
     - Graph Layout Gallery: sims/graph-viz-gallery/index.md
     - Simulation Anatomy: sims/simulation-anatomy/index.md
     - Timeline Layout Styles: sims/timeline-styles/index.md
+    - JSON Syntax Validator: sims/json-syntax-validator/index.md
+    - JSON Object Structure Visualizer: sims/json-object-visualizer/index.md
+    - Array Operations Playground: sims/json-array-playground/index.md
+    - MicroSim Schema Structure Map: sims/microsim-schema-map/index.md
+    - Validation Feedback Simulator: sims/validation-simulator/index.md
+    - Completeness Score Calculator: sims/completeness-calculator/index.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md

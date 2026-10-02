@@ -1,0 +1,208 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "Validation Feedback Simulator",
+      "creator": [
+        "Dan McCreary"
+      ],
+      "subject": [
+        "Schema Validation",
+        "JSON Schema",
+        "Required Fields",
+        "Metadata Quality",
+        "Error Messages"
+      ],
+      "description": "Interactive schema validator for MicroSim metadata. A JSON editor shows a document with errors marked in the gutter, and a results panel lists each error or warning with its location path, current value, and expected value. Students click an issue to jump to its line, edit the JSON while it is re-validated live, watch a progress bar count fixed issues, and compare what Auto-fix can and cannot repair.",
+      "contributor": [
+        "Claude Code"
+      ],
+      "date": "2026-10-01",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "identifier": "https://dmccreary.github.io/search-microsims/sims/validation-simulator/",
+      "language": "en-US",
+      "relation": [
+        "https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/"
+      ],
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": [
+        "schema validation",
+        "json schema",
+        "validator",
+        "error messages",
+        "metadata",
+        "required fields",
+        "enum"
+      ],
+      "visualizationType": [
+        "interactive-demo"
+      ],
+      "interactionLevel": "high",
+      "complexity": 5,
+      "relatedConcepts": [
+        "Schema Validation",
+        "JSON Schema",
+        "Required Fields",
+        "Optional Fields",
+        "Data Quality"
+      ],
+      "applicationDomains": [
+        "education",
+        "training",
+        "assessment",
+        "analysis"
+      ]
+    },
+    "educational": {
+      "gradeLevel": [
+        "Undergraduate",
+        "Adult"
+      ],
+      "subjectArea": [
+        "Computer Science"
+      ],
+      "topic": [
+        "Schema validation",
+        "Validation error messages",
+        "MicroSim metadata"
+      ],
+      "learningObjectives": [
+        "Distinguish valid from invalid JSON metadata by analyzing validation feedback",
+        "Locate the line that causes a validation error from its message and path",
+        "Correct missing required fields, wrong types, invalid enum values, and array constraint violations",
+        "Explain the difference between an error and a warning"
+      ],
+      "bloomsTaxonomy": [
+        "Analyze"
+      ],
+      "prerequisites": [
+        "Can write valid JSON syntax",
+        "Knows what required fields, types, and enums are in a JSON Schema"
+      ],
+      "duration": {
+        "typical": 15,
+        "range": {
+          "min": 10,
+          "max": 20
+        }
+      },
+      "difficulty": "Intermediate"
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 540,
+        "responsive": true
+      },
+      "dependencies": [
+        "p5.js 1.11.10"
+      ],
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "accessibility": {
+        "screenReader": true,
+        "keyboardNavigation": true,
+        "colorContrast": true
+      }
+    },
+    "userInterface": {
+      "layoutType": "two-column",
+      "layoutPattern": "editor-left-results-right",
+      "controls": [
+        {
+          "id": "editor",
+          "type": "text-input",
+          "label": "Metadata JSON editor",
+          "description": "Multi-line code editor with line numbers, syntax colors, and issue markers"
+        },
+        {
+          "id": "validate",
+          "type": "button",
+          "label": "Validate",
+          "description": "Run the validator and report the number of remaining errors"
+        },
+        {
+          "id": "autofix",
+          "type": "button",
+          "label": "Auto-fix",
+          "description": "Repair mechanical mistakes such as misspelled keys, wrong quotes, and enum values with an obvious replacement"
+        },
+        {
+          "id": "reset",
+          "type": "button",
+          "label": "Reset to Original",
+          "description": "Reload the current example"
+        },
+        {
+          "id": "hints",
+          "type": "checkbox",
+          "label": "Show hints",
+          "description": "Show a suggested fix for the selected issue"
+        },
+        {
+          "id": "example",
+          "type": "dropdown",
+          "label": "Load Example",
+          "description": "Three errors, valid, missing required, wrong type, invalid enum, array error, or misspelled key"
+        }
+      ]
+    },
+    "usage": {
+      "recommendedUsage": [
+        "guided-practice",
+        "assessment",
+        "individual-study"
+      ],
+      "instructionalStrategies": [
+        "Classify each error before fixing it",
+        "Compare what Auto-fix can repair with what needs human judgment"
+      ],
+      "assessmentQuestions": [
+        {
+          "question": "Why can a document be valid JSON but invalid metadata?",
+          "type": "short-answer",
+          "level": "Understand"
+        },
+        {
+          "question": "Fix the three-error example without using hints.",
+          "type": "observation",
+          "level": "Analyze"
+        }
+      ]
+    },
+    "pedagogical": {
+      "pattern": "practice",
+      "bloomsTaxonomy": [
+        "Apply",
+        "Analyze"
+      ],
+      "bloomAlignment": [
+        "analyze",
+        "apply"
+      ],
+      "bloomVerbs": [
+        "analyze",
+        "differentiate",
+        "examine",
+        "test"
+      ],
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "pacing": "self-paced",
+      "feedbackType": [
+        "immediate",
+        "corrective",
+        "explanatory"
+      ],
+      "interactionStyle": "construct"
+    }
+  }
+}

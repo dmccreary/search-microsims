@@ -1,0 +1,225 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "Array Operations Playground",
+      "creator": [
+        "Dan McCreary"
+      ],
+      "subject": [
+        "JSON",
+        "JSON Arrays",
+        "Array Index",
+        "Nested Arrays",
+        "Data Structures"
+      ],
+      "description": "Interactive playground for JSON arrays. The array is drawn as a train of connected boxes with index numbers, colored by data type. Students add elements at any position, select and remove elements, drag to reorder, and nest arrays, while a live panel shows the matching JSON text, the array length, and a warning when element types are mixed. Five practice goals check the result.",
+      "contributor": [
+        "Claude Code"
+      ],
+      "date": "2026-10-01",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "identifier": "https://dmccreary.github.io/search-microsims/sims/json-array-playground/",
+      "language": "en-US",
+      "relation": [
+        "https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/"
+      ],
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": [
+        "json",
+        "array",
+        "index",
+        "insert",
+        "remove",
+        "reorder",
+        "drag and drop",
+        "nested array"
+      ],
+      "visualizationType": [
+        "interactive-demo",
+        "diagram"
+      ],
+      "interactionLevel": "very-high",
+      "complexity": 4,
+      "relatedConcepts": [
+        "JSON",
+        "JSON Arrays",
+        "JSON Syntax",
+        "Data Quality"
+      ],
+      "applicationDomains": [
+        "education",
+        "training",
+        "exploration"
+      ]
+    },
+    "educational": {
+      "gradeLevel": [
+        "Undergraduate",
+        "Adult"
+      ],
+      "subjectArea": [
+        "Computer Science"
+      ],
+      "topic": [
+        "JSON arrays",
+        "Zero-based indexing",
+        "Ordered collections",
+        "Nested arrays"
+      ],
+      "learningObjectives": [
+        "Demonstrate JSON array operations by adding, removing, and reordering elements while observing the resulting JSON",
+        "Predict how element indexes change when an element is inserted or removed",
+        "Build a nested array that represents two-dimensional data",
+        "Explain why arrays in metadata should hold elements of one type"
+      ],
+      "bloomsTaxonomy": [
+        "Apply"
+      ],
+      "prerequisites": [
+        "Knows the six JSON data types"
+      ],
+      "duration": {
+        "typical": 15,
+        "range": {
+          "min": 10,
+          "max": 20
+        }
+      },
+      "difficulty": "Beginner"
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 515,
+        "responsive": true
+      },
+      "dependencies": [
+        "p5.js 1.11.10"
+      ],
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "accessibility": {
+        "screenReader": true,
+        "keyboardNavigation": false,
+        "colorContrast": true
+      }
+    },
+    "userInterface": {
+      "layoutType": "two-column",
+      "layoutPattern": "array-picture-left-json-right",
+      "controls": [
+        {
+          "id": "value",
+          "type": "text-input",
+          "label": "Value",
+          "description": "Value of the element to add"
+        },
+        {
+          "id": "type",
+          "type": "dropdown",
+          "label": "Type",
+          "description": "Data type of the new element: string, number, or boolean"
+        },
+        {
+          "id": "position",
+          "type": "dropdown",
+          "label": "Position",
+          "description": "Insert at the end, the beginning, or a specific index"
+        },
+        {
+          "id": "add",
+          "type": "button",
+          "label": "Add Element",
+          "description": "Insert the value into the main array or the selected nested array"
+        },
+        {
+          "id": "nested",
+          "type": "button",
+          "label": "Add Nested Array",
+          "description": "Insert an empty nested array and select it"
+        },
+        {
+          "id": "remove",
+          "type": "button",
+          "label": "Remove Selected",
+          "description": "Delete the selected element"
+        },
+        {
+          "id": "clear",
+          "type": "button",
+          "label": "Clear Array",
+          "description": "Remove every element"
+        },
+        {
+          "id": "copy",
+          "type": "button",
+          "label": "Copy JSON",
+          "description": "Copy the array as JSON text to the clipboard"
+        },
+        {
+          "id": "goal",
+          "type": "dropdown",
+          "label": "Practice goal",
+          "description": "Free play or one of four target arrays to build"
+        }
+      ]
+    },
+    "usage": {
+      "recommendedUsage": [
+        "guided-practice",
+        "exploration",
+        "individual-study"
+      ],
+      "instructionalStrategies": [
+        "Predict the new JSON before each operation",
+        "Build target arrays with the practice goals"
+      ],
+      "assessmentQuestions": [
+        {
+          "question": "An array has length 5. What is the index of its last element?",
+          "type": "short-answer",
+          "level": "Understand"
+        },
+        {
+          "question": "Build the array [[1, 2], [3, 4], [5, 6]].",
+          "type": "observation",
+          "level": "Apply"
+        }
+      ]
+    },
+    "pedagogical": {
+      "pattern": "practice",
+      "bloomsTaxonomy": [
+        "Understand",
+        "Apply"
+      ],
+      "bloomAlignment": [
+        "apply"
+      ],
+      "bloomVerbs": [
+        "demonstrate",
+        "apply",
+        "construct",
+        "predict"
+      ],
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "pacing": "self-paced",
+      "feedbackType": [
+        "immediate",
+        "corrective",
+        "explanatory"
+      ],
+      "interactionStyle": "construct"
+    }
+  }
+}

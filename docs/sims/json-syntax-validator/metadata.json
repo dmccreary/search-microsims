@@ -1,0 +1,203 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "JSON Syntax Validator",
+      "creator": [
+        "Dan McCreary"
+      ],
+      "subject": [
+        "JSON",
+        "JSON Syntax",
+        "Data Formats",
+        "Metadata",
+        "Debugging"
+      ],
+      "description": "Interactive JSON editor and validator. Students type or load JSON, see the first syntax error underlined with its line and column, read a plain-language fix suggestion, and repair the document until it is valid. Covers missing quotes, single quotes, unquoted keys, trailing and missing commas, leading zeros, comments, and unclosed braces.",
+      "contributor": [
+        "Claude Code"
+      ],
+      "date": "2026-10-01",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "identifier": "https://dmccreary.github.io/search-microsims/sims/json-syntax-validator/",
+      "language": "en-US",
+      "relation": [
+        "https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/"
+      ],
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": [
+        "json",
+        "syntax",
+        "validator",
+        "linter",
+        "code editor",
+        "error messages"
+      ],
+      "visualizationType": [
+        "interactive-demo"
+      ],
+      "interactionLevel": "high",
+      "complexity": 4,
+      "relatedConcepts": [
+        "JSON",
+        "JSON Syntax",
+        "JSON Objects",
+        "JSON Arrays",
+        "Schema Validation"
+      ],
+      "applicationDomains": [
+        "education",
+        "training",
+        "assessment"
+      ]
+    },
+    "educational": {
+      "gradeLevel": [
+        "Undergraduate",
+        "Adult"
+      ],
+      "subjectArea": [
+        "Computer Science"
+      ],
+      "topic": [
+        "JSON syntax rules",
+        "Syntax errors",
+        "Data interchange formats"
+      ],
+      "learningObjectives": [
+        "Use JSON syntax rules to identify and fix common syntax errors in real time",
+        "Interpret a parser error message that gives a line and column",
+        "Write a valid JSON document that contains strings, numbers, booleans, arrays, and nested objects"
+      ],
+      "bloomsTaxonomy": [
+        "Apply"
+      ],
+      "prerequisites": [
+        "Knows that JSON stores data as key-value pairs and lists"
+      ],
+      "duration": {
+        "typical": 15,
+        "range": {
+          "min": 10,
+          "max": 20
+        }
+      },
+      "difficulty": "Beginner"
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 520,
+        "responsive": true
+      },
+      "dependencies": [
+        "p5.js 1.11.10"
+      ],
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "accessibility": {
+        "screenReader": true,
+        "keyboardNavigation": true,
+        "colorContrast": true
+      }
+    },
+    "userInterface": {
+      "layoutType": "two-column",
+      "layoutPattern": "editor-left-results-right",
+      "controls": [
+        {
+          "id": "editor",
+          "type": "text-input",
+          "label": "JSON editor",
+          "description": "Multi-line code editor with line numbers and syntax colors"
+        },
+        {
+          "id": "validate",
+          "type": "button",
+          "label": "Validate",
+          "description": "Check the JSON and report the first syntax error"
+        },
+        {
+          "id": "format",
+          "type": "button",
+          "label": "Format",
+          "description": "Pretty-print valid JSON with two-space indentation"
+        },
+        {
+          "id": "clear",
+          "type": "button",
+          "label": "Clear",
+          "description": "Empty the editor"
+        },
+        {
+          "id": "live",
+          "type": "checkbox",
+          "label": "Live validation",
+          "description": "Validate on every keystroke; turn off to predict before checking"
+        },
+        {
+          "id": "example",
+          "type": "dropdown",
+          "label": "Load Example",
+          "description": "Load a valid document or one of eight documents that each break one rule"
+        }
+      ]
+    },
+    "usage": {
+      "recommendedUsage": [
+        "guided-practice",
+        "individual-study",
+        "demonstration"
+      ],
+      "instructionalStrategies": [
+        "Predict then check with live validation turned off",
+        "Fix one error at a time, as real parsers report them"
+      ],
+      "assessmentQuestions": [
+        {
+          "question": "Why is {\"count\": 042} invalid JSON?",
+          "type": "short-answer",
+          "level": "Understand"
+        },
+        {
+          "question": "Fix every broken example without reading the Fix hint.",
+          "type": "observation",
+          "level": "Apply"
+        }
+      ]
+    },
+    "pedagogical": {
+      "pattern": "practice",
+      "bloomsTaxonomy": [
+        "Understand",
+        "Apply"
+      ],
+      "bloomAlignment": [
+        "apply"
+      ],
+      "bloomVerbs": [
+        "use",
+        "apply",
+        "identify",
+        "test"
+      ],
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "pacing": "self-paced",
+      "feedbackType": [
+        "immediate",
+        "corrective",
+        "explanatory"
+      ],
+      "interactionStyle": "construct"
+    }
+  }
+}

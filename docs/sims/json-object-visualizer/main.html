@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>JSON Object Structure Visualizer using vis-network</title>
+    <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <!-- Title at top center -->
+            <div class="title">JSON Object Structure Visualizer</div>
+
+            <!-- Legend: shape and color of each JSON data type -->
+            <div class="legend" aria-label="Legend">
+                <div class="legend-item"><span class="swatch swatch-root"></span>Root</div>
+                <div class="legend-item"><span class="swatch swatch-object"></span>Object { }</div>
+                <div class="legend-item"><span class="swatch swatch-array"></span>Array [ ]</div>
+                <div class="legend-item"><span class="swatch swatch-dot swatch-string"></span>String</div>
+                <div class="legend-item"><span class="swatch swatch-dot swatch-number"></span>Number</div>
+                <div class="legend-item"><span class="swatch swatch-dot swatch-boolean"></span>Boolean</div>
+                <div class="legend-item"><span class="swatch swatch-dot swatch-null"></span>Null</div>
+            </div>
+
+            <!-- Tree drawing area. Overlays are siblings because vis-network replaces its container's children. -->
+            <div id="network" aria-label="Tree view of the JSON document"></div>
+
+            <!-- Controls below the drawing area -->
+            <div class="bottom-panel">
+                <div class="input-col">
+                    <label for="json-input">Paste JSON here:</label>
+                    <textarea id="json-input" spellcheck="false" autocomplete="off"></textarea>
+                </div>
+
+                <div class="controls-col">
+                    <button class="btn btn-primary" id="visualize-btn">Visualize</button>
+                    <button class="btn btn-secondary" id="sample-btn">Load Sample</button>
+                    <button class="btn btn-secondary" id="expand-btn">Expand All</button>
+                    <button class="btn btn-secondary" id="collapse-btn">Collapse All</button>
+                    <label class="check"><input type="checkbox" id="values-check" checked> Show Values</label>
+                </div>
+
+                <div class="info-col" id="info-panel" aria-live="polite">
+                    <div class="info-title" id="info-title">Node Details</div>
+                    <div class="info-content" id="info-content"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+
+    <script src="json-object-visualizer.js"></script>
+</body>
+</html>

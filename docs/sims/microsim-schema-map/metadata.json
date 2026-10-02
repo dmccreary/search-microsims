@@ -1,0 +1,200 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "MicroSim Schema Structure Map",
+      "creator": [
+        "Dan McCreary"
+      ],
+      "subject": [
+        "JSON Schema",
+        "Metadata Schema",
+        "Required Fields",
+        "Optional Fields",
+        "Dublin Core",
+        "Schema Validation"
+      ],
+      "description": "Interactive map of the MicroSim metadata schema. A central root connects to eight color-coded sections, and each section opens to show its key fields. Required fields are solid, optional fields are outlined, and dashed lines mark dependencies between sections. Students filter to required fields, focus on one section, search for a field by name, and hover to see each field's type and constraints.",
+      "contributor": [
+        "Claude Code"
+      ],
+      "date": "2026-10-01",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "identifier": "https://dmccreary.github.io/search-microsims/sims/microsim-schema-map/",
+      "language": "en-US",
+      "relation": [
+        "https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/"
+      ],
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": [
+        "json schema",
+        "schema map",
+        "required fields",
+        "optional fields",
+        "mind map",
+        "metadata sections"
+      ],
+      "visualizationType": [
+        "network",
+        "graph",
+        "diagram"
+      ],
+      "interactionLevel": "high",
+      "complexity": 5,
+      "relatedConcepts": [
+        "JSON Schema",
+        "Schema Validation",
+        "Required Fields",
+        "Optional Fields",
+        "Dublin Core"
+      ],
+      "applicationDomains": [
+        "education",
+        "exploration",
+        "analysis"
+      ]
+    },
+    "educational": {
+      "gradeLevel": [
+        "Undergraduate",
+        "Adult"
+      ],
+      "subjectArea": [
+        "Computer Science"
+      ],
+      "topic": [
+        "JSON Schema",
+        "MicroSim metadata schema",
+        "Required and optional fields"
+      ],
+      "learningObjectives": [
+        "Examine the relationships between the eight sections of the MicroSim metadata schema",
+        "Distinguish required fields from optional fields",
+        "Identify the type and constraints a schema places on a field",
+        "Explain a dependency between fields in two different sections"
+      ],
+      "bloomsTaxonomy": [
+        "Analyze"
+      ],
+      "prerequisites": [
+        "Can read JSON objects and arrays",
+        "Knows the JSON Schema keywords type, properties, required, and enum"
+      ],
+      "duration": {
+        "typical": 15,
+        "range": {
+          "min": 10,
+          "max": 20
+        }
+      },
+      "difficulty": "Intermediate"
+    },
+    "technical": {
+      "framework": "vis-network.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 620,
+        "responsive": true
+      },
+      "dependencies": [
+        "vis-network 9.1.9"
+      ],
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "accessibility": {
+        "screenReader": false,
+        "keyboardNavigation": true,
+        "colorContrast": true
+      }
+    },
+    "userInterface": {
+      "layoutType": "multi-panel",
+      "layoutPattern": "map-top-controls-bottom",
+      "controls": [
+        {
+          "id": "search-input",
+          "type": "text-input",
+          "label": "Find a field",
+          "description": "Highlight fields whose name contains the typed text"
+        },
+        {
+          "id": "section-select",
+          "type": "dropdown",
+          "label": "Show section",
+          "description": "Focus on one section and fade the others"
+        },
+        {
+          "id": "required-check",
+          "type": "checkbox",
+          "label": "Show required only",
+          "description": "Hide every optional field"
+        },
+        {
+          "id": "expand-btn",
+          "type": "button",
+          "label": "Expand All",
+          "description": "Open all eight sections"
+        },
+        {
+          "id": "collapse-btn",
+          "type": "button",
+          "label": "Collapse All",
+          "description": "Close all sections"
+        }
+      ]
+    },
+    "usage": {
+      "recommendedUsage": [
+        "exploration",
+        "demonstration",
+        "guided-practice"
+      ],
+      "instructionalStrategies": [
+        "Filter to required fields, then add optional fields section by section",
+        "Trace each dashed dependency line and explain it"
+      ],
+      "assessmentQuestions": [
+        {
+          "question": "Which section of the schema is required, and which seven fields inside it are required?",
+          "type": "short-answer",
+          "level": "Remember"
+        },
+        {
+          "question": "Why should dublinCore.subject agree with educational.subjectArea?",
+          "type": "short-answer",
+          "level": "Analyze"
+        }
+      ]
+    },
+    "pedagogical": {
+      "pattern": "exploration",
+      "bloomsTaxonomy": [
+        "Understand",
+        "Analyze"
+      ],
+      "bloomAlignment": [
+        "analyze"
+      ],
+      "bloomVerbs": [
+        "examine",
+        "analyze",
+        "differentiate",
+        "compare"
+      ],
+      "supportsPrediction": false,
+      "dataVisibility": "high",
+      "pacing": "self-paced",
+      "feedbackType": [
+        "immediate"
+      ],
+      "interactionStyle": "explore"
+    }
+  }
+}
