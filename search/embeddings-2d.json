@@ -7576,10 +7576,10 @@
       "y": 0.1187015982427021,
       "title": "4-Hour Token Window Visualization",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/4-hour-token-window-visualization/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/4-hour-token-window-visualization/",
       "color": "#9467bd"
     },
     {
@@ -7587,10 +7587,10 @@
       "y": 0.11855035925348867,
       "title": "5-Hour Token Window Visualization",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/5-hour-token-window-visualization/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/5-hour-token-window-visualization/",
       "color": "#9467bd"
     },
     {
@@ -7598,10 +7598,10 @@
       "y": -0.09688497153460039,
       "title": "Adding Taxonomy to CSV Workflow",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/adding-taxonomy-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/adding-taxonomy-workflow/",
       "color": "#999999"
     },
     {
@@ -7609,10 +7609,10 @@
       "y": 0.12967641190533608,
       "title": "Admonition Types Interactive Reference",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/admonition-types-interactive-reference/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/admonition-types-interactive-reference/",
       "color": "#9467bd"
     },
     {
@@ -7620,10 +7620,10 @@
       "y": -0.0504548142532626,
       "title": "Algorithm Visualization with Step Controls MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/algorithm-visualization-with-step-controls-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/algorithm-visualization-with-step-controls-microsim/",
       "color": "#9467bd"
     },
     {
@@ -7631,10 +7631,10 @@
       "y": -0.136040474043191,
       "title": "Average Dependencies Distribution Bar Chart",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/average-dependencies-distribution/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/average-dependencies-distribution/",
       "color": "#999999"
     },
     {
@@ -7642,10 +7642,10 @@
       "y": 0.2852760260230715,
       "title": "Basic MicroSim Template Structure",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/basic-microsim-template-structure/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/basic-microsim-template-structure/",
       "color": "#9467bd"
     },
     {
@@ -7653,10 +7653,10 @@
       "y": 0.13096758943452494,
       "title": "Bloom's Taxonomy 1956 vs 2001 Comparison",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/bloom-s-taxonomy-1956-vs-2001-comparison/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/bloom-s-taxonomy-1956-vs-2001-comparison/",
       "color": "#9467bd"
     },
     {
@@ -7664,10 +7664,10 @@
       "y": 0.19788504000842108,
       "title": "Bloom's Taxonomy Application Distribution in Quality Courses",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/bloom-s-taxonomy-application-distribution-in-quality-courses/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/bloom-s-taxonomy-application-distribution-in-quality-courses/",
       "color": "#9467bd"
     },
     {
@@ -7675,10 +7675,10 @@
       "y": -0.022718400557491233,
       "title": "Bloom's Taxonomy Distribution Analyzer Chart",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/bloom-s-taxonomy-distribution-analyzer-chart/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/bloom-s-taxonomy-distribution-analyzer-chart/",
       "color": "#9467bd"
     },
     {
@@ -7686,10 +7686,10 @@
       "y": -0.11862091757842122,
       "title": "Book Build Workflow",
       "subject": "Education",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/book-build-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/book-build-workflow/",
       "color": "#9edae5"
     },
     {
@@ -7697,10 +7697,10 @@
       "y": 0.08082524726286386,
       "title": "Book Levels MicroSim",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/book-levels/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/book-levels/",
       "color": "#999999"
     },
     {
@@ -7708,10 +7708,10 @@
       "y": -0.06039808526032147,
       "title": "Certificate of Completion Generator",
       "subject": "Mathematics",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "6-12",
       "framework": "vanilla-js",
-      "url": "https://dmccreary.github.io/claude-skills/sims/certificate-generator/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/certificate-generator/",
       "color": "blue"
     },
     {
@@ -7719,10 +7719,10 @@
       "y": -0.058728273361978334,
       "title": "Chapter Content Generation Workflow Timeline",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/chapter-content-generation-timeline/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/chapter-content-generation-timeline/",
       "color": "#999999"
     },
     {
@@ -7730,10 +7730,10 @@
       "y": -0.029816098813744366,
       "title": "Chapter Index File Structure",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/chapter-index-structure/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/chapter-index-structure/",
       "color": "#999999"
     },
     {
@@ -7741,10 +7741,10 @@
       "y": -0.02937008036904894,
       "title": "Chapter Organization Workflow Diagram",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/chapter-organization-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/chapter-organization-workflow/",
       "color": "#999999"
     },
     {
@@ -7752,10 +7752,10 @@
       "y": -0.07427234808319304,
       "title": "Claude Code Memory Layers",
       "subject": "Computer Science",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-memory-layers/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-memory-layers/",
       "color": "green"
     },
     {
@@ -7763,10 +7763,10 @@
       "y": -0.13700973859703017,
       "title": "Evolution of AI: From Neural Networks to Claude Code",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-timeline/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-timeline/",
       "color": "#999999"
     },
     {
@@ -7774,10 +7774,10 @@
       "y": -0.17559203217079014,
       "title": "Claude Code T-Shirt Design - Workflow Diagram",
       "subject": "AI/ML",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-tshirt-design/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-tshirt-design/",
       "color": "#bcbd22"
     },
     {
@@ -7785,10 +7785,10 @@
       "y": 0.03805454895125062,
       "title": "Claude Code Workflow Diagram",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/claude-code-workflow-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/claude-code-workflow-diagram/",
       "color": "#9467bd"
     },
     {
@@ -7796,10 +7796,10 @@
       "y": 0.14919114549527482,
       "title": "Color Accessibility Checker MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/color-accessibility-checker-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/color-accessibility-checker-microsim/",
       "color": "#9467bd"
     },
     {
@@ -7807,10 +7807,10 @@
       "y": -0.19990081745757998,
       "title": "Color Wheel with Named Colors",
       "subject": "Computer Science",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/color-wheel-with-named-colors/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/color-wheel-with-named-colors/",
       "color": "green"
     },
     {
@@ -7818,10 +7818,10 @@
       "y": 0.10547014808269495,
       "title": "Command-Line Interface Basics Interactive Infographic",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/command-line-interface-basics-interactive-infographic/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/command-line-interface-basics-interactive-infographic/",
       "color": "#9467bd"
     },
     {
@@ -7829,10 +7829,10 @@
       "y": 0.12798133582318838,
       "title": "Concept Count by Course Duration",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/concept-count-by-course-duration/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/concept-count-by-course-duration/",
       "color": "#9467bd"
     },
     {
@@ -7840,10 +7840,10 @@
       "y": 0.023843850492988303,
       "title": "Concept Depth Distribution Analysis",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/concept-depth-distribution-analysis/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/concept-depth-distribution-analysis/",
       "color": "#9467bd"
     },
     {
@@ -7851,10 +7851,10 @@
       "y": -0.07279724450655732,
       "title": "Concept Granularity Spectrum Visualization",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/concept-granularity-spectrum-visualization/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/concept-granularity-spectrum-visualization/",
       "color": "#9467bd"
     },
     {
@@ -7862,10 +7862,10 @@
       "y": 0.026042173213277606,
       "title": "Concept Label Length Optimization",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/concept-label-length-optimization/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/concept-label-length-optimization/",
       "color": "#9467bd"
     },
     {
@@ -7873,10 +7873,10 @@
       "y": 0.17895989816354596,
       "title": "Concept Label Quality Checklist",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/concept-label-quality-checklist/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/concept-label-quality-checklist/",
       "color": "#9467bd"
     },
     {
@@ -7884,10 +7884,10 @@
       "y": -0.19829918894392534,
       "title": "Concept Label Length Histogram",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/concept-length-histogram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/concept-length-histogram/",
       "color": "#999999"
     },
     {
@@ -7895,10 +7895,10 @@
       "y": 0.1165776633041215,
       "title": "ConceptID vs ConceptLabel Comparison",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/conceptid-vs-conceptlabel-comparison/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/conceptid-vs-conceptlabel-comparison/",
       "color": "#9467bd"
     },
     {
@@ -7906,10 +7906,10 @@
       "y": 0.003747233018923138,
       "title": "Course Description Quality Rubric Visualization",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/course-description-quality-rubric-visualization/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/course-description-quality-rubric-visualization/",
       "color": "#9467bd"
     },
     {
@@ -7917,10 +7917,10 @@
       "y": -0.08137822437542082,
       "title": "Course Description Quality Impact on Workflow",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/course-description-quality-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/course-description-quality-workflow/",
       "color": "#999999"
     },
     {
@@ -7928,10 +7928,10 @@
       "y": -0.039880448152036514,
       "title": "Cover Image Generation Workflow",
       "subject": "Computer Science",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/cover-image-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/cover-image-workflow/",
       "color": "green"
     },
     {
@@ -7939,10 +7939,10 @@
       "y": 0.13976282008419977,
       "title": "CSV File Format Example with Validation",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/csv-file-format-example-with-validation/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/csv-file-format-example-with-validation/",
       "color": "#9467bd"
     },
     {
@@ -7950,10 +7950,10 @@
       "y": 0.06309571699813196,
       "title": "CSV to JSON Conversion Mapping Diagram",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/csv-to-json-conversion-mapping-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/csv-to-json-conversion-mapping-diagram/",
       "color": "#9467bd"
     },
     {
@@ -7961,10 +7961,10 @@
       "y": -0.08149649678604438,
       "title": "DAG vs Cyclic Graph Comparison",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/dag-vs-cyclic-graph-comparison/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/dag-vs-cyclic-graph-comparison/",
       "color": "#9467bd"
     },
     {
@@ -7972,10 +7972,10 @@
       "y": 0.12925844366080252,
       "title": "Dependency Mapping Decision Tree",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/dependency-mapping-decision-tree/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/dependency-mapping-decision-tree/",
       "color": "#9467bd"
     },
     {
@@ -7983,10 +7983,10 @@
       "y": 0.1696135964480279,
       "title": "Dependency Mapping Workflow",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/dependency-mapping-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/dependency-mapping-workflow/",
       "color": "#9467bd"
     },
     {
@@ -7994,10 +7994,10 @@
       "y": 0.17038905910377275,
       "title": "Dependency Pattern Examples",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/dependency-pattern-examples/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/dependency-pattern-examples/",
       "color": "#9467bd"
     },
     {
@@ -8005,10 +8005,10 @@
       "y": 0.3040144861781981,
       "title": "Dublin Core Metadata Field Reference Card",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/dublin-core-metadata-field-reference-card/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/dublin-core-metadata-field-reference-card/",
       "color": "#9467bd"
     },
     {
@@ -8016,10 +8016,10 @@
       "y": 0.037945017052321756,
       "title": "Evolution of AI Approaches Timeline",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/evolution-of-ai-approaches-timeline/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/evolution-of-ai-approaches-timeline/",
       "color": "#9467bd"
     },
     {
@@ -8027,10 +8027,10 @@
       "y": -0.06209622587321172,
       "title": "FAQ Question Pattern Analysis Workflow",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/faq-pattern-analysis/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/faq-pattern-analysis/",
       "color": "#999999"
     },
     {
@@ -8038,10 +8038,10 @@
       "y": -0.005074889150188732,
       "title": "Five Levels of Textbook Intelligence Visual Model",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/five-levels-of-textbook-intelligence-visual-model/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/five-levels-of-textbook-intelligence-visual-model/",
       "color": "#9467bd"
     },
     {
@@ -8049,10 +8049,10 @@
       "y": 0.05241646455714,
       "title": "Git Branching and Merging Visualization MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/git-branching-and-merging-visualization-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/git-branching-and-merging-visualization-microsim/",
       "color": "#9467bd"
     },
     {
@@ -8060,10 +8060,10 @@
       "y": -0.09702394038415296,
       "title": "Git Workflow for Skill Development",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/git-workflow-skill-development/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/git-workflow-skill-development/",
       "color": "#999999"
     },
     {
@@ -8071,10 +8071,10 @@
       "y": -0.28784843615132594,
       "title": "Learning Graph Color Test",
       "subject": "Mathematics",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "6-12",
       "framework": "vis-network",
-      "url": "https://dmccreary.github.io/claude-skills/sims/graph-color-test/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/graph-color-test/",
       "color": "blue"
     },
     {
@@ -8082,10 +8082,10 @@
       "y": -0.23169834362083305,
       "title": "Learning Graph Viewer",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/graph-viewer/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/graph-viewer/",
       "color": "#999999"
     },
     {
@@ -8093,10 +8093,10 @@
       "y": -0.12668639886592303,
       "title": "Install Book Environment Dependencies",
       "subject": "Computer Science",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/install-book-env/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/install-book-env/",
       "color": "green"
     },
     {
@@ -8104,10 +8104,10 @@
       "y": 0.25184376172841616,
       "title": "Interactive Directory Navigation Practice MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/interactive-directory-navigation-practice-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-directory-navigation-practice-microsim/",
       "color": "#9467bd"
     },
     {
@@ -8115,10 +8115,10 @@
       "y": 0.15795250988099763,
       "title": "Interactive Exercise Generator MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/interactive-exercise-generator-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-exercise-generator-microsim/",
       "color": "#9467bd"
     },
     {
@@ -8126,10 +8126,10 @@
       "y": 0.01434770948020652,
       "title": "Interactive Learning Element Types Comparison",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/interactive-learning-element-types-comparison/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-learning-element-types-comparison/",
       "color": "#9467bd"
     },
     {
@@ -8137,10 +8137,10 @@
       "y": 0.15410595979091718,
       "title": "Interactive Quiz Question Constructor MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/interactive-quiz-question-constructor-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/interactive-quiz-question-constructor-microsim/",
       "color": "#9467bd"
     },
     {
@@ -8148,10 +8148,10 @@
       "y": 0.07253364838416385,
       "title": "ISO 11179 Principles Comparison Table Infographic",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/iso-11179-principles-comparison-table-infographic/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/iso-11179-principles-comparison-table-infographic/",
       "color": "#9467bd"
     },
     {
@@ -8159,10 +8159,10 @@
       "y": 0.049212398805848066,
       "title": "Iterative Prompt Refinement Metrics",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/iterative-prompt-refinement-metrics/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/iterative-prompt-refinement-metrics/",
       "color": "#9467bd"
     },
     {
@@ -8170,10 +8170,10 @@
       "y": -0.15552241919970608,
       "title": "Learning Graph JSON Schema",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-json-schema/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/learning-graph-json-schema/",
       "color": "#999999"
     },
     {
@@ -8181,10 +8181,10 @@
       "y": -0.025935244780989374,
       "title": "Learning Graph Quality Score Calculator MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-quality-score-calculator-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/learning-graph-quality-score-calculator-microsim/",
       "color": "#9467bd"
     },
     {
@@ -8192,10 +8192,10 @@
       "y": -0.17923056928289066,
       "title": "Learning Graph Structure Visualization",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/learning-graph-structure-visualization/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/learning-graph-structure-visualization/",
       "color": "#9467bd"
     },
     {
@@ -8203,10 +8203,10 @@
       "y": -0.2514405893529224,
       "title": "Linear Chain vs Network Structure Comparison",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/linear-chain-vs-network/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/linear-chain-vs-network/",
       "color": "#999999"
     },
     {
@@ -8214,10 +8214,10 @@
       "y": 0.051871066797193506,
       "title": "Lower-Order vs Higher-Order Thinking Skills",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/lower-order-vs-higher-order-thinking-skills/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/lower-order-vs-higher-order-thinking-skills/",
       "color": "#9467bd"
     },
     {
@@ -8225,10 +8225,10 @@
       "y": 0.08860092201524603,
       "title": "Material Theme Features Interactive Comparison",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/material-theme-features-interactive-comparison/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/material-theme-features-interactive-comparison/",
       "color": "#9467bd"
     },
     {
@@ -8236,10 +8236,10 @@
       "y": 0.29666193592714785,
       "title": "MicroSim Design Quality Checklist",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/microsim-design-quality-checklist/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/microsim-design-quality-checklist/",
       "color": "#9467bd"
     },
     {
@@ -8247,10 +8247,10 @@
       "y": 0.22987975321285528,
       "title": "MicroSim File Relationship Diagram",
       "subject": "Education",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/microsim-file-relationship-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/microsim-file-relationship-diagram/",
       "color": "#9edae5"
     },
     {
@@ -8258,10 +8258,10 @@
       "y": -0.014987501989156531,
       "title": "MkDocs Build Process Workflow",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/mkdocs-build-process/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/mkdocs-build-process/",
       "color": "#999999"
     },
     {
@@ -8269,10 +8269,10 @@
       "y": -0.0327600864667784,
       "title": "MkDocs GitHub Pages Deployment Workflow",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/mkdocs-github-pages-deployment/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/mkdocs-github-pages-deployment/",
       "color": "#999999"
     },
     {
@@ -8280,10 +8280,10 @@
       "y": -0.22429111795947665,
       "title": "Terminal Nodes Identification Chart",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/orphaned-nodes-identification/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/orphaned-nodes-identification/",
       "color": "#999999"
     },
     {
@@ -8291,10 +8291,10 @@
       "y": -0.2805509016573129,
       "title": "p5.js Architecture and Execution Model",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/p5js-architecture/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/p5js-architecture/",
       "color": "#999999"
     },
     {
@@ -8302,10 +8302,10 @@
       "y": 0.09861975549466513,
       "title": "Permission Bits Visual Infographic",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/permission-bits-visual-infographic/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/permission-bits-visual-infographic/",
       "color": "#9467bd"
     },
     {
@@ -8313,10 +8313,10 @@
       "y": 0.06739997654348233,
       "title": "Prompt Engineering Iterative Refinement Workflow",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/prompt-engineering-iterative-refinement-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/prompt-engineering-iterative-refinement-workflow/",
       "color": "#9467bd"
     },
     {
@@ -8324,10 +8324,10 @@
       "y": -0.0798511024260035,
       "title": "Python Learning Graph Processing Pipeline",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/python-learning-graph-processing-pipeline/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/python-learning-graph-processing-pipeline/",
       "color": "#9467bd"
     },
     {
@@ -8335,10 +8335,10 @@
       "y": 0.12881334207465064,
       "title": "Responsive Iframe Embedding MicroSim",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/responsive-iframe-embedding-microsim/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/responsive-iframe-embedding-microsim/",
       "color": "#9467bd"
     },
     {
@@ -8346,10 +8346,10 @@
       "y": -0.002728106178177717,
       "title": "Security Zones Diagram",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/security-zones-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/security-zones-diagram/",
       "color": "#999999"
     },
     {
@@ -8357,10 +8357,10 @@
       "y": -0.4737992471456158,
       "title": "Sine Function Visualization",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/sine-function-plot/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/sine-function-plot/",
       "color": "#999999"
     },
     {
@@ -8368,10 +8368,10 @@
       "y": -0.004575211645323451,
       "title": "Skill Context Window",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "p5.js 1.11.10",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-context-window/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-context-window/",
       "color": "#999999"
     },
     {
@@ -8379,10 +8379,10 @@
       "y": -0.06238161880810488,
       "title": "Skill Directory Structure",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-directory-structure/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-directory-structure/",
       "color": "#999999"
     },
     {
@@ -8390,10 +8390,10 @@
       "y": 0.07628615245199455,
       "title": "Skill File Anatomy Diagram",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-file-anatomy-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-file-anatomy-diagram/",
       "color": "#9467bd"
     },
     {
@@ -8401,10 +8401,10 @@
       "y": -0.16817768293038285,
       "title": "Skill Development Priority Matrix Visualization",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-impact-chart/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-impact-chart/",
       "color": "#999999"
     },
     {
@@ -8412,10 +8412,10 @@
       "y": 0.20183663857367,
       "title": "Skill Installation Locations and Priority",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-installation-locations-and-priority/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-installation-locations-and-priority/",
       "color": "#9467bd"
     },
     {
@@ -8423,10 +8423,10 @@
       "y": -0.11167346033131934,
       "title": "Skill Installation Workflow",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-installation-workflow/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-installation-workflow/",
       "color": "#999999"
     },
     {
@@ -8434,10 +8434,10 @@
       "y": 0.15356791185600593,
       "title": "Skill Invocation and Execution Lifecycle",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-invocation-and-execution-lifecycle/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-invocation-and-execution-lifecycle/",
       "color": "#9467bd"
     },
     {
@@ -8445,10 +8445,10 @@
       "y": 0.18107746357241977,
       "title": "Skill Package Contents Checklist",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-package-contents-checklist/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-package-contents-checklist/",
       "color": "#9467bd"
     },
     {
@@ -8456,10 +8456,10 @@
       "y": 0.11097407878713719,
       "title": "Skill Permission Matrix",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-permission-matrix/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-permission-matrix/",
       "color": "#9467bd"
     },
     {
@@ -8467,10 +8467,10 @@
       "y": 0.04260111498560419,
       "title": "Skill Testing Workflow Diagram",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skill-testing-workflow-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skill-testing-workflow-diagram/",
       "color": "#9467bd"
     },
     {
@@ -8478,10 +8478,10 @@
       "y": 0.08857977489126913,
       "title": "Skills vs Commands Decision Tree",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/skills-vs-commands-decision-tree/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/skills-vs-commands-decision-tree/",
       "color": "#9467bd"
     },
     {
@@ -8489,10 +8489,10 @@
       "y": -0.14371322466851028,
       "title": "Taxonomy Distribution Pie Chart",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/taxonomy-distribution-pie/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/taxonomy-distribution-pie/",
       "color": "#999999"
     },
     {
@@ -8500,10 +8500,10 @@
       "y": -0.09565463524256258,
       "title": "Terminal Workflow for Textbook Development",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/terminal-workflow-textbook/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/terminal-workflow-textbook/",
       "color": "#999999"
     },
     {
@@ -8511,10 +8511,10 @@
       "y": 0.022841456250507052,
       "title": "Major World Cities",
       "subject": "Social Studies",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/test-world-cities/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/test-world-cities/",
       "color": "#999999"
     },
     {
@@ -8522,10 +8522,10 @@
       "y": -0.30840416056713166,
       "title": "Three-Color DFS Cycle Detection",
       "subject": "Other",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/three-color-dfs/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/three-color-dfs/",
       "color": "#999999"
     },
     {
@@ -8533,10 +8533,10 @@
       "y": 0.21355205716883188,
       "title": "Token Consumption Timeline for Complete Textbook Project",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/token-consumption-timeline-for-complete-textbook-project/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/token-consumption-timeline-for-complete-textbook-project/",
       "color": "#9467bd"
     },
     {
@@ -8544,10 +8544,10 @@
       "y": 0.1031559818842297,
       "title": "Topic-to-Concept Expansion Example",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-example/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-example/",
       "color": "#9467bd"
     },
     {
@@ -8555,10 +8555,10 @@
       "y": 0.11146830906421107,
       "title": "Topic-to-Concept Expansion Process",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/topic-to-concept-expansion-process/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/topic-to-concept-expansion-process/",
       "color": "#9467bd"
     },
     {
@@ -8566,10 +8566,10 @@
       "y": 0.11204982046210377,
       "title": "Transformer Architecture Diagram",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/transformer-architecture-diagram/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/transformer-architecture-diagram/",
       "color": "#9467bd"
     },
     {
@@ -8577,10 +8577,10 @@
       "y": 0.0795174145600703,
       "title": "VS Code Interface Layout for Textbook Development",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/vs-code-interface-layout-for-textbook-development/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/vs-code-interface-layout-for-textbook-development/",
       "color": "#9467bd"
     },
     {
@@ -8588,10 +8588,10 @@
       "y": 0.09776070293349906,
       "title": "Worked Example: Determining Reading Level from Course Description",
       "subject": "Geometry",
-      "repo": "claude-skills",
+      "repo": "ibook-skills",
       "gradeLevel": "",
       "framework": "",
-      "url": "https://dmccreary.github.io/claude-skills/sims/worked-example-determining-reading-level-from-course-description/",
+      "url": "https://dmccreary.github.io/ibook-skills/sims/worked-example-determining-reading-level-from-course-description/",
       "color": "#9467bd"
     },
     {

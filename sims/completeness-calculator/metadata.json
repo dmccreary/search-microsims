@@ -1,0 +1,223 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "Completeness Score Calculator",
+      "creator": [
+        "Dan McCreary"
+      ],
+      "subject": [
+        "Data Quality",
+        "Completeness Score",
+        "Metadata Quality",
+        "Required Fields",
+        "Weighted Average"
+      ],
+      "description": "Interactive calculator for metadata completeness. Students check off 40 metadata fields grouped by schema section and color coded as required, recommended, or optional. A gauge shows the weighted or unweighted completeness score with a rating and stars, bars break the score down by weight and by section, the formula is shown with the current numbers, and a recommendations panel lists the fields that reach the next target fastest.",
+      "contributor": [
+        "Claude Code"
+      ],
+      "date": "2026-10-01",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "identifier": "https://dmccreary.github.io/search-microsims/sims/completeness-calculator/",
+      "language": "en-US",
+      "relation": [
+        "https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/"
+      ],
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": [
+        "completeness",
+        "data quality",
+        "metadata",
+        "weighted score",
+        "gauge",
+        "checklist",
+        "calculator"
+      ],
+      "visualizationType": [
+        "interactive-demo",
+        "chart",
+        "dashboard"
+      ],
+      "interactionLevel": "high",
+      "complexity": 4,
+      "relatedConcepts": [
+        "Data Quality",
+        "Completeness Score",
+        "Quality Score",
+        "Required Fields",
+        "Optional Fields"
+      ],
+      "applicationDomains": [
+        "education",
+        "training",
+        "assessment",
+        "analysis"
+      ]
+    },
+    "educational": {
+      "gradeLevel": [
+        "Undergraduate",
+        "Adult"
+      ],
+      "subjectArea": [
+        "Computer Science"
+      ],
+      "topic": [
+        "Metadata completeness",
+        "Weighted scoring",
+        "Data quality metrics"
+      ],
+      "learningObjectives": [
+        "Calculate weighted and unweighted completeness scores for a metadata record",
+        "Explain why required fields change the weighted score more than optional fields",
+        "Choose the fields that raise a completeness score most efficiently"
+      ],
+      "bloomsTaxonomy": [
+        "Apply"
+      ],
+      "prerequisites": [
+        "Understands percentages and weighted averages",
+        "Knows the difference between required and optional metadata fields"
+      ],
+      "duration": {
+        "typical": 15,
+        "range": {
+          "min": 10,
+          "max": 20
+        }
+      },
+      "difficulty": "Beginner"
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 555,
+        "responsive": true
+      },
+      "dependencies": [
+        "p5.js 1.11.10"
+      ],
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "accessibility": {
+        "screenReader": true,
+        "keyboardNavigation": true,
+        "colorContrast": true
+      }
+    },
+    "userInterface": {
+      "layoutType": "multi-panel",
+      "layoutPattern": "checklist-left-gauge-center-recommendations-right",
+      "controls": [
+        {
+          "id": "fields",
+          "type": "checkbox",
+          "label": "Metadata field checklist",
+          "description": "Forty checkboxes, one per metadata field, that mark the field as filled"
+        },
+        {
+          "id": "minimal",
+          "type": "button",
+          "label": "Minimal",
+          "description": "Load a record with only the seven required fields"
+        },
+        {
+          "id": "good",
+          "type": "button",
+          "label": "Good",
+          "description": "Load a record with all required and recommended fields and eight optional fields"
+        },
+        {
+          "id": "excellent",
+          "type": "button",
+          "label": "Excellent",
+          "description": "Load a record with all but three optional fields"
+        },
+        {
+          "id": "calculate",
+          "type": "button",
+          "label": "Calculate",
+          "description": "Replay the score from zero and highlight the formula"
+        },
+        {
+          "id": "reset",
+          "type": "button",
+          "label": "Reset All",
+          "description": "Uncheck every field"
+        },
+        {
+          "id": "mode",
+          "type": "radio",
+          "label": "Weighted or Unweighted",
+          "description": "Choose which completeness formula the gauge shows"
+        }
+      ]
+    },
+    "simulation": {
+      "model": {
+        "type": "mathematical",
+        "description": "Completeness as filled fields divided by possible fields, with optional weights of 3, 2, and 1 for required, recommended, and optional fields",
+        "equations": [
+          "unweighted = fields populated / total possible fields x 100",
+          "weighted = sum(weight x filled) / sum(weight x total) x 100"
+        ]
+      }
+    },
+    "usage": {
+      "recommendedUsage": [
+        "guided-practice",
+        "exploration",
+        "individual-study"
+      ],
+      "instructionalStrategies": [
+        "Compute the score by hand, then check it against the formula panel",
+        "Find the fewest fields that reach a target score"
+      ],
+      "assessmentQuestions": [
+        {
+          "question": "A record has 5 of 7 required, 6 of 8 recommended, and 10 of 25 optional fields filled. What is its weighted completeness?",
+          "type": "short-answer",
+          "level": "Apply"
+        },
+        {
+          "question": "Why can a record be 100% complete and still be poor metadata?",
+          "type": "short-answer",
+          "level": "Understand"
+        }
+      ]
+    },
+    "pedagogical": {
+      "pattern": "practice",
+      "bloomsTaxonomy": [
+        "Understand",
+        "Apply"
+      ],
+      "bloomAlignment": [
+        "apply"
+      ],
+      "bloomVerbs": [
+        "calculate",
+        "apply",
+        "predict",
+        "compare"
+      ],
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "pacing": "self-paced",
+      "feedbackType": [
+        "immediate",
+        "explanatory"
+      ],
+      "interactionStyle": "manipulate"
+    }
+  }
+}

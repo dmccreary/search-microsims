@@ -1,0 +1,202 @@
+{
+  "microsim": {
+    "dublinCore": {
+      "title": "JSON Object Structure Visualizer",
+      "creator": [
+        "Dan McCreary"
+      ],
+      "subject": [
+        "JSON",
+        "JSON Objects",
+        "Nested Data",
+        "Tree Structures",
+        "Metadata"
+      ],
+      "description": "Interactive tree view of a JSON document. The root is a blue circle, objects are green rectangles, arrays are orange rounded rectangles, and primitive values are small dots colored by data type. Students hover to see each value's path and type, click boxes to expand or collapse them, and paste their own JSON to visualize.",
+      "contributor": [
+        "Claude Code"
+      ],
+      "date": "2026-10-01",
+      "type": "Interactive Simulation",
+      "format": "text/html",
+      "identifier": "https://dmccreary.github.io/search-microsims/sims/json-object-visualizer/",
+      "language": "en-US",
+      "relation": [
+        "https://dmccreary.github.io/search-microsims/chapters/05-json-and-data-structures/"
+      ],
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": [
+        "json",
+        "tree",
+        "hierarchy",
+        "nested objects",
+        "data structure",
+        "path"
+      ],
+      "visualizationType": [
+        "graph",
+        "network",
+        "diagram"
+      ],
+      "interactionLevel": "high",
+      "complexity": 4,
+      "relatedConcepts": [
+        "JSON",
+        "JSON Objects",
+        "JSON Arrays",
+        "Key-Value Pairs",
+        "Nesting"
+      ],
+      "applicationDomains": [
+        "education",
+        "exploration",
+        "demonstration"
+      ]
+    },
+    "educational": {
+      "gradeLevel": [
+        "Undergraduate",
+        "Adult"
+      ],
+      "subjectArea": [
+        "Computer Science"
+      ],
+      "topic": [
+        "JSON objects",
+        "Hierarchical data",
+        "Nested key-value pairs"
+      ],
+      "learningObjectives": [
+        "Interpret the hierarchical structure of JSON objects by viewing nested key-value pairs as a tree",
+        "Write the path from the root to any value in a JSON document",
+        "Distinguish objects, arrays, and primitive values by how they appear in the tree"
+      ],
+      "bloomsTaxonomy": [
+        "Understand"
+      ],
+      "prerequisites": [
+        "Can recognize JSON objects, arrays, strings, numbers, booleans, and null"
+      ],
+      "duration": {
+        "typical": 10,
+        "range": {
+          "min": 5,
+          "max": 15
+        }
+      },
+      "difficulty": "Beginner"
+    },
+    "technical": {
+      "framework": "vis-network.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 600,
+        "responsive": true
+      },
+      "dependencies": [
+        "vis-network 9.1.9"
+      ],
+      "browserCompatibility": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge"
+      ],
+      "accessibility": {
+        "screenReader": false,
+        "keyboardNavigation": true,
+        "colorContrast": true
+      }
+    },
+    "userInterface": {
+      "layoutType": "multi-panel",
+      "layoutPattern": "tree-top-controls-bottom",
+      "controls": [
+        {
+          "id": "json-input",
+          "type": "text-input",
+          "label": "Paste JSON here",
+          "description": "Text area holding the JSON document to draw"
+        },
+        {
+          "id": "visualize-btn",
+          "type": "button",
+          "label": "Visualize",
+          "description": "Parse the text and draw it as a tree"
+        },
+        {
+          "id": "sample-btn",
+          "type": "button",
+          "label": "Load Sample",
+          "description": "Restore the sample MicroSim metadata document"
+        },
+        {
+          "id": "expand-btn",
+          "type": "button",
+          "label": "Expand All",
+          "description": "Open every object and array"
+        },
+        {
+          "id": "collapse-btn",
+          "type": "button",
+          "label": "Collapse All",
+          "description": "Close every object and array below the root"
+        },
+        {
+          "id": "values-check",
+          "type": "checkbox",
+          "label": "Show Values",
+          "description": "Show or hide primitive values next to their key names"
+        }
+      ]
+    },
+    "usage": {
+      "recommendedUsage": [
+        "demonstration",
+        "exploration",
+        "individual-study"
+      ],
+      "instructionalStrategies": [
+        "Predict the depth and top-level keys from the text before expanding the tree",
+        "Trace the path from root to a named value"
+      ],
+      "assessmentQuestions": [
+        {
+          "question": "What is the path from root to the value 600 in the sample document?",
+          "type": "short-answer",
+          "level": "Understand"
+        },
+        {
+          "question": "How does the tree show the difference between an object and an array?",
+          "type": "short-answer",
+          "level": "Understand"
+        }
+      ]
+    },
+    "pedagogical": {
+      "pattern": "exploration",
+      "bloomsTaxonomy": [
+        "Understand"
+      ],
+      "bloomAlignment": [
+        "understand"
+      ],
+      "bloomVerbs": [
+        "interpret",
+        "describe",
+        "explain",
+        "identify"
+      ],
+      "supportsPrediction": true,
+      "dataVisibility": "high",
+      "pacing": "self-paced",
+      "feedbackType": [
+        "immediate"
+      ],
+      "interactionStyle": "explore"
+    }
+  }
+}
